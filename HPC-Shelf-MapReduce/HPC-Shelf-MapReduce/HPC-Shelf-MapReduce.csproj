@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="DGAC">
-      <HintPath>..\DGAC.dll</HintPath>
+      <HintPath>..\lib\DGAC.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
