@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000093358cb1d20b2a4bb285163508c2de1ed35e004264b650f72fb45b4970c47a408b084bb2537753b4de26ce72e6a7aa21228d71e38b1c9a12199b82ea8b80c44fb006f5e6637ea1f61416107333e5247bd66995a3db19cade0dc45dadc4fa8581a14e9d0b4669b4962c8f8790a4d4d2815952cae0a64bf2926669c3fd1a4ae6d2" isAbstract="true" kind="Computation" name="Combiner" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="ICombiner" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner&#xA;{&#xA;&#x9;public interface BaseICombiner : IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseICombiner.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner/bin/1.0.0.0/BaseICombiner.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner&#xA;{&#xA;&#x9;public interface ICombiner : BaseICombiner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ICombiner.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner/bin/1.0.0.0/ICombiner.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner/bin/1.0.0.0/BaseICombiner.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="178" y="204">
+        <color b="230" g="227" r="173"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ICombiner" multiple="true" private="false" replica="0" uRef="combiner" visibleInterface="true">
+      <visualDescription h="40" w="80" x="178" y="284"/>
+    </unit>
+  </componentInfo>
+</component:component>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000af815f954355442a492697e2b1cd22d29994be20030a435bcaf038e1740ad89ae86c2c0ea8aa2c3cb4b5be0c01eff39433cef372d6c8e995326571d9d3b90c34a110be6e48826e782636b31f442d1e31d8dcb92d163ecc6529ade0a1c7f480e7e332370e1b674ae5334149440e282e1e936503c41c2129aa4989531af05243b2" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000041e55fd219f91cc501c4fabe779c0e6415e7cb037553f165723927362e7cda7c25732c3e67138099a18adadd4e581483cbc325135a52e6978a09e7febe6fc2902f47abd16f2d3081a5a682077fd1a00e66dd85ce58f21fb0bd4b40722a46eb768c29e83c082e107f493414f2a768a60a71f1d936de72b1be94390853538384b4" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -15,7 +15,7 @@
         </file>
       </sources>
       <visualDescription h="40" w="80" x="221" y="243">
-        <color b="0" g="165" r="255"/>
+        <color b="230" g="180" r="173"/>
       </visualDescription>
       <action id="main">
         <protocol/>

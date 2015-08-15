@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002d5b8a6ee8d400885b6059cbba4d9a2a7761b85c0dfd4651ad603ef67040cb7a477671089fc9cd8d678f35569937f9d709ff0c4adb5b329c2d485cd7b0ce635c67239e8fa427ae44be946c532579385ae1384f00508c0d8dcd8a1c3efd31eb2da1bcb3174a244510188f6a22d48a958c3f4ded221518ff07292eb7c220d2e7a8" isAbstract="true" kind="Computation" name="Reducer" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IReducer" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Reducer&#xA;{&#xA;&#x9;public interface BaseIReducer : IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIReducer.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Reducer/bin/1.0.0.0/BaseIReducer.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Reducer&#xA;{&#xA;&#x9;public interface IReducer : BaseIReducer&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IReducer.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Reducer/bin/1.0.0.0/IReducer.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Reducer/bin/1.0.0.0/BaseIReducer.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="171" y="207">
+        <color b="174" g="230" r="173"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IReducer" multiple="true" private="false" replica="0" uRef="reducer" visibleInterface="true">
+      <visualDescription h="40" w="80" x="171" y="287"/>
+    </unit>
+  </componentInfo>
+</component:component>

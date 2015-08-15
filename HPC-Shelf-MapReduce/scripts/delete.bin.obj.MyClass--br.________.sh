@@ -9,4 +9,3 @@ do
         echo rm -rf $pacote/obj
         rm -rf $pacote/obj
 done;
-
