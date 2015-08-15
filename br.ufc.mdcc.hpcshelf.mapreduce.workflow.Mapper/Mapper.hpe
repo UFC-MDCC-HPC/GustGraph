@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000af815f954355442a492697e2b1cd22d29994be20030a435bcaf038e1740ad89ae86c2c0ea8aa2c3cb4b5be0c01eff39433cef372d6c8e995326571d9d3b90c34a110be6e48826e782636b31f442d1e31d8dcb92d163ecc6529ade0a1c7f480e7e332370e1b674ae5334149440e282e1e936503c41c2129aa4989531af05243b2" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IMapper" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper&#xA;{&#xA;&#x9;public interface BaseIMapper : IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIMapper.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper/bin/1.0.0.0/BaseIMapper.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper&#xA;{&#xA;&#x9;public interface IMapper : BaseIMapper&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IMapper.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper/bin/1.0.0.0/IMapper.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper/bin/1.0.0.0/BaseIMapper.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="221" y="243">
+        <color b="0" g="165" r="255"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IMapper" multiple="false" private="false" replica="0" uRef="mapper" visibleInterface="true">
+      <visualDescription h="40" w="80" x="221" y="323"/>
+    </unit>
+  </componentInfo>
+</component:component>
