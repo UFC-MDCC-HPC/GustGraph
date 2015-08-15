@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
- 	<name>br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper</name>
+ 	<name>br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffler</name>
 	<comment></comment>
  	<projects>
  	</projects>
