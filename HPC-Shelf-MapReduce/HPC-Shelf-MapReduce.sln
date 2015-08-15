@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8565540D-B642-4992-93DD-E4D26B2667C4}"
+	ProjectSection(SolutionItems) = preProject
+		DGAC.dll = DGAC.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPC-Shelf-MapReduce", "HPC-Shelf-MapReduce\HPC-Shelf-MapReduce.csproj", "{7AE08D52-2EA4-48E4-B7B9-379C3789B2B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper", "..\br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper\br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper\br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper.csproj", "{08449497-A987-494B-8DD2-B53211B3C762}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08449497-A987-494B-8DD2-B53211B3C762}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{08449497-A987-494B-8DD2-B53211B3C762}.Debug|x86.Build.0 = Debug|Any CPU
+		{08449497-A987-494B-8DD2-B53211B3C762}.Release|x86.ActiveCfg = Release|Any CPU
+		{08449497-A987-494B-8DD2-B53211B3C762}.Release|x86.Build.0 = Release|Any CPU
+		{7AE08D52-2EA4-48E4-B7B9-379C3789B2B5}.Debug|x86.ActiveCfg = Debug|x86
+		{7AE08D52-2EA4-48E4-B7B9-379C3789B2B5}.Debug|x86.Build.0 = Debug|x86
+		{7AE08D52-2EA4-48E4-B7B9-379C3789B2B5}.Release|x86.ActiveCfg = Release|x86
+		{7AE08D52-2EA4-48E4-B7B9-379C3789B2B5}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = HPC-Shelf-MapReduce\HPC-Shelf-MapReduce.csproj
+	EndGlobalSection
+EndGlobal

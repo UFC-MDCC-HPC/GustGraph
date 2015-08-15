@@ -17,9 +17,9 @@ Old-MapReduce
 
 *.mdb
 *.exe
-*.dll
+#*.dll
 Debug
 bin
 obj
-HPC-Shelf-MapReduce
+#HPC-Shelf-MapReduce
 
