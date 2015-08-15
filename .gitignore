@@ -13,3 +13,13 @@ hs_err_pid*
 
 Old-MapReduce
 
+#CSharp
+
+*.mdb
+*.exe
+*.dll
+Debug
+bin
+obj
+HPC-Shelf-MapReduce
+
