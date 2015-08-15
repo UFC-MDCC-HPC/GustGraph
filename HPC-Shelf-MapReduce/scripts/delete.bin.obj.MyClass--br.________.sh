@@ -1,5 +1,5 @@
 #!/bin/bash
-for folder in br.ufc.mdcc.*
+for folder in br.*
 do 
         pacote=$folder/$folder
         echo rm -rf $pacote/MyClass.cs
