@@ -21,7 +21,7 @@
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="IMapper" multiple="false" private="false" replica="0" uRef="mapper" visibleInterface="true">
+    <unit facet="0" iRef="IMapper" multiple="true" private="false" replica="0" uRef="mapper" visibleInterface="true">
       <visualDescription h="40" w="80" x="221" y="323"/>
     </unit>
   </componentInfo>
