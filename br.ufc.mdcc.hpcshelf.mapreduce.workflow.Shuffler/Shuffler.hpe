@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000006b0b8296a2825f1f7d369280b175eae9e6a0827dd2bcc099485c97dcb27c36b6711c269ff661e94b04dd27460776fa7f3fbdde72b3771cabff4b67501cfdab03569edc2e0abb9dcab6fb6e3bd5040a1e78e9691ba64d90f5e612bb7085e45e103d3b81ae24e48656f516e455c3b5e6d49515b5b10f9de915c2786123efe9fd96" isAbstract="true" kind="Facet" name="Shuffler" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IShuffler" nArgs="0">
+      <visualDescription h="40" w="80" x="218" y="209">
+        <color b="0" g="255" r="255"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IShuffler" multiple="true" private="false" replica="0" uRef="shuffler" visibleInterface="true">
+      <visualDescription h="40" w="80" x="218" y="289"/>
+    </unit>
+  </componentInfo>
+</component:component>

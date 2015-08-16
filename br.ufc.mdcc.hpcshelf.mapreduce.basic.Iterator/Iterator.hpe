@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f18771c415db84ee3822d11269c2b0f00875140c4cd8241d744e52f7bbffe4b1bc2b95281dfa02ac8c499704457e5d5de475b4a7acee4e7c8ac42dcd054b6cca5e0163c69eff967a4d70359c322a62bfa59e02cb02f22894775201bf9e28cdf14537eb450175f4cab9b0ede847b5717b20830429889dd63b3e7cbba509c5b7a9" isAbstract="true" kind="Data" name="Iterator" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.basic">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IIterator" nArgs="0">
+      <visualDescription h="40" w="80" x="264" y="256">
+        <color b="144" g="238" r="144"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IIterator" multiple="false" private="false" replica="0" uRef="iterator" visibleInterface="true">
+      <visualDescription h="40" w="80" x="264" y="336"/>
+    </unit>
+  </componentInfo>
+</component:component>

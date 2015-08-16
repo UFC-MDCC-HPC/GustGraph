@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007dd56ad1b658677b7f3a02bbd2195cdd6f4dd7d1edc75a84e980528053bc36f032835d467b6b54634a3990eacd003e25048d8875b7d930dbc8ba269266411c0f33cabeb68541f0cfd033861dcdcb150e34eff7741647fe2130d66243b9aa488812d6432d90d9c5b3b538727d78de24a2b819ec313bcc3d30c3f541ac1fcc00d2" isAbstract="true" kind="Computation" name="MapFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IMapFunction" nArgs="0">
+      <visualDescription h="40" w="159" x="114" y="265">
+        <color b="230" g="216" r="173"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IMapFunction" multiple="false" private="false" replica="0" uRef="map_function" visibleInterface="true">
+      <visualDescription h="40" w="159" x="114" y="345"/>
+    </unit>
+  </componentInfo>
+</component:component>

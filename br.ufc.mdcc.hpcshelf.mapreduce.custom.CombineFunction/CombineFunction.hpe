@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000037f8f9d65e6e733f6aa65a41b580ccc78602f1214038d462cc15a0c9a01f03afd454202e601a95974f9da29f0dd29eae5c008640c08166350b28b22105baa9182a98b24c436fd4108bebfbd8fb91123cf405ff60e22d6e2aa33d3bbd75c57e97aa982c3df0ceab469d63abbc0f0d67b7960f5104446f39930c0aacd06e31b4bc" isAbstract="true" kind="Computation" name="CombineFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="ICombineFunction" nArgs="0">
+      <visualDescription h="40" w="145" x="153" y="255">
+        <color b="230" g="216" r="173"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ICombineFunction" multiple="false" private="false" replica="0" uRef="combine_function" visibleInterface="true">
+      <visualDescription h="40" w="145" x="153" y="335"/>
+    </unit>
+  </componentInfo>
+</component:component>

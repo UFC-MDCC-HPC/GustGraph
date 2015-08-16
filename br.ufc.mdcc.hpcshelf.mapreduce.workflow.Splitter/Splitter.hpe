@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002da0a48c88cee6150a3ac73a32f0ae38f67cd6813cce09e7a305821587740a897f482bd91d7e7b4d5fa91ac3bddf53c49a76dffc438811c801070e5148eaa382c3d743ab4102a979eb2f644381033c040b62c414bfbab41cc58d04b3d492a8e71d44a2f38e9f25461e0fa7e218738981f7994a2a0a0699584493324be397f081" isAbstract="true" kind="Facet" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IMapFeeder" nArgs="0">
+      <visualDescription h="40" w="107" x="131" y="203">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+    </interface>
+    <interface iRef="IReduceCollector" nArgs="0">
+      <visualDescription h="40" w="147" x="326" y="213">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+    </interface>
+    <interface iRef="IReadInput" nArgs="0">
+      <visualDescription h="40" w="118" x="147" y="483">
+        <color b="144" g="238" r="144"/>
+      </visualDescription>
+    </interface>
+    <interface iRef="IWriteOutput" nArgs="0">
+      <visualDescription h="40" w="119" x="343" y="490">
+        <color b="144" g="238" r="144"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IMapFeeder" multiple="true" private="false" replica="0" uRef="map_feeder" visibleInterface="true">
+      <visualDescription h="40" w="107" x="131" y="283"/>
+    </unit>
+    <unit facet="0" iRef="IReduceCollector" multiple="true" private="false" replica="0" uRef="reduce_collector" visibleInterface="true">
+      <visualDescription h="40" w="147" x="326" y="293"/>
+    </unit>
+    <unit facet="0" iRef="IReadInput" multiple="false" private="false" replica="0" uRef="read_input" visibleInterface="true">
+      <visualDescription h="40" w="118" x="144" y="404"/>
+    </unit>
+    <unit facet="0" iRef="IWriteOutput" multiple="false" private="false" replica="0" uRef="write_output" visibleInterface="true">
+      <visualDescription h="40" w="119" x="345" y="410"/>
+    </unit>
+  </componentInfo>
+</component:component>

@@ -15,7 +15,7 @@
         </file>
       </sources>
       <visualDescription h="40" w="80" x="171" y="207">
-        <color b="174" g="230" r="173"/>
+        <color b="0" g="0" r="255"/>
       </visualDescription>
       <action id="main">
         <protocol/>

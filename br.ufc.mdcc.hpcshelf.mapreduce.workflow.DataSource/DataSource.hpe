@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000af49f15dad429cec09ce7ce373485a6e3c1bb76ce1b8ca98ef60c7b21b7d255b32a36e8d4b00eb073bc01162e6f5b23f092c9e7ee502be8c80b4fb36db38cc30d7533923cbb20084741b0edaa28e7b22ffa1cf0fe1a2537afdddad44325ae4e435ec607ac073bffc9599d107ce6e319bd015ed83f3226c36e5e3503a80e55be1" isAbstract="true" kind="Data" name="DataSource" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IDataSource" nArgs="0">
+      <visualDescription h="40" w="120" x="171" y="244">
+        <color b="144" g="238" r="144"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IDataSource" multiple="false" private="false" replica="0" uRef="data_source" visibleInterface="true">
+      <visualDescription h="40" w="130" x="167" y="328"/>
+    </unit>
+  </componentInfo>
+</component:component>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001fdf375f18d3ba359a19900a0891a1f45daf4201ac887fba10ccbd82e9186c00530f5181b8f02ae8b4fc9102205547c03aeae71ef3e8d5993de4ddda76f6f68bd6caa700f2ee78cd0838b895f65a8575d0aa8e3bac8bf43857d6e3d59edb4538ed65103e7b16870ea9b165bcf856c82eca762836f4b9f763a2f0030e1e50658b" isAbstract="true" kind="Computation" name="ReduceFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IReduceFunction" nArgs="0">
+      <visualDescription h="40" w="155" x="180" y="246">
+        <color b="230" g="216" r="173"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IReduceFunction" multiple="false" private="false" replica="0" uRef="reduce_function" visibleInterface="true">
+      <visualDescription h="40" w="155" x="180" y="326"/>
+    </unit>
+  </componentInfo>
+</component:component>
