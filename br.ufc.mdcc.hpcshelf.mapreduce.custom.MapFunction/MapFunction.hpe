@@ -8,6 +8,12 @@
   </header>
   <componentInfo>
     <interface iRef="IMapFunction" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction&#xA;{&#xA;&#x9;public interface BaseIMapFunction : IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIMapFunction.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction/bin/1.0.0.0/BaseIMapFunction.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction&#xA;{&#xA;&#x9;public interface IMapFunction : BaseIMapFunction&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IMapFunction.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction/bin/1.0.0.0/IMapFunction.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction/bin/1.0.0.0/BaseIMapFunction.dll</dependency>
+        </file>
+      </sources>
       <visualDescription h="40" w="159" x="114" y="265">
         <color b="230" g="216" r="173"/>
       </visualDescription>

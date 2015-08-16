@@ -8,6 +8,12 @@
   </header>
   <componentInfo>
     <interface iRef="IIterator" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.basic.Iterator&#xA;{&#xA;&#x9;public interface BaseIIterator : IDataStructureKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIIterator.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.basic.Iterator/bin/1.0.0.0/BaseIIterator.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.basic.Iterator&#xA;{&#xA;&#x9;public interface IIterator : BaseIIterator&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IIterator.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.basic.Iterator/bin/1.0.0.0/IIterator.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.basic.Iterator/bin/1.0.0.0/BaseIIterator.dll</dependency>
+        </file>
+      </sources>
       <visualDescription h="40" w="80" x="264" y="256">
         <color b="144" g="238" r="144"/>
       </visualDescription>

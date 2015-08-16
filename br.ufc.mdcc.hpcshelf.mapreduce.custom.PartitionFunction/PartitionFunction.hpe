@@ -8,6 +8,12 @@
   </header>
   <componentInfo>
     <interface iRef="IPartitionFunction" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction&#xA;{&#xA;&#x9;public interface BaseIPartitionFunction : IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIPartitionFunction.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/BaseIPartitionFunction.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction&#xA;{&#xA;&#x9;public interface IPartitionFunction : BaseIPartitionFunction&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IPartitionFunction.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/BaseIPartitionFunction.dll</dependency>
+        </file>
+      </sources>
       <visualDescription h="40" w="167" x="138" y="239">
         <color b="230" g="216" r="173"/>
       </visualDescription>
