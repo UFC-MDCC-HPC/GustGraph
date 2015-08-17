@@ -13,7 +13,7 @@
       </visualDescription>
     </interface>
     <interface iRef="IReduceCollector" nArgs="0">
-      <visualDescription h="40" w="147" x="326" y="213">
+      <visualDescription h="40" w="147" x="582" y="191">
         <color b="0" g="0" r="255"/>
       </visualDescription>
     </interface>
@@ -23,7 +23,7 @@
       </visualDescription>
     </interface>
     <interface iRef="IWriteOutput" nArgs="0">
-      <visualDescription h="40" w="119" x="343" y="490">
+      <visualDescription h="40" w="119" x="585" y="477">
         <color b="144" g="238" r="144"/>
       </visualDescription>
     </interface>
@@ -31,13 +31,13 @@
       <visualDescription h="40" w="107" x="131" y="283"/>
     </unit>
     <unit facet="0" iRef="IReduceCollector" multiple="true" private="false" replica="0" uRef="reduce_collector" visibleInterface="true">
-      <visualDescription h="40" w="147" x="326" y="293"/>
+      <visualDescription h="40" w="147" x="582" y="271"/>
     </unit>
     <unit facet="0" iRef="IReadInput" multiple="false" private="false" replica="0" uRef="read_input" visibleInterface="true">
       <visualDescription h="40" w="118" x="144" y="404"/>
     </unit>
     <unit facet="0" iRef="IWriteOutput" multiple="false" private="false" replica="0" uRef="write_output" visibleInterface="true">
-      <visualDescription h="40" w="119" x="345" y="410"/>
+      <visualDescription h="40" w="119" x="587" y="397"/>
     </unit>
   </componentInfo>
 </component:component>
