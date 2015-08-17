@@ -9,6 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction</RootNamespace>
     <AssemblyName>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction</AssemblyName>
+    <BaseDirectory>..\src\1.0.0.0</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

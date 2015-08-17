@@ -9,6 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>br.ufc.mdcc.hpcshelf.mapreduce.basic.KVPair</RootNamespace>
     <AssemblyName>br.ufc.mdcc.hpcshelf.mapreduce.basic.KVPair</AssemblyName>
+    <BaseDirectory>..\src\1.0.0.0</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
