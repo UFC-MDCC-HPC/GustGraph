@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002da0a48c88cee6150a3ac73a32f0ae38f67cd6813cce09e7a305821587740a897f482bd91d7e7b4d5fa91ac3bddf53c49a76dffc438811c801070e5148eaa382c3d743ab4102a979eb2f644381033c040b62c414bfbab41cc58d04b3d492a8e71d44a2f38e9f25461e0fa7e218738981f7994a2a0a0699584493324be397f081" isAbstract="true" kind="Facet" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002f14acde55c4f97fa7dc8eb04ed73c2f3d70f30fc3b54e46fe84f4b399b30161ec87622ad5c55dc55e6408deae1574a744b9c029bf464fe0f18d0b7f8b9324820d0c0f9e91e61d5ca598d728646b104777f0b248f0de5ab9a49680b3ec2d7e3cf6304e4d0ad1770ad87f62b806c7f89d0c0433a690cfacdf12d546f0c6de2cba" isAbstract="true" kind="Facet" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -9,12 +9,12 @@
   <componentInfo>
     <interface iRef="IMapFeeder" nArgs="0">
       <visualDescription h="40" w="107" x="131" y="203">
-        <color b="0" g="0" r="255"/>
+        <color b="0" g="255" r="255"/>
       </visualDescription>
     </interface>
     <interface iRef="IReduceCollector" nArgs="0">
       <visualDescription h="40" w="147" x="582" y="191">
-        <color b="0" g="0" r="255"/>
+        <color b="0" g="255" r="255"/>
       </visualDescription>
     </interface>
     <interface iRef="IReadInput" nArgs="0">

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ef784a54e9c3951982b8255025cb58db0e884660bd1f62e699400ba155013a53b89c3835ccc226e5f7a849094436001674fe671b087666a8182e6a822e909423108c6c6f0d0b32068690ea262c171fd2e4201901e17e1ddfcc7878e4d3311684aa67160ae6ad61e2134dc743b5ea793f9c53e1774e076508439273cab1f135b2" isAbstract="true" kind="Binding" name="ReadData" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.environment">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IReadData" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.ReadData&#xA;{&#xA;&#x9;public interface BaseIReadData : IBindingKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIReadData.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.ReadData/bin/1.0.0.0/BaseIReadData.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.ReadData&#xA;{&#xA;&#x9;public interface IReadData : BaseIReadData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IReadData.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.ReadData/bin/1.0.0.0/IReadData.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.environment.ReadData/bin/1.0.0.0/BaseIReadData.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="137" y="295">
+        <color b="255" g="144" r="30"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IReadData" multiple="false" private="false" replica="0" uRef="read_data" visibleInterface="true">
+      <visualDescription h="40" w="80" x="137" y="375"/>
+    </unit>
+  </componentInfo>
+</component:component>

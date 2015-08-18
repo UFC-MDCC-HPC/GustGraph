@@ -20,5 +20,6 @@ RemoteSystemsTempFiles
 Debug
 bin
 obj
+local_files
 .metadata
 

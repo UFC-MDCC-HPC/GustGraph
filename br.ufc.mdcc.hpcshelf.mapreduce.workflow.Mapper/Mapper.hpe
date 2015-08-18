@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000041e55fd219f91cc501c4fabe779c0e6415e7cb037553f165723927362e7cda7c25732c3e67138099a18adadd4e581483cbc325135a52e6978a09e7febe6fc2902f47abd16f2d3081a5a682077fd1a00e66dd85ce58f21fb0bd4b40722a46eb768c29e83c082e107f493414f2a768a60a71f1d936de72b1be94390853538384b4" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bfb5520631aa03ef383c55dbf25d1223563474eb9a4597c702eac2fa36734c49459182a7507c9cf82093bec812af5080bf73b2f00f190a622cc839b206e80261d30c72eefc32c988e580f953fe92e263c4d67004debc63dfc6f1d4145aab81e93953cfc0913ef124d25ecf79c9d480daa6a5e1bf241d784aabb8717633e83484" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
