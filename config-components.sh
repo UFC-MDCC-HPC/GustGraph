@@ -9,6 +9,5 @@
 
 #sn create/update
 ./HPC-Shelf-MapReduce/scripts/sn--br.ufc.mdcc.hpcshelf.mapreduce._.Interface.sh
-./HPC-Shelf-MapReduce/scripts/sn--br.ufc.mdcc.hpcshelf.farm.Interface.sh
 
 
