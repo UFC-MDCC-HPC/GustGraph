@@ -24,3 +24,4 @@ Open Luna:
   * new launch configuration
   * Field Name = HPC-Shelf-MapReduce
   * Field Location = ~/workspace/gitsource/HPC-Shelf-MapReduce
+  * Run
