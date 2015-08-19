@@ -1,4 +1,4 @@
-**HPC-Shelf-MapReduce** is a MapReduce application for **HPC Storm**. The objective is demonstrating the specification of parallel computing systems by using **SAFeSWL**, as well as its execution model. This MapReduce application is a set components, which can be opened on the Luna Eclipse.
+**HPC-Shelf-MapReduce** is a MapReduce application for **HPC Storm**. This MapReduce application is a set of components, which can be opened on the **Eclipse Luna**.
 
 To open
 -------
@@ -13,7 +13,7 @@ git:
 * cd ~/workspace/gitsource/HPC-Shelf-MapReduce
 * sh config-components.sh
 
-Open Luna:
+Open on Eclipse Luna:
 ----------
 
 * import **HCLCompiler** from **Hash-Programming-Environment**
