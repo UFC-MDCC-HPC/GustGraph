@@ -17,9 +17,13 @@ RemoteSystemsTempFiles
 *.mdb
 *.exe
 *.dll
+*.snk
+*.pub
+
 Debug
 bin
 obj
 local_files
 .metadata
+
 
