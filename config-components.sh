@@ -8,6 +8,5 @@
 ./HPC-Shelf-MapReduce/scripts/delete.bin.obj.MyClass--br.________.sh
 
 #sn create/update
-./HPC-Shelf-MapReduce/scripts/sn--br.ufc.mdcc.hpcshelf.mapreduce._.Interface.sh
-
+./HPC-Shelf-MapReduce/scripts/create.sn--br._____.sh
 
