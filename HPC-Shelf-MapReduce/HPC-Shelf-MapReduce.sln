@@ -44,8 +44,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapred
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.environment.WriteData", "..\br.ufc.mdcc.hpcshelf.mapreduce.environment.WriteData\br.ufc.mdcc.hpcshelf.mapreduce.environment.WriteData\br.ufc.mdcc.hpcshelf.mapreduce.environment.WriteData.csproj", "{D4DA93D1-BB74-446F-A26D-83BB1BA32A82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.environment.Teste", "..\br.ufc.mdcc.hpcshelf.mapreduce.environment.Teste\br.ufc.mdcc.hpcshelf.mapreduce.environment.Teste\br.ufc.mdcc.hpcshelf.mapreduce.environment.Teste.csproj", "{8F8DE838-03DB-4272-B156-22F6EEECE431}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -84,10 +82,6 @@ Global
 		{8A4BED89-55A4-4E80-8351-C2C2F1286ED8}.Debug|x86.Build.0 = Debug|Any CPU
 		{8A4BED89-55A4-4E80-8351-C2C2F1286ED8}.Release|x86.ActiveCfg = Release|Any CPU
 		{8A4BED89-55A4-4E80-8351-C2C2F1286ED8}.Release|x86.Build.0 = Release|Any CPU
-		{8F8DE838-03DB-4272-B156-22F6EEECE431}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{8F8DE838-03DB-4272-B156-22F6EEECE431}.Debug|x86.Build.0 = Debug|Any CPU
-		{8F8DE838-03DB-4272-B156-22F6EEECE431}.Release|x86.ActiveCfg = Release|Any CPU
-		{8F8DE838-03DB-4272-B156-22F6EEECE431}.Release|x86.Build.0 = Release|Any CPU
 		{90623C03-B24B-4448-A81E-901BB4017F36}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{90623C03-B24B-4448-A81E-901BB4017F36}.Debug|x86.Build.0 = Debug|Any CPU
 		{90623C03-B24B-4448-A81E-901BB4017F36}.Release|x86.ActiveCfg = Release|Any CPU
