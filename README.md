@@ -1,7 +1,7 @@
 **HPC-Shelf-MapReduce** is a MapReduce application for **HPC Storm**. This application is a set of components, which can be opened on the **Eclipse Luna**.
 
-To open
--------
+Instructions
+------------
 
 git:
 ----
