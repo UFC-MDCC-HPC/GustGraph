@@ -23,6 +23,6 @@ Open Luna:
   * Eclipse Application
   * new launch configuration
   * Field Name = HPC-Shelf-MapReduce
-  * Field Location = **workspace/gitsource/HPC-Shelf-MapReduce** (without the ~/)
+  * Field Location = workspace/gitsource/HPC-Shelf-MapReduce (**don't use ~/**)
   * Run
   * File->Import->General->Existing Projects into Workspace->Browse select HPC-Shelf-MapReduce directory->Finish
