@@ -1,13 +1,57 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000037f8f9d65e6e733f6aa65a41b580ccc78602f1214038d462cc15a0c9a01f03afd454202e601a95974f9da29f0dd29eae5c008640c08166350b28b22105baa9182a98b24c436fd4108bebfbd8fb91123cf405ff60e22d6e2aa33d3bbd75c57e97aa982c3df0ceab469d63abbc0f0d67b7960f5104446f39930c0aacd06e31b4bc" isAbstract="true" kind="Computation" name="CombineFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000008fdb55f672bdc1ecf8860a73c57c19b548f155026301cc8703a97edbc904b81d65bc56a6ce08ae63430fee9f8822d20fa1ab557824849a2736ceef212530c0efef3a8f911528bf36e205cb65485430db0e59837121882e8c2d7562e742c58c2e35b2ed327fd1de236c7509d598e3aedede6133c4f00dc63355d4c2feab55228c" isAbstract="true" kind="Computation" name="CombineFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
   <componentInfo>
-    <interface iRef="ICombineFunction" nArgs="0">
+    <parameter componentRef="input_value" formFieldId="input_value_type" order="0" variance="contravariant" varName="OMV"/>
+    <parameter componentRef="input_key" formFieldId="input_key_type" order="1" variance="contravariant" varName="OMK"/>
+    <innerComponent localRef="output_item_kv" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="false">
+      <visualDescription h="60" w="179" x="505" y="223">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="OMV"/>
+      <parameter formFieldId="key_type" varName="OMK"/>
+      <unitBounds parallel="false" uRef="kv_pair">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="input_value" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" parameter_id="input_value_type" exposed="true">
+      <visualDescription h="60" w="200" x="304" y="433">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="input_key" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" parameter_id="input_key_type" exposed="true">
+      <visualDescription h="60" w="187" x="39" y="434">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="output_data" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="false">
+      <visualDescription h="60" w="100" x="498" y="334">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <interface iRef="ICombineFunction" nArgs="2">
+      <slice isRef="input_key">
+        <originRef cRef="input_key" iRef="IData"/>
+        <visualDescription h="10" w="10" x="19" y="24"/>
+      </slice>
+      <slice isRef="input_value">
+        <originRef cRef="input_value" iRef="IData"/>
+        <visualDescription h="10" w="10" x="90" y="26"/>
+      </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction&#xA;{&#xA;&#x9;public interface BaseICombineFunction : IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseICombineFunction.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction/bin/1.0.0.0/BaseICombineFunction.dll" versionId="1.0.0.0"/>
         <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction&#xA;{&#xA;&#x9;public interface ICombineFunction : BaseICombineFunction&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ICombineFunction.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction/bin/1.0.0.0/ICombineFunction.dll" versionId="1.0.0.0">
@@ -17,11 +61,27 @@
       <visualDescription h="40" w="145" x="153" y="255">
         <color b="230" g="216" r="173"/>
       </visualDescription>
+      <port name="input_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key_type" sRef="input_key_type"/>
+      </port>
+      <port name="input_value">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_value_type" sRef="input_value_type"/>
+      </port>
+      <parameter iname="IData" order="1" parid="input_key_type" uname="data" varid="OMK"/>
+      <parameter iname="IData" order="0" parid="input_value_type" uname="data" varid="OMV"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="ICombineFunction" multiple="false" private="false" replica="0" uRef="combine_function" visibleInterface="true">
+      <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="false">
+        <visualDescription h="10" w="10" x="19" y="24"/>
+      </slices>
+      <slices cRef="input_value" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_value" transitive="false">
+        <visualDescription h="10" w="10" x="90" y="26"/>
+      </slices>
       <visualDescription h="40" w="145" x="153" y="335"/>
     </unit>
   </componentInfo>
