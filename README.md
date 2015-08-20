@@ -26,3 +26,5 @@ Open on Eclipse Luna:
   * Field Location = workspace/gitsource/HPC-Shelf-MapReduce (**don't use ~/**)
   * Run
   * File**->**Import**->**General**->**Existing Projects into Workspace**->**Browse HPC-Shelf-MapReduce directory**->**Finish
+  * Open Perspective **Hash Programming Environment**
+  * Open *.hpe components
