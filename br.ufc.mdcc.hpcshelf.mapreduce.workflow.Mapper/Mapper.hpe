@@ -1,13 +1,63 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bfb5520631aa03ef383c55dbf25d1223563474eb9a4597c702eac2fa36734c49459182a7507c9cf82093bec812af5080bf73b2f00f190a622cc839b206e80261d30c72eefc32c988e580f953fe92e263c4d67004debc63dfc6f1d4145aab81e93953cfc0913ef124d25ecf79c9d480daa6a5e1bf241d784aabb8717633e83484" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d567df65d98ece600f2e6e5847d5db82602d76764149107e66834bf8c6b2e0ccb676873138daa54115b0e6deb7ffc7716b2a82a739bdb23969f19e403f39e2e2741efb2f1d3df5b2ec080be4b556a55d1d6d883423cf9536d5dcb771bc6aadcd0e998dc4c217e1bfdcb28d832c00daace2f93ee635cf568ebcb679dcf4e176a7" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
   <componentInfo>
-    <interface iRef="IMapper" nArgs="0">
+    <parameter componentRef="input_key_type" formFieldId="input_key_type" order="0" variance="contravariant" varName="IMK"/>
+    <parameter componentRef="input_value_type" formFieldId="input_value_type" order="1" variance="contravariant" varName="IMV"/>
+    <innerComponent localRef="map_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction/MapFunction.hpe" multiple="false" name="MapFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" exposed="false">
+      <visualDescription h="60" w="176" x="193" y="410">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="output_item_value_type" varName="OMV"/>
+      <parameter formFieldId="input_key_type" varName="IMK"/>
+      <parameter formFieldId="output_item_key_type" varName="OMK"/>
+      <parameter formFieldId="input_value_type" varName="IMV"/>
+      <port localRef="input_key" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="true">
+        <visualDescription h="60" w="100" x="88" y="520">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <port localRef="input_value" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="true">
+        <visualDescription h="60" w="100" x="324" y="529">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <unitBounds parallel="false" uRef="map_function">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="input_key_type" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" parameter_id="input_key_type" exposed="false">
+      <visualDescription h="60" w="205" x="376" y="367">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="input_value_type" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" parameter_id="input_value_type" exposed="false">
+      <visualDescription h="60" w="204" x="418" y="343">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <interface iRef="IMapper" nArgs="2">
+      <slice isRef="map_function">
+        <originRef cRef="map_function" iRef="IMapFunction"/>
+        <visualDescription h="10" w="10" x="20" y="20"/>
+      </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper&#xA;{&#xA;&#x9;public interface BaseIMapper : IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIMapper.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper/bin/1.0.0.0/BaseIMapper.dll" versionId="1.0.0.0"/>
         <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper&#xA;{&#xA;&#x9;public interface IMapper : BaseIMapper&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IMapper.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper/bin/1.0.0.0/IMapper.dll" versionId="1.0.0.0">
@@ -17,11 +67,32 @@
       <visualDescription h="40" w="80" x="221" y="243">
         <color b="0" g="0" r="255"/>
       </visualDescription>
+      <port name="input_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="map_function"/>
+      </port>
+      <port name="input_value">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_value" sRef="map_function"/>
+      </port>
+      <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="IMK"/>
+      <parameter iname="IData" order="1" parid="input_value_type" uname="data" varid="IMV"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IMapper" multiple="true" private="false" replica="0" uRef="mapper" visibleInterface="true">
+      <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
+        <visualDescription h="10" w="10" x="29" y="26"/>
+      </slices>
+      <slices cRef="input_value" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_value" transitive="true">
+        <visualDescription h="10" w="10" x="120" y="26"/>
+      </slices>
+      <slices cRef="map_function" inner_replica="0" slice_replica="0" uRef="map_function" sliceName="map_function" transitive="false">
+        <visualDescription h="10" w="10" x="20" y="20"/>
+        <port>input_key</port>
+        <port>input_value</port>
+      </slices>
       <visualDescription h="40" w="80" x="221" y="323"/>
     </unit>
   </componentInfo>
