@@ -28,3 +28,7 @@ Open on Eclipse Luna:
   * File**->**Import**->**General**->**Existing Projects into Workspace**->**Browse HPC-Shelf-MapReduce directory**->**Finish
   * Open Perspective **Hash Programming Environment**
   * Open *.hpe components
+
+
+**Common libs**: the components require 3 dlls (DGAC, MPI and MySql). This was included in the directory **HPC-Shelf-MapReduce/HPC-Shelf-MapReduce/lib**
+
