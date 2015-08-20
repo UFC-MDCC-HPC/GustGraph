@@ -11,7 +11,7 @@ git:
 * git clone https://github.com/UFC-MDCC-HPC/Hash-Programming-Environment
 * git clone https://github.com/UFC-MDCC-HPC/HPC-Shelf-MapReduce
 * cd ~/workspace/gitsource/HPC-Shelf-MapReduce
-* sh config-components.sh
+* **sh config-components.sh**
 
 Open on Eclipse Luna:
 ----------
