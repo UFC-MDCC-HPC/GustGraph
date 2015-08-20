@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001fdf375f18d3ba359a19900a0891a1f45daf4201ac887fba10ccbd82e9186c00530f5181b8f02ae8b4fc9102205547c03aeae71ef3e8d5993de4ddda76f6f68bd6caa700f2ee78cd0838b895f65a8575d0aa8e3bac8bf43857d6e3d59edb4538ed65103e7b16870ea9b165bcf856c82eca762836f4b9f763a2f0030e1e50658b" isAbstract="true" kind="Computation" name="ReduceFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000077825ae2269e1ab57db8afbe1edbcc09b395044d33ae9a876bb886f90511160d990688a2c8931bd0200dfe468afb24c22fe33665cb4e4a37629df10b60e39f6d0ea5c1a6290f58186e80da7940a43f3e434bca1fed7fac17e5ee45979e38a493b024c4ebbfa69706d5f4772b83e126193a98ab65614128c602fc79ec07f1d9b6" isAbstract="true" kind="Computation" name="ReduceFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
   <componentInfo>
-    <interface iRef="IReduceFunction" nArgs="0">
+    <parameter componentRef="input_key" formFieldId="input_key_type" order="0" variance="contravariant" varName="OCK"/>
+    <parameter componentRef="input_value_type" formFieldId="input_value_type" order="1" variance="contravariant" varName="OCV"/>
+    <innerComponent localRef="input_key" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" parameter_id="input_key_type" exposed="false">
+      <visualDescription h="60" w="167" x="86" y="428">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="input_value_type" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" parameter_id="input_value_type" exposed="false">
+      <visualDescription h="60" w="166" x="327" y="434">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="output_data" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="false">
+      <visualDescription h="60" w="100" x="473" y="373">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <interface iRef="IReduceFunction" nArgs="1">
+      <slice isRef="input_key">
+        <originRef cRef="input_key" iRef="IData"/>
+        <visualDescription h="10" w="10" x="39" y="22"/>
+      </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction&#xA;{&#xA;&#x9;public interface BaseIReduceFunction : IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIReduceFunction.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/bin/1.0.0.0/BaseIReduceFunction.dll" versionId="1.0.0.0"/>
         <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction&#xA;{&#xA;&#x9;public interface IReduceFunction : BaseIReduceFunction&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IReduceFunction.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/bin/1.0.0.0/IReduceFunction.dll" versionId="1.0.0.0">
@@ -17,11 +47,15 @@
       <visualDescription h="40" w="155" x="180" y="246">
         <color b="230" g="216" r="173"/>
       </visualDescription>
+      <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="OCK"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IReduceFunction" multiple="false" private="false" replica="0" uRef="reduce_function" visibleInterface="true">
+      <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="false">
+        <visualDescription h="10" w="10" x="39" y="22"/>
+      </slices>
       <visualDescription h="40" w="155" x="180" y="326"/>
     </unit>
   </componentInfo>

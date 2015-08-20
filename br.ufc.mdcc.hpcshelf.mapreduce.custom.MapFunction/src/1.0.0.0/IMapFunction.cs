@@ -6,5 +6,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction
 		where IMK:IData
 		where IMV:IData
 		where OMK:IData
-		where OMV:IData
+		where OMV:IData{
+
+	}
 }

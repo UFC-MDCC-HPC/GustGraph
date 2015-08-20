@@ -10,11 +10,11 @@
     <parameter componentRef="input_value" formFieldId="input_value_type" order="0" variance="contravariant" varName="OMV"/>
     <parameter componentRef="input_key" formFieldId="input_key_type" order="1" variance="contravariant" varName="OMK"/>
     <innerComponent localRef="output_item_kv" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="false">
-      <visualDescription h="60" w="179" x="505" y="223">
+      <visualDescription h="60" w="179" x="521" y="234">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="value_type" varName="OMV"/>
-      <parameter formFieldId="key_type" varName="OMK"/>
+      <parameter formFieldId="value_type" varName="OCV"/>
+      <parameter formFieldId="key_type" varName="OCK"/>
       <unitBounds parallel="false" uRef="kv_pair">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -36,7 +36,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="output_data" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="false">
-      <visualDescription h="60" w="100" x="498" y="334">
+      <visualDescription h="60" w="100" x="476" y="334">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
