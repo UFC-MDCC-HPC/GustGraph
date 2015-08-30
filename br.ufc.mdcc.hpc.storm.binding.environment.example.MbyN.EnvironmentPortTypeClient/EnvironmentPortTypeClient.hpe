@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000004507e03ad23533f6f6c2fe5d3f3711b94691a74d784fa18f1113dcb44d65f2ebe8164de973fd0505d3faf5eab8e342b3dadf55f18e419b0e331314d03811383e5aa0d1f228d51a042952a30c2f08dbac6b9142d8391d9ad55f3a21e062dc1483dc91a3d232771e8a615b241772b9f5e2dcf8df34703c6358b840b8ddb79fb2c8" isAbstract="true" kind="Qualifier" name="EnvironmentPortTypeClient" packagePath="br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000008d4004cfea783e9e082fccb28baa3505a8a5fe565f2776b95511fa582a18f5e5d8ce31d4a96c9461045da8b8b000d05bde8bb606db5619ac279308fcea96890809a82bdf9ba4f0bca81b9fdbeb7ee9292888b932ede9a10946830cf9d306c61051b3fd2a07c5b95a72a58267a0a2768e5c979aea9ed142de1393dfdbb4830e82" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="110" y="164">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="true" uRef="environment_port_type">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IMbyNClientPortTypeExample" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient&#xA;{&#xA;&#x9;public interface BaseIMbyNClientPortTypeExample : BaseIEnvironmentPortType, IQualifierKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIMbyNClientPortTypeExample.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient/bin/1.0.0.0/BaseIMbyNClientPortTypeExample.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/BaseIEnvironmentPortType.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient&#xA;{&#xA;&#x9;public interface IMbyNClientPortTypeExample : BaseIMbyNClientPortTypeExample, IEnvironmentPortType&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IMbyNClientPortTypeExample.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient/bin/1.0.0.0/IMbyNClientPortTypeExample.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient/bin/1.0.0.0/BaseIMbyNClientPortTypeExample.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="57" w="284" x="6" y="89">
+        <color b="144" g="238" r="144"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IMbyNClientPortTypeExample" multiple="true" private="false" replica="0" uRef="environment_port_type" visibleInterface="true">
+      <super cRef="base" uRef="environment_port_type"/>
+      <visualDescription h="57" w="202" x="16" y="351"/>
+    </unit>
+  </componentInfo>
+</component:component>

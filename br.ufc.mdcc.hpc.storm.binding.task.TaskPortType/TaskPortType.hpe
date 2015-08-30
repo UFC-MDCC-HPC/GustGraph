@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000013c562a387ef603f52341cf7b3d2fac589979e8a144e84ab0b6cb537867cd6be218a0bd7cca087c9079cec2c96f051de42693d7d645a4d24e7de7b08f4c3cd07a3ec64128a8a605d7c30cbc2265b4fefd94c353669b3a0859407fd958be5df08354f66fd7d0b91be0c79119feda638dfcea4bfece49b8857c7ec6785d3f4028a" isAbstract="true" kind="Qualifier" name="TaskPortType" packagePath="br.ufc.mdcc.hpc.storm.binding.task">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="ITaskPortType" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.task.TaskPortType&#xA;{&#xA;&#x9;public interface BaseITaskPortType : IQualifierKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseITaskPortType.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/bin/1.0.0.0/BaseITaskPortType.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using System.Collections.Generic;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.task.TaskPortType&#xA;{&#xA;&#x9;public interface ITaskPortType : BaseITaskPortType&#xA;&#x9;{&#xA;&#x9;}&#xA;&#xA;&#x9;public class ActionDef&#xA;&#x9;{&#xA;&#x9;&#x9;public static IDictionary&lt;object,int> action_ids = new Dictionary&lt;object,int>();&#xA;&#x9;}&#xA;}" name="ITaskPortType.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/bin/1.0.0.0/ITaskPortType.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/bin/1.0.0.0/BaseITaskPortType.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="189" x="167" y="143">
+        <color b="230" g="216" r="173"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="ITaskPortType" multiple="true" private="false" replica="0" uRef="task_port_type" visibleInterface="true">
+      <visualDescription h="40" w="189" x="167" y="223"/>
+    </unit>
+  </componentInfo>
+</component:component>

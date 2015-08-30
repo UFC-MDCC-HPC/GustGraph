@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ed78314729c0b4d22f897b0540fdbfba32137ac1ac4e06a7cab5a589a12bf5e003f5b31ba78b368c4817c5629d4baaa55ca1f7ec69ebe35922e51cccb19525d2b7042123c548653737bad6b63a072de3ae73a27439b954685c27c38f7648aee32c36e62b08b12567d1b0601a2c98b6eecbb6e519daa37fde7130030e893f4ba9" isAbstract="false" kind="Synchronizer" name="TaskBindingExampleImpl" packagePath="br.ufc.mdcc.hpc.storm.binding.task.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000852220feacb735558fd2bfa28ed6f5a9af190d62a984dfbb43137906856ae9f6f6642ab86692e68b0cf5660ed8d8408bce23698ea66b8263e0e648368d79ff6d4dc9df2f3cfc6c7022bb79bcd28e32c29e611fa0e59daafaf8374b4ca3a27d1bfbc249f67ef1184f0cddd93d78ca6e04a456ed95730cc652eeca3f99452ba3d4" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingExample/TaskBindingExample.hpe" name="TaskBindingExample" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="256" y="308">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <port hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005926cf9752a49ce8dcbf205c57274f8b53967fd274530755ad6db3781d190255d48e419e740233df38eb48c07d8a4b0124f9926080307a70f76e2e238926089cbdde8787d35ed09fac7432eac1bf0a271e8f1cc1467841294b6e0e2faa580740e34a606295c7014ec9971ecb13636762932495675e8f040bfb64abb172c53793" localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="60" w="158" x="215" y="455">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###1365835356"/>
+          <unitBounds parallel="true" uRef="peer_left">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+          <unitBounds parallel="true" uRef="peer_right">
+            <visualDescription h="20" w="20" x="28" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="true" uRef="peer_left">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="peer_right">
+          <visualDescription h="20" w="20" x="28" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="TaskPortExample" nArgs="0">
+      <slice isRef="task_port">
+        <originRef cRef="task_port" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="47" y="26"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingExample;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingExampleImpl &#xA;{&#xA;&#x9;public abstract class BaseTaskPortExample: Synchronizer, BaseITaskPortExample&#xA;&#x9;{&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeExample> task_port = null;&#xA;&#xA;&#x9;&#x9;public ITaskPort&lt;ITaskPortTypeExample> Task_port&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_port == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_port = (ITaskPort&lt;ITaskPortTypeExample>) Services.getPort(&quot;task_port&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_port;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseTaskPortExample.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingExampleImpl/bin/1.0.0.0/BaseTaskPortExample.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample/bin/1.0.0.0/ITaskPortTypeExample.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingExample/bin/1.0.0.0/Base.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingExample;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskPortType;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingExampleImpl&#xA;{&#xA;&#x9;public class TaskPortExample : BaseTaskPortExample, ITaskPortExample&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void on_initialize ()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;ActionDef.action_ids[ITaskPortExampleAction.ACTION_0] = 10;&#xA;&#x9;&#x9;&#x9;ActionDef.action_ids[ITaskPortExampleAction.ACTION_1] = 11;&#xA;&#x9;&#x9;&#x9;ActionDef.action_ids[ITaskPortExampleAction.ACTION_2] = 12;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;}&#xA;}&#xA;" name="TaskPortExample.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingExampleImpl/bin/1.0.0.0/TaskPortExample.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingExampleImpl/bin/1.0.0.0/BaseTaskPortExample.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingExample/bin/1.0.0.0/.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="244" y="69">
+        <color b="0" g="128" r="0"/>
+      </visualDescription>
+      <port name="task_port">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_port" sRef="task_port"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="TaskPortExample" multiple="true" private="false" replica="0" uRef="peer_left" visibleInterface="true">
+      <super cRef="base" uRef="peer_left"/>
+      <visualDescription h="40" w="80" x="60" y="191"/>
+    </unit>
+    <unit facet="0" iRef="TaskPortExample" multiple="true" private="false" replica="0" uRef="peer_right" visibleInterface="true">
+      <super cRef="base" uRef="peer_right"/>
+      <visualDescription h="40" w="80" x="405" y="145"/>
+    </unit>
+  </componentInfo>
+</component:component>

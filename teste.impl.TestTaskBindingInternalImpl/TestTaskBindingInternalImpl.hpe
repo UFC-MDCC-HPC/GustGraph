@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000fb9c99a07e911257b336a656863e17ee52f6bacf4d02cc8c70807c6e39bba05b052ddb0df56a0ea33a9e3c05caddad29b2bf38c7d402e21c4c64711a5c688efd9f64a1c646836f283fd039c236ecea36f55e2aa90460b9515d91d8961bfe485a04a6862ed90ce157574bc0cc801c3327a6c94f7f874f0fe98bd8a6c67a77afa2" isAbstract="false" kind="Application" name="TestTaskBindingInternalImpl" packagePath="teste.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000834d5df82f428893568b18e3ec835a1b371989a6d499ee3733d8c238f80ca9fd71d77fe35cb6f879a55d469d2293f52972819664612fe036ea244e825e3b5c587802042c0f3c1c20981812bff51248aaeaf696c6b0f518e70bd46394c50b80669727cc01de0f3c01b3e08064aa140c0d3346383419fed65758b6ceaa62b53384" localRef="base" location="teste.TestTaskBindingInternal/TestTaskBindingInternal.hpe" name="TestTaskBindingInternal" package="teste" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="226" y="194">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="true" uRef="left_unit">
+          <visualDescription h="20" w="20" x="8" y="19"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="right_unit">
+          <visualDescription h="20" w="20" x="71" y="19"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="ILeftUnitImpl" nArgs="0">
+      <slice isRef="task_binding">
+        <originRef cRef="task_binding" iRef="ITaskPortExample"/>
+        <visualDescription h="10" w="10" x="60" y="25"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingExample;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample;&#xA;using teste.TestTaskBindingInternal;&#xA;&#xA;namespace teste.impl.TestTaskBindingInternalImpl &#xA;{&#xA;&#x9;public abstract class BaseILeftUnitImpl: Application, BaseILeftUnit&#xA;&#x9;{&#xA;&#x9;&#x9;private ITaskPortExample task_binding = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPortExample Task_binding&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_binding == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding = (ITaskPortExample) Services.getPort(&quot;task_binding&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_binding;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeExample> task_port = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeExample> Task_port&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_port == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_port = (ITaskPort&lt;ITaskPortTypeExample>) Services.getPort(&quot;task_port&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_port;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseILeftUnitImpl.cs" srcType="base" uri="teste.impl.TestTaskBindingInternalImpl/bin/1.0.0.0/BaseILeftUnitImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingExample/bin/1.0.0.0/ITaskPortExample.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample/bin/1.0.0.0/ITaskPortTypeExample.dll</dependency>
+          <dependency>teste.TestTaskBindingInternal/bin/1.0.0.0/BaseILeftUnit.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using teste.TestTaskBindingInternal;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingExample;&#xA;&#xA;namespace teste.impl.TestTaskBindingInternalImpl&#xA;{&#xA;&#x9;public class ILeftUnitImpl : BaseILeftUnitImpl, ILeftUnit&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;ITaskPort&lt;ITaskPortTypeExample> task_port = Task_port;&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.PeerRank + &quot;: BEFORE LEFT INVOKE&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture action_future_0;&#xA;&#x9;&#x9;&#x9;Thread t0 = task_port.invoke (ITaskPortExampleAction.ACTION_0, reaction0, out action_future_0);&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture action_future_1;&#xA;&#x9;&#x9;&#x9;Thread t1 = task_port.invoke (ITaskPortExampleAction.ACTION_1, reaction1, out action_future_1);&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture action_future_2;&#xA;&#x9;&#x9;&#x9;Thread t2 = task_port.invoke (ITaskPortExampleAction.ACTION_2, reaction2, out action_future_2);&#xA;&#xA;&#x9;&#x9;&#x9;IActionFutureSet action_future_set = action_future_0.createSet ();&#xA;&#x9;&#x9;&#x9;action_future_set.addAction (action_future_1);&#xA;&#x9;&#x9;&#x9;action_future_set.addAction (action_future_2);&#xA;&#xA;&#x9;&#x9;&#x9;//&#x9;action_future_set.waitAll ();&#xA;&#x9;&#x9;&#x9;while (action_future_set.Pending.Length > 0) &#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;IActionFuture action_future = action_future_set.waitAny ();&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.PeerRank + &quot;: LEFT WAIT ANY&quot;);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.PeerRank + &quot;: AFTER LEFT WAIT&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;t0.Join ();&#xA;&#x9;&#x9;&#x9;t1.Join ();&#xA;&#x9;&#x9;&#x9;t2.Join ();&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.PeerRank + &quot;: AFTER LEFT INVOKE&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;void reaction0()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Thread.Sleep(6000);&#xA;&#x9;&#x9;&#x9;Console.WriteLine(this.PeerRank + &quot;: LEFT REACTION 0&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;void reaction1()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Thread.Sleep(5000);&#xA;&#x9;&#x9;&#x9;Console.WriteLine(this.PeerRank + &quot;: LEFT REACTION 1&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;void reaction2()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Thread.Sleep(7000);&#xA;&#x9;&#x9;&#x9;Console.WriteLine(this.PeerRank + &quot;: LEFT REACTION 2&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="ILeftUnitImpl.cs" srcType="user" uri="teste.impl.TestTaskBindingInternalImpl/bin/1.0.0.0/ILeftUnitImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/teste.impl.TestTaskBindingInternalImpl/bin/1.0.0.0/BaseILeftUnitImpl.dll</dependency>
+          <dependency>teste.TestTaskBindingInternal/bin/1.0.0.0/ILeftUnit.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="46" w="132" x="30" y="114">
+        <color b="255" g="144" r="30"/>
+      </visualDescription>
+      <port name="task_port">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_port" sRef="task_binding"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IRightUnitImpl" nArgs="0">
+      <slice isRef="task_binding">
+        <originRef cRef="task_binding" iRef="ITaskPortExample"/>
+        <visualDescription h="10" w="10" x="13" y="29"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingExample;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample;&#xA;using teste.TestTaskBindingInternal;&#xA;&#xA;namespace teste.impl.TestTaskBindingInternalImpl &#xA;{&#xA;&#x9;public abstract class BaseIRightUnitImpl: Application, BaseIRightUnit&#xA;&#x9;{&#xA;&#x9;&#x9;private ITaskPortExample task_binding = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPortExample Task_binding&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_binding == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding = (ITaskPortExample) Services.getPort(&quot;task_binding&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_binding;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeExample> task_port = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeExample> Task_port&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_port == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_port = (ITaskPort&lt;ITaskPortTypeExample>) Services.getPort(&quot;task_port&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_port;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIRightUnitImpl.cs" srcType="base" uri="teste.impl.TestTaskBindingInternalImpl/bin/1.0.0.0/BaseIRightUnitImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingExample/bin/1.0.0.0/ITaskPortExample.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample/bin/1.0.0.0/ITaskPortTypeExample.dll</dependency>
+          <dependency>teste.TestTaskBindingInternal/bin/1.0.0.0/BaseIRightUnit.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using teste.TestTaskBindingInternal;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingExample;&#xA;&#xA;namespace teste.impl.TestTaskBindingInternalImpl&#xA;{&#xA;&#x9;public class IRightUnitImpl : BaseIRightUnitImpl, IRightUnit&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;ITaskPort&lt;ITaskPortTypeExample> task_port = Task_port;&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.PeerRank + &quot;: BEFORE RIGHT INVOKE&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture action_future_0;&#xA;&#x9;&#x9;&#x9;Thread t0 = task_port.invoke (ITaskPortExampleAction.ACTION_0, reaction0, out action_future_0);&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture action_future_1;&#xA;&#x9;&#x9;&#x9;Thread t1 = task_port.invoke (ITaskPortExampleAction.ACTION_1, reaction1, out action_future_1);&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture action_future_2;&#xA;&#x9;&#x9;&#x9;Thread t2 = task_port.invoke (ITaskPortExampleAction.ACTION_2, reaction2, out action_future_2);&#xA;&#xA;&#x9;&#x9;&#x9;IActionFutureSet action_future_set = action_future_0.createSet ();&#xA;&#x9;&#x9;&#x9;action_future_set.addAction (action_future_1);&#xA;&#x9;&#x9;&#x9;action_future_set.addAction (action_future_2);&#xA;&#xA;&#x9;&#x9;&#x9;//&#x9;action_future_set.waitAll ();&#xA;&#x9;&#x9;&#x9;while (action_future_set.Pending.Length > 0) &#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;IActionFuture action_future = action_future_set.waitAny ();&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.PeerRank + &quot;: RIGHT WAIT ANY&quot;);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.PeerRank + &quot;: AFTER RIGHT WAIT&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;t0.Join ();&#xA;&#x9;&#x9;&#x9;t1.Join ();&#xA;&#x9;&#x9;&#x9;t2.Join ();&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.PeerRank + &quot;: AFTER  INVOKE&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;void reaction0()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Thread.Sleep(6000);&#xA;&#x9;&#x9;&#x9;Console.WriteLine(this.PeerRank + &quot;: RIGHT REACTION 0&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;void reaction1()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Thread.Sleep(5000);&#xA;&#x9;&#x9;&#x9;Console.WriteLine(this.PeerRank + &quot;: RIGHT REACTION 1&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;void reaction2()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Thread.Sleep(7000);&#xA;&#x9;&#x9;&#x9;Console.WriteLine(this.PeerRank + &quot;: RIGHT REACTION 2&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IRightUnitImpl.cs" srcType="user" uri="teste.impl.TestTaskBindingInternalImpl/bin/1.0.0.0/IRightUnitImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/teste.impl.TestTaskBindingInternalImpl/bin/1.0.0.0/BaseIRightUnitImpl.dll</dependency>
+          <dependency>teste.TestTaskBindingInternal/bin/1.0.0.0/IRightUnit.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="125" x="445" y="143">
+        <color b="255" g="0" r="0"/>
+      </visualDescription>
+      <port name="task_port">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_port" sRef="task_binding"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ILeftUnitImpl" multiple="true" private="false" replica="0" uRef="left_unit" visibleInterface="true">
+      <super cRef="base" uRef="left_unit"/>
+      <visualDescription h="46" w="95" x="67" y="206"/>
+    </unit>
+    <unit facet="0" iRef="IRightUnitImpl" multiple="true" private="false" replica="0" uRef="right_unit" visibleInterface="true">
+      <super cRef="base" uRef="right_unit"/>
+      <visualDescription h="40" w="80" x="490" y="223"/>
+    </unit>
+  </componentInfo>
+</component:component>

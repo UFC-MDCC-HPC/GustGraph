@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f9de059224874ab7abb097a806f6b19b4b0842f0f05c687c04e2054c38d5e44c1b880dd72ac7506557adaf0aaa5017a0dda91833e98acb5e3f065e3f307492e9f7910d32f2a72c7920f90ae007e8010ab3e28df7d6cf8c31649277e243b993c7cc378a937f7fc896c271626480c5b803f69d3e2550227beb2ffc84b39b08a2a6" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMbyNInter" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001b50ad3746fb4e635c574a9bfe114c7113fd0b5c98cba9d45c39b13f5b060ce243bbcdd12cf90295a62ddb5575625749e82e51d1456c77fdac01b6044a9408deaadc713178fb05ecbf25f7bb9d75719e425d7e6d381ce2315e835ae0487ebf0ab1f0477678a13d1ae32dfd94fc8021adddac988ed0cc6b62d011d172657670c6" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/EnvironmentBindingMbyN.hpe" name="EnvironmentBindingMbyN" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+        <visualDescription h="60" w="135" x="172" y="198">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="client_port_type" varName="C"/>
+        <parameter formFieldId="server_port_type" varName="S"/>
+        <unitBounds parallel="true" uRef="client">
+          <visualDescription h="20" w="20" x="18" y="22"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="server">
+          <visualDescription h="20" w="20" x="96" y="25"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <parameter componentRef="client_port_type" formFieldId="client_port_type" order="0" varName="C"/>
+    <parameter componentRef="server_port_type" formFieldId="server_port_type" order="1" varName="S"/>
+    <innerComponent hash_component_UID="00240000048000009400000006020000002400005253413100040000110000008d4004cfea783e9e082fccb28baa3505a8a5fe565f2776b95511fa582a18f5e5d8ce31d4a96c9461045da8b8b000d05bde8bb606db5619ac279308fcea96890809a82bdf9ba4f0bca81b9fdbeb7ee9292888b932ede9a10946830cf9d306c61051b3fd2a07c5b95a72a58267a0a2768e5c979aea9ed142de1393dfdbb4830e82" localRef="client_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="client_port_type" exposed="false">
+      <visualDescription h="60" w="100" x="157" y="264">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000174170214ec8de902f58c9e2758714817ff949c0c098fc0bb0d7f68cfab78767e1a0c1983242dfd742d7e3732d9050312c8c95d9130a7071b3ccddfe9b59fd7b8df6676b7b12a4a3f7e1fdad77bdaeb4396d673feddeaf3545c105ba8114bc03f067758555bf72db629d435bfeae77bbb9a77a0690d7415de49fea886da17dd1" localRef="channel" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" multiple="false" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" exposed="false">
+      <visualDescription h="90" w="181" x="121" y="354">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="root">
+        <visualDescription h="20" w="20" x="81" y="11"/>
+      </unitBounds>
+      <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
+        <visualDescription h="20" w="20" x="20" y="34"/>
+      </unitBounds>
+      <unitBounds parallel="true" slice_replica="1" unit_replica="0" uRef="peer">
+        <visualDescription h="20" w="20" x="133" y="33"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003b6f30920d4560d2baa85bfb5e875776fc5cd76f3caa34d280007a5ed94c47552714f6188dcfd3c0f942a3fa89e53cdbb2cd2c3f79554220882d2ff02ef9c9cf3b5cce310ef2af328c9bb66b837f92ceafd6be7de3e09a457e82f479f7923f3754eba60d99950e50adbf01672902d0bd34d4cc537178e75385b44cd7d82831a1" localRef="server_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="server_port_type" exposed="false">
+      <visualDescription h="60" w="100" x="229" y="500">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <interface iRef="IClientMbyNInter" nArgs="1">
+      <slice isRef="channel">
+        <originRef cRef="channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="8" y="21"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNInter&#xA;{&#xA;&#x9;public interface BaseIClientMbyNInter&lt;C> : BaseIClientMbyN&lt;C>, ISynchronizerKind &#xA;&#x9;&#x9;where C:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIClientMbyNInter.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNInter/bin/1.0.0.0/BaseIClientMbyNInter.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/BaseIClientMbyN.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNInter&#xA;{&#xA;&#x9;public interface IClientMbyNInter&lt;C> : BaseIClientMbyNInter&lt;C>, IClientMbyN&lt;C>&#xA;&#x9;&#x9;where C:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;&#xA;&#x9;public class MbyNClient&#xA;&#x9;{&#xA;&#x9;&#x9;public static void sendOperation(Aliencommunicator comm, int operId)&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void allgatherArgument&lt;T> (Aliencommunicator comm, T value)&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void allreduceArgument&lt;T> (Aliencommunicator comm, T value)&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void scanArgument&lt;T> (Aliencommunicator comm, T value)&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void alltoallArgument&lt;T> (Aliencommunicator comm, T[] value)&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void reducescatterArgument&lt;T> (Aliencommunicator comm, T[] value)&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public delegate T Operator&lt;T> (T v1, T v2);&#xA;&#xA;&#x9;&#x9;public static void allgatherResult&lt;T> (Aliencommunicator comm, out T[] value)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;value = null;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void allreduceResult&lt;T> (Aliencommunicator comm, Operator&lt;T> oper, out T value)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;value = default (T);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void scanResult&lt;T> (Aliencommunicator comm, Operator&lt;T> oper, out T value)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;value = default (T);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void alltoAllResult&lt;T> (Aliencommunicator comm, out T[] value)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;value = null;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void reducescatterResult&lt;T> (Aliencommunicator comm, Operator&lt;T> oper, out T value)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;value = default(T);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="IClientMbyNInter.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNInter/bin/1.0.0.0/IClientMbyNInter.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNInter/bin/1.0.0.0/BaseIClientMbyNInter.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/IClientMbyN.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="162" x="59" y="90">
+        <color b="0" g="255" r="255"/>
+      </visualDescription>
+      <parameter iname="IEnvironmentPortTypeMultiplePartner" order="0" parid="client_port_type" uname="environment_port_type" varid="C"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IServerMbyNInter" nArgs="1">
+      <slice isRef="channel">
+        <originRef cRef="channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="14" y="21"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNInter&#xA;{&#xA;&#x9;public interface BaseIServerMbyNInter&lt;S> : BaseIServerMbyN&lt;S>, ISynchronizerKind &#xA;&#x9;&#x9;where S:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIServerMbyNInter.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNInter/bin/1.0.0.0/BaseIServerMbyNInter.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/BaseIServerMbyN.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNInter&#xA;{&#xA;&#x9;public interface IServerMbyNInter&lt;S> : BaseIServerMbyNInter&lt;S>, IServerMbyN&lt;S>&#xA;&#x9;&#x9;where S:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;&#xA;&#x9;public class MbyNServer&#xA;&#x9;{&#xA;&#x9;&#x9;public delegate T Operator&lt;T> (T v1, T v2);&#xA;&#xA;&#x9;&#x9;public static void receiveOperation(Aliencommunicator comm, out int operId)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;operId = 0;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void allgatherArgument&lt;T> (Aliencommunicator comm, out T[] value)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;value = null;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void allreduceArgument&lt;T> (Aliencommunicator comm, Operator&lt;T> oper, out T value)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;value = default (T);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void scanArgument&lt;T> (Aliencommunicator comm, Operator&lt;T> oper, out T value)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;value = default (T);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void alltoAllArgument&lt;T> (Aliencommunicator comm, out T[] value)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;value = null;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void reducescatterArgument&lt;T> (Aliencommunicator comm, Operator&lt;T> oper, out T value)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;value = default(T);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void allgatheResult&lt;T> (Aliencommunicator comm, T value)&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void allreduceResult&lt;T> (Aliencommunicator comm, T value)&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void scanResult&lt;T> (Aliencommunicator comm, T value)&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void alltoallResult&lt;T> (Aliencommunicator comm, T[] value)&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void reducescatterResult&lt;T> (Aliencommunicator comm, T[] value)&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;}&#xA;}&#xA;}" name="IServerMbyNInter.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNInter/bin/1.0.0.0/IServerMbyNInter.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNInter/bin/1.0.0.0/BaseIServerMbyNInter.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/IServerMbyN.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="230" x="322" y="77">
+        <color b="0" g="165" r="255"/>
+      </visualDescription>
+      <parameter iname="IEnvironmentPortTypeMultiplePartner" order="0" parid="server_port_type" uname="environment_port_type" varid="S"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IClientMbyNInter" multiple="true" private="false" replica="0" uRef="client" visibleInterface="true">
+      <super cRef="base" uRef="client"/>
+      <slices cRef="channel" inner_replica="0" slice_replica="0" uRef="peer" sliceName="channel" transitive="false">
+        <visualDescription h="10" w="10" x="8" y="21"/>
+      </slices>
+      <visualDescription h="40" w="80" x="69" y="163"/>
+    </unit>
+    <unit facet="1" iRef="IServerMbyNInter" multiple="true" private="false" replica="0" uRef="server" visibleInterface="true">
+      <super cRef="base" uRef="server"/>
+      <slices cRef="channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="channel" transitive="false">
+        <visualDescription h="10" w="10" x="14" y="21"/>
+      </slices>
+      <visualDescription h="40" w="80" x="385" y="174"/>
+    </unit>
+  </componentInfo>
+</component:component>

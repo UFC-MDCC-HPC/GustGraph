@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000053bc2f4c691b5c96c71ed842aa3fd0e547c333b05fc13c06655b00da5a33b9dccf28435bc0c8f430a121500d949dfe54dcb5e5ace8ff6a8b6603ebec55c5e65510392592bc3e6f4fa1c908e9b51c5f5ace4deb4b61c4c22bb210bdc150a3ca28cde3e61523c55a6643ee027889015fec175d8dcb0fa9c9b1f0666710f36ed786" isAbstract="false" kind="Binding" name="BindingImpl" packagePath="teste.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ffe3947c0e398c80bfe9505b464d303a00e446180960ab5c4cec1a97aa748a02d8859969012e8ff5a102f0c39aebd70dedc5017bf6469c74e361983734d94863ca33499a51fafa0c34e1baa053c34b36c500bde935c22b40b98290eb15d84eb2bd2f677b819d498ef296bd82eb11777579dcc3f401eb26735ed34974f61986a4" localRef="base" location="teste.Binding/Binding.hpe" name="Binding" package="teste" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="284" y="416">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="root">
+          <visualDescription h="20" w="20" x="40" y="0"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="peer_left">
+          <visualDescription h="20" w="20" x="5" y="26"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="peer_right">
+          <visualDescription h="20" w="20" x="70" y="26"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IRootImpl" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using teste.Binding;&#xA;&#xA;namespace teste.impl.BindingImpl { &#xA;&#xA;&#x9;public abstract class BaseIRootImpl: br.ufc.pargo.hpe.kinds.BindingRoot, BaseIRoot&#xA;{&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;}&#xA;" fileType="library" name="BaseIRootImpl.cs" srcType="base" uri="teste.impl.BindingImpl/bin/1.0.0.0/BaseIRootImpl.dll" versionId="1.0.0.0">
+          <dependency>teste.Binding/bin/1.0.0.0/BaseIRoot.dll</dependency>
+          <externalDependency>MPI</externalDependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using teste.Binding;&#xA;using System.Threading;&#xA;using System.Net;&#xA;using System.Net.Sockets;&#xA;using System.Text;&#xA;using System.Collections.Generic;&#xA;&#xA;namespace teste.impl.BindingImpl &#xA;{ &#xA;&#x9;public class IRootImpl : BaseIRootImpl, IRoot&#xA;&#x9;{&#xA;&#xA;&#x9;&#x9;public override void server ()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;ROOT SERVER PROCESS&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;//StartServer ();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void client ()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;ROOT CLIENT PROCESS&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;int r = RootCommunicator.Allreduce (44, minus);&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;ROOT CALCULATED &quot; + r);&#xA;&#xA;&#x9;&#x9;&#x9;//StartClient (r.ToString());&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private int minus(int a, int b) { return a - b; }&#xA;&#xA;&#xA;&#x9;&#x9;public void StartClient(string data) &#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;// Data buffer for incoming data.&#xA;&#x9;&#x9;&#x9;byte[] bytes = new byte[1024];&#xA;&#x9;&#x9;&#x9;Thread.Sleep (10000);&#xA;&#xA;&#x9;&#x9;&#x9;// Connect to a remote device.&#xA;&#x9;&#x9;&#x9;try {&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;int port_client = this.Facet[Math.Abs(this.ThisFacet-1)].port; // int.Parse(System.Environment.GetEnvironmentVariable(&quot;BINDING_TEST_CLIENT_PORT&quot;));&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;ROOT CLIENT port={0}&quot;, port_client);&#xA;&#x9;&#x9;&#x9;&#x9;// Establish the remote endpoint for the socket.&#xA;&#x9;&#x9;&#x9;&#x9;// This example uses port 11000 on the local computer.&#xA;&#x9;&#x9;&#x9;&#x9;IPHostEntry ipHostInfo = Dns.GetHostEntry(&quot;localhost&quot; /*Dns.GetHostName()*/);&#xA;&#x9;&#x9;&#x9;&#x9;IPAddress ipAddress = ipHostInfo.AddressList[0];&#xA;&#x9;&#x9;&#x9;&#x9;IPEndPoint remoteEP = new IPEndPoint(ipAddress,port_client);&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;ROOT CLIENT - ipHostInfo: &quot; + remoteEP.Address);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;// Create a TCP/IP  socket.&#xA;&#x9;&#x9;&#x9;&#x9;Socket sender = new Socket(AddressFamily.InterNetwork, &#xA;&#x9;&#x9;&#x9;&#x9;                           SocketType.Stream, System.Net.Sockets.ProtocolType.Tcp );&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;// Connect the socket to the remote endpoint. Catch any errors.&#xA;&#x9;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sender.Connect(remoteEP);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;Socket connected to {0}&quot;, sender.RemoteEndPoint.ToString());&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;// Encode the data string into a byte array.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;byte[] msg = Encoding.ASCII.GetBytes(data + &quot;&lt;EOF>&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;CLIENT 1&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;// Send the data through the socket.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;int bytesSent = sender.Send(msg);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;CLIENT 2&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;// Receive the response from the remote device.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;int bytesRec = sender.Receive(bytes);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;Echoed test = {0}&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;                  Encoding.ASCII.GetString(bytes,0,bytesRec));&#xA;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;} catch (ArgumentNullException ane) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;ArgumentNullException : {0}&quot;,ane.ToString());&#xA;&#x9;&#x9;&#x9;&#x9;} catch (SocketException se) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;SocketException : {0}&quot;,se.ToString());&#xA;&#x9;&#x9;&#x9;&#x9;} catch (Exception e) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;Unexpected exception : {0}&quot;, e.ToString());&#xA;&#x9;&#x9;&#x9;&#x9;} &#xA;&#x9;&#x9;&#x9;&#x9;finally &#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (&quot;CLOSING SOCKET CLIENT&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;// Release the socket.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sender.Shutdown(SocketShutdown.Both);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sender.Close();&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;} catch (Exception e) {&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine( e.ToString());&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public void StartServer() &#x9;&#x9;&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;ROOT SERVER ----- &quot; + ThisFacet);&#xA;&#x9;&#x9;&#x9;foreach (KeyValuePair&lt;int,FacetAccess> fa in this.Facet)&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (&quot;ROOT SERVER $$$ &quot; + fa.Key + &quot;/&quot;+ fa.Value.port);&#xA;&#xA;&#x9;&#x9;&#x9;int port_server = this.Facet[this.ThisFacet].port; //int.Parse(System.Environment.GetEnvironmentVariable(&quot;BINDING_TEST_SERVER_PORT&quot;));&#xA;&#x9;&#x9;&#x9;Console.WriteLine(&quot;ROOT SERVER port={0}&quot;, port_server);&#xA;&#xA;&#xA;&#x9;&#x9;&#x9;string data = null;&#xA;&#xA;&#x9;&#x9;&#x9;// Data buffer for incoming data.&#xA;&#x9;&#x9;&#x9;byte[] bytes = new Byte[1024];&#xA;&#xA;&#x9;&#x9;&#x9;// Establish the local endpoint for the socket.&#xA;&#x9;&#x9;&#x9;// Dns.GetHostName returns the name of the &#xA;&#x9;&#x9;&#x9;// host running the application.&#xA;&#x9;&#x9;&#x9;IPHostEntry ipHostInfo = Dns.Resolve(&quot;localhost&quot; /*Dns.GetHostName()*/);&#xA;&#x9;&#x9;&#x9;IPAddress ipAddress = ipHostInfo.AddressList[0];&#x9;&#xA;&#x9;&#x9;&#x9;Console.WriteLine(&quot;ROOT SERVER - ipHostInfo: &quot; + ipAddress);&#xA;&#x9;&#x9;&#x9;IPEndPoint localEndPoint = new IPEndPoint(ipAddress, port_server);&#xA;&#xA;&#x9;&#x9;&#x9;// Create a TCP/IP socket.&#xA;&#x9;&#x9;&#x9;Socket listener = new Socket(AddressFamily.InterNetwork,&#xA;&#x9;&#x9;&#x9;                             SocketType.Stream, System.Net.Sockets.ProtocolType.Tcp );&#xA;&#xA;&#x9;&#x9;&#x9;// Bind the socket to the local endpoint and &#xA;&#x9;&#x9;&#x9;// listen for incoming connections.&#xA;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;listener.Bind(localEndPoint);&#xA;&#x9;&#x9;&#x9;&#x9;listener.Listen(10);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;// Start listening for connections.&#xA;&#x9;&#x9;&#x9;&#x9;//while (true) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;Waiting for a connection...&quot; + localEndPoint.Address);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;// Program is suspended while waiting for an incoming connection.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Socket handler = listener.Accept();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;data = null;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;// An incoming connection needs to be processed.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;while (true) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;LOOP SERVER BYTE ...&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;bytes = new byte[1024];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;int bytesRec = handler.Receive(bytes);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;data += Encoding.ASCII.GetString(bytes,0,bytesRec);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (data.IndexOf(&quot;&lt;EOF>&quot;) > -1) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;// Show the data on the console.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine( &quot;Text received : {0}&quot;, data);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;// Echo the data back to the client.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;byte[] msg = Encoding.ASCII.GetBytes(data);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;handler.Send(msg);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;handler.Shutdown(SocketShutdown.Both);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;handler.Close();&#xA;&#x9;&#x9;&#x9;&#x9;//}&#xA;&#xA;&#x9;&#x9;&#x9;} catch (Exception e) {&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(e.ToString());&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;finally &#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (&quot;CLOSING SOCKET SERVER&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;listener.Shutdown(SocketShutdown.Both);&#xA;&#x9;&#x9;&#x9;&#x9;listener.Close();&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine(&quot;Press ENTER to continue...&quot;);&#xA;&#x9;&#x9;&#x9;Console.Read();&#xA;&#xA;&#x9;&#x9;}&#xA;&#xA;&#xA;&#x9;}&#xA;}&#xA;" fileType="library" name="IRootImpl.cs" srcType="user" uri="teste.impl.BindingImpl/bin/1.0.0.0/IRootImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/teste.impl.BindingImpl/bin/1.0.0.0/BaseIRootImpl.dll</dependency>
+          <dependency>teste.Binding/bin/1.0.0.0/IRoot.dll</dependency>
+          <externalDependency>MPI</externalDependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="272" y="47">
+        <color b="0" g="255" r="255"/>
+      </visualDescription>
+      <externalReferences>MPI</externalReferences>
+    </interface>
+    <interface iRef="IPeerLeftImpl" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using teste.Binding;&#xA;&#xA;namespace teste.impl.BindingImpl &#xA;{ &#xA;&#xA;&#x9;public abstract class BaseIPeerLeftImpl: br.ufc.pargo.hpe.kinds.Binding, BaseIPeerLeft&#xA;&#x9;{&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;}&#xA;" fileType="library" name="BaseIPeerLeftImpl.cs" srcType="base" uri="teste.impl.BindingImpl/bin/1.0.0.0/BaseIPeerLeftImpl.dll" versionId="1.0.0.0">
+          <dependency>teste.Binding/bin/1.0.0.0/BaseIPeerLeft.dll</dependency>
+          <externalDependency>MPI</externalDependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using teste.Binding;&#xA;using MPI;&#xA;&#xA;namespace teste.impl.BindingImpl &#xA;{&#xA;&#x9;public class IPeerLeftImpl : BaseIPeerLeftImpl, IPeerLeft&#xA;&#x9;{&#xA;&#x9;&#x9;#region IPeerLeft implementation&#xA;&#x9;&#x9;public void doSomething (int v)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;int r = this.RootCommunicator.Allreduce (v, times);&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;LEFT CALCULATED &quot; + r);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private int times(int a, int b) { return a + b; }&#xA;&#xA;&#x9;&#x9;#endregion&#xA;&#x9;}&#xA;}&#xA;" fileType="library" name="IPeerLeftImpl.cs" srcType="user" uri="teste.impl.BindingImpl/bin/1.0.0.0/IPeerLeftImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/teste.impl.BindingImpl/bin/1.0.0.0/BaseIPeerLeftImpl.dll</dependency>
+          <dependency>teste.Binding/bin/1.0.0.0/IPeerLeft.dll</dependency>
+          <externalDependency>MPI</externalDependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="142" x="63" y="145">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <externalReferences>MPI</externalReferences>
+    </interface>
+    <interface iRef="IPeerRightImpl" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using teste.Binding;&#xA;&#xA;namespace teste.impl.BindingImpl { &#xA;&#xA;&#x9;public abstract class BaseIPeerRightImpl: br.ufc.pargo.hpe.kinds.Binding, BaseIPeerRight&#xA;{&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;}&#xA;" fileType="library" name="BaseIPeerRightImpl.cs" srcType="base" uri="teste.impl.BindingImpl/bin/1.0.0.0/BaseIPeerRightImpl.dll" versionId="1.0.0.0">
+          <dependency>teste.Binding/bin/1.0.0.0/BaseIPeerRight.dll</dependency>
+          <externalDependency>MPI</externalDependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using teste.Binding;&#xA;using MPI;&#xA;&#xA;namespace teste.impl.BindingImpl &#xA;{ &#xA;&#x9;public class IPeerRightImpl : BaseIPeerRightImpl, IPeerRight&#xA;&#x9;{&#xA;&#x9;&#x9;#region IPeerRight implementation&#xA;&#x9;&#x9;public void doSomething (int v)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;int r = this.RootCommunicator.Allreduce (v, sum);&#x9;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;RIGHT CALCULATED &quot; + r);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;#endregion&#xA;&#xA;&#x9;&#x9;private int sum(int a, int b) { return a + b; }&#xA;&#x9;}&#xA;}&#xA;" fileType="library" name="IPeerRightImpl.cs" srcType="user" uri="teste.impl.BindingImpl/bin/1.0.0.0/IPeerRightImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/teste.impl.BindingImpl/bin/1.0.0.0/BaseIPeerRightImpl.dll</dependency>
+          <dependency>teste.Binding/bin/1.0.0.0/IPeerRight.dll</dependency>
+          <externalDependency>MPI</externalDependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="146" x="441" y="213">
+        <color b="255" g="0" r="0"/>
+      </visualDescription>
+      <externalReferences>MPI</externalReferences>
+    </interface>
+    <unit facet="-1" iRef="IRootImpl" multiple="false" private="false" replica="0" uRef="root" visibleInterface="true">
+      <super cRef="base" uRef="root"/>
+      <visualDescription h="40" w="80" x="283" y="152"/>
+    </unit>
+    <unit facet="0" iRef="IPeerLeftImpl" multiple="true" private="false" replica="0" uRef="peer_left" visibleInterface="true">
+      <super cRef="base" uRef="peer_left"/>
+      <visualDescription h="40" w="86" x="127" y="285"/>
+    </unit>
+    <unit facet="1" iRef="IPeerRightImpl" multiple="true" private="false" replica="0" uRef="peer_right" visibleInterface="true">
+      <super cRef="base" uRef="peer_right"/>
+      <visualDescription h="40" w="92" x="441" y="293"/>
+    </unit>
+  </componentInfo>
+</component:component>

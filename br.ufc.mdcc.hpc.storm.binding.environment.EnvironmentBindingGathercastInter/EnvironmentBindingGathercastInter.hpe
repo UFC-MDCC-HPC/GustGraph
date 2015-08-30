@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000008fabe5cd162a35c8fafcad98862e3169820781d090b0c0de2133ce2da60b9ed40a656d59ec35b896c66098024d341eec0c435b41dc647e7756f8469f651b9b7bbfc754dcdd9f3758b43861c84c6c20c18cec34889713279c4270fb05db91fada2ae8c9d41d7d7716df8c1c97f5ca56dd3baa9a82fdaf0a286a32e4b1bbaa33d3" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingGathercastInter" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005f7f5d1a72d7d8fbdb8420a516096de109f736890a68ef8effd4babf8f5277065d8eee60fccdc750b2a4b14ba8d4cc0117bbed4144fcaacb76bb3dd612f8dadc59fac82b8782c1783b1e2774c61a0e3ad7ab4c54be24b8383ef515d0b95547b226fff60a81c13c8ec45128ef3fba8723b631c6ca7c2c73c247b3afdb45320892" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercast/EnvironmentBindingGathercast.hpe" name="EnvironmentBindingGathercast" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+        <visualDescription h="60" w="135" x="194" y="164">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="client_port_type" varName="C"/>
+        <parameter formFieldId="server_port_type" varName="S"/>
+        <unitBounds parallel="false" uRef="client">
+          <visualDescription h="20" w="20" x="17" y="17"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="server">
+          <visualDescription h="20" w="20" x="96" y="25"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <parameter componentRef="client_port_type" formFieldId="client_port_type" order="0" variance="invariant" varName="C"/>
+    <parameter componentRef="server_port_type" formFieldId="server_port_type" order="1" variance="invariant" varName="S"/>
+    <innerComponent hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003f151f6afda0297b0e9417af183039231d871587daf80b94e7253cf57788bc66baaccdf4aad3fa7a41ef96ef0e133ac9cf0241f6c78f02a02cfd4877bc6c5feb1ef6969b77bedc39c137b6fedd591b6bd23cd9e872537a1b13f5f4203de0a3f7561d81c1ae77b504a6a442702926c6fa80571652fc6669b1c7d6c0c45fab49f0" localRef="client_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="client_port_type" exposed="false">
+      <visualDescription h="60" w="100" x="240" y="304">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000174170214ec8de902f58c9e2758714817ff949c0c098fc0bb0d7f68cfab78767e1a0c1983242dfd742d7e3732d9050312c8c95d9130a7071b3ccddfe9b59fd7b8df6676b7b12a4a3f7e1fdad77bdaeb4396d673feddeaf3545c105ba8114bc03f067758555bf72db629d435bfeae77bbb9a77a0690d7415de49fea886da17dd1" localRef="channel" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" multiple="false" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" exposed="false">
+      <visualDescription h="90" w="181" x="119" y="338">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="root">
+        <visualDescription h="20" w="20" x="81" y="11"/>
+      </unitBounds>
+      <unitBounds parallel="false" slice_replica="0" unit_replica="0" uRef="peer">
+        <visualDescription h="20" w="20" x="20" y="34"/>
+      </unitBounds>
+      <unitBounds parallel="true" slice_replica="1" unit_replica="0" uRef="peer">
+        <visualDescription h="20" w="20" x="133" y="33"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003b6f30920d4560d2baa85bfb5e875776fc5cd76f3caa34d280007a5ed94c47552714f6188dcfd3c0f942a3fa89e53cdbb2cd2c3f79554220882d2ff02ef9c9cf3b5cce310ef2af328c9bb66b837f92ceafd6be7de3e09a457e82f479f7923f3754eba60d99950e50adbf01672902d0bd34d4cc537178e75385b44cd7d82831a1" localRef="server_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="server_port_type" exposed="false">
+      <visualDescription h="60" w="100" x="95" y="418">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <interface iRef="IClientGathercastInter" nArgs="1">
+      <slice isRef="channel">
+        <originRef cRef="channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="8" y="21"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercast;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastInter&#xA;{&#xA;&#x9;public interface BaseIClientGathercastInter&lt;C> : BaseIClientGathercast&lt;C>, ISynchronizerKind &#xA;&#x9;&#x9;where C:IEnvironmentPortTypeSinglePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIClientGathercastInter.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastInter/bin/1.0.0.0/BaseIClientGathercastInter.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercast/bin/1.0.0.0/BaseIClientGathercast.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercast;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastInter&#xA;{&#xA;&#x9;public interface IClientGathercastInter&lt;C> : BaseIClientGathercastInter&lt;C>, IClientGathercast&lt;C>&#xA;&#x9;&#x9;where C:IEnvironmentPortTypeSinglePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;&#xA;&#x9;public class GathercastClient&#xA;&#x9;{&#xA;&#x9;&#x9;public static void sendOperation(Aliencommunicator comm, int operId)&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void gatherArgument&lt;T> (Aliencommunicator comm, T value)&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void reduceArgument&lt;T> (Aliencommunicator comm, T value)&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void scatterResult&lt;T> (Aliencommunicator comm, out T value)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;value = default(T);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void broadcastResult&lt;T> (Aliencommunicator comm, out T value)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;value = default (T);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;}&#xA;}" name="IClientGathercastInter.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastInter/bin/1.0.0.0/IClientGathercastInter.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastInter/bin/1.0.0.0/BaseIClientGathercastInter.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercast/bin/1.0.0.0/IClientGathercast.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="180" x="46" y="65">
+        <color b="0" g="255" r="255"/>
+      </visualDescription>
+      <parameter iname="IEnvironmentPortTypeSinglePartner" order="0" parid="client_port_type" uname="environment_port_type" varid="C"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IServerGathercastInter" nArgs="1">
+      <slice isRef="channel">
+        <originRef cRef="channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="14" y="21"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercast;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastInter&#xA;{&#xA;&#x9;public interface BaseIServerGathercastInter&lt;S> : BaseIServerGathercast&lt;S>, ISynchronizerKind &#xA;&#x9;&#x9;where S:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIServerGathercastInter.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastInter/bin/1.0.0.0/BaseIServerGathercastInter.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercast/bin/1.0.0.0/BaseIServerGathercast.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercast;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastInter&#xA;{&#xA;&#x9;public interface IServerGathercastInter&lt;S> : BaseIServerGathercastInter&lt;S>, IServerGathercast&lt;S>&#xA;&#x9;&#x9;where S:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;&#xA;&#x9;public class GathercastServer&#xA;&#x9;{&#xA;&#x9;&#x9;public delegate T Operator&lt;T> (T v1, T v2);&#xA;&#xA;&#x9;&#x9;public static void receiveOperation(Aliencommunicator comm, out int operId)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;operId = 0;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void gatherArgument&lt;T> (Aliencommunicator comm, out T[] value)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;value = null;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void reduceArgument&lt;T> (Aliencommunicator comm, Operator&lt;T> oper, out T value)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;value = default(T);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void scatterResult&lt;T> (Aliencommunicator comm, T[] value)&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public static void broadcastResult&lt;T> (Aliencommunicator comm, T value)&#xA;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="IServerGathercastInter.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastInter/bin/1.0.0.0/IServerGathercastInter.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastInter/bin/1.0.0.0/BaseIServerGathercastInter.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercast/bin/1.0.0.0/IServerGathercast.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="230" x="322" y="77">
+        <color b="0" g="165" r="255"/>
+      </visualDescription>
+      <parameter iname="IEnvironmentPortTypeMultiplePartner" order="0" parid="server_port_type" uname="environment_port_type" varid="S"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IClientGathercastInter" multiple="false" private="false" replica="0" uRef="client" visibleInterface="true">
+      <super cRef="base" uRef="client"/>
+      <slices cRef="channel" inner_replica="0" slice_replica="0" uRef="peer" sliceName="channel" transitive="false">
+        <visualDescription h="10" w="10" x="8" y="21"/>
+      </slices>
+      <visualDescription h="40" w="80" x="56" y="167"/>
+    </unit>
+    <unit facet="1" iRef="IServerGathercastInter" multiple="true" private="false" replica="0" uRef="server" visibleInterface="true">
+      <super cRef="base" uRef="server"/>
+      <slices cRef="channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="channel" transitive="false">
+        <visualDescription h="10" w="10" x="14" y="21"/>
+      </slices>
+      <visualDescription h="40" w="80" x="385" y="174"/>
+    </unit>
+  </componentInfo>
+</component:component>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ffe3947c0e398c80bfe9505b464d303a00e446180960ab5c4cec1a97aa748a02d8859969012e8ff5a102f0c39aebd70dedc5017bf6469c74e361983734d94863ca33499a51fafa0c34e1baa053c34b36c500bde935c22b40b98290eb15d84eb2bd2f677b819d498ef296bd82eb11777579dcc3f401eb26735ed34974f61986a4" isAbstract="true" kind="Binding" name="Binding" packagePath="teste">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IRoot" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace teste.Binding { &#xA;&#xA;public interface BaseIRoot : IBindingRootKind &#xA;{&#xA;&#xA;&#xA;&#xA;} // end main interface &#xA;&#xA;} // end namespace &#xA;" fileType="library" name="BaseIRoot.cs" srcType="base" uri="teste.Binding/bin/1.0.0.0/BaseIRoot.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace teste.Binding &#xA;{ &#xA;&#x9;public interface IRoot : BaseIRoot&#xA;&#x9;{&#xA;&#x9;} // end main interface &#xA;} // end namespace &#xA;" fileType="library" name="IRoot.cs" srcType="user" uri="teste.Binding/bin/1.0.0.0/IRoot.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/teste.Binding/bin/1.0.0.0/BaseIRoot.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="283" y="49">
+        <color b="0" g="255" r="255"/>
+      </visualDescription>
+    </interface>
+    <interface iRef="IPeerLeft" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace teste.Binding { &#xA;&#xA;public interface BaseIPeerLeft : IBindingKind &#xA;{&#xA;&#xA;&#xA;&#xA;} // end main interface &#xA;&#xA;} // end namespace &#xA;" fileType="library" name="BaseIPeerLeft.cs" srcType="base" uri="teste.Binding/bin/1.0.0.0/BaseIPeerLeft.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace teste.Binding &#xA;{ &#xA;&#x9;public interface IPeerLeft : BaseIPeerLeft&#xA;&#x9;{&#xA;&#x9;&#x9;void doSomething (int v);&#xA;&#x9;} &#xA;}&#xA;" fileType="library" name="IPeerLeft.cs" srcType="user" uri="teste.Binding/bin/1.0.0.0/IPeerLeft.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/teste.Binding/bin/1.0.0.0/BaseIPeerLeft.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="86" x="129" y="191">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+    </interface>
+    <interface iRef="IPeerRight" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace teste.Binding { &#xA;&#xA;public interface BaseIPeerRight : IBindingKind &#xA;{&#xA;&#xA;&#xA;&#xA;} // end main interface &#xA;&#xA;} // end namespace &#xA;" fileType="library" name="BaseIPeerRight.cs" srcType="base" uri="teste.Binding/bin/1.0.0.0/BaseIPeerRight.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace teste.Binding &#xA;{ &#xA;&#x9;public interface IPeerRight : BaseIPeerRight&#xA;&#x9;{&#xA;&#x9;&#x9;void doSomething (int v);&#xA;&#x9;} &#xA;} &#xA;" fileType="library" name="IPeerRight.cs" srcType="user" uri="teste.Binding/bin/1.0.0.0/IPeerRight.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/teste.Binding/bin/1.0.0.0/BaseIPeerRight.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="92" x="441" y="213">
+        <color b="255" g="0" r="0"/>
+      </visualDescription>
+    </interface>
+    <unit facet="-1" iRef="IRoot" multiple="false" private="false" replica="0" uRef="root" visibleInterface="true">
+      <visualDescription h="40" w="80" x="283" y="152"/>
+    </unit>
+    <unit facet="0" iRef="IPeerLeft" multiple="true" private="false" replica="0" uRef="peer_left" visibleInterface="true">
+      <visualDescription h="40" w="86" x="127" y="285"/>
+    </unit>
+    <unit facet="1" iRef="IPeerRight" multiple="true" private="false" replica="0" uRef="peer_right" visibleInterface="true">
+      <visualDescription h="40" w="92" x="441" y="293"/>
+    </unit>
+  </componentInfo>
+</component:component>
