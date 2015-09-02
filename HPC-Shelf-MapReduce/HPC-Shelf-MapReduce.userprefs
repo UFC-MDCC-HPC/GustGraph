@@ -1,4 +1,4 @@
-﻿<Properties>
+﻿<Properties StartupItem="HPC-Shelf-MapReduce/HPC-Shelf-MapReduce.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
