@@ -73,15 +73,32 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="env_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/EnvironmentBindingGathercastIntra.hpe" multiple="false" name="EnvironmentBindingGathercastIntra" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
+      <visualDescription h="60" w="162" x="50" y="403">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
+      <unitBounds parallel="false" uRef="client">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+      <unitBounds parallel="true" uRef="server">
+        <visualDescription h="20" w="20" x="28" y="2"/>
+      </unitBounds>
+    </innerComponent>
     <fusion>
-      <cRefs>base</cRefs>
       <cRefs>map_function</cRefs>
+      <cRefs>base</cRefs>
       <pRef>output</pRef>
     </fusion>
     <interface iRef="IMapper" nArgs="0">
       <slice isRef="map_function">
         <originRef cRef="map_function" iRef="IMapFunction"/>
         <visualDescription h="10" w="10" x="58" y="19"/>
+      </slice>
+      <slice isRef="env_binding">
+        <originRef cRef="env_binding" iRef="IClientGathercastIntra"/>
+        <visualDescription h="10" w="10" x="13" y="25"/>
       </slice>
       <visualDescription h="40" w="80" x="183" y="228">
         <color b="144" g="238" r="144"/>
@@ -90,13 +107,17 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output" sRef="map_function"/>
       </port>
+      <port name="input_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="map_function"/>
+      </port>
       <port name="input_value">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_value" sRef="map_function"/>
       </port>
-      <port name="input_key">
+      <port name="env_binding">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key" sRef="map_function"/>
+        <slice pRef="env_binding" sRef="env_binding"/>
       </port>
       <action id="main">
         <protocol/>
@@ -106,6 +127,9 @@
       <super cRef="base" uRef="work"/>
       <slices cRef="output" inner_replica="0" slice_replica="0" uRef="data" sliceName="output" transitive="false">
         <visualDescription h="10" w="10" x="51" y="27"/>
+      </slices>
+      <slices cRef="env_binding" inner_replica="0" slice_replica="0" uRef="client" sliceName="env_binding" transitive="false">
+        <visualDescription h="10" w="10" x="13" y="25"/>
       </slices>
       <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
         <visualDescription h="10" w="10" x="29" y="26"/>
