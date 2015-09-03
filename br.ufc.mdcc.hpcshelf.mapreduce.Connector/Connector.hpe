@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000edfdf808bc53c4981b2921a47b21d90a3b0f69a22bab059d236133ec0283c78e3380e1fa06673eec8b6a597f38fdc918b5a9932e29cf62d26b46b3ce09e29dddfeaffa9030179a391833330435c07c0f90214781eb9ead874deea54a2be28c1501d10b73bab224624f74050f9944233317babc0d51c07cbca47cae6dca278ab7" isAbstract="true" kind="Synchronizer" name="Connector" packagePath="br.ufc.mdcc.hpcshelf.mapreduce">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <parameter componentRef="binding" formFieldId="binding" order="0" variance="contravariant" varName="COM"/>
+    <parameter componentRef="server_port_type" formFieldId="server_port_type" order="0" variance="contravariant" varName="S"/>
+    <parameter componentRef="client_port_type" formFieldId="client_port_type" order="1" variance="contravariant" varName="C"/>
+    <innerComponent localRef="binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/EnvironmentBindingMbyN.hpe" multiple="false" name="EnvironmentBindingMbyN" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="binding" exposed="true">
+      <visualDescription h="60" w="100" x="202" y="450">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
+      <unitBounds parallel="true" uRef="client">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+      <unitBounds parallel="true" uRef="server">
+        <visualDescription h="20" w="20" x="28" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="server_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="server_port_type" exposed="false">
+      <visualDescription h="60" w="143" x="59" y="123">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="client_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="client_port_type" exposed="false">
+      <visualDescription h="60" w="218" x="237" y="117">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <interface iRef="IConnectorClient" nArgs="2">
+      <slice isRef="binding">
+        <originRef cRef="binding" iRef="IClientMbyN"/>
+        <visualDescription h="10" w="10" x="47" y="25"/>
+      </slice>
+      <visualDescription h="40" w="140" x="75" y="248">
+        <color b="255" g="144" r="30"/>
+      </visualDescription>
+      <port name="binding">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="binding" sRef="binding"/>
+      </port>
+      <parameter iname="IClientMbyN" order="0" parid="binding" uname="client" varid="COM"/>
+      <parameter iname="IEnvironmentPortTypeMultiplePartner" order="1" parid="client_port_type" uname="environment_port_type" varid="C"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IConnectorServer" nArgs="2">
+      <slice isRef="binding">
+        <originRef cRef="binding" iRef="IServerMbyN"/>
+        <visualDescription h="10" w="10" x="12" y="25"/>
+      </slice>
+      <visualDescription h="40" w="135" x="296" y="246">
+        <color b="203" g="192" r="255"/>
+      </visualDescription>
+      <port name="binding">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="binding" sRef="binding"/>
+      </port>
+      <parameter iname="IServerMbyN" parid="binding" uname="server" varid="COM"/>
+      <parameter iname="IEnvironmentPortTypeMultiplePartner" order="0" parid="server_port_type" uname="environment_port_type" varid="S"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IConnectorClient" multiple="true" private="false" replica="0" uRef="client" visibleInterface="true">
+      <slices cRef="binding" inner_replica="0" slice_replica="0" uRef="client" sliceName="binding" transitive="false">
+        <visualDescription h="10" w="10" x="47" y="25"/>
+      </slices>
+      <visualDescription h="40" w="80" x="149" y="343"/>
+    </unit>
+    <unit facet="0" iRef="IConnectorServer" multiple="true" private="false" replica="0" uRef="server" visibleInterface="true">
+      <slices cRef="binding" inner_replica="0" slice_replica="0" uRef="server" sliceName="binding" transitive="false">
+        <visualDescription h="10" w="10" x="12" y="25"/>
+      </slices>
+      <visualDescription h="40" w="80" x="334" y="345"/>
+    </unit>
+  </componentInfo>
+</component:component>
