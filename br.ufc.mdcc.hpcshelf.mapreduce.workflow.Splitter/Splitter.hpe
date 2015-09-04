@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000037a75e3e69b6110e811e3c7bc8322bb5b0bc9bc58ca627cb92d3617700f7371aee1daa42ba4220c2288c3ed9ced2fb3bb937700fc143645846dd14e74d0cb9a1520d665e95b155446b0d83e8a58754c0f94df2e61b586c01ea98d9af5d855ca7449df64f263173c79e80e6d50c1ea7ae144ce86e3183658a306d2baf0b957c91" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000017066589f6a8ca8e4131870f9a203c951fe4af711c8c99e1b8a8dc718a4357aa9be410641e3383434527cab6bf8b117301e7802d28ffd8af6294e5617b281b5370fa6b745537cc6618152ef5b754935a537ba2fc283b6585356a7a2190b62b6d38b927df6dbefb8a73a2b7b2134411a0d0090bdd879cf56a1ead3aba87c445b1" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -106,8 +106,8 @@
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
-      <port localRef="output_key" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="true">
-        <visualDescription h="60" w="100" x="684" y="367">
+      <port localRef="Address" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Address/Address.hpe" multiple="false" name="Address" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="true">
+        <visualDescription h="60" w="100" x="630" y="388">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -137,7 +137,7 @@
         <visualDescription h="60" w="100" x="88" y="196">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###921131332"/>
+        <parameter formFieldId="item_type" varName="X###957659494"/>
         <unitBounds parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -156,7 +156,7 @@
     </innerComponent>
     <supplyParameter cRef="s" direct="true" varName="S"/>
     <supplyParameter cRef="c" direct="true" varName="C"/>
-    <innerComponent localRef="C###921131332" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="false">
+    <innerComponent localRef="C###957659494" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="false">
       <visualDescription h="60" w="132" x="403" y="438">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -166,7 +166,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###921131332" varName="X###921131332"/>
+    <supplyParameter cRef="C###957659494" varName="X###957659494"/>
     <innerRenaming cNewName="data_source" cOldName="input_data" cRef="split_function"/>
     <interface iRef="IReduceCollector" nArgs="2">
       <slice isRef="output_reduce">
@@ -220,13 +220,13 @@
       <visualDescription h="40" w="120" x="77" y="53">
         <color b="0" g="128" r="0"/>
       </visualDescription>
-      <port name="data_source">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_data" sRef="split_function"/>
-      </port>
       <port name="iterator">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="iterator" sRef="split_function"/>
+      </port>
+      <port name="data_source">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_data" sRef="split_function"/>
       </port>
       <parameter iname="IData" parid="input_splitter" uname="data" varid="I"/>
       <parameter iname="IData" order="0" parid="input_map_key" uname="data" varid="IMK"/>

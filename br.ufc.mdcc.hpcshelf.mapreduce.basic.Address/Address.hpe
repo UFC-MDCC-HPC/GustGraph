@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005f1f1846d812f036d9e7208401fae25a8d84e57fcbc99818ef6d6f6a1329d4eec18e8681d6c3ec452fdb5edea0f5cdac20d3937acfcb9def4dd98e8dadb9b0654db43bcffdfb4f4922db86e2537f80a0c353f54ab974f61715c3c42cb562267eab3d877694cd0286d2293575e52c0429ffd5c8727b4e2082fbdf6ab2912076a2" isAbstract="true" kind="Data" name="Address" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.basic">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005b6326f41e4990b9dc21588b62ac1e7dc8a655588ffe3a5434248f64ad39c5ae953613672fa256992c3465c8ee77205e4a86abe1511ecd61f01994d7bd2576a42fcb789609553fb0dde944382b824a442983daee31341941f0a8640c70fa4f9ab5cb905100e258e4e8fa23a122e5f489bc2f39975598332d22700bb4658c8f89" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="138" y="320">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IAddress" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="&#xfeff;using System;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.basic.Address {&#xA;&#x9;public class BaseIAddress {&#xA;&#x9;&#x9;public BaseIAddress() {&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;&#xA;" name="BaseIAddress.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.basic.Address/bin/1.0.0.0/BaseIAddress.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/bin/1.0.0.0/BaseIData.dll</dependency>
+        </file>
+        <file contents="&#xfeff;using System;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.basic.Address {&#xA;&#x9;public class IAddress {&#xA;&#x9;&#x9;public IAddress() {&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;&#xA;" name="IAddress.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.basic.Address/bin/1.0.0.0/IAddress.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.basic.Address/bin/1.0.0.0/BaseIAddress.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/bin/1.0.0.0/IData.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="103" y="145">
+        <color b="144" g="238" r="144"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IAddress" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
+      <super cRef="base" uRef="data"/>
+      <visualDescription h="40" w="80" x="87" y="237"/>
+    </unit>
+  </componentInfo>
+</component:component>
