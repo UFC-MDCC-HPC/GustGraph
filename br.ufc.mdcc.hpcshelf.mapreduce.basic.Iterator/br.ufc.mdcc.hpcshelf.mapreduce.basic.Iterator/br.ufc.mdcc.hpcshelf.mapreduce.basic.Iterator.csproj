@@ -41,4 +41,10 @@
     <Compile Include="..\src\1.0.0.0\BaseIIterator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.basic.Data\br.ufc.mdcc.hpcshelf.mapreduce.basic.Data\br.ufc.mdcc.hpcshelf.mapreduce.basic.Data.csproj">
+      <Project>{7E59B89F-898A-46D1-9EBD-B2A0448D9770}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.basic.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

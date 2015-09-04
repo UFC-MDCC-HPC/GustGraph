@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e5e6de1ae7ffc9c9a14f6dd4e73346601b8542d19b38e7be2087fc2887088d1aa6437dc1b72250c3bf0b05ad3d0f1c6f942292629334abfd6b3f516aebdc09e238343de54b7b96373daa11ffdd596d773dcfb2a09960357d1014ebaca47810457a3209eb21f913adacc01a08b589ac341c5554f84959ef3c3178d6d7bd6a86d6" isAbstract="true" kind="Computation" name="PartitionFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bde476e1f5747326efcd117820f1ce2db8bca94b8d8323e59fda2b603eba6b734198da50e1c2beee55987b2f922b4a9d84536b3747d2e0c2265ea0798854f896b3e18e7cbed33a996eb8e41a5a5809fa5a3659ef91ea74db9d4b52dd6823eecc1284f10f7ca2eb5a7063b5ac9f8075b8e5de89e5f5a98237e15ce76c2b9b349f" isAbstract="true" kind="Computation" name="PartitionFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
   <componentInfo>
-    <parameter componentRef="input_key" formFieldId="input_key" order="0" variance="contravariant" varName="OCK"/>
+    <parameter componentRef="input_key" formFieldId="input_key" order="0" variance="contravariant" varName="IPK"/>
     <innerComponent localRef="input_key" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" parameter_id="input_key" exposed="true">
       <visualDescription h="60" w="100" x="155" y="436">
         <color b="255" g="255" r="255"/>
@@ -16,7 +16,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="output_key" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="false">
+    <innerComponent localRef="output_key" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="true">
       <visualDescription h="60" w="100" x="294" y="421">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -46,17 +46,21 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_key" sRef="input_key"/>
       </port>
-      <parameter iname="IData" order="0" parid="input_key" uname="data" varid="OCK"/>
+      <port name="output_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="output_key"/>
+      </port>
+      <parameter iname="IData" order="0" parid="input_key" uname="data" varid="IPK"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IPartitionFunction" multiple="false" private="false" replica="0" uRef="partition_function" visibleInterface="true">
-      <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="false">
-        <visualDescription h="10" w="10" x="46" y="26"/>
-      </slices>
       <slices cRef="output_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_key" transitive="false">
         <visualDescription h="10" w="10" x="104" y="18"/>
+      </slices>
+      <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="false">
+        <visualDescription h="10" w="10" x="46" y="26"/>
       </slices>
       <visualDescription h="40" w="167" x="138" y="319"/>
     </unit>

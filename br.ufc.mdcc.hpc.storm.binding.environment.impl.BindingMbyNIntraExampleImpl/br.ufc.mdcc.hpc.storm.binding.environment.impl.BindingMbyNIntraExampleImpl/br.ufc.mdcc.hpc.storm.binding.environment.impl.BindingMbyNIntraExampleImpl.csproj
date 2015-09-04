@@ -63,17 +63,9 @@
       <Project>{4BB52CBE-64B0-4E9C-812F-921ED3FB87AF}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient\br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient\br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient.csproj">
-      <Project>{CF89C678-534D-4D6A-BAB5-D141B2CC1455}</Project>
-      <Name>br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra.csproj">
       <Project>{2740F5B5-682D-40F2-B578-FFF3EC0645FC}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer\br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer\br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer.csproj">
-      <Project>{60E1C26D-D1BF-41F4-99CE-B6D5B6D44731}</Project>
-      <Name>br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN.csproj">
       <Project>{E3CA865E-AFBF-40C4-B7CE-0CEF37F4B21F}</Project>
@@ -86,6 +78,14 @@
     <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner.csproj">
       <Project>{B1988D74-54AE-4031-B185-E046226BC359}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient\br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient\br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient.csproj">
+      <Project>{CF89C678-534D-4D6A-BAB5-D141B2CC1455}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer\br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer\br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer.csproj">
+      <Project>{60E1C26D-D1BF-41F4-99CE-B6D5B6D44731}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
