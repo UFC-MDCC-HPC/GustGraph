@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d5d913deabf49fadad83be65500e9e276354832c7ef0334e1f7de22ccdb9989b0ad4fe5ba07901c3eed5f7b370e0bffc88dc53bef09f9fce16c275c5d6cad41850bcc541d145cafb827df61b4b579dfcdef025d41f73b35677477aea91758479bd5ba52dc3607082c0afb20c405ad1e54f089eea0cbd5ac018fd0af9091a80a3" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007d3e2c17e115309749f01f575efe3ce7ccbf74a49ab0e39f08a99dea5fd45765bfbe8354d3c2ab5de12d67a9bcc3bdc517a12c0584a45b4c27e10f2a2cbf172f6dae636b40093a8f21dcb89c93708f6215a90d750a05d3bf4cfbcf6d8a39db81a31ef626dc7d3b1955d1fe6fd6118d372bbaef6acfc57cfce3a0f63606be9cae" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerComponent localRef="env_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/EnvironmentBindingMbyNIntra.hpe" multiple="false" name="EnvironmentBindingMbyNIntra" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="61" w="188" x="276" y="431">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="server_port_type" varName="S"/>
-      <parameter formFieldId="client_port_type" varName="C"/>
-      <unitBounds parallel="true" uRef="client">
-        <visualDescription h="20" w="20" x="15" y="19"/>
-      </unitBounds>
-      <unitBounds parallel="true" uRef="server">
-        <visualDescription h="20" w="20" x="144" y="19"/>
-      </unitBounds>
-    </innerComponent>
     <innerComponent localRef="s" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
       <visualDescription h="60" w="100" x="621" y="357">
         <color b="255" g="255" r="255"/>
@@ -41,16 +28,16 @@
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="input_key" varName="IMK"/>
-      <port localRef="input_key" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="true">
-        <visualDescription h="60" w="100" x="812" y="110">
+      <port localRef="Address" location="br.ufc.mdcc.common.Address/Address.hpe" multiple="false" name="Address" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="60" w="100" x="907" y="304">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
-      <port localRef="Address" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Address/Address.hpe" multiple="false" name="Address" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="true">
-        <visualDescription h="60" w="100" x="907" y="304">
+      <port localRef="input" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="60" w="100" x="848" y="105">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -80,7 +67,7 @@
         <visualDescription h="60" w="100" x="620" y="30">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###577652113"/>
+        <parameter formFieldId="item_type" varName="X###414221702"/>
         <unitBounds parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -110,7 +97,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="input_map_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="136" x="48" y="182">
+      <visualDescription h="60" w="136" x="1044" y="160">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
@@ -118,7 +105,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="input_map_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="150" x="209" y="184">
+      <visualDescription h="60" w="150" x="1054" y="243">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
@@ -126,7 +113,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="input_splitter" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="128" x="253" y="261">
+      <visualDescription h="60" w="128" x="1092" y="330">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
@@ -134,7 +121,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="output_reduce_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="227" x="269" y="347">
+      <visualDescription h="60" w="227" x="1074" y="429">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
@@ -142,14 +129,88 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="output_reduce_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="215" x="42" y="415">
+      <visualDescription h="60" w="215" x="1016" y="85">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="C###577652113" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+    <innerComponent localRef="channel" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" multiple="false" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" exposed="false">
+      <visualDescription h="71" w="158" x="244" y="216">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="root">
+        <visualDescription h="20" w="20" x="104" y="26"/>
+      </unitBounds>
+      <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
+        <visualDescription h="20" w="20" x="14" y="9"/>
+      </unitBounds>
+      <unitBounds parallel="true" slice_replica="1" unit_replica="0" uRef="peer">
+        <visualDescription h="20" w="20" x="125" y="41"/>
+      </unitBounds>
+      <unitBounds parallel="true" slice_replica="2" unit_replica="0" uRef="peer">
+        <visualDescription h="20" w="20" x="15" y="39"/>
+      </unitBounds>
+      <unitBounds parallel="true" slice_replica="3" unit_replica="0" uRef="peer">
+        <visualDescription h="20" w="20" x="124" y="6"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="read_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="160" x="22" y="181">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
+      <unitBounds parallel="false" uRef="client">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+      <unitBounds parallel="false" uRef="server">
+        <visualDescription h="20" w="20" x="28" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="write_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="170" x="436" y="192">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
+      <unitBounds parallel="false" uRef="client">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+      <unitBounds parallel="false" uRef="server">
+        <visualDescription h="20" w="20" x="28" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="map_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="144" x="425" y="444">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
+      <unitBounds parallel="false" uRef="client">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+      <unitBounds parallel="false" uRef="server">
+        <visualDescription h="20" w="20" x="28" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="reduce_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="179" x="35" y="444">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
+      <unitBounds parallel="false" uRef="client">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+      <unitBounds parallel="false" uRef="server">
+        <visualDescription h="20" w="20" x="28" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="c" direct="true" varName="C"/>
+    <supplyParameter cRef="s" direct="true" varName="S"/>
+    <innerComponent localRef="C###414221702" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
       <visualDescription h="60" w="100" x="556" y="288">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -159,8 +220,12 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###577652113" varName="X###577652113"/>
+    <supplyParameter cRef="C###414221702" varName="X###414221702"/>
     <interface iRef="IReduceCollector" nArgs="0">
+      <slice isRef="channel">
+        <originRef cRef="channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="115" y="12"/>
+      </slice>
       <visualDescription h="40" w="137" x="94" y="270">
         <color b="255" g="0" r="0"/>
       </visualDescription>
@@ -169,6 +234,10 @@
       </action>
     </interface>
     <interface iRef="IMapFeeder" nArgs="0">
+      <slice isRef="channel">
+        <originRef cRef="channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="9" y="13"/>
+      </slice>
       <visualDescription h="40" w="182" x="413" y="270">
         <color b="203" g="192" r="255"/>
       </visualDescription>
@@ -177,6 +246,10 @@
       </action>
     </interface>
     <interface iRef="IReadInput" nArgs="0">
+      <slice isRef="channel">
+        <originRef cRef="channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="109" y="18"/>
+      </slice>
       <visualDescription h="40" w="120" x="77" y="53">
         <color b="0" g="128" r="0"/>
       </visualDescription>
@@ -185,6 +258,10 @@
       </action>
     </interface>
     <interface iRef="IWriteOutput" nArgs="0">
+      <slice isRef="channel">
+        <originRef cRef="channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="14" y="26"/>
+      </slice>
       <visualDescription h="40" w="125" x="438" y="56">
         <color b="0" g="128" r="0"/>
       </visualDescription>
@@ -193,16 +270,28 @@
       </action>
     </interface>
     <unit facet="0" iRef="IReduceCollector" multiple="true" private="false" replica="0" uRef="reduce_collector" visibleInterface="true">
+      <slices cRef="channel" inner_replica="0" slice_replica="2" uRef="peer" sliceName="channel" transitive="false">
+        <visualDescription h="10" w="10" x="115" y="12"/>
+      </slices>
       <visualDescription h="40" w="137" x="94" y="350"/>
     </unit>
     <unit facet="0" iRef="IMapFeeder" multiple="true" private="false" replica="0" uRef="map_feeder" visibleInterface="true">
+      <slices cRef="channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="channel" transitive="false">
+        <visualDescription h="10" w="10" x="9" y="13"/>
+      </slices>
       <visualDescription h="40" w="182" x="413" y="350"/>
     </unit>
     <unit facet="0" iRef="IReadInput" multiple="false" private="false" replica="0" uRef="read_input" visibleInterface="true">
-      <visualDescription h="40" w="80" x="97" y="126"/>
+      <slices cRef="channel" inner_replica="0" slice_replica="0" uRef="peer" sliceName="channel" transitive="false">
+        <visualDescription h="10" w="10" x="109" y="18"/>
+      </slices>
+      <visualDescription h="40" w="127" x="74" y="127"/>
     </unit>
     <unit facet="0" iRef="IWriteOutput" multiple="false" private="false" replica="0" uRef="write_output" visibleInterface="true">
-      <visualDescription h="40" w="80" x="461" y="140"/>
+      <slices cRef="channel" inner_replica="0" slice_replica="3" uRef="peer" sliceName="channel" transitive="false">
+        <visualDescription h="10" w="10" x="14" y="26"/>
+      </slices>
+      <visualDescription h="40" w="120" x="440" y="127"/>
     </unit>
   </componentInfo>
 </component:component>
