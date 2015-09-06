@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="DGAC">
-      <HintPath>..\..\MapReduce-for-HPE\DGAC.dll</HintPath>
+      <HintPath>..\..\HPC-Shelf-MapReduce\lib\DGAC.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
