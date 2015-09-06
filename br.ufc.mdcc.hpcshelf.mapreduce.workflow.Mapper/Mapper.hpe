@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000000960848a5e30591b59fc4aeef10f5211aba1177a7e484acbf9109f4d919d96918ae8fc6afe284692a4a78eed5d8c0935567db4531cbe70125ee53d6f49967cea700371b1d35ef42463ff6c31d4c10047f12293b3fb01b12d66532d49d5425230d57b39e6c6700b42777b1f776807ea0954d3b85da2e15516d5240053d22a8eda" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ddb8164578f499bd530f08ff293c8e12acf8440f96be2e94f4648ccd57f1ced01b688c81e90ef615340f324032d5ae4333a4a917192c9e9c0bc8ab82f34d4e6ffa0a05c9f111badb2b18a005a8dba47e1ae7d3b0d97d04f04c31a7fef88e539f38b415b5ec41e1ecf2ec38092ecf96e3ddc762a98ffea0f5152263a996f426ae" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b13066598688bb57006f0d446a8ab9cd807767ac1909daee775b29691575899b8ac62ae99e7b65035d7242fca84e9f995086d0b7275cac68eaa78426ab8381dc9370c63ffd5c58c386cc2fd12f5ffdb4dcbc296be3605a5505e3195edfc4138ff05530951741f9e9c820d0087d352e859712add09af76d754b3fd7725fc5d8b8" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.Work/Work.hpe" name="Work" package="br.ufc.mdcc.hpcshelf.mapreduce" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="273" y="436">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a1d06f89d04477e8e400f0aab2b6efe51782d002f506495ae0f1b7637468d43a22acae7b5b8914eb5d9a8c51f4dc1f2f563378276e60db54ea1c57cb34443133bedcf6e7f6df540f8eeea2b28c92830822ee78c282775019f52aaec87ceab83c34bca1a2c31463ad67bb92be9e5230bd4b76af4b4cd58c692c72409bae362186" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.Work/Work.hpe" name="Work" package="br.ufc.mdcc.hpcshelf.mapreduce" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="216" y="457">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="output_type" varName="O"/>
         <parameter formFieldId="input_type" varName="I"/>
-        <port localRef="input" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="true" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="true">
-          <visualDescription h="60" w="100" x="87" y="511">
+        <port localRef="input_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="true" name="Data" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="60" w="100" x="86" y="496">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <unitBounds parallel="false" uRef="data">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <port localRef="output" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="true" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="true">
-          <visualDescription h="60" w="100" x="390" y="506">
+        <port localRef="output_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="true" name="Data" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="60" w="100" x="378" y="493">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <unitBounds parallel="false" uRef="data">
@@ -62,7 +62,7 @@
         </unitBounds>
       </port>
       <port localRef="output" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="true">
-        <visualDescription h="60" w="100" x="390" y="506">
+        <visualDescription h="60" w="100" x="584" y="468">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -86,38 +86,33 @@
         <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
-    <fusion>
-      <cRefs>map_function</cRefs>
-      <cRefs>base</cRefs>
-      <pRef>output</pRef>
-    </fusion>
     <interface iRef="IMapper" nArgs="0">
-      <slice isRef="map_function">
-        <originRef cRef="map_function" iRef="IMapFunction"/>
-        <visualDescription h="10" w="10" x="58" y="19"/>
-      </slice>
       <slice isRef="env_binding">
         <originRef cRef="env_binding" iRef="IClientGathercastIntra"/>
         <visualDescription h="10" w="10" x="13" y="25"/>
       </slice>
+      <slice isRef="map_function">
+        <originRef cRef="map_function" iRef="IMapFunction"/>
+        <visualDescription h="10" w="10" x="58" y="19"/>
+      </slice>
       <visualDescription h="40" w="80" x="183" y="228">
         <color b="144" g="238" r="144"/>
       </visualDescription>
-      <port name="output">
+      <port name="env_binding">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output" sRef="map_function"/>
-      </port>
-      <port name="input_key">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key" sRef="map_function"/>
+        <slice pRef="env_binding" sRef="env_binding"/>
       </port>
       <port name="input_value">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_value" sRef="map_function"/>
       </port>
-      <port name="env_binding">
+      <port name="input_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="env_binding" sRef="env_binding"/>
+        <slice pRef="input_key" sRef="map_function"/>
+      </port>
+      <port name="output">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output" sRef="map_function"/>
       </port>
       <action id="main">
         <protocol/>
@@ -125,8 +120,8 @@
     </interface>
     <unit facet="0" iRef="IMapper" multiple="true" private="false" replica="0" uRef="mapper" visibleInterface="true">
       <super cRef="base" uRef="work"/>
-      <slices cRef="output" inner_replica="0" slice_replica="0" uRef="data" sliceName="output" transitive="false">
-        <visualDescription h="10" w="10" x="51" y="27"/>
+      <slices cRef="output" inner_replica="0" slice_replica="0" uRef="data" sliceName="output" transitive="true">
+        <visualDescription h="10" w="10" x="137" y="10"/>
       </slices>
       <slices cRef="env_binding" inner_replica="0" slice_replica="0" uRef="client" sliceName="env_binding" transitive="false">
         <visualDescription h="10" w="10" x="13" y="25"/>

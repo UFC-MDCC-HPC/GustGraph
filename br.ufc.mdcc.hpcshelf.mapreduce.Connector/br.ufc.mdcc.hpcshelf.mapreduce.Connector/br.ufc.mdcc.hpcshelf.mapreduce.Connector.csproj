@@ -65,9 +65,5 @@
       <Project>{4BB52CBE-64B0-4E9C-812F-921ED3FB87AF}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.basic.Data\br.ufc.mdcc.hpcshelf.mapreduce.basic.Data\br.ufc.mdcc.hpcshelf.mapreduce.basic.Data.csproj">
-      <Project>{7E59B89F-898A-46D1-9EBD-B2A0448D9770}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.basic.Data</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>

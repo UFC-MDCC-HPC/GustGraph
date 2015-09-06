@@ -1,13 +1,15 @@
 /* AUTOMATICALLY GENERATE CODE */
 
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.hpcshelf.mapreduce.basic.Data;
+using br.ufc.mdcc.common.KVPair;
+using br.ufc.mdcc.common.Data;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.Connector
 {
-	public interface BaseIConnectorClient<I> : ISynchronizerKind 
-		where I:IData
+	public interface BaseIConnectorClient<ICK, ICV> : ISynchronizerKind 
+		where ICV:IData
+		where ICK:IData
 	{
-		I Input {get;}
+		IKVPair<ICK, ICV> Input {get;}
 	}
 }

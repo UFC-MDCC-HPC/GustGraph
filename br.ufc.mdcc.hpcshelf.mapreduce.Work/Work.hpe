@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b13066598688bb57006f0d446a8ab9cd807767ac1909daee775b29691575899b8ac62ae99e7b65035d7242fca84e9f995086d0b7275cac68eaa78426ab8381dc9370c63ffd5c58c386cc2fd12f5ffdb4dcbc296be3605a5505e3195edfc4138ff05530951741f9e9c820d0087d352e859712add09af76d754b3fd7725fc5d8b8" isAbstract="true" kind="Computation" name="Work" packagePath="br.ufc.mdcc.hpcshelf.mapreduce">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a1d06f89d04477e8e400f0aab2b6efe51782d002f506495ae0f1b7637468d43a22acae7b5b8914eb5d9a8c51f4dc1f2f563378276e60db54ea1c57cb34443133bedcf6e7f6df540f8eeea2b28c92830822ee78c282775019f52aaec87ceab83c34bca1a2c31463ad67bb92be9e5230bd4b76af4b4cd58c692c72409bae362186" isAbstract="true" kind="Computation" name="Work" packagePath="br.ufc.mdcc.hpcshelf.mapreduce">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
   <componentInfo>
-    <parameter componentRef="input" formFieldId="input_type" order="0" variance="contravariant" varName="I"/>
-    <parameter componentRef="output" formFieldId="output_type" order="1" variance="contravariant" varName="O"/>
-    <innerComponent localRef="input" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="true" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" parameter_id="input_type" exposed="true">
-      <visualDescription h="60" w="100" x="114" y="470">
+    <parameter componentRef="input_type" formFieldId="input_type" order="0" variance="contravariant" varName="I"/>
+    <parameter componentRef="output_type" formFieldId="output_type" order="1" variance="contravariant" varName="O"/>
+    <innerComponent localRef="input_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="true" name="Data" package="br.ufc.mdcc.common" parameter_id="input_type" exposed="true">
+      <visualDescription h="60" w="100" x="87" y="459">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="output" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="true" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" parameter_id="output_type" exposed="true">
-      <visualDescription h="60" w="100" x="420" y="461">
+    <innerComponent localRef="output_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="true" name="Data" package="br.ufc.mdcc.common" parameter_id="output_type" exposed="true">
+      <visualDescription h="60" w="100" x="370" y="461">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
@@ -26,24 +26,24 @@
       </unitBounds>
     </innerComponent>
     <interface iRef="IWork" nArgs="2">
-      <slice isRef="input">
-        <originRef cRef="input" iRef="IData"/>
-        <visualDescription h="10" w="10" x="11" y="24"/>
+      <slice isRef="input_type">
+        <originRef cRef="input_type" iRef="IData"/>
+        <visualDescription h="10" w="10" x="12" y="26"/>
       </slice>
-      <slice isRef="output">
-        <originRef cRef="output" iRef="IData"/>
-        <visualDescription h="10" w="10" x="51" y="27"/>
+      <slice isRef="output_type">
+        <originRef cRef="output_type" iRef="IData"/>
+        <visualDescription h="10" w="10" x="52" y="25"/>
       </slice>
       <visualDescription h="40" w="80" x="231" y="297">
         <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="input">
+      <port name="input_type">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input" sRef="input"/>
+        <slice pRef="input_type" sRef="input_type"/>
       </port>
-      <port name="output">
+      <port name="output_type">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output" sRef="output"/>
+        <slice pRef="output_type" sRef="output_type"/>
       </port>
       <parameter iname="IData" order="0" parid="input_type" uname="data" varid="I"/>
       <parameter iname="IData" order="1" parid="output_type" uname="data" varid="O"/>
@@ -52,11 +52,11 @@
       </action>
     </interface>
     <unit facet="0" iRef="IWork" multiple="true" private="false" replica="0" uRef="work" visibleInterface="true">
-      <slices cRef="output" inner_replica="0" slice_replica="0" uRef="data" sliceName="output" transitive="false">
-        <visualDescription h="10" w="10" x="51" y="27"/>
+      <slices cRef="output_type" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_type" transitive="false">
+        <visualDescription h="10" w="10" x="52" y="25"/>
       </slices>
-      <slices cRef="input" inner_replica="0" slice_replica="0" uRef="data" sliceName="input" transitive="false">
-        <visualDescription h="10" w="10" x="11" y="24"/>
+      <slices cRef="input_type" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_type" transitive="false">
+        <visualDescription h="10" w="10" x="12" y="26"/>
       </slices>
       <visualDescription h="40" w="80" x="231" y="377"/>
     </unit>

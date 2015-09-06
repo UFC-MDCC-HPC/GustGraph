@@ -1,10 +1,11 @@
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.hpcshelf.mapreduce.basic.Data;
+using br.ufc.mdcc.common.Data;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.Connector
 {
-	public interface IConnectorServer<O> : BaseIConnectorServer<O>
-		where O:IData
+	public interface IConnectorServer<OCK, OCV> : BaseIConnectorServer<OCK, OCV>
+		where OCV:IData
+		where OCK:IData
 	{
 	}
 }
