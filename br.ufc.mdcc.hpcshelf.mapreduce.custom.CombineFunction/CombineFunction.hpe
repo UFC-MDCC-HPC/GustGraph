@@ -7,8 +7,6 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <parameter componentRef="input_key_type" formFieldId="input_key_type" order="0" variance="contravariant" varName="OMK"/>
-    <parameter componentRef="input_value_type" formFieldId="input_value_type" order="1" variance="contravariant" varName="OMV"/>
     <innerComponent localRef="input_key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_key_type" exposed="true">
       <visualDescription h="60" w="162" x="46" y="445">
         <color b="255" g="255" r="255"/>
@@ -70,12 +68,6 @@
       </action>
     </interface>
     <unit facet="0" iRef="ICombineFunction" multiple="false" private="false" replica="0" uRef="combine_function" visibleInterface="true">
-      <slices cRef="input_key_type" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key_type" transitive="false">
-        <visualDescription h="10" w="10" x="12" y="28"/>
-      </slices>
-      <slices cRef="input_value_type" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_value_type" transitive="false">
-        <visualDescription h="10" w="10" x="62" y="25"/>
-      </slices>
       <visualDescription h="40" w="145" x="153" y="335"/>
     </unit>
   </componentInfo>
