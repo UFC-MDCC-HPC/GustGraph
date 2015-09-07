@@ -74,6 +74,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.common.KVPair",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.common.Address", "..\br.ufc.mdcc.common.Address\br.ufc.mdcc.common.Address\br.ufc.mdcc.common.Address.csproj", "{AC3F2496-01A1-4D68-87D0-230C68F6BBDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink", "..\br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink\br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink\br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink.csproj", "{E27FAA80-9E4B-4CBE-970F-23E98879A3A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -204,6 +206,10 @@ Global
 		{D4DA93D1-BB74-446F-A26D-83BB1BA32A82}.Debug|x86.Build.0 = Debug|Any CPU
 		{D4DA93D1-BB74-446F-A26D-83BB1BA32A82}.Release|x86.ActiveCfg = Release|Any CPU
 		{D4DA93D1-BB74-446F-A26D-83BB1BA32A82}.Release|x86.Build.0 = Release|Any CPU
+		{E27FAA80-9E4B-4CBE-970F-23E98879A3A0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E27FAA80-9E4B-4CBE-970F-23E98879A3A0}.Debug|x86.Build.0 = Debug|Any CPU
+		{E27FAA80-9E4B-4CBE-970F-23E98879A3A0}.Release|x86.ActiveCfg = Release|Any CPU
+		{E27FAA80-9E4B-4CBE-970F-23E98879A3A0}.Release|x86.Build.0 = Release|Any CPU
 		{E3CA865E-AFBF-40C4-B7CE-0CEF37F4B21F}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{E3CA865E-AFBF-40C4-B7CE-0CEF37F4B21F}.Debug|x86.Build.0 = Debug|Any CPU
 		{E3CA865E-AFBF-40C4-B7CE-0CEF37F4B21F}.Release|x86.ActiveCfg = Release|Any CPU

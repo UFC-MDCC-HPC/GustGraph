@@ -67,7 +67,7 @@
         <visualDescription h="60" w="100" x="620" y="30">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###414221702"/>
+        <parameter formFieldId="item_type" varName="X###839801554"/>
         <unitBounds parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -143,7 +143,7 @@
       <unitBounds parallel="false" uRef="root">
         <visualDescription h="20" w="20" x="104" y="26"/>
       </unitBounds>
-      <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
+      <unitBounds parallel="false" slice_replica="0" unit_replica="0" uRef="peer">
         <visualDescription h="20" w="20" x="14" y="9"/>
       </unitBounds>
       <unitBounds parallel="true" slice_replica="1" unit_replica="0" uRef="peer">
@@ -152,7 +152,7 @@
       <unitBounds parallel="true" slice_replica="2" unit_replica="0" uRef="peer">
         <visualDescription h="20" w="20" x="15" y="39"/>
       </unitBounds>
-      <unitBounds parallel="true" slice_replica="3" unit_replica="0" uRef="peer">
+      <unitBounds parallel="false" slice_replica="3" unit_replica="0" uRef="peer">
         <visualDescription h="20" w="20" x="124" y="6"/>
       </unitBounds>
     </innerComponent>
@@ -210,7 +210,7 @@
     </innerComponent>
     <supplyParameter cRef="c" direct="true" varName="C"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>
-    <innerComponent localRef="C###414221702" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+    <innerComponent localRef="C###839801554" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
       <visualDescription h="60" w="100" x="556" y="288">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -220,7 +220,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###414221702" varName="X###414221702"/>
+    <supplyParameter cRef="C###839801554" varName="X###839801554"/>
     <interface iRef="IReduceCollector" nArgs="0">
       <slice isRef="channel">
         <originRef cRef="channel" iRef="IChannel"/>
@@ -248,7 +248,7 @@
     <interface iRef="IReadInput" nArgs="0">
       <slice isRef="channel">
         <originRef cRef="channel" iRef="IChannel"/>
-        <visualDescription h="10" w="10" x="109" y="18"/>
+        <visualDescription h="10" w="10" x="89" y="23"/>
       </slice>
       <visualDescription h="40" w="120" x="77" y="53">
         <color b="0" g="128" r="0"/>
@@ -260,7 +260,7 @@
     <interface iRef="IWriteOutput" nArgs="0">
       <slice isRef="channel">
         <originRef cRef="channel" iRef="IChannel"/>
-        <visualDescription h="10" w="10" x="14" y="26"/>
+        <visualDescription h="10" w="10" x="9" y="23"/>
       </slice>
       <visualDescription h="40" w="125" x="438" y="56">
         <color b="0" g="128" r="0"/>
@@ -283,13 +283,13 @@
     </unit>
     <unit facet="0" iRef="IReadInput" multiple="false" private="false" replica="0" uRef="read_input" visibleInterface="true">
       <slices cRef="channel" inner_replica="0" slice_replica="0" uRef="peer" sliceName="channel" transitive="false">
-        <visualDescription h="10" w="10" x="109" y="18"/>
+        <visualDescription h="10" w="10" x="89" y="23"/>
       </slices>
       <visualDescription h="40" w="127" x="74" y="127"/>
     </unit>
     <unit facet="0" iRef="IWriteOutput" multiple="false" private="false" replica="0" uRef="write_output" visibleInterface="true">
       <slices cRef="channel" inner_replica="0" slice_replica="3" uRef="peer" sliceName="channel" transitive="false">
-        <visualDescription h="10" w="10" x="14" y="26"/>
+        <visualDescription h="10" w="10" x="9" y="23"/>
       </slices>
       <visualDescription h="40" w="120" x="440" y="127"/>
     </unit>
