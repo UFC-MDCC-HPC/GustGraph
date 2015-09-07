@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009936aee64d96a7ee675052d5b88d7d1dff11a89729c7371592986b3691b18da21ca181f242e475ca2f8ca00e242f11f12e92ea53d5d8cce02b0a9f20b30ece69f596c07d5e9243a41ac7a5afc1ccba5860ac5c6c8573e86fc774c21e5417035a0ffb9b532f8f8f09b0a118644370eb824e29df2167896c595b5fd37073007ab1" isAbstract="true" kind="Data" name="DataSource" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009b22c2c5e61b7b9f78c591b94f93427cd222bdb18031a7d43572b97fdf80cf576b62a2b4200b0b10c80929ec07a89ef905f5e2b843e1d0bfe427ca92a1548f5aacaaf99075b12cc04f99bee1b0bbf61867660e21f5470cb4aed78dbdb32262db3628b7ef547220d849c52e024a5cf5f46b2bd6686b169347cf625ca87c7c988a" isAbstract="true" kind="Data" name="DataSource" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000372d83aaa123858a97a353cd956eea59b526f3524a0b69ca51d23c6b5e50c14721ee4166d87e7e9f451ee95352730aef34e9cb849e6b5ea13671a9b755f9613ba945240437226e4e67762b01435f8463578849f4af6d6de0f843be1f2709a38edbeeb542483818886b9fcbf40c442db2d79060d42dd605ee7983b06ebf973d85" localRef="base" location="br.ufc.mdcc.common.Data/Data.hpe" name="Data" package="br.ufc.mdcc.common" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="362" y="385">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -8,25 +21,22 @@
   </header>
   <componentInfo>
     <interface iRef="IDataSource" nArgs="0">
-      <slice isRef="data_type">
-        <originRef cRef="data_type" iRef="IData"/>
-        <visualDescription h="10" w="10" x="86" y="25"/>
-      </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource&#xA;{&#xA;&#x9;public interface BaseIDataSource : IDataStructureKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDataSource.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource/bin/1.0.0.0/BaseIDataSource.dll" versionId="1.0.0.0"/>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource&#xA;{&#xA;&#x9;public interface IDataSource : BaseIDataSource&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDataSource.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource/bin/1.0.0.0/IDataSource.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource&#xA;{&#xA;&#x9;public interface BaseIDataSource : BaseIData, IDataStructureKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDataSource.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource/bin/1.0.0.0/BaseIDataSource.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource&#xA;{&#xA;&#x9;public interface IDataSource : BaseIDataSource, IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDataSource.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource/bin/1.0.0.0/IDataSource.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource/bin/1.0.0.0/BaseIDataSource.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="120" x="171" y="244">
-        <color b="144" g="238" r="144"/>
+      <visualDescription h="40" w="123" x="306" y="191">
+        <color b="0" g="255" r="255"/>
       </visualDescription>
     </interface>
-    <unit facet="0" iRef="IDataSource" multiple="false" private="false" replica="0" uRef="data_source" visibleInterface="true">
-      <slices cRef="data_type" inner_replica="0" slice_replica="0" uRef="data" sliceName="data_type" transitive="false">
-        <visualDescription h="10" w="10" x="86" y="25"/>
-      </slices>
-      <visualDescription h="40" w="130" x="167" y="328"/>
+    <unit facet="0" iRef="IDataSource" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
+      <super cRef="base" uRef="data"/>
+      <visualDescription h="40" w="80" x="332" y="294"/>
     </unit>
   </componentInfo>
 </component:component>

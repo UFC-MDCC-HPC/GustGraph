@@ -1,9 +1,11 @@
-﻿using System;
+/* AUTOMATICALLY GENERATE CODE */
 
-namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink {
-	public class BaseIDataSink {
-		public BaseIDataSink() {
-		}
+using br.ufc.pargo.hpe.kinds;
+using br.ufc.mdcc.common.Data;
+
+namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink
+{
+	public interface BaseIDataSink : BaseIData, IDataStructureKind 
+	{
 	}
 }
-
