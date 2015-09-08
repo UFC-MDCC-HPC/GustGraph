@@ -21,15 +21,6 @@
   </header>
   <componentInfo>
     <interface iRef="IDataSink" nArgs="0">
-      <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink&#xA;{&#xA;&#x9;public interface BaseIDataSink : BaseIData, IDataStructureKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDataSink.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink/bin/1.0.0.0/BaseIDataSink.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll</dependency>
-        </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink&#xA;{&#xA;&#x9;public interface IDataSink : BaseIDataSink, IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDataSink.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink/bin/1.0.0.0/IDataSink.dll" versionId="1.0.0.0">
-          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink/bin/1.0.0.0/BaseIDataSink.dll</dependency>
-          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
-        </file>
-      </sources>
       <visualDescription h="40" w="80" x="282" y="222">
         <color b="0" g="255" r="255"/>
       </visualDescription>

@@ -21,15 +21,6 @@
   </header>
   <componentInfo>
     <interface iRef="IDataSource" nArgs="0">
-      <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource&#xA;{&#xA;&#x9;public interface BaseIDataSource : BaseIData, IDataStructureKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDataSource.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource/bin/1.0.0.0/BaseIDataSource.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll</dependency>
-        </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource&#xA;{&#xA;&#x9;public interface IDataSource : BaseIDataSource, IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDataSource.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource/bin/1.0.0.0/IDataSource.dll" versionId="1.0.0.0">
-          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource/bin/1.0.0.0/BaseIDataSource.dll</dependency>
-          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
-        </file>
-      </sources>
       <visualDescription h="40" w="123" x="306" y="191">
         <color b="0" g="255" r="255"/>
       </visualDescription>
