@@ -71,7 +71,7 @@
         <visualDescription h="60" w="100" x="636" y="52">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###759941667"/>
+        <parameter formFieldId="item_type" varName="X###14126182"/>
         <unitBounds parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -167,10 +167,10 @@
       <parameter formFieldId="server_port_type" varName="S1M"/>
       <parameter formFieldId="client_port_type" varName="C1M"/>
       <unitBounds parallel="false" uRef="client">
-        <visualDescription h="20" w="20" x="5" y="2"/>
+        <visualDescription h="20" w="20" x="3" y="15"/>
       </unitBounds>
       <unitBounds parallel="false" uRef="server">
-        <visualDescription h="20" w="20" x="28" y="2"/>
+        <visualDescription h="20" w="20" x="131" y="19"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="write_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
@@ -180,10 +180,10 @@
       <parameter formFieldId="server_port_type" varName="S1M"/>
       <parameter formFieldId="client_port_type" varName="C1M"/>
       <unitBounds parallel="false" uRef="client">
-        <visualDescription h="20" w="20" x="5" y="2"/>
+        <visualDescription h="20" w="20" x="6" y="21"/>
       </unitBounds>
       <unitBounds parallel="false" uRef="server">
-        <visualDescription h="20" w="20" x="28" y="2"/>
+        <visualDescription h="20" w="20" x="145" y="20"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="cmap_sreduce" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
@@ -232,7 +232,7 @@
     <supplyParameter cRef="c1m" direct="true" varName="C1M"/>
     <supplyParameter cRef="cnm" direct="true" varName="CNM"/>
     <supplyParameter cRef="snm" direct="true" varName="SNM"/>
-    <innerComponent localRef="C###759941667" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+    <innerComponent localRef="C###14126182" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
       <visualDescription h="60" w="100" x="556" y="288">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -242,7 +242,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###759941667" varName="X###759941667"/>
+    <supplyParameter cRef="C###14126182" varName="X###14126182"/>
     <interface iRef="IReduceCollector" nArgs="2">
       <slice isRef="channel">
         <originRef cRef="channel" iRef="IChannel"/>
@@ -263,6 +263,10 @@
       <visualDescription h="40" w="137" x="94" y="270">
         <color b="255" g="0" r="0"/>
       </visualDescription>
+      <port name="channel">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="channel" sRef="channel"/>
+      </port>
       <parameter iname="IData" order="0" parid="output_reduce_value" uname="data" varid="ORV"/>
       <parameter iname="IData" order="1" parid="output_reduce_key" uname="data" varid="ORK"/>
       <action id="main">
@@ -296,6 +300,10 @@
       <port name="input_map">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_map" sRef="input_map"/>
+      </port>
+      <port name="channel">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="channel" sRef="channel"/>
       </port>
       <port name="Address">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -343,6 +351,10 @@
       <visualDescription h="40" w="125" x="438" y="56">
         <color b="0" g="128" r="0"/>
       </visualDescription>
+      <port name="channel">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="channel" sRef="channel"/>
+      </port>
       <action id="main">
         <protocol/>
       </action>

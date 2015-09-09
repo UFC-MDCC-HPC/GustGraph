@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f15f9639a65892458db7df08707f8a50a844d572dea3dd34a2ae196194b5b9726094c7c34ec626bcb957c6b611b036768d5081550e83fe2734f48e396224661ed4e9ef6a2c2c74597095fd6fdbcf74ef961f9c9e3810f163e0ae5b1725201945bc3e50b5a0ef9731837dba2eb771441426dec44cb6aa20140151d1987a46e696" isAbstract="true" kind="Qualifier" name="PartitionType" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IPartitionType" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType&#xA;{&#xA;&#x9;public interface BaseIPartitionType : IQualifierKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIPartitionType.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType/bin/1.0.0.0/BaseIPartitionType.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType&#xA;{&#xA;&#x9;public interface IPartitionType : BaseIPartitionType&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IPartitionType.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType/bin/1.0.0.0/IPartitionType.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType/bin/1.0.0.0/BaseIPartitionType.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="118" x="119" y="253">
+        <color b="203" g="192" r="255"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IPartitionType" multiple="false" private="false" replica="0" uRef="partition_type" visibleInterface="true">
+      <visualDescription h="40" w="118" x="119" y="333"/>
+    </unit>
+  </componentInfo>
+</component:component>

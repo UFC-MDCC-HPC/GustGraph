@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000af74c921ca8f9b0e4240ae0c83f88e9b42c03e61eee3141c52c76721cbf5177a9e7dd7b19d8e61b37340f0eed9adb05c73bc70144234f8e63e065f3f7eeebe6c66b47857b93dc7264efdcf8b0ca1efd0cffd00863822b8c12f1d6c49ca03723c89a67c3ddebabba8863a2fd5fc5a114e2cca46aefaa88c0b5019fc4b6896b5a2" isAbstract="true" kind="Qualifier" name="PartitionTypeForReduce" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f15f9639a65892458db7df08707f8a50a844d572dea3dd34a2ae196194b5b9726094c7c34ec626bcb957c6b611b036768d5081550e83fe2734f48e396224661ed4e9ef6a2c2c74597095fd6fdbcf74ef961f9c9e3810f163e0ae5b1725201945bc3e50b5a0ef9731837dba2eb771441426dec44cb6aa20140151d1987a46e696" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType/PartitionType.hpe" name="PartitionType" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="218" y="336">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="partition_type">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IPartitionTypeForReduce" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForReduce&#xA;{&#xA;&#x9;public interface BaseIPartitionTypeForReduce : BaseIPartitionType, IQualifierKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIPartitionTypeForReduce.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForReduce/bin/1.0.0.0/BaseIPartitionTypeForReduce.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType/bin/1.0.0.0/BaseIPartitionType.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForReduce&#xA;{&#xA;&#x9;public interface IPartitionTypeForReduce : BaseIPartitionTypeForReduce, IPartitionType&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IPartitionTypeForReduce.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForReduce/bin/1.0.0.0/IPartitionTypeForReduce.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForReduce/bin/1.0.0.0/BaseIPartitionTypeForReduce.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType/bin/1.0.0.0/IPartitionType.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="162" x="131" y="124">
+        <color b="203" g="192" r="255"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IPartitionTypeForReduce" multiple="false" private="false" replica="0" uRef="partition_type" visibleInterface="true">
+      <super cRef="base" uRef="partition_type"/>
+      <visualDescription h="40" w="118" x="196" y="252"/>
+    </unit>
+  </componentInfo>
+</component:component>
