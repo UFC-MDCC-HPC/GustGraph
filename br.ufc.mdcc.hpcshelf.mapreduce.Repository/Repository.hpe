@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000634e07a90fed82a60ba23366191122c58a4d6fd7fc3c495d6ce2eae74700338f73a79a36813a2b21a26541a7125519584d980ac555c408bbe9360a3829499d20075d637acf9145953cd691f1f542e0da902bb58894adcb031eb6154853fe52f20c7997d7cd756c53eef565daf5455c6574253e63d9469b1e0e6d2afa0fe9c3b1" isAbstract="true" kind="Computation" name="Repository" packagePath="br.ufc.mdcc.hpcshelf.mapreduce">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000017f88e844c3abe46774a5415288d5b58265341964ddf19fc7be21419cbbbb289b9aeecac371aa39905e10a58747cc12473defa1b30a45ae2692101f289b8454e67ea2c2d2bffd88858284b93bccb73c2781eedfabd9d2dd66def0eb1b65ab3671d2e39885ee14fe02b5d8548d91c1f009cd45028d3ba16c217a4092419a71385" isAbstract="true" kind="Computation" name="Repository" packagePath="br.ufc.mdcc.hpcshelf.mapreduce">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -8,7 +8,7 @@
   </header>
   <componentInfo>
     <innerComponent localRef="feeder" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
-      <visualDescription h="60" w="186" x="410" y="428">
+      <visualDescription h="60" w="186" x="234" y="446">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="server_port_type" varName="S"/>
@@ -20,27 +20,28 @@
         <visualDescription h="20" w="20" x="155" y="20"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="collector" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
-      <visualDescription h="60" w="202" x="126" y="429">
+    <innerComponent localRef="s" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="480" y="505">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="server_port_type" varName="S"/>
-      <parameter formFieldId="client_port_type" varName="C"/>
-      <unitBounds parallel="false" uRef="client">
+      <unitBounds parallel="true" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
-      <unitBounds parallel="false" uRef="server">
-        <visualDescription h="20" w="20" x="28" y="2"/>
+    </innerComponent>
+    <innerComponent localRef="c" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="187" y="506">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
+    <supplyParameter cRef="c" direct="true" varName="C"/>
+    <supplyParameter cRef="s" direct="true" varName="S"/>
     <interface iRef="IRepository" nArgs="0">
       <slice isRef="feeder">
         <originRef cRef="feeder" iRef="IServerBase"/>
-        <visualDescription h="10" w="10" x="94" y="24"/>
-      </slice>
-      <slice isRef="collector">
-        <originRef cRef="collector" iRef="IClientBase"/>
-        <visualDescription h="10" w="10" x="5" y="24"/>
+        <visualDescription h="10" w="10" x="90" y="27"/>
       </slice>
       <visualDescription h="40" w="108" x="283" y="236">
         <color b="0" g="128" r="0"/>
@@ -49,20 +50,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feeder" sRef="feeder"/>
       </port>
-      <port name="collector">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collector" sRef="collector"/>
-      </port>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IRepository" multiple="false" private="false" replica="0" uRef="repository" visibleInterface="true">
       <slices cRef="feeder" inner_replica="0" slice_replica="0" uRef="server" sliceName="feeder" transitive="false">
-        <visualDescription h="10" w="10" x="94" y="24"/>
-      </slices>
-      <slices cRef="collector" inner_replica="0" slice_replica="0" uRef="client" sliceName="collector" transitive="false">
-        <visualDescription h="10" w="10" x="5" y="24"/>
+        <visualDescription h="10" w="10" x="90" y="27"/>
       </slices>
       <visualDescription h="40" w="110" x="283" y="324"/>
     </unit>

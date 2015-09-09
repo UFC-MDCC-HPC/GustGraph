@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000031bc432fdb56836447ee6d509f776be191677c3a08c0aa693cb9674cb8f55924a905415ae8cd4ccc45c910a9a890d7829b7e5970e1e3d7d1ba550e53e969388076cf5a2ad50cbee45b95a06d61755734c24ed60f7a8c4fb44e6cac6c49755e08f091595143d6c50313f3236fbeb70e534d272b7efa2f41b82aea384caf9bb0b7" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f1f598a47da3c6e0bad159e0117b4711e2015f14f1ec2a7c3fa179cff7ae6645f4779ceb1c6ae19978036e2eacdbb32d53e64dd6110070c4a8f71359466f32b743fe0f95a81006493769217db4964d67b26f5232c7acd2005e46b987d0afacee04647c70f34e8f549f64b7be664545801626fa04b3fd433813c872be6d0deba1" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -28,12 +28,13 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="partition_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" exposed="false">
-      <visualDescription h="87" w="116" x="687" y="346">
+      <visualDescription h="87" w="116" x="668" y="351">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="input_key" varName="IMK"/>
-      <port localRef="Address" location="br.ufc.mdcc.common.Address/Address.hpe" multiple="false" name="Address" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="60" w="100" x="853" y="357">
+      <parameter formFieldId="partition_type" varName="IPT"/>
+      <port localRef="address" location="br.ufc.mdcc.common.Address/Address.hpe" multiple="false" name="Address" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="60" w="100" x="831" y="432">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -41,7 +42,7 @@
         </unitBounds>
       </port>
       <port localRef="input" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="60" w="100" x="820" y="257">
+        <visualDescription h="60" w="100" x="832" y="262">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -50,34 +51,6 @@
       </port>
       <unitBounds parallel="false" uRef="partition_function">
         <visualDescription h="20" w="20" x="10" y="43"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="split_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction/SplitFunction.hpe" multiple="false" name="SplitFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" exposed="false">
-      <visualDescription h="60" w="126" x="664" y="136">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="value_type" varName="IMV"/>
-      <parameter formFieldId="key_type" varName="IMK"/>
-      <parameter formFieldId="input_type" varName="IMAP"/>
-      <port localRef="input" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="60" w="100" x="691" y="231">
-          <color b="255" g="255" r="255"/>
-        </visualDescription>
-        <unitBounds parallel="false" uRef="data">
-          <visualDescription h="20" w="20" x="5" y="2"/>
-        </unitBounds>
-      </port>
-      <port localRef="iterator" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="60" w="100" x="636" y="52">
-          <color b="203" g="192" r="255"/>
-        </visualDescription>
-        <parameter formFieldId="item_type" varName="X###14126182"/>
-        <unitBounds parallel="false" uRef="iterator">
-          <visualDescription h="20" w="20" x="5" y="2"/>
-        </unitBounds>
-      </port>
-      <unitBounds parallel="false" uRef="split_function">
-        <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="input_map" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="true" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
@@ -116,7 +89,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="input_splitter" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="in" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="128" x="257" y="61">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -165,7 +138,7 @@
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="server_port_type" varName="S1M"/>
-      <parameter formFieldId="client_port_type" varName="C1M"/>
+      <parameter formFieldId="client_port_type" varName="C11"/>
       <unitBounds parallel="false" uRef="client">
         <visualDescription h="20" w="20" x="3" y="15"/>
       </unitBounds>
@@ -213,7 +186,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="c1m" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="100" x="314" y="520">
+      <visualDescription h="60" w="100" x="429" y="532">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="environment_port_type">
@@ -221,18 +194,53 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="s1m" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="100" x="174" y="524">
+      <visualDescription h="60" w="100" x="60" y="513">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="s1m" direct="true" varName="S1M"/>
-    <supplyParameter cRef="c1m" direct="true" varName="C1M"/>
+    <innerComponent localRef="ipt" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForMap/PartitionTypeForMap.hpe" multiple="false" name="PartitionTypeForMap" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" exposed="false">
+      <visualDescription h="60" w="100" x="702" y="481">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="partition_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="split_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction/SplitFunction.hpe" multiple="false" name="SplitFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" exposed="false">
+      <visualDescription h="70" w="111" x="700" y="111">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="IMV"/>
+      <parameter formFieldId="key_type" varName="IMK"/>
+      <parameter formFieldId="input_type" varName="IN"/>
+      <port localRef="input" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="36" w="64" x="616" y="117">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <port localRef="iterator" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="41" w="93" x="833" y="104">
+          <color b="203" g="192" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="item_type" varName="X###2067575651"/>
+        <unitBounds parallel="false" uRef="iterator">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <unitBounds parallel="false" uRef="split_function">
+        <visualDescription h="20" w="20" x="46" y="46"/>
+      </unitBounds>
+    </innerComponent>
     <supplyParameter cRef="cnm" direct="true" varName="CNM"/>
     <supplyParameter cRef="snm" direct="true" varName="SNM"/>
-    <innerComponent localRef="C###14126182" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+    <supplyParameter cRef="ipt" direct="true" varName="IPT"/>
+    <innerComponent localRef="C###2067575651" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
       <visualDescription h="60" w="100" x="556" y="288">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -242,7 +250,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###14126182" varName="X###14126182"/>
+    <supplyParameter cRef="C###2067575651" varName="X###2067575651"/>
     <interface iRef="IReduceCollector" nArgs="2">
       <slice isRef="channel">
         <originRef cRef="channel" iRef="IChannel"/>
@@ -305,9 +313,9 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="channel" sRef="channel"/>
       </port>
-      <port name="Address">
+      <port name="address">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="Address" sRef="partition_function"/>
+        <slice pRef="address" sRef="partition_function"/>
       </port>
       <port name="input">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -378,11 +386,11 @@
       <slices cRef="input" inner_replica="0" slice_replica="0" uRef="data" sliceName="input" transitive="true">
         <visualDescription h="10" w="10" x="24" y="26"/>
       </slices>
+      <slices cRef="address" inner_replica="0" slice_replica="0" uRef="data" sliceName="address" transitive="true">
+        <visualDescription h="10" w="10" x="102" y="18"/>
+      </slices>
       <slices cRef="input_map" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="input_map" transitive="false">
         <visualDescription h="10" w="10" x="41" y="28"/>
-      </slices>
-      <slices cRef="Address" inner_replica="0" slice_replica="0" uRef="data" sliceName="Address" transitive="true">
-        <visualDescription h="10" w="10" x="102" y="18"/>
       </slices>
       <slices cRef="channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="channel" transitive="false">
         <visualDescription h="10" w="10" x="9" y="13"/>
@@ -390,7 +398,7 @@
       <slices cRef="partition_function" inner_replica="0" slice_replica="0" uRef="partition_function" sliceName="partition_function" transitive="false">
         <visualDescription h="10" w="10" x="162" y="28"/>
         <port>input</port>
-        <port>Address</port>
+        <port>address</port>
       </slices>
       <slices cRef="smap_creduce" inner_replica="0" slice_replica="0" uRef="server" sliceName="smap_creduce" transitive="false">
         <visualDescription h="10" w="10" x="21" y="28"/>

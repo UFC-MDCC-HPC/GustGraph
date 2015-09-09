@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002115d2c9d4be7ca5242a80723742e7dda88d3d2b3e3bd7ed5e0a83f22c1528481a66c20a687201f9461726ad6db57bb27aadbe652bb2c616d7453db098bf004c9f4e89d42bf9bd941d5be537237931710c8dbdffafafe01d33dfc49eb670eb07e101da8809fd7888c3b309261a3ff1e169d1ec48eaee3751fd2513fc852e7195" isAbstract="true" kind="Computation" name="PartitionFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e3c5eee13ff2762e2fceba8ee0eb788f5240941ca80a2b1d6dd75b7ca9e6b08efede6b0b1c9dd7c47619317a08fb71328017de2345bb8ba1813670385cfd804248a139412b0bcd2ac3425972bd889f656d72e806b8981c1e0d31aab221a782d2a2d661700acf4bfa77d42cf4b822624e186a5f888e158cfe6b942906bc9c848a" isAbstract="true" kind="Computation" name="PartitionFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -8,7 +8,8 @@
   </header>
   <componentInfo>
     <parameter componentRef="input" formFieldId="input_key" order="0" variance="contravariant" varName="IPK"/>
-    <innerComponent localRef="Address" location="br.ufc.mdcc.common.Address/Address.hpe" multiple="false" name="Address" package="br.ufc.mdcc.common" exposed="true">
+    <parameter componentRef="partition_type" formFieldId="partition_type" order="0" variance="contravariant" varName="IPT"/>
+    <innerComponent localRef="address" location="br.ufc.mdcc.common.Address/Address.hpe" multiple="false" name="Address" package="br.ufc.mdcc.common" exposed="true">
       <visualDescription h="60" w="100" x="306" y="412">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -24,13 +25,21 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="partition_type" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType/PartitionType.hpe" multiple="false" name="PartitionType" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" parameter_id="partition_type" exposed="false">
+      <visualDescription h="91" w="138" x="404" y="291">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="partition_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
     <interface iRef="IPartitionFunction" nArgs="1">
       <slice isRef="input">
         <originRef cRef="input" iRef="IData"/>
         <visualDescription h="10" w="10" x="24" y="26"/>
       </slice>
-      <slice isRef="Address">
-        <originRef cRef="Address" iRef="IAddress"/>
+      <slice isRef="address">
+        <originRef cRef="address" iRef="IAddress"/>
         <visualDescription h="10" w="10" x="102" y="18"/>
       </slice>
       <visualDescription h="40" w="167" x="138" y="239">
@@ -38,9 +47,9 @@
       </visualDescription>
       <port name="input">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key" sRef="input_key"/>
+        <slice pRef="input" sRef="input"/>
       </port>
-      <port name="Address">
+      <port name="address">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="Address" sRef="Address"/>
       </port>
@@ -53,7 +62,7 @@
       <slices cRef="input" inner_replica="0" slice_replica="0" uRef="data" sliceName="input" transitive="false">
         <visualDescription h="10" w="10" x="24" y="26"/>
       </slices>
-      <slices cRef="Address" inner_replica="0" slice_replica="0" uRef="data" sliceName="Address" transitive="false">
+      <slices cRef="address" inner_replica="0" slice_replica="0" uRef="data" sliceName="address" transitive="false">
         <visualDescription h="10" w="10" x="102" y="18"/>
       </slices>
       <visualDescription h="40" w="167" x="138" y="319"/>
