@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4A3CCC94-17C4-41C3-B3D7-9992DFB7236A}</ProjectGuid>
+    <ProjectGuid>{DBF6685A-BA25-4E68-96E6-43B7C9BA53BA}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.TransformFunction</RootNamespace>
-    <AssemblyName>br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.TransformFunction</AssemblyName>
-    <BaseDirectory>..\src\1.0.0.0</BaseDirectory>
+    <RootNamespace>br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.Strategy</RootNamespace>
+    <AssemblyName>br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.Strategy</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <BaseDirectory>..\src\1.0.0.0</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,8 +38,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\src\1.0.0.0\ITransformFunction.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseITransformFunction.cs" />
+    <Compile Include="..\src\1.0.0.0\IStrategy.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseIStrategy.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

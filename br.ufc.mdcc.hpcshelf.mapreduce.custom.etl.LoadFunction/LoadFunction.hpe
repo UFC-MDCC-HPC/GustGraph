@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000abfe6d5154c37c88b0c85928f9b719e7ed38d749740a54864969ac6b2a9780ef8c2ede13854c3dffdd559f493dc2d0d3357e7d7e323c4929ba34cbd7056164a4b716fcb9d0335e3814bcc76ff92150e50e83612e3e85d23cb68d632dbbf431f119a531b5a2a8bb0810579f35de21b6a344857592133fc8dd314ff8e847b8d686" isAbstract="true" kind="Computation" name="LoadFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="ILoadFunction" nArgs="0">
+      <visualDescription h="40" w="206" x="198" y="276">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ILoadFunction" multiple="false" private="false" replica="0" uRef="load_function" visibleInterface="true">
+      <visualDescription h="40" w="206" x="198" y="356"/>
+    </unit>
+  </componentInfo>
+</component:component>

@@ -78,8 +78,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapred
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.Repository", "..\br.ufc.mdcc.hpcshelf.mapreduce.Repository\br.ufc.mdcc.hpcshelf.mapreduce.Repository\br.ufc.mdcc.hpcshelf.mapreduce.Repository.csproj", "{E12C1BEB-2941-41EF-8894-86D4EC6E153E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.ChunkServer", "..\br.ufc.mdcc.hpcshelf.mapreduce.ChunkServer\br.ufc.mdcc.hpcshelf.mapreduce.ChunkServer\br.ufc.mdcc.hpcshelf.mapreduce.ChunkServer.csproj", "{396A2589-FE97-4105-AA92-12474628F36A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType", "..\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType.csproj", "{6030D76B-074C-411F-839D-72C1A43599EE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForMap", "..\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForMap\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForMap\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForMap.csproj", "{92D7F8C8-1FD4-4697-A754-4C449429710E}"
@@ -91,6 +89,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.TransformFunction", "..\br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.TransformFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.TransformFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.TransformFunction.csproj", "{4A3CCC94-17C4-41C3-B3D7-9992DFB7236A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.LoadFunction", "..\br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.LoadFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.LoadFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.LoadFunction.csproj", "{B0F5F3F4-38AA-44EE-B661-8786F2B0C896}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.Strategy", "..\br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.Strategy\br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.Strategy\br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.Strategy.csproj", "{DBF6685A-BA25-4E68-96E6-43B7C9BA53BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -118,10 +118,6 @@ Global
 		{2C633D76-F5C2-4801-9564-BB4F68E020BE}.Debug|x86.Build.0 = Debug|Any CPU
 		{2C633D76-F5C2-4801-9564-BB4F68E020BE}.Release|x86.ActiveCfg = Release|Any CPU
 		{2C633D76-F5C2-4801-9564-BB4F68E020BE}.Release|x86.Build.0 = Release|Any CPU
-		{396A2589-FE97-4105-AA92-12474628F36A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{396A2589-FE97-4105-AA92-12474628F36A}.Debug|x86.Build.0 = Debug|Any CPU
-		{396A2589-FE97-4105-AA92-12474628F36A}.Release|x86.ActiveCfg = Release|Any CPU
-		{396A2589-FE97-4105-AA92-12474628F36A}.Release|x86.Build.0 = Release|Any CPU
 		{3BF5B5AC-3E1A-4133-9D12-4B2011CA1EB2}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{3BF5B5AC-3E1A-4133-9D12-4B2011CA1EB2}.Debug|x86.Build.0 = Debug|Any CPU
 		{3BF5B5AC-3E1A-4133-9D12-4B2011CA1EB2}.Release|x86.ActiveCfg = Release|Any CPU
@@ -250,6 +246,10 @@ Global
 		{D6F40291-BE1B-4EFD-8B63-9D9F35BEA962}.Debug|x86.Build.0 = Debug|Any CPU
 		{D6F40291-BE1B-4EFD-8B63-9D9F35BEA962}.Release|x86.ActiveCfg = Release|Any CPU
 		{D6F40291-BE1B-4EFD-8B63-9D9F35BEA962}.Release|x86.Build.0 = Release|Any CPU
+		{DBF6685A-BA25-4E68-96E6-43B7C9BA53BA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DBF6685A-BA25-4E68-96E6-43B7C9BA53BA}.Debug|x86.Build.0 = Debug|Any CPU
+		{DBF6685A-BA25-4E68-96E6-43B7C9BA53BA}.Release|x86.ActiveCfg = Release|Any CPU
+		{DBF6685A-BA25-4E68-96E6-43B7C9BA53BA}.Release|x86.Build.0 = Release|Any CPU
 		{E12C1BEB-2941-41EF-8894-86D4EC6E153E}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{E12C1BEB-2941-41EF-8894-86D4EC6E153E}.Debug|x86.Build.0 = Debug|Any CPU
 		{E12C1BEB-2941-41EF-8894-86D4EC6E153E}.Release|x86.ActiveCfg = Release|Any CPU
