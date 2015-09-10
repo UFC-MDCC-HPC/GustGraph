@@ -211,6 +211,33 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="split_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.SplitFunction/SplitFunction.hpe" multiple="false" name="SplitFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl" exposed="false">
+      <visualDescription h="60" w="194" x="15" y="225">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="split_output_type" varName="SOT"/>
+      <parameter formFieldId="strategy_type" varName="ETL"/>
+      <parameter formFieldId="split_input_type" varName="IN"/>
+      <port localRef="input" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="42" w="105" x="43" y="148">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="63" y="2"/>
+        </unitBounds>
+      </port>
+      <port localRef="output" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="60" w="171" x="40" y="318">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="65" y="2"/>
+        </unitBounds>
+      </port>
+      <unitBounds parallel="false" uRef="split_function">
+        <visualDescription h="20" w="20" x="159" y="17"/>
+      </unitBounds>
+    </innerComponent>
     <supplyParameter cRef="ipt" direct="true" varName="IPT"/>
     <supplyParameter cRef="c" direct="true" varName="C"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>

@@ -9,8 +9,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>br.ufc.mdcc.common.Address</RootNamespace>
     <AssemblyName>br.ufc.mdcc.common.Address</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <BaseDirectory>..\src\1.0.0.0</BaseDirectory>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
