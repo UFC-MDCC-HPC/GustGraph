@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000017f88e844c3abe46774a5415288d5b58265341964ddf19fc7be21419cbbbb289b9aeecac371aa39905e10a58747cc12473defa1b30a45ae2692101f289b8454e67ea2c2d2bffd88858284b93bccb73c2781eedfabd9d2dd66def0eb1b65ab3671d2e39885ee14fe02b5d8548d91c1f009cd45028d3ba16c217a4092419a71385" isAbstract="true" kind="Computation" name="Repository" packagePath="br.ufc.mdcc.hpcshelf.mapreduce">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000069b71ae7a01622bdfa0fc81348e220366bb1f433659c6ac48667d95c6239331d301875d028cc73433dc2f816cc731de0d238700e580d3d7fce287b7c6a985e6b51456ed433f02f705f68f9de0bb482e83f808189f47f7031b8c2eab92a702f7bffcb78b05ecd6d41307bd3520440f32811417993cf16fa75e794d2a01eb313a7" isAbstract="true" kind="Computation" name="Repository" packagePath="br.ufc.mdcc.hpcshelf.mapreduce">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
   <componentInfo>
+    <parameter componentRef="server_port_type" formFieldId="server_port_type" order="0" variance="contravariant" varName="RS"/>
+    <parameter componentRef="client_port_type" formFieldId="client_port_type" order="1" variance="contravariant" varName="RC"/>
     <innerComponent localRef="feeder" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
-      <visualDescription h="60" w="186" x="234" y="446">
+      <visualDescription h="60" w="186" x="213" y="429">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="server_port_type" varName="S"/>
-      <parameter formFieldId="client_port_type" varName="C"/>
+      <parameter formFieldId="server_port_type" varName="RS"/>
+      <parameter formFieldId="client_port_type" varName="RC"/>
       <unitBounds parallel="false" uRef="client">
         <visualDescription h="20" w="20" x="13" y="19"/>
       </unitBounds>
@@ -20,36 +22,35 @@
         <visualDescription h="20" w="20" x="155" y="20"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="s" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="100" x="480" y="505">
+    <innerComponent localRef="server_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/EnvironmentPortType.hpe" multiple="false" name="EnvironmentPortType" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="server_port_type" exposed="false">
+      <visualDescription h="60" w="183" x="451" y="217">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="c" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="100" x="187" y="506">
+    <innerComponent localRef="client_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/EnvironmentPortType.hpe" multiple="false" name="EnvironmentPortType" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="client_port_type" exposed="false">
+      <visualDescription h="60" w="160" x="168" y="199">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="c" direct="true" varName="C"/>
-    <supplyParameter cRef="s" direct="true" varName="S"/>
-    <interface iRef="IRepository" nArgs="0">
+    <interface iRef="IRepository" nArgs="1">
       <slice isRef="feeder">
         <originRef cRef="feeder" iRef="IServerBase"/>
         <visualDescription h="10" w="10" x="90" y="27"/>
       </slice>
-      <visualDescription h="40" w="108" x="283" y="236">
+      <visualDescription h="40" w="108" x="82" y="325">
         <color b="0" g="128" r="0"/>
       </visualDescription>
       <port name="feeder">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feeder" sRef="feeder"/>
       </port>
+      <parameter iname="IEnvironmentPortType" order="0" parid="server_port_type" uname="environment_port_type" varid="RS"/>
       <action id="main">
         <protocol/>
       </action>

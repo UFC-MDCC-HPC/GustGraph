@@ -1,33 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000971d13b1a5bd18b78596f619745825507a11f8726ab20950545a75527a03872ba00270d16525c3a9fbd76aed905333d0d5a9ac0a76638fa9ed517dc9d16cb290d729fe4c4042949d285a79d17730f003289a52408a67bffc3bb127225651ad572f36b705c9a801d14a52fe52fc7c300c9ea06c1b6fcb3332630819e73609fc96" isAbstract="true" kind="Data" name="DataSink" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
-    <baseType>
-      <extensionType>
-        <extends>true</extends>
-      </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000372d83aaa123858a97a353cd956eea59b526f3524a0b69ca51d23c6b5e50c14721ee4166d87e7e9f451ee95352730aef34e9cb849e6b5ea13671a9b755f9613ba945240437226e4e67762b01435f8463578849f4af6d6de0f843be1f2709a38edbeeb542483818886b9fcbf40c442db2d79060d42dd605ee7983b06ebf973d85" localRef="base" location="br.ufc.mdcc.common.Data/Data.hpe" name="Data" package="br.ufc.mdcc.common" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="322" y="456">
-          <color b="255" g="255" r="255"/>
-        </visualDescription>
-        <unitBounds parallel="false" uRef="data">
-          <visualDescription h="20" w="20" x="5" y="2"/>
-        </unitBounds>
-      </component>
-    </baseType>
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005bce2412c01d926ff4886a2a526ecc6f1dbbfac386a4622b346d1c141e952a990f89a209257fb8d9acd105318a7db8ef34c2b4f16c212ce8d4ecc4ee00ebf43e6a27f56c628f919ae4c3178d39a30d7b0eced8ca05d5fcb5264258e6f9cd765f231bc1a49db66a2323ecea9b4ac23dfe8fefdd61b33c5a52226cb6f9b6e32694" isAbstract="true" kind="Computation" name="DataSink" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
-  <componentInfo>
-    <interface iRef="IDataSink" nArgs="0">
-      <visualDescription h="40" w="80" x="282" y="222">
-        <color b="0" g="255" r="255"/>
-      </visualDescription>
-    </interface>
-    <unit facet="0" iRef="IDataSink" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
-      <super cRef="base" uRef="data"/>
-      <visualDescription h="40" w="80" x="295" y="358"/>
-    </unit>
-  </componentInfo>
+  <componentInfo/>
 </component:component>

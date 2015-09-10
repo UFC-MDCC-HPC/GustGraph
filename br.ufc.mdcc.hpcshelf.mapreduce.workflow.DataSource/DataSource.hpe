@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009b22c2c5e61b7b9f78c591b94f93427cd222bdb18031a7d43572b97fdf80cf576b62a2b4200b0b10c80929ec07a89ef905f5e2b843e1d0bfe427ca92a1548f5aacaaf99075b12cc04f99bee1b0bbf61867660e21f5470cb4aed78dbdb32262db3628b7ef547220d849c52e024a5cf5f46b2bd6686b169347cf625ca87c7c988a" isAbstract="true" kind="Data" name="DataSource" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d91ae33b2667f31923a54fe73da92de214e18b0ec71d358bd352a8dd8b63900bae7bca86e01002aa7f4b6c660d45636fe9a1ff290340bf20918a0fafd6392dd1165a61730f362aa363452015980eab3a0374dfcaac200a0b96bff65eb7070961d2e620ef75d1d710c9d034d8619ee04b04a333b95fc9af2ab9d42dde74d5afc4" isAbstract="true" kind="Computation" name="DataSource" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000372d83aaa123858a97a353cd956eea59b526f3524a0b69ca51d23c6b5e50c14721ee4166d87e7e9f451ee95352730aef34e9cb849e6b5ea13671a9b755f9613ba945240437226e4e67762b01435f8463578849f4af6d6de0f843be1f2709a38edbeeb542483818886b9fcbf40c442db2d79060d42dd605ee7983b06ebf973d85" localRef="base" location="br.ufc.mdcc.common.Data/Data.hpe" name="Data" package="br.ufc.mdcc.common" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="362" y="385">
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000069b71ae7a01622bdfa0fc81348e220366bb1f433659c6ac48667d95c6239331d301875d028cc73433dc2f816cc731de0d238700e580d3d7fce287b7c6a985e6b51456ed433f02f705f68f9de0bb482e83f808189f47f7031b8c2eab92a702f7bffcb78b05ecd6d41307bd3520440f32811417993cf16fa75e794d2a01eb313a7" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.Repository/Repository.hpe" name="Repository" package="br.ufc.mdcc.hpcshelf.mapreduce" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="299" y="390">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <unitBounds parallel="false" uRef="data">
+        <parameter formFieldId="server_port_type" varName="RS"/>
+        <parameter formFieldId="client_port_type" varName="RC"/>
+        <port localRef="feeder" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+          <visualDescription h="60" w="186" x="460" y="389">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="server_port_type" varName="RS"/>
+          <parameter formFieldId="client_port_type" varName="RC"/>
+          <unitBounds parallel="false" uRef="client">
+            <visualDescription h="20" w="20" x="13" y="19"/>
+          </unitBounds>
+          <unitBounds parallel="false" uRef="server">
+            <visualDescription h="20" w="20" x="155" y="20"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="false" uRef="repository">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -20,14 +35,88 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <interface iRef="IDataSource" nArgs="0">
-      <visualDescription h="40" w="123" x="306" y="191">
-        <color b="0" g="255" r="255"/>
+    <parameter componentRef="strategy_type" formFieldId="strategy_type" order="0" variance="contravariant" varName="ETL"/>
+    <parameter componentRef="input_type" formFieldId="input_type" order="0" variance="contravariant" varName="IN"/>
+    <innerComponent localRef="rc" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="79" y="136">
+        <color b="255" g="255" r="255"/>
       </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="rs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="288" y="134">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="strategy_type" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.Strategy/Strategy.hpe" multiple="false" name="Strategy" package="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl" parameter_id="strategy_type" exposed="false">
+      <visualDescription h="60" w="141" x="287" y="134">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="strategy">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="extract_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.ExtractFunction/ExtractFunction.hpe" multiple="false" name="ExtractFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl" exposed="false">
+      <visualDescription h="58" w="142" x="72" y="255">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="extract_output_type" varName="IN"/>
+      <parameter formFieldId="strategy_type" varName="ETL"/>
+      <port localRef="output" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="57" w="128" x="82" y="142">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <unitBounds parallel="false" uRef="extract_function">
+        <visualDescription h="20" w="20" x="119" y="18"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="input_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_type" exposed="false">
+      <visualDescription h="60" w="100" x="150" y="434">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="rc" direct="true" varName="RC"/>
+    <supplyParameter cRef="rs" direct="true" varName="RS"/>
+    <innerRenaming cNewName="extract_data" cOldName="output" cRef="extract_function"/>
+    <interface iRef="IDataSource" nArgs="1">
+      <slice isRef="extract_function">
+        <originRef cRef="extract_function" iRef="IExtractFunction"/>
+        <visualDescription h="10" w="10" x="8" y="25"/>
+      </slice>
+      <visualDescription h="40" w="108" x="129" y="334">
+        <color b="0" g="128" r="0"/>
+      </visualDescription>
+      <port name="extract_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output" sRef="extract_function"/>
+      </port>
+      <parameter iname="IData" order="0" parid="input_type" uname="data" varid="IN"/>
+      <action id="main">
+        <protocol/>
+      </action>
     </interface>
-    <unit facet="0" iRef="IDataSource" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
-      <super cRef="base" uRef="data"/>
-      <visualDescription h="40" w="80" x="332" y="294"/>
+    <unit facet="0" iRef="IDataSource" multiple="false" private="false" replica="0" uRef="repository" visibleInterface="true">
+      <super cRef="base" uRef="repository"/>
+      <slices cRef="extract_data" inner_replica="0" slice_replica="0" uRef="data" sliceName="extract_data" transitive="true">
+        <visualDescription h="10" w="10" x="110" y="28"/>
+      </slices>
+      <slices cRef="extract_function" inner_replica="0" slice_replica="0" uRef="extract_function" sliceName="extract_function" transitive="false">
+        <visualDescription h="10" w="10" x="8" y="25"/>
+        <port>extract_data</port>
+      </slices>
+      <visualDescription h="40" w="110" x="271" y="264"/>
     </unit>
   </componentInfo>
 </component:component>
