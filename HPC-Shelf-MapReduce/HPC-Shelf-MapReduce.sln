@@ -20,8 +20,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapred
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource", "..\br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource\br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource\br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource.csproj", "{BEE63437-0DC5-4A9F-A8A6-16E755AE9B3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction", "..\br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction.csproj", "{3BF5B5AC-3E1A-4133-9D12-4B2011CA1EB2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction", "..\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction.csproj", "{ADB1B6BE-28D3-4B10-BBFC-9224181F52C7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction", "..\br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction.csproj", "{CC4908F8-3F6B-4F14-9179-64EF033B3371}"
@@ -92,6 +90,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapred
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.Strategy", "..\br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.Strategy\br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.Strategy\br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.Strategy.csproj", "{DBF6685A-BA25-4E68-96E6-43B7C9BA53BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.SplitFunction", "..\br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.SplitFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.SplitFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.SplitFunction.csproj", "{83D83656-92DD-44B9-87D0-0FD3E4266B9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -118,10 +118,6 @@ Global
 		{2C633D76-F5C2-4801-9564-BB4F68E020BE}.Debug|x86.Build.0 = Debug|Any CPU
 		{2C633D76-F5C2-4801-9564-BB4F68E020BE}.Release|x86.ActiveCfg = Release|Any CPU
 		{2C633D76-F5C2-4801-9564-BB4F68E020BE}.Release|x86.Build.0 = Release|Any CPU
-		{3BF5B5AC-3E1A-4133-9D12-4B2011CA1EB2}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{3BF5B5AC-3E1A-4133-9D12-4B2011CA1EB2}.Debug|x86.Build.0 = Debug|Any CPU
-		{3BF5B5AC-3E1A-4133-9D12-4B2011CA1EB2}.Release|x86.ActiveCfg = Release|Any CPU
-		{3BF5B5AC-3E1A-4133-9D12-4B2011CA1EB2}.Release|x86.Build.0 = Release|Any CPU
 		{40488558-F21F-4863-A466-15F96A6CD131}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{40488558-F21F-4863-A466-15F96A6CD131}.Debug|x86.Build.0 = Debug|Any CPU
 		{40488558-F21F-4863-A466-15F96A6CD131}.Release|x86.ActiveCfg = Release|Any CPU
@@ -174,6 +170,10 @@ Global
 		{807A087E-123C-4745-B029-C31FC9458A61}.Debug|x86.Build.0 = Debug|Any CPU
 		{807A087E-123C-4745-B029-C31FC9458A61}.Release|x86.ActiveCfg = Release|Any CPU
 		{807A087E-123C-4745-B029-C31FC9458A61}.Release|x86.Build.0 = Release|Any CPU
+		{83D83656-92DD-44B9-87D0-0FD3E4266B9E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{83D83656-92DD-44B9-87D0-0FD3E4266B9E}.Debug|x86.Build.0 = Debug|Any CPU
+		{83D83656-92DD-44B9-87D0-0FD3E4266B9E}.Release|x86.ActiveCfg = Release|Any CPU
+		{83D83656-92DD-44B9-87D0-0FD3E4266B9E}.Release|x86.Build.0 = Release|Any CPU
 		{8B87057A-B2AF-4A07-8F2D-E91E930F9188}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{8B87057A-B2AF-4A07-8F2D-E91E930F9188}.Debug|x86.Build.0 = Debug|Any CPU
 		{8B87057A-B2AF-4A07-8F2D-E91E930F9188}.Release|x86.ActiveCfg = Release|Any CPU

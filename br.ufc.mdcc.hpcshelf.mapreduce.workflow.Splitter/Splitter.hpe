@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000eb6dac06c79b516a8e9896bb59bf3ec15be947664a608a71729689f4e1b8f1bc88749930d5a98b524b9875b5f0ab508372ad9bcfdec95dd4d2ccd5fe8f451c605760faac3248ba0e2c33ceb0a2a4b7735425ea3e0478656ed8426173185c7906d41615c8db6460881813f6135777f7a08192f87f164e636a786c4483b423508f" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002318e6073ccd5f50569daefc67ced9c734312707758774a1e8514898ea8c6d8a7e2d43280a3ba7c974bb4a96b2f040dc199b1d8208c01906f7773e28e20ae98cee3dfef09cbaa7f82327d10afeceb26d47a48e999d0c7606c06c2e19b48bdb0301fe1d560c654e7003a592e15850f66fb73efbb0912de0c2810021818717a995" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -29,14 +29,14 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="partition_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" exposed="false">
-      <visualDescription h="87" w="116" x="829" y="377">
+    <innerComponent localRef="re_partition_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" exposed="false">
+      <visualDescription h="72" w="136" x="792" y="367">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="input_key" varName="IMK"/>
       <parameter formFieldId="partition_type" varName="IPT"/>
       <port localRef="address" location="br.ufc.mdcc.common.Address/Address.hpe" multiple="false" name="Address" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="60" w="100" x="992" y="458">
+        <visualDescription h="60" w="100" x="925" y="448">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -52,7 +52,7 @@
         </unitBounds>
       </port>
       <unitBounds parallel="false" uRef="partition_function">
-        <visualDescription h="20" w="20" x="10" y="43"/>
+        <visualDescription h="20" w="20" x="54" y="46"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="input_map" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="true" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
@@ -203,33 +203,6 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="transform_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.TransformFunction/TransformFunction.hpe" multiple="false" name="TransformFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl" exposed="false">
-      <visualDescription h="60" w="185" x="0" y="209">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="transform_output_type" varName="TOT"/>
-      <parameter formFieldId="strategy_type" varName="ETL"/>
-      <parameter formFieldId="transform_input_type" varName="IN"/>
-      <port localRef="input" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="42" w="143" x="1" y="138">
-          <color b="255" g="255" r="255"/>
-        </visualDescription>
-        <unitBounds parallel="false" uRef="data">
-          <visualDescription h="20" w="20" x="5" y="2"/>
-        </unitBounds>
-      </port>
-      <port localRef="output" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="51" w="147" x="34" y="309">
-          <color b="255" g="255" r="255"/>
-        </visualDescription>
-        <unitBounds parallel="false" uRef="data">
-          <visualDescription h="20" w="20" x="5" y="2"/>
-        </unitBounds>
-      </port>
-      <unitBounds parallel="false" uRef="transform_function">
-        <visualDescription h="20" w="20" x="143" y="15"/>
-      </unitBounds>
-    </innerComponent>
     <innerComponent localRef="strategy_type" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.Strategy/Strategy.hpe" multiple="false" name="Strategy" package="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl" parameter_id="strategy_type" exposed="false">
       <visualDescription h="60" w="144" x="604" y="86">
         <color b="255" g="255" r="255"/>
@@ -242,8 +215,6 @@
     <supplyParameter cRef="c" direct="true" varName="C"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>
     <supplyParameter cRef="rc" direct="true" varName="RC"/>
-    <innerRenaming cNewName="transform_input" cOldName="input" cRef="transform_function"/>
-    <innerRenaming cNewName="transform_output" cOldName="output" cRef="transform_function"/>
     <interface iRef="IReduceCollector" nArgs="2">
       <slice isRef="channel">
         <originRef cRef="channel" iRef="IChannel"/>
@@ -283,8 +254,8 @@
         <originRef cRef="channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="9" y="13"/>
       </slice>
-      <slice isRef="partition_function">
-        <originRef cRef="partition_function" iRef="IPartitionFunction"/>
+      <slice isRef="re_partition_function">
+        <originRef cRef="re_partition_function" iRef="IPartitionFunction"/>
         <visualDescription h="10" w="10" x="0" y="26"/>
       </slice>
       <slice isRef="creduce_smap">
@@ -308,11 +279,11 @@
       </port>
       <port name="address">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="address" sRef="partition_function"/>
+        <slice pRef="address" sRef="re_partition_function"/>
       </port>
       <port name="input">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input" sRef="partition_function"/>
+        <slice pRef="input" sRef="re_partition_function"/>
       </port>
       <parameter iname="IData" order="1" parid="input_map_value" uname="data" varid="IMV"/>
       <parameter iname="IData" order="0" parid="input_map_key" uname="data" varid="IMK"/>
@@ -333,10 +304,6 @@
         <originRef cRef="writer_binding" iRef="IServerBase"/>
         <visualDescription h="10" w="10" x="109" y="16"/>
       </slice>
-      <slice isRef="transform_function">
-        <originRef cRef="transform_function" iRef="ITransformFunction"/>
-        <visualDescription h="10" w="10" x="112" y="27"/>
-      </slice>
       <slice isRef="input">
         <originRef cRef="input" iRef="IData"/>
         <visualDescription h="10" w="10" x="100" y="2"/>
@@ -347,14 +314,6 @@
       <port name="channel">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="channel" sRef="channel"/>
-      </port>
-      <port name="transform_output">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output" sRef="transform_function"/>
-      </port>
-      <port name="transform_input">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input" sRef="transform_function"/>
       </port>
       <parameter iname="IData" order="0" parid="input_type" uname="data" varid="IN"/>
       <action id="main">
@@ -409,7 +368,7 @@
       <slices cRef="channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="channel" transitive="false">
         <visualDescription h="10" w="10" x="9" y="13"/>
       </slices>
-      <slices cRef="partition_function" inner_replica="0" slice_replica="0" uRef="partition_function" sliceName="partition_function" transitive="false">
+      <slices cRef="re_partition_function" inner_replica="0" slice_replica="0" uRef="partition_function" sliceName="re_partition_function" transitive="false">
         <visualDescription h="10" w="10" x="162" y="28"/>
         <port>input</port>
         <port>address</port>
@@ -423,25 +382,14 @@
       <visualDescription h="40" w="182" x="574" y="376"/>
     </unit>
     <unit facet="0" iRef="IReadInput" multiple="false" private="false" replica="0" uRef="read_input" visibleInterface="true">
-      <slices cRef="transform_output" inner_replica="0" slice_replica="0" uRef="data" sliceName="transform_output" transitive="true">
-        <visualDescription h="10" w="10" x="132" y="18"/>
-      </slices>
       <slices cRef="channel" inner_replica="0" slice_replica="0" uRef="peer" sliceName="channel" transitive="false">
         <visualDescription h="10" w="10" x="110" y="25"/>
-      </slices>
-      <slices cRef="transform_input" inner_replica="0" slice_replica="0" uRef="data" sliceName="transform_input" transitive="true">
-        <visualDescription h="10" w="10" x="32" y="25"/>
       </slices>
       <slices cRef="reader_binding" inner_replica="0" slice_replica="0" uRef="client" sliceName="reader_binding" transitive="false">
         <visualDescription h="10" w="10" x="114" y="16"/>
       </slices>
       <slices cRef="writer_binding" inner_replica="0" slice_replica="0" uRef="server" sliceName="writer_binding" transitive="false">
         <visualDescription h="10" w="10" x="112" y="4"/>
-      </slices>
-      <slices cRef="transform_function" inner_replica="0" slice_replica="0" uRef="transform_function" sliceName="transform_function" transitive="false">
-        <visualDescription h="10" w="10" x="6" y="27"/>
-        <port>transform_output</port>
-        <port>transform_input</port>
       </slices>
       <slices cRef="input" inner_replica="1" slice_replica="0" uRef="data" sliceName="input" transitive="false">
         <visualDescription h="10" w="10" x="6" y="5"/>
