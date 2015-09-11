@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002318e6073ccd5f50569daefc67ced9c734312707758774a1e8514898ea8c6d8a7e2d43280a3ba7c974bb4a96b2f040dc199b1d8208c01906f7773e28e20ae98cee3dfef09cbaa7f82327d10afeceb26d47a48e999d0c7606c06c2e19b48bdb0301fe1d560c654e7003a592e15850f66fb73efbb0912de0c2810021818717a995" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d1cd9fce9aa02e44be242e0e09b7cc040fb80837752d1ba06d0513f0a080c6c250a06a69c7f4ff6e2332ef386ce79abdb4766132c02aeec41809058323811842b9a69383c69a9244bd861cd3f094fbf9e649f7a2524ed00ae20bc98ad5ce374e42585318623cd0e6574a8739ca39deb391ac564e8a07bfc3f6347f1bc4fabb86" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -36,7 +36,7 @@
       <parameter formFieldId="input_key" varName="IMK"/>
       <parameter formFieldId="partition_type" varName="IPT"/>
       <port localRef="address" location="br.ufc.mdcc.common.Address/Address.hpe" multiple="false" name="Address" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="60" w="100" x="925" y="448">
+        <visualDescription h="60" w="152" x="873" y="448">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -44,7 +44,7 @@
         </unitBounds>
       </port>
       <port localRef="input" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="60" w="100" x="941" y="303">
+        <visualDescription h="45" w="132" x="865" y="295">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -212,36 +212,77 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="split_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.SplitFunction/SplitFunction.hpe" multiple="false" name="SplitFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl" exposed="false">
-      <visualDescription h="60" w="194" x="15" y="225">
+      <visualDescription h="60" w="194" x="8" y="251">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="split_output_type" varName="SOT"/>
+      <parameter formFieldId="value_type" varName="IMV"/>
+      <parameter formFieldId="key_type" varName="IMK"/>
       <parameter formFieldId="strategy_type" varName="ETL"/>
       <parameter formFieldId="split_input_type" varName="IN"/>
-      <port localRef="input" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="42" w="105" x="43" y="148">
+      <port localRef="split_input" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="36" w="116" x="80" y="143">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="63" y="2"/>
         </unitBounds>
       </port>
-      <port localRef="output" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="60" w="171" x="40" y="318">
+      <port localRef="split_output" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="38" w="98" x="1" y="190">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <unitBounds parallel="false" uRef="data">
-          <visualDescription h="20" w="20" x="65" y="2"/>
+        <parameter formFieldId="value_type" varName="X###134356518"/>
+        <unitBounds parallel="false" uRef="set">
+          <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
       <unitBounds parallel="false" uRef="split_function">
         <visualDescription h="20" w="20" x="159" y="17"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="load_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.LoadFunction/LoadFunction.hpe" multiple="false" name="LoadFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl" exposed="false">
+      <visualDescription h="74" w="185" x="31" y="352">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="key_type" varName="IMK"/>
+      <parameter formFieldId="strategy_type" varName="ETL"/>
+      <port localRef="load_input" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="45" w="95" x="36" y="461">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <port localRef="load_address" location="br.ufc.mdcc.common.Address/Address.hpe" multiple="false" name="Address" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="39" w="104" x="97" y="537">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <unitBounds parallel="false" uRef="load_function">
+        <visualDescription h="20" w="20" x="142" y="28"/>
+      </unitBounds>
+    </innerComponent>
     <supplyParameter cRef="ipt" direct="true" varName="IPT"/>
     <supplyParameter cRef="c" direct="true" varName="C"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>
     <supplyParameter cRef="rc" direct="true" varName="RC"/>
+    <innerComponent localRef="C###134356518" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="439" y="277">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="IMV"/>
+      <parameter formFieldId="key_type" varName="IMK"/>
+      <unitBounds parallel="false" uRef="kv_pair">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="C###134356518" varName="X###134356518"/>
+    <innerRenaming cNewName="partition_input" cOldName="input" cRef="re_partition_function"/>
+    <innerRenaming cNewName="partition_address" cOldName="address" cRef="re_partition_function"/>
     <interface iRef="IReduceCollector" nArgs="2">
       <slice isRef="channel">
         <originRef cRef="channel" iRef="IChannel"/>
@@ -304,11 +345,11 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="channel" sRef="channel"/>
       </port>
-      <port name="address">
+      <port name="partition_address">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="address" sRef="re_partition_function"/>
       </port>
-      <port name="input">
+      <port name="partition_input">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input" sRef="re_partition_function"/>
       </port>
@@ -318,7 +359,7 @@
         <protocol/>
       </action>
     </interface>
-    <interface iRef="IReadInput" nArgs="1">
+    <interface iRef="IReadInput" nArgs="2">
       <slice isRef="channel">
         <originRef cRef="channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="89" y="23"/>
@@ -335,6 +376,14 @@
         <originRef cRef="input" iRef="IData"/>
         <visualDescription h="10" w="10" x="100" y="2"/>
       </slice>
+      <slice isRef="split_function">
+        <originRef cRef="split_function" iRef="ISplitFunction"/>
+        <visualDescription h="10" w="10" x="6" y="23"/>
+      </slice>
+      <slice isRef="load_function">
+        <originRef cRef="load_function" iRef="ILoadFunction"/>
+        <visualDescription h="10" w="10" x="57" y="25"/>
+      </slice>
       <visualDescription h="40" w="120" x="238" y="79">
         <color b="0" g="128" r="0"/>
       </visualDescription>
@@ -342,7 +391,24 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="channel" sRef="channel"/>
       </port>
-      <parameter iname="IData" order="0" parid="input_type" uname="data" varid="IN"/>
+      <port name="split_input">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="split_input" sRef="split_function"/>
+      </port>
+      <port name="split_output">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="split_output" sRef="split_function"/>
+      </port>
+      <port name="load_input">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="load_input" sRef="load_function"/>
+      </port>
+      <port name="load_address">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="load_address" sRef="load_function"/>
+      </port>
+      <parameter iname="IData" order="1" parid="input_type" uname="data" varid="IN"/>
+      <parameter iname="IData" order="0" parid="input_map_key" uname="data" varid="IMK"/>
       <action id="main">
         <protocol/>
       </action>
@@ -383,22 +449,22 @@
       <visualDescription h="40" w="137" x="255" y="376"/>
     </unit>
     <unit facet="0" iRef="IMapFeeder" multiple="true" private="false" replica="0" uRef="map_feeder" visibleInterface="true">
-      <slices cRef="input" inner_replica="0" slice_replica="0" uRef="data" sliceName="input" transitive="true">
-        <visualDescription h="10" w="10" x="24" y="26"/>
-      </slices>
-      <slices cRef="address" inner_replica="0" slice_replica="0" uRef="data" sliceName="address" transitive="true">
-        <visualDescription h="10" w="10" x="102" y="18"/>
-      </slices>
       <slices cRef="input_map" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="input_map" transitive="false">
         <visualDescription h="10" w="10" x="41" y="28"/>
+      </slices>
+      <slices cRef="partition_address" inner_replica="0" slice_replica="0" uRef="data" sliceName="partition_address" transitive="true">
+        <visualDescription h="10" w="10" x="102" y="18"/>
       </slices>
       <slices cRef="channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="channel" transitive="false">
         <visualDescription h="10" w="10" x="9" y="13"/>
       </slices>
+      <slices cRef="partition_input" inner_replica="0" slice_replica="0" uRef="data" sliceName="partition_input" transitive="true">
+        <visualDescription h="10" w="10" x="24" y="26"/>
+      </slices>
       <slices cRef="re_partition_function" inner_replica="0" slice_replica="0" uRef="partition_function" sliceName="re_partition_function" transitive="false">
         <visualDescription h="10" w="10" x="162" y="28"/>
-        <port>input</port>
-        <port>address</port>
+        <port>partition_address</port>
+        <port>partition_input</port>
       </slices>
       <slices cRef="creduce_smap" inner_replica="0" slice_replica="0" uRef="server" sliceName="creduce_smap" transitive="false">
         <visualDescription h="10" w="10" x="21" y="28"/>
@@ -409,8 +475,20 @@
       <visualDescription h="40" w="182" x="574" y="376"/>
     </unit>
     <unit facet="0" iRef="IReadInput" multiple="false" private="false" replica="0" uRef="read_input" visibleInterface="true">
+      <slices cRef="load_input" inner_replica="0" slice_replica="0" uRef="data" sliceName="load_input" transitive="true">
+        <visualDescription h="10" w="10" x="23" y="20"/>
+      </slices>
+      <slices cRef="split_output" inner_replica="0" slice_replica="0" uRef="set" sliceName="split_output" transitive="true">
+        <visualDescription h="10" w="10" x="101" y="23"/>
+      </slices>
+      <slices cRef="split_input" inner_replica="0" slice_replica="0" uRef="data" sliceName="split_input" transitive="true">
+        <visualDescription h="10" w="10" x="16" y="23"/>
+      </slices>
       <slices cRef="channel" inner_replica="0" slice_replica="0" uRef="peer" sliceName="channel" transitive="false">
         <visualDescription h="10" w="10" x="110" y="25"/>
+      </slices>
+      <slices cRef="load_address" inner_replica="0" slice_replica="0" uRef="data" sliceName="load_address" transitive="true">
+        <visualDescription h="10" w="10" x="148" y="26"/>
       </slices>
       <slices cRef="reader_binding" inner_replica="0" slice_replica="0" uRef="client" sliceName="reader_binding" transitive="false">
         <visualDescription h="10" w="10" x="114" y="16"/>
@@ -418,8 +496,18 @@
       <slices cRef="writer_binding" inner_replica="0" slice_replica="0" uRef="server" sliceName="writer_binding" transitive="false">
         <visualDescription h="10" w="10" x="112" y="4"/>
       </slices>
-      <slices cRef="input" inner_replica="1" slice_replica="0" uRef="data" sliceName="input" transitive="false">
+      <slices cRef="input" inner_replica="0" slice_replica="0" uRef="data" sliceName="input" transitive="false">
         <visualDescription h="10" w="10" x="6" y="5"/>
+      </slices>
+      <slices cRef="split_function" inner_replica="0" slice_replica="0" uRef="split_function" sliceName="split_function" transitive="false">
+        <visualDescription h="10" w="10" x="6" y="23"/>
+        <port>split_output</port>
+        <port>split_input</port>
+      </slices>
+      <slices cRef="load_function" inner_replica="0" slice_replica="0" uRef="load_function" sliceName="load_function" transitive="false">
+        <visualDescription h="10" w="10" x="57" y="25"/>
+        <port>load_input</port>
+        <port>load_address</port>
       </slices>
       <visualDescription h="40" w="127" x="222" y="156"/>
     </unit>
