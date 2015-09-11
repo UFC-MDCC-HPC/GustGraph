@@ -1,71 +1,117 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ddb8164578f499bd530f08ff293c8e12acf8440f96be2e94f4648ccd57f1ced01b688c81e90ef615340f324032d5ae4333a4a917192c9e9c0bc8ab82f34d4e6ffa0a05c9f111badb2b18a005a8dba47e1ae7d3b0d97d04f04c31a7fef88e539f38b415b5ec41e1ecf2ec38092ecf96e3ddc762a98ffea0f5152263a996f426ae" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
-    <baseType>
-      <extensionType>
-        <extends>true</extends>
-      </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a1d06f89d04477e8e400f0aab2b6efe51782d002f506495ae0f1b7637468d43a22acae7b5b8914eb5d9a8c51f4dc1f2f563378276e60db54ea1c57cb34443133bedcf6e7f6df540f8eeea2b28c92830822ee78c282775019f52aaec87ceab83c34bca1a2c31463ad67bb92be9e5230bd4b76af4b4cd58c692c72409bae362186" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.Work/Work.hpe" name="Work" package="br.ufc.mdcc.hpcshelf.mapreduce" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="216" y="457">
-          <color b="255" g="255" r="255"/>
-        </visualDescription>
-        <parameter formFieldId="output_type" varName="O"/>
-        <parameter formFieldId="input_type" varName="I"/>
-        <port localRef="input_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="true" name="Data" package="br.ufc.mdcc.common" exposed="true">
-          <visualDescription h="60" w="100" x="86" y="496">
-            <color b="255" g="255" r="255"/>
-          </visualDescription>
-          <unitBounds parallel="false" uRef="data">
-            <visualDescription h="20" w="20" x="5" y="2"/>
-          </unitBounds>
-        </port>
-        <port localRef="output_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="true" name="Data" package="br.ufc.mdcc.common" exposed="true">
-          <visualDescription h="60" w="100" x="378" y="493">
-            <color b="255" g="255" r="255"/>
-          </visualDescription>
-          <unitBounds parallel="false" uRef="data">
-            <visualDescription h="20" w="20" x="5" y="2"/>
-          </unitBounds>
-        </port>
-        <unitBounds parallel="true" uRef="work">
-          <visualDescription h="20" w="20" x="5" y="2"/>
-        </unitBounds>
-      </component>
-    </baseType>
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005380b1be614334e2fe45d962b944f6aa280d4d1d0978d1581163e630fd429d5fa9264227dac9e02e14a6ff48bca3a87f032df08b1e74c583fe5214e176a138e92c0723048d6a372dd1489b006e473a2e675919e1bcacde5d96bc88473772f88a9b42a9e94a97e806010231ef505ab7b0e2221a9678f19be0ae9e5477bb67c4a6" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerComponent localRef="map_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction/MapFunction.hpe" multiple="false" name="MapFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" exposed="false">
-      <visualDescription h="60" w="144" x="405" y="375">
+    <parameter componentRef="input_key_type" formFieldId="input_key_type" order="0" variance="contravariant" varName="IMK"/>
+    <parameter componentRef="input_value_type" formFieldId="input_value_type" order="1" variance="contravariant" varName="IMV"/>
+    <parameter componentRef="output_key_type" formFieldId="output_key_type" order="2" variance="contravariant" varName="OMK"/>
+    <parameter componentRef="output_value_type" formFieldId="output_value_type" order="3" variance="contravariant" varName="OMV"/>
+    <parameter componentRef="map_function" formFieldId="map_function" order="3" variance="contravariant" varName="M"/>
+    <innerComponent localRef="input_key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_key_type" exposed="false">
+      <visualDescription h="60" w="148" x="615" y="131">
         <color b="255" g="255" r="255"/>
       </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="input_value_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_value_type" exposed="false">
+      <visualDescription h="60" w="160" x="817" y="129">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="output_key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="output_key_type" exposed="false">
+      <visualDescription h="60" w="158" x="629" y="259">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="output_value_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="output_value_type" exposed="false">
+      <visualDescription h="60" w="175" x="847" y="252">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="input" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="true" name="Set" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="60" w="100" x="134" y="451">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="IV"/>
+      <unitBounds parallel="false" uRef="set">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="output" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="true" name="Set" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="66" w="120" x="386" y="455">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="OV"/>
+      <unitBounds parallel="false" uRef="set">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="iv" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="437" y="461">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="IMV"/>
+      <parameter formFieldId="key_type" varName="IMK"/>
+      <unitBounds parallel="false" uRef="kv_pair">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="ov" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="604" y="483">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="OMV"/>
+      <parameter formFieldId="key_type" varName="OMK"/>
+      <unitBounds parallel="false" uRef="kv_pair">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="map_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction/MapFunction.hpe" multiple="true" name="MapFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" parameter_id="map_function" exposed="false">
+      <visualDescription h="60" w="182" x="477" y="351">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="output_key_type" varName="OMK"/>
       <parameter formFieldId="input_key_type" varName="IMK"/>
       <parameter formFieldId="input_value_type" varName="IMV"/>
-      <parameter formFieldId="output_type" varName="O"/>
-      <port localRef="input_key" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="true">
-        <visualDescription h="60" w="100" x="325" y="254">
+      <parameter formFieldId="output_value_type" varName="OMV"/>
+      <port localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+        <visualDescription h="60" w="160" x="438" y="237">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
-      <port localRef="input_value" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="true">
-        <visualDescription h="60" w="100" x="511" y="237">
+      <port localRef="input_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+        <visualDescription h="60" w="191" x="623" y="238">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
-      <port localRef="output" location="br.ufc.mdcc.hpcshelf.mapreduce.basic.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.hpcshelf.mapreduce.basic" exposed="true">
-        <visualDescription h="60" w="100" x="584" y="468">
+      <port localRef="output_map_function" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="66" w="120" x="386" y="455">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <unitBounds parallel="false" uRef="data">
+        <parameter formFieldId="value_type" varName="X###604682533"/>
+        <unitBounds parallel="false" uRef="set">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
@@ -73,8 +119,21 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="env_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/EnvironmentBindingGathercastIntra.hpe" multiple="false" name="EnvironmentBindingGathercastIntra" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
-      <visualDescription h="60" w="162" x="50" y="403">
+    <innerComponent localRef="client_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="62" w="212" x="298" y="101">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
+      <unitBounds parallel="false" uRef="client">
+        <visualDescription h="20" w="20" x="97" y="40"/>
+      </unitBounds>
+      <unitBounds parallel="false" uRef="server">
+        <visualDescription h="20" w="20" x="28" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="server_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="61" w="205" x="58" y="110">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="server_port_type" varName="S"/>
@@ -82,63 +141,121 @@
       <unitBounds parallel="false" uRef="client">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
-      <unitBounds parallel="true" uRef="server">
-        <visualDescription h="20" w="20" x="28" y="2"/>
+      <unitBounds parallel="false" uRef="server">
+        <visualDescription h="20" w="20" x="90" y="39"/>
       </unitBounds>
     </innerComponent>
-    <interface iRef="IMapper" nArgs="0">
-      <slice isRef="env_binding">
-        <originRef cRef="env_binding" iRef="IClientGathercastIntra"/>
-        <visualDescription h="10" w="10" x="13" y="25"/>
+    <innerComponent localRef="c" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="676" y="384">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="s" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="680" y="477">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="iv" direct="true" varName="IV"/>
+    <supplyParameter cRef="ov" direct="true" varName="OV"/>
+    <supplyParameter cRef="c" direct="true" varName="C"/>
+    <supplyParameter cRef="s" direct="true" varName="S"/>
+    <innerComponent localRef="C###604682533" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="437" y="287">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="OMV"/>
+      <parameter formFieldId="key_type" varName="OMK"/>
+      <unitBounds parallel="false" uRef="kv_pair">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="C###604682533" varName="X###604682533"/>
+    <innerRenaming cNewName="map_value" cOldName="input_value" cRef="map_function"/>
+    <innerRenaming cNewName="output" cOldName="output_map_function" cRef="map_function"/>
+    <innerRenaming cNewName="map_key" cOldName="input_key" cRef="map_function"/>
+    <interface iRef="IMapper" nArgs="3">
+      <slice isRef="output">
+        <originRef cRef="output" iRef="ISet"/>
+        <visualDescription h="10" w="10" x="77" y="20"/>
+      </slice>
+      <slice isRef="input">
+        <originRef cRef="input" iRef="ISet"/>
+        <visualDescription h="10" w="10" x="5" y="24"/>
       </slice>
       <slice isRef="map_function">
         <originRef cRef="map_function" iRef="IMapFunction"/>
-        <visualDescription h="10" w="10" x="58" y="19"/>
+        <visualDescription h="10" w="10" x="140" y="14"/>
       </slice>
-      <visualDescription h="40" w="80" x="183" y="228">
-        <color b="144" g="238" r="144"/>
+      <slice isRef="server_binding">
+        <originRef cRef="server_binding" iRef="IServerBase"/>
+        <visualDescription h="10" w="10" x="13" y="8"/>
+      </slice>
+      <slice isRef="client_binding">
+        <originRef cRef="client_binding" iRef="IClientBase"/>
+        <visualDescription h="10" w="10" x="124" y="6"/>
+      </slice>
+      <visualDescription h="40" w="166" x="196" y="283">
+        <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="env_binding">
+      <port name="output">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="env_binding" sRef="env_binding"/>
+        <slice pRef="output" sRef="output"/>
       </port>
-      <port name="input_value">
+      <port name="input">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_value" sRef="map_function"/>
-      </port>
-      <port name="input_key">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key" sRef="map_function"/>
+        <slice pRef="input" sRef="input"/>
       </port>
       <port name="output">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output" sRef="map_function"/>
+        <slice pRef="output_map_function" sRef="map_function"/>
       </port>
+      <port name="map_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="map_function"/>
+      </port>
+      <port name="map_value">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_value" sRef="map_function"/>
+      </port>
+      <parameter iname="IMapFunction" order="2" parid="map_function" uname="map_function" varid="M"/>
+      <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="IMK"/>
+      <parameter iname="IData" order="1" parid="input_value_type" uname="data" varid="IMV"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IMapper" multiple="true" private="false" replica="0" uRef="mapper" visibleInterface="true">
-      <super cRef="base" uRef="work"/>
-      <slices cRef="output" inner_replica="0" slice_replica="0" uRef="data" sliceName="output" transitive="true">
-        <visualDescription h="10" w="10" x="137" y="10"/>
+      <slices cRef="output" inner_replica="0" slice_replica="0" uRef="set" sliceName="output" transitive="false">
+        <visualDescription h="10" w="10" x="77" y="20"/>
       </slices>
-      <slices cRef="env_binding" inner_replica="0" slice_replica="0" uRef="client" sliceName="env_binding" transitive="false">
-        <visualDescription h="10" w="10" x="13" y="25"/>
+      <slices cRef="input" inner_replica="0" slice_replica="0" uRef="set" sliceName="input" transitive="false">
+        <visualDescription h="10" w="10" x="5" y="24"/>
       </slices>
-      <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
-        <visualDescription h="10" w="10" x="29" y="26"/>
+      <slices cRef="map_value" inner_replica="0" slice_replica="0" uRef="data" sliceName="map_value" transitive="true">
+        <visualDescription h="10" w="10" x="105" y="24"/>
       </slices>
-      <slices cRef="input_value" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_value" transitive="true">
-        <visualDescription h="10" w="10" x="120" y="26"/>
+      <slices cRef="map_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="map_key" transitive="true">
+        <visualDescription h="10" w="10" x="11" y="23"/>
       </slices>
       <slices cRef="map_function" inner_replica="0" slice_replica="0" uRef="map_function" sliceName="map_function" transitive="false">
-        <visualDescription h="10" w="10" x="58" y="19"/>
+        <visualDescription h="10" w="10" x="140" y="14"/>
         <port>output</port>
-        <port>input_key</port>
-        <port>input_value</port>
+        <port>map_value</port>
+        <port>map_key</port>
       </slices>
-      <visualDescription h="40" w="80" x="197" y="336"/>
+      <slices cRef="server_binding" inner_replica="0" slice_replica="0" uRef="server" sliceName="server_binding" transitive="false">
+        <visualDescription h="10" w="10" x="13" y="8"/>
+      </slices>
+      <slices cRef="client_binding" inner_replica="0" slice_replica="0" uRef="client" sliceName="client_binding" transitive="false">
+        <visualDescription h="10" w="10" x="124" y="6"/>
+      </slices>
+      <visualDescription h="40" w="166" x="196" y="363"/>
     </unit>
   </componentInfo>
 </component:component>
