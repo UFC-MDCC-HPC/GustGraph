@@ -34,10 +34,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapred
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.environment.WriteData", "..\br.ufc.mdcc.hpcshelf.mapreduce.environment.WriteData\br.ufc.mdcc.hpcshelf.mapreduce.environment.WriteData\br.ufc.mdcc.hpcshelf.mapreduce.environment.WriteData.csproj", "{D4DA93D1-BB74-446F-A26D-83BB1BA32A82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.Work", "..\br.ufc.mdcc.hpcshelf.mapreduce.Work\br.ufc.mdcc.hpcshelf.mapreduce.Work\br.ufc.mdcc.hpcshelf.mapreduce.Work.csproj", "{68B7FE00-F566-4F02-91E8-568F0A3F407E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.Connector", "..\br.ufc.mdcc.hpcshelf.mapreduce.Connector\br.ufc.mdcc.hpcshelf.mapreduce.Connector\br.ufc.mdcc.hpcshelf.mapreduce.Connector.csproj", "{B59B99FF-734A-4D22-8E23-98A14A74C019}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpc.storm.kind.Binding", "..\br.ufc.mdcc.hpc.storm.kind.Binding\br.ufc.mdcc.hpc.storm.kind.Binding\br.ufc.mdcc.hpc.storm.kind.Binding.csproj", "{75954E48-9C52-4F6D-8947-13E9D574FBEA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase", "..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase.csproj", "{226E5496-FDF2-4765-9C43-D2A2770EE760}"
@@ -66,21 +62,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpc.storm.bindi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.common.Data", "..\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data.csproj", "{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.common.Iterator", "..\br.ufc.mdcc.common.Iterator\br.ufc.mdcc.common.Iterator\br.ufc.mdcc.common.Iterator.csproj", "{807A087E-123C-4745-B029-C31FC9458A61}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.common.KVPair", "..\br.ufc.mdcc.common.KVPair\br.ufc.mdcc.common.KVPair\br.ufc.mdcc.common.KVPair.csproj", "{9B499C49-DA84-475A-B783-2A3D2DEAAA97}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.common.Address", "..\br.ufc.mdcc.common.Address\br.ufc.mdcc.common.Address\br.ufc.mdcc.common.Address.csproj", "{AC3F2496-01A1-4D68-87D0-230C68F6BBDE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink", "..\br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink\br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink\br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink.csproj", "{E27FAA80-9E4B-4CBE-970F-23E98879A3A0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.Repository", "..\br.ufc.mdcc.hpcshelf.mapreduce.Repository\br.ufc.mdcc.hpcshelf.mapreduce.Repository\br.ufc.mdcc.hpcshelf.mapreduce.Repository.csproj", "{E12C1BEB-2941-41EF-8894-86D4EC6E153E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType", "..\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionType.csproj", "{6030D76B-074C-411F-839D-72C1A43599EE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForMap", "..\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForMap\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForMap\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForMap.csproj", "{92D7F8C8-1FD4-4697-A754-4C449429710E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForReduce", "..\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForReduce\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForReduce\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionTypeForReduce.csproj", "{6312810E-AB5D-4D1C-812F-39049DF5F646}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.common.Platform", "..\br.ufc.mdcc.common.Platform\br.ufc.mdcc.common.Platform\br.ufc.mdcc.common.Platform.csproj", "{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}"
 EndProject
@@ -132,10 +118,6 @@ Global
 		{4BB52CBE-64B0-4E9C-812F-921ED3FB87AF}.Debug|x86.Build.0 = Debug|Any CPU
 		{4BB52CBE-64B0-4E9C-812F-921ED3FB87AF}.Release|x86.ActiveCfg = Release|Any CPU
 		{4BB52CBE-64B0-4E9C-812F-921ED3FB87AF}.Release|x86.Build.0 = Release|Any CPU
-		{6030D76B-074C-411F-839D-72C1A43599EE}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{6030D76B-074C-411F-839D-72C1A43599EE}.Debug|x86.Build.0 = Debug|Any CPU
-		{6030D76B-074C-411F-839D-72C1A43599EE}.Release|x86.ActiveCfg = Release|Any CPU
-		{6030D76B-074C-411F-839D-72C1A43599EE}.Release|x86.Build.0 = Release|Any CPU
 		{60E1C26D-D1BF-41F4-99CE-B6D5B6D44731}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{60E1C26D-D1BF-41F4-99CE-B6D5B6D44731}.Debug|x86.Build.0 = Debug|Any CPU
 		{60E1C26D-D1BF-41F4-99CE-B6D5B6D44731}.Release|x86.ActiveCfg = Release|Any CPU
@@ -144,18 +126,10 @@ Global
 		{6140F412-4FFC-4D7C-8767-867931B07811}.Debug|x86.Build.0 = Debug|Any CPU
 		{6140F412-4FFC-4D7C-8767-867931B07811}.Release|x86.ActiveCfg = Release|Any CPU
 		{6140F412-4FFC-4D7C-8767-867931B07811}.Release|x86.Build.0 = Release|Any CPU
-		{6312810E-AB5D-4D1C-812F-39049DF5F646}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{6312810E-AB5D-4D1C-812F-39049DF5F646}.Debug|x86.Build.0 = Debug|Any CPU
-		{6312810E-AB5D-4D1C-812F-39049DF5F646}.Release|x86.ActiveCfg = Release|Any CPU
-		{6312810E-AB5D-4D1C-812F-39049DF5F646}.Release|x86.Build.0 = Release|Any CPU
 		{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}.Debug|x86.Build.0 = Debug|Any CPU
 		{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}.Release|x86.ActiveCfg = Release|Any CPU
 		{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}.Release|x86.Build.0 = Release|Any CPU
-		{68B7FE00-F566-4F02-91E8-568F0A3F407E}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{68B7FE00-F566-4F02-91E8-568F0A3F407E}.Debug|x86.Build.0 = Debug|Any CPU
-		{68B7FE00-F566-4F02-91E8-568F0A3F407E}.Release|x86.ActiveCfg = Release|Any CPU
-		{68B7FE00-F566-4F02-91E8-568F0A3F407E}.Release|x86.Build.0 = Release|Any CPU
 		{75954E48-9C52-4F6D-8947-13E9D574FBEA}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{75954E48-9C52-4F6D-8947-13E9D574FBEA}.Debug|x86.Build.0 = Debug|Any CPU
 		{75954E48-9C52-4F6D-8947-13E9D574FBEA}.Release|x86.ActiveCfg = Release|Any CPU
@@ -172,10 +146,6 @@ Global
 		{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}.Debug|x86.Build.0 = Debug|Any CPU
 		{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}.Release|x86.ActiveCfg = Release|Any CPU
 		{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}.Release|x86.Build.0 = Release|Any CPU
-		{807A087E-123C-4745-B029-C31FC9458A61}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{807A087E-123C-4745-B029-C31FC9458A61}.Debug|x86.Build.0 = Debug|Any CPU
-		{807A087E-123C-4745-B029-C31FC9458A61}.Release|x86.ActiveCfg = Release|Any CPU
-		{807A087E-123C-4745-B029-C31FC9458A61}.Release|x86.Build.0 = Release|Any CPU
 		{8B87057A-B2AF-4A07-8F2D-E91E930F9188}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{8B87057A-B2AF-4A07-8F2D-E91E930F9188}.Debug|x86.Build.0 = Debug|Any CPU
 		{8B87057A-B2AF-4A07-8F2D-E91E930F9188}.Release|x86.ActiveCfg = Release|Any CPU
@@ -184,10 +154,6 @@ Global
 		{90623C03-B24B-4448-A81E-901BB4017F36}.Debug|x86.Build.0 = Debug|Any CPU
 		{90623C03-B24B-4448-A81E-901BB4017F36}.Release|x86.ActiveCfg = Release|Any CPU
 		{90623C03-B24B-4448-A81E-901BB4017F36}.Release|x86.Build.0 = Release|Any CPU
-		{92D7F8C8-1FD4-4697-A754-4C449429710E}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{92D7F8C8-1FD4-4697-A754-4C449429710E}.Debug|x86.Build.0 = Debug|Any CPU
-		{92D7F8C8-1FD4-4697-A754-4C449429710E}.Release|x86.ActiveCfg = Release|Any CPU
-		{92D7F8C8-1FD4-4697-A754-4C449429710E}.Release|x86.Build.0 = Release|Any CPU
 		{9B499C49-DA84-475A-B783-2A3D2DEAAA97}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{9B499C49-DA84-475A-B783-2A3D2DEAAA97}.Debug|x86.Build.0 = Debug|Any CPU
 		{9B499C49-DA84-475A-B783-2A3D2DEAAA97}.Release|x86.ActiveCfg = Release|Any CPU
@@ -196,10 +162,6 @@ Global
 		{A456B539-600E-4685-9460-04506F64AF52}.Debug|x86.Build.0 = Debug|Any CPU
 		{A456B539-600E-4685-9460-04506F64AF52}.Release|x86.ActiveCfg = Release|Any CPU
 		{A456B539-600E-4685-9460-04506F64AF52}.Release|x86.Build.0 = Release|Any CPU
-		{AC3F2496-01A1-4D68-87D0-230C68F6BBDE}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{AC3F2496-01A1-4D68-87D0-230C68F6BBDE}.Debug|x86.Build.0 = Debug|Any CPU
-		{AC3F2496-01A1-4D68-87D0-230C68F6BBDE}.Release|x86.ActiveCfg = Release|Any CPU
-		{AC3F2496-01A1-4D68-87D0-230C68F6BBDE}.Release|x86.Build.0 = Release|Any CPU
 		{ADB1B6BE-28D3-4B10-BBFC-9224181F52C7}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{ADB1B6BE-28D3-4B10-BBFC-9224181F52C7}.Debug|x86.Build.0 = Debug|Any CPU
 		{ADB1B6BE-28D3-4B10-BBFC-9224181F52C7}.Release|x86.ActiveCfg = Release|Any CPU
@@ -212,10 +174,6 @@ Global
 		{B1C180D0-5858-44C1-AC56-7897EF241EC2}.Debug|x86.Build.0 = Debug|Any CPU
 		{B1C180D0-5858-44C1-AC56-7897EF241EC2}.Release|x86.ActiveCfg = Release|Any CPU
 		{B1C180D0-5858-44C1-AC56-7897EF241EC2}.Release|x86.Build.0 = Release|Any CPU
-		{B59B99FF-734A-4D22-8E23-98A14A74C019}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B59B99FF-734A-4D22-8E23-98A14A74C019}.Debug|x86.Build.0 = Debug|Any CPU
-		{B59B99FF-734A-4D22-8E23-98A14A74C019}.Release|x86.ActiveCfg = Release|Any CPU
-		{B59B99FF-734A-4D22-8E23-98A14A74C019}.Release|x86.Build.0 = Release|Any CPU
 		{BD43AB9C-C297-40AE-BB7A-9C69ADCEB702}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{BD43AB9C-C297-40AE-BB7A-9C69ADCEB702}.Debug|x86.Build.0 = Debug|Any CPU
 		{BD43AB9C-C297-40AE-BB7A-9C69ADCEB702}.Release|x86.ActiveCfg = Release|Any CPU
