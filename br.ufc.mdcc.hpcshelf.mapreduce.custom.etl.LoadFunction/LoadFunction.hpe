@@ -7,17 +7,7 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <parameter componentRef="strategy_type" formFieldId="strategy_type" order="0" variance="contravariant" varName="ETL"/>
-    <parameter componentRef="load_input" formFieldId="key_type" order="0" variance="contravariant" varName="IMK"/>
-    <innerComponent localRef="strategy_type" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.Strategy/Strategy.hpe" multiple="false" name="Strategy" package="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl" parameter_id="strategy_type" exposed="false">
-      <visualDescription h="60" w="100" x="210" y="529">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="false" uRef="strategy">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="load_input" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="key_type" exposed="true">
+    <innerComponent localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
       <visualDescription h="60" w="188" x="105" y="455">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -25,46 +15,23 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="load_address" location="br.ufc.mdcc.common.Address/Address.hpe" multiple="false" name="Address" package="br.ufc.mdcc.common" exposed="true">
-      <visualDescription h="60" w="152" x="384" y="470">
+    <innerComponent localRef="s" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="60" w="100" x="353" y="437">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <interface iRef="ILoadFunction" nArgs="1">
-      <slice isRef="load_input">
-        <originRef cRef="load_input" iRef="IData"/>
-        <visualDescription h="10" w="10" x="23" y="20"/>
-      </slice>
-      <slice isRef="load_address">
-        <originRef cRef="load_address" iRef="IAddress"/>
-        <visualDescription h="10" w="10" x="148" y="26"/>
-      </slice>
+    <interface iRef="ILoadFunction" nArgs="0">
       <visualDescription h="40" w="206" x="198" y="276">
         <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="load_input">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="load_input" sRef="load_input"/>
-      </port>
-      <port name="load_address">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="load_address" sRef="load_address"/>
-      </port>
-      <parameter iname="IData" order="0" parid="key_type" uname="data" varid="IMK"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="ILoadFunction" multiple="false" private="false" replica="0" uRef="load_function" visibleInterface="true">
-      <slices cRef="load_input" inner_replica="0" slice_replica="0" uRef="data" sliceName="load_input" transitive="false">
-        <visualDescription h="10" w="10" x="23" y="20"/>
-      </slices>
-      <slices cRef="load_address" inner_replica="0" slice_replica="0" uRef="data" sliceName="load_address" transitive="false">
-        <visualDescription h="10" w="10" x="148" y="26"/>
-      </slices>
       <visualDescription h="40" w="206" x="198" y="356"/>
     </unit>
   </componentInfo>

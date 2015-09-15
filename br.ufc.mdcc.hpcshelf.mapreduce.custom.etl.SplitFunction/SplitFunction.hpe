@@ -7,8 +7,7 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <parameter componentRef="split_input" formFieldId="split_input_type" order="0" variance="contravariant" varName="SIT"/>
-    <parameter componentRef="strategy_type" formFieldId="strategy_type" order="2" variance="contravariant" varName="ETL"/>
+    <parameter componentRef="split_input" formFieldId="split_input_type" order="0" variance="contravariant" varName="IN"/>
     <parameter componentRef="key_type" formFieldId="key_type" order="2" variance="contravariant" varName="IMK"/>
     <parameter componentRef="value_type" formFieldId="value_type" order="3" variance="contravariant" varName="IMV"/>
     <innerComponent localRef="split_input" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="split_input_type" exposed="true">
@@ -17,14 +16,6 @@
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="63" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="strategy_type" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl.Strategy/Strategy.hpe" multiple="false" name="Strategy" package="br.ufc.mdcc.hpcshelf.mapreduce.custom.etl" parameter_id="strategy_type" exposed="false">
-      <visualDescription h="60" w="162" x="398" y="230">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="false" uRef="strategy">
-        <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="split_output" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="true">
@@ -83,7 +74,7 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="split_input" sRef="split_input"/>
       </port>
-      <parameter iname="IData" order="0" parid="split_input_type" uname="data" varid="SIT"/>
+      <parameter iname="IData" order="0" parid="split_input_type" uname="data" varid="IN"/>
       <action id="main">
         <protocol/>
       </action>

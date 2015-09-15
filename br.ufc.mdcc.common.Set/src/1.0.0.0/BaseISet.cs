@@ -5,8 +5,8 @@ using br.ufc.mdcc.common.Data;
 
 namespace br.ufc.mdcc.common.Set
 {
-	public interface BaseISet<V> : BaseIData, IDataStructureKind 
-	where V:IData
+	public interface BaseISet<T> : BaseIData, IDataStructureKind 
+	where T:IData
 	{
 	}
 }

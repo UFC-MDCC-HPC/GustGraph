@@ -1,10 +1,61 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005bce2412c01d926ff4886a2a526ecc6f1dbbfac386a4622b346d1c141e952a990f89a209257fb8d9acd105318a7db8ef34c2b4f16c212ce8d4ecc4ee00ebf43e6a27f56c628f919ae4c3178d39a30d7b0eced8ca05d5fcb5264258e6f9cd765f231bc1a49db66a2323ecea9b4ac23dfe8fefdd61b33c5a52226cb6f9b6e32694" isAbstract="true" kind="Computation" name="DataSink" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000257f9d7d66eeb91b231da14b2d2955cad8102f477c0174dd8e7552b05bbec969bdeced4be5ff48912299874809ff98b0460078a25e8ac98937d93b553d4bd6550d6e1d1495ed033e318ff75a03b3018b4fa8523355f03ee5f246a3725adc749f04c534c2e90bb29a75cb61f47251b49f59ada89c7128c95aa11e8d3f0333ad8d" isAbstract="true" kind="Computation" name="DataSink" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b126729ab4b1cc3521afb3a8f8f5982b0e7699d89f8a6484cf16f938bd233c15dbf7df37a0474e3445af3cf7aced609c2e6a313ccbedc2bf1e731f970ef9fe67f980c4f8956b8acec0c76d5b0b37cc45dfef27d19c3f99c53bf03171a8082180db5e27133d308476dae52a49ea8a1907eae4f2668903653d7859cd9618bdecb1" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.Repository/Repository.hpe" name="Repository" package="br.ufc.mdcc.hpcshelf.mapreduce" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="344" y="415">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="server_port_type" varName="DSKS"/>
+        <parameter formFieldId="client_port_type" varName="DSKC"/>
+        <parameter formFieldId="data_type" varName="OUT"/>
+        <port localRef="binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
+          <visualDescription h="60" w="197" x="501" y="377">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="server_port_type" varName="DSKS"/>
+          <parameter formFieldId="client_port_type" varName="DSKC"/>
+          <unitBounds parallel="false" uRef="client">
+            <visualDescription h="20" w="20" x="13" y="20"/>
+          </unitBounds>
+          <unitBounds parallel="false" uRef="server">
+            <visualDescription h="20" w="20" x="165" y="18"/>
+          </unitBounds>
+        </port>
+        <port localRef="data" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="60" w="100" x="164" y="361">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <unitBounds parallel="false" uRef="data">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="false" uRef="repository">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
-  <componentInfo/>
+  <componentInfo>
+    <innerRenaming cNewName="data_sink_binding" cOldName="binding" cRef="base"/>
+    <interface iRef="IDataSink" nArgs="0">
+      <visualDescription h="46" w="143" x="212" y="240">
+        <color b="0" g="128" r="0"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IDataSink" multiple="false" private="false" replica="0" uRef="data_sink" visibleInterface="true">
+      <super cRef="base" uRef="repository"/>
+      <visualDescription h="40" w="143" x="311" y="321"/>
+    </unit>
+  </componentInfo>
 </component:component>

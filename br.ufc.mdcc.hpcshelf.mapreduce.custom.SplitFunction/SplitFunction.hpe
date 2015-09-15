@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003ff525ee2d4e29c56cef1a0cb687dd74839e11c2dc4511a5564dbd5ef4df187897edf869233ff7288e7e7b4beba04b72f70f79a0bdc69959ed402b0ded86c66f2ea1c7a7abe17f9fc8742e6efc485e8250ca7cb7f442791ea43f63d37cda41af6d79ba3602cf54594478a1eeda02eb43cde03f41f7d39ed71a2790cccd8a939a" isAbstract="true" kind="Computation" name="SplitFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <parameter componentRef="input_type" formFieldId="input_type" order="1" variance="contravariant" varName="IN"/>
+    <parameter componentRef="value_type" formFieldId="value_type" order="0" variance="contravariant" varName="IMV"/>
+    <parameter componentRef="key_type" formFieldId="key_type" order="1" variance="contravariant" varName="IMK"/>
+    <innerComponent localRef="input_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_type" exposed="true">
+      <visualDescription h="60" w="100" x="152" y="450">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="kvpair" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="513" y="397">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="IMV"/>
+      <parameter formFieldId="key_type" varName="IMK"/>
+      <unitBounds parallel="false" uRef="kv_pair">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="value_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="value_type" exposed="false">
+      <visualDescription h="60" w="100" x="142" y="184">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="key_type" exposed="false">
+      <visualDescription h="60" w="100" x="361" y="176">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="output_type" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="60" w="137" x="422" y="456">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="T"/>
+      <unitBounds parallel="false" uRef="set">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="kvpair" direct="true" varName="T"/>
+    <interface iRef="ISplitFunction" nArgs="1">
+      <slice isRef="input_type">
+        <originRef cRef="input_type" iRef="IData"/>
+        <visualDescription h="10" w="10" x="26" y="32"/>
+      </slice>
+      <slice isRef="output_type">
+        <originRef cRef="output_type" iRef="ISet"/>
+        <visualDescription h="10" w="10" x="95" y="24"/>
+      </slice>
+      <visualDescription h="40" w="151" x="227" y="291">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <port name="input_type">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_type" sRef="input_type"/>
+      </port>
+      <port name="output_type">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_type" sRef="output_type"/>
+      </port>
+      <parameter iname="IData" order="0" parid="input_type" uname="data" varid="IN"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ISplitFunction" multiple="false" private="false" replica="0" uRef="split_function" visibleInterface="true">
+      <slices cRef="output_type" inner_replica="0" slice_replica="0" uRef="set" sliceName="output_type" transitive="false">
+        <visualDescription h="10" w="10" x="95" y="24"/>
+      </slices>
+      <slices cRef="input_type" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_type" transitive="false">
+        <visualDescription h="10" w="10" x="26" y="32"/>
+      </slices>
+      <visualDescription h="40" w="151" x="227" y="371"/>
+    </unit>
+  </componentInfo>
+</component:component>

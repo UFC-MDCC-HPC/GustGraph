@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001f648004d2db3ee950af92b7101782384df5ebcc69867dfd098b0ff7c83195bdc1b3c8377c470b3a6a1d2af8396b4c3939ffca41f341a9ba411712ee79901bab7a2ec2e686cfc8b925dacbda3bbe7eea32d6338bf46dd7f69b30d91b83f7451d42aad751f05f5bd04ac1e210b3aa49bc18dcd960dafacab1aabb644473d937c9" isAbstract="true" kind="Data" name="Set" packagePath="br.ufc.mdcc.common">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002900e6edc26f3d2788f781e073096761cd65f795dd89fbfedf1273bb086404e3f7490283edec508678385be54297386ab150b85d4642024a38c2a283a74b0dab747febca8d2fe496f9e1b470fac6f0ac72e6b1cedcc13fbc799c35dd9e0f91654c5f415b656477857540db173066010f26ff8f3d69229fa3f0a6a0252ac323a2" isAbstract="true" kind="Data" name="Set" packagePath="br.ufc.mdcc.common">
     <baseType>
       <extensionType>
         <extends>true</extends>
@@ -20,7 +20,7 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <parameter componentRef="value_type" formFieldId="value_type" order="0" variance="contravariant" varName="V"/>
+    <parameter componentRef="value_type" formFieldId="value_type" order="0" variance="contravariant" varName="T"/>
     <innerComponent localRef="value_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="value_type" exposed="false">
       <visualDescription h="60" w="100" x="70" y="257">
         <color b="255" g="255" r="255"/>
@@ -31,10 +31,10 @@
     </innerComponent>
     <interface iRef="ISet" nArgs="0">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.common.Set&#xA;{&#xA;&#x9;public interface BaseISet : BaseIData, IDataStructureKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseISet.cs" srcType="base" uri="br.ufc.mdcc.common.Set/bin/1.0.0.0/BaseISet.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.common.Set&#xA;{&#xA;&#x9;public interface BaseISet&lt;V> : BaseIData, IDataStructureKind &#xA;&#x9;where V:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseISet.cs" srcType="base" uri="br.ufc.mdcc.common.Set/bin/1.0.0.0/BaseISet.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.common.Set&#xA;{&#xA;&#x9;public interface ISet : BaseISet, IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ISet.cs" srcType="user" uri="br.ufc.mdcc.common.Set/bin/1.0.0.0/ISet.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.common.Set&#xA;{&#xA;&#x9;public interface ISet&lt;V> : BaseISet&lt;V>, IData&#xA;&#x9;where V:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ISet.cs" srcType="user" uri="br.ufc.mdcc.common.Set/bin/1.0.0.0/ISet.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.common.Set/bin/1.0.0.0/BaseISet.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
         </file>
