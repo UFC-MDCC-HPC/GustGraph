@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c56c4656e072dc2288dcac05cf2afc442729848888186fa09bbe0098ff02f409214408d1bc72e45c73e0dcd27606fb6171ce40455dcbe310e7a44ee81c6105394d3ef276655a5e1cfa419adc3a3e82c24b29dc1b781e17ac40852b4bfab8e6346984ff7292104334321b295f3d8d4830d309b92c87ddb4d91545de0f23228ea3" isAbstract="true" kind="Computation" name="MapReduce" packagePath="br.ufc.mdcc.hpcshelf.mapreduce">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo/>
+</component:component>
