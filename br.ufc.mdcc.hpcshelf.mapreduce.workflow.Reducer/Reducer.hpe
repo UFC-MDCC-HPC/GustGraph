@@ -1,28 +1,206 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002d5b8a6ee8d400885b6059cbba4d9a2a7761b85c0dfd4651ad603ef67040cb7a477671089fc9cd8d678f35569937f9d709ff0c4adb5b329c2d485cd7b0ce635c67239e8fa427ae44be946c532579385ae1384f00508c0d8dcd8a1c3efd31eb2da1bcb3174a244510188f6a22d48a958c3f4ded221518ff07292eb7c220d2e7a8" isAbstract="true" kind="Computation" name="Reducer" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000addc3fad463ca5cd9feec54524aa223aa46ee770d3e350fe837517c4b3060e00ac8089feb5afc472b4373a693e3a9905b4dfb7f2dd1f24a72fcef0c381497aa971833de29ba1d71b2181b5a6bef0119a81eced196307fb117d5180de87e1a76abb58721d6f53417d3a14f2e0e466ba4b0b4a52b1c50b6e021cd5c60154087084" isAbstract="true" kind="Computation" name="Reducer" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
   <componentInfo>
-    <interface iRef="IReducer" nArgs="0">
+    <parameter componentRef="input_key_type" formFieldId="input_key_type" order="0" variance="contravariant" varName="OMK"/>
+    <parameter componentRef="input_value_type" formFieldId="input_value_type" order="1" variance="contravariant" varName="OMV"/>
+    <parameter componentRef="output_key_type" formFieldId="output_key_type" order="2" variance="contravariant" varName="ORK"/>
+    <parameter componentRef="output_value_type" formFieldId="output_value_type" order="3" variance="contravariant" varName="ORV"/>
+    <parameter componentRef="server_port_type" formFieldId="server_port_type" order="3" variance="contravariant" varName="S"/>
+    <parameter componentRef="client_port_type" formFieldId="client_port_type" order="4" variance="contravariant" varName="C"/>
+    <innerComponent localRef="input_key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_key_type" exposed="false">
+      <visualDescription h="60" w="163" x="101" y="125">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="input_value_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_value_type" exposed="false">
+      <visualDescription h="60" w="166" x="286" y="128">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="output_key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="output_key_type" exposed="false">
+      <visualDescription h="60" w="201" x="490" y="127">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="output_value_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="output_value_type" exposed="false">
+      <visualDescription h="60" w="189" x="516" y="198">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="read" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="127" x="37" y="188">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
+      <unitBounds parallel="false" uRef="client">
+        <visualDescription h="20" w="20" x="91" y="21"/>
+      </unitBounds>
+      <unitBounds parallel="false" uRef="server">
+        <visualDescription h="20" w="20" x="13" y="18"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="feed" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="54" w="124" x="39" y="277">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
+      <unitBounds parallel="false" uRef="client">
+        <visualDescription h="20" w="20" x="15" y="14"/>
+      </unitBounds>
+      <unitBounds parallel="false" uRef="server">
+        <visualDescription h="20" w="20" x="87" y="16"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="server_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/EnvironmentPortType.hpe" multiple="false" name="EnvironmentPortType" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="server_port_type" exposed="false">
+      <visualDescription h="60" w="158" x="133" y="163">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="client_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/EnvironmentPortType.hpe" multiple="false" name="EnvironmentPortType" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="client_port_type" exposed="false">
+      <visualDescription h="60" w="180" x="324" y="160">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="reduce_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/ReduceFunction.hpe" multiple="false" name="ReduceFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" exposed="false">
+      <visualDescription h="62" w="132" x="305" y="344">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="output_key_type" varName="ORK"/>
+      <parameter formFieldId="input_key_type" varName="OMK"/>
+      <parameter formFieldId="input_value_type" varName="OMV"/>
+      <parameter formFieldId="output_value_type" varName="ORV"/>
+      <port localRef="output_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="47" w="95" x="440" y="413">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="57" y="2"/>
+        </unitBounds>
+      </port>
+      <port localRef="output_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="40" w="99" x="439" y="281">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="54" y="3"/>
+        </unitBounds>
+      </port>
+      <port localRef="input" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="45" w="96" x="181" y="394">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="value_type" varName="X###229728136"/>
+        <parameter formFieldId="key_type" varName="OMK"/>
+        <unitBounds parallel="false" uRef="kv_pair">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <unitBounds parallel="false" uRef="reduce_function">
+        <visualDescription h="20" w="20" x="43" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="C###229728136" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="152" x="455" y="455">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="OMV"/>
+      <unitBounds parallel="false" uRef="set">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="C###229728136" varName="X###229728136"/>
+    <interface iRef="IReducer" nArgs="5">
+      <slice isRef="feed">
+        <originRef cRef="feed" iRef="IServerBase"/>
+        <visualDescription h="10" w="10" x="125" y="24"/>
+      </slice>
+      <slice isRef="read">
+        <originRef cRef="read" iRef="IClientBase"/>
+        <visualDescription h="10" w="10" x="20" y="26"/>
+      </slice>
+      <slice isRef="reduce_function">
+        <originRef cRef="reduce_function" iRef="IReduceFunction"/>
+        <visualDescription h="10" w="10" x="147" y="11"/>
+      </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Reducer&#xA;{&#xA;&#x9;public interface BaseIReducer : IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIReducer.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Reducer/bin/1.0.0.0/BaseIReducer.dll" versionId="1.0.0.0"/>
         <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Reducer&#xA;{&#xA;&#x9;public interface IReducer : BaseIReducer&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IReducer.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Reducer/bin/1.0.0.0/IReducer.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Reducer/bin/1.0.0.0/BaseIReducer.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="80" x="171" y="207">
+      <visualDescription h="40" w="167" x="203" y="170">
         <color b="0" g="0" r="255"/>
       </visualDescription>
+      <port name="output_value">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_value" sRef="reduce_function"/>
+      </port>
+      <port name="input">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input" sRef="reduce_function"/>
+      </port>
+      <port name="output_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="reduce_function"/>
+      </port>
+      <parameter iname="IEnvironmentPortType" parid="server_port_type" uname="environment_port_type" varid="S"/>
+      <parameter iname="IEnvironmentPortType" order="3" parid="client_port_type" uname="environment_port_type" varid="C"/>
+      <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="OMK"/>
+      <parameter iname="IData" order="1" parid="output_key_type" uname="data" varid="ORK"/>
+      <parameter iname="IData" order="2" parid="output_value_type" uname="data" varid="ORV"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IReducer" multiple="true" private="false" replica="0" uRef="reducer" visibleInterface="true">
-      <visualDescription h="40" w="80" x="171" y="287"/>
+      <slices cRef="input" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="input" transitive="true">
+        <visualDescription h="10" w="10" x="11" y="25"/>
+      </slices>
+      <slices cRef="output_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_key" transitive="true">
+        <visualDescription h="10" w="10" x="140" y="27"/>
+      </slices>
+      <slices cRef="output_value" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_value" transitive="true">
+        <visualDescription h="10" w="10" x="174" y="15"/>
+      </slices>
+      <slices cRef="feed" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed" transitive="false">
+        <visualDescription h="10" w="10" x="8" y="25"/>
+      </slices>
+      <slices cRef="read" inner_replica="0" slice_replica="0" uRef="client" sliceName="read" transitive="false">
+        <visualDescription h="10" w="10" x="5" y="11"/>
+      </slices>
+      <slices cRef="reduce_function" inner_replica="0" slice_replica="0" uRef="reduce_function" sliceName="reduce_function" transitive="false">
+        <visualDescription h="10" w="10" x="147" y="23"/>
+        <port>input</port>
+        <port>output_key</port>
+        <port>output_value</port>
+      </slices>
+      <visualDescription h="40" w="167" x="203" y="250"/>
     </unit>
   </componentInfo>
 </component:component>

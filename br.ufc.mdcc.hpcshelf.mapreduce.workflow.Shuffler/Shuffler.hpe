@@ -26,7 +26,7 @@
         <visualDescription h="20" w="20" x="7" y="20"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="map_collect" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+    <innerComponent localRef="read" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
       <visualDescription h="60" w="161" x="67" y="423">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -39,7 +39,7 @@
         <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="reduce_feed" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+    <innerComponent localRef="feed" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
       <visualDescription h="60" w="174" x="464" y="408">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -114,8 +114,8 @@
         <originRef cRef="shuffler_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="17" y="26"/>
       </slice>
-      <slice isRef="reduce_feed">
-        <originRef cRef="reduce_feed" iRef="IServerBase"/>
+      <slice isRef="feed">
+        <originRef cRef="feed" iRef="IServerBase"/>
         <visualDescription h="10" w="10" x="76" y="23"/>
       </slice>
       <slice isRef="partition_function">
@@ -129,13 +129,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="shuffler_channel" sRef="shuffler_channel"/>
       </port>
-      <port name="input_key">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key" sRef="partition_function"/>
-      </port>
       <port name="output_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_key" sRef="partition_function"/>
+      </port>
+      <port name="input_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="partition_function"/>
       </port>
       <parameter iname="IEnvironmentPortType" order="1" parid="server_port_type" uname="environment_port_type" varid="S"/>
       <parameter iname="IPartitionFunction" order="2" parid="partition_function" uname="partition_function" varid="PF"/>
@@ -149,8 +149,8 @@
         <originRef cRef="shuffler_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="168" y="22"/>
       </slice>
-      <slice isRef="map_collect">
-        <originRef cRef="map_collect" iRef="IClientBase"/>
+      <slice isRef="read">
+        <originRef cRef="read" iRef="IClientBase"/>
         <visualDescription h="10" w="10" x="39" y="24"/>
       </slice>
       <visualDescription h="40" w="197" x="84" y="250">
@@ -175,7 +175,7 @@
       <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
         <visualDescription h="10" w="10" x="24" y="26"/>
       </slices>
-      <slices cRef="reduce_feed" inner_replica="0" slice_replica="0" uRef="server" sliceName="reduce_feed" transitive="false">
+      <slices cRef="feed" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed" transitive="false">
         <visualDescription h="10" w="10" x="76" y="23"/>
       </slices>
       <slices cRef="partition_function" inner_replica="0" slice_replica="0" uRef="partition_function" sliceName="partition_function" transitive="false">
@@ -189,7 +189,7 @@
       <slices cRef="shuffler_channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="shuffler_channel" transitive="false">
         <visualDescription h="10" w="10" x="168" y="22"/>
       </slices>
-      <slices cRef="map_collect" inner_replica="0" slice_replica="0" uRef="client" sliceName="map_collect" transitive="false">
+      <slices cRef="read" inner_replica="0" slice_replica="0" uRef="client" sliceName="read" transitive="false">
         <visualDescription h="10" w="10" x="39" y="24"/>
       </slices>
       <visualDescription h="40" w="197" x="84" y="330"/>

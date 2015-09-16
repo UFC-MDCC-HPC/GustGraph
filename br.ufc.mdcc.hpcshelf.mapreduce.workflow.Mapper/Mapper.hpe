@@ -74,7 +74,7 @@
         <visualDescription h="66" w="120" x="576" y="492">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###1356820746"/>
+        <parameter formFieldId="value_type" varName="X###543923401"/>
         <unitBounds parallel="false" uRef="set">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -83,7 +83,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="reader_pairs_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
+    <innerComponent localRef="read" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
       <visualDescription h="62" w="212" x="298" y="101">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -96,7 +96,7 @@
         <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="feeder_pairs_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
+    <innerComponent localRef="feed" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
       <visualDescription h="61" w="205" x="58" y="110">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -125,7 +125,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="C###1356820746" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###543923401" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="437" y="287">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -135,17 +135,17 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1356820746" varName="X###1356820746"/>
-    <innerRenaming cNewName="map_key" cOldName="input_key" cRef="map_function"/>
+    <supplyParameter cRef="C###543923401" varName="X###543923401"/>
     <innerRenaming cNewName="output" cOldName="output_map_function" cRef="map_function"/>
     <innerRenaming cNewName="map_value" cOldName="input_value" cRef="map_function"/>
+    <innerRenaming cNewName="map_key" cOldName="input_key" cRef="map_function"/>
     <interface iRef="IMapper" nArgs="5">
-      <slice isRef="feeder_pairs_binding">
-        <originRef cRef="feeder_pairs_binding" iRef="IServerBase"/>
+      <slice isRef="feed">
+        <originRef cRef="feed" iRef="IServerBase"/>
         <visualDescription h="10" w="10" x="13" y="8"/>
       </slice>
-      <slice isRef="reader_pairs_binding">
-        <originRef cRef="reader_pairs_binding" iRef="IClientBase"/>
+      <slice isRef="read">
+        <originRef cRef="read" iRef="IClientBase"/>
         <visualDescription h="10" w="10" x="124" y="6"/>
       </slice>
       <slice isRef="map_function">
@@ -155,21 +155,21 @@
       <visualDescription h="40" w="166" x="196" y="283">
         <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="feeder_pairs_binding">
+      <port name="feed">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feeder_pairs_binding" sRef="feeder_pairs_binding"/>
       </port>
-      <port name="reader_pairs_binding">
+      <port name="read">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="reader_pairs_binding" sRef="reader_pairs_binding"/>
-      </port>
-      <port name="map_value">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_value" sRef="map_function"/>
       </port>
       <port name="output">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_map_function" sRef="map_function"/>
+      </port>
+      <port name="map_value">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_value" sRef="map_function"/>
       </port>
       <port name="map_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -188,17 +188,17 @@
       <slices cRef="output" inner_replica="0" slice_replica="0" uRef="set" sliceName="output" transitive="true">
         <visualDescription h="10" w="10" x="129" y="14"/>
       </slices>
-      <slices cRef="feeder_pairs_binding" inner_replica="0" slice_replica="0" uRef="server" sliceName="feeder_pairs_binding" transitive="false">
+      <slices cRef="feed" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed" transitive="false">
         <visualDescription h="10" w="10" x="13" y="8"/>
+      </slices>
+      <slices cRef="read" inner_replica="0" slice_replica="0" uRef="client" sliceName="read" transitive="false">
+        <visualDescription h="10" w="10" x="124" y="6"/>
       </slices>
       <slices cRef="map_value" inner_replica="0" slice_replica="0" uRef="data" sliceName="map_value" transitive="true">
         <visualDescription h="10" w="10" x="105" y="24"/>
       </slices>
       <slices cRef="map_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="map_key" transitive="true">
         <visualDescription h="10" w="10" x="11" y="23"/>
-      </slices>
-      <slices cRef="reader_pairs_binding" inner_replica="0" slice_replica="0" uRef="client" sliceName="reader_pairs_binding" transitive="false">
-        <visualDescription h="10" w="10" x="124" y="6"/>
       </slices>
       <slices cRef="map_function" inner_replica="0" slice_replica="0" uRef="map_function" sliceName="map_function" transitive="false">
         <visualDescription h="10" w="10" x="140" y="14"/>
