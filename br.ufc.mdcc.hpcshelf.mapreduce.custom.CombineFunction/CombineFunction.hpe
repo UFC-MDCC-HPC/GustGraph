@@ -26,7 +26,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="output_data" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="100" x="346" y="207">
+      <visualDescription h="60" w="100" x="116" y="413">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
@@ -34,7 +34,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="output_item_kv" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="258" x="492" y="208">
+      <visualDescription h="74" w="111" x="300" y="390">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="value_type" varName="OMV"/>

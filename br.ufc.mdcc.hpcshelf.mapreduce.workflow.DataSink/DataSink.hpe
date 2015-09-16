@@ -6,14 +6,14 @@
         <extends>true</extends>
       </extensionType>
       <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b126729ab4b1cc3521afb3a8f8f5982b0e7699d89f8a6484cf16f938bd233c15dbf7df37a0474e3445af3cf7aced609c2e6a313ccbedc2bf1e731f970ef9fe67f980c4f8956b8acec0c76d5b0b37cc45dfef27d19c3f99c53bf03171a8082180db5e27133d308476dae52a49ea8a1907eae4f2668903653d7859cd9618bdecb1" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.Repository/Repository.hpe" name="Repository" package="br.ufc.mdcc.hpcshelf.mapreduce" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="344" y="415">
+        <visualDescription h="60" w="100" x="366" y="412">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="server_port_type" varName="DSKS"/>
         <parameter formFieldId="client_port_type" varName="DSKC"/>
         <parameter formFieldId="data_type" varName="OUT"/>
         <port localRef="binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
-          <visualDescription h="60" w="197" x="501" y="377">
+          <visualDescription h="60" w="197" x="510" y="394">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <parameter formFieldId="server_port_type" varName="DSKS"/>
