@@ -53,7 +53,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="channel" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" multiple="false" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" exposed="true">
+    <innerComponent localRef="split_channel" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" multiple="false" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" exposed="true">
       <visualDescription h="71" w="158" x="405" y="242">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -73,7 +73,7 @@
         <visualDescription h="20" w="20" x="124" y="6"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="reader_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+    <innerComponent localRef="reader_data_source" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
       <visualDescription h="66" w="132" x="423" y="145">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -86,7 +86,7 @@
         <visualDescription h="20" w="20" x="101" y="42"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="writer_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+    <innerComponent localRef="writer_data_sink" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
       <visualDescription h="67" w="137" x="420" y="65">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -99,7 +99,7 @@
         <visualDescription h="20" w="20" x="40" y="44"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="map_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+    <innerComponent localRef="map_feed" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
       <visualDescription h="62" w="195" x="377" y="431">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -112,7 +112,7 @@
         <visualDescription h="20" w="20" x="171" y="21"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="reduce_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+    <innerComponent localRef="reduce_collect" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
       <visualDescription h="66" w="200" x="372" y="493">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -144,7 +144,7 @@
         <visualDescription h="37" w="95" x="108" y="69">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###705665175"/>
+        <parameter formFieldId="value_type" varName="X###934564423"/>
         <unitBounds parallel="false" uRef="set">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -242,7 +242,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="C###705665175" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###934564423" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="513" y="397">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -252,22 +252,22 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###705665175" varName="X###705665175"/>
+    <supplyParameter cRef="C###934564423" varName="X###934564423"/>
     <innerRenaming cNewName="input" cOldName="input_type" cRef="split_function"/>
     <innerRenaming cNewName="output_set" cOldName="output_type" cRef="split_function"/>
     <interface iRef="IReduceCollector" nArgs="1">
-      <slice isRef="channel">
-        <originRef cRef="channel" iRef="IChannel"/>
+      <slice isRef="split_channel">
+        <originRef cRef="split_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="115" y="12"/>
       </slice>
-      <slice isRef="reduce_binding">
-        <originRef cRef="reduce_binding" iRef="IClientBase"/>
+      <slice isRef="reduce_collect">
+        <originRef cRef="reduce_collect" iRef="IClientBase"/>
         <visualDescription h="10" w="10" x="77" y="26"/>
       </slice>
       <visualDescription h="40" w="137" x="255" y="296">
-        <color b="255" g="0" r="0"/>
+        <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="channel">
+      <port name="split_channel">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="channel" sRef="channel"/>
       </port>
@@ -277,18 +277,18 @@
       </action>
     </interface>
     <interface iRef="IMapFeeder" nArgs="1">
-      <slice isRef="channel">
-        <originRef cRef="channel" iRef="IChannel"/>
+      <slice isRef="split_channel">
+        <originRef cRef="split_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="9" y="13"/>
       </slice>
-      <slice isRef="map_binding">
-        <originRef cRef="map_binding" iRef="IServerBase"/>
+      <slice isRef="map_feed">
+        <originRef cRef="map_feed" iRef="IServerBase"/>
         <visualDescription h="10" w="10" x="17" y="27"/>
       </slice>
       <visualDescription h="40" w="182" x="574" y="296">
-        <color b="203" g="192" r="255"/>
+        <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="channel">
+      <port name="split_channel">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="channel" sRef="channel"/>
       </port>
@@ -298,12 +298,12 @@
       </action>
     </interface>
     <interface iRef="IReadInput" nArgs="5">
-      <slice isRef="channel">
-        <originRef cRef="channel" iRef="IChannel"/>
+      <slice isRef="split_channel">
+        <originRef cRef="split_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="89" y="23"/>
       </slice>
-      <slice isRef="reader_binding">
-        <originRef cRef="reader_binding" iRef="IClientBase"/>
+      <slice isRef="reader_data_source">
+        <originRef cRef="reader_data_source" iRef="IClientBase"/>
         <visualDescription h="10" w="10" x="27" y="22"/>
       </slice>
       <slice isRef="split_function">
@@ -317,17 +317,17 @@
       <visualDescription h="40" w="120" x="238" y="79">
         <color b="0" g="128" r="0"/>
       </visualDescription>
-      <port name="channel">
+      <port name="split_channel">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="channel" sRef="channel"/>
-      </port>
-      <port name="output_set">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_type" sRef="split_function"/>
       </port>
       <port name="input">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_type" sRef="split_function"/>
+      </port>
+      <port name="output_set">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_type" sRef="split_function"/>
       </port>
       <port name="output_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -347,49 +347,49 @@
       </action>
     </interface>
     <interface iRef="IWriteOutput" nArgs="2">
-      <slice isRef="channel">
-        <originRef cRef="channel" iRef="IChannel"/>
-        <visualDescription h="10" w="10" x="9" y="23"/>
-      </slice>
-      <slice isRef="writer_binding">
-        <originRef cRef="writer_binding" iRef="IClientBase"/>
-        <visualDescription h="10" w="10" x="7" y="3"/>
-      </slice>
       <slice isRef="output">
         <originRef cRef="output" iRef="IData"/>
         <visualDescription h="10" w="10" x="90" y="23"/>
       </slice>
+      <slice isRef="split_channel">
+        <originRef cRef="split_channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="9" y="23"/>
+      </slice>
+      <slice isRef="writer_data_sink">
+        <originRef cRef="writer_data_sink" iRef="IClientBase"/>
+        <visualDescription h="10" w="10" x="7" y="3"/>
+      </slice>
       <visualDescription h="40" w="125" x="599" y="82">
         <color b="0" g="128" r="0"/>
       </visualDescription>
-      <port name="channel">
+      <port name="output">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output" sRef="output"/>
+      </port>
+      <port name="split_channel">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="channel" sRef="channel"/>
       </port>
-      <port name="output">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_type" sRef="output_type"/>
-      </port>
-      <parameter iname="IEnvironmentPortType" order="0" parid="data_sink_client_port_type" uname="environment_port_type" varid="DSKC"/>
       <parameter iname="IData" order="1" parid="output_type" uname="data" varid="OUT"/>
+      <parameter iname="IEnvironmentPortType" order="0" parid="data_sink_client_port_type" uname="environment_port_type" varid="DSKC"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IReduceCollector" multiple="true" private="false" replica="0" uRef="reduce_collector" visibleInterface="true">
-      <slices cRef="channel" inner_replica="0" slice_replica="2" uRef="peer" sliceName="channel" transitive="false">
+      <slices cRef="split_channel" inner_replica="0" slice_replica="2" uRef="peer" sliceName="split_channel" transitive="false">
         <visualDescription h="10" w="10" x="115" y="12"/>
       </slices>
-      <slices cRef="reduce_binding" inner_replica="0" slice_replica="0" uRef="client" sliceName="reduce_binding" transitive="false">
+      <slices cRef="reduce_collect" inner_replica="0" slice_replica="0" uRef="client" sliceName="reduce_collect" transitive="false">
         <visualDescription h="10" w="10" x="77" y="26"/>
       </slices>
       <visualDescription h="40" w="137" x="255" y="376"/>
     </unit>
     <unit facet="0" iRef="IMapFeeder" multiple="true" private="false" replica="0" uRef="map_feeder" visibleInterface="true">
-      <slices cRef="channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="channel" transitive="false">
+      <slices cRef="split_channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="split_channel" transitive="false">
         <visualDescription h="10" w="10" x="9" y="13"/>
       </slices>
-      <slices cRef="map_binding" inner_replica="0" slice_replica="0" uRef="server" sliceName="map_binding" transitive="false">
+      <slices cRef="map_feed" inner_replica="0" slice_replica="0" uRef="server" sliceName="map_feed" transitive="false">
         <visualDescription h="10" w="10" x="17" y="27"/>
       </slices>
       <visualDescription h="40" w="182" x="574" y="376"/>
@@ -398,19 +398,19 @@
       <slices cRef="input" inner_replica="0" slice_replica="0" uRef="data" sliceName="input" transitive="true">
         <visualDescription h="10" w="10" x="26" y="32"/>
       </slices>
+      <slices cRef="split_channel" inner_replica="0" slice_replica="0" uRef="peer" sliceName="split_channel" transitive="false">
+        <visualDescription h="10" w="10" x="110" y="25"/>
+      </slices>
       <slices cRef="output_set" inner_replica="0" slice_replica="0" uRef="set" sliceName="output_set" transitive="true">
         <visualDescription h="10" w="10" x="95" y="24"/>
       </slices>
       <slices cRef="output_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_key" transitive="true">
         <visualDescription h="10" w="10" x="130" y="24"/>
       </slices>
-      <slices cRef="channel" inner_replica="0" slice_replica="0" uRef="peer" sliceName="channel" transitive="false">
-        <visualDescription h="10" w="10" x="110" y="25"/>
-      </slices>
       <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
         <visualDescription h="10" w="10" x="24" y="26"/>
       </slices>
-      <slices cRef="reader_binding" inner_replica="0" slice_replica="0" uRef="client" sliceName="reader_binding" transitive="false">
+      <slices cRef="reader_data_source" inner_replica="0" slice_replica="0" uRef="client" sliceName="reader_data_source" transitive="false">
         <visualDescription h="10" w="10" x="114" y="16"/>
       </slices>
       <slices cRef="split_function" inner_replica="0" slice_replica="0" uRef="split_function" sliceName="split_function" transitive="false">
@@ -429,10 +429,10 @@
       <slices cRef="output" inner_replica="0" slice_replica="0" uRef="data" sliceName="output" transitive="false">
         <visualDescription h="10" w="10" x="90" y="23"/>
       </slices>
-      <slices cRef="channel" inner_replica="0" slice_replica="3" uRef="peer" sliceName="channel" transitive="false">
+      <slices cRef="split_channel" inner_replica="0" slice_replica="3" uRef="peer" sliceName="split_channel" transitive="false">
         <visualDescription h="10" w="10" x="9" y="23"/>
       </slices>
-      <slices cRef="writer_binding" inner_replica="0" slice_replica="0" uRef="client" sliceName="writer_binding" transitive="false">
+      <slices cRef="writer_data_sink" inner_replica="0" slice_replica="0" uRef="client" sliceName="writer_data_sink" transitive="false">
         <visualDescription h="10" w="10" x="7" y="3"/>
       </slices>
       <visualDescription h="40" w="120" x="601" y="153"/>

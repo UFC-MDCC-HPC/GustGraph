@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000033ac9049965ad20d83711b5b2d129131266565591b16ac76f898ea993545f715690e030f4e932ed6c6329f04eeb6f14d881dc401a7dca6c835215de5fa49f4e8b6de6e11685b7d6f030182e070e0418a0fb4d7468ee8fb8ba09f3d7ef1ad1e9720c7a763327c91be2c6b0461c39bb54bc32db377d4fbf836cd15e9c14901fb97" isAbstract="true" kind="Computation" name="CombineFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e71b4dddaf9063999ba0a2b3407be7d21a0f6f68f05adbafb472c707d0d7538fc11334bc6288ee98e440457f9301b35172fb9cb93d515697e159aa0edb1ccd2169a1a62e86bf4372fc1ecea977aed9646ba616f71a1d183a7641f7fb500c208e65eb4df0a93059d4b488cf03b621fa262b8a28ad9ddfbbea1fb2921382c85d8a" isAbstract="true" kind="Computation" name="CombineFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerComponent localRef="input_key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_key_type" exposed="true">
-      <visualDescription h="60" w="162" x="46" y="445">
+    <parameter componentRef="key_type" formFieldId="key_type" order="0" variance="contravariant" varName="OMK"/>
+    <parameter componentRef="value_type" formFieldId="value_type" order="1" variance="contravariant" varName="OMV"/>
+    <innerComponent localRef="key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="key_type" exposed="true">
+      <visualDescription h="60" w="162" x="225" y="146">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="input_value_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_value_type" exposed="true">
-      <visualDescription h="60" w="142" x="234" y="449">
+    <innerComponent localRef="value_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="value_type" exposed="true">
+      <visualDescription h="60" w="142" x="436" y="157">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
@@ -24,7 +26,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="output_data" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="100" x="410" y="476">
+      <visualDescription h="60" w="100" x="346" y="207">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
@@ -32,37 +34,19 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="output_item_kv" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="258" x="545" y="344">
+      <visualDescription h="60" w="258" x="492" y="208">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="value_type" varName="OCV"/>
-      <parameter formFieldId="key_type" varName="OCK"/>
+      <parameter formFieldId="value_type" varName="OMV"/>
+      <parameter formFieldId="key_type" varName="OMK"/>
       <unitBounds parallel="false" uRef="kv_pair">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <interface iRef="ICombineFunction" nArgs="2">
-      <slice isRef="input_key_type">
-        <originRef cRef="input_key_type" iRef="IData"/>
-        <visualDescription h="10" w="10" x="12" y="28"/>
-      </slice>
-      <slice isRef="input_value_type">
-        <originRef cRef="input_value_type" iRef="IData"/>
-        <visualDescription h="10" w="10" x="62" y="25"/>
-      </slice>
+    <interface iRef="ICombineFunction" nArgs="0">
       <visualDescription h="40" w="145" x="153" y="255">
         <color b="230" g="216" r="173"/>
       </visualDescription>
-      <port name="input_key_type">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key_type" sRef="input_key_type"/>
-      </port>
-      <port name="input_value_type">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_value_type" sRef="input_value_type"/>
-      </port>
-      <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="OMK"/>
-      <parameter iname="IData" order="1" parid="input_value_type" uname="data" varid="OMV"/>
       <action id="main">
         <protocol/>
       </action>
