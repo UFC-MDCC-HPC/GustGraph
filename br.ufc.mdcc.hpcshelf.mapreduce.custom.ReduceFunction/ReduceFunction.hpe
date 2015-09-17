@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002def3d11a6e7d607c4d5309707e475c38cc77895411770fceb63da917b024475af79ea80a21f2e9261a32a35138edfaa0758e9c879ac7e6e9cc8d2a03227ad847e8c2847183a2bbd555e60e605e97a8de2ac251091739108535c63d71cfdff1a80fbce7fdb14f315acafb7b3a84f62355ea15586d87fdcd93889a5f65c94c5b0" isAbstract="true" kind="Computation" name="ReduceFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000063715763eb49d652d8dbd8e9f9775b05fc4b4acfdeff8a5e936d68267d36491001f7aa1ba4d5bba36ae0e568400a31abb38dc925123f4cf89fa7561cecbd999d21501f69449dd508d7c10766be2c2b71a3c7ab7457a09357c6d36df74709dadfd791f42d702e1d6a0d7ef868f9939336e0efc35046662978c751c0f50dbdd5ec" isAbstract="true" kind="Computation" name="ReduceFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -9,8 +9,8 @@
   <componentInfo>
     <parameter componentRef="input_key_type" formFieldId="input_key_type" order="0" variance="contravariant" varName="OMK"/>
     <parameter componentRef="input_value_type" formFieldId="input_value_type" order="1" variance="contravariant" varName="OMV"/>
-    <parameter componentRef="output_key" formFieldId="output_key_type" order="2" variance="contravariant" varName="ORK"/>
-    <parameter componentRef="output_value" formFieldId="output_value_type" order="3" variance="contravariant" varName="ORV"/>
+    <parameter componentRef="output_key_type" formFieldId="output_key_type" order="2" variance="contravariant" varName="ORK"/>
+    <parameter componentRef="output_value_type" formFieldId="output_value_type" order="3" variance="contravariant" varName="ORV"/>
     <innerComponent localRef="input_key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_key_type" exposed="false">
       <visualDescription h="60" w="158" x="183" y="498">
         <color b="255" g="255" r="255"/>
@@ -27,7 +27,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="output_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="output_key_type" exposed="true">
+    <innerComponent localRef="output_key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="output_key_type" exposed="true">
       <visualDescription h="77" w="123" x="401" y="463">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -35,7 +35,7 @@
         <visualDescription h="20" w="20" x="57" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="output_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="output_value_type" exposed="true">
+    <innerComponent localRef="output_value_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="output_value_type" exposed="true">
       <visualDescription h="68" w="133" x="500" y="404">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -62,51 +62,51 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="output" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="60" w="100" x="423" y="471">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="ORV"/>
+      <parameter formFieldId="key_type" varName="ORK"/>
+      <unitBounds parallel="false" uRef="kv_pair">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
     <supplyParameter cRef="set_values" direct="true" varName="SETV"/>
-    <interface iRef="IReduceFunction" nArgs="3">
-      <slice isRef="output_key">
-        <originRef cRef="output_key" iRef="IData"/>
-        <visualDescription h="10" w="10" x="140" y="27"/>
+    <interface iRef="IReduceFunction" nArgs="4">
+      <slice isRef="output">
+        <originRef cRef="output" iRef="IKVPair"/>
+        <visualDescription h="10" w="10" x="162" y="5"/>
       </slice>
       <slice isRef="input">
         <originRef cRef="input" iRef="IKVPair"/>
         <visualDescription h="10" w="10" x="11" y="25"/>
       </slice>
-      <slice isRef="output_value">
-        <originRef cRef="output_value" iRef="IData"/>
-        <visualDescription h="10" w="10" x="174" y="15"/>
-      </slice>
       <visualDescription h="40" w="190" x="270" y="273">
         <color b="0" g="165" r="255"/>
       </visualDescription>
-      <port name="output_key">
+      <port name="output">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_key_type" sRef="output_key_type"/>
+        <slice pRef="output" sRef="output"/>
       </port>
       <port name="input">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input" sRef="input"/>
       </port>
-      <port name="output_value">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_value_type" sRef="output_value_type"/>
-      </port>
-      <parameter iname="IData" order="1" parid="output_key_type" uname="data" varid="ORK"/>
+      <parameter iname="IData" order="3" parid="output_value_type" uname="data" varid="ORV"/>
+      <parameter iname="IData" order="2" parid="output_key_type" uname="data" varid="ORK"/>
+      <parameter iname="IData" order="1" parid="input_value_type" uname="data" varid="OMV"/>
       <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="OMK"/>
-      <parameter iname="IData" order="2" parid="output_value_type" uname="data" varid="ORV"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IReduceFunction" multiple="false" private="false" replica="0" uRef="reduce_function" visibleInterface="true">
+      <slices cRef="output" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="output" transitive="false">
+        <visualDescription h="10" w="10" x="144" y="21"/>
+      </slices>
       <slices cRef="input" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="input" transitive="false">
         <visualDescription h="10" w="10" x="11" y="25"/>
-      </slices>
-      <slices cRef="output_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_key" transitive="false">
-        <visualDescription h="10" w="10" x="140" y="27"/>
-      </slices>
-      <slices cRef="output_value" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_value" transitive="false">
-        <visualDescription h="10" w="10" x="174" y="15"/>
       </slices>
       <visualDescription h="40" w="190" x="270" y="353"/>
     </unit>

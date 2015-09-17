@@ -25,18 +25,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="input_data" location="br.ufc.mdcc.common.KMVPair/KMVPair.hpe" multiple="false" name="KMVPair" package="br.ufc.mdcc.common" exposed="true">
-      <visualDescription h="60" w="100" x="50" y="404">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="key_type" varName="OMK"/>
-      <parameter formFieldId="multi_value_type" varName="OMV"/>
-      <unitBounds parallel="false" uRef="kmv_pair">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
     <innerComponent localRef="output_data" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
-      <visualDescription h="60" w="159" x="324" y="419">
+      <visualDescription h="60" w="159" x="330" y="403">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="value_type" varName="OMV"/>
@@ -45,14 +35,34 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="input_data" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="60" w="246" x="37" y="408">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="SET"/>
+      <parameter formFieldId="key_type" varName="OMK"/>
+      <unitBounds parallel="false" uRef="kv_pair">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="set" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="393" y="224">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="OMV"/>
+      <unitBounds parallel="false" uRef="set">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="set" direct="true" varName="SET"/>
     <interface iRef="ICombineFunction" nArgs="2">
       <slice isRef="input_data">
-        <originRef cRef="input_data" iRef="IKMVPair"/>
-        <visualDescription h="10" w="10" x="20" y="25"/>
+        <originRef cRef="input_data" iRef="IKVPair"/>
+        <visualDescription h="10" w="10" x="10" y="21"/>
       </slice>
       <slice isRef="output_data">
         <originRef cRef="output_data" iRef="IKVPair"/>
-        <visualDescription h="10" w="10" x="111" y="21"/>
+        <visualDescription h="10" w="10" x="112" y="20"/>
       </slice>
       <visualDescription h="40" w="145" x="153" y="255">
         <color b="230" g="216" r="173"/>
@@ -65,18 +75,18 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_data" sRef="output_data"/>
       </port>
-      <parameter iname="IData" order="0" parid="key_type" uname="data" varid="OMK"/>
       <parameter iname="IData" order="1" parid="value_type" uname="data" varid="OMV"/>
+      <parameter iname="IData" order="0" parid="key_type" uname="data" varid="OMK"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="ICombineFunction" multiple="false" private="false" replica="0" uRef="combine_function" visibleInterface="true">
-      <slices cRef="input_data" inner_replica="0" slice_replica="0" uRef="kmv_pair" sliceName="input_data" transitive="false">
-        <visualDescription h="10" w="10" x="20" y="25"/>
+      <slices cRef="input_data" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="input_data" transitive="false">
+        <visualDescription h="10" w="10" x="10" y="21"/>
       </slices>
       <slices cRef="output_data" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="output_data" transitive="false">
-        <visualDescription h="10" w="10" x="111" y="21"/>
+        <visualDescription h="10" w="10" x="112" y="20"/>
       </slices>
       <visualDescription h="40" w="145" x="153" y="335"/>
     </unit>

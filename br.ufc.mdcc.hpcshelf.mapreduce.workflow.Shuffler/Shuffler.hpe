@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000059bdfd6d980c0a05e6f31e59067d8ed7d730b1883c6dd1393669e49a297a0bfb44d7443c5a1b16db6f76f029dbb2843c201e7a0f3cda4f4a43381e4d1b5fbe9c8ef6a4d84d2c9f081cdf0df640b66c51eb200405405cf34c9906a838030180af965d9841423aafdce365c37248ea87c1e478fc602a12b8855fa7af368f9b5182" isAbstract="true" kind="Synchronizer" name="Shuffler" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000077efb75e5e2a589ed331c47b1d3840d127b8c875a1c45bc2b5fc4680f42262941c36a575c9f7a4bd70998d4c5e9f34c52a10d755d65075dfa4754d1b2df00f6e198aa8db32efa90df063c70aaaf0e8ed1f561830572ba7be0795c6de14f7d1f3a34f596e3a0fcc480f8c25b9b99f416ccd321417964e4c0b4b0546d2abd8f85" isAbstract="true" kind="Synchronizer" name="Shuffler" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -9,8 +9,6 @@
   <componentInfo>
     <parameter componentRef="intermediate_key_type" formFieldId="intermediate_key_type" order="0" variance="contravariant" varName="OMK"/>
     <parameter componentRef="intermediate_value_type" formFieldId="intermediate_value_type" order="1" variance="contravariant" varName="OMV"/>
-    <parameter componentRef="server_port_type" formFieldId="server_port_type" order="1" variance="contravariant" varName="S"/>
-    <parameter componentRef="client_port_type" formFieldId="client_port_type" order="2" variance="contravariant" varName="C"/>
     <parameter componentRef="partition_function" formFieldId="partition_function" order="2" variance="contravariant" varName="PF"/>
     <innerComponent localRef="shuffler_channel" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" multiple="false" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" exposed="true">
       <visualDescription h="61" w="182" x="254" y="418">
@@ -26,7 +24,7 @@
         <visualDescription h="20" w="20" x="7" y="20"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="read" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+    <innerComponent localRef="read_map" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
       <visualDescription h="60" w="161" x="67" y="423">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -39,7 +37,7 @@
         <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="feed" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+    <innerComponent localRef="feed_reduce" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
       <visualDescription h="60" w="174" x="464" y="408">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -68,22 +66,6 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="server_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/EnvironmentPortType.hpe" multiple="false" name="EnvironmentPortType" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="server_port_type" exposed="false">
-      <visualDescription h="60" w="214" x="157" y="134">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="client_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/EnvironmentPortType.hpe" multiple="false" name="EnvironmentPortType" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="client_port_type" exposed="false">
-      <visualDescription h="60" w="196" x="475" y="137">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
     <innerComponent localRef="partition_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" parameter_id="partition_function" exposed="false">
       <visualDescription h="64" w="125" x="609" y="261">
         <color b="255" g="255" r="255"/>
@@ -109,13 +91,31 @@
         <visualDescription h="20" w="20" x="54" y="42"/>
       </unitBounds>
     </innerComponent>
-    <interface iRef="IReduceFeeder" nArgs="3">
+    <innerComponent localRef="c" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="56" y="160">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="s" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="221" y="121">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="c" direct="true" varName="C"/>
+    <supplyParameter cRef="s" direct="true" varName="S"/>
+    <interface iRef="IReduceFeeder" nArgs="2">
       <slice isRef="shuffler_channel">
         <originRef cRef="shuffler_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="17" y="26"/>
       </slice>
-      <slice isRef="feed">
-        <originRef cRef="feed" iRef="IServerBase"/>
+      <slice isRef="feed_reduce">
+        <originRef cRef="feed_reduce" iRef="IServerBase"/>
         <visualDescription h="10" w="10" x="76" y="23"/>
       </slice>
       <slice isRef="partition_function">
@@ -137,20 +137,19 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_key" sRef="partition_function"/>
       </port>
-      <parameter iname="IEnvironmentPortType" order="1" parid="server_port_type" uname="environment_port_type" varid="S"/>
-      <parameter iname="IPartitionFunction" order="2" parid="partition_function" uname="partition_function" varid="PF"/>
+      <parameter iname="IPartitionFunction" order="1" parid="partition_function" uname="partition_function" varid="PF"/>
       <parameter iname="IData" order="0" parid="intermediate_key_type" uname="data" varid="OMK"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
-    <interface iRef="IMapCollector" nArgs="1">
+    <interface iRef="IMapCollector" nArgs="0">
       <slice isRef="shuffler_channel">
         <originRef cRef="shuffler_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="168" y="22"/>
       </slice>
-      <slice isRef="read">
-        <originRef cRef="read" iRef="IClientBase"/>
+      <slice isRef="read_map">
+        <originRef cRef="read_map" iRef="IClientBase"/>
         <visualDescription h="10" w="10" x="39" y="24"/>
       </slice>
       <visualDescription h="40" w="197" x="84" y="250">
@@ -160,7 +159,6 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="shuffler_channel" sRef="shuffler_channel"/>
       </port>
-      <parameter iname="IEnvironmentPortType" order="0" parid="client_port_type" uname="environment_port_type" varid="C"/>
       <action id="main">
         <protocol/>
       </action>
@@ -175,7 +173,7 @@
       <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
         <visualDescription h="10" w="10" x="24" y="26"/>
       </slices>
-      <slices cRef="feed" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed" transitive="false">
+      <slices cRef="feed_reduce" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed_reduce" transitive="false">
         <visualDescription h="10" w="10" x="76" y="23"/>
       </slices>
       <slices cRef="partition_function" inner_replica="0" slice_replica="0" uRef="partition_function" sliceName="partition_function" transitive="false">
@@ -189,7 +187,7 @@
       <slices cRef="shuffler_channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="shuffler_channel" transitive="false">
         <visualDescription h="10" w="10" x="168" y="22"/>
       </slices>
-      <slices cRef="read" inner_replica="0" slice_replica="0" uRef="client" sliceName="read" transitive="false">
+      <slices cRef="read_map" inner_replica="0" slice_replica="0" uRef="client" sliceName="read_map" transitive="false">
         <visualDescription h="10" w="10" x="39" y="24"/>
       </slices>
       <visualDescription h="40" w="197" x="84" y="330"/>

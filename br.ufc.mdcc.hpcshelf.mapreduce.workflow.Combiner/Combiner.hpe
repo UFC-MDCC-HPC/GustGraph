@@ -7,16 +7,14 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <parameter componentRef="server_port_type" formFieldId="server_port_type" order="0" variance="contravariant" varName="S"/>
-    <parameter componentRef="client_port_type" formFieldId="client_port_type" order="1" variance="contravariant" varName="C"/>
     <parameter componentRef="input_value_type" formFieldId="input_value_type" order="2" variance="contravariant" varName="OMV"/>
     <parameter componentRef="input_key_type" formFieldId="input_key_type" order="3" variance="contravariant" varName="OMK"/>
-    <innerComponent localRef="feeder_pairs_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+    <innerComponent localRef="read_map" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
       <visualDescription h="60" w="182" x="99" y="393">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="server_port_type" varName="S"/>
-      <parameter formFieldId="client_port_type" varName="C"/>
+      <parameter formFieldId="server_port_type" varName="MS"/>
+      <parameter formFieldId="client_port_type" varName="MC"/>
       <unitBounds parallel="false" uRef="client">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -24,33 +22,17 @@
         <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="reader_pairs_binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+    <innerComponent localRef="feed_shuffle" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
       <visualDescription h="60" w="186" x="338" y="397">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="server_port_type" varName="S"/>
-      <parameter formFieldId="client_port_type" varName="C"/>
+      <parameter formFieldId="server_port_type" varName="SS"/>
+      <parameter formFieldId="client_port_type" varName="SC"/>
       <unitBounds parallel="false" uRef="client">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
       <unitBounds parallel="false" uRef="server">
         <visualDescription h="20" w="20" x="28" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="server_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/EnvironmentPortType.hpe" multiple="false" name="EnvironmentPortType" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="server_port_type" exposed="false">
-      <visualDescription h="60" w="192" x="596" y="241">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="client_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/EnvironmentPortType.hpe" multiple="false" name="EnvironmentPortType" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="client_port_type" exposed="false">
-      <visualDescription h="60" w="174" x="590" y="170">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
-        <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="input_value_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_value_type" exposed="false">
@@ -76,7 +58,7 @@
       <parameter formFieldId="value_type" varName="OMV"/>
       <parameter formFieldId="key_type" varName="OMK"/>
       <port localRef="input_data" location="br.ufc.mdcc.common.KMVPair/KMVPair.hpe" multiple="false" name="KMVPair" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="60" w="100" x="601" y="229">
+        <visualDescription h="60" w="100" x="589" y="240">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="key_type" varName="OMK"/>
@@ -99,13 +81,49 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <interface iRef="ICombiner" nArgs="4">
-      <slice isRef="feeder_pairs_binding">
-        <originRef cRef="feeder_pairs_binding" iRef="IClientBase"/>
+    <innerComponent localRef="shuffle_SS" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="376" y="104">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="shuffle_SC" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="598" y="109">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="map_ms" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="187" y="513">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="map_mc" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="315" y="505">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="map_ms" direct="true" varName="MS"/>
+    <supplyParameter cRef="map_mc" direct="true" varName="MC"/>
+    <supplyParameter cRef="shuffle_SS" direct="true" varName="SS"/>
+    <supplyParameter cRef="shuffle_SC" direct="true" varName="SC"/>
+    <interface iRef="ICombiner" nArgs="2">
+      <slice isRef="read_map">
+        <originRef cRef="read_map" iRef="IClientBase"/>
         <visualDescription h="10" w="10" x="18" y="25"/>
       </slice>
-      <slice isRef="reader_pairs_binding">
-        <originRef cRef="reader_pairs_binding" iRef="IServerBase"/>
+      <slice isRef="feed_shuffle">
+        <originRef cRef="feed_shuffle" iRef="IServerBase"/>
         <visualDescription h="10" w="10" x="103" y="21"/>
       </slice>
       <slice isRef="combine_function">
@@ -129,10 +147,8 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_data" sRef="combine_function"/>
       </port>
-      <parameter iname="IEnvironmentPortType" order="1" parid="client_port_type" uname="environment_port_type" varid="C"/>
-      <parameter iname="IEnvironmentPortType" order="0" parid="server_port_type" uname="environment_port_type" varid="S"/>
-      <parameter iname="IData" order="3" parid="input_key_type" uname="data" varid="OMK"/>
-      <parameter iname="IData" order="2" parid="input_value_type" uname="data" varid="OMV"/>
+      <parameter iname="IData" order="1" parid="input_key_type" uname="data" varid="OMK"/>
+      <parameter iname="IData" order="0" parid="input_value_type" uname="data" varid="OMV"/>
       <action id="main">
         <protocol/>
       </action>
@@ -144,10 +160,10 @@
       <slices cRef="output_data" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="output_data" transitive="true">
         <visualDescription h="10" w="10" x="111" y="21"/>
       </slices>
-      <slices cRef="feeder_pairs_binding" inner_replica="0" slice_replica="0" uRef="client" sliceName="feeder_pairs_binding" transitive="false">
+      <slices cRef="read_map" inner_replica="0" slice_replica="0" uRef="client" sliceName="read_map" transitive="false">
         <visualDescription h="10" w="10" x="18" y="25"/>
       </slices>
-      <slices cRef="reader_pairs_binding" inner_replica="0" slice_replica="0" uRef="server" sliceName="reader_pairs_binding" transitive="false">
+      <slices cRef="feed_shuffle" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed_shuffle" transitive="false">
         <visualDescription h="10" w="10" x="103" y="21"/>
       </slices>
       <slices cRef="combine_function" inner_replica="0" slice_replica="0" uRef="combine_function" sliceName="combine_function" transitive="false">
