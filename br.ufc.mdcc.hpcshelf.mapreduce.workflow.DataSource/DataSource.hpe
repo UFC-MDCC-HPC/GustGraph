@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000067f20346309ac0f7c24df89a1d76006af256f6bec57e24c9159ec6bcd2b55bf6eeb1dc50d8619b8a26ed74600996aff2e1d2b039111f34543628228383963f2301a999d384b2630c4207a0fec2fc5d400817cb620db739e9fb1feddc0ef6ac581c643a4b5b4951aa702d1eb4093e8863d0e7dd91e206a175bee7914001aa9ecd" isAbstract="true" kind="Computation" name="DataSource" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000021f6669acd9c0a82cd09e9e85e9cdd823a84086fe80e940d98871fdeb808a6a9f01d15e7a315d27e31e0d624bcdc79443005497d93cd8089b1e5842f683e11d82d27069ebbead6d3ee80a34098bf1e2ba9a706861ec3540d566f6f505b1bd0ca5acbb06a15dc4470016b902992f74ffb19a25b233f45d0ca8090d8e44792c8d5" isAbstract="true" kind="Computation" name="DataSource" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -8,22 +8,6 @@
   </header>
   <componentInfo>
     <parameter componentRef="data_type" formFieldId="data_type" order="0" variance="contravariant" varName="IN"/>
-    <innerComponent localRef="rs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="100" x="456" y="171">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="rc" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="100" x="604" y="173">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
     <innerComponent localRef="data_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="data_type" exposed="true">
       <visualDescription h="60" w="100" x="207" y="370">
         <color b="255" g="255" r="255"/>
@@ -32,12 +16,10 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="data_server" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
-      <visualDescription h="60" w="160" x="367" y="375">
+    <innerComponent localRef="reader" location="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/EnvironmentBindingReadData.hpe" multiple="false" name="EnvironmentBindingReadData" package="br.ufc.mdcc.hpcshelf.mapreduce.environment" exposed="false">
+      <visualDescription h="60" w="100" x="399" y="378">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="server_port_type" varName="S"/>
-      <parameter formFieldId="client_port_type" varName="C"/>
       <unitBounds parallel="false" uRef="client">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -45,45 +27,31 @@
         <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="c" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="100" x="573" y="194">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="s" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="100" x="592" y="279">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <supplyParameter cRef="rs" direct="true" varName="RS"/>
-    <supplyParameter cRef="rc" direct="true" varName="RC"/>
-    <supplyParameter cRef="c" direct="true" varName="C"/>
-    <supplyParameter cRef="s" direct="true" varName="S"/>
     <interface iRef="IDataSource" nArgs="1">
       <slice isRef="data_type">
         <originRef cRef="data_type" iRef="IData"/>
         <visualDescription h="10" w="10" x="31" y="25"/>
       </slice>
-      <slice isRef="data_server">
-        <originRef cRef="data_server" iRef="IServerBase"/>
-        <visualDescription h="10" w="10" x="149" y="19"/>
+      <slice isRef="reader">
+        <originRef cRef="reader" iRef="IServerReadData"/>
+        <visualDescription h="10" w="10" x="159" y="22"/>
       </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource&#xA;{&#xA;&#x9;public interface BaseIDataSource&lt;IN> : IComputationKind &#xA;&#x9;&#x9;where IN:IData&#xA;&#x9;{&#xA;&#x9;&#x9;IN Data_type {get;}&#xA;&#x9;}&#xA;}" name="BaseIDataSource.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource/bin/1.0.0.0/BaseIDataSource.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource&#xA;{&#xA;&#x9;public interface IDataSource&lt;IN> : BaseIDataSource&lt;IN>&#xA;&#x9;&#x9;where IN:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDataSource.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource/bin/1.0.0.0/IDataSource.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource/bin/1.0.0.0/BaseIDataSource.dll</dependency>
+        </file>
+      </sources>
       <visualDescription h="40" w="213" x="226" y="184">
         <color b="0" g="128" r="0"/>
       </visualDescription>
       <port name="data_type">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="data_type" sRef="data_type"/>
-      </port>
-      <port name="data_server">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="data_server" sRef="data_server"/>
       </port>
       <parameter iname="IData" order="0" parid="data_type" uname="data" varid="IN"/>
       <action id="main">
@@ -94,8 +62,8 @@
       <slices cRef="data_type" inner_replica="0" slice_replica="0" uRef="data" sliceName="data_type" transitive="false">
         <visualDescription h="10" w="10" x="31" y="25"/>
       </slices>
-      <slices cRef="data_server" inner_replica="0" slice_replica="0" uRef="server" sliceName="data_server" transitive="false">
-        <visualDescription h="10" w="10" x="149" y="19"/>
+      <slices cRef="reader" inner_replica="0" slice_replica="0" uRef="server" sliceName="reader" transitive="false">
+        <visualDescription h="10" w="10" x="159" y="22"/>
       </slices>
       <visualDescription h="40" w="213" x="226" y="264"/>
     </unit>

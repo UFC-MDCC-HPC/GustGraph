@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000006b1c0362c8bda3fdc252ca178cf43b4af78f16dcbfadface0df5de0138d60364fbc60686da79d9decec75569d9bca8bc6f7426fe05d8d7d9f0c166ae05adb8cc5a2fd7fa2e7a5efc0b7e276a5cc44d9bb22d073b73a41309f1050325c7d297d99451d46a983d7aa24aeab3da8ef5cfc48d62a046eb3e07db58c1d984dd4a55b8" isAbstract="true" kind="Computation" name="PartitionFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a760049d72968c58f73f32a73de737561f079b6c1522bef41a7215a6ca763f6646882803219343a5b7bea951c891d692e331bc95921b57c6c4142fd0dd0a38eb34d045096c7c7ca4f3a6e93f1838d9c85086966a9fa8ee1498bfa49e8e5f1c5c8500b4fbb247ce7647b7141a5e09c3ebde7024e7463dc292067281f1c41b5f8a" isAbstract="true" kind="Computation" name="PartitionFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -25,24 +25,35 @@
       </unitBounds>
     </innerComponent>
     <interface iRef="IPartitionFunction" nArgs="1">
-      <slice isRef="input_key">
-        <originRef cRef="input_key" iRef="IData"/>
-        <visualDescription h="10" w="10" x="24" y="26"/>
-      </slice>
       <slice isRef="output_key">
         <originRef cRef="output_key" iRef="IInteger"/>
         <visualDescription h="10" w="10" x="130" y="24"/>
       </slice>
+      <slice isRef="input_key">
+        <originRef cRef="input_key" iRef="IData"/>
+        <visualDescription h="10" w="10" x="24" y="26"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction&#xA;{&#xA;&#x9;public interface BaseIPartitionFunction&lt;IPK> : IComputationKind &#xA;&#x9;&#x9;where IPK:IData&#xA;&#x9;{&#xA;&#x9;&#x9;IPK Input_key {get;}&#xA;&#x9;&#x9;IInteger Output_key {get;}&#xA;&#x9;}&#xA;}" name="BaseIPartitionFunction.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/BaseIPartitionFunction.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction&#xA;{&#xA;&#x9;public interface IPartitionFunction&lt;IPK> : BaseIPartitionFunction&lt;IPK>&#xA;&#x9;&#x9;where IPK:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IPartitionFunction.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/BaseIPartitionFunction.dll</dependency>
+        </file>
+      </sources>
       <visualDescription h="40" w="167" x="138" y="239">
         <color b="230" g="216" r="173"/>
       </visualDescription>
-      <port name="input_key">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input" sRef="input"/>
-      </port>
       <port name="output_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_key" sRef="output_key"/>
+      </port>
+      <port name="input_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="input_key"/>
       </port>
       <parameter iname="IData" order="0" parid="input_key" uname="data" varid="IPK"/>
       <action id="main">

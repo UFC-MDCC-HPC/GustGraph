@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000004fd3d31afd90c822e426c2711874a2041a93f59b07f4ba45158bbaf6f06ed3e46c944fad8513f2134437297ee1f3db8e527c4698880ca06724b280f6a8c92ec531402527b8652eb1a717d689b72c821274dcd4aab7cd249c3f8440ea02b651859fb77fc18fd98c033696cd87ef5b6f59d1bd5e75ca374ac75207cbfa152e419c" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e728cf0b0d7fa66fa27ddd2ce468c83b9d33ca1cc0be81e41767424b6430f9bd76b202135649f773a7fa100f665e62aba3fa93aa347ec86ff2df3c893669c59d272ad1c30c31520954c26e631ab0afcad9d09be0f88afad03df31ed8f5d78828f6b64639e2fce1da15e52fa8a1990bab074dca7241c1c5bfc2cf17adfd52eca4" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -67,58 +67,6 @@
         <visualDescription h="20" w="20" x="124" y="6"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="reader_data_source" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="66" w="132" x="423" y="145">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="server_port_type" varName="RS"/>
-      <parameter formFieldId="client_port_type" varName="RC"/>
-      <unitBounds parallel="false" uRef="client">
-        <visualDescription h="20" w="20" x="10" y="40"/>
-      </unitBounds>
-      <unitBounds parallel="false" uRef="server">
-        <visualDescription h="20" w="20" x="101" y="42"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="writer_data_sink" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="67" w="137" x="420" y="65">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="server_port_type" varName="RS"/>
-      <parameter formFieldId="client_port_type" varName="RC"/>
-      <unitBounds parallel="false" uRef="client">
-        <visualDescription h="20" w="20" x="86" y="44"/>
-      </unitBounds>
-      <unitBounds parallel="false" uRef="server">
-        <visualDescription h="20" w="20" x="40" y="44"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="feed_map" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="62" w="195" x="377" y="431">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="server_port_type" varName="S"/>
-      <parameter formFieldId="client_port_type" varName="C"/>
-      <unitBounds parallel="false" uRef="client">
-        <visualDescription h="20" w="20" x="6" y="20"/>
-      </unitBounds>
-      <unitBounds parallel="false" uRef="server">
-        <visualDescription h="20" w="20" x="171" y="21"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="read_reduce" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="66" w="200" x="372" y="493">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="server_port_type" varName="S"/>
-      <parameter formFieldId="client_port_type" varName="C"/>
-      <unitBounds parallel="false" uRef="client">
-        <visualDescription h="20" w="20" x="7" y="19"/>
-      </unitBounds>
-      <unitBounds parallel="false" uRef="server">
-        <visualDescription h="20" w="20" x="174" y="21"/>
-      </unitBounds>
-    </innerComponent>
     <innerComponent localRef="split_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction/SplitFunction.hpe" multiple="false" name="SplitFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" parameter_id="split_function" exposed="false">
       <visualDescription h="39" w="125" x="47" y="150">
         <color b="255" g="255" r="255"/>
@@ -138,7 +86,7 @@
         <visualDescription h="37" w="95" x="108" y="69">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###1126947400"/>
+        <parameter formFieldId="value_type" varName="X###116365521"/>
         <unitBounds parallel="false" uRef="set">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -188,43 +136,51 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="c" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="185" x="36" y="344">
+    <innerComponent localRef="writer" location="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingWriteData/EnvironmentBindingWriteData.hpe" multiple="false" name="EnvironmentBindingWriteData" package="br.ufc.mdcc.hpcshelf.mapreduce.environment" exposed="false">
+      <visualDescription h="50" w="194" x="368" y="78">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
-        <visualDescription h="20" w="20" x="5" y="2"/>
+      <unitBounds parallel="false" uRef="client">
+        <visualDescription h="20" w="20" x="165" y="14"/>
+      </unitBounds>
+      <unitBounds parallel="false" uRef="server">
+        <visualDescription h="20" w="20" x="9" y="15"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="s" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="209" x="25" y="411">
+    <innerComponent localRef="reader" location="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/EnvironmentBindingReadData.hpe" multiple="false" name="EnvironmentBindingReadData" package="br.ufc.mdcc.hpcshelf.mapreduce.environment" exposed="false">
+      <visualDescription h="44" w="205" x="373" y="143">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
-        <visualDescription h="20" w="20" x="5" y="2"/>
+      <unitBounds parallel="false" uRef="client">
+        <visualDescription h="20" w="20" x="10" y="14"/>
+      </unitBounds>
+      <unitBounds parallel="false" uRef="server">
+        <visualDescription h="20" w="20" x="172" y="11"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="rs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="209" x="36" y="475">
+    <innerComponent localRef="feed_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs/EnvironmentBindingMbyNTakePairs.hpe" multiple="false" name="EnvironmentBindingMbyNTakePairs" package="br.ufc.mdcc.hpcshelf.mapreduce.environment" exposed="false">
+      <visualDescription h="60" w="140" x="428" y="418">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
-        <visualDescription h="20" w="20" x="5" y="2"/>
+      <unitBounds parallel="true" uRef="client">
+        <visualDescription h="20" w="20" x="5" y="22"/>
+      </unitBounds>
+      <unitBounds parallel="true" uRef="server">
+        <visualDescription h="20" w="20" x="116" y="20"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="rc" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="218" x="42" y="536">
+    <innerComponent localRef="collect_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs/EnvironmentBindingMbyNTakePairs.hpe" multiple="false" name="EnvironmentBindingMbyNTakePairs" package="br.ufc.mdcc.hpcshelf.mapreduce.environment" exposed="false">
+      <visualDescription h="58" w="156" x="421" y="491">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
-        <visualDescription h="20" w="20" x="5" y="2"/>
+      <unitBounds parallel="true" uRef="client">
+        <visualDescription h="20" w="20" x="5" y="21"/>
+      </unitBounds>
+      <unitBounds parallel="true" uRef="server">
+        <visualDescription h="20" w="20" x="123" y="16"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="rs" direct="true" varName="RS"/>
-    <supplyParameter cRef="rc" direct="true" varName="RC"/>
-    <supplyParameter cRef="s" direct="true" varName="S"/>
-    <supplyParameter cRef="c" direct="true" varName="C"/>
-    <innerComponent localRef="C###1126947400" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###116365521" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="513" y="397">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -234,18 +190,26 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1126947400" varName="X###1126947400"/>
-    <innerRenaming cNewName="input" cOldName="input_type" cRef="split_function"/>
+    <supplyParameter cRef="C###116365521" varName="X###116365521"/>
     <innerRenaming cNewName="output_set" cOldName="output_type" cRef="split_function"/>
+    <innerRenaming cNewName="input" cOldName="input_type" cRef="split_function"/>
     <interface iRef="IReduceCollector" nArgs="0">
       <slice isRef="split_channel">
         <originRef cRef="split_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="115" y="12"/>
       </slice>
-      <slice isRef="read_reduce">
-        <originRef cRef="read_reduce" iRef="IClientBase"/>
-        <visualDescription h="10" w="10" x="77" y="26"/>
+      <slice isRef="collect_pairs">
+        <originRef cRef="collect_pairs" iRef="IClientTakePairs"/>
+        <visualDescription h="10" w="10" x="89" y="24"/>
       </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter&#xA;{&#xA;&#x9;public interface BaseIReduceCollector : ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;&#x9;IChannel Split_channel {get;}&#xA;&#x9;}&#xA;}" name="BaseIReduceCollector.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/BaseIReduceCollector.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter&#xA;{&#xA;&#x9;public interface IReduceCollector : BaseIReduceCollector&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IReduceCollector.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/IReduceCollector.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/BaseIReduceCollector.dll</dependency>
+        </file>
+      </sources>
       <visualDescription h="40" w="137" x="255" y="296">
         <color b="0" g="0" r="255"/>
       </visualDescription>
@@ -262,10 +226,18 @@
         <originRef cRef="split_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="9" y="13"/>
       </slice>
-      <slice isRef="feed_map">
-        <originRef cRef="feed_map" iRef="IServerBase"/>
-        <visualDescription h="10" w="10" x="17" y="27"/>
+      <slice isRef="feed_pairs">
+        <originRef cRef="feed_pairs" iRef="IServerTakePairs"/>
+        <visualDescription h="10" w="10" x="6" y="23"/>
       </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter&#xA;{&#xA;&#x9;public interface BaseIMapFeeder : ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;&#x9;IChannel Split_channel {get;}&#xA;&#x9;}&#xA;}" name="BaseIMapFeeder.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/BaseIMapFeeder.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter&#xA;{&#xA;&#x9;public interface IMapFeeder : BaseIMapFeeder&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IMapFeeder.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/IMapFeeder.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/BaseIMapFeeder.dll</dependency>
+        </file>
+      </sources>
       <visualDescription h="40" w="182" x="574" y="296">
         <color b="0" g="0" r="255"/>
       </visualDescription>
@@ -282,10 +254,6 @@
         <originRef cRef="split_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="89" y="23"/>
       </slice>
-      <slice isRef="reader_data_source">
-        <originRef cRef="reader_data_source" iRef="IClientBase"/>
-        <visualDescription h="10" w="10" x="27" y="22"/>
-      </slice>
       <slice isRef="split_function">
         <originRef cRef="split_function" iRef="ISplitFunction"/>
         <visualDescription h="10" w="10" x="7" y="22"/>
@@ -294,6 +262,30 @@
         <originRef cRef="bin_function" iRef="IPartitionFunction"/>
         <visualDescription h="10" w="10" x="24" y="19"/>
       </slice>
+      <slice isRef="reader">
+        <originRef cRef="reader" iRef="IClientReadData"/>
+        <visualDescription h="10" w="10" x="110" y="11"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.common.Set;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter&#xA;{&#xA;&#x9;public interface BaseIReadInput&lt;SF, IMV, IMK, IN, BF> : ISynchronizerKind &#xA;&#x9;&#x9;where SF:ISplitFunction&lt;IMV, IMK, IN>&#xA;&#x9;&#x9;where IMV:IData&#xA;&#x9;&#x9;where IMK:IData&#xA;&#x9;&#x9;where IN:IData&#xA;&#x9;&#x9;where BF:IPartitionFunction&lt;IMK>&#xA;&#x9;{&#xA;&#x9;&#x9;IChannel Split_channel {get;}&#xA;&#x9;&#x9;IN Input {get;}&#xA;&#x9;}&#xA;}" name="BaseIReadInput.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/BaseIReadInput.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Set/bin/1.0.0.0/ISet.dll</dependency>
+          <dependency>br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction/bin/1.0.0.0/ISplitFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter&#xA;{&#xA;&#x9;public interface IReadInput&lt;SF, IMV, IMK, IN, BF> : BaseIReadInput&lt;SF, IMV, IMK, IN, BF>&#xA;&#x9;&#x9;where SF:ISplitFunction&lt;IMV, IMK, IN>&#xA;&#x9;&#x9;where IMV:IData&#xA;&#x9;&#x9;where IMK:IData&#xA;&#x9;&#x9;where IN:IData&#xA;&#x9;&#x9;where BF:IPartitionFunction&lt;IMK>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IReadInput.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/IReadInput.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction/bin/1.0.0.0/ISplitFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/BaseIReadInput.dll</dependency>
+        </file>
+      </sources>
       <visualDescription h="40" w="120" x="238" y="79">
         <color b="0" g="128" r="0"/>
       </visualDescription>
@@ -301,13 +293,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="split_channel" sRef="split_channel"/>
       </port>
-      <port name="input">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_type" sRef="split_function"/>
-      </port>
       <port name="output_set">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_type" sRef="split_function"/>
+      </port>
+      <port name="input">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_type" sRef="split_function"/>
       </port>
       <port name="input_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -335,10 +327,21 @@
         <originRef cRef="split_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="9" y="23"/>
       </slice>
-      <slice isRef="writer_data_sink">
-        <originRef cRef="writer_data_sink" iRef="IClientBase"/>
-        <visualDescription h="10" w="10" x="7" y="3"/>
+      <slice isRef="writer">
+        <originRef cRef="writer" iRef="IClientWriteData"/>
+        <visualDescription h="10" w="10" x="1" y="3"/>
       </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter&#xA;{&#xA;&#x9;public interface BaseIWriteOutput&lt;OUT> : ISynchronizerKind &#xA;&#x9;&#x9;where OUT:IData&#xA;&#x9;{&#xA;&#x9;&#x9;IChannel Split_channel {get;}&#xA;&#x9;&#x9;OUT Output {get;}&#xA;&#x9;}&#xA;}" name="BaseIWriteOutput.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/BaseIWriteOutput.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter&#xA;{&#xA;&#x9;public interface IWriteOutput&lt;OUT> : BaseIWriteOutput&lt;OUT>&#xA;&#x9;&#x9;where OUT:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IWriteOutput.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/IWriteOutput.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/BaseIWriteOutput.dll</dependency>
+        </file>
+      </sources>
       <visualDescription h="40" w="125" x="599" y="82">
         <color b="0" g="128" r="0"/>
       </visualDescription>
@@ -359,8 +362,8 @@
       <slices cRef="split_channel" inner_replica="0" slice_replica="2" uRef="peer" sliceName="split_channel" transitive="false">
         <visualDescription h="10" w="10" x="115" y="12"/>
       </slices>
-      <slices cRef="read_reduce" inner_replica="0" slice_replica="0" uRef="client" sliceName="read_reduce" transitive="false">
-        <visualDescription h="10" w="10" x="77" y="26"/>
+      <slices cRef="collect_pairs" inner_replica="0" slice_replica="0" uRef="client" sliceName="collect_pairs" transitive="false">
+        <visualDescription h="10" w="10" x="112" y="25"/>
       </slices>
       <visualDescription h="40" w="137" x="255" y="376"/>
     </unit>
@@ -368,8 +371,8 @@
       <slices cRef="split_channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="split_channel" transitive="false">
         <visualDescription h="10" w="10" x="9" y="13"/>
       </slices>
-      <slices cRef="feed_map" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed_map" transitive="false">
-        <visualDescription h="10" w="10" x="17" y="27"/>
+      <slices cRef="feed_pairs" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed_pairs" transitive="false">
+        <visualDescription h="10" w="10" x="6" y="23"/>
       </slices>
       <visualDescription h="40" w="182" x="574" y="376"/>
     </unit>
@@ -389,9 +392,6 @@
       <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
         <visualDescription h="10" w="10" x="24" y="26"/>
       </slices>
-      <slices cRef="reader_data_source" inner_replica="0" slice_replica="0" uRef="client" sliceName="reader_data_source" transitive="false">
-        <visualDescription h="10" w="10" x="114" y="16"/>
-      </slices>
       <slices cRef="split_function" inner_replica="0" slice_replica="0" uRef="split_function" sliceName="split_function" transitive="false">
         <visualDescription h="10" w="10" x="7" y="22"/>
         <port>input</port>
@@ -402,6 +402,9 @@
         <port>output_key</port>
         <port>input_key</port>
       </slices>
+      <slices cRef="reader" inner_replica="0" slice_replica="0" uRef="client" sliceName="reader" transitive="false">
+        <visualDescription h="10" w="10" x="110" y="11"/>
+      </slices>
       <visualDescription h="40" w="127" x="222" y="156"/>
     </unit>
     <unit facet="0" iRef="IWriteOutput" multiple="false" private="false" replica="0" uRef="write_output" visibleInterface="true">
@@ -411,8 +414,8 @@
       <slices cRef="split_channel" inner_replica="0" slice_replica="3" uRef="peer" sliceName="split_channel" transitive="false">
         <visualDescription h="10" w="10" x="9" y="23"/>
       </slices>
-      <slices cRef="writer_data_sink" inner_replica="0" slice_replica="0" uRef="client" sliceName="writer_data_sink" transitive="false">
-        <visualDescription h="10" w="10" x="7" y="3"/>
+      <slices cRef="writer" inner_replica="0" slice_replica="0" uRef="client" sliceName="writer" transitive="false">
+        <visualDescription h="10" w="10" x="1" y="3"/>
       </slices>
       <visualDescription h="40" w="120" x="601" y="153"/>
     </unit>
