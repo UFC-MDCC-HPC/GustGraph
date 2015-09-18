@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000796aa2b2b7c2002f0cee126638717234123215d551f492c33a0a4dc067da8117d3fa665d991be5c5b0aa1a6bf8cd2445d741b2e01d45cef0b45bb02d1fb631ba9d4bd5506c054f7708ccb9cd3c299358c63105388c44e0f699db97624cd87e028d3cbfb7df7c14092b63c86e0a8aced2aa85349adf7f3e4a94ef0521f0183a98" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingReadData" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.environment">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005908e35d36802a83328e03c2580a464af29300a51db5e9be9805ba4704ce5b3bb05fd169866e83e1fa8686eb82e2dcf1056992246d61b2216bca6e1f68c6f59bf1a7f3cc3a4b1e4a594a05cbb5af3e757a7039ce12cd8d465ccd8b6d1401a401dc40206c86c49b4e6ce76c1f9cd8fa4417ad3f0621f5c9a152eb02b61d95b0b5" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="283" y="344">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="server_port_type" varName="S"/>
+        <parameter formFieldId="client_port_type" varName="C"/>
+        <unitBounds parallel="false" uRef="client">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+        <unitBounds parallel="false" uRef="server">
+          <visualDescription h="20" w="20" x="28" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="c" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="212" y="439">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="s" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="414" y="470">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="c" direct="true" varName="C"/>
+    <supplyParameter cRef="s" direct="true" varName="S"/>
+    <interface iRef="IClientReadData" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData&#xA;{&#xA;&#x9;public interface BaseIClientReadData : BaseIClientBase, ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIClientReadData.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/bin/1.0.0.0/BaseIClientReadData.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/BaseIClientBase.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData&#xA;{&#xA;&#x9;public interface IClientReadData : BaseIClientReadData, IClientBase&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IClientReadData.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/bin/1.0.0.0/IClientReadData.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/bin/1.0.0.0/BaseIClientReadData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="101" x="128" y="201">
+        <color b="0" g="255" r="255"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IServerReadData" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData&#xA;{&#xA;&#x9;public interface BaseIServerReadData : BaseIServerBase, ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIServerReadData.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/bin/1.0.0.0/BaseIServerReadData.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/BaseIServerBase.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData&#xA;{&#xA;&#x9;public interface IServerReadData : BaseIServerReadData, IServerBase&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IServerReadData.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/bin/1.0.0.0/IServerReadData.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/bin/1.0.0.0/BaseIServerReadData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="134" x="414" y="207">
+        <color b="0" g="165" r="255"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IClientReadData" multiple="false" private="false" replica="0" uRef="client" visibleInterface="true">
+      <super cRef="base" uRef="client"/>
+      <visualDescription h="40" w="80" x="164" y="284"/>
+    </unit>
+    <unit facet="0" iRef="IServerReadData" multiple="false" private="false" replica="0" uRef="server" visibleInterface="true">
+      <super cRef="base" uRef="server"/>
+      <visualDescription h="40" w="80" x="402" y="291"/>
+    </unit>
+  </componentInfo>
+</component:component>
