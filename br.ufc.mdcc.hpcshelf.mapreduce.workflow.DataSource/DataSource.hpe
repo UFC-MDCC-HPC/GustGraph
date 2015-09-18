@@ -1,61 +1,103 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000253db79f0f3391c7ac1cf9f39c9ab1fb003ae9d719c7458cdd6a3b811eb2d5ba639b0cdded6047930d204f68e22770a94de9f3c50c507dd0cb289e825cdbde80973d2eda0544f1df4b9de141e3d3757f749be15699fa889db39f6569d48c01f9b80a4a36d500728e0dcd246fd1df7cfefa26384c732aa76f18d4f68166e86f8d" isAbstract="true" kind="Computation" name="DataSource" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
-    <baseType>
-      <extensionType>
-        <extends>true</extends>
-      </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b126729ab4b1cc3521afb3a8f8f5982b0e7699d89f8a6484cf16f938bd233c15dbf7df37a0474e3445af3cf7aced609c2e6a313ccbedc2bf1e731f970ef9fe67f980c4f8956b8acec0c76d5b0b37cc45dfef27d19c3f99c53bf03171a8082180db5e27133d308476dae52a49ea8a1907eae4f2668903653d7859cd9618bdecb1" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.Repository/Repository.hpe" name="Repository" package="br.ufc.mdcc.hpcshelf.mapreduce" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="303" y="348">
-          <color b="255" g="255" r="255"/>
-        </visualDescription>
-        <parameter formFieldId="server_port_type" varName="DSS"/>
-        <parameter formFieldId="client_port_type" varName="DSC"/>
-        <parameter formFieldId="data_type" varName="IN"/>
-        <port localRef="binding" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
-          <visualDescription h="60" w="197" x="430" y="452">
-            <color b="255" g="255" r="255"/>
-          </visualDescription>
-          <parameter formFieldId="server_port_type" varName="DSS"/>
-          <parameter formFieldId="client_port_type" varName="DSC"/>
-          <unitBounds parallel="false" uRef="client">
-            <visualDescription h="20" w="20" x="13" y="20"/>
-          </unitBounds>
-          <unitBounds parallel="false" uRef="server">
-            <visualDescription h="20" w="20" x="165" y="18"/>
-          </unitBounds>
-        </port>
-        <port localRef="data" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
-          <visualDescription h="60" w="100" x="131" y="420">
-            <color b="255" g="255" r="255"/>
-          </visualDescription>
-          <unitBounds parallel="false" uRef="data">
-            <visualDescription h="20" w="20" x="5" y="2"/>
-          </unitBounds>
-        </port>
-        <unitBounds parallel="false" uRef="repository">
-          <visualDescription h="20" w="20" x="5" y="2"/>
-        </unitBounds>
-      </component>
-    </baseType>
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000067f20346309ac0f7c24df89a1d76006af256f6bec57e24c9159ec6bcd2b55bf6eeb1dc50d8619b8a26ed74600996aff2e1d2b039111f34543628228383963f2301a999d384b2630c4207a0fec2fc5d400817cb620db739e9fb1feddc0ef6ac581c643a4b5b4951aa702d1eb4093e8863d0e7dd91e206a175bee7914001aa9ecd" isAbstract="true" kind="Computation" name="DataSource" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerRenaming cNewName="data_source_binding" cOldName="binding" cRef="base"/>
-    <interface iRef="IDataSource" nArgs="0">
-      <visualDescription h="46" w="143" x="215" y="132">
+    <parameter componentRef="data_type" formFieldId="data_type" order="0" variance="contravariant" varName="IN"/>
+    <innerComponent localRef="rs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="456" y="171">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="rc" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="604" y="173">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="data_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="data_type" exposed="true">
+      <visualDescription h="60" w="100" x="207" y="370">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="data_server" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
+      <visualDescription h="60" w="160" x="367" y="375">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
+      <unitBounds parallel="false" uRef="client">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+      <unitBounds parallel="false" uRef="server">
+        <visualDescription h="20" w="20" x="28" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="c" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="573" y="194">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="s" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="592" y="279">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="rs" direct="true" varName="RS"/>
+    <supplyParameter cRef="rc" direct="true" varName="RC"/>
+    <supplyParameter cRef="c" direct="true" varName="C"/>
+    <supplyParameter cRef="s" direct="true" varName="S"/>
+    <interface iRef="IDataSource" nArgs="1">
+      <slice isRef="data_type">
+        <originRef cRef="data_type" iRef="IData"/>
+        <visualDescription h="10" w="10" x="31" y="25"/>
+      </slice>
+      <slice isRef="data_server">
+        <originRef cRef="data_server" iRef="IServerBase"/>
+        <visualDescription h="10" w="10" x="149" y="19"/>
+      </slice>
+      <visualDescription h="40" w="213" x="226" y="184">
         <color b="0" g="128" r="0"/>
       </visualDescription>
+      <port name="data_type">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="data_type" sRef="data_type"/>
+      </port>
+      <port name="data_server">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="data_server" sRef="data_server"/>
+      </port>
+      <parameter iname="IData" order="0" parid="data_type" uname="data" varid="IN"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IDataSource" multiple="false" private="false" replica="0" uRef="data_source" visibleInterface="true">
-      <super cRef="base" uRef="repository"/>
-      <visualDescription h="40" w="143" x="241" y="251"/>
+      <slices cRef="data_type" inner_replica="0" slice_replica="0" uRef="data" sliceName="data_type" transitive="false">
+        <visualDescription h="10" w="10" x="31" y="25"/>
+      </slices>
+      <slices cRef="data_server" inner_replica="0" slice_replica="0" uRef="server" sliceName="data_server" transitive="false">
+        <visualDescription h="10" w="10" x="149" y="19"/>
+      </slices>
+      <visualDescription h="40" w="213" x="226" y="264"/>
     </unit>
   </componentInfo>
 </component:component>
