@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002d8ce0e80a56e83ed04aba3eee5a2aef62b0e03d528a06e4fd1619b9b183ed16012bb7296e5dcb5837eb445f3818a16b9b57572ee68459032832699b3df29ddf13949224dc9cdfde8e4a6bc295f995d9a2d1eb5b54a3e09bffd7e98847fd71a0259c85a06921078a50fa3010426613478408f1d221a748db6137f029222690a4" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMbyNTakePairs" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.environment">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001b50ad3746fb4e635c574a9bfe114c7113fd0b5c98cba9d45c39b13f5b060ce243bbcdd12cf90295a62ddb5575625749e82e51d1456c77fdac01b6044a9408deaadc713178fb05ecbf25f7bb9d75719e425d7e6d381ce2315e835ae0487ebf0ab1f0477678a13d1ae32dfd94fc8021adddac988ed0cc6b62d011d172657670c6" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/EnvironmentBindingMbyN.hpe" name="EnvironmentBindingMbyN" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="257" y="353">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="server_port_type" varName="S"/>
+        <parameter formFieldId="client_port_type" varName="C"/>
+        <unitBounds parallel="true" uRef="client">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="server">
+          <visualDescription h="20" w="20" x="28" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="c" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="201" y="437">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="s" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="381" y="437">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="c" direct="true" varName="C"/>
+    <supplyParameter cRef="s" direct="true" varName="S"/>
+    <interface iRef="IClientTakePairs" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs&#xA;{&#xA;&#x9;public interface BaseIClientTakePairs : BaseIClientMbyN, ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIClientTakePairs.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs/bin/1.0.0.0/BaseIClientTakePairs.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/BaseIClientMbyN.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs&#xA;{&#xA;&#x9;public interface IClientTakePairs : BaseIClientTakePairs, IClientMbyN&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IClientTakePairs.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs/bin/1.0.0.0/IClientTakePairs.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs/bin/1.0.0.0/BaseIClientTakePairs.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/IClientMbyN.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="122" x="102" y="173">
+        <color b="0" g="255" r="255"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IServerTakePairs" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs&#xA;{&#xA;&#x9;public interface BaseIServerTakePairs : BaseIServerMbyN, ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIServerTakePairs.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs/bin/1.0.0.0/BaseIServerTakePairs.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/BaseIServerMbyN.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs&#xA;{&#xA;&#x9;public interface IServerTakePairs : BaseIServerTakePairs, IServerMbyN&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IServerTakePairs.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs/bin/1.0.0.0/IServerTakePairs.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs/bin/1.0.0.0/BaseIServerTakePairs.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/IServerMbyN.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="126" x="352" y="172">
+        <color b="0" g="165" r="255"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IClientTakePairs" multiple="true" private="false" replica="0" uRef="client" visibleInterface="true">
+      <super cRef="base" uRef="client"/>
+      <visualDescription h="40" w="80" x="167" y="250"/>
+    </unit>
+    <unit facet="0" iRef="IServerTakePairs" multiple="true" private="false" replica="0" uRef="server" visibleInterface="true">
+      <super cRef="base" uRef="server"/>
+      <visualDescription h="40" w="80" x="328" y="248"/>
+    </unit>
+  </componentInfo>
+</component:component>
