@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a1378c384609bc44d2f89605be6ec80ee2adc045f671517b5fc37f73da2015f1eed8124cdabfb98254ba0477332e21e5941ede0b601e7e6d64bec63d8ee82125ccc78924f8e10b6809534d4a6c4245a0d71f5ac395f1810446f6e1ab5a99f56075d3fdfb7846254f6f3a3a85908cdd301f9c5b3cae0e81cdaf6a0a49f7ce1bdb" isAbstract="true" kind="Synchronizer" name="TaskBindingShuffle" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+      <visualDescription h="60" w="100" x="167" y="385">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="task_port_type" varName="T"/>
+      <unitBounds parallel="true" uRef="peer_left">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+      <unitBounds parallel="true" uRef="peer_right">
+        <visualDescription h="20" w="20" x="28" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/TaskPortType.hpe" multiple="false" name="TaskPortType" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="false">
+      <visualDescription h="60" w="133" x="322" y="386">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="task_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="task_port_type" direct="true" varName="T"/>
+    <interface iRef="ITaskBindingShuffle" nArgs="0">
+      <slice isRef="task_port">
+        <originRef cRef="task_port" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="9" y="23"/>
+      </slice>
+      <visualDescription h="40" w="128" x="133" y="204">
+        <color b="0" g="128" r="0"/>
+      </visualDescription>
+      <port name="task_port">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_port" sRef="task_port"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ITaskBindingShuffle" multiple="true" private="false" replica="0" uRef="peer_left" visibleInterface="true">
+      <slices cRef="task_port" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_port" transitive="false">
+        <visualDescription h="10" w="10" x="89" y="28"/>
+      </slices>
+      <visualDescription h="40" w="123" x="44" y="294"/>
+    </unit>
+    <unit facet="0" iRef="ITaskBindingShuffle" multiple="true" private="false" replica="0" uRef="peer_right" visibleInterface="true">
+      <slices cRef="task_port" inner_replica="0" slice_replica="0" uRef="peer_right" sliceName="task_port" transitive="false">
+        <visualDescription h="10" w="10" x="9" y="23"/>
+      </slices>
+      <visualDescription h="40" w="128" x="218" y="297"/>
+    </unit>
+  </componentInfo>
+</component:component>

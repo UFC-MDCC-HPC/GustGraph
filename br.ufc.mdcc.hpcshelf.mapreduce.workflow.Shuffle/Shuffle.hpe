@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f9cfc04cd3147aba427c8c1a577de9763b2d4ad94f85b8a51916225b59937044d78522f69a18bff581a3d2177c1ef691ed8b8f0be4936782a963fecc7d5a5fd8a36320afde5d0af471d9d3117bd5e029869bb0bc2c574a0ac23609b2bf99c6f190d9d57c633a21eac77aa2133d359576ea2b664b0c4dbdc6740c41ff6c90bb83" isAbstract="true" kind="Synchronizer" name="Shuffle" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <parameter componentRef="intermediate_key_type" formFieldId="intermediate_key_type" order="0" variance="contravariant" varName="OMK"/>
+    <parameter componentRef="intermediate_value_type" formFieldId="intermediate_value_type" order="1" variance="contravariant" varName="OMV"/>
+    <parameter componentRef="partition_function" formFieldId="partition_function" order="2" variance="contravariant" varName="PF"/>
+    <innerComponent localRef="shuffler_channel" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" multiple="false" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" exposed="true">
+      <visualDescription h="61" w="182" x="254" y="418">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="root">
+        <visualDescription h="20" w="20" x="87" y="36"/>
+      </unitBounds>
+      <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
+        <visualDescription h="20" w="20" x="154" y="19"/>
+      </unitBounds>
+      <unitBounds parallel="true" slice_replica="1" unit_replica="0" uRef="peer">
+        <visualDescription h="20" w="20" x="7" y="20"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="intermediate_key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="intermediate_key_type" exposed="false">
+      <visualDescription h="60" w="209" x="242" y="68">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="intermediate_value_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="intermediate_value_type" exposed="false">
+      <visualDescription h="60" w="219" x="231" y="139">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="partition_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" parameter_id="partition_function" exposed="false">
+      <visualDescription h="64" w="125" x="609" y="261">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="input_key" varName="OMK"/>
+      <port localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="60" w="100" x="591" y="164">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <port localRef="output_key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="60" w="100" x="745" y="171">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <unitBounds parallel="false" uRef="partition_function">
+        <visualDescription h="20" w="20" x="54" y="42"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="collect_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs/EnvironmentBindingMbyNTakePairs.hpe" multiple="false" name="EnvironmentBindingMbyNTakePairs" package="br.ufc.mdcc.hpcshelf.mapreduce.environment" exposed="false">
+      <visualDescription h="60" w="100" x="85" y="419">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="client">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+      <unitBounds parallel="true" uRef="server">
+        <visualDescription h="20" w="20" x="28" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="feed_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs/EnvironmentBindingMbyNTakePairs.hpe" multiple="false" name="EnvironmentBindingMbyNTakePairs" package="br.ufc.mdcc.hpcshelf.mapreduce.environment" exposed="false">
+      <visualDescription h="60" w="150" x="458" y="421">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="client">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+      <unitBounds parallel="true" uRef="server">
+        <visualDescription h="20" w="20" x="28" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <interface iRef="IReduceFeeder" nArgs="2">
+      <slice isRef="shuffler_channel">
+        <originRef cRef="shuffler_channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="17" y="26"/>
+      </slice>
+      <slice isRef="partition_function">
+        <originRef cRef="partition_function" iRef="IPartitionFunction"/>
+        <visualDescription h="10" w="10" x="115" y="12"/>
+      </slice>
+      <slice isRef="feed_pairs">
+        <originRef cRef="feed_pairs" iRef="IServerTakePairs"/>
+        <visualDescription h="10" w="10" x="76" y="27"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle&#xA;{&#xA;&#x9;public interface BaseIReduceFeeder&lt;PF, OMK> : ISynchronizerKind &#xA;&#x9;&#x9;where PF:IPartitionFunction&lt;OMK>&#xA;&#x9;&#x9;where OMK:IData&#xA;&#x9;{&#xA;&#x9;&#x9;IChannel Shuffle_channel {get;}&#xA;&#x9;&#x9;IInteger Output_key {get;}&#xA;&#x9;&#x9;OMK Input_key {get;}&#xA;&#x9;}&#xA;}" name="BaseIReduceFeeder.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle/bin/1.0.0.0/BaseIReduceFeeder.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle&#xA;{&#xA;&#x9;public interface IReduceFeeder&lt;PF, OMK> : BaseIReduceFeeder&lt;PF, OMK>&#xA;&#x9;&#x9;where PF:IPartitionFunction&lt;OMK>&#xA;&#x9;&#x9;where OMK:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IReduceFeeder.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle/bin/1.0.0.0/IReduceFeeder.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle/bin/1.0.0.0/BaseIReduceFeeder.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="151" x="402" y="251">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <port name="shuffler_channel">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="shuffler_channel" sRef="shuffler_channel"/>
+      </port>
+      <port name="output_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="partition_function"/>
+      </port>
+      <port name="input_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="partition_function"/>
+      </port>
+      <parameter iname="IPartitionFunction" order="1" parid="partition_function" uname="partition_function" varid="PF"/>
+      <parameter iname="IData" order="0" parid="intermediate_key_type" uname="data" varid="OMK"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IMapCollector" nArgs="0">
+      <slice isRef="shuffler_channel">
+        <originRef cRef="shuffler_channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="168" y="22"/>
+      </slice>
+      <slice isRef="collect_pairs">
+        <originRef cRef="collect_pairs" iRef="IClientTakePairs"/>
+        <visualDescription h="10" w="10" x="47" y="27"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle&#xA;{&#xA;&#x9;public interface BaseIMapCollector : ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;&#x9;IChannel Shuffle_channel {get;}&#xA;&#x9;}&#xA;}" name="BaseIMapCollector.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle/bin/1.0.0.0/BaseIMapCollector.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle&#xA;{&#xA;&#x9;public interface IMapCollector : BaseIMapCollector&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IMapCollector.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle/bin/1.0.0.0/IMapCollector.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle/bin/1.0.0.0/BaseIMapCollector.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="197" x="84" y="250">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <port name="shuffler_channel">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="shuffler_channel" sRef="shuffler_channel"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IReduceFeeder" multiple="true" private="false" replica="0" uRef="reduce_feeder" visibleInterface="true">
+      <slices cRef="shuffler_channel" inner_replica="0" slice_replica="0" uRef="peer" sliceName="shuffler_channel" transitive="false">
+        <visualDescription h="10" w="10" x="17" y="26"/>
+      </slices>
+      <slices cRef="output_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_key" transitive="true">
+        <visualDescription h="10" w="10" x="130" y="24"/>
+      </slices>
+      <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
+        <visualDescription h="10" w="10" x="24" y="26"/>
+      </slices>
+      <slices cRef="partition_function" inner_replica="0" slice_replica="0" uRef="partition_function" sliceName="partition_function" transitive="false">
+        <visualDescription h="10" w="10" x="115" y="12"/>
+        <port>output_key</port>
+        <port>input_key</port>
+      </slices>
+      <slices cRef="feed_pairs" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed_pairs" transitive="false">
+        <visualDescription h="10" w="10" x="76" y="27"/>
+      </slices>
+      <visualDescription h="40" w="151" x="402" y="331"/>
+    </unit>
+    <unit facet="0" iRef="IMapCollector" multiple="true" private="false" replica="0" uRef="map_collector" visibleInterface="true">
+      <slices cRef="shuffler_channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="shuffler_channel" transitive="false">
+        <visualDescription h="10" w="10" x="168" y="22"/>
+      </slices>
+      <slices cRef="collect_pairs" inner_replica="0" slice_replica="0" uRef="client" sliceName="collect_pairs" transitive="false">
+        <visualDescription h="10" w="10" x="47" y="27"/>
+      </slices>
+      <visualDescription h="40" w="197" x="84" y="330"/>
+    </unit>
+  </componentInfo>
+</component:component>

@@ -6,7 +6,7 @@ using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData
 {
-	public interface BaseIClientReadData<C> : BaseIClientBase<C>, ISynchronizerKind
+	public interface BaseIClientReadData<C> : BaseIClientBase<C>, ISynchronizerKind 
 		where C:IEnvironmentPortTypeSinglePartner
 	{
 	}
