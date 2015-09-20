@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c7e38f5bcafae824e8a1f8f602010757d2f1435d385ae22569b1ade9cf749cdfe5349fe9b3a1eec2be909716adf97e91e84e66ae52fa72345aa3ce4e99e45f74e50c7083ca810156bdd648432d2503a355f8fbd532afae880f94e411ea4396a704a9be50902f101b206586d18971449955c121d871b29103fd4adc6d2d180188" isAbstract="true" kind="Computation" name="Combiner" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000175472995094919d0959df69510d056f09c6bfb2fa49931d2334ff76ad46a1537ff094aeb1bcadfc1be3248af3288d76a8a40daa335f27117db7d9831089c7791402bfa0a8aefb076d4bec47cb3bf88bc316f75d3fb6d674980ca6ea7c4c17f501dea1a1ed5f8d43cd71bf013650ec8580b22d5df25fb24c36509e3ab6a59a90" isAbstract="true" kind="Computation" name="Combiner" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -45,7 +45,7 @@
         <visualDescription h="60" w="100" x="589" y="240">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###2121828266"/>
+        <parameter formFieldId="value_type" varName="X###1327587239"/>
         <parameter formFieldId="key_type" varName="OMK"/>
         <unitBounds parallel="false" uRef="kv_pair">
           <visualDescription h="20" w="20" x="5" y="2"/>
@@ -77,7 +77,38 @@
         <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="C###2121828266" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="task_binding" location="br.ufc.mdcc.hpcshelf.mapreduce.task.combiner.TaskBindingCombine/TaskBindingCombine.hpe" multiple="false" name="TaskBindingCombine" package="br.ufc.mdcc.hpcshelf.mapreduce.task.combiner" exposed="false">
+      <visualDescription h="60" w="196" x="140" y="498">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+        <visualDescription h="60" w="158" x="380" y="476">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="task_port_type" varName="X###1857876957"/>
+        <unitBounds parallel="true" uRef="peer_left">
+          <visualDescription h="20" w="20" x="8" y="19"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="peer_right">
+          <visualDescription h="20" w="20" x="121" y="19"/>
+        </unitBounds>
+      </port>
+      <unitBounds parallel="true" uRef="peer_left">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+      <unitBounds parallel="true" uRef="peer_right">
+        <visualDescription h="20" w="20" x="28" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="platform" location="br.ufc.mdcc.common.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="156" y="100">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="platform">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="C###1327587239" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="393" y="224">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -86,7 +117,16 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###2121828266" varName="X###2121828266"/>
+    <supplyParameter cRef="C###1327587239" varName="X###1327587239"/>
+    <innerComponent localRef="C###1857876957" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+      <visualDescription h="60" w="289" x="74" y="116">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="task_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="C###1857876957" varName="X###1857876957"/>
     <interface iRef="ICombiner" nArgs="2">
       <slice isRef="combine_function">
         <originRef cRef="combine_function" iRef="ICombineFunction"/>
@@ -117,13 +157,13 @@
       <visualDescription h="40" w="140" x="178" y="204">
         <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="input_data">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_data" sRef="combine_function"/>
-      </port>
       <port name="output_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_data" sRef="combine_function"/>
+      </port>
+      <port name="input_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_data" sRef="combine_function"/>
       </port>
       <parameter iname="IData" order="0" parid="input_value_type" uname="data" varid="OMV"/>
       <parameter iname="IData" order="1" parid="input_key_type" uname="data" varid="OMK"/>

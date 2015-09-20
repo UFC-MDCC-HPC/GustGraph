@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e728cf0b0d7fa66fa27ddd2ce468c83b9d33ca1cc0be81e41767424b6430f9bd76b202135649f773a7fa100f665e62aba3fa93aa347ec86ff2df3c893669c59d272ad1c30c31520954c26e631ab0afcad9d09be0f88afad03df31ed8f5d78828f6b64639e2fce1da15e52fa8a1990bab074dca7241c1c5bfc2cf17adfd52eca4" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002f8b436dbc6ead015e57ae504f655618583e6b850c959a4173d4aaa927e2d12b1ef49fd04087b9b29293be5d51fc4bb1c2079f278426354e58f12aefa9ab341a18c8ab3fb4019384915ef58001066863912e70f224a9b859a57c6fc19669193d40fd69a4385380701b521b7f9dae90d7c983f1c4c8225612d697d322616f80bf" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -86,7 +86,7 @@
         <visualDescription h="37" w="95" x="108" y="69">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###116365521"/>
+        <parameter formFieldId="value_type" varName="X###541392364"/>
         <unitBounds parallel="false" uRef="set">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -180,7 +180,30 @@
         <visualDescription h="20" w="20" x="123" y="16"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="C###116365521" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="task_binding" location="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter/TaskBindingSplitter.hpe" multiple="false" name="TaskBindingSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter" exposed="false">
+      <visualDescription h="60" w="198" x="77" y="481">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+        <visualDescription h="47" w="93" x="87" y="417">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="task_port_type" varName="X###135874519"/>
+        <unitBounds parallel="true" uRef="peer_left">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="peer_right">
+          <visualDescription h="20" w="20" x="28" y="2"/>
+        </unitBounds>
+      </port>
+      <unitBounds parallel="true" uRef="peer_left">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+      <unitBounds parallel="true" uRef="peer_right">
+        <visualDescription h="20" w="20" x="28" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="C###541392364" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="513" y="397">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -190,7 +213,16 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###116365521" varName="X###116365521"/>
+    <supplyParameter cRef="C###541392364" varName="X###541392364"/>
+    <innerComponent localRef="C###135874519" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/TaskPortTypeSplitter.hpe" multiple="false" name="TaskPortTypeSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+      <visualDescription h="60" w="164" x="389" y="294">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="task_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="C###135874519" varName="X###135874519"/>
     <innerRenaming cNewName="output_set" cOldName="output_type" cRef="split_function"/>
     <innerRenaming cNewName="input" cOldName="input_type" cRef="split_function"/>
     <interface iRef="IReduceCollector" nArgs="0">

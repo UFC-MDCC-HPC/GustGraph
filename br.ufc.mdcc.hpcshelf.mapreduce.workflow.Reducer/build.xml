@@ -19,6 +19,7 @@
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/bin/1.0.0.0/IReduceFunction.dll"/>
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll"/>
         <include/>
       </references>
     </csc>
@@ -29,6 +30,7 @@
       <references>
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/bin/1.0.0.0/IReduceFunction.dll"/>
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Reducer/bin/1.0.0.0/BaseIReducer.dll"/>
         <include/>
       </references>

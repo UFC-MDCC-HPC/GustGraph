@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000021f6669acd9c0a82cd09e9e85e9cdd823a84086fe80e940d98871fdeb808a6a9f01d15e7a315d27e31e0d624bcdc79443005497d93cd8089b1e5842f683e11d82d27069ebbead6d3ee80a34098bf1e2ba9a706861ec3540d566f6f505b1bd0ca5acbb06a15dc4470016b902992f74ffb19a25b233f45d0ca8090d8e44792c8d5" isAbstract="true" kind="Computation" name="DataSource" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a10f89e715245e032411c2edf265525be7b8d9f35e263b9e9275803d2864612fa0d70770a71173813d457df7aa3bc0b03e6ff3469c0bdf3615ad9a499055d4fa0944b29acad1a32910b3d50ac17eb84580a18399e2052b7968f87cf036308905ef9713b5b758ce2b5c288f30b096632129ac1723c095fbbaee43d5bb45149c82" isAbstract="true" kind="Computation" name="DataSource" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -25,6 +25,14 @@
       </unitBounds>
       <unitBounds parallel="false" uRef="server">
         <visualDescription h="20" w="20" x="28" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="platform" location="br.ufc.mdcc.common.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="98" y="493">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="platform">
+        <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
     <interface iRef="IDataSource" nArgs="1">

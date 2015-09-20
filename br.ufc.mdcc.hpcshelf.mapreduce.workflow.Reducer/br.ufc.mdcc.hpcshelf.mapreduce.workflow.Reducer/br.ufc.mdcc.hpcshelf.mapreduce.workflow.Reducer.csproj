@@ -59,5 +59,9 @@
       <Project>{F8166152-ED2A-473F-A191-3FC88F611512}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.Platform\br.ufc.mdcc.common.Platform\br.ufc.mdcc.common.Platform.csproj">
+      <Project>{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}</Project>
+      <Name>br.ufc.mdcc.common.Platform</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
