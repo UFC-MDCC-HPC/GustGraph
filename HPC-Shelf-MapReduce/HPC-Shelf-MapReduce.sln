@@ -90,9 +90,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapred
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle", "..\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle.csproj", "{B14307C5-3973-45FA-AF81-A155E35F62F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffler", "..\br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle\br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle\br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffler.csproj", "{0E8CF5A1-E562-402B-A17D-9A6BD2416ED3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle", "..\br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle\br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle\br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle.csproj", "{0E8CF5A1-E562-402B-A17D-9A6BD2416ED3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffler", "..\br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle\br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle\br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffler.csproj", "{74444345-4DEA-4363-BC42-E59B96A5438C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle", "..\br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle\br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle\br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle.csproj", "{74444345-4DEA-4363-BC42-E59B96A5438C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
