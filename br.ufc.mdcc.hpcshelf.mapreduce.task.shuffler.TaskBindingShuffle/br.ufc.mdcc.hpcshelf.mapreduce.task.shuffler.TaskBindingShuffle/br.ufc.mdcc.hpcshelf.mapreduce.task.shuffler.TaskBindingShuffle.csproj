@@ -51,5 +51,9 @@
       <Project>{B785892B-10B1-43BA-897F-E6F02CC932D0}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskPortType</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle.csproj">
+      <Project>{B14307C5-3973-45FA-AF81-A155E35F62F7}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d1d48ff051997af4583b2b8373ea262ef249f50a81e12f939b64bb3064d0bcd6761b8e951ac486a0bd7ed9f89e538f3c2285b4d1fe53d20f90de4feaed7cabeeb17f1da57f6224a401fa5b1c5e3d5c114ab1242f8ea036ab069dc82bd846dda3701a80f54862315ef5598824c398120b3a38b95430fd80b2ce9c87ede45d4aa1" isAbstract="true" kind="Synchronizer" name="TaskBindingReduce" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.reducer">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bbf3be50a9c91420f29a725950be30010eed14f58ae13d81af3de78036ac617f0fcdc9563901f4974793b59a96b66d1da0a49f0c435838572961cd02dfdd094367ea6905bcd6fdf79a857d6051122dc989132469d7f004afa5fdf640cae1bd4a6adc563fa97d95e4a1b057834c25d8b3b24000dd8e5b114f8d4d23c87c5b919f" isAbstract="true" kind="Synchronizer" name="TaskBindingReduce" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.reducer">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -8,7 +8,7 @@
   </header>
   <componentInfo>
     <innerComponent localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="60" w="132" x="193" y="384">
+      <visualDescription h="60" w="132" x="197" y="393">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="T"/>
@@ -19,8 +19,8 @@
         <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/TaskPortType.hpe" multiple="false" name="TaskPortType" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="false">
-      <visualDescription h="60" w="152" x="222" y="204">
+    <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+      <visualDescription h="60" w="153" x="422" y="422">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="task_port_type">
@@ -33,6 +33,15 @@
         <originRef cRef="task_port" iRef="ITaskPort"/>
         <visualDescription h="10" w="10" x="14" y="27"/>
       </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.reducer.TaskBindingReduce&#xA;{&#xA;&#x9;public interface BaseITaskBindingReduce : ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPorttypePhases> Task_port {get;}&#xA;&#x9;}&#xA;}" name="BaseITaskBindingReduce.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.reducer.TaskBindingReduce/bin/1.0.0.0/BaseITaskBindingReduce.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/bin/1.0.0.0/ITaskPorttypePhases.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.reducer.TaskBindingReduce&#xA;{&#xA;&#x9;public interface ITaskBindingReduce : BaseITaskBindingReduce&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITaskBindingReduce.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.reducer.TaskBindingReduce/bin/1.0.0.0/ITaskBindingReduce.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.task.reducer.TaskBindingReduce/bin/1.0.0.0/BaseITaskBindingReduce.dll</dependency>
+        </file>
+      </sources>
       <visualDescription h="40" w="164" x="156" y="194">
         <color b="0" g="128" r="0"/>
       </visualDescription>

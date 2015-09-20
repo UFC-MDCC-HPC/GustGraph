@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005b2b7e9fe32164cc8f00b482d271f26bc3ae3efa6762d5119e73a1ce128a8f28ae1f5d3d17df6c05e0efb6c1743e45c6ba249145e035e799a302d5a8d6b6ff5f42a9f1df6a840730da2dc4a80107c45488bc93255b4ada93b964495a1490fbaac0a05247d51a11eee96cb6fe9e9c5fbccc2b855ed841ea2c9cc0a6dd79452796" isAbstract="true" kind="Synchronizer" name="TaskBindingSplitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f39eaba1f8c8ee43189356d47ac0faca214cadd6276ef8eaa59cb461365cb8fbe20c2e63055b3877f6ed6e9d8a83180a1c365fac1d9925a3d76498e0916acdccd447649281731cd92659713eead99442d4f9b9559d4cdada6ff22db867c913d9ea88e465f496704bfa917e2fe1f38a4cd8d06e00fb6d99da988a8d2e2092f189" isAbstract="true" kind="Synchronizer" name="TaskBindingSplitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -8,7 +8,7 @@
   </header>
   <componentInfo>
     <innerComponent localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="60" w="151" x="138" y="360">
+      <visualDescription h="60" w="151" x="150" y="363">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="T"/>
@@ -19,8 +19,8 @@
         <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/TaskPortType.hpe" multiple="false" name="TaskPortType" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="false">
-      <visualDescription h="60" w="143" x="329" y="355">
+    <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/TaskPortTypeSplitter.hpe" multiple="false" name="TaskPortTypeSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+      <visualDescription h="60" w="164" x="389" y="294">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="task_port_type">
@@ -33,6 +33,15 @@
         <originRef cRef="task_port" iRef="ITaskPort"/>
         <visualDescription h="10" w="10" x="12" y="21"/>
       </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter&#xA;{&#xA;&#x9;public interface BaseITaskBindingSplitter : ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPorttypeSplitter> Task_port {get;}&#xA;&#x9;}&#xA;}" name="BaseITaskBindingSplitter.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter/bin/1.0.0.0/BaseITaskBindingSplitter.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/bin/1.0.0.0/ITaskPorttypeSplitter.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter&#xA;{&#xA;&#x9;public interface ITaskBindingSplitter : BaseITaskBindingSplitter&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITaskBindingSplitter.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter/bin/1.0.0.0/ITaskBindingSplitter.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter/bin/1.0.0.0/BaseITaskBindingSplitter.dll</dependency>
+        </file>
+      </sources>
       <visualDescription h="40" w="124" x="119" y="183">
         <color b="0" g="128" r="0"/>
       </visualDescription>

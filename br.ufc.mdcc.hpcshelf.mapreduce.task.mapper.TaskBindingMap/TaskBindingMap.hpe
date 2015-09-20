@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000554a67005b98afd497b7dd14bccee68d87d5dc9c567aa0e56ef25635d405955d700389a1257372061e3bf4f096acb75069d5697e7324c79aedd8a67a415061574f57166b88f026dc564afe4050c5c286103acd841ac5c60219cb73becec242f8a6c3d27573773df88fbcc9f2c7182d0320000c8d8d784a4bcf086e1f2598f6a7" isAbstract="true" kind="Synchronizer" name="TaskBindingMap" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000041690948e9856df0b366adc4f506628ddb6421b24e94dce5d0c2aa686003f7e1156ad592368e302e49e66f153fb570dcc5090009c68218e47472b7b6fa3d358d56adc3b497cfdd0c001ac69821343e245bb48841571a79e28f13a80e87b438f317684ea8ecb2011c2416b05bc3e4cc3037a53bd50efc40709fee9e29bc55d191" isAbstract="true" kind="Synchronizer" name="TaskBindingMap" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -8,7 +8,7 @@
   </header>
   <componentInfo>
     <innerComponent localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="60" w="129" x="249" y="370">
+      <visualDescription h="60" w="129" x="260" y="370">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="T"/>
@@ -19,8 +19,8 @@
         <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/TaskPortType.hpe" multiple="false" name="TaskPortType" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="false">
-      <visualDescription h="60" w="157" x="238" y="456">
+    <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+      <visualDescription h="60" w="181" x="225" y="489">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="task_port_type">
@@ -33,6 +33,15 @@
         <originRef cRef="task_port" iRef="ITaskPort"/>
         <visualDescription h="10" w="10" x="13" y="27"/>
       </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap&#xA;{&#xA;&#x9;public interface BaseITaskBindingMap : ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPorttypePhases> Task_port {get;}&#xA;&#x9;}&#xA;}" name="BaseITaskBindingMap.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap/bin/1.0.0.0/BaseITaskBindingMap.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/bin/1.0.0.0/ITaskPorttypePhases.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap&#xA;{&#xA;&#x9;public interface ITaskBindingMap : BaseITaskBindingMap&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITaskBindingMap.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap/bin/1.0.0.0/ITaskBindingMap.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap/bin/1.0.0.0/BaseITaskBindingMap.dll</dependency>
+        </file>
+      </sources>
       <visualDescription h="40" w="138" x="259" y="222">
         <color b="0" g="128" r="0"/>
       </visualDescription>

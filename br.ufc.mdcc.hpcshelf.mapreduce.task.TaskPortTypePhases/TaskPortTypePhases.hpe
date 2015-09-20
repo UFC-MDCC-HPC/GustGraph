@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000119cc864c24e601b4385c53c8a9613e47f6ed9422ccb013a45baa982455de8e2c3857a8c0bffffe4183209f43a201212d32274532a2fd3eaf079cad4f1bcf302541e8b3cba57ea58b7ac0650fe208d55eb4115bcd1ea2a847cdbed5869e01a17fc49daec9add3cea795c0633851c2da61958129e98dc0b51992895ff56fcffa1" isAbstract="true" kind="Qualifier" name="TaskPortTypePhases" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000db08bbd059e07e947d8e2340a8b73eaf0f2d77042a86454cf25440bca4bf9b8711a6791188e745d2e18e7f1abf4651eb3ae8591740164aa1b36dfe5ec75997b81adeb5c2aef405aaa00c94e5fb923be8635fb1d8f09d279fbbdc1c63c188aa5f045cc1c09e8ec83b1182a4b5eb6d31fdad2a8c793906e71d053f34ab962a059d" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/TaskPortType.hpe" name="TaskPortType" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="200" y="353">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="true" uRef="task_port_type">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="ITaskPorttypePhases" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskPortType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases&#xA;{&#xA;&#x9;public interface BaseITaskPorttypePhases : BaseITaskPortType, IQualifierKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseITaskPorttypePhases.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/bin/1.0.0.0/BaseITaskPorttypePhases.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/bin/1.0.0.0/BaseITaskPortType.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskPortType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases&#xA;{&#xA;&#x9;public interface ITaskPorttypePhases : BaseITaskPorttypePhases, ITaskPortType&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITaskPorttypePhases.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/bin/1.0.0.0/ITaskPorttypePhases.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/bin/1.0.0.0/BaseITaskPorttypePhases.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/bin/1.0.0.0/ITaskPortType.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="189" x="167" y="143">
+        <color b="230" g="216" r="173"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="ITaskPorttypePhases" multiple="true" private="false" replica="0" uRef="task_port_type" visibleInterface="true">
+      <super cRef="base" uRef="task_port_type"/>
+      <visualDescription h="40" w="189" x="167" y="223"/>
+    </unit>
+  </componentInfo>
+</component:component>

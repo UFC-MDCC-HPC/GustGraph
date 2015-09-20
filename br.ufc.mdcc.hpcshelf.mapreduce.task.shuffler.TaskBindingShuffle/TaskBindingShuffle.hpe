@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a1378c384609bc44d2f89605be6ec80ee2adc045f671517b5fc37f73da2015f1eed8124cdabfb98254ba0477332e21e5941ede0b601e7e6d64bec63d8ee82125ccc78924f8e10b6809534d4a6c4245a0d71f5ac395f1810446f6e1ab5a99f56075d3fdfb7846254f6f3a3a85908cdd301f9c5b3cae0e81cdaf6a0a49f7ce1bdb" isAbstract="true" kind="Synchronizer" name="TaskBindingShuffle" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002f20339604a54352eec6718d24e76b723dd865ed4cd91dc0d3330f8ffc0ca692a12fc5c048b505637284ff162e784834f1dd55866cbcb65d2ff9a12cea5b82c405b9d40e81d76a30897364be501928ac9bcb2c8c8bb0143a309ed5f51b08a2fce36082bf37cfc2fdf110ba8b6d5750a7016cdf5b538a40b3a4cdbe1964503e8b" isAbstract="true" kind="Synchronizer" name="TaskBindingShuffle" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -8,7 +8,7 @@
   </header>
   <componentInfo>
     <innerComponent localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="60" w="100" x="167" y="385">
+      <visualDescription h="60" w="100" x="152" y="391">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="T"/>
@@ -19,8 +19,8 @@
         <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/TaskPortType.hpe" multiple="false" name="TaskPortType" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="false">
-      <visualDescription h="60" w="133" x="322" y="386">
+    <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle/TaskPortTypeShuffle.hpe" multiple="false" name="TaskPortTypeShuffle" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+      <visualDescription h="60" w="141" x="375" y="426">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="task_port_type">
@@ -33,6 +33,15 @@
         <originRef cRef="task_port" iRef="ITaskPort"/>
         <visualDescription h="10" w="10" x="9" y="23"/>
       </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle&#xA;{&#xA;&#x9;public interface BaseITaskBindingShuffle : ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPorttypeShuffle> Task_port {get;}&#xA;&#x9;}&#xA;}" name="BaseITaskBindingShuffle.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle/bin/1.0.0.0/BaseITaskBindingShuffle.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle/bin/1.0.0.0/ITaskPorttypeShuffle.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle&#xA;{&#xA;&#x9;public interface ITaskBindingShuffle : BaseITaskBindingShuffle&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITaskBindingShuffle.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle/bin/1.0.0.0/ITaskBindingShuffle.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle/bin/1.0.0.0/BaseITaskBindingShuffle.dll</dependency>
+        </file>
+      </sources>
       <visualDescription h="40" w="128" x="133" y="204">
         <color b="0" g="128" r="0"/>
       </visualDescription>
