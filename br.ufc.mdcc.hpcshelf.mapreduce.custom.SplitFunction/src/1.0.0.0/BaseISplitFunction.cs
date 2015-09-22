@@ -7,12 +7,12 @@ using br.ufc.mdcc.common.KVPair;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction
 {
-	public interface BaseISplitFunction<IMV, IMK, IN> : IComputationKind 
-		where IMV:IData
+	public interface BaseISplitFunction<IMK, IMV, IN> : IComputationKind 
 		where IMK:IData
+		where IMV:IData
 		where IN:IData
 	{
 		IN Input_type {get;}
-		ISet<IKVPair<IMV, IMK>> Output_type {get;}
+		ISet<IKVPair<IMK, IMV>> Output_type {get;}
 	}
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b1a819df081bb9cf8d6faa8ba6049b4569890fac0869600e51085f15fc510fd6b824e07a83aad7b84c0f8d4c3f6a2593e3ddc1b5c1c8786b324c1ea3878ab91024d887157a6c83ea882fd18f7e75a180c9798bec9da968a4e1730218b13bf1b7f396ef73a36d6425ab1fc46812bf867657fea8a168c9cf9dbbb25c8b4276bf9d" isAbstract="true" kind="Computation" name="CombineFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ddafd92ac6e0adb24ceff43d2e4c617a9cc50f40395afd846b0c58995f9fa5ce3c37caa630ea589ed1d6d6f5c65de9dda01869ab24c6b44f3c8a2938f53c29223923d8b296be6922eba39ccff43277c314dd303e48a3d26ecbf2d518dafdaa48c85df2097d9ac3f5c3d84196d52f66a0e499499fd90613a215642a5f34d51481" isAbstract="true" kind="Computation" name="CombineFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -65,15 +65,15 @@
         <visualDescription h="10" w="10" x="112" y="20"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.common.Set;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction&#xA;{&#xA;&#x9;public interface BaseICombineFunction&lt;OMV, OMK> : IComputationKind &#xA;&#x9;&#x9;where OMV:IData&#xA;&#x9;&#x9;where OMK:IData&#xA;&#x9;{&#xA;&#x9;&#x9;IKVPair&lt;OMV, OMK> Output_data {get;}&#xA;&#x9;&#x9;IKVPair&lt;ISet&lt;OMV>, OMK> Input_data {get;}&#xA;&#x9;}&#xA;}" name="BaseICombineFunction.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction/bin/1.0.0.0/BaseICombineFunction.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.common.Set;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction&#xA;{&#xA;&#x9;public interface BaseICombineFunction&lt;OMK, OMV> : IComputationKind &#xA;&#x9;&#x9;where OMK:IData&#xA;&#x9;&#x9;where OMV:IData&#xA;&#x9;{&#xA;&#x9;&#x9;IKVPair&lt;OMK, ISet&lt;OMV>> Input_data {get;}&#xA;&#x9;&#x9;IKVPair&lt;OMK, OMV> Output_data {get;}&#xA;&#x9;}&#xA;}" name="BaseICombineFunction.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction/bin/1.0.0.0/BaseICombineFunction.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
-          <dependency>br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll</dependency>
           <dependency>br.ufc.mdcc.common.Set/bin/1.0.0.0/ISet.dll</dependency>
+          <dependency>br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction&#xA;{&#xA;&#x9;public interface ICombineFunction&lt;OMV, OMK> : BaseICombineFunction&lt;OMV, OMK>&#xA;&#x9;&#x9;where OMV:IData&#xA;&#x9;&#x9;where OMK:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ICombineFunction.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction/bin/1.0.0.0/ICombineFunction.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction&#xA;{&#xA;&#x9;public interface ICombineFunction&lt;OMK, OMV> : BaseICombineFunction&lt;OMK, OMV>&#xA;&#x9;&#x9;where OMK:IData&#xA;&#x9;&#x9;where OMV:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ICombineFunction.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction/bin/1.0.0.0/ICombineFunction.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction/bin/1.0.0.0/BaseICombineFunction.dll</dependency>
         </file>
@@ -89,8 +89,8 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_data" sRef="output_data"/>
       </port>
-      <parameter iname="IData" order="1" parid="value_type" uname="data" varid="OMV"/>
       <parameter iname="IData" order="0" parid="key_type" uname="data" varid="OMK"/>
+      <parameter iname="IData" order="1" parid="value_type" uname="data" varid="OMV"/>
       <action id="main">
         <protocol/>
       </action>

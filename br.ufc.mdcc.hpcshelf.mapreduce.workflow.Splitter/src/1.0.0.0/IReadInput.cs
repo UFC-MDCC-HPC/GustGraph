@@ -5,10 +5,10 @@ using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter
 {
-	public interface IReadInput<SF, IMV, IMK, IN, BF> : BaseIReadInput<SF, IMV, IMK, IN, BF>
-		where SF:ISplitFunction<IMV, IMK, IN>
-		where IMV:IData
+	public interface IReadInput<SF, IMK, IMV, IN, BF> : BaseIReadInput<SF, IMK, IMV, IN, BF>
+		where SF:ISplitFunction<IMK, IMV, IN>
 		where IMK:IData
+		where IMV:IData
 		where IN:IData
 		where BF:IPartitionFunction<IMK>
 	{

@@ -14,6 +14,7 @@
       <references>
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll"/>
         <include/>
       </references>
     </csc>
@@ -23,6 +24,7 @@
       </sources>
       <references>
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink/bin/1.0.0.0/BaseIDataSink.dll"/>
         <include/>
       </references>

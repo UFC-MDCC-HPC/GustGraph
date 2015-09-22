@@ -3,9 +3,9 @@ using br.ufc.mdcc.common.Data;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction
 {
-	public interface ISplitFunction<IMV, IMK, IN> : BaseISplitFunction<IMV, IMK, IN>
-		where IMV:IData
+	public interface ISplitFunction<IMK, IMV, IN> : BaseISplitFunction<IMK, IMV, IN>
 		where IMK:IData
+		where IMV:IData
 		where IN:IData
 	{
 	}

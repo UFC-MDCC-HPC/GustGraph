@@ -3,11 +3,11 @@ using br.ufc.mdcc.common.Data;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction
 {
-	public interface IMapFunction<IMV, IMK, OMV, OMK> : BaseIMapFunction<IMV, IMK, OMV, OMK>
-		where IMV:IData
+	public interface IMapFunction<IMK, IMV, OMK, OMV> : BaseIMapFunction<IMK, IMV, OMK, OMV>
 		where IMK:IData
-		where OMV:IData
+		where IMV:IData
 		where OMK:IData
+		where OMV:IData
 	{
 	}
 }

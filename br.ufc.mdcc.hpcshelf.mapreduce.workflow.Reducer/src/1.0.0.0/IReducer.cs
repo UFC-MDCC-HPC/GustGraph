@@ -5,12 +5,12 @@ using br.ufc.mdcc.common.Platform;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Reducer
 {
-	public interface IReducer<RF, ORV, ORK, OMV, OMK, P> : BaseIReducer<RF, ORV, ORK, OMV, OMK, P>
-		where RF:IReduceFunction<ORV, ORK, OMV, OMK>
-		where ORV:IData
-		where ORK:IData
-		where OMV:IData
+	public interface IReducer<RF, OMK, OMV, ORK, ORV, P> : BaseIReducer<RF, OMK, OMV, ORK, ORV, P>
+		where RF:IReduceFunction<OMK, OMV, ORK, ORV>
 		where OMK:IData
+		where OMV:IData
+		where ORK:IData
+		where ORV:IData
 		where P:IPlatform
 	{
 	}

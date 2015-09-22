@@ -5,12 +5,12 @@ using br.ufc.mdcc.common.Platform;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper
 {
-	public interface IMapper<M, IMV, IMK, OMV, OMK, P> : BaseIMapper<M, IMV, IMK, OMV, OMK, P>
-		where M:IMapFunction<IMV, IMK, OMV, OMK>
-		where IMV:IData
+	public interface IMapper<M, IMK, IMV, OMK, OMV, P> : BaseIMapper<M, IMK, IMV, OMK, OMV, P>
+		where M:IMapFunction<IMK, IMV, OMK, OMV>
 		where IMK:IData
-		where OMV:IData
+		where IMV:IData
 		where OMK:IData
+		where OMV:IData
 		where P:IPlatform
 	{
 	}

@@ -7,13 +7,13 @@ using br.ufc.mdcc.common.Data;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction
 {
-	public interface BaseIMapFunction<IMV, IMK, OMV, OMK> : IComputationKind 
-		where IMV:IData
+	public interface BaseIMapFunction<IMK, IMV, OMK, OMV> : IComputationKind 
 		where IMK:IData
-		where OMV:IData
+		where IMV:IData
 		where OMK:IData
+		where OMV:IData
 	{
-		ISet<IKVPair<OMV, OMK>> Output_pairs {get;}
-		IKVPair<IMV, IMK> Input_pair {get;}
+		ISet<IKVPair<OMK, OMV>> Output_pairs {get;}
+		IKVPair<IMK, IMV> Input_pair {get;}
 	}
 }

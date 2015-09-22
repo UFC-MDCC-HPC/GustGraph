@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a760049d72968c58f73f32a73de737561f079b6c1522bef41a7215a6ca763f6646882803219343a5b7bea951c891d692e331bc95921b57c6c4142fd0dd0a38eb34d045096c7c7ca4f3a6e93f1838d9c85086966a9fa8ee1498bfa49e8e5f1c5c8500b4fbb247ce7647b7141a5e09c3ebde7024e7463dc292067281f1c41b5f8a" isAbstract="true" kind="Computation" name="PartitionFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000271356170fc8dfe840cb0062e3cff451dff957d9d35301723b1f2c581b47f310ecf54c1071f4bd1f17b176b704476db03b45949f76de6645ff95a86f7a4e9b77c3fcc6a7c7d058ac16ba87644e8cdb929040e789f627cca16830dcf031cbc04ab22d89ca4f42f88b3bfd65a221fdf19477ef02764421eed9fe912407ee67d09b" isAbstract="true" kind="Computation" name="PartitionFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
