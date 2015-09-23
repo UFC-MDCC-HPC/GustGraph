@@ -101,10 +101,6 @@
       <Project>{75954E48-9C52-4F6D-8947-13E9D574FBEA}</Project>
       <Name>br.ufc.mdcc.hpc.storm.kind.Binding</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.task.TaskPortType\br.ufc.mdcc.hpc.storm.binding.task.TaskPortType\br.ufc.mdcc.hpc.storm.binding.task.TaskPortType.csproj">
-      <Project>{B785892B-10B1-43BA-897F-E6F02CC932D0}</Project>
-      <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskPortType</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase\br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase\br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase.csproj">
       <Project>{816B876F-E438-4F9E-85D8-B98BCCE57044}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase</Name>
@@ -112,6 +108,10 @@
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter.csproj">
       <Project>{20438860-777F-4276-BD0F-E20A2E2E1407}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.task.TaskPortType\br.ufc.mdcc.hpc.storm.binding.task.TaskPortType\br.ufc.mdcc.hpc.storm.binding.task.TaskPortType.csproj">
+      <Project>{B785892B-10B1-43BA-897F-E6F02CC932D0}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskPortType</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
