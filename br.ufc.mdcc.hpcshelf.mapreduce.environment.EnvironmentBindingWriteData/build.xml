@@ -12,6 +12,7 @@
         <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingWriteData/src/1.0.0.0/BaseIClientWriteData.cs"/>
       </sources>
       <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/BaseIClientBase.dll"/>
         <include/>
       </references>
@@ -21,6 +22,7 @@
         <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingWriteData/src/1.0.0.0/IClientWriteData.cs"/>
       </sources>
       <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingWriteData/bin/1.0.0.0/BaseIClientWriteData.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll"/>
         <include/>
@@ -31,6 +33,7 @@
         <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingWriteData/src/1.0.0.0/BaseIServerWriteData.cs"/>
       </sources>
       <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/BaseIServerBase.dll"/>
         <include/>
       </references>
@@ -40,6 +43,7 @@
         <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingWriteData/src/1.0.0.0/IServerWriteData.cs"/>
       </sources>
       <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingWriteData/bin/1.0.0.0/BaseIServerWriteData.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
         <include/>

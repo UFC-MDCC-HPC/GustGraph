@@ -12,6 +12,7 @@
         <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs/src/1.0.0.0/BaseIClientTakePairs.cs"/>
       </sources>
       <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/IEnvironmentPortTypeMultiplePartner.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/BaseIClientMbyN.dll"/>
         <include/>
       </references>
@@ -21,6 +22,7 @@
         <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs/src/1.0.0.0/IClientTakePairs.cs"/>
       </sources>
       <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/IEnvironmentPortTypeMultiplePartner.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs/bin/1.0.0.0/BaseIClientTakePairs.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/IClientMbyN.dll"/>
         <include/>
@@ -31,6 +33,7 @@
         <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs/src/1.0.0.0/BaseIServerTakePairs.cs"/>
       </sources>
       <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/IEnvironmentPortTypeMultiplePartner.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/BaseIServerMbyN.dll"/>
         <include/>
       </references>
@@ -40,6 +43,7 @@
         <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs/src/1.0.0.0/IServerTakePairs.cs"/>
       </sources>
       <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/IEnvironmentPortTypeMultiplePartner.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs/bin/1.0.0.0/BaseIServerTakePairs.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/IServerMbyN.dll"/>
         <include/>

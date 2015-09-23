@@ -77,5 +77,13 @@
       <Project>{B785892B-10B1-43BA-897F-E6F02CC932D0}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskPortType</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType.csproj">
+      <Project>{4BB52CBE-64B0-4E9C-812F-921ED3FB87AF}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner.csproj">
+      <Project>{B1988D74-54AE-4031-B185-E046226BC359}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

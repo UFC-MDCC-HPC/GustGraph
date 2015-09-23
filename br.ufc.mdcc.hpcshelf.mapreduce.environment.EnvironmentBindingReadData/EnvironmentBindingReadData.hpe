@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000019e09490b38f10e67d5ff2c4a327446286593144befe80faa3dcea18fa0602178a5742c356752643fa7ef9b6641b6cf6b4cda262ddbac48c7746ffca0e895433571c8515e7455f1d596a09aead265fb94b53dceb8c4752a1cf19b6dd57f5fe292fdd478a1c9f19386cd64db1d8ca7c3d02e341c00226d61cc703e9f34f96778f" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingReadData" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.environment">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002d5c59cb2f13a87062c7016f448f809ffd95381ad80c778089ab15bd70ed3c5b676a4e3171debd1c79042acc51ca5a580e518e0bcbd46adc574c93b0bd0fd57a7b0c6a88470383fa86e9643f72b2ff40ef9a0575ae64861b448824888c7c5a13150ef29404ba04c80ae9728648b11e8ff92f9aeb815f3013c14a3956f64eb883" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingReadData" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.environment">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
       <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005908e35d36802a83328e03c2580a464af29300a51db5e9be9805ba4704ce5b3bb05fd169866e83e1fa8686eb82e2dcf1056992246d61b2216bca6e1f68c6f59bf1a7f3cc3a4b1e4a594a05cbb5af3e757a7039ce12cd8d465ccd8b6d1401a401dc40206c86c49b4e6ce76c1f9cd8fa4417ad3f0621f5c9a152eb02b61d95b0b5" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="272" y="347">
+        <visualDescription h="60" w="100" x="248" y="310">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="server_port_type" varName="S"/>
@@ -25,7 +25,9 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerComponent localRef="client_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+    <parameter componentRef="client_port_type" formFieldId="client_port_type" order="0" variance="invariant" varName="C"/>
+    <parameter componentRef="server_port_type" formFieldId="server_port_type" order="1" variance="invariant" varName="S"/>
+    <innerComponent localRef="client_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="client_port_type" exposed="false">
       <visualDescription h="60" w="164" x="137" y="444">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -33,7 +35,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="server_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+    <innerComponent localRef="server_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="server_port_type" exposed="false">
       <visualDescription h="60" w="149" x="356" y="448">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -41,49 +43,53 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="client_port_type" direct="true" varName="C"/>
-    <supplyParameter cRef="server_port_type" direct="true" varName="S"/>
-    <interface iRef="IClientReadData" nArgs="0">
+    <interface iRef="IClientReadData" nArgs="1">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData&#xA;{&#xA;&#x9;public interface BaseIClientReadData&lt;C> : BaseIClientBase&lt;C>, ISynchronizerKind &#xA;&#x9;&#x9;where C:IEnvironmentPortTypeSinglePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIClientReadData.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/bin/1.0.0.0/BaseIClientReadData.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData&#xA;{&#xA;&#x9;public interface BaseIClientReadData&lt;C> : BaseIClientBase&lt;C>, ISynchronizerKind &#xA;&#x9;&#x9;where C:IEnvironmentPortTypeSinglePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIClientReadData.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/bin/1.0.0.0/BaseIClientReadData.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/BaseIClientBase.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData&#xA;{&#xA;&#x9;public interface IClientReadData&lt;C> : BaseIClientReadData&lt;C>, IClientBase&lt;C>&#xA;&#x9;&#x9;where C:IEnvironmentPortTypeSinglePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IClientReadData.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/bin/1.0.0.0/IClientReadData.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData&#xA;{&#xA;&#x9;public interface IClientReadData&lt;C> : BaseIClientReadData&lt;C>, IClientBase&lt;C>&#xA;&#x9;&#x9;where C:IEnvironmentPortTypeSinglePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IClientReadData.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/bin/1.0.0.0/IClientReadData.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/bin/1.0.0.0/BaseIClientReadData.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="101" x="128" y="201">
+      <visualDescription h="40" w="101" x="104" y="164">
         <color b="0" g="255" r="255"/>
       </visualDescription>
+      <parameter iname="IEnvironmentPortTypeSinglePartner" order="0" parid="client_port_type" uname="environment_port_type" varid="C"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
-    <interface iRef="IServerReadData" nArgs="0">
+    <interface iRef="IServerReadData" nArgs="1">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData&#xA;{&#xA;&#x9;public interface BaseIServerReadData&lt;S> : BaseIServerBase&lt;S>, ISynchronizerKind &#xA;&#x9;&#x9;where S:IEnvironmentPortTypeSinglePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIServerReadData.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/bin/1.0.0.0/BaseIServerReadData.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData&#xA;{&#xA;&#x9;public interface BaseIServerReadData&lt;S> : BaseIServerBase&lt;S>, ISynchronizerKind &#xA;&#x9;&#x9;where S:IEnvironmentPortTypeSinglePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIServerReadData.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/bin/1.0.0.0/BaseIServerReadData.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/BaseIServerBase.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData&#xA;{&#xA;&#x9;public interface IServerReadData&lt;S> : BaseIServerReadData&lt;S>, IServerBase&lt;S>&#xA;&#x9;&#x9;where S:IEnvironmentPortTypeSinglePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IServerReadData.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/bin/1.0.0.0/IServerReadData.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData&#xA;{&#xA;&#x9;public interface IServerReadData&lt;S> : BaseIServerReadData&lt;S>, IServerBase&lt;S>&#xA;&#x9;&#x9;where S:IEnvironmentPortTypeSinglePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IServerReadData.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/bin/1.0.0.0/IServerReadData.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData/bin/1.0.0.0/BaseIServerReadData.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="134" x="414" y="207">
+      <visualDescription h="40" w="134" x="390" y="170">
         <color b="0" g="165" r="255"/>
       </visualDescription>
+      <parameter iname="IEnvironmentPortTypeSinglePartner" order="0" parid="server_port_type" uname="environment_port_type" varid="S"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IClientReadData" multiple="false" private="false" replica="0" uRef="client" visibleInterface="true">
       <super cRef="base" uRef="client"/>
-      <visualDescription h="40" w="80" x="164" y="284"/>
+      <visualDescription h="40" w="80" x="140" y="247"/>
     </unit>
     <unit facet="0" iRef="IServerReadData" multiple="false" private="false" replica="0" uRef="server" visibleInterface="true">
       <super cRef="base" uRef="server"/>
-      <visualDescription h="40" w="80" x="402" y="291"/>
+      <visualDescription h="40" w="80" x="378" y="254"/>
     </unit>
   </componentInfo>
 </component:component>

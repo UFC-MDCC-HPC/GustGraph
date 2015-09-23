@@ -19,6 +19,7 @@
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll"/>
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/IEnvironmentPortTypeMultiplePartner.dll"/>
         <include/>
       </references>
     </csc>
@@ -29,6 +30,7 @@
       <references>
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll"/>
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/IEnvironmentPortTypeMultiplePartner.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle/bin/1.0.0.0/BaseIReduceFeeder.dll"/>
         <include/>
       </references>
@@ -41,6 +43,7 @@
         <include name="br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle/bin/1.0.0.0/ITaskPorttypeShuffle.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/IEnvironmentPortTypeMultiplePartner.dll"/>
         <include/>
       </references>
     </csc>
@@ -49,6 +52,7 @@
         <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle/src/1.0.0.0/IMapCollector.cs"/>
       </sources>
       <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/IEnvironmentPortTypeMultiplePartner.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle/bin/1.0.0.0/BaseIMapCollector.dll"/>
         <include/>
       </references>

@@ -22,6 +22,7 @@
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction/bin/1.0.0.0/IMapFunction.dll"/>
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include name="br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/IEnvironmentPortTypeMultiplePartner.dll"/>
         <include/>
       </references>
     </csc>
@@ -33,6 +34,7 @@
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction/bin/1.0.0.0/IMapFunction.dll"/>
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include name="br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/IEnvironmentPortTypeMultiplePartner.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper/bin/1.0.0.0/BaseIMapper.dll"/>
         <include/>
       </references>
