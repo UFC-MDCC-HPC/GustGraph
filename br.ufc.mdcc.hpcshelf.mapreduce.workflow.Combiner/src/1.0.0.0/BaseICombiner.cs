@@ -11,11 +11,11 @@ using br.ufc.mdcc.common.Platform;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner
 {
-	public interface BaseICombiner<OMK, OMV, S, C, P> : IComputationKind 
+	public interface BaseICombiner<OMK, OMV, C, S, P> : IComputationKind 
 		where OMK:IData
 		where OMV:IData
-		where S:IEnvironmentPortTypeMultiplePartner
 		where C:IEnvironmentPortTypeMultiplePartner
+		where S:IEnvironmentPortTypeMultiplePartner
 		where P:IPlatform
 	{
 		ITaskPort<ITaskPorttypePhases> Task_port {get;}

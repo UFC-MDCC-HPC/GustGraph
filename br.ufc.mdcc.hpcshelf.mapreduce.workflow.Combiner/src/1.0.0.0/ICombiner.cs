@@ -5,11 +5,11 @@ using br.ufc.mdcc.common.Platform;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner
 {
-	public interface ICombiner<OMK, OMV, S, C, P> : BaseICombiner<OMK, OMV, S, C, P>
+	public interface ICombiner<OMK, OMV, C, S, P> : BaseICombiner<OMK, OMV, C, S, P>
 		where OMK:IData
 		where OMV:IData
-		where S:IEnvironmentPortTypeMultiplePartner
 		where C:IEnvironmentPortTypeMultiplePartner
+		where S:IEnvironmentPortTypeMultiplePartner
 		where P:IPlatform
 	{
 	}
