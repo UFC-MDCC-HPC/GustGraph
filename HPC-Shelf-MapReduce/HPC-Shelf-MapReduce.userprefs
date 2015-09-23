@@ -1,6 +1,11 @@
 ﻿<Properties StartupItem="HPC-Shelf-MapReduce/HPC-Shelf-MapReduce.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/src/1.0.0.0/BaseIReadInput.cs">
+    <Files>
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/src/1.0.0.0/IWriteOutput.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/src/1.0.0.0/BaseIReadInput.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/MapReduce-for-HPE/MapReduce-for-HPE/Program.cs" line="24" column="16" />
