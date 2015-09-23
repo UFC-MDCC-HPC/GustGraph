@@ -12,12 +12,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyN
 		public override void main()
 		{
 		}
-		//public IEnvironmentPortTypeMultiplePartner Service{
-		//	get{
-		//		if (this.Service == null)
-		//			this.Service = (IEnvironmentPortTypeMultiplePartner) Services.getPort("client_port_type");
-		//		return this.Service;
-		//	}
-		//}
+		public IEnvironmentPortTypeMultiplePartner Service{ get { return null; }  }
 	}
 }

@@ -12,5 +12,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyN
 		public override void main()
 		{
 		}
+		public IEnvironmentPortTypeMultiplePartner Service{ set {  }  }
 	}
 }//
