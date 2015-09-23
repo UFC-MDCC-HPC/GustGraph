@@ -93,18 +93,6 @@
       <Project>{B1C180D0-5858-44C1-AC56-7897EF241EC2}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs\br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs\br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs.csproj">
-      <Project>{68127716-3A3A-4CF4-952D-BE4965DEA00D}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingMbyNTakePairs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData\br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData\br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData.csproj">
-      <Project>{9CD27D21-A108-48ED-B8F4-03A3AF0321E7}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingWriteData\br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingWriteData\br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingWriteData.csproj">
-      <Project>{3478805D-AC1B-449F-A37A-6C41B7294D8B}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingWriteData</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.common.Integer\br.ufc.mdcc.common.Integer\br.ufc.mdcc.common.Integer.csproj">
       <Project>{97B35E58-AC6B-44A6-A536-90FA39076265}</Project>
       <Name>br.ufc.mdcc.common.Integer</Name>
