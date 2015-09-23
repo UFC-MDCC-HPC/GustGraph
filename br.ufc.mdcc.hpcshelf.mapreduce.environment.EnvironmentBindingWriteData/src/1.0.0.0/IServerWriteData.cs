@@ -7,4 +7,4 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingWriteData
 	public interface IServerWriteData : BaseIServerWriteData, IServerBase<IEnvironmentPortTypeSinglePartner>
 	{
 	}
-}
+}//

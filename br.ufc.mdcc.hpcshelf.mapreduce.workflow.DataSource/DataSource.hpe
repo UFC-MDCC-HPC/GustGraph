@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a10f89e715245e032411c2edf265525be7b8d9f35e263b9e9275803d2864612fa0d70770a71173813d457df7aa3bc0b03e6ff3469c0bdf3615ad9a499055d4fa0944b29acad1a32910b3d50ac17eb84580a18399e2052b7968f87cf036308905ef9713b5b758ce2b5c288f30b096632129ac1723c095fbbaee43d5bb45149c82" isAbstract="true" kind="Computation" name="DataSource" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000edad93d4f5dfc148d8603afd733ee9c0ef8489caef1f12443ea4e43a380bbad3a85ad99b560b72a626722d4b690dd8ea886bf5f137de312fc57ad96fc1d153518f21189373ac0e44873096636747e62a69026b11c27aaf0b6bbac4857dd84c2793545f3003fe238032abca8bdb0d47e4c2ad0cb211d52850b93013efe27c7c9a" isAbstract="true" kind="Computation" name="DataSource" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -8,7 +8,7 @@
   </header>
   <componentInfo>
     <parameter componentRef="data_type" formFieldId="data_type" order="0" variance="contravariant" varName="IN"/>
-    <parameter componentRef="platform" formFieldId="platform" order="3" variance="contravariant" varName="P"/>
+    <parameter componentRef="platform" formFieldId="platform" order="2" variance="contravariant" varName="P"/>
     <parameter componentRef="client_port_type" formFieldId="client_port_type" order="1" variance="contravariant" varName="C"/>
     <parameter componentRef="server_port_type" formFieldId="server_port_type" order="2" variance="contravariant" varName="S"/>
     <innerComponent localRef="data_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="data_type" exposed="true">
@@ -23,7 +23,7 @@
       <visualDescription h="60" w="100" x="388" y="342">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="platform">
+      <unitBounds parallel="false" uRef="platform">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -67,7 +67,7 @@
       </slice>
       <slice isRef="platform">
         <originRef cRef="platform" iRef="IPlatform"/>
-        <visualDescription h="10" w="10" x="193" y="20"/>
+        <visualDescription h="10" w="10" x="190" y="21"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;using br.ufc.mdcc.common.Platform;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource&#xA;{&#xA;&#x9;public interface BaseIDataSource&lt;IN, S, P> : IComputationKind &#xA;&#x9;&#x9;where IN:IData&#xA;&#x9;&#x9;where S:IEnvironmentPortTypeSinglePartner&#xA;&#x9;&#x9;where P:IPlatform&#xA;&#x9;{&#xA;&#x9;&#x9;IN Data_type {get;}&#xA;&#x9;}&#xA;}" name="BaseIDataSource.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource/bin/1.0.0.0/BaseIDataSource.dll" versionId="1.0.0.0">
@@ -91,8 +91,8 @@
         <slice pRef="data_type" sRef="data_type"/>
       </port>
       <parameter iname="IData" order="0" parid="data_type" uname="data" varid="IN"/>
-      <parameter iname="IEnvironmentPortTypeSinglePartner" order="1" parid="server_port_type" uname="environment_port_type" varid="S"/>
-      <parameter iname="IPlatform" order="2" parid="platform" uname="platform" varid="P"/>
+      <parameter iname="IEnvironmentPortTypeSinglePartner" parid="server_port_type" uname="environment_port_type" varid="S"/>
+      <parameter iname="IPlatform" order="1" parid="platform" uname="platform" varid="P"/>
       <action id="main">
         <protocol/>
       </action>
@@ -105,7 +105,7 @@
         <visualDescription h="10" w="10" x="154" y="31"/>
       </slices>
       <slices cRef="platform" inner_replica="0" slice_replica="0" uRef="platform" sliceName="platform" transitive="false">
-        <visualDescription h="10" w="10" x="193" y="20"/>
+        <visualDescription h="10" w="10" x="190" y="21"/>
       </slices>
       <visualDescription h="40" w="213" x="86" y="278"/>
     </unit>

@@ -7,4 +7,4 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.EnvironmentBindingReadData
 	public interface IServerReadData : BaseIServerReadData, IServerBase<IEnvironmentPortTypeSinglePartner>
 	{
 	}
-}
+}//
