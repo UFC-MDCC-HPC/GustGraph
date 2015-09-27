@@ -10,18 +10,14 @@ using System.ServiceModel;
 using System.Web.Services;
 using System.IO;
 
-namespace br.ufc.mdcc.hpc.storm.binding.environment.impl.BindingMbyNIntraExample
-{
-//	public class IBindingMyNIntraExampleClient<C> : BaseIBindingMyNIntraExampleClient<C>, IClientMbyNIntra<C>
-//		where C:IMbyNClientPortTypeExample
-	public class IBindingMyNIntraExampleClient : BaseIBindingMyNIntraExampleClient<IMbyNClientPortTypeExample>, 
-												IClientMbyNIntra<IMbyNClientPortTypeExample>
-	{
-
+namespace br.ufc.mdcc.hpc.storm.binding.environment.impl.BindingMbyNIntraExample {
+	//	public class IBindingMyNIntraExampleClient<C> : BaseIBindingMyNIntraExampleClient<C>, IClientMbyNIntra<C>
+	//		where C:IMbyNClientPortTypeExample
+	public class IBindingMyNIntraExampleClient:BaseIBindingMyNIntraExampleClient<IMbyNClientPortTypeExample>, 
+	                                                                             IClientMbyNIntra<IMbyNClientPortTypeExample> {
 		private MPI.Intercommunicator channel;
 
-		public override void after_initialize ()
-		{
+		public override void after_initialize (){
 			int remote_leader = this.UnitRanks ["server"] [0];
 			channel = new MPI.Intercommunicator(this.PeerComm, 0, this.Communicator, remote_leader, 0);
 			((IMbyNClientPortTypeExampleImpl)service).Channel = channel;
@@ -37,9 +33,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.impl.BindingMbyNIntraExample
 
 		}
 
-		public override void main()
-		{
-		}
+		public override void main(){}
 
 		#region IClientBase implementation
 
@@ -52,11 +46,9 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.impl.BindingMbyNIntraExample
 		}
 		#endregion
 
-		internal class IMbyNClientPortTypeExampleImpl : IMbyNClientPortTypeExample 
-		{
+		internal class IMbyNClientPortTypeExampleImpl : IMbyNClientPortTypeExample {
 
-			public IMbyNClientPortTypeExampleImpl()
-			{
+			public IMbyNClientPortTypeExampleImpl(){
 			}
 
 			private MPI.Intercommunicator channel;
@@ -74,12 +66,10 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.impl.BindingMbyNIntraExample
 
 			#region IMbyNClientPortTypeExample implementation
 
-			private void sendArguments (int operation_tag, int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6, ref MPI.RequestList reqList)
-			{
+			private void sendArguments (int operation_tag, int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6, ref MPI.RequestList reqList) {
 				int remote_size = channel.RemoteSize;
 
-				for (int server = 0; server < remote_size; server++) 
-				{
+				for (int server = 0; server < remote_size; server++) {
 					if (channel.Rank == 0)
 						channel.Send<int> (operation_tag, server, OPERATION_TAG);
 
@@ -98,26 +88,21 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.impl.BindingMbyNIntraExample
 
 			}
 
-			private void receiveResult<T> (ref MPI.RequestList reqList, int operation_tag)
-			{
+			private void receiveResult<T> (ref MPI.RequestList reqList, int operation_tag){
 				int remote_size = channel.RemoteSize;
 
-				for (int server = 0; server < remote_size; server++) 
-				{
+				for (int server = 0; server < remote_size; server++) {
 					MPI.Request req = channel.ImmediateReceive<T> (server, operation_tag);
 					reqList.Add (req);
 				}
 
 			}
 
-			private int[] takeResults (IList<MPI.Request> reqList_complete)
-			{
+			private int[] takeResults (IList<MPI.Request> reqList_complete){
 				int[] result_values = new int[channel.RemoteSize];
 
-				foreach (MPI.Request req in reqList_complete) 
-				{
-					if (req is MPI.ReceiveRequest) 
-					{
+				foreach (MPI.Request req in reqList_complete) {
+					if (req is MPI.ReceiveRequest) {
 						MPI.ReceiveRequest recv_req = (MPI.ReceiveRequest)req;
 						MPI.CompletedStatus status = recv_req.Wait ();
 						int value = (int) recv_req.GetValue ();
@@ -128,8 +113,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.impl.BindingMbyNIntraExample
 				return result_values;
 			}
 
-			public void some_method_1 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-			{
+			public void some_method_1 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 				MPI.RequestList reqList = new MPI.RequestList ();
 
 				sendArguments (OPERATION_1, arg1, arg2, arg3, arg4, arg5, arg6, ref reqList);
@@ -138,22 +122,20 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.impl.BindingMbyNIntraExample
 				reqList.WaitAll ();
 			}
 
-			public IGather<int> some_method_2 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-			{
+			public IGather<int> some_method_2 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 				MPI.RequestList reqList = new MPI.RequestList ();
 
 				sendArguments (OPERATION_2, arg1, arg2, arg3, arg4, arg5, arg6, ref reqList);
 				receiveResult<int> (ref reqList, OPERATION_2);
 
 				IList<MPI.Request> reqList_complete = reqList.WaitAll ();
-				
+
 				int[] result_values = takeResults (reqList_complete);
 
 				return Gather<int>.create (channel, result_values);
 			}
 
-			public IReduce<int> some_method_3 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-			{
+			public IReduce<int> some_method_3 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 				MPI.RequestList reqList = new MPI.RequestList ();
 
 				sendArguments (OPERATION_3, arg1, arg2, arg3, arg4, arg5, arg6, ref reqList);
@@ -166,8 +148,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.impl.BindingMbyNIntraExample
 				return Reduce<int>.create (channel, result_values, sum, 0);
 			}
 
-			public IScan<int> some_method_4 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-			{
+			public IScan<int> some_method_4 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 				MPI.RequestList reqList = new MPI.RequestList ();
 
 				sendArguments (OPERATION_4, arg1, arg2, arg3, arg4, arg5, arg6, ref reqList);
@@ -180,8 +161,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.impl.BindingMbyNIntraExample
 				return Scan<int>.create (channel, result_values, sum, 0);
 			}
 
-			public IGather<int> some_method_5 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-			{
+			public IGather<int> some_method_5 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 				MPI.RequestList reqList = new MPI.RequestList ();
 
 				sendArguments (OPERATION_5, arg1, arg2, arg3, arg4, arg5, arg6, ref reqList);
@@ -194,8 +174,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.impl.BindingMbyNIntraExample
 				return Gather<int>.create (channel, result_values);
 			}
 
-			public IReduce<int> some_method_6 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-			{
+			public IReduce<int> some_method_6 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 				MPI.RequestList reqList = new MPI.RequestList ();
 
 				sendArguments (OPERATION_6, arg1, arg2, arg3, arg4, arg5, arg6, ref reqList);
@@ -208,8 +187,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.impl.BindingMbyNIntraExample
 				return Reduce<int>.create (channel, result_values, sum, 0);
 			}
 
-			public IScan<int> some_method_7 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-			{
+			public IScan<int> some_method_7 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 				MPI.RequestList reqList = new MPI.RequestList ();
 
 				sendArguments (OPERATION_7, arg1, arg2, arg3, arg4, arg5, arg6, ref reqList);
@@ -227,8 +205,6 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.impl.BindingMbyNIntraExample
 			private int sum(int a, int b) {
 				return a + b;
 			}
-
-
 		}
 	}
 
@@ -244,13 +220,10 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.impl.BindingMbyNIntraExample
 	 *         components.
 	 */
 
-	public class IMbyNClientPortTypeExampleSkeleton : System.Web.Services.WebService,
-													 IMbyNClientPortTypeExample
-	{
+	public class IMbyNClientPortTypeExampleSkeleton : System.Web.Services.WebService, IMbyNClientPortTypeExample {
 		private IMbyNClientPortTypeExample binding_client_object;
 
-		public IMbyNClientPortTypeExampleSkeleton()
-		{
+		public IMbyNClientPortTypeExampleSkeleton()	{
 			var binding = new WSHttpBinding ();
 			var address = new EndpointAddress ("http://localhost:8085");
 			binding_client_object = new IMbyNClientPortTypeExampleImpl (binding, address);
@@ -259,90 +232,74 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.impl.BindingMbyNIntraExample
 		#region IMbyNClientPortTypeExample implementation
 
 		[WebMethod]
-		public void some_method_1 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-		{
+		public void some_method_1 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 			binding_client_object.some_method_1 (arg1, arg2, arg3, arg4, arg5, arg6);
 		}
 
 		[WebMethod]
-		public IGather<int> some_method_2 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-		{
+		public IGather<int> some_method_2 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 			return binding_client_object.some_method_2 (arg1, arg2, arg3, arg4, arg5, arg6);
 		}
 
 		[WebMethod]
-		public IReduce<int> some_method_3 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-		{
+		public IReduce<int> some_method_3 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 			return binding_client_object.some_method_3 (arg1, arg2, arg3, arg4, arg5, arg6);
 		}
 
 		[WebMethod]
-		public IScan<int> some_method_4 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-		{
+		public IScan<int> some_method_4 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 			return binding_client_object.some_method_4 (arg1, arg2, arg3, arg4, arg5, arg6);
 		}
 
 		[WebMethod]
-		public IGather<int> some_method_5 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-		{
+		public IGather<int> some_method_5 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 			return binding_client_object.some_method_5 (arg1, arg2, arg3, arg4, arg5, arg6);
 		}
 
 		[WebMethod]
-		public IReduce<int> some_method_6 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-		{
+		public IReduce<int> some_method_6 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 			return binding_client_object.some_method_6 (arg1, arg2, arg3, arg4, arg5, arg6);
 		}
 
 		[WebMethod]
-		public IScan<int> some_method_7 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-		{
+		public IScan<int> some_method_7 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 			return binding_client_object.some_method_7 (arg1, arg2, arg3, arg4, arg5, arg6);
 		}
 		#endregion
 
 		internal class IMbyNClientPortTypeExampleImpl : ClientBase<IMbyNClientPortTypeExample>, 
-														IMbyNClientPortTypeExample
-		{
+		IMbyNClientPortTypeExample{
 			public IMbyNClientPortTypeExampleImpl (System.ServiceModel.Channels.Binding binding, EndpointAddress address)
-				: base (binding, address)
-			{
+				: base (binding, address){
 			}
 
 			#region IMbyNClientPortTypeExample implementation
 
-			public void some_method_1 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-			{
+			public void some_method_1 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 				Channel.some_method_1 (arg1, arg2, arg3, arg4, arg5, arg6);
 			}
 
-			public IGather<int> some_method_2 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-			{
+			public IGather<int> some_method_2 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 				return Channel.some_method_2 (arg1, arg2, arg3, arg4, arg5, arg6);
 			}
 
-			public IReduce<int> some_method_3 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-			{
+			public IReduce<int> some_method_3 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 				return Channel.some_method_3 (arg1, arg2, arg3, arg4, arg5, arg6);
 			}
 
-			public IScan<int> some_method_4 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-			{
+			public IScan<int> some_method_4 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 				return Channel.some_method_4 (arg1, arg2, arg3, arg4, arg5, arg6);
 			}
 
-			public IGather<int> some_method_5 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-			{
+			public IGather<int> some_method_5 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 				return Channel.some_method_5 (arg1, arg2, arg3, arg4, arg5, arg6);
 			}
 
-			public IReduce<int> some_method_6 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-			{
+			public IReduce<int> some_method_6 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 				return Channel.some_method_6 (arg1, arg2, arg3, arg4, arg5, arg6);
 			}
 
-			public IScan<int> some_method_7 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6)
-			{
+			public IScan<int> some_method_7 (int arg1, int arg2, int arg3, IScatter<int> arg4, IScatter<int> arg5, IScatter<int> arg6){
 				return Channel.some_method_7 (arg1, arg2, arg3, arg4, arg5, arg6);
 			}
 

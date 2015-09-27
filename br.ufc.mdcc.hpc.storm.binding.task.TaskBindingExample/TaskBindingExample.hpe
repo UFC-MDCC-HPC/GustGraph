@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000852220feacb735558fd2bfa28ed6f5a9af190d62a984dfbb43137906856ae9f6f6642ab86692e68b0cf5660ed8d8408bce23698ea66b8263e0e648368d79ff6d4dc9df2f3cfc6c7022bb79bcd28e32c29e611fa0e59daafaf8374b4ca3a27d1bfbc249f67ef1184f0cddd93d78ca6e04a456ed95730cc652eeca3f99452ba3d4" isAbstract="true" kind="Synchronizer" name="TaskBindingExample" packagePath="br.ufc.mdcc.hpc.storm.binding.task">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000000d04b2465e01ccf5f751010756e6b6248d38e245f8903368a8f85044922f451238a4a4c76343c76d2af9657890ea146944644aabe635967326aed52b2fd9e9fb95e9d22079e5d14968a7c3ca1bd27c8f991dbdc7acf941058541aa05c499eaab335b741d56187ce3b17dbe657ce6da10e942b2e73ef4f2a8fd9d28af15e43b8c" isAbstract="true" kind="Synchronizer" name="TaskBindingExample" packagePath="br.ufc.mdcc.hpc.storm.binding.task">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerComponent hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005926cf9752a49ce8dcbf205c57274f8b53967fd274530755ad6db3781d190255d48e419e740233df38eb48c07d8a4b0124f9926080307a70f76e2e238926089cbdde8787d35ed09fac7432eac1bf0a271e8f1cc1467841294b6e0e2faa580740e34a606295c7014ec9971ecb13636762932495675e8f040bfb64abb172c53793" localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+    <innerComponent localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
       <visualDescription h="60" w="158" x="224" y="240">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -19,7 +19,7 @@
         <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent hash_component_UID="00240000048000009400000006020000002400005253413100040000110000008d34e4f1f2b0b1d1dd318b334d9bf609e322dc535ff97a55b1d0fd7a113d2d90fb5cc9a6885da5ff62ce18a4c32a80280f85d349a1519ce506302854c55a3a4a79d40be659ea0b62a589d1ae316e764195200fc71d9cf2ad2c39966ea1b5d94348acb488d526f5227df5661d85b9abc84e73aad9b8f20e9a7ee1d68bf2a9e891" localRef="task_port_type" location="br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample/TaskPortTypeExample.hpe" multiple="false" name="TaskPortTypeExample" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="false">
+    <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample/TaskPortTypeExample.hpe" multiple="false" name="TaskPortTypeExample" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="false">
       <visualDescription h="60" w="100" x="148" y="328">
         <color b="255" g="255" r="255"/>
       </visualDescription>

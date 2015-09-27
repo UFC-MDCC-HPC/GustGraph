@@ -1,40 +1,33 @@
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;
 using System.Collections.Generic;
-using MPI;
 using System;
 using System.Runtime.Serialization;
+using MPI;
 
-namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner
-{
-	public interface IEnvironmentPortTypeMultiplePartner : BaseIEnvironmentPortTypeMultiplePartner, IEnvironmentPortType
-	{
+namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner{
+	public interface IEnvironmentPortTypeMultiplePartner : BaseIEnvironmentPortTypeMultiplePartner, IEnvironmentPortType{
 
 	}
 
-	public interface IScatter<T>
-	{
+	public interface IScatter<T>{
 		T[] Value { get; set;} 
 	}
 
-	public interface IGather<T>
-	{
+	public interface IGather<T>{
 		T[] Value { get; set;}
 	}
 
-	public interface IReduce<T>
-	{
+	public interface IReduce<T>	{
 		T Value { get; set;} 
 	}
 
-	public interface IScan<T>
-	{
+	public interface IScan<T>{
 		T Value { get; set;} 
 	}
 
 	[DataContract]
-	internal class Scatter_<T> : IScatter<T>
-	{
+	internal class Scatter_<T> : IScatter<T>{
 		private T[] values;
 
 		#region IScatter implementation
@@ -45,18 +38,15 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultipleP
 		}
 		#endregion
 
-		public void check_size(int remote_size)
-		{
+		public void check_size(int remote_size)	{
 			if (Value.Length != remote_size)
 				throw new Exception ("Invalid attempt to build a scatter object: the size of the array must be equal to the size of the communicator's remote group");
 		}
 	}
 
-	public class Scatter<U>
-	{
+	public class Scatter<U>	{
 		// This function must be called from within the environemnt binding.
-		public static IScatter<U> create (Intercommunicator comm, U[] values)
-		{
+		public static IScatter<U> create (Intercommunicator comm, U[] values){
 			if (comm.RemoteSize != values.Length)
 				throw new Exception ("Invalid attempt to build a scatter object: the size of the array must be equal to the size of the communicator's remote group");
 
@@ -65,10 +55,9 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultipleP
 			return res;
 		}
 	}
-	
+
 	[DataContract]
-	internal class Gather_<T> : IGather<T>
-	{
+	internal class Gather_<T> : IGather<T>{
 		private T[] values;
 
 		#region IGather implementation
@@ -82,11 +71,9 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultipleP
 		#endregion
 	}
 
-	public class Gather<U>
-	{
+	public class Gather<U>{
 		// This function must be called from within the environemnt binding.
-		public static IGather<U> create (Intercommunicator comm, U[] values)
-		{
+		public static IGather<U> create (Intercommunicator comm, U[] values){
 			if (comm.RemoteSize != values.Length)
 				throw new Exception ("Invalid attempt to build a gather object: the size of the array must be equal to the size of the communicator's remote group");
 
@@ -96,13 +83,11 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultipleP
 		}
 	}
 
-
 	public delegate T Operator<T> (T v1, T v2);
 
 
 	[DataContract]
-	internal class Reduce_<T> : IReduce<T>
-	{
+	internal class Reduce_<T> : IReduce<T>{
 		private T value;
 
 		#region IReduce implementation
@@ -118,14 +103,11 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultipleP
 		/* The operator is defined in subclasses of IEnvironmentPortTypeMultipleClass, in such a way they may be informed by the user. 
 		 * So, the binding implementation, which know the proper subclass, may get the corret operator.
 		 */
-
 	}
 
-	public class Reduce<U>
-	{
+	public class Reduce<U>{
 		// This function must be called from within the environemnt binding.
-		public static IReduce<U> create (Intercommunicator comm, U[] values, Operator<U> op, U v0)
-		{
+		public static IReduce<U> create (Intercommunicator comm, U[] values, Operator<U> op, U v0){
 			if (comm.RemoteSize != values.Length)
 				throw new Exception ("Invalid attempt to build a reduce object: the size of the array must be equal to the size of the communicator's remote group");
 
@@ -143,30 +125,23 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultipleP
 
 
 	[DataContract]
-	internal class Scan_<T> : IScan<T>
-	{
+	internal class Scan_<T> : IScan<T>{
 		private T value;
-
 		#region IScan implementation
-
 		[DataMember]
 		public T Value {
 			get { return this.value; }
 			set { this.value = value; }
 		}
-
 		#endregion
-
 		/* The operator is defined in subclasses of IEnvironmentPortTypeMultipleClass, in such a way they may be informed by the user. 
 		 * So, the binding implementation, which know the proper subclass, may get the corret operator.
 		 */
 	}
 
-	public class Scan<U>
-	{
+	public class Scan<U>{
 		// This function must be called from within the environemnt binding.
-		public static IScan<U> create (Intercommunicator comm, U[] values, Operator<U> op, U v0)
-		{
+		public static IScan<U> create (Intercommunicator comm, U[] values, Operator<U> op, U v0){
 			int rank = comm.Rank;
 
 			if (comm.RemoteSize != values.Length)
@@ -183,5 +158,5 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultipleP
 			return res;
 		}
 	}
-
 }
+

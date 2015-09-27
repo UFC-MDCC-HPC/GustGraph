@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001b50ad3746fb4e635c574a9bfe114c7113fd0b5c98cba9d45c39b13f5b060ce243bbcdd12cf90295a62ddb5575625749e82e51d1456c77fdac01b6044a9408deaadc713178fb05ecbf25f7bb9d75719e425d7e6d381ce2315e835ae0487ebf0ab1f0477678a13d1ae32dfd94fc8021adddac988ed0cc6b62d011d172657670c6" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMbyN" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bd3e68053d762f2593149a0ce590714752019b5476830b37809f744ce03374ab54d2dd4b689f363152f0a533f6d307ce2d7b141c11d0e0d1a47e634eb028e297feded706942d212aab1c9bc736f9ec23ff304df14ca53f5ec5ca563b617c9319770f6c342a53ac09ef30eebee066ea15358b67d3811758223a15e9cf58e15784" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMbyN" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005908e35d36802a83328e03c2580a464af29300a51db5e9be9805ba4704ce5b3bb05fd169866e83e1fa8686eb82e2dcf1056992246d61b2216bca6e1f68c6f59bf1a7f3cc3a4b1e4a594a05cbb5af3e757a7039ce12cd8d465ccd8b6d1401a401dc40206c86c49b4e6ce76c1f9cd8fa4417ad3f0621f5c9a152eb02b61d95b0b5" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a1d74013f542dc6b0a1afeb5cd998b0e4b01d16d4b47289df1ffc09aab1f6c5e73260703df4ea456d09029c179b4525c57280cca1a6c53b1c54f2a9bc2cbeb5313b7d5387c39925712e9dbbdd0105b8d166030981e44891ed0883deaf202e7dd1d8d9d3879544586d28e50fba8d669a1f403713f7a5a36b39b37674eb92905ab" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
         <visualDescription h="60" w="253" x="91" y="247">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="client_port_type" varName="C"/>
         <parameter formFieldId="server_port_type" varName="S"/>
+        <parameter formFieldId="client_port_type" varName="C"/>
         <unitBounds parallel="true" uRef="client">
           <visualDescription h="20" w="20" x="45" y="24"/>
         </unitBounds>
@@ -25,8 +25,8 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <parameter componentRef="client_port_type" formFieldId="client_port_type" order="0" varName="C"/>
-    <parameter componentRef="server_port_type" formFieldId="server_port_type" order="1" varName="S"/>
+    <parameter componentRef="client_port_type" formFieldId="client_port_type" order="0" variance="invariant" varName="C"/>
+    <parameter componentRef="server_port_type" formFieldId="server_port_type" order="1" variance="invariant" varName="S"/>
     <innerComponent localRef="client_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="client_port_type" exposed="false">
       <visualDescription h="60" w="100" x="125" y="327">
         <color b="255" g="255" r="255"/>
@@ -45,11 +45,11 @@
     </innerComponent>
     <interface iRef="IClientMbyN" nArgs="1">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN&#xA;{&#xA;&#x9;public interface BaseIClientMbyN&lt;C> : BaseIClientBase&lt;C>, ISynchronizerKind &#xA;&#x9;&#x9;where C:IEnvironmentPortType&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIClientMbyN.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/BaseIClientMbyN.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN&#xA;{&#xA;&#x9;public interface BaseIClientMbyN&lt;C> : BaseIClientBase&lt;C>, ISynchronizerKind &#xA;&#x9;&#x9;where C:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIClientMbyN.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/BaseIClientMbyN.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/BaseIClientBase.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN&#xA;{&#xA;&#x9;public interface IClientMbyN&lt;C> : BaseIClientMbyN&lt;C>, IClientBase&lt;C>&#xA;&#x9;&#x9;where C:IEnvironmentPortType&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IClientMbyN.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/IClientMbyN.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN&#xA;{&#xA;&#x9;public interface IClientMbyN&lt;C> : BaseIClientMbyN&lt;C>, IClientBase&lt;C>&#xA;&#x9;&#x9;where C:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IClientMbyN.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/IClientMbyN.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/BaseIClientMbyN.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll</dependency>
@@ -58,18 +58,18 @@
       <visualDescription h="40" w="122" x="59" y="90">
         <color b="0" g="255" r="255"/>
       </visualDescription>
-      <parameter iname="IEnvironmentPortType" order="0" parid="client_port_type" uname="environment_port_type" varid="C"/>
+      <parameter iname="IEnvironmentPortTypeMultiplePartner" order="0" parid="client_port_type" uname="environment_port_type" varid="C"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <interface iRef="IServerMbyN" nArgs="1">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN&#xA;{&#xA;&#x9;public interface BaseIServerMbyN&lt;S> : BaseIServerBase&lt;S>, ISynchronizerKind &#xA;&#x9;&#x9;where S:IEnvironmentPortType&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIServerMbyN.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/BaseIServerMbyN.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN&#xA;{&#xA;&#x9;public interface BaseIServerMbyN&lt;S> : BaseIServerBase&lt;S>, ISynchronizerKind &#xA;&#x9;&#x9;where S:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIServerMbyN.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/BaseIServerMbyN.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/BaseIServerBase.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN&#xA;{&#xA;&#x9;public interface IServerMbyN&lt;S> : BaseIServerMbyN&lt;S>, IServerBase&lt;S>&#xA;&#x9;&#x9;where S:IEnvironmentPortType&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IServerMbyN.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/IServerMbyN.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN&#xA;{&#xA;&#x9;public interface IServerMbyN&lt;S> : BaseIServerMbyN&lt;S>, IServerBase&lt;S>&#xA;&#x9;&#x9;where S:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IServerMbyN.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/IServerMbyN.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/BaseIServerMbyN.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
@@ -78,7 +78,7 @@
       <visualDescription h="40" w="126" x="226" y="69">
         <color b="0" g="165" r="255"/>
       </visualDescription>
-      <parameter iname="IEnvironmentPortType" order="0" parid="server_port_type" uname="environment_port_type" varid="S"/>
+      <parameter iname="IEnvironmentPortTypeMultiplePartner" order="0" parid="server_port_type" uname="environment_port_type" varid="S"/>
       <action id="main">
         <protocol/>
       </action>

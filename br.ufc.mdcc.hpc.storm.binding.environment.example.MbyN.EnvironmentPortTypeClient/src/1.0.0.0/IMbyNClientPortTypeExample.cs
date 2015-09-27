@@ -1,5 +1,6 @@
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;
+using System;
 using System.ServiceModel;
 
 namespace br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient

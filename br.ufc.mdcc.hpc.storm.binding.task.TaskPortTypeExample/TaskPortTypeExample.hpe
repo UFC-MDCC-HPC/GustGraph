@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000008d34e4f1f2b0b1d1dd318b334d9bf609e322dc535ff97a55b1d0fd7a113d2d90fb5cc9a6885da5ff62ce18a4c32a80280f85d349a1519ce506302854c55a3a4a79d40be659ea0b62a589d1ae316e764195200fc71d9cf2ad2c39966ea1b5d94348acb488d526f5227df5661d85b9abc84e73aad9b8f20e9a7ee1d68bf2a9e891" isAbstract="true" kind="Qualifier" name="TaskPortTypeExample" packagePath="br.ufc.mdcc.hpc.storm.binding.task">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000000f5cc1cc1b849e9b49e17b2d76517e336143fb57de0dd8b989dd15ba245eccc4f76e6495cb74859d2856dc565a3ba06c86c9c22e6cd7a860dbbd5a18ded628c2f4809906573b4c80b96baed42ee14622d68a485bf8f4246624fb49825e81fbe0d571589acce0be3ea522b4a27dd77ad155a9c67fd49a30873f1119b1454b31c0" isAbstract="true" kind="Qualifier" name="TaskPortTypeExample" packagePath="br.ufc.mdcc.hpc.storm.binding.task">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000013c562a387ef603f52341cf7b3d2fac589979e8a144e84ab0b6cb537867cd6be218a0bd7cca087c9079cec2c96f051de42693d7d645a4d24e7de7b08f4c3cd07a3ec64128a8a605d7c30cbc2265b4fefd94c353669b3a0859407fd958be5df08354f66fd7d0b91be0c79119feda638dfcea4bfece49b8857c7ec6785d3f4028a" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/TaskPortType.hpe" name="TaskPortType" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bf529efdae941000152bc0d5cc9563ead94e3fd1d8dea3339cf74a4b13a37913eb66d6457e0dd0551303a440619563c6b1bed9cb8062471ae84a9880e6a06f37ce48cb3d1c43615235ba52a4e20617843ac4391a8b37e4a4a9d0b3f9cf81a84a8c7c4053e26fdf261714304fdca17fde9db40b9c0935d27811a39c373ac732cb" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/TaskPortType.hpe" name="TaskPortType" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
         <visualDescription h="60" w="100" x="188" y="180">
           <color b="255" g="255" r="255"/>
         </visualDescription>
