@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000057d2991a914cc5a1e399b5e559703a31e0a69a29ef955a8e05537e55a6a4701359654f399a058d62fa1a6d9ebd4a27b26d2eebd3c0545d1e01b5428138c3e77bbcecda136f69d3fad7bfcfa81f05f9c315592c0e92ef4798d7058f61e34e5c5f311e6023678be1515caaaf8fca8889fff5acbf4d8385071c5abe5fa240b89ec5" isAbstract="true" kind="Binding" name="Binding" packagePath="br.ufc.mdcc.hpc.storm.binding.channel">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000174170214ec8de902f58c9e2758714817ff949c0c098fc0bb0d7f68cfab78767e1a0c1983242dfd742d7e3732d9050312c8c95d9130a7071b3ccddfe9b59fd7b8df6676b7b12a4a3f7e1fdad77bdaeb4396d673feddeaf3545c105ba8114bc03f067758555bf72db629d435bfeae77bbb9a77a0690d7415de49fea886da17dd1" isAbstract="true" kind="Binding" name="Binding" packagePath="br.ufc.mdcc.hpc.storm.binding.channel">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000001eb6c43296f92e9c58ad6e4dfc863c9f3821ec2430e3bcc55835df343d380eae871ba902df5752e049d1868ed1fe274844d71c048fe4b7e74e73d1199bafa8a1e751f25103cfb3c507045bf567da858df655171b6207564d77120f957120d7692c096ad401c63ea1a86182be27e935daf1b6b442c3dd420c62358aff8669989" localRef="base" location="br.ufc.mdcc.hpc.storm.kind.Binding/Binding.hpe" name="Binding" package="br.ufc.mdcc.hpc.storm.kind" version="1.0.0.0">
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000027a317f913743facf128cbff4267868d0182882c7a41b97f60fb74e4064eb9d913c120c2036c58f445bfa59bc83791105ba6615e96c8338454e80fca5da50166bb0231effb46ba9f76de1f7a2bab11e256939eec39563e7c748f35cab54fba13eec406fc39d6ceee356d655cd83d85a4b258c273deea8b2a01f3fa705d588290" localRef="base" location="br.ufc.mdcc.hpc.storm.kind.Binding/Binding.hpe" name="Binding" package="br.ufc.mdcc.hpc.storm.kind" version="1.0.0.0">
         <visualDescription h="95" w="95" x="254" y="228">
           <color b="255" g="255" r="255"/>
         </visualDescription>
