@@ -15,7 +15,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.impl.TaskBindingMapImpl
 		public override void on_initialize ()
 		{
 			ActionDef.action_ids[ITaskBindingMapAction.READ_CHUNK]  = 3;
-			ActionDef.action_ids[ITaskBindingMapAction.PARTITION]   = 4;
+			ActionDef.action_ids[ITaskBindingMapAction.PERFORM]   = 4;
 			ActionDef.action_ids[ITaskBindingMapAction.CHUNK_READY] = 5;
 		}
 	}
