@@ -36,8 +36,6 @@ teste.impl.BindingImpl
 teste.impl.TestBindingAppImpl
 teste.impl.TestTaskBindingInternalImpl
 
-br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
-br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingExampleImpl
 commit.sh
 #end temp
 

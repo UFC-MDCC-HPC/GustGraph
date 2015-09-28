@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002d18b689bae73901596bde1ec9f7f780f258eedabc873da6396418bfed90aaa63d2557f6889a9524a72d2a29fb39ddcf36991ece55b547354b856266c3521f407ad97a5645ff9e9c2652caf76fafa1a2e3a26d9c421e3b627fc924b5a1630776b8e76857a0be1ac77434c3026bb438d24849a5839941eb25be4936fad17317bf" isAbstract="false" kind="Computation" name="CombinerImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner/Combiner.hpe" multiple="false" name="Combiner" package="br.ufc.mdcc.hpcshelf.mapreduce.workflow" exposed="false">
+      <visualDescription h="60" w="100" x="287" y="492">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="input_key_type" varName="OMK"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
+      <parameter formFieldId="input_value_type" varName="OMV"/>
+      <parameter formFieldId="platform" varName="P"/>
+      <port localRef="output_data" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="60" w="139" x="501" y="427">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="value_type" varName="OMV"/>
+        <parameter formFieldId="key_type" varName="OMK"/>
+        <unitBounds parallel="false" uRef="kv_pair">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <port localRef="input_data" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="60" w="157" x="237" y="380">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="value_type" varName="X###1180355520"/>
+        <parameter formFieldId="key_type" varName="OMK"/>
+        <unitBounds parallel="false" uRef="kv_pair">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+        <visualDescription h="60" w="158" x="57" y="461">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="task_port_type" varName="X###1816726734"/>
+        <unitBounds parallel="true" uRef="peer_left">
+          <visualDescription h="20" w="20" x="8" y="19"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="peer_right">
+          <visualDescription h="20" w="20" x="121" y="19"/>
+        </unitBounds>
+      </port>
+      <unitBounds parallel="true" uRef="combiner">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="C###1180355520" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="393" y="224">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="OMV"/>
+      <unitBounds parallel="false" uRef="set">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="C###1180355520" varName="X###1180355520"/>
+    <innerComponent localRef="C###1816726734" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+      <visualDescription h="60" w="289" x="74" y="116">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="task_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="C###1816726734" varName="X###1816726734"/>
+  </componentInfo>
+</component:component>
