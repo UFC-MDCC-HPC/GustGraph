@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingExampleImpl</name>
+	<name>br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterImpl</name>
 	<comment></comment>
 	<projects>
 	</projects>

@@ -6,6 +6,7 @@ using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases;
 using br.ufc.mdcc.common.Set;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Data;
+using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;
 using br.ufc.mdcc.common.Platform;
@@ -22,8 +23,9 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper
 		where S:IEnvironmentPortTypeMultiplePartner
 		where P:IPlatform
 	{
-		ITaskPort<ITaskPorttypePhases> Task_port {get;}
+		ITaskPort<ITaskPorttypePhases> Task_port_mapper {get;}
 		ISet<IKVPair<OMK, OMV>> Output_pairs {get;}
 		IKVPair<IMK, IMV> Input_pair {get;}
+		ITaskPort<ITaskPorttypeSplitter> Task_port_splitter {get;}
 	}
 }

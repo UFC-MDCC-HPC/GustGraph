@@ -15,8 +15,8 @@ namespace MapReduceforHPE
 {
 	class MainClass
 	{
-		public static void Main (string[] args)
-		{
+		//public static void Main (string[] args)
+		//{
 		//	IMapperFetchValuesImpl<IData,IData,IPartitionFunction<IData>> v 
 		//		= new IMapperFetchValuesImpl<IData,IData,IPartitionFunction<IData>>();
 			//IIteratorImpl<IData> v = new IIteratorImpl<IData> (); 
@@ -29,8 +29,8 @@ namespace MapReduceforHPE
 
 			//IMapperFetchValuesImpl<IString,IInteger,IPartitionFunction<IString>> vv = (IMapperFetchValuesImpl<IString,IInteger,IPartitionFunction<IString>>) obj.Unwrap();
 
-			Trace.WriteLine ("Hello World!");
+			//Trace.WriteLine ("Hello World!");
 
-		}
+		//}
 	}
 }

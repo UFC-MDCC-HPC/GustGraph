@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000efe7c2d6d13a975767141db9e0ccb0d3f922fa767f35b06a37bff9804ee794fb51ad0c98e8704dfc1102e76efc44ce350706512b44702544994b12ef31d5e3f773155666535a252654ec18f2da7948d32bd4bbfe517d0f8b9593ecbea7c83dd42b972b02b5febf5b9aba206614a936a2fa949371537478bd486da2cc10b72c80" isAbstract="false" kind="Synchronizer" name="TaskBindingSplitterImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f39eaba1f8c8ee43189356d47ac0faca214cadd6276ef8eaa59cb461365cb8fbe20c2e63055b3877f6ed6e9d8a83180a1c365fac1d9925a3d76498e0916acdccd447649281731cd92659713eead99442d4f9b9559d4cdada6ff22db867c913d9ea88e465f496704bfa917e2fe1f38a4cd8d06e00fb6d99da988a8d2e2092f189" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter/TaskBindingSplitter.hpe" name="TaskBindingSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="341" y="407">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="60" w="151" x="141" y="464">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###954997812"/>
+          <unitBounds parallel="true" uRef="peer_left">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+          <unitBounds parallel="true" uRef="peer_right">
+            <visualDescription h="20" w="20" x="28" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="true" uRef="peer_left">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="peer_right">
+          <visualDescription h="20" w="20" x="28" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="ITaskBindingSplitterImpl" nArgs="0">
+      <slice isRef="task_port">
+        <originRef cRef="task_port" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="12" y="21"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterImpl &#xA;{&#xA;&#x9;public abstract class BaseITaskBindingSplitterImpl: Synchronizer, BaseITaskBindingSplitter&#xA;&#x9;{&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPorttypeSplitter> task_port = null;&#xA;&#xA;&#x9;&#x9;public ITaskPort&lt;ITaskPorttypeSplitter> Task_port&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_port == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_port = (ITaskPort&lt;ITaskPorttypeSplitter>) Services.getPort(&quot;task_port&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_port;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseITaskBindingSplitterImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterImpl/bin/1.0.0.0/BaseITaskBindingSplitterImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/bin/1.0.0.0/ITaskPorttypeSplitter.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter/bin/1.0.0.0/Base.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterImpl&#xA;{&#xA;&#x9;public class ITaskBindingSplitterImpl : BaseITaskBindingSplitterImpl, ITaskBindingSplitter&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="ITaskBindingSplitterImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterImpl/bin/1.0.0.0/ITaskBindingSplitterImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterImpl/bin/1.0.0.0/BaseITaskBindingSplitterImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter/bin/1.0.0.0/.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="181" x="245" y="221">
+        <color b="0" g="128" r="0"/>
+      </visualDescription>
+      <port name="task_port">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_port" sRef="task_port"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ITaskBindingSplitterImpl" multiple="true" private="false" replica="0" uRef="peer_left" visibleInterface="true">
+      <super cRef="base" uRef="peer_left"/>
+      <visualDescription h="40" w="119" x="182" y="337"/>
+    </unit>
+    <unit facet="0" iRef="ITaskBindingSplitterImpl" multiple="true" private="false" replica="0" uRef="peer_right" visibleInterface="true">
+      <super cRef="base" uRef="peer_right"/>
+      <visualDescription h="40" w="124" x="419" y="343"/>
+    </unit>
+  </componentInfo>
+</component:component>

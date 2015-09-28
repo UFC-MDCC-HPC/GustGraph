@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000047756fea01ff47ce61f6de41025362196ef1190260572281da05f71786c8eb65fe776427460d64487374e3db8c6ce6a1895ab9f3e188a57601d0cbb1b851195717c6420f764884e7449be66fbb9c5f232052396c775b07698cad4adf2c876efa6a44d95a7bcd7799c997aede5a20baf9ecc582e831ec864b7e5b2fcc27ae37bb" isAbstract="false" kind="Synchronizer" name="TaskBindingMapImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003b0bde5c732c2f616788e0dfc93c8db02566f008970b968266a4164e429a2cb35e26c4f71cbe263da5234ec89238be9d0e278bdc8859da2a90d07b9ac988957daaca6222c8267ca655db4b007b281b57f442837595edff2c1e3330a0bab43b442181b701d0fb122421bfd508fc5f8ca63de2f7cd98ec228a67bed9e22d436fb9" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap/TaskBindingMap.hpe" name="TaskBindingMap" package="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="173" y="438">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="60" w="129" x="321" y="406">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###744540856"/>
+          <unitBounds parallel="true" uRef="peer_left">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+          <unitBounds parallel="true" uRef="peer_right">
+            <visualDescription h="20" w="20" x="28" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="true" uRef="peer_left">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="peer_right">
+          <visualDescription h="20" w="20" x="28" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="ITaskBindingMapImpl" nArgs="0">
+      <slice isRef="task_port">
+        <originRef cRef="task_port" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="13" y="27"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.impl.TaskBindingMapImpl &#xA;{&#xA;&#x9;public abstract class BaseITaskBindingMapImpl: Synchronizer, Base&#xA;&#x9;{&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPorttypePhases> task_port = null;&#xA;&#xA;&#x9;&#x9;public ITaskPort&lt;ITaskPorttypePhases> Task_port&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_port == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_port = (ITaskPort&lt;ITaskPorttypePhases>) Services.getPort(&quot;task_port&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_port;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseITaskBindingMapImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.impl.TaskBindingMapImpl/bin/1.0.0.0/BaseITaskBindingMapImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/bin/1.0.0.0/ITaskPorttypePhases.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap/bin/1.0.0.0/Base.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.impl.TaskBindingMapImpl&#xA;{&#xA;&#x9;public class ITaskBindingMapImpl : BaseITaskBindingMapImpl, &#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="ITaskBindingMapImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.impl.TaskBindingMapImpl/bin/1.0.0.0/ITaskBindingMapImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.impl.TaskBindingMapImpl/bin/1.0.0.0/BaseITaskBindingMapImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap/bin/1.0.0.0/.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="194" x="167" y="216">
+        <color b="0" g="128" r="0"/>
+      </visualDescription>
+      <port name="task_port">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_port" sRef="task_port"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ITaskBindingMapImpl" multiple="true" private="false" replica="0" uRef="peer_left" visibleInterface="true">
+      <super cRef="base" uRef="peer_left"/>
+      <visualDescription h="40" w="137" x="114" y="336"/>
+    </unit>
+    <unit facet="0" iRef="ITaskBindingMapImpl" multiple="true" private="false" replica="0" uRef="peer_right" visibleInterface="true">
+      <super cRef="base" uRef="peer_right"/>
+      <visualDescription h="40" w="138" x="285" y="328"/>
+    </unit>
+  </componentInfo>
+</component:component>
