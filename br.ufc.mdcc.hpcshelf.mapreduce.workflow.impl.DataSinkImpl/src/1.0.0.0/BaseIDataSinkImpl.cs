@@ -5,7 +5,6 @@ using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.common.Platform;
-using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataServer;
 using br.ufc.mdcc.common.Data;

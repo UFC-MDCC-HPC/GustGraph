@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/cenez/hpe/cenez/cache" default="all" name="DataSourceImpl">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="DataSourceImpl-1.0.0.0">
+    <ifnot targetexists="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.DataSourceImpl/bin/1.0.0.0">
+      <mkdir dir="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.DataSourceImpl/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.DataSourceImpl/DataSourceImpl.snk" optimize="true" output="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.DataSourceImpl/bin/1.0.0.0/BaseIDataSourceImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.DataSourceImpl/src/1.0.0.0/BaseIDataSourceImpl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeReadDataServer/bin/1.0.0.0/IEnvironmentPortTypeReadDataServer.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeReadDataClient/bin/1.0.0.0/IEnvironmentPortTypeReadDataClient.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource/bin/1.0.0.0/BaseIDataSource.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.DataSourceImpl/DataSourceImpl.snk" optimize="true" output="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.DataSourceImpl/bin/1.0.0.0/IDataSourceImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.DataSourceImpl/src/1.0.0.0/IDataSourceImpl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeReadDataClient/bin/1.0.0.0/IEnvironmentPortTypeReadDataClient.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeReadDataServer/bin/1.0.0.0/IEnvironmentPortTypeReadDataServer.dll"/>
+        <include name="br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll"/>
+        <include name="/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.DataSourceImpl/bin/1.0.0.0/BaseIDataSourceImpl.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSource/bin/1.0.0.0/IDataSource.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="DataSourceImpl-1.0.0.0" name="all"/>
+</project>
