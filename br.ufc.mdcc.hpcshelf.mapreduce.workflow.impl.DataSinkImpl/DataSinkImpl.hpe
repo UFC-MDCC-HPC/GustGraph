@@ -6,7 +6,7 @@
         <implements>true</implements>
       </extensionType>
       <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000297cdd1c13d6e249b9ee0ba3dd6bba23ae31104a651bb46f3ed870ac4c846bba78e82c0bd1f24ccc765afe0824ebf9a5c86e195e46f0431359f34a666bee942ff66ce460b995808d07f7f408ec183be54683cb7a96a8d0698cd79ac7a05e07da4c5fc67598713132c85d8187d2d387c583a17704eb8dbc7299083fdc85102bc3" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink/DataSink.hpe" name="DataSink" package="br.ufc.mdcc.hpcshelf.mapreduce.workflow" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="295" y="479">
+        <visualDescription h="60" w="100" x="263" y="461">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="server_port_type" varName="S"/>
@@ -14,7 +14,7 @@
         <parameter formFieldId="data_type" varName="OUT"/>
         <parameter formFieldId="platform" varName="P"/>
         <port localRef="data_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
-          <visualDescription h="60" w="100" x="102" y="442">
+          <visualDescription h="60" w="100" x="424" y="274">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <unitBounds parallel="false" uRef="data">
@@ -32,6 +32,42 @@
     </visualAttributes>
   </header>
   <componentInfo>
+    <innerComponent localRef="out" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="60" w="100" x="424" y="274">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="platform" location="br.ufc.mdcc.common.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="587" y="493">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="platform">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="c" location="br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataClient/EnvironmentPortTypeWriteDataClient.hpe" multiple="false" name="EnvironmentPortTypeWriteDataClient" package="br.ufc.mdcc.hpcshelf.mapreduce.environment.Base" exposed="false">
+      <visualDescription h="60" w="100" x="292" y="588">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="s" location="br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataServer/EnvironmentPortTypeWriteDataServer.hpe" multiple="false" name="EnvironmentPortTypeWriteDataServer" package="br.ufc.mdcc.hpcshelf.mapreduce.environment.Base" exposed="false">
+      <visualDescription h="60" w="100" x="475" y="596">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="out" direct="true" varName="OUT"/>
+    <supplyParameter cRef="platform" direct="true" varName="P"/>
+    <supplyParameter cRef="c" direct="true" varName="C"/>
+    <supplyParameter cRef="s" direct="true" varName="S"/>
     <interface iRef="IDataSinkImpl" nArgs="4">
       <slice isRef="data_type">
         <originRef cRef="data_type" iRef="IData"/>
@@ -49,6 +85,25 @@
         <originRef cRef="platform" iRef="IPlatform"/>
         <visualDescription h="10" w="10" x="149" y="20"/>
       </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Platform;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataServer;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataClient;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.DataSinkImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataSinkImpl: Computation, BaseIDataSink&lt;OUT, C, S, P>&#xA;&#x9;&#x9;where OUT:IData&#xA;&#x9;&#x9;where C:IEnvironmentPortTypeWriteDataClient&#xA;&#x9;&#x9;where S:IEnvironmentPortTypeWriteDataServer&#xA;&#x9;&#x9;where P:IPlatform&#xA;&#x9;{&#xA;&#x9;&#x9;private P platform = default(P);&#xA;&#xA;&#x9;&#x9;protected P Platform&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform = (P) Services.getPort(&quot;platform&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private C client_type = default(C);&#xA;&#xA;&#x9;&#x9;protected C Client_type&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.client_type == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.client_type = (C) Services.getPort(&quot;client_type&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.client_type;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IServerBase&lt;S> writer = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;S> Writer&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.writer == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.writer = (IServerBase&lt;S>) Services.getPort(&quot;writer&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.writer;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private OUT data_type = default(OUT);&#xA;&#xA;&#x9;&#x9;public OUT Data_type&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.data_type == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.data_type = (OUT) Services.getPort(&quot;data_type&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.data_type;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataSinkImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.DataSinkImpl/bin/1.0.0.0/BaseIDataSinkImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataServer/bin/1.0.0.0/IEnvironmentPortTypeWriteDataServer.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataClient/bin/1.0.0.0/IEnvironmentPortTypeWriteDataClient.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink/bin/1.0.0.0/BaseIDataSink.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataClient;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataServer;&#xA;using br.ufc.mdcc.common.Platform;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.DataSinkImpl&#xA;{&#xA;&#x9;public class IDataSinkImpl : BaseIDataSinkImpl, IDataSink&lt;OUT, C, S, P>&#xA;where OUT:IData&#xA;where C:IEnvironmentPortTypeWriteDataClient&#xA;where S:IEnvironmentPortTypeWriteDataServer&#xA;where P:IPlatform&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IDataSinkImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.DataSinkImpl/bin/1.0.0.0/IDataSinkImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataClient/bin/1.0.0.0/IEnvironmentPortTypeWriteDataClient.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataServer/bin/1.0.0.0/IEnvironmentPortTypeWriteDataServer.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.DataSinkImpl/bin/1.0.0.0/BaseIDataSinkImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink/bin/1.0.0.0/IDataSink.dll</dependency>
+        </file>
+      </sources>
       <visualDescription h="40" w="174" x="163" y="220">
         <color b="0" g="128" r="0"/>
       </visualDescription>
@@ -57,8 +112,8 @@
         <slice pRef="data_type" sRef="data_type"/>
       </port>
       <parameter iname="IData" order="0" parid="data_type" uname="data" varid="OUT"/>
-      <parameter iname="IEnvironmentPortTypeSinglePartner" order="1" parid="client_port_type" uname="environment_port_type" varid="C"/>
-      <parameter iname="IEnvironmentPortTypeSinglePartner" order="2" parid="server_port_type" uname="environment_port_type" varid="S"/>
+      <parameter iname="IEnvironmentPortTypeWriteDataClient" order="1" parid="client_port_type" uname="environment_port_type" varid="C"/>
+      <parameter iname="IEnvironmentPortTypeWriteDataServer" order="2" parid="server_port_type" uname="environment_port_type" varid="S"/>
       <parameter iname="IPlatform" order="3" parid="platform" uname="platform" varid="P"/>
       <action id="main">
         <protocol/>
