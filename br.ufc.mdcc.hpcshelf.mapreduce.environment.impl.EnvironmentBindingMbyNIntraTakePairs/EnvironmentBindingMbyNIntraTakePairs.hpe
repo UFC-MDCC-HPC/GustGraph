@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c58c98f77efed0bc8d0f345f9b076b73c05a6af55bf02adecd88e23c5a05c5956a1a5b4b70726f1fe963a80a44c8267dc687b237cf1d7d8bb866e4cd2d639dd3857f36a3134254752e657e4660cd14edd1fca3cbe51afafd818f997088f5a03dffc06c759504c46ca918d5018da3976a9e110c7e7d700242dcf50891a2ac14ac" isAbstract="false" kind="Synchronizer" name="EnvironmentBindingMbyNIntraTakePairs" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.environment.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f93dddfbf0a0573e316fa165552ef8b584ca86b29fda1fcce2f97668654b463d8e85b3bce42a0512283ead564755c35133ed8a1ba34f604ac4a933c6548f453cf4f7d3c7a969d218226d2c852fc5bdfb59c3a0257c8a0b7e122b70c1b6457e4acf33c796586fca99684ab790f3ec5651896a527343d7a149bca605fe031784af" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/EnvironmentBindingMbyNIntra.hpe" name="EnvironmentBindingMbyNIntra" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="347" y="487">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="server_port_type" varName="S"/>
+        <parameter formFieldId="client_port_type" varName="C"/>
+        <unitBounds parallel="true" uRef="client">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="server">
+          <visualDescription h="20" w="20" x="28" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="c" location="br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsClient/EnvironmentPortTypeTakePairsClient.hpe" multiple="false" name="EnvironmentPortTypeTakePairsClient" package="br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN" exposed="false">
+      <visualDescription h="60" w="100" x="244" y="620">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="s" location="br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsServer/EnvironmentPortTypeTakePairsServer.hpe" multiple="false" name="EnvironmentPortTypeTakePairsServer" package="br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN" exposed="false">
+      <visualDescription h="60" w="100" x="576" y="696">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="c" direct="true" varName="C"/>
+    <supplyParameter cRef="s" direct="true" varName="S"/>
+    <interface iRef="IClientIntraTakePairs" nArgs="1">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNIntraTakePairs &#xA;{&#xA;&#x9;public abstract class BaseIClientIntraTakePairs: Synchronizer, BaseIClientMbyN&lt;IEnvironmentPortTypeTakePairsClient>&#xA;&#x9;{&#xA;&#x9;&#x9;private IEnvironmentPortType client_port_type = null;&#xA;&#xA;&#x9;&#x9;protected IEnvironmentPortType Client_port_type&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.client_port_type == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.client_port_type = (IEnvironmentPortType) Services.getPort(&quot;client_port_type&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.client_port_type;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIClientIntraTakePairs.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNIntraTakePairs/bin/1.0.0.0/BaseIClientIntraTakePairs.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/BaseIClientMbyN.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNIntraTakePairs&#xA;{&#xA;&#x9;public class IClientIntraTakePairs : BaseIClientIntraTakePairs, IClientMbyN&lt;IEnvironmentPortTypeTakePairsClient>&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IClientIntraTakePairs.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNIntraTakePairs/bin/1.0.0.0/IClientIntraTakePairs.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNIntraTakePairs/bin/1.0.0.0/BaseIClientIntraTakePairs.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/IClientMbyN.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="256" x="100" y="306">
+        <color b="0" g="255" r="255"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IServerIntraTakePairs" nArgs="1">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNIntraTakePairs &#xA;{&#xA;&#x9;public abstract class BaseIServerIntraTakePairs: Synchronizer, BaseIServerMbyNIntra&lt;IEnvironmentPortTypeTakePairsServer>&#xA;&#x9;{&#xA;&#x9;&#x9;private IEnvironmentPortType server_port_type = null;&#xA;&#xA;&#x9;&#x9;protected IEnvironmentPortType Server_port_type&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.server_port_type == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.server_port_type = (IEnvironmentPortType) Services.getPort(&quot;server_port_type&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.server_port_type;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIServerIntraTakePairs.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNIntraTakePairs/bin/1.0.0.0/BaseIServerIntraTakePairs.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/BaseIServerMbyNIntra.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNIntraTakePairs&#xA;{&#xA;&#x9;public class IServerIntraTakePairs : BaseIServerIntraTakePairs, IServerMbyNIntra&lt;IEnvironmentPortTypeTakePairsServer>&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IServerIntraTakePairs.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNIntraTakePairs/bin/1.0.0.0/IServerIntraTakePairs.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNIntraTakePairs/bin/1.0.0.0/BaseIServerIntraTakePairs.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/IServerMbyNIntra.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="273" x="393" y="308">
+        <color b="0" g="165" r="255"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IClientIntraTakePairs" multiple="true" private="false" replica="0" uRef="client" visibleInterface="true">
+      <super cRef="base" uRef="client"/>
+      <visualDescription h="40" w="80" x="216" y="430"/>
+    </unit>
+    <unit facet="0" iRef="IServerIntraTakePairs" multiple="true" private="false" replica="0" uRef="server" visibleInterface="true">
+      <super cRef="base" uRef="server"/>
+      <visualDescription h="40" w="80" x="436" y="417"/>
+    </unit>
+  </componentInfo>
+</component:component>

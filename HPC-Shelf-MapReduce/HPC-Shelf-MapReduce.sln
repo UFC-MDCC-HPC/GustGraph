@@ -92,8 +92,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpc.storm.bindi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample", "..\br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample\br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample\br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample.csproj", "{B3AC52F9-564D-47BE-831E-B0CC18F7A397}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNTakePairs", "..\br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNTakePairs\br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNTakePairs\br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNTakePairs.csproj", "{83E7182D-3464-4BF3-BB0C-8D7E2D50D7F9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingReadData", "..\br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingReadData\br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingReadData\br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingReadData.csproj", "{5D416C3A-5E9B-4BF0-87F3-7114828AF21B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData", "..\br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData\br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData\br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData.csproj", "{93E814EF-BF79-4A30-821C-C352A4D8E4DC}"
@@ -142,6 +140,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapred
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsServer", "..\br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsServer\br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsServer\br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsServer.csproj", "{266CA400-6048-4CF6-875B-D3B7E2B19E90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNIntraTakePairs", "..\br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNIntraTakePairs\br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNIntraTakePairs\br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingMbyNIntraTakePairs.csproj", "{183F0348-98E4-4C67-9BC9-B1D9CEB40D12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -172,6 +172,10 @@ Global
 		{1541079A-D275-4C8A-A5AD-78AE6B3944D4}.Debug|x86.Build.0 = Debug|Any CPU
 		{1541079A-D275-4C8A-A5AD-78AE6B3944D4}.Release|x86.ActiveCfg = Release|Any CPU
 		{1541079A-D275-4C8A-A5AD-78AE6B3944D4}.Release|x86.Build.0 = Release|Any CPU
+		{183F0348-98E4-4C67-9BC9-B1D9CEB40D12}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{183F0348-98E4-4C67-9BC9-B1D9CEB40D12}.Debug|x86.Build.0 = Debug|Any CPU
+		{183F0348-98E4-4C67-9BC9-B1D9CEB40D12}.Release|x86.ActiveCfg = Release|Any CPU
+		{183F0348-98E4-4C67-9BC9-B1D9CEB40D12}.Release|x86.Build.0 = Release|Any CPU
 		{185D2D48-3773-454D-AC06-4384BAB96F2A}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{185D2D48-3773-454D-AC06-4384BAB96F2A}.Debug|x86.Build.0 = Debug|Any CPU
 		{185D2D48-3773-454D-AC06-4384BAB96F2A}.Release|x86.ActiveCfg = Release|Any CPU
@@ -288,10 +292,6 @@ Global
 		{816B876F-E438-4F9E-85D8-B98BCCE57044}.Debug|x86.Build.0 = Debug|Any CPU
 		{816B876F-E438-4F9E-85D8-B98BCCE57044}.Release|x86.ActiveCfg = Release|Any CPU
 		{816B876F-E438-4F9E-85D8-B98BCCE57044}.Release|x86.Build.0 = Release|Any CPU
-		{83E7182D-3464-4BF3-BB0C-8D7E2D50D7F9}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{83E7182D-3464-4BF3-BB0C-8D7E2D50D7F9}.Debug|x86.Build.0 = Debug|Any CPU
-		{83E7182D-3464-4BF3-BB0C-8D7E2D50D7F9}.Release|x86.ActiveCfg = Release|Any CPU
-		{83E7182D-3464-4BF3-BB0C-8D7E2D50D7F9}.Release|x86.Build.0 = Release|Any CPU
 		{8B87057A-B2AF-4A07-8F2D-E91E930F9188}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{8B87057A-B2AF-4A07-8F2D-E91E930F9188}.Debug|x86.Build.0 = Debug|Any CPU
 		{8B87057A-B2AF-4A07-8F2D-E91E930F9188}.Release|x86.ActiveCfg = Release|Any CPU
