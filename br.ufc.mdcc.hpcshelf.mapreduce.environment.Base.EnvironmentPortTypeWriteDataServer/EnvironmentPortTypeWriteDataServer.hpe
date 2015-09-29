@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b7df5350c4acb38df24d87251c299a2d79ddbc45b9ff8fe231be58c877eadadaf1acae4ab440e99a293e2e1b68b724f24a922b171387126f9c9161548e089e9eba46294df060067557805a008a5e4c28cb209b656f199da2df09794d21d92aab34ca154e6efd31efa93a8b25a409fc4a9ef4f15f2ad070cece766ca40cab59ad" isAbstract="true" kind="Qualifier" name="EnvironmentPortTypeWriteDataServer" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.environment.Base">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000017f388e71ae0208531c326cdffc82e725d52eefce0ffed9bef0c11823bada2184dc37f32de643be39a5821d52d513ee6648f6ee7c26543735eb9fd122577954fa22d98d230b4e7ed07df71d97b602ccccbf0d67dfbdeaa9f6828ee3c00aea0942b3af9c70ddf0112b16aa01a466f04e9e5a43a969d7ce1827e817bac5f849986" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="205" y="454">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="true" uRef="environment_port_type">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IEnvironmentPortTypeWriteDataServer" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataServer&#xA;{&#xA;&#x9;public interface BaseIEnvironmentPortTypeWriteDataServer : BaseIEnvironmentPortType, IQualifierKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIEnvironmentPortTypeWriteDataServer.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataServer/bin/1.0.0.0/BaseIEnvironmentPortTypeWriteDataServer.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/BaseIEnvironmentPortType.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataServer&#xA;{&#xA;&#x9;public interface IEnvironmentPortTypeWriteDataServer : BaseIEnvironmentPortTypeWriteDataServer, IEnvironmentPortType&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IEnvironmentPortTypeWriteDataServer.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataServer/bin/1.0.0.0/IEnvironmentPortTypeWriteDataServer.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataServer/bin/1.0.0.0/BaseIEnvironmentPortTypeWriteDataServer.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="57" w="308" x="69" y="189">
+        <color b="144" g="238" r="144"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IEnvironmentPortTypeWriteDataServer" multiple="true" private="false" replica="0" uRef="environment_port_type" visibleInterface="true">
+      <super cRef="base" uRef="environment_port_type"/>
+      <visualDescription h="57" w="202" x="125" y="316"/>
+    </unit>
+  </componentInfo>
+</component:component>
