@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007fa879a0f3a2bcbb748dbb50fbec46244ff88b78a53048f736f905356fbdedf06875414eef39dbbd8ba4437a3f9bdb74adc238cd56ac3b80f1ad97c198ad599dc1a08d9c4799377bdc223c4895fca6754fab132ea7f2e29dede134be70a06afeecdbd14da99a1050c6e9833968b22d12e93838694a8fdb0d314e0b4846da58a3" isAbstract="false" kind="Computation" name="DataSinkImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000297cdd1c13d6e249b9ee0ba3dd6bba23ae31104a651bb46f3ed870ac4c846bba78e82c0bd1f24ccc765afe0824ebf9a5c86e195e46f0431359f34a666bee942ff66ce460b995808d07f7f408ec183be54683cb7a96a8d0698cd79ac7a05e07da4c5fc67598713132c85d8187d2d387c583a17704eb8dbc7299083fdc85102bc3" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.workflow.DataSink/DataSink.hpe" name="DataSink" package="br.ufc.mdcc.hpcshelf.mapreduce.workflow" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="295" y="479">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="server_port_type" varName="S"/>
+        <parameter formFieldId="client_port_type" varName="C"/>
+        <parameter formFieldId="data_type" varName="OUT"/>
+        <parameter formFieldId="platform" varName="P"/>
+        <port localRef="data_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="60" w="100" x="102" y="442">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <unitBounds parallel="false" uRef="data">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="true" uRef="data_sink">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IDataSinkImpl" nArgs="4">
+      <slice isRef="data_type">
+        <originRef cRef="data_type" iRef="IData"/>
+        <visualDescription h="10" w="10" x="21" y="26"/>
+      </slice>
+      <slice isRef="client_type">
+        <originRef cRef="client_type" iRef="IEnvironmentPortTypeSinglePartner"/>
+        <visualDescription h="10" w="10" x="123" y="24"/>
+      </slice>
+      <slice isRef="writer">
+        <originRef cRef="writer" iRef="IServerBase"/>
+        <visualDescription h="10" w="10" x="87" y="24"/>
+      </slice>
+      <slice isRef="platform">
+        <originRef cRef="platform" iRef="IPlatform"/>
+        <visualDescription h="10" w="10" x="149" y="20"/>
+      </slice>
+      <visualDescription h="40" w="174" x="163" y="220">
+        <color b="0" g="128" r="0"/>
+      </visualDescription>
+      <port name="data_type">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="data_type" sRef="data_type"/>
+      </port>
+      <parameter iname="IData" order="0" parid="data_type" uname="data" varid="OUT"/>
+      <parameter iname="IEnvironmentPortTypeSinglePartner" order="1" parid="client_port_type" uname="environment_port_type" varid="C"/>
+      <parameter iname="IEnvironmentPortTypeSinglePartner" order="2" parid="server_port_type" uname="environment_port_type" varid="S"/>
+      <parameter iname="IPlatform" order="3" parid="platform" uname="platform" varid="P"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IDataSinkImpl" multiple="true" private="false" replica="0" uRef="data_sink" visibleInterface="true">
+      <super cRef="base" uRef="data_sink"/>
+      <visualDescription h="40" w="174" x="182" y="343"/>
+    </unit>
+  </componentInfo>
+</component:component>
