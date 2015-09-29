@@ -24,6 +24,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter
 	{
 		IChannel Split_channel {get;}
 		IN Input {get;}
-		ITaskPort<ITaskPorttypeSplitter> Task_port {get;}
+		ITaskPort<ITaskPorttypeSplitter> Task_port_read {get;}
 	}
 }

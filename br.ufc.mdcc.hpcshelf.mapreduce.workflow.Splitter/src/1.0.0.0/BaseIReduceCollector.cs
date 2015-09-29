@@ -12,6 +12,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter
 		where C:IEnvironmentPortTypeMultiplePartner
 	{
 		IChannel Split_channel {get;}
-		ITaskPort<ITaskPorttypeSplitter> Task_port {get;}
+		ITaskPort<ITaskPorttypeSplitter> Task_port_collect {get;}
 	}
 }

@@ -4,9 +4,9 @@ using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter
 {
-	public interface IWriteOutput<OUT, DSC> : BaseIWriteOutput<OUT, DSC>
+	public interface IWriteOutput<OUT, DWC> : BaseIWriteOutput<OUT, DWC>
 		where OUT:IData
-		where DSC:IEnvironmentPortTypeSinglePartner
+		where DWC:IEnvironmentPortTypeSinglePartner
 	{
 	}
 }

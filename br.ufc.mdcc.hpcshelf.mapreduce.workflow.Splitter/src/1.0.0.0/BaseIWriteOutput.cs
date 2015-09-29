@@ -9,12 +9,12 @@ using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter
 {
-	public interface BaseIWriteOutput<OUT, DSC> : ISynchronizerKind 
+	public interface BaseIWriteOutput<OUT, DWC> : ISynchronizerKind 
 		where OUT:IData
-		where DSC:IEnvironmentPortTypeSinglePartner
+		where DWC:IEnvironmentPortTypeSinglePartner
 	{
 		IChannel Split_channel {get;}
-		ITaskPort<ITaskPorttypeSplitter> Task_port {get;}
+		ITaskPort<ITaskPorttypeSplitter> Task_port_write {get;}
 		OUT Output {get;}
 	}
 }
