@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000041318f082c2e623ae18a42b5b02dc685dcaf80c61e9c82ea033f2b7ef53c0f95a08b3c24f19d0aa6fa2da29c59139479912bd925e613387dd5a0deddf51cec8dc9901ee79566bd88621b9804195d9a683ee2f5519d495eee0702aba6eede2e45efef1013d22378b9991055d4dea3b9a7cb41d065b8d944575441163d48bcc789" isAbstract="false" kind="Synchronizer" name="EnvironmentBindingWriteData" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.environment.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a9e1ce4977fe56b1874317668afd63d3849d918a6a95cbb6acf1634302cab5d5f9add903333c71431e65f8bbb1f1f62cfa8c693657d151d8caf99b9a939258e98f8581f6319ec2a61061c6f14299b091d59de15ab82cb628b0a00cfe5777e9d0f2e1966cede1761a8a15e2bdf388045cd201b9e20111b9de6f729405882ace9c" isAbstract="false" kind="Synchronizer" name="EnvironmentBindingWriteData" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.environment.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000137e47ecc7ae162133f23e91a114a5ce0ab0948ec33b7d711831b905689075c53766f3e2af8b164aef9f801c82b71ee27cbcb434eb38afa6e5a1b8ee123dfd59377f151126afe2a038147f05650e0a01217621408ff2487eb1282b15e09296701f82d7e2118e5cfa0af72fe71e1eb0d9afc5bcf9184234b0860aaf092d3b2b83" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="269" y="390">
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005908e35d36802a83328e03c2580a464af29300a51db5e9be9805ba4704ce5b3bb05fd169866e83e1fa8686eb82e2dcf1056992246d61b2216bca6e1f68c6f59bf1a7f3cc3a4b1e4a594a05cbb5af3e757a7039ce12cd8d465ccd8b6d1401a401dc40206c86c49b4e6ce76c1f9cd8fa4417ad3f0621f5c9a152eb02b61d95b0b5" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="255" y="348">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="server_port_type" varName="S"/>
@@ -25,16 +25,16 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerComponent localRef="c" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="100" x="410" y="551">
+    <innerComponent localRef="c" location="br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataClient/EnvironmentPortTypeWriteDataClient.hpe" multiple="false" name="EnvironmentPortTypeWriteDataClient" package="br.ufc.mdcc.hpcshelf.mapreduce.environment.Base" exposed="false">
+      <visualDescription h="60" w="100" x="100" y="580">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="s" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" multiple="false" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="100" x="662" y="521">
+    <innerComponent localRef="s" location="br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataServer/EnvironmentPortTypeWriteDataServer.hpe" multiple="false" name="EnvironmentPortTypeWriteDataServer" package="br.ufc.mdcc.hpcshelf.mapreduce.environment.Base" exposed="false">
+      <visualDescription h="60" w="100" x="222" y="533">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="environment_port_type">
@@ -49,16 +49,16 @@
         <visualDescription h="10" w="10" x="12" y="28"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData &#xA;{&#xA;&#x9;public abstract class BaseIClientWriteData: Synchronizer, BaseIClientBase&lt;IEnvironmentPortTypeSinglePartner>&#xA;&#x9;{&#xA;&#x9;&#x9;private IEnvironmentPortType client_port_type = null;&#xA;&#xA;&#x9;&#x9;protected IEnvironmentPortType Client_port_type&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.client_port_type == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.client_port_type = (IEnvironmentPortType) Services.getPort(&quot;client_port_type&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.client_port_type;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIClientWriteData.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData/bin/1.0.0.0/BaseIClientWriteData.dll" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData &#xA;{&#xA;&#x9;public abstract class BaseIClientWriteData: Synchronizer, BaseIClientBase&lt;IEnvironmentPortTypeWriteDataClient>&#xA;&#x9;{&#xA;&#x9;&#x9;private IEnvironmentPortType client_port_type = null;&#xA;&#xA;&#x9;&#x9;protected IEnvironmentPortType Client_port_type&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.client_port_type == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.client_port_type = (IEnvironmentPortType) Services.getPort(&quot;client_port_type&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.client_port_type;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIClientWriteData.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData/bin/1.0.0.0/BaseIClientWriteData.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/BaseIClientBase.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData&#xA;{&#xA;&#x9;public class IClientWriteData : BaseIClientWriteData, IClientBase&lt;IEnvironmentPortTypeSinglePartner>&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IClientWriteData.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData/bin/1.0.0.0/IClientWriteData.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData&#xA;{&#xA;&#x9;public class IClientWriteData : BaseIClientWriteData, IClientBase&lt;IEnvironmentPortTypeWriteDataClient>&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IClientWriteData.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData/bin/1.0.0.0/IClientWriteData.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData/bin/1.0.0.0/BaseIClientWriteData.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="112" x="110" y="189">
+      <visualDescription h="40" w="112" x="96" y="147">
         <color b="0" g="255" r="255"/>
       </visualDescription>
       <action id="main">
@@ -71,16 +71,16 @@
         <visualDescription h="10" w="10" x="10" y="28"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData &#xA;{&#xA;&#x9;public abstract class BaseIServerWriteData: Synchronizer, BaseIServerBase&lt;IEnvironmentPortTypeSinglePartner>&#xA;&#x9;{&#xA;&#x9;&#x9;private IEnvironmentPortType server_port_type = null;&#xA;&#xA;&#x9;&#x9;protected IEnvironmentPortType Server_port_type&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.server_port_type == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.server_port_type = (IEnvironmentPortType) Services.getPort(&quot;server_port_type&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.server_port_type;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIServerWriteData.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData/bin/1.0.0.0/BaseIServerWriteData.dll" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData &#xA;{&#xA;&#x9;public abstract class BaseIServerWriteData: Synchronizer, BaseIServerBase&lt;IEnvironmentPortTypeWriteDataServer>&#xA;&#x9;{&#xA;&#x9;&#x9;private IEnvironmentPortType server_port_type = null;&#xA;&#xA;&#x9;&#x9;protected IEnvironmentPortType Server_port_type&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.server_port_type == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.server_port_type = (IEnvironmentPortType) Services.getPort(&quot;server_port_type&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.server_port_type;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIServerWriteData.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData/bin/1.0.0.0/BaseIServerWriteData.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/BaseIServerBase.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData&#xA;{&#xA;&#x9;public class IServerWriteData : BaseIServerWriteData, IServerBase&lt;IEnvironmentPortTypeSinglePartner>&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IServerWriteData.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData/bin/1.0.0.0/IServerWriteData.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData&#xA;{&#xA;&#x9;public class IServerWriteData : BaseIServerWriteData, IServerBase&lt;IEnvironmentPortTypeWriteDataServer>&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IServerWriteData.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData/bin/1.0.0.0/IServerWriteData.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData/bin/1.0.0.0/BaseIServerWriteData.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="181" x="310" y="184">
+      <visualDescription h="40" w="181" x="296" y="142">
         <color b="0" g="165" r="255"/>
       </visualDescription>
       <action id="main">
@@ -89,11 +89,11 @@
     </interface>
     <unit facet="0" iRef="IClientWriteData" multiple="false" private="false" replica="0" uRef="client" visibleInterface="true">
       <super cRef="base" uRef="client"/>
-      <visualDescription h="40" w="80" x="170" y="274"/>
+      <visualDescription h="40" w="80" x="156" y="232"/>
     </unit>
     <unit facet="0" iRef="IServerWriteData" multiple="false" private="false" replica="0" uRef="server" visibleInterface="true">
       <super cRef="base" uRef="server"/>
-      <visualDescription h="40" w="80" x="319" y="289"/>
+      <visualDescription h="40" w="80" x="305" y="247"/>
     </unit>
   </componentInfo>
 </component:component>

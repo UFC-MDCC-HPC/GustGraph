@@ -4,22 +4,22 @@ using System;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
-using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;
+using br.ufc.mdcc.hpcshelf.mapreduce.environment.Base.EnvironmentPortTypeWriteDataClient;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.EnvironmentBindingWriteData 
 {
-	public abstract class BaseIClientWriteData: Synchronizer, BaseIClientBase<IEnvironmentPortTypeSinglePartner>
+	public abstract class BaseIClientWriteData<C>: Synchronizer, BaseIClientBase<C>
+	   where C:IEnvironmentPortTypeWriteDataClient
 	{
-		private IEnvironmentPortType client_port_type = null;
+		private C client_port_type = default(C);
 
-		protected IEnvironmentPortType Client_port_type
+		protected C Client_port_type
 		{
 			get
 			{
 				if (this.client_port_type == null)
-					this.client_port_type = (IEnvironmentPortType) Services.getPort("client_port_type");
+					this.client_port_type = (C) Services.getPort("client_port_type");
 				return this.client_port_type;
 			}
 		}
