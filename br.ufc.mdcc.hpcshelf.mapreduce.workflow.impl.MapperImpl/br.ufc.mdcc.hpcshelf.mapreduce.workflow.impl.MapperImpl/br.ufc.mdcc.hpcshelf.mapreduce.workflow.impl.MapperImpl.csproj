@@ -32,6 +32,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="DGAC">
+      <HintPath>..\..\HPC-Shelf-MapReduce\lib\DGAC.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -39,4 +42,70 @@
     <Compile Include="..\src\1.0.0.0\BaseIMapperImpl.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data.csproj">
+      <Project>{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}</Project>
+      <Name>br.ufc.mdcc.common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.Platform\br.ufc.mdcc.common.Platform\br.ufc.mdcc.common.Platform.csproj">
+      <Project>{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}</Project>
+      <Name>br.ufc.mdcc.common.Platform</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction.csproj">
+      <Project>{CC4908F8-3F6B-4F14-9179-64EF033B3371}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsClient\br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsClient\br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsClient.csproj">
+      <Project>{1541079A-D275-4C8A-A5AD-78AE6B3944D4}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsServer\br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsServer\br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsServer.csproj">
+      <Project>{266CA400-6048-4CF6-875B-D3B7E2B19E90}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper\br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper\br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper.csproj">
+      <Project>{08449497-A987-494B-8DD2-B53211B3C762}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.workflow.Mapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.KVPair\br.ufc.mdcc.common.KVPair\br.ufc.mdcc.common.KVPair.csproj">
+      <Project>{9B499C49-DA84-475A-B783-2A3D2DEAAA97}</Project>
+      <Name>br.ufc.mdcc.common.KVPair</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.Set\br.ufc.mdcc.common.Set\br.ufc.mdcc.common.Set.csproj">
+      <Project>{22022ACE-A645-40B7-908A-441CD854EA9A}</Project>
+      <Name>br.ufc.mdcc.common.Set</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase.csproj">
+      <Project>{226E5496-FDF2-4765-9C43-D2A2770EE760}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase\br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase\br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase.csproj">
+      <Project>{816B876F-E438-4F9E-85D8-B98BCCE57044}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases.csproj">
+      <Project>{185D2D48-3773-454D-AC06-4384BAB96F2A}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter\br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter\br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter.csproj">
+      <Project>{BE9D32D8-D7E0-4CB5-89A3-879EF872A80E}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter.csproj">
+      <Project>{20438860-777F-4276-BD0F-E20A2E2E1407}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap\br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap\br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap.csproj">
+      <Project>{E177A49D-38C9-4D5E-95DF-1816EDB222B0}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType.csproj">
+      <Project>{4BB52CBE-64B0-4E9C-812F-921ED3FB87AF}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner.csproj">
+      <Project>{B1988D74-54AE-4031-B185-E046226BC359}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

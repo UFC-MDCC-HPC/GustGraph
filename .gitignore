@@ -37,5 +37,6 @@ teste.impl.TestBindingAppImpl
 teste.impl.TestTaskBindingInternalImpl
 
 commit.sh
+commit
 #end temp
 
