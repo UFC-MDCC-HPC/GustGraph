@@ -38,8 +38,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\src\1.0.0.0\ICombinerImpl.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseICombinerImpl.cs" />
+    <Compile Include="..\src\1.0.0.0\ICombinerRightImpl.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseICombinerRightImpl.cs" />
+    <Compile Include="..\src\1.0.0.0\ICombinerLeftImpl.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseICombinerLeftImpl.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

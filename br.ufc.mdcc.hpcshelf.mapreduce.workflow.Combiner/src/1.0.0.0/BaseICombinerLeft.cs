@@ -7,19 +7,16 @@ using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.common.Set;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;
-using br.ufc.mdcc.common.Platform;
+using br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner
 {
-	public interface BaseICombiner<OMK, OMV, C, S, P> : IComputationKind 
+	public interface BaseICombinerLeft<C, CF, OMK, OMV> : IComputationKind 
+		where C:IEnvironmentPortTypeMultiplePartner
+		where CF:ICombineFunction<OMK, OMV>
 		where OMK:IData
 		where OMV:IData
-		where C:IEnvironmentPortTypeMultiplePartner
-		where S:IEnvironmentPortTypeMultiplePartner
-		where P:IPlatform
 	{
-		ITaskPort<ITaskPorttypePhases> Task_port_combine {get;}
-		ITaskPort<ITaskPorttypePhases> Task_port_map {get;}
 		IKVPair<OMK, ISet<OMV>> Input_data {get;}
 		IKVPair<OMK, OMV> Output_data {get;}
 	}
