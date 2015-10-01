@@ -166,6 +166,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "teste.TestTaskBindingIntern
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "teste.TestTaskBindingInternal3Impl", "..\teste.TestTaskBindingInternal3Impl\teste.TestTaskBindingInternal3Impl\teste.TestTaskBindingInternal3Impl.csproj", "{E20AD612-F023-4849-8AA0-C2A46DB10CB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "teste.TestTaskBindingInternal4", "..\teste.TestTaskBindingInternal4\teste.TestTaskBindingInternal4\teste.TestTaskBindingInternal4.csproj", "{B9BFF4AB-1DEF-4BBF-9BFA-3F069D3F30E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "teste.TestTaskBindingInternal4Impl", "..\teste.TestTaskBindingInternal4Impl\teste.TestTaskBindingInternal4Impl\teste.TestTaskBindingInternal4Impl.csproj", "{6413038E-77F7-4640-AFB7-5A2CA0606B5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -288,6 +292,10 @@ Global
 		{635659CA-1642-4B3B-880F-32D69394757C}.Debug|x86.Build.0 = Debug|Any CPU
 		{635659CA-1642-4B3B-880F-32D69394757C}.Release|x86.ActiveCfg = Release|Any CPU
 		{635659CA-1642-4B3B-880F-32D69394757C}.Release|x86.Build.0 = Release|Any CPU
+		{6413038E-77F7-4640-AFB7-5A2CA0606B5E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6413038E-77F7-4640-AFB7-5A2CA0606B5E}.Debug|x86.Build.0 = Debug|Any CPU
+		{6413038E-77F7-4640-AFB7-5A2CA0606B5E}.Release|x86.ActiveCfg = Release|Any CPU
+		{6413038E-77F7-4640-AFB7-5A2CA0606B5E}.Release|x86.Build.0 = Release|Any CPU
 		{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}.Debug|x86.Build.0 = Debug|Any CPU
 		{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}.Release|x86.ActiveCfg = Release|Any CPU
@@ -400,6 +408,10 @@ Global
 		{B785892B-10B1-43BA-897F-E6F02CC932D0}.Debug|x86.Build.0 = Debug|Any CPU
 		{B785892B-10B1-43BA-897F-E6F02CC932D0}.Release|x86.ActiveCfg = Release|Any CPU
 		{B785892B-10B1-43BA-897F-E6F02CC932D0}.Release|x86.Build.0 = Release|Any CPU
+		{B9BFF4AB-1DEF-4BBF-9BFA-3F069D3F30E5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B9BFF4AB-1DEF-4BBF-9BFA-3F069D3F30E5}.Debug|x86.Build.0 = Debug|Any CPU
+		{B9BFF4AB-1DEF-4BBF-9BFA-3F069D3F30E5}.Release|x86.ActiveCfg = Release|Any CPU
+		{B9BFF4AB-1DEF-4BBF-9BFA-3F069D3F30E5}.Release|x86.Build.0 = Release|Any CPU
 		{BE9D32D8-D7E0-4CB5-89A3-879EF872A80E}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{BE9D32D8-D7E0-4CB5-89A3-879EF872A80E}.Debug|x86.Build.0 = Debug|Any CPU
 		{BE9D32D8-D7E0-4CB5-89A3-879EF872A80E}.Release|x86.ActiveCfg = Release|Any CPU

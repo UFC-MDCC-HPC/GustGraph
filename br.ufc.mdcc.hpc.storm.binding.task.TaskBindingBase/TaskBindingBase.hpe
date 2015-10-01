@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cff4cee6e15d868c33c429aee7b804b2974f0b6e20dd647d2914f374ab77adb127fcff12cbd8e2577c752f7d8a6548bf749bb839ec97110fd96bd4f484e7791cc76703c9ccc2a0b0529339ea93e41d51e38f76cea354f331031be747eaddedc18bfcbcffc35417f6aaaed6f87724ee282cfc2852a07432b7f432f06b1a20d399" isAbstract="true" kind="Synchronizer" name="TaskBindingBase" packagePath="br.ufc.mdcc.hpc.storm.binding.task">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000011d1f6bca82558aa4955d08987a987b45757886ce7a691046c3c83198c3ab675eecf83b496be4a5ab1802ba96e24dab2bf015d13b5003054a274eea5bb19aeeabfbac144536aabbb24fcbadcee81836b3e05d618ac81680de0b5497a0906ea6e4cd1694969b41d946834b3ee1e1f472588a66c4dc03f23deeab4809387fe608b" isAbstract="true" kind="Synchronizer" name="TaskBindingBase" packagePath="br.ufc.mdcc.hpc.storm.binding.task">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>

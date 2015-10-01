@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000025ca3146824a3b008d62e884da2a504687705677695e63765ebaae4ba43f2e6887deebe280e95cd6afdc776a8d716f76c6587b4c6f11782d0f651f28e0b58d2ac74c1f7b7b619196d1947b97a270634bbe024418ce8dfee8f2f47561906da7a75b5c75e080879a9e4b244c8cf5941745c4cf407c0d8d40920602393806c03daa" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMulticastInter" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cb5674859cfdb0d348ef149bcc20b57a370854300d64f77d85a5da4c0be79a4255f5c73cfc47e073e50088cd44802c3b495c491ee0fec593f481d664be4372be5c13162f3a2b89a05e8d9a05d2ece388e6c8668072e38113d44e3abc3eaa74e5e7e954baa9050ca418f454f070676d46b3ab254ce6d1cdb43ca5cb68e3b37986" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMulticastInter" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cbbe16ea9c13e9cc73e89e0cfb459d45f5f9c2b945ce2c00705a1836211b898d5685aae2a542b381111708b2187868dc3d87d95fcf3ced0443c136901ca931ede0bee7e70b6cbe441355d753970eb54a8f4e101a32f1974fa83c213ab0c402dcec93ecf2788457d04fab422dd89d146deb5d619dbae574ceb137ccd3b60396b4" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMulticast/EnvironmentBindingMulticast.hpe" name="EnvironmentBindingMulticast" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001db838bcb6f20e76b60e5a59a49292c2b302d258ab0a89d0f5d3d1e412fdd680b1144da816b9a46da79f8b7f781725ffbe9ffc7844ebb1d9416dd11aaf5ab83df866914c90790b23cdd616e90578a4f45ae9d17c9935de6f846ac0a831709f5f1aa5b3028bcaf2c93c881595265383ac5bf4ea3c863b3ff1076c9cb8596ffa86" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMulticast/EnvironmentBindingMulticast.hpe" name="EnvironmentBindingMulticast" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
         <visualDescription h="60" w="135" x="204" y="167">
           <color b="255" g="255" r="255"/>
         </visualDescription>

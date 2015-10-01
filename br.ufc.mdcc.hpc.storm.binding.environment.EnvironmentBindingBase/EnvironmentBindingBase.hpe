@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b16f1a1b8cdb63c24fdad5d0af01e3e96b345428cc446d5e23b8ac64dc284fd993c011223c0dc769cefeb6bf56b1f8e8d53473280cc96f654fb2ca5a955459844c2bb863ac425a723a0fd4665fe08b392116040673a4cc6372aa2492ddd8d06069e33f76a118768a03e761186a214819a0f29c4748cc9b1ceced14da1581569c" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingBase" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f7a29b69857e152b724315c27988abd42d7375a3c48bbde28fffdff5db2c128a68d8c1e3c891e8dcd153d70f53fff51b4429528abb85a546132a3f2cc5776efdba7f4af0be0b9348a8c14f959d31381ecf29e20b9e0fcb4d856244f2fd0e6455a5b014c0ee5613e31573efe20fcf6486e84ee77b323a7a7d20ff3055000cd197" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingBase" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>

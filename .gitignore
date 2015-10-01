@@ -44,6 +44,9 @@ teste.TestTaskBindingInternalApp
 teste.TestTaskBindingInternalAppImpl
 teste.TestTaskBindingInternal3
 teste.TestTaskBindingInternal3Impl
+teste.TestTaskBindingInternal4
+teste.TestTaskBindingInternal4Impl
+
 
 commit.sh
 commit

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bbe32f8297c5eb514704d64a4d033e66528aac175d552116db04bbbd6216399a67339f93282f0d438e9ff064e851794861eed8dae816fc1246c7fa97a7e5d5efe8a64b069877471bfe626d9f8ab08e5ab86de4bc0e0c6177e2e67bdb1b7edabb072a4e5ad96f4282ff9e102789c5cfc98b27da18ca2fd60e6b012ccaeb5a649c" isAbstract="true" kind="Binding" name="Binding" packagePath="br.ufc.mdcc.hpc.storm.kind">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d74564edd98c02a168e6666be6c9ed4feaeb92269ac276fedd777944e74cf3262ea2b606db7c110771bdda137a8bae7a0b14d610f31aed62485a8dcad4dd8dbd2212e7cf5180b74a1c428decc6a62bbed5a18ddffc52c466623441b19aa6d5ae564776dfb28dc5df434d635fcfd3eefc5c9d350732a4c607de0b10623c55c1ab" isAbstract="true" kind="Binding" name="Binding" packagePath="br.ufc.mdcc.hpc.storm.kind">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
