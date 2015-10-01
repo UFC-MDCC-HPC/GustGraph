@@ -15,11 +15,21 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 		public override void main()
 		{
 		}
+		public static void writeFile(string PATH, string saida, bool manter){ 
+			using (System.IO.StreamWriter file = new System.IO.StreamWriter (@PATH, manter)) {
+				file.WriteLine (saida);
+			}
+		}
 		
 		public override void after_initialize ()
 		{
 			int remote_leader = this.Id_unit.Equals("peer_right") ? this.UnitRanks ["peer_left"] [0] : this.UnitRanks ["peer_right"] [0];
 			channel = new MPI.Intercommunicator(this.PeerComm, 0, this.Communicator, remote_leader, 0);
+			writeFile ("./LOG-TaskPort.TXT","INICIO TaskPort"+
+				" remote_leader:"+remote_leader+
+				" this.Rank:"+this.Rank+
+				" this.PeerRank:"+this.PeerRank+
+				" this.PeerSize:"+this.PeerSize, false);
 		}
 
 		private MPI.Intercommunicator channel;
@@ -119,6 +129,11 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 			Thread t = new Thread(new ThreadStart(() => handle_request(future_, sync, reaction)));
 
 			t.Start();
+
+			writeFile ("./LOG-TaskPort.TXT","End TaskPort"+
+				" this.Rank:"+this.Rank+
+				" this.PeerRank:"+this.PeerRank
+				+" this.PeerSize:"+this.PeerSize, true);
 
 			return t;
 		}

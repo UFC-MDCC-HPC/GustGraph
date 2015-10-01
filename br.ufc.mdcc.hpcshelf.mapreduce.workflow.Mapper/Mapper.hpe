@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000004fef33be36a8799f146a94479c26c7fb2ec3fd2dc3ce1f88127fa0d628bee50c58dafe157efe10182be414efaf24a297cf79ef46833af12533edc1f7b5e7772d776094e2c67a1b0357efb39b9228b2acc82ea2dcafd799b65b7169418512c19984ad18a3689b39383d1b516fc80d801fd5cb01fe8355b547a3a834024fb2b3a1" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d3d9b64b97e0206feae81b58758a42fdd4adaf9d6767798d52897eaca19a9031b9313a1e70cd0383954f84728767820b03f6690ef6c3016248555e14105d04208e20afb2add68841037da82e65c54b93f1db1fae07546e0852bded637bea1c709e8dafb4222540a4fafb9171a0e1e4a9cb0dceedefa9b2894035142de0a0fe8c" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -59,7 +59,7 @@
         <visualDescription h="44" w="168" x="455" y="182">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###813264335"/>
+        <parameter formFieldId="value_type" varName="X###1153955756"/>
         <unitBounds parallel="false" uRef="set">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -86,7 +86,7 @@
         <visualDescription h="60" w="129" x="221" y="490">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###1864262737"/>
+        <parameter formFieldId="task_port_type" varName="X###1666978376"/>
         <unitBounds parallel="true" uRef="peer_left">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -151,7 +151,7 @@
         <visualDescription h="20" w="20" x="37" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="C###813264335" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###1153955756" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="437" y="287">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -161,8 +161,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###813264335" varName="X###813264335"/>
-    <innerComponent localRef="C###1864262737" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+    <supplyParameter cRef="C###1153955756" varName="X###1153955756"/>
+    <innerComponent localRef="C###1666978376" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
       <visualDescription h="60" w="181" x="225" y="489">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -170,7 +170,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1864262737" varName="X###1864262737"/>
+    <supplyParameter cRef="C###1666978376" varName="X###1666978376"/>
+    <innerRenaming cNewName="task_port_mapper" cOldName="task_port" cRef="task_mapper"/>
     <interface iRef="IMapperLeft" nArgs="6">
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IClientBase"/>
@@ -207,7 +208,7 @@
       <visualDescription h="40" w="99" x="104" y="218">
         <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="task_port">
+      <port name="task_port_mapper">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_mapper"/>
       </port>
@@ -252,7 +253,7 @@
       <visualDescription h="40" w="103" x="292" y="222">
         <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="task_port">
+      <port name="task_port_mapper">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_mapper"/>
       </port>
@@ -261,12 +262,12 @@
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="IMapperLeft" multiple="true" private="false" replica="0" uRef="mapper_left" visibleInterface="true">
+    <unit facet="0" iRef="IMapperLeft" multiple="true" private="false" replica="0" uRef="left_unit" visibleInterface="true">
+      <slices cRef="task_port_mapper" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_port_mapper" transitive="true">
+        <visualDescription h="10" w="10" x="81" y="19"/>
+      </slices>
       <slices cRef="input_pair" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="input_pair" transitive="true">
         <visualDescription h="10" w="10" x="143" y="3"/>
-      </slices>
-      <slices cRef="task_port" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_port" transitive="true">
-        <visualDescription h="10" w="10" x="81" y="19"/>
       </slices>
       <slices cRef="output_pairs" inner_replica="0" slice_replica="0" uRef="set" sliceName="output_pairs" transitive="true">
         <visualDescription h="10" w="10" x="129" y="14"/>
@@ -276,7 +277,7 @@
       </slices>
       <slices cRef="task_mapper" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_mapper" transitive="false">
         <visualDescription h="10" w="10" x="65" y="23"/>
-        <port>task_port</port>
+        <port>task_port_mapper</port>
       </slices>
       <slices cRef="map_function" inner_replica="0" slice_replica="0" uRef="map_function" sliceName="map_function" transitive="false">
         <visualDescription h="10" w="10" x="78" y="9"/>
@@ -285,13 +286,13 @@
       </slices>
       <visualDescription h="40" w="99" x="104" y="298"/>
     </unit>
-    <unit facet="0" iRef="IMapperRight" multiple="true" private="false" replica="0" uRef="mapper_right" visibleInterface="true">
-      <slices cRef="task_port" inner_replica="0" slice_replica="0" uRef="peer_right" sliceName="task_port" transitive="true">
+    <unit facet="0" iRef="IMapperRight" multiple="true" private="false" replica="0" uRef="right_unit" visibleInterface="true">
+      <slices cRef="task_port_mapper" inner_replica="0" slice_replica="0" uRef="peer_right" sliceName="task_port_mapper" transitive="true">
         <visualDescription h="10" w="10" x="13" y="27"/>
       </slices>
       <slices cRef="task_mapper" inner_replica="0" slice_replica="0" uRef="peer_right" sliceName="task_mapper" transitive="false">
         <visualDescription h="10" w="10" x="23" y="28"/>
-        <port>task_port</port>
+        <port>task_port_mapper</port>
       </slices>
       <slices cRef="feed_pairs" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed_pairs" transitive="false">
         <visualDescription h="10" w="10" x="39" y="23"/>

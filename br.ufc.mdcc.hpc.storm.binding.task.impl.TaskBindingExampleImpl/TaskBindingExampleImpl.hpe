@@ -13,7 +13,7 @@
           <visualDescription h="60" w="158" x="215" y="455">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1733144356"/>
+          <parameter formFieldId="task_port_type" varName="X###930111634"/>
           <unitBounds parallel="true" uRef="peer_left">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>

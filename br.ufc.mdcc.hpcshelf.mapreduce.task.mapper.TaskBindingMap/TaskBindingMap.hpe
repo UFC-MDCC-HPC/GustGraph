@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000041690948e9856df0b366adc4f506628ddb6421b24e94dce5d0c2aa686003f7e1156ad592368e302e49e66f153fb570dcc5090009c68218e47472b7b6fa3d358d56adc3b497cfdd0c001ac69821343e245bb48841571a79e28f13a80e87b438f317684ea8ecb2011c2416b05bc3e4cc3037a53bd50efc40709fee9e29bc55d191" isAbstract="true" kind="Synchronizer" name="TaskBindingMap" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d9a961f2ba448eaa9024452c0444cfd89ffc038a094eae1fea8129e5801389ce6f1eff75157aca3842fa89409f375fcd5a070e1fc14aff62344feaa1d954f2f6b7dea007a72df4bc292f5bcef92fbe8826e21f152763b1fd6b3c58669289146b90317bcb94778e141e72e0316b5b59baecc3fec8a8e0437962e39c929e9d149f" isAbstract="true" kind="Synchronizer" name="TaskBindingMap" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -38,7 +38,7 @@
           <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/bin/1.0.0.0/ITaskPorttypePhases.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap&#xA;{&#xA;&#x9;public interface ITaskBindingMap : BaseITaskBindingMap&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITaskBindingMap.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap/bin/1.0.0.0/ITaskBindingMap.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap&#xA;{&#xA;&#x9;public interface ITaskBindingMap : BaseITaskBindingMap&#xA;&#x9;{&#xA;&#x9;}&#xA;&#x9;public class ITaskBindingMapAction&#xA;&#x9;{&#xA;&#x9;&#x9;public static object READ_CHUNK = new object();&#xA;&#x9;&#x9;public static object PERFORM = new object();&#xA;&#x9;&#x9;public static object CHUNK_READY = new object();&#xA;&#x9;}&#xA;}" name="ITaskBindingMap.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap/bin/1.0.0.0/ITaskBindingMap.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap/bin/1.0.0.0/BaseITaskBindingMap.dll</dependency>
         </file>
       </sources>

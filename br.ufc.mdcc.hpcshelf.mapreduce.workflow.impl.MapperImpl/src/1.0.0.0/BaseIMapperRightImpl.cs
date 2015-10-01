@@ -16,15 +16,15 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.MapperImpl
 	public abstract class BaseIMapperRightImpl<S>: Computation, BaseIMapperRight<S>
 		where S:IEnvironmentPortTypeTakePairsServer
 	{
-		private ITaskPort<ITaskPorttypePhases> task_port = null;
+		private ITaskPort<ITaskPorttypePhases> task_port_mapper = null;
 
-		protected ITaskPort<ITaskPorttypePhases> Task_port
+		protected ITaskPort<ITaskPorttypePhases> Task_port_mapper
 		{
 			get
 			{
-				if (this.task_port == null)
-					this.task_port = (ITaskPort<ITaskPorttypePhases>) Services.getPort("task_port");
-				return this.task_port;
+				if (this.task_port_mapper == null)
+					this.task_port_mapper = (ITaskPort<ITaskPorttypePhases>) Services.getPort("task_port_mapper");
+				return this.task_port_mapper;
 			}
 		}
 		private IServerBase<S> feed_pairs = null;
