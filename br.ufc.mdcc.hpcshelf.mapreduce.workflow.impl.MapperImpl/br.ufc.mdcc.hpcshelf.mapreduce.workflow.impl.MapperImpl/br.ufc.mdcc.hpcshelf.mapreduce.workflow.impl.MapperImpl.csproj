@@ -38,8 +38,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\src\1.0.0.0\IMapperImpl.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseIMapperImpl.cs" />
+    <Compile Include="..\src\1.0.0.0\IMapperLeftImpl.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseIMapperLeftImpl.cs" />
+    <Compile Include="..\src\1.0.0.0\IMapperRightImpl.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseIMapperRightImpl.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -106,6 +108,10 @@
     <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner.csproj">
       <Project>{B1988D74-54AE-4031-B185-E046226BC359}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.task.TaskPortType\br.ufc.mdcc.hpc.storm.binding.task.TaskPortType\br.ufc.mdcc.hpc.storm.binding.task.TaskPortType.csproj">
+      <Project>{B785892B-10B1-43BA-897F-E6F02CC932D0}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskPortType</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

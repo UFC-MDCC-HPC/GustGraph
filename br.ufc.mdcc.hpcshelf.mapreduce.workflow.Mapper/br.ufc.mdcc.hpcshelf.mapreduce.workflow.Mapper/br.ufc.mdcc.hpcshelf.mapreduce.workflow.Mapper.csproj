@@ -37,9 +37,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\src\1.0.0.0\IMapper.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseIMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\src\1.0.0.0\IMapperLeft.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseIMapperLeft.cs" />
+    <Compile Include="..\src\1.0.0.0\IMapperRight.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseIMapperRight.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

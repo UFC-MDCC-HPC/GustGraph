@@ -15,6 +15,7 @@ using br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePai
 using br.ufc.mdcc.hpcshelf.mapreduce.task.combiner.TaskBindingCombine;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction;
 using br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsServer;
+using br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap;
 using br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.CombinerImpl 
@@ -44,8 +45,19 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.CombinerImpl
 			get
 			{
 				if (this.task_port == null)
-					this.task_port = (ITaskPort<ITaskPorttypePhases>) Services.getPort("task_port");
+					this.task_port = (ITaskPort<ITaskPorttypePhases>) Services.getPort("task_port_combine");
 				return this.task_port;
+			}
+		}
+		private ITaskPort<ITaskPorttypePhases> task_port_map = null;
+
+		public ITaskPort<ITaskPorttypePhases> Task_port_map
+		{
+			get
+			{
+				if (this.task_port_map == null)
+					this.task_port_map = (ITaskPort<ITaskPorttypePhases>) Services.getPort("task_port_map");
+				return this.task_port_map;
 			}
 		}
 		private IKVPair<OMK, ISet<OMV>> input_data = null;
@@ -112,6 +124,17 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.CombinerImpl
 				if (this.feed_pairs == null)
 					this.feed_pairs = (IServerBase<S>) Services.getPort("feed_pairs");
 				return this.feed_pairs;
+			}
+		}
+		private ITaskBindingMap task_map = null;
+
+		protected ITaskBindingMap Task_map
+		{
+			get
+			{
+				if (this.task_map == null)
+					this.task_map = (ITaskBindingMap) Services.getPort("task_map");
+				return this.task_map;
 			}
 		}
 	}

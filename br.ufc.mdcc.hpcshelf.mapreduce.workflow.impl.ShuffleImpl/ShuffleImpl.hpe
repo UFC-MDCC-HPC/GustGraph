@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000057a910c63a06cb05133763f0250a82187f1d5b0c7cfc2f347b88aa7b9dc8b96bcb0dc69ad24f1d8fe9af5a877f1020e9980c6bb148af8951eef6c317f0000a2a475786f66b944cc388611961ff085a3f76387484e8b0d79e00a8372b8ad803a3c5478c197ed636ef3a996724770f0efcb262e1302796ad44f19d313cf5ec8694" isAbstract="false" kind="Synchronizer" name="ShuffleImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009dec49b1d05312ef4f35d9dbf81d9b2fbed95fead60552f6f385cb553c8f81509464c83789445b10e84eb262f4888e76051a52d9ec96a941474e6bc927917f00ecf284dfa697e28e45c7357b61ffe9d574952680a8161f886e26e562dc1de4ea6107368d8ed08b42ce9043b82b654e4514d0661744648daa7c95633d2302ed8e" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle/Shuffle.hpe" name="Shuffle" package="br.ufc.mdcc.hpcshelf.mapreduce.workflow" version="1.0.0.0">
+        <visualDescription h="60" w="114" x="303" y="451">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="server_port_type" varName="S"/>
+        <parameter formFieldId="client_port_type" varName="C"/>
+        <parameter formFieldId="intermediate_value_type" varName="OMV"/>
+        <parameter formFieldId="intermediate_key_type" varName="OMK"/>
+        <parameter formFieldId="partition_function" varName="PF"/>
+        <port localRef="shuffler_channel" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" multiple="false" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" exposed="true">
+          <visualDescription h="47" w="141" x="403" y="557">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <unitBounds parallel="false" uRef="root">
+            <visualDescription h="20" w="20" x="87" y="36"/>
+          </unitBounds>
+          <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
+            <visualDescription h="20" w="20" x="154" y="19"/>
+          </unitBounds>
+          <unitBounds parallel="true" slice_replica="1" unit_replica="0" uRef="peer">
+            <visualDescription h="20" w="20" x="7" y="20"/>
+          </unitBounds>
+        </port>
+        <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="60" w="100" x="149" y="490">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###1628919876"/>
+          <unitBounds parallel="true" uRef="peer_left">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+          <unitBounds parallel="true" uRef="peer_right">
+            <visualDescription h="20" w="20" x="28" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="60" w="100" x="228" y="580">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###5639559"/>
+          <unitBounds parallel="true" uRef="peer_left">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+          <unitBounds parallel="true" uRef="peer_right">
+            <visualDescription h="20" w="20" x="28" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="true" uRef="reduce_feeder">
+          <visualDescription h="20" w="20" x="89" y="22"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="map_collector">
+          <visualDescription h="20" w="20" x="0" y="14"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="omk" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="60" w="100" x="541" y="103">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="omv" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="684" y="101">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="omk" direct="true" varName="OMK"/>
+    <supplyParameter cRef="omv" direct="true" varName="OMV"/>
+    <interface iRef="IIReduceFeederImpl" nArgs="3">
+      <slice isRef="shuffler_channel">
+        <originRef cRef="shuffler_channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="17" y="26"/>
+      </slice>
+      <slice isRef="partition_function">
+        <originRef cRef="partition_function" iRef="IPartitionFunction"/>
+        <visualDescription h="10" w="10" x="115" y="12"/>
+      </slice>
+      <slice isRef="task_feed">
+        <originRef cRef="task_feed" iRef="ITaskBindingShuffle"/>
+        <visualDescription h="10" w="10" x="39" y="25"/>
+      </slice>
+      <slice isRef="feed_pairs">
+        <originRef cRef="feed_pairs" iRef="IServerBase"/>
+        <visualDescription h="10" w="10" x="102" y="27"/>
+      </slice>
+      <visualDescription h="40" w="185" x="368" y="251">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <port name="shuffler_channel">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="shuffler_channel" sRef="shuffler_channel"/>
+      </port>
+      <port name="input_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="partition_function"/>
+      </port>
+      <port name="output_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="partition_function"/>
+      </port>
+      <port name="task_port">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_port" sRef="task_feed"/>
+      </port>
+      <parameter iname="IPartitionFunction" order="1" parid="partition_function" uname="partition_function" varid="PF"/>
+      <parameter iname="IData" order="0" parid="intermediate_key_type" uname="data" varid="OMK"/>
+      <parameter iname="IEnvironmentPortTypeMultiplePartner" order="2" parid="server_port_type" uname="environment_port_type" varid="S"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IIMapCollectorImpl" nArgs="1">
+      <slice isRef="shuffler_channel">
+        <originRef cRef="shuffler_channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="168" y="22"/>
+      </slice>
+      <slice isRef="task_collect">
+        <originRef cRef="task_collect" iRef="ITaskBindingShuffle"/>
+        <visualDescription h="10" w="10" x="115" y="25"/>
+      </slice>
+      <slice isRef="collect_pairs">
+        <originRef cRef="collect_pairs" iRef="IClientBase"/>
+        <visualDescription h="10" w="10" x="21" y="24"/>
+      </slice>
+      <visualDescription h="40" w="197" x="84" y="250">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <port name="shuffler_channel">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="shuffler_channel" sRef="shuffler_channel"/>
+      </port>
+      <port name="task_port">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_port" sRef="task_collect"/>
+      </port>
+      <parameter iname="IEnvironmentPortTypeMultiplePartner" order="0" parid="client_port_type" uname="environment_port_type" varid="C"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IIReduceFeederImpl" multiple="true" private="false" replica="0" uRef="reduce_feeder" visibleInterface="true">
+      <super cRef="base" uRef="reduce_feeder"/>
+      <visualDescription h="40" w="151" x="395" y="351"/>
+    </unit>
+    <unit facet="0" iRef="IIMapCollectorImpl" multiple="true" private="false" replica="0" uRef="map_collector" visibleInterface="true">
+      <super cRef="base" uRef="map_collector"/>
+      <visualDescription h="40" w="197" x="72" y="348"/>
+    </unit>
+  </componentInfo>
+</component:component>

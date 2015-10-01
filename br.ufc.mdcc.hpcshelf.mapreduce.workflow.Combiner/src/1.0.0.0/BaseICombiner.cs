@@ -18,7 +18,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner
 		where S:IEnvironmentPortTypeMultiplePartner
 		where P:IPlatform
 	{
-		ITaskPort<ITaskPorttypePhases> Task_port {get;}
+		ITaskPort<ITaskPorttypePhases> Task_port_combine {get;}
+		ITaskPort<ITaskPorttypePhases> Task_port_map {get;}
 		IKVPair<OMK, ISet<OMV>> Input_data {get;}
 		IKVPair<OMK, OMV> Output_data {get;}
 	}

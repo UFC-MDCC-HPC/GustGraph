@@ -36,6 +36,15 @@ teste.impl.BindingImpl
 teste.impl.TestBindingAppImpl
 teste.impl.TestTaskBindingInternalImpl
 
+teste.TestTaskBindingInternal1
+teste.TestTaskBindingInternal1Impl
+teste.TestTaskBindingInternal2
+teste.TestTaskBindingInternal2Impl
+teste.TestTaskBindingInternalApp
+teste.TestTaskBindingInternalAppImpl
+teste.TestTaskBindingInternal3
+teste.TestTaskBindingInternal3Impl
+
 commit.sh
 commit
 #end temp

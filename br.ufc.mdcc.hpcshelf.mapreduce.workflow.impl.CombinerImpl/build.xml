@@ -24,6 +24,7 @@
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction/bin/1.0.0.0/ICombineFunction.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsServer/bin/1.0.0.0/IEnvironmentPortTypeTakePairsServer.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap/bin/1.0.0.0/ITaskBindingMap.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner/bin/1.0.0.0/BaseICombiner.dll"/>
         <include/>
       </references>

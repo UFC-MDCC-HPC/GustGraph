@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b947e20fc5261786ed244b148ed53cd11ea72f52da4f234a4c5005dd4f407aba016abd3f4997503a7aca3244f113443161235f84cef327704e302993218ceea61a3eb0fadbc1a75be902630ef8d3b34af8c0c03c9044130011e82038bfc0bf2ace43dcc276e2b95f83f2bdd6518acddbf55735ca8d8b9b2055b3281be4505fbe" isAbstract="true" kind="Synchronizer" name="Shuffle" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009dec49b1d05312ef4f35d9dbf81d9b2fbed95fead60552f6f385cb553c8f81509464c83789445b10e84eb262f4888e76051a52d9ec96a941474e6bc927917f00ecf284dfa697e28e45c7357b61ffe9d574952680a8161f886e26e562dc1de4ea6107368d8ed08b42ce9043b82b654e4514d0661744648daa7c95633d2302ed8e" isAbstract="true" kind="Synchronizer" name="Shuffle" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -72,10 +72,10 @@
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-        <visualDescription h="60" w="100" x="593" y="605">
+        <visualDescription h="60" w="131" x="593" y="605">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###356171677"/>
+        <parameter formFieldId="task_port_type" varName="X###1108192494"/>
         <unitBounds parallel="true" uRef="peer_left">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -111,10 +111,10 @@
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-        <visualDescription h="60" w="100" x="94" y="580">
+        <visualDescription h="60" w="127" x="94" y="580">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###1267605829"/>
+        <parameter formFieldId="task_port_type" varName="X###986334426"/>
         <unitBounds parallel="true" uRef="peer_left">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -155,7 +155,7 @@
         <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="C###356171677" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle/TaskPortTypeShuffle.hpe" multiple="false" name="TaskPortTypeShuffle" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+    <innerComponent localRef="C###1108192494" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle/TaskPortTypeShuffle.hpe" multiple="false" name="TaskPortTypeShuffle" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
       <visualDescription h="60" w="141" x="375" y="426">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -163,8 +163,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###356171677" varName="X###356171677"/>
-    <innerComponent localRef="C###1267605829" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle/TaskPortTypeShuffle.hpe" multiple="false" name="TaskPortTypeShuffle" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+    <supplyParameter cRef="C###1108192494" varName="X###1108192494"/>
+    <innerComponent localRef="C###986334426" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle/TaskPortTypeShuffle.hpe" multiple="false" name="TaskPortTypeShuffle" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
       <visualDescription h="60" w="141" x="375" y="426">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -172,7 +172,9 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1267605829" varName="X###1267605829"/>
+    <supplyParameter cRef="C###986334426" varName="X###986334426"/>
+    <innerRenaming cNewName="task_port_feed" cOldName="task_port" cRef="task_feed"/>
+    <innerRenaming cNewName="task_port_collect" cOldName="task_port" cRef="task_collect"/>
     <interface iRef="IReduceFeeder" nArgs="3">
       <slice isRef="shuffler_channel">
         <originRef cRef="shuffler_channel" iRef="IChannel"/>
@@ -215,15 +217,15 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="shuffler_channel" sRef="shuffler_channel"/>
       </port>
-      <port name="output_key">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_key" sRef="partition_function"/>
-      </port>
       <port name="input_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_key" sRef="partition_function"/>
       </port>
-      <port name="task_port">
+      <port name="output_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="partition_function"/>
+      </port>
+      <port name="task_port_feed">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_feed"/>
       </port>
@@ -266,7 +268,7 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="shuffler_channel" sRef="shuffler_channel"/>
       </port>
-      <port name="task_port">
+      <port name="task_port_collect">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_collect"/>
       </port>
@@ -285,7 +287,7 @@
       <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
         <visualDescription h="10" w="10" x="24" y="26"/>
       </slices>
-      <slices cRef="task_port" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_port" transitive="true">
+      <slices cRef="task_port_feed" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_port_feed" transitive="true">
         <visualDescription h="10" w="10" x="89" y="28"/>
       </slices>
       <slices cRef="partition_function" inner_replica="0" slice_replica="0" uRef="partition_function" sliceName="partition_function" transitive="false">
@@ -295,7 +297,7 @@
       </slices>
       <slices cRef="task_feed" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_feed" transitive="false">
         <visualDescription h="10" w="10" x="39" y="25"/>
-        <port>task_port</port>
+        <port>task_port_feed</port>
       </slices>
       <slices cRef="feed_pairs" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed_pairs" transitive="false">
         <visualDescription h="10" w="10" x="102" y="27"/>
@@ -306,12 +308,12 @@
       <slices cRef="shuffler_channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="shuffler_channel" transitive="false">
         <visualDescription h="10" w="10" x="168" y="22"/>
       </slices>
-      <slices cRef="task_port" inner_replica="1" slice_replica="0" uRef="peer_left" sliceName="task_port" transitive="true">
+      <slices cRef="task_port_collect" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_port_collect" transitive="true">
         <visualDescription h="10" w="10" x="89" y="28"/>
       </slices>
       <slices cRef="task_collect" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_collect" transitive="false">
         <visualDescription h="10" w="10" x="115" y="25"/>
-        <port>task_port</port>
+        <port>task_port_collect</port>
       </slices>
       <slices cRef="collect_pairs" inner_replica="0" slice_replica="0" uRef="client" sliceName="collect_pairs" transitive="false">
         <visualDescription h="10" w="10" x="21" y="24"/>

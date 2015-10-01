@@ -22,7 +22,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Reducer
 		where S:IEnvironmentPortTypeMultiplePartner
 		where P:IPlatform
 	{
-		ITaskPort<ITaskPorttypePhases> Task_port {get;}
+		ITaskPort<ITaskPorttypePhases> Task_port_reduce {get;}
 		IKVPair<OMK, ISet<OMV>> Input_item {get;}
 		IKVPair<ORK, ORV> Output_item {get;}
 	}

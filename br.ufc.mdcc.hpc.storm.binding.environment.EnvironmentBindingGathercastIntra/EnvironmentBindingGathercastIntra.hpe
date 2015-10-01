@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000435b4f87e62bceccde33bc127928ae746c7b3aa49dca514878f32824d2b58d691a844cba57bac91615f05e709b94b0913d51c78d3c181c28a828a8d6fc893edd5dd9c5add442959416999f0b6afb539112aa8ddeb9273e54f693b70ee642ed2f5f93c1c0dd5c7af6886cb1fc9836de6c7b90d4cec0782a7e09afc8ecfe3faf99" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingGathercastIntra" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003bbd3360ca2f7343ed6fa2811729630921fccdf649b3fc7075b1806735d54d2ddd4180832f908cecc0a727b0a0a64d5d91ed9c0d6463111bed834d1e36f951837dc37c6df44b4675566e9a205bb6442611e6b3f320d1a68679d1c4d79b888ec44e06bf8387da93fedbc8c8c4df7c2f7f6491f4a059a4ce628005485080161dc2" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingGathercastIntra" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005f7f5d1a72d7d8fbdb8420a516096de109f736890a68ef8effd4babf8f5277065d8eee60fccdc750b2a4b14ba8d4cc0117bbed4144fcaacb76bb3dd612f8dadc59fac82b8782c1783b1e2774c61a0e3ad7ab4c54be24b8383ef515d0b95547b226fff60a81c13c8ec45128ef3fba8723b631c6ca7c2c73c247b3afdb45320892" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercast/EnvironmentBindingGathercast.hpe" name="EnvironmentBindingGathercast" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ffc6ec5fbd10c296c5b4d8d35b7637d0de074747ee6d1b3b7396faabb3e1c62df290fe5cd24865ff4ee0731071136d8bf4d28aa6cb84e102976ceb638aac3d7eed8697f1e13f784b910ebd027a782037a9ec8f5afaaf3117ca7c42c21586767b182ecee16281fe71a9bd2ecc619ff58cefa27c91fc695cbefdd281ecf08d9c80" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercast/EnvironmentBindingGathercast.hpe" name="EnvironmentBindingGathercast" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
         <visualDescription h="60" w="166" x="136" y="223">
           <color b="255" g="255" r="255"/>
         </visualDescription>
