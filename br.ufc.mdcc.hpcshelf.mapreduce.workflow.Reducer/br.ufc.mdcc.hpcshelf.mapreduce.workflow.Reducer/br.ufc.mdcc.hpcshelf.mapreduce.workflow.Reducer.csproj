@@ -38,8 +38,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\src\1.0.0.0\IReducer.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseIReducer.cs" />
+    <Compile Include="..\src\1.0.0.0\IReducerRight.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseIReducerRight.cs" />
+    <Compile Include="..\src\1.0.0.0\IReducerLeft.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseIReducerLeft.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
