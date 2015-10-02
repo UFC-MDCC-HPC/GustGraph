@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000079820d9a1938f92d2cd27088ab7b28fbba27d1b6807d809cbcd758264472f8edac24ee43bc717a7e1063550254307dd7384a8fe0b5d90a5478799e30378cfc18a71f85be669e2423daaac963f98829e1cd88952b476ef53bc9f7a9c17d4b3cede2a83b27c15cdc1cc4293bbab5a220c6de15905cfbe51bf60ade2017ada46e89" isAbstract="true" kind="Synchronizer" name="TaskBindingCombine" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.combiner">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000657a75ce7e4d6b5aca16f26a0e3affea1d8f9be4ff0d3198a8288c2d6ab30a8702dd6f3ae878daf6cff8b59c4e9c59cd254f85835b2b39f9bc280f392a973250024ebb0636cf26d6d3d9e07a4ddd75c9530f495e14d0a9c0589ecfe2871629644692d64719bf9e330a363bc8af5134bd73b4f3cf68d84ee43e2d96a3fd4a0ab5" isAbstract="true" kind="Synchronizer" name="TaskBindingCombine" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.combiner">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -20,7 +20,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
-      <visualDescription h="60" w="289" x="74" y="116">
+      <visualDescription h="60" w="289" x="134" y="115">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="task_port_type">
@@ -38,7 +38,7 @@
           <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/bin/1.0.0.0/ITaskPorttypePhases.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.combiner.TaskBindingCombine&#xA;{&#xA;&#x9;public interface ITaskBindingCombine : BaseITaskBindingCombine&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITaskBindingCombine.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.combiner.TaskBindingCombine/bin/1.0.0.0/ITaskBindingCombine.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.combiner.TaskBindingCombine&#xA;{&#xA;&#x9;public interface ITaskBindingCombine : BaseITaskBindingCombine&#xA;&#x9;{&#xA;&#x9;}&#xA;&#x9;public class ITaskBindingCombineAction&#xA;&#x9;{&#xA;&#x9;&#x9;public static object READ_CHUNK = new object();&#xA;&#x9;&#x9;public static object PERFORM = new object();&#xA;&#x9;&#x9;public static object CHUNK_READY = new object();&#xA;&#x9;}&#xA;}" name="ITaskBindingCombine.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.combiner.TaskBindingCombine/bin/1.0.0.0/ITaskBindingCombine.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.task.combiner.TaskBindingCombine/bin/1.0.0.0/BaseITaskBindingCombine.dll</dependency>
         </file>
       </sources>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000013048a771cf3c3442978d143487f82aeebe2ea38ca251739b045928f7e259b20c5f1403435acee5fea173760571351819ce2d9cc3a0d18a244c4a2b15f6d70b4bdc5b609df16dc856f64de06bbb3916adf9b87e407d21187b2d3fc7ab4cd09247473ab2eb79be8033852cc409cfc2fc9c2d8fe0ed8064fd9fb912d9d37f98ba0" isAbstract="true" kind="Qualifier" name="EnvironmentPortTypeServer" packagePath="br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000dfcbe0822da8bd5e8b7a85a595200c28daa2f2445f02d8020e3b72d2d5af8bf000baa80e8426e6a5450590f1f4c084133456d34a5c0cad544ee41380016006c7cbe33809edc99340d896e9a9af668bd7554f93aabb4b5fc50f0dc2b16988a9bda5a469581f6d5b52bec149531482c6ad82f467bcee1f7c365b6e2e6ee750d1a1" isAbstract="true" kind="Qualifier" name="EnvironmentPortTypeServer" packagePath="br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000033dbb60bbc5d12756b28f3ca1bc094de0f476dc78ba83d422e02c79e5f1de84c5b253315cc089f6179da8f0214e2111b8c73eb2d9094c1e1e2db0c5c303f89a7d90ff77ac3034a6b98be81c0bed34d96e0ce232c88aa959de76d26584b8384aa1bae127b6235d47be01139d83f4a9a7356c17e562f475ca2ad7a9bb004e601a0" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ef82e69ec40f2d9aa1d6a9458be5a7dffb10cd8cb40350d44f14787186aff7a3f56d75ec6cb3bf0a892780fd4782175b9c91febf010e77f624931c5998bb841ffa678f1b49237713c28cc8750112a7b5aba8d604ea35a87b452481db50e00f114c1ed87fea6e46d711bf949107afdd2888bf4b646cfcf799a26d12d88abca98a" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
         <visualDescription h="60" w="100" x="224" y="154">
           <color b="255" g="255" r="255"/>
         </visualDescription>

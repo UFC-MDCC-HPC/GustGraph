@@ -3,8 +3,8 @@ using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartn
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle
 {
-	public interface IMapCollector<C> : BaseIMapCollector<C>
-		where C:IEnvironmentPortTypeMultiplePartner
+	public interface IShuffleRight<S> : BaseIShuffleRight<S>
+		where S:IEnvironmentPortTypeMultiplePartner
 	{
 	}
 }

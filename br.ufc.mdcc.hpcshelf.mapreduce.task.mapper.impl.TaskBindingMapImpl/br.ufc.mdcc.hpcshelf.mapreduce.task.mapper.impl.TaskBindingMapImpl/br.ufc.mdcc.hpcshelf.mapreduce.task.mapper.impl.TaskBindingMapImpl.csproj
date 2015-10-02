@@ -59,5 +59,9 @@
       <Project>{E177A49D-38C9-4D5E-95DF-1816EDB222B0}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeMap\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeMap\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeMap.csproj">
+      <Project>{179FCEAC-931F-40A7-8FC5-B7B7675C6398}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeMap</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e33509fe0d792d3444abc124a3cae00781aef06d28e27ec90c59d78029a93a24c4b457bd3b955b15ba8b8f8d0a6b520b9e828c58e5b166b1e988073eb16fa99a0aa392e7cf8436f2516c1b7a2805e8fc0dc9f2de330aee6a3823ac9dd125b8c0536889620bbcbed9ece8c36bfe4ec9ca32e3650b9f7ce2f0052be83eb4f123a6" isAbstract="true" kind="Qualifier" name="TaskPortTypePhases" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000039a5fcd83af0a38a73d19a1ab08225d03d8ff248d5e75781fc7c1c0fcafd7cf84660d28325bca25d42c84a380162ec04c053e48120ef9e3c6c84bcd1d0dacc6a29ea57bb257185186fef648afe8bf98009548529c8e870c002b4b9ea4187fc9c41cb55e1b8be376becb722ebd8d875fbf1bb44db998cb8f3d83032d69944e98b" isAbstract="true" kind="Qualifier" name="TaskPortTypePhases" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task">
     <baseType>
       <extensionType>
         <extends>true</extends>

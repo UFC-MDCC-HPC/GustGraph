@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bbf3be50a9c91420f29a725950be30010eed14f58ae13d81af3de78036ac617f0fcdc9563901f4974793b59a96b66d1da0a49f0c435838572961cd02dfdd094367ea6905bcd6fdf79a857d6051122dc989132469d7f004afa5fdf640cae1bd4a6adc563fa97d95e4a1b057834c25d8b3b24000dd8e5b114f8d4d23c87c5b919f" isAbstract="true" kind="Synchronizer" name="TaskBindingReduce" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.reducer">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001d79a298b1796885806ab65fd9e3fb7d7054930595dcc358d1956d1a868333fd35ec3107c79898ed7658f1a353969955c27deff3cc4989a13e9a1a749ad0033a94add53643752728fb4a996e8ec933cc368fc7f7abf6a83b367f3d2ce52a530fcaa316d939361ccbf8a6e2dc7c4f893b35914f44d1277700f172d19259e652a9" isAbstract="true" kind="Synchronizer" name="TaskBindingReduce" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.reducer">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -20,7 +20,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
-      <visualDescription h="60" w="153" x="422" y="422">
+      <visualDescription h="60" w="199" x="193" y="529">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="task_port_type">
@@ -38,7 +38,7 @@
           <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/bin/1.0.0.0/ITaskPorttypePhases.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.reducer.TaskBindingReduce&#xA;{&#xA;&#x9;public interface ITaskBindingReduce : BaseITaskBindingReduce&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITaskBindingReduce.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.reducer.TaskBindingReduce/bin/1.0.0.0/ITaskBindingReduce.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.reducer.TaskBindingReduce&#xA;{&#xA;&#x9;public interface ITaskBindingReduce : BaseITaskBindingReduce&#xA;&#x9;{&#xA;&#x9;}&#xA;&#x9;public class ITaskBindingReduceAction&#xA;&#x9;{&#xA;&#x9;&#x9;public static object READ_CHUNK = new object();&#xA;&#x9;&#x9;public static object PERFORM = new object();&#xA;&#x9;&#x9;public static object CHUNK_READY = new object();&#xA;&#x9;}&#xA;}" name="ITaskBindingReduce.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.reducer.TaskBindingReduce/bin/1.0.0.0/ITaskBindingReduce.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.task.reducer.TaskBindingReduce/bin/1.0.0.0/BaseITaskBindingReduce.dll</dependency>
         </file>
       </sources>

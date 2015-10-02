@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000419342bc1bd3cafa9759be89cd7f80b7c61ed36d2c604f6b97dd99789155eda86ac7654909c4989d6b4d7b58ba6e208e63d6f45a05674c306893d368524909e9a1f092ddf51ed64ec3435fc64c0a29ff4c058b1d83285f6bed1e0981405d9a696b8151977b3226007a3fb2feeb8458fb139a2e210ef09c2b731781bd7f602297" isAbstract="false" kind="Binding" name="BindingImpl" packagePath="br.ufc.mdcc.hpc.storm.binding.channel.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000718cc4b77affcb72734c9225f89c5ca7a797c76cd9df7683f889d623386695b822ce2d2562af81f7400b58ee4e1c22c7002371e142ab81ed5b994c19980af1b4db5692f2de210b014e6d1560d7a4a3cd8c0b010fabbdb44964e7409ca727b9e803114c794f291715c1782a060e283e8a013a4866bcb1b39dc92e9759070a818a" isAbstract="false" kind="Binding" name="BindingImpl" packagePath="br.ufc.mdcc.hpc.storm.binding.channel.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000033a49832da0c561e5e266e783ed25164199e7cb9794508dabec9bfaa47172a65defdbb9c325d04fe08018c7ac30c234e09e3a313dfe0e0d80c429b45d76fd382ad17d48f1f56e174f838a4b2b244b56649068170152fcf858cca95aa45fd406d8a922ea7b3f0c8edc75087c74ee1649d02137b4c2167a5299f045d97bcb43dab" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b9d5b1a31e1fe735ab5c3c66d1f27cc583aa54b3d408de149438c5fd805cfc3273156982280faefb8d312c2194dc487cbbc95d38004ce343951e85352c60071820de9c9bbfb22ec95766f7b6ab7c998700fac88ed56838e4cb33f07959bbe5a113f821d59152616fcc8f63b6e1e51775f89c032a1112bb440def9d5537b21692" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" version="1.0.0.0">
         <visualDescription h="60" w="173" x="226" y="237">
           <color b="255" g="255" r="255"/>
         </visualDescription>

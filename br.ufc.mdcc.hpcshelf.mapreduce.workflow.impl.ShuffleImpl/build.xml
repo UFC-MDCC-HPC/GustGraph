@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/cenez/hpe/cenez/cache" default="all" name="ShuffleImpl">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="ShuffleImpl-1.0.0.0">
+    <ifnot targetexists="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl/bin/1.0.0.0">
+      <mkdir dir="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl/ShuffleImpl.snk" optimize="true" output="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl/bin/1.0.0.0/BaseIShuffleRightImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl/src/1.0.0.0/BaseIShuffleRightImpl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle/bin/1.0.0.0/ITaskBindingShuffle.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsServer/bin/1.0.0.0/IEnvironmentPortTypeTakePairsServer.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle/bin/1.0.0.0/ITaskPorttypeShuffle.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle/bin/1.0.0.0/BaseIShuffleRight.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl/ShuffleImpl.snk" optimize="true" output="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl/bin/1.0.0.0/IShuffleRightImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl/src/1.0.0.0/IShuffleRightImpl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsServer/bin/1.0.0.0/IEnvironmentPortTypeTakePairsServer.dll"/>
+        <include name="/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl/bin/1.0.0.0/BaseIShuffleRightImpl.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle/bin/1.0.0.0/IShuffleRight.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl/ShuffleImpl.snk" optimize="true" output="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl/bin/1.0.0.0/BaseIShuffleLeftImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl/src/1.0.0.0/BaseIShuffleLeftImpl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle/bin/1.0.0.0/ITaskBindingShuffle.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsClient/bin/1.0.0.0/IEnvironmentPortTypeTakePairsClient.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle/bin/1.0.0.0/ITaskPorttypeShuffle.dll"/>
+        <include name="br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle/bin/1.0.0.0/BaseIShuffleLeft.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl/ShuffleImpl.snk" optimize="true" output="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl/bin/1.0.0.0/IShuffleLeftImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl/src/1.0.0.0/IShuffleLeftImpl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.environment.MbyN.EnvironmentPortTypeTakePairsClient/bin/1.0.0.0/IEnvironmentPortTypeTakePairsClient.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl/bin/1.0.0.0/BaseIShuffleLeftImpl.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle/bin/1.0.0.0/IShuffleLeft.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="ShuffleImpl-1.0.0.0" name="all"/>
+</project>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000df91f0500337df8ee98b3dbd2ecd0d3eada34fe97db39b98f863e52335fc45ad772b6e77a51a50363ebb321a3a4fc82b33d09ffac21b550d55b21ab0686f83f7be9cd36251a665c034570cb4965398b486d73fd81987e1e8c9bf60866ea29b655c8e77b8c709aa8c2f43b5a1dcc44618aa64ac8e9d5973f9278f245d5e50b9a5" isAbstract="false" kind="Synchronizer" name="TaskBindingExampleImpl" packagePath="br.ufc.mdcc.hpc.storm.binding.task.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ab12bdf8b403de8918a657245f1b742126a6b4e22cccf3eda44b4183dd410af9b773670373e89cf0e9081827d1e1473a20c8f416292e1d8583628f811228e4031b868722d31e32ad3e757c8686db3e0f04c0ac0cf5fc759fa381f6b135b576e2e6cdc8d5b5985f20bfc282652d73bc0679b1843202975f98a6d6c060d93ab88a" isAbstract="false" kind="Synchronizer" name="TaskBindingExampleImpl" packagePath="br.ufc.mdcc.hpc.storm.binding.task.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
@@ -13,7 +13,7 @@
           <visualDescription h="60" w="158" x="215" y="455">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###930111634"/>
+          <parameter formFieldId="task_port_type" varName="X###157476508"/>
           <unitBounds parallel="true" uRef="peer_left">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>

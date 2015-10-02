@@ -13,7 +13,7 @@
       </sources>
       <references>
         <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/bin/1.0.0.0/ITaskPorttypePhases.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeMap/bin/1.0.0.0/ITaskPortTypeMap.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap/bin/1.0.0.0/Base.dll"/>
         <include/>
       </references>
@@ -23,6 +23,7 @@
         <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.impl.TaskBindingMapImpl/src/1.0.0.0/ITaskBindingMapImpl.cs"/>
       </sources>
       <references>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeMap/bin/1.0.0.0/ITaskPortTypeMap.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.impl.TaskBindingMapImpl/bin/1.0.0.0/BaseITaskBindingMapImpl.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper.TaskBindingMap/bin/1.0.0.0/.dll"/>
         <include/>

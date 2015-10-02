@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000008de5d209069424f092f7de2d8db8433d2e0573ac2981d585e275d7de3745b244e0f6b17a573504743a18d5f8ffbcfd885ba77c99a8334be1ad41b1ac5ca3e1b02a891228a1f159eafb92a4d4715a7b360d424c0c857be4d6cdbb74eb245990592a0c78dc4d9220e88785e475f9b18f3798cf7db750f1de7721186737412dbc94" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMbyNIntra" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000692298a8106a647a8197306840eac99b7d831b0c6d18d1eab2ef7473cc3e314e1d40fc63d3ee9fa3f76e3cda9b63970d9b5142489001bd61614dab7fc19ac42a8df1996f05513acd46f6b82c6c9ac42f485b1c7410055ea34137d4601556e7d8f477bda12a36a96fc1b0f22695af751903e19ea0550ac5dcd50520f9d29c008b" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMbyNIntra" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003956cd51f70a6d22aea131cdd3d148e25afdcb1d462e795ec0c7351a28af24ea104132ed9e8e77d23448a21e4b78d4dbf78f1994f772fbd681f5495dcdae96803c297712c6a820a5746e2784ee38a1e4b21cb5d910fc99a7e2c2ff0e3242993d5bd978ea29551789773fad39a3a06097aefe58138b2f594790983a7f7486818a" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/EnvironmentBindingMbyN.hpe" name="EnvironmentBindingMbyN" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e1aece3313935241905c86e7054690bbc6a1f0b346c74fb82c695a75a99ef45a1bb598bdb5f6556fae195ecd0e4a96e7a1d2896caac950df76829c43c96e2c3788cb1a51331f5f1ee35afa96bd42df620db3fd4f3eeb8809b0cb7d607f7a04ace09592733c30c418c21cabf75d4540db91199ee59897aeabc73ea5c4bc044e9f" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/EnvironmentBindingMbyN.hpe" name="EnvironmentBindingMbyN" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
         <visualDescription h="60" w="166" x="141" y="227">
           <color b="255" g="255" r="255"/>
         </visualDescription>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d9a961f2ba448eaa9024452c0444cfd89ffc038a094eae1fea8129e5801389ce6f1eff75157aca3842fa89409f375fcd5a070e1fc14aff62344feaa1d954f2f6b7dea007a72df4bc292f5bcef92fbe8826e21f152763b1fd6b3c58669289146b90317bcb94778e141e72e0316b5b59baecc3fec8a8e0437962e39c929e9d149f" isAbstract="true" kind="Synchronizer" name="TaskBindingMap" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005bf87d4317a9206fac5d9439b05a72e5182d49188d71cbef45616bfdf812c76655292dbb2dce6a2db4fe578303ba9edf97c6249f8e31f59e97199012bb0e49f99a4124e400a1461be46eca1b6b62e847d220cf4ca925b2ff7d9d789ecbfa95b07c5fd516fabe695484ee00e87e54291b4b2e423c81ffc6c6f706f9dbf4ddba8d" isAbstract="true" kind="Synchronizer" name="TaskBindingMap" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.mapper">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -8,7 +8,7 @@
   </header>
   <componentInfo>
     <innerComponent localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="60" w="129" x="260" y="370">
+      <visualDescription h="60" w="129" x="248" y="396">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="T"/>
@@ -20,7 +20,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
-      <visualDescription h="60" w="181" x="225" y="489">
+      <visualDescription h="60" w="142" x="217" y="525">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="task_port_type">

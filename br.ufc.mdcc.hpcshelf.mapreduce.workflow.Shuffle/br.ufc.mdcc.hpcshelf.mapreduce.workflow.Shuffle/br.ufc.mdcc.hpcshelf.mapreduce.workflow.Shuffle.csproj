@@ -38,10 +38,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseIMapCollector.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseIReduceFeeder.cs" />
-    <Compile Include="..\src\1.0.0.0\IMapCollector.cs" />
-    <Compile Include="..\src\1.0.0.0\IReduceFeeder.cs" />
+    <Compile Include="..\src\1.0.0.0\IShuffleLeft.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseIShuffleLeft.cs" />
+    <Compile Include="..\src\1.0.0.0\IShuffleRight.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseIShuffleRight.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

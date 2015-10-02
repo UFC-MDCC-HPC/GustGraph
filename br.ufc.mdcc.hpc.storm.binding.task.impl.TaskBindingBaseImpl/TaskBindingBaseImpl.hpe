@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000045dd644c8a8848b41f838156c718dccf77a2ebe9c871de4f444afe1032814b38f3a3562e24811b3f375124abfebf88e07dd79b3a3e926cebfd0f252d6eeedc9f687deccb0a8714092424ece6b40262cc0ce5406b0c77eee86edc3fcc13cf61f166a4f2bc806ba1cdbc4012bbef989e66162d0b226843e30d4dd4002adbf69a9f" isAbstract="false" kind="Synchronizer" name="TaskBindingBaseImpl" packagePath="br.ufc.mdcc.hpc.storm.binding.task.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000192a0366bd7cc76dff96a16f994f3163e3285e6167b7b0ce1db18d8535ee99375fb01f2b62a397b2c9eb8fb7fd577e360d2c52e8e816a2fdb54ea7e346d7aa3625c46a522633b9dc1af762fe62a110b6e73d8d6107b49965173d155011f0b987ab97a295b31316b8b2c136cf7f06783862d7bd67097094045eb998c2bf5272ac" isAbstract="false" kind="Synchronizer" name="TaskBindingBaseImpl" packagePath="br.ufc.mdcc.hpc.storm.binding.task.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>

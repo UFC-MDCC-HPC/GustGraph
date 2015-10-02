@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000029fb612dc1de00b83ecb978027235ec91c4d00d1863c6187ca1aa682054d665a908ad7aae425116d810e08e26bad04f4d42021feeff6f39bc71a022ad59871e6cae777d766d23eb0e13eeb680cc147139d54d0bdd4813a7eb141662af8e8facd5210a0f351f9bb350fb1353d305daaaa1fd68ec8487797fe742bb8d5e4e15193" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000055a99c1a3513ed57e7ac20cbbf4551df7ff47023d9e877946673cf1376965c10d01303a149573a7f5a4203ce8295270d3f5769c95c7ce3b99feb118f91ec16ab4f95d4ed6e1e4a977431e10fe2915eda28028327496e6db03cedf279af9b4184f20af85883677a51a8a54c327e0348739be7cb96e62361003f16bebcbb25e8ad" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -54,7 +54,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="split_channel" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" multiple="false" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" exposed="true">
-      <visualDescription h="71" w="158" x="405" y="290">
+      <visualDescription h="71" w="158" x="401" y="280">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="root">
@@ -92,7 +92,7 @@
         <visualDescription h="37" w="95" x="108" y="69">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###919959197"/>
+        <parameter formFieldId="value_type" varName="X###1747833376"/>
         <unitBounds parallel="false" uRef="set">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -135,7 +135,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="output" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="output_type" exposed="true">
-      <visualDescription h="60" w="100" x="722" y="216">
+      <visualDescription h="60" w="100" x="782" y="149">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
@@ -175,14 +175,14 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="task_read" location="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter/TaskBindingSplitter.hpe" multiple="false" name="TaskBindingSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter" exposed="false">
-      <visualDescription h="48" w="188" x="374" y="161">
+      <visualDescription h="48" w="347" x="300" y="227">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-        <visualDescription h="41" w="110" x="405" y="226">
+        <visualDescription h="41" w="110" x="423" y="170">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###405984002"/>
+        <parameter formFieldId="task_port_type" varName="X###1933285458"/>
         <unitBounds parallel="true" uRef="peer_left">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -191,21 +191,21 @@
         </unitBounds>
       </port>
       <unitBounds parallel="false" uRef="peer_left">
-        <visualDescription h="20" w="20" x="5" y="2"/>
+        <visualDescription h="20" w="20" x="8" y="13"/>
       </unitBounds>
       <unitBounds parallel="true" uRef="peer_right">
-        <visualDescription h="20" w="20" x="28" y="2"/>
+        <visualDescription h="20" w="20" x="300" y="14"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="task_write" location="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter/TaskBindingSplitter.hpe" multiple="false" name="TaskBindingSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter" exposed="false">
-      <visualDescription h="46" w="182" x="766" y="135">
+      <visualDescription h="46" w="375" x="300" y="359">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-        <visualDescription h="42" w="98" x="996" y="99">
+        <visualDescription h="42" w="98" x="436" y="430">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###863304467"/>
+        <parameter formFieldId="task_port_type" varName="X###914717644"/>
         <unitBounds parallel="true" uRef="peer_left">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -214,21 +214,21 @@
         </unitBounds>
       </port>
       <unitBounds parallel="false" uRef="peer_left">
-        <visualDescription h="20" w="20" x="5" y="2"/>
+        <visualDescription h="20" w="20" x="329" y="13"/>
       </unitBounds>
       <unitBounds parallel="true" uRef="peer_right">
-        <visualDescription h="20" w="20" x="28" y="2"/>
+        <visualDescription h="20" w="20" x="10" y="15"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_collect" location="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter/TaskBindingSplitter.hpe" multiple="false" name="TaskBindingSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter" exposed="false">
-      <visualDescription h="60" w="100" x="429" y="488">
+    <innerComponent localRef="task_collect_map" location="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter/TaskBindingSplitter.hpe" multiple="false" name="TaskBindingSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter" exposed="false">
+      <visualDescription h="60" w="159" x="423" y="509">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-        <visualDescription h="41" w="114" x="429" y="579">
+        <visualDescription h="41" w="114" x="443" y="588">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###2092373381"/>
+        <parameter formFieldId="task_port_type" varName="X###2007924965"/>
         <unitBounds parallel="true" uRef="peer_left">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -240,30 +240,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
       <unitBounds parallel="true" uRef="peer_right">
-        <visualDescription h="20" w="20" x="28" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="task_feed" location="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter/TaskBindingSplitter.hpe" multiple="false" name="TaskBindingSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter" exposed="false">
-      <visualDescription h="60" w="100" x="811" y="417">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-        <visualDescription h="40" w="105" x="827" y="520">
-          <color b="255" g="255" r="255"/>
-        </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###1640756496"/>
-        <unitBounds parallel="true" uRef="peer_left">
-          <visualDescription h="20" w="20" x="5" y="2"/>
-        </unitBounds>
-        <unitBounds parallel="true" uRef="peer_right">
-          <visualDescription h="20" w="20" x="28" y="2"/>
-        </unitBounds>
-      </port>
-      <unitBounds parallel="true" uRef="peer_left">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-      <unitBounds parallel="true" uRef="peer_right">
-        <visualDescription h="20" w="20" x="28" y="2"/>
+        <visualDescription h="20" w="20" x="132" y="16"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="writer" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
@@ -334,7 +311,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="C###919959197" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###1747833376" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="513" y="397">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -344,8 +321,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###919959197" varName="X###919959197"/>
-    <innerComponent localRef="C###405984002" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/TaskPortTypeSplitter.hpe" multiple="false" name="TaskPortTypeSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+    <supplyParameter cRef="C###1747833376" varName="X###1747833376"/>
+    <innerComponent localRef="C###1933285458" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/TaskPortTypeSplitter.hpe" multiple="false" name="TaskPortTypeSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
       <visualDescription h="60" w="164" x="389" y="294">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -353,8 +330,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###405984002" varName="X###405984002"/>
-    <innerComponent localRef="C###863304467" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/TaskPortTypeSplitter.hpe" multiple="false" name="TaskPortTypeSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+    <supplyParameter cRef="C###1933285458" varName="X###1933285458"/>
+    <innerComponent localRef="C###914717644" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/TaskPortTypeSplitter.hpe" multiple="false" name="TaskPortTypeSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
       <visualDescription h="60" w="164" x="389" y="294">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -362,8 +339,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###863304467" varName="X###863304467"/>
-    <innerComponent localRef="C###2092373381" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/TaskPortTypeSplitter.hpe" multiple="false" name="TaskPortTypeSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+    <supplyParameter cRef="C###914717644" varName="X###914717644"/>
+    <innerComponent localRef="C###2007924965" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/TaskPortTypeSplitter.hpe" multiple="false" name="TaskPortTypeSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
       <visualDescription h="60" w="164" x="389" y="294">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -371,34 +348,28 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###2092373381" varName="X###2092373381"/>
-    <innerComponent localRef="C###1640756496" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/TaskPortTypeSplitter.hpe" multiple="false" name="TaskPortTypeSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
-      <visualDescription h="60" w="164" x="389" y="294">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="true" uRef="task_port_type">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <supplyParameter cRef="C###1640756496" varName="X###1640756496"/>
+    <supplyParameter cRef="C###2007924965" varName="X###2007924965"/>
     <innerRenaming cNewName="input" cOldName="input_type" cRef="split_function"/>
-    <innerRenaming cNewName="task_port_write" cOldName="task_port" cRef="task_write"/>
     <innerRenaming cNewName="output_set" cOldName="output_type" cRef="split_function"/>
+    <innerRenaming cNewName="task_port_collect" cOldName="task_port" cRef="task_collect_map"/>
     <innerRenaming cNewName="task_port_read" cOldName="task_port" cRef="task_read"/>
-    <innerRenaming cNewName="task_port_feed" cOldName="task_port" cRef="task_feed"/>
-    <innerRenaming cNewName="task_port_collect" cOldName="task_port" cRef="task_collect"/>
+    <innerRenaming cNewName="task_port_write" cOldName="task_port" cRef="task_write"/>
     <interface iRef="IReduceCollector" nArgs="1">
       <slice isRef="split_channel">
         <originRef cRef="split_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="115" y="12"/>
       </slice>
-      <slice isRef="task_collect">
-        <originRef cRef="task_collect" iRef="ITaskBindingSplitter"/>
-        <visualDescription h="10" w="10" x="112" y="25"/>
-      </slice>
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IClientBase"/>
         <visualDescription h="10" w="10" x="28" y="20"/>
+      </slice>
+      <slice isRef="task_write">
+        <originRef cRef="task_write" iRef="ITaskBindingSplitter"/>
+        <visualDescription h="10" w="10" x="117" y="23"/>
+      </slice>
+      <slice isRef="task_collect_map">
+        <originRef cRef="task_collect_map" iRef="ITaskBindingSplitter"/>
+        <visualDescription h="10" w="10" x="96" y="17"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter&#xA;{&#xA;&#x9;public interface BaseIReduceCollector&lt;C> : ISynchronizerKind &#xA;&#x9;&#x9;where C:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;&#x9;IChannel Split_channel {get;}&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPorttypeSplitter> Task_port_collect {get;}&#xA;&#x9;}&#xA;}" name="BaseIReduceCollector.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/BaseIReduceCollector.dll" versionId="1.0.0.0">
@@ -412,16 +383,20 @@
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/BaseIReduceCollector.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="137" x="255" y="344">
+      <visualDescription h="40" w="137" x="24" y="361">
         <color b="0" g="0" r="255"/>
       </visualDescription>
       <port name="split_channel">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="split_channel" sRef="split_channel"/>
       </port>
+      <port name="task_port_write">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_port" sRef="task_write"/>
+      </port>
       <port name="task_port_collect">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_port" sRef="task_collect"/>
+        <slice pRef="task_port" sRef="task_collect_map"/>
       </port>
       <parameter iname="IEnvironmentPortTypeMultiplePartner" order="0" parid="splitter_client_port_type" uname="environment_port_type" varid="C"/>
       <action id="main">
@@ -433,13 +408,17 @@
         <originRef cRef="split_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="9" y="13"/>
       </slice>
-      <slice isRef="task_feed">
-        <originRef cRef="task_feed" iRef="ITaskBindingSplitter"/>
-        <visualDescription h="10" w="10" x="157" y="11"/>
-      </slice>
       <slice isRef="feed_pairs">
         <originRef cRef="feed_pairs" iRef="IServerBase"/>
         <visualDescription h="10" w="10" x="71" y="28"/>
+      </slice>
+      <slice isRef="task_read">
+        <originRef cRef="task_read" iRef="ITaskBindingSplitter"/>
+        <visualDescription h="10" w="10" x="18" y="8"/>
+      </slice>
+      <slice isRef="task_collect_map">
+        <originRef cRef="task_collect_map" iRef="ITaskBindingSplitter"/>
+        <visualDescription h="10" w="10" x="24" y="24"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter&#xA;{&#xA;&#x9;public interface BaseIMapFeeder&lt;S> : ISynchronizerKind &#xA;&#x9;&#x9;where S:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;&#x9;IChannel Split_channel {get;}&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPorttypeSplitter> Task_port_feed {get;}&#xA;&#x9;}&#xA;}" name="BaseIMapFeeder.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/BaseIMapFeeder.dll" versionId="1.0.0.0">
@@ -453,16 +432,20 @@
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/BaseIMapFeeder.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="182" x="574" y="344">
+      <visualDescription h="40" w="182" x="834" y="336">
         <color b="0" g="0" r="255"/>
       </visualDescription>
       <port name="split_channel">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="split_channel" sRef="split_channel"/>
       </port>
-      <port name="task_port_feed">
+      <port name="task_port_read">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_port" sRef="task_feed"/>
+        <slice pRef="task_port" sRef="task_read"/>
+      </port>
+      <port name="task_port_collect">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_port" sRef="task_collect_map"/>
       </port>
       <parameter iname="IEnvironmentPortTypeMultiplePartner" order="0" parid="splitter_server_port_type" uname="environment_port_type" varid="S"/>
       <action id="main">
@@ -482,13 +465,13 @@
         <originRef cRef="bin_function" iRef="IPartitionFunction"/>
         <visualDescription h="10" w="10" x="24" y="19"/>
       </slice>
-      <slice isRef="task_read">
-        <originRef cRef="task_read" iRef="ITaskBindingSplitter"/>
-        <visualDescription h="10" w="10" x="112" y="11"/>
-      </slice>
       <slice isRef="reader">
         <originRef cRef="reader" iRef="IClientBase"/>
         <visualDescription h="10" w="10" x="100" y="2"/>
+      </slice>
+      <slice isRef="task_read">
+        <originRef cRef="task_read" iRef="ITaskBindingSplitter"/>
+        <visualDescription h="10" w="10" x="85" y="24"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.common.Set;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter&#xA;{&#xA;&#x9;public interface BaseIReadInput&lt;SF, IMK, IMV, IN, BF, DSC> : ISynchronizerKind &#xA;&#x9;&#x9;where SF:ISplitFunction&lt;IMK, IMV, IN>&#xA;&#x9;&#x9;where IMK:IData&#xA;&#x9;&#x9;where IMV:IData&#xA;&#x9;&#x9;where IN:IData&#xA;&#x9;&#x9;where BF:IPartitionFunction&lt;IMK>&#xA;&#x9;&#x9;where DSC:IEnvironmentPortTypeSinglePartner&#xA;&#x9;{&#xA;&#x9;&#x9;IChannel Split_channel {get;}&#xA;&#x9;&#x9;IN Input {get;}&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPorttypeSplitter> Task_port_read {get;}&#xA;&#x9;}&#xA;}" name="BaseIReadInput.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/BaseIReadInput.dll" versionId="1.0.0.0">
@@ -560,16 +543,16 @@
         <originRef cRef="split_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="9" y="23"/>
       </slice>
-      <slice isRef="task_write">
-        <originRef cRef="task_write" iRef="ITaskBindingSplitter"/>
-        <visualDescription h="10" w="10" x="101" y="12"/>
-      </slice>
       <slice isRef="writer">
         <originRef cRef="writer" iRef="IClientBase"/>
         <visualDescription h="10" w="10" x="4" y="2"/>
       </slice>
+      <slice isRef="task_write">
+        <originRef cRef="task_write" iRef="ITaskBindingSplitter"/>
+        <visualDescription h="10" w="10" x="77" y="24"/>
+      </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter&#xA;{&#xA;&#x9;public interface BaseIWriteOutput&lt;OUT, DSC> : ISynchronizerKind &#xA;&#x9;&#x9;where OUT:IData&#xA;&#x9;&#x9;where DSC:IEnvironmentPortTypeSinglePartner&#xA;&#x9;{&#xA;&#x9;&#x9;IChannel Split_channel {get;}&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPorttypeSplitter> Task_port_write {get;}&#xA;&#x9;&#x9;OUT Output {get;}&#xA;&#x9;}&#xA;}" name="BaseIWriteOutput.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/BaseIWriteOutput.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter&#xA;{&#xA;&#x9;public interface BaseIWriteOutput&lt;OUT, DWC> : ISynchronizerKind &#xA;&#x9;&#x9;where OUT:IData&#xA;&#x9;&#x9;where DWC:IEnvironmentPortTypeSinglePartner&#xA;&#x9;{&#xA;&#x9;&#x9;IChannel Split_channel {get;}&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPorttypeSplitter> Task_port_write {get;}&#xA;&#x9;&#x9;OUT Output {get;}&#xA;&#x9;}&#xA;}" name="BaseIWriteOutput.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/BaseIWriteOutput.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/bin/1.0.0.0/ITaskPorttypeSplitter.dll</dependency>
@@ -577,7 +560,7 @@
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter&#xA;{&#xA;&#x9;public interface IWriteOutput&lt;OUT, DSC> : BaseIWriteOutput&lt;OUT, DSC>&#xA;&#x9;&#x9;where OUT:IData&#xA;&#x9;&#x9;where DSC:IEnvironmentPortTypeSinglePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IWriteOutput.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/IWriteOutput.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter&#xA;{&#xA;&#x9;public interface IWriteOutput&lt;OUT, DWC> : BaseIWriteOutput&lt;OUT, DWC>&#xA;&#x9;&#x9;where OUT:IData&#xA;&#x9;&#x9;where DWC:IEnvironmentPortTypeSinglePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IWriteOutput.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/IWriteOutput.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter/bin/1.0.0.0/BaseIWriteOutput.dll</dependency>
@@ -611,12 +594,19 @@
       <slices cRef="task_port_collect" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_port_collect" transitive="true">
         <visualDescription h="10" w="10" x="93" y="30"/>
       </slices>
-      <slices cRef="task_collect" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_collect" transitive="false">
-        <visualDescription h="10" w="10" x="112" y="25"/>
-        <port>task_port_collect</port>
+      <slices cRef="task_port_write" inner_replica="0" slice_replica="0" uRef="peer_right" sliceName="task_port_write" transitive="true">
+        <visualDescription h="10" w="10" x="12" y="21"/>
       </slices>
       <slices cRef="collect_pairs" inner_replica="0" slice_replica="0" uRef="client" sliceName="collect_pairs" transitive="false">
         <visualDescription h="10" w="10" x="28" y="20"/>
+      </slices>
+      <slices cRef="task_write" inner_replica="0" slice_replica="0" uRef="peer_right" sliceName="task_write" transitive="false">
+        <visualDescription h="10" w="10" x="89" y="9"/>
+        <port>task_port_write</port>
+      </slices>
+      <slices cRef="task_collect_map" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_collect_map" transitive="false">
+        <visualDescription h="10" w="10" x="96" y="17"/>
+        <port>task_port_collect</port>
       </slices>
       <visualDescription h="40" w="137" x="255" y="424"/>
     </unit>
@@ -624,15 +614,22 @@
       <slices cRef="split_channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="split_channel" transitive="false">
         <visualDescription h="10" w="10" x="9" y="13"/>
       </slices>
-      <slices cRef="task_port_feed" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_port_feed" transitive="true">
-        <visualDescription h="10" w="10" x="93" y="30"/>
+      <slices cRef="task_port_collect" inner_replica="0" slice_replica="0" uRef="peer_right" sliceName="task_port_collect" transitive="true">
+        <visualDescription h="10" w="10" x="12" y="21"/>
       </slices>
-      <slices cRef="task_feed" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_feed" transitive="false">
-        <visualDescription h="10" w="10" x="157" y="11"/>
-        <port>task_port_feed</port>
+      <slices cRef="task_port_read" inner_replica="0" slice_replica="0" uRef="peer_right" sliceName="task_port_read" transitive="true">
+        <visualDescription h="10" w="10" x="12" y="21"/>
       </slices>
       <slices cRef="feed_pairs" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed_pairs" transitive="false">
         <visualDescription h="10" w="10" x="71" y="28"/>
+      </slices>
+      <slices cRef="task_read" inner_replica="0" slice_replica="0" uRef="peer_right" sliceName="task_read" transitive="false">
+        <visualDescription h="10" w="10" x="33" y="8"/>
+        <port>task_port_read</port>
+      </slices>
+      <slices cRef="task_collect_map" inner_replica="0" slice_replica="0" uRef="peer_right" sliceName="task_collect_map" transitive="false">
+        <visualDescription h="10" w="10" x="24" y="24"/>
+        <port>task_port_collect</port>
       </slices>
       <visualDescription h="40" w="182" x="574" y="424"/>
     </unit>
@@ -665,12 +662,12 @@
         <port>output_key</port>
         <port>input_key</port>
       </slices>
-      <slices cRef="task_read" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_read" transitive="false">
-        <visualDescription h="10" w="10" x="112" y="11"/>
-        <port>task_port_read</port>
-      </slices>
       <slices cRef="reader" inner_replica="0" slice_replica="0" uRef="client" sliceName="reader" transitive="false">
         <visualDescription h="10" w="10" x="100" y="2"/>
+      </slices>
+      <slices cRef="task_read" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_read" transitive="false">
+        <visualDescription h="10" w="10" x="85" y="24"/>
+        <port>task_port_read</port>
       </slices>
       <visualDescription h="40" w="127" x="222" y="156"/>
     </unit>
@@ -684,12 +681,12 @@
       <slices cRef="task_port_write" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_port_write" transitive="true">
         <visualDescription h="10" w="10" x="93" y="30"/>
       </slices>
-      <slices cRef="task_write" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_write" transitive="false">
-        <visualDescription h="10" w="10" x="101" y="12"/>
-        <port>task_port_write</port>
-      </slices>
       <slices cRef="writer" inner_replica="0" slice_replica="0" uRef="client" sliceName="writer" transitive="false">
         <visualDescription h="10" w="10" x="4" y="2"/>
+      </slices>
+      <slices cRef="task_write" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_write" transitive="false">
+        <visualDescription h="10" w="10" x="77" y="24"/>
+        <port>task_port_write</port>
       </slices>
       <visualDescription h="40" w="120" x="601" y="153"/>
     </unit>

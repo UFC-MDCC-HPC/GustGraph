@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cd5c7c33e377606fd07660707cf085262054608a3a45e29c339e59fc7b63e43d48c1d701c5d34288fad2b6e63e10822646cd2ff22185048fe297ea985d90031aa5c94ac61a0b6238b1ddcd9497628b93405acf0de3895f105b0676a1931c7b895840a5a50c9a1de600371a21f9fc00bcf6694778ff8928287117856db0db2fa3" isAbstract="true" kind="Qualifier" name="TaskPortTypeExample" packagePath="br.ufc.mdcc.hpc.storm.binding.task">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000045a8d643712ef01bdac104bb24af3880520907f78a039fd23f379f44a4a29d074417c8425e465cf370c477b23798f997a26e7c51f5a92eec6c1cb7b0be30e2f9414f2b6b7c54e96932dedd0ea770558bdd3fe1fa130fff00203b585b16f2cb4c4ed2170e159025c899eb76be91e558a1afdfd3895b1c2b95f48e2524a5f3c8d5" isAbstract="true" kind="Qualifier" name="TaskPortTypeExample" packagePath="br.ufc.mdcc.hpc.storm.binding.task">
     <baseType>
       <extensionType>
         <extends>true</extends>
