@@ -53,6 +53,14 @@
 /home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Reducer
 /home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffle
 /home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Splitter
+/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.Binding
+/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestBindingApp
+/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal
+/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal1
+/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal2
+/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal3
+/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal4
+/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternalApp
 /home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 /home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 /home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpc.storm.binding.environment.impl.BindingMbyNIntraExampleImpl
@@ -72,3 +80,11 @@
 /home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ReducerImpl
 /home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.ShuffleImpl
 /home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.impl.SplitterImpl
+/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal1Impl
+/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal2Impl
+/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal3Impl
+/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal4Impl
+/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternalAppImpl
+/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.impl.BindingImpl
+/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.impl.TestBindingAppImpl
+/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.impl.TestTaskBindingInternalImpl
