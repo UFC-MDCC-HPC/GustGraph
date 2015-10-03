@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000093a5f79db5954f0d46348038c4c3277b51c559f7e19a71f82b7ce432dadd0f5cb2dc5fc84360b3445aac48286a660d58df853e20e9d74b7033f4c4bc20cf5b6b01b99d4a705b97f7c6af115b5deadf7c97371e250fd9000cad1d11c692b7399c8de2b289cdbab441a7dadf78acaedd6eacc418380a3f75a0b1326b94993df6af" isAbstract="true" kind="Application" name="TestBindingApp" packagePath="teste">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="binding" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" multiple="false" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" exposed="false">
+      <visualDescription h="63" w="100" x="275" y="211">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="root">
+        <visualDescription h="20" w="20" x="44" y="5"/>
+      </unitBounds>
+      <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
+        <visualDescription h="20" w="20" x="17" y="37"/>
+      </unitBounds>
+      <unitBounds parallel="true" slice_replica="1" unit_replica="0" uRef="peer">
+        <visualDescription h="20" w="20" x="51" y="35"/>
+      </unitBounds>
+    </innerComponent>
+    <interface iRef="ILeftUnit" nArgs="0">
+      <slice isRef="binding">
+        <originRef cRef="binding" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="52" y="21"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace teste.TestBindingApp&#xA;{&#xA;&#x9;public interface BaseILeftUnit : IApplicationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseILeftUnit.cs" srcType="base" uri="teste.TestBindingApp/bin/1.0.0.0/BaseILeftUnit.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace teste.TestBindingApp&#xA;{&#xA;&#x9;public interface ILeftUnit : BaseILeftUnit&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ILeftUnit.cs" srcType="user" uri="teste.TestBindingApp/bin/1.0.0.0/ILeftUnit.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/teste.TestBindingApp/bin/1.0.0.0/BaseILeftUnit.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="66" y="137">
+        <color b="203" g="192" r="255"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IRightUnit" nArgs="0">
+      <slice isRef="binding">
+        <originRef cRef="binding" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="0" y="29"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace teste.TestBindingApp&#xA;{&#xA;&#x9;public interface BaseIRightUnit : IApplicationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIRightUnit.cs" srcType="base" uri="teste.TestBindingApp/bin/1.0.0.0/BaseIRightUnit.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace teste.TestBindingApp&#xA;{&#xA;&#x9;public interface IRightUnit : BaseIRightUnit&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IRightUnit.cs" srcType="user" uri="teste.TestBindingApp/bin/1.0.0.0/IRightUnit.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/teste.TestBindingApp/bin/1.0.0.0/BaseIRightUnit.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="431" y="127">
+        <color b="230" g="216" r="173"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ILeftUnit" multiple="true" private="false" replica="0" uRef="left_unit" visibleInterface="true">
+      <slices cRef="binding" inner_replica="0" slice_replica="0" uRef="peer" sliceName="binding" transitive="false">
+        <visualDescription h="10" w="10" x="52" y="21"/>
+      </slices>
+      <visualDescription h="40" w="80" x="66" y="267"/>
+    </unit>
+    <unit facet="1" iRef="IRightUnit" multiple="true" private="false" replica="0" uRef="right_unit" visibleInterface="true">
+      <slices cRef="binding" inner_replica="0" slice_replica="1" uRef="peer" sliceName="binding" transitive="false">
+        <visualDescription h="10" w="10" x="0" y="29"/>
+      </slices>
+      <visualDescription h="40" w="80" x="438" y="253"/>
+    </unit>
+  </componentInfo>
+</component:component>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B9BFF4AB-1DEF-4BBF-9BFA-3F069D3F30E5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>teste.TestTaskBindingInternal4</RootNamespace>
+    <AssemblyName>teste.TestTaskBindingInternal4</AssemblyName>
+    <BaseDirectory>..\src\1.0.0.0</BaseDirectory>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="DGAC">
+      <HintPath>..\..\HPC-Shelf-MapReduce\lib\DGAC.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\src\1.0.0.0\IRightUnitD.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseIRightUnitD.cs" />
+    <Compile Include="..\src\1.0.0.0\ILeftUnitD.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseILeftUnitD.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase\br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase\br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase.csproj">
+      <Project>{816B876F-E438-4F9E-85D8-B98BCCE57044}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample\br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample\br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample.csproj">
+      <Project>{B3AC52F9-564D-47BE-831E-B0CC18F7A397}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskPortTypeExample</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

@@ -25,31 +25,12 @@ bin
 obj
 local_files
 to_deploy.txt2
+to_deploy.txt3
 .metadata
 
 # begin temp
 Teste.cs
 Program.cs
-teste.Binding
-teste.TestBindingApp
-teste.TestTaskBindingInternal
-teste.impl.BindingImpl
-teste.impl.TestBindingAppImpl
-teste.impl.TestTaskBindingInternalImpl
-
-teste.TestTaskBindingInternal1
-teste.TestTaskBindingInternal1Impl
-teste.TestTaskBindingInternal2
-teste.TestTaskBindingInternal2Impl
-teste.TestTaskBindingInternalApp
-teste.TestTaskBindingInternalAppImpl
-teste.TestTaskBindingInternal3
-teste.TestTaskBindingInternal3Impl
-teste.TestTaskBindingInternal4
-teste.TestTaskBindingInternal4Impl
-
-
-commit.sh
 commit
 #end temp
 

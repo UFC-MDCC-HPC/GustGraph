@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/cenez/hpe/cenez/cache" default="all" name="TestTaskBindingInternal3">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="TestTaskBindingInternal3-1.0.0.0">
+    <ifnot targetexists="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal3/bin/1.0.0.0">
+      <mkdir dir="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal3/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal3/TestTaskBindingInternal3.snk" optimize="true" output="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal3/bin/1.0.0.0/BaseILeftUnit.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal3/src/1.0.0.0/BaseILeftUnit.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/bin/1.0.0.0/ITaskPorttypePhases.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal3/TestTaskBindingInternal3.snk" optimize="true" output="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal3/bin/1.0.0.0/ILeftUnit.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal3/src/1.0.0.0/ILeftUnit.cs"/>
+      </sources>
+      <references>
+        <include name="/teste.TestTaskBindingInternal3/bin/1.0.0.0/BaseILeftUnit.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal3/TestTaskBindingInternal3.snk" optimize="true" output="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal3/bin/1.0.0.0/BaseIRightUnit.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal3/src/1.0.0.0/BaseIRightUnit.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/bin/1.0.0.0/ITaskPorttypePhases.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal3/TestTaskBindingInternal3.snk" optimize="true" output="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal3/bin/1.0.0.0/IRightUnit.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gitsource/HPC-Shelf-MapReduce/teste.TestTaskBindingInternal3/src/1.0.0.0/IRightUnit.cs"/>
+      </sources>
+      <references>
+        <include name="/teste.TestTaskBindingInternal3/bin/1.0.0.0/BaseIRightUnit.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="TestTaskBindingInternal3-1.0.0.0" name="all"/>
+</project>

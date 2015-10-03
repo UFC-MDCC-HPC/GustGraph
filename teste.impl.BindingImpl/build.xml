@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/heron/hpe/heron/cache" default="all" name="BindingImpl">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="BindingImpl-1.0.0.0">
+    <ifnot targetexists="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/bin/1.0.0.0">
+      <mkdir dir="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/BindingImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/bin/1.0.0.0/BaseIRootImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/src/1.0.0.0/BaseIRootImpl.cs"/>
+      </sources>
+      <references>
+        <include name="teste.Binding/bin/1.0.0.0/BaseIRoot.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/BindingImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/bin/1.0.0.0/IRootImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/src/1.0.0.0/IRootImpl.cs"/>
+      </sources>
+      <references>
+        <include name="/teste.impl.BindingImpl/bin/1.0.0.0/BaseIRootImpl.dll"/>
+        <include name="teste.Binding/bin/1.0.0.0/IRoot.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/BindingImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/bin/1.0.0.0/BaseIPeerLeftImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/src/1.0.0.0/BaseIPeerLeftImpl.cs"/>
+      </sources>
+      <references>
+        <include name="teste.Binding/bin/1.0.0.0/BaseIPeerLeft.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/BindingImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/bin/1.0.0.0/IPeerLeftImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/src/1.0.0.0/IPeerLeftImpl.cs"/>
+      </sources>
+      <references>
+        <include name="/teste.impl.BindingImpl/bin/1.0.0.0/BaseIPeerLeftImpl.dll"/>
+        <include name="teste.Binding/bin/1.0.0.0/IPeerLeft.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/BindingImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/bin/1.0.0.0/BaseIPeerRightImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/src/1.0.0.0/BaseIPeerRightImpl.cs"/>
+      </sources>
+      <references>
+        <include name="teste.Binding/bin/1.0.0.0/BaseIPeerRight.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/BindingImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/bin/1.0.0.0/IPeerRightImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.BindingImpl/src/1.0.0.0/IPeerRightImpl.cs"/>
+      </sources>
+      <references>
+        <include name="/teste.impl.BindingImpl/bin/1.0.0.0/BaseIPeerRightImpl.dll"/>
+        <include name="teste.Binding/bin/1.0.0.0/IPeerRight.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="BindingImpl-1.0.0.0" name="all"/>
+</project>

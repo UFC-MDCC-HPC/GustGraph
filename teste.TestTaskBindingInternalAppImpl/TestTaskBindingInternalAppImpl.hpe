@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ad4034554000719044d817367f7f4d5d59db321a81b0546e0302f13636414b3d16b67e0f34e0f458994a7a8771b0add0594329356908f4289fec5626bb171b249091f0934cd6b759f8ec6136ae0106b332569f3cdb164e2093fd32ff481ef6a103c416a3a1c6e71d966247754e3d824d8ef6b14d47366330c3fd5592b629a4be" isAbstract="false" kind="Application" name="TestTaskBindingInternalAppImpl" packagePath="teste">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ffe6c22316d84d0855bcdd0f22b666e4ec9e4a379b981d251668000e09e2377f6d191317af5a23406794ebfe7f4c33f90fa816185cc8b93d4eddac44542358ed70e23e3ce13dca6c7bdb3337797ea5f25572e3db995d7499ebd8809489522a6c929b0411618292c21f5c6768a1536d6caf88dc4439b9c898c3fb0c84548079a9" localRef="base" location="teste.TestTaskBindingInternalApp/TestTaskBindingInternalApp.hpe" name="TestTaskBindingInternalApp" package="teste" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="232" y="525">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="true" uRef="left_unit_app">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="right_unit_app">
+          <visualDescription h="20" w="20" x="28" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="ILeftUnitAppImpl" nArgs="0">
+      <slice isRef="internal3">
+        <originRef cRef="internal3" iRef="ILeftUnit"/>
+        <visualDescription h="10" w="10" x="21" y="26"/>
+      </slice>
+      <slice isRef="internal4">
+        <originRef cRef="internal4" iRef="ILeftUnitD"/>
+        <visualDescription h="10" w="10" x="3" y="26"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using teste.TestTaskBindingInternal4;&#xA;using teste.TestTaskBindingInternal3;&#xA;using teste.TestTaskBindingInternalApp;&#xA;&#xA;namespace teste.TestTaskBindingInternalAppImpl &#xA;{&#xA;&#x9;public abstract class BaseILeftUnitAppImpl: Application, BaseILeftUnitApp&#xA;&#x9;{&#xA;&#x9;&#x9;private ILeftUnitD internal4 = null;&#xA;&#xA;&#x9;&#x9;protected ILeftUnitD Internal4&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.internal4 == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.internal4 = (ILeftUnitD) Services.getPort(&quot;internal4&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.internal4;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ILeftUnit internal3 = null;&#xA;&#xA;&#x9;&#x9;protected ILeftUnit Internal3&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.internal3 == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.internal3 = (ILeftUnit) Services.getPort(&quot;internal3&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.internal3;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseILeftUnitAppImpl.cs" srcType="base" uri="teste.TestTaskBindingInternalAppImpl/bin/1.0.0.0/BaseILeftUnitAppImpl.dll" versionId="1.0.0.0">
+          <dependency>teste.TestTaskBindingInternal4/bin/1.0.0.0/ILeftUnitD.dll</dependency>
+          <dependency>teste.TestTaskBindingInternal3/bin/1.0.0.0/ILeftUnit.dll</dependency>
+          <dependency>teste.TestTaskBindingInternalApp/bin/1.0.0.0/BaseILeftUnitApp.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using teste.TestTaskBindingInternalApp;&#xA;&#xA;namespace teste.TestTaskBindingInternalAppImpl&#xA;{&#xA;&#x9;public class ILeftUnitAppImpl : BaseILeftUnitAppImpl, ILeftUnitApp&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Internal3.go ();&#xA;&#x9;&#x9;&#x9;Internal4.go ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="ILeftUnitAppImpl.cs" srcType="user" uri="teste.TestTaskBindingInternalAppImpl/bin/1.0.0.0/ILeftUnitAppImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/teste.TestTaskBindingInternalAppImpl/bin/1.0.0.0/BaseILeftUnitAppImpl.dll</dependency>
+          <dependency>teste.TestTaskBindingInternalApp/bin/1.0.0.0/ILeftUnitApp.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="130" x="86" y="362">
+        <color b="144" g="238" r="144"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IRightUnitAppImpl" nArgs="0">
+      <slice isRef="internal3">
+        <originRef cRef="internal3" iRef="IRightUnit"/>
+        <visualDescription h="10" w="10" x="12" y="24"/>
+      </slice>
+      <slice isRef="internal4">
+        <originRef cRef="internal4" iRef="IRightUnitD"/>
+        <visualDescription h="10" w="10" x="82" y="27"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using teste.TestTaskBindingInternal3;&#xA;using teste.TestTaskBindingInternal4;&#xA;using teste.TestTaskBindingInternalApp;&#xA;&#xA;namespace teste.TestTaskBindingInternalAppImpl &#xA;{&#xA;&#x9;public abstract class BaseIRightUnitAppImpl: Application, BaseIRightUnitApp&#xA;&#x9;{&#xA;&#x9;&#x9;private IRightUnit internal3 = null;&#xA;&#xA;&#x9;&#x9;protected IRightUnit Internal3&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.internal3 == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.internal3 = (IRightUnit) Services.getPort(&quot;internal3&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.internal3;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IRightUnitD internal4 = null;&#xA;&#xA;&#x9;&#x9;protected IRightUnitD Internal4&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.internal4 == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.internal4 = (IRightUnitD) Services.getPort(&quot;internal4&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.internal4;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIRightUnitAppImpl.cs" srcType="base" uri="teste.TestTaskBindingInternalAppImpl/bin/1.0.0.0/BaseIRightUnitAppImpl.dll" versionId="1.0.0.0">
+          <dependency>teste.TestTaskBindingInternal3/bin/1.0.0.0/IRightUnit.dll</dependency>
+          <dependency>teste.TestTaskBindingInternal4/bin/1.0.0.0/IRightUnitD.dll</dependency>
+          <dependency>teste.TestTaskBindingInternalApp/bin/1.0.0.0/BaseIRightUnitApp.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using teste.TestTaskBindingInternalApp;&#xA;&#xA;namespace teste.TestTaskBindingInternalAppImpl&#xA;{&#xA;&#x9;public class IRightUnitAppImpl : BaseIRightUnitAppImpl, IRightUnitApp&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Internal3.go ();&#xA;&#x9;&#x9;&#x9;Internal4.go ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IRightUnitAppImpl.cs" srcType="user" uri="teste.TestTaskBindingInternalAppImpl/bin/1.0.0.0/IRightUnitAppImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/teste.TestTaskBindingInternalAppImpl/bin/1.0.0.0/BaseIRightUnitAppImpl.dll</dependency>
+          <dependency>teste.TestTaskBindingInternalApp/bin/1.0.0.0/IRightUnitApp.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="145" x="375" y="357">
+        <color b="144" g="238" r="144"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ILeftUnitAppImpl" multiple="true" private="false" replica="0" uRef="left_unit_app" visibleInterface="true">
+      <super cRef="base" uRef="left_unit_app"/>
+      <visualDescription h="40" w="130" x="78" y="434"/>
+    </unit>
+    <unit facet="0" iRef="IRightUnitAppImpl" multiple="true" private="false" replica="0" uRef="right_unit_app" visibleInterface="true">
+      <super cRef="base" uRef="right_unit_app"/>
+      <visualDescription h="40" w="145" x="340" y="453"/>
+    </unit>
+  </componentInfo>
+</component:component>

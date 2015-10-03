@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/heron/hpe/heron/cache" default="all" name="TestBindingAppImpl">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="TestBindingAppImpl-1.0.0.0">
+    <ifnot targetexists="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.TestBindingAppImpl/bin/1.0.0.0">
+      <mkdir dir="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.TestBindingAppImpl/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.TestBindingAppImpl/TestBindingAppImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.TestBindingAppImpl/bin/1.0.0.0/BaseILeftUnitImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.TestBindingAppImpl/src/1.0.0.0/BaseILeftUnitImpl.cs"/>
+      </sources>
+      <references>
+        <include name="teste.Binding/bin/1.0.0.0/IPeerLeft.dll"/>
+        <include name="teste.TestBindingApp/bin/1.0.0.0/BaseILeftUnit.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.TestBindingAppImpl/TestBindingAppImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.TestBindingAppImpl/bin/1.0.0.0/ILeftUnitImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.TestBindingAppImpl/src/1.0.0.0/ILeftUnitImpl.cs"/>
+      </sources>
+      <references>
+        <include name="/teste.impl.TestBindingAppImpl/bin/1.0.0.0/BaseILeftUnitImpl.dll"/>
+        <include name="teste.TestBindingApp/bin/1.0.0.0/ILeftUnit.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.TestBindingAppImpl/TestBindingAppImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.TestBindingAppImpl/bin/1.0.0.0/BaseIRightUnitImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.TestBindingAppImpl/src/1.0.0.0/BaseIRightUnitImpl.cs"/>
+      </sources>
+      <references>
+        <include name="teste.Binding/bin/1.0.0.0/IPeerRight.dll"/>
+        <include name="teste.TestBindingApp/bin/1.0.0.0/BaseIRightUnit.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.TestBindingAppImpl/TestBindingAppImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.TestBindingAppImpl/bin/1.0.0.0/IRightUnitImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/teste.impl.TestBindingAppImpl/src/1.0.0.0/IRightUnitImpl.cs"/>
+      </sources>
+      <references>
+        <include name="/teste.impl.TestBindingAppImpl/bin/1.0.0.0/BaseIRightUnitImpl.dll"/>
+        <include name="teste.TestBindingApp/bin/1.0.0.0/IRightUnit.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="TestBindingAppImpl-1.0.0.0" name="all"/>
+</project>
