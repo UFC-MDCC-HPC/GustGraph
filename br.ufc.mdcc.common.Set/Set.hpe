@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002900e6edc26f3d2788f781e073096761cd65f795dd89fbfedf1273bb086404e3f7490283edec508678385be54297386ab150b85d4642024a38c2a283a74b0dab747febca8d2fe496f9e1b470fac6f0ac72e6b1cedcc13fbc799c35dd9e0f91654c5f415b656477857540db173066010f26ff8f3d69229fa3f0a6a0252ac323a2" isAbstract="true" kind="Data" name="Set" packagePath="br.ufc.mdcc.common">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009344522cf374a2f9e7f9c8d3e50a076974d4f2e7e6d7ffb0f8c225c89f5538221b2d873bbedb4ab76e524861b4ff0a3b3283da3b318205d4947e298215176808d73b771c7f544a2cb07615466fe0dca08ca9b8e00510ddfbc0cd8b3d1ce8f579a9de0e744aa4ce02a76b28a5560088a6d6c027500a23721e33a7c1b53055a0da" isAbstract="true" kind="Data" name="Set" packagePath="br.ufc.mdcc.common">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000372d83aaa123858a97a353cd956eea59b526f3524a0b69ca51d23c6b5e50c14721ee4166d87e7e9f451ee95352730aef34e9cb849e6b5ea13671a9b755f9613ba945240437226e4e67762b01435f8463578849f4af6d6de0f843be1f2709a38edbeeb542483818886b9fcbf40c442db2d79060d42dd605ee7983b06ebf973d85" localRef="base" location="br.ufc.mdcc.common.Data/Data.hpe" name="Data" package="br.ufc.mdcc.common" version="1.0.0.0">
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000013c5d956e8ca7627c1fe8513efbb0bec405dff82347769461c6ae03bfa16c10e2d46b08e13add22a3b1c2fb521aa3167f6131ba6e14496e7958c784dd4b8d168fa8fb30602fe38ea801a0431f68c465cacba41bf2248242d7ab3062f69f7a6f3472bf7b8ea2fc28b9cf97410164ea497517d49779c2c5932dfaed53a4b479d80" localRef="base" location="br.ufc.mdcc.common.Data/Data.hpe" name="Data" package="br.ufc.mdcc.common" version="1.0.0.0">
         <visualDescription h="60" w="100" x="361" y="345">
           <color b="255" g="255" r="255"/>
         </visualDescription>

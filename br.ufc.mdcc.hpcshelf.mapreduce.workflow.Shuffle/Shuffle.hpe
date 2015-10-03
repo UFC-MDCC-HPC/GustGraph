@@ -91,7 +91,7 @@
         <visualDescription h="60" w="127" x="276" y="464">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###1282961523"/>
+        <parameter formFieldId="task_port_type" varName="X###815010076"/>
         <unitBounds parallel="true" uRef="peer_left">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -132,7 +132,7 @@
         <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="C###1282961523" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle/TaskPortTypeShuffle.hpe" multiple="false" name="TaskPortTypeShuffle" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+    <innerComponent localRef="C###815010076" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle/TaskPortTypeShuffle.hpe" multiple="false" name="TaskPortTypeShuffle" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
       <visualDescription h="60" w="141" x="375" y="426">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -140,7 +140,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1282961523" varName="X###1282961523"/>
+    <supplyParameter cRef="C###815010076" varName="X###815010076"/>
     <innerRenaming cNewName="task_port_shuffle" cOldName="task_port" cRef="task_shuffle"/>
     <interface iRef="IShuffleRight" nArgs="1">
       <slice isRef="shuffler_channel">
@@ -229,13 +229,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_shuffle"/>
       </port>
-      <port name="output_key">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_key" sRef="partition_function"/>
-      </port>
       <port name="input_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_key" sRef="partition_function"/>
+      </port>
+      <port name="output_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="partition_function"/>
       </port>
       <parameter iname="IEnvironmentPortTypeMultiplePartner" order="1" parid="client_port_type" uname="environment_port_type" varid="C"/>
       <parameter iname="IPartitionFunction" order="2" parid="partition_function" uname="partition_function" varid="PF"/>

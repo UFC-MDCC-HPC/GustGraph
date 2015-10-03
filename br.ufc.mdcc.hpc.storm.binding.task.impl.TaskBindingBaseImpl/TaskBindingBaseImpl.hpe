@@ -5,7 +5,7 @@
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000011d1f6bca82558aa4955d08987a987b45757886ce7a691046c3c83198c3ab675eecf83b496be4a5ab1802ba96e24dab2bf015d13b5003054a274eea5bb19aeeabfbac144536aabbb24fcbadcee81836b3e05d618ac81680de0b5497a0906ea6e4cd1694969b41d946834b3ee1e1f472588a66c4dc03f23deeab4809387fe608b" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c30345bfefca3f63e75844ea2be2e9761ad507021559d14d519136e1b6f89d815d57c4a4099d17300f18acc764bc2da8770f7a624c3adc43f82432f83fb1b6a39917d2d5f8e50bbcd1aae4a4f1c40be5695d18e049f0b17e8e3dc7500c4b1b8713df922a8fed4bef7319e517c6a5e53f4d2872794ed5134f2f98037069e79080" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
         <visualDescription h="60" w="141" x="194" y="353">
           <color b="255" g="255" r="255"/>
         </visualDescription>

@@ -92,7 +92,7 @@
         <visualDescription h="37" w="95" x="108" y="69">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###1747833376"/>
+        <parameter formFieldId="value_type" varName="X###585944364"/>
         <unitBounds parallel="false" uRef="set">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -182,7 +182,7 @@
         <visualDescription h="41" w="110" x="423" y="170">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###1933285458"/>
+        <parameter formFieldId="task_port_type" varName="X###232564301"/>
         <unitBounds parallel="true" uRef="peer_left">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -205,7 +205,7 @@
         <visualDescription h="42" w="98" x="436" y="430">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###914717644"/>
+        <parameter formFieldId="task_port_type" varName="X###1564047738"/>
         <unitBounds parallel="true" uRef="peer_left">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -228,7 +228,7 @@
         <visualDescription h="41" w="114" x="443" y="588">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###2007924965"/>
+        <parameter formFieldId="task_port_type" varName="X###1808154638"/>
         <unitBounds parallel="true" uRef="peer_left">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -311,7 +311,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="C###1747833376" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###585944364" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="513" y="397">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -321,8 +321,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1747833376" varName="X###1747833376"/>
-    <innerComponent localRef="C###1933285458" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/TaskPortTypeSplitter.hpe" multiple="false" name="TaskPortTypeSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+    <supplyParameter cRef="C###585944364" varName="X###585944364"/>
+    <innerComponent localRef="C###232564301" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/TaskPortTypeSplitter.hpe" multiple="false" name="TaskPortTypeSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
       <visualDescription h="60" w="164" x="389" y="294">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -330,8 +330,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1933285458" varName="X###1933285458"/>
-    <innerComponent localRef="C###914717644" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/TaskPortTypeSplitter.hpe" multiple="false" name="TaskPortTypeSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+    <supplyParameter cRef="C###232564301" varName="X###232564301"/>
+    <innerComponent localRef="C###1564047738" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/TaskPortTypeSplitter.hpe" multiple="false" name="TaskPortTypeSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
       <visualDescription h="60" w="164" x="389" y="294">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -339,8 +339,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###914717644" varName="X###914717644"/>
-    <innerComponent localRef="C###2007924965" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/TaskPortTypeSplitter.hpe" multiple="false" name="TaskPortTypeSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+    <supplyParameter cRef="C###1564047738" varName="X###1564047738"/>
+    <innerComponent localRef="C###1808154638" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/TaskPortTypeSplitter.hpe" multiple="false" name="TaskPortTypeSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
       <visualDescription h="60" w="164" x="389" y="294">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -348,10 +348,10 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###2007924965" varName="X###2007924965"/>
+    <supplyParameter cRef="C###1808154638" varName="X###1808154638"/>
     <innerRenaming cNewName="input" cOldName="input_type" cRef="split_function"/>
-    <innerRenaming cNewName="output_set" cOldName="output_type" cRef="split_function"/>
     <innerRenaming cNewName="task_port_collect" cOldName="task_port" cRef="task_collect_map"/>
+    <innerRenaming cNewName="output_set" cOldName="output_type" cRef="split_function"/>
     <innerRenaming cNewName="task_port_read" cOldName="task_port" cRef="task_read"/>
     <innerRenaming cNewName="task_port_write" cOldName="task_port" cRef="task_write"/>
     <interface iRef="IReduceCollector" nArgs="1">
@@ -512,13 +512,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_type" sRef="split_function"/>
       </port>
-      <port name="output_key">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_key" sRef="bin_function"/>
-      </port>
       <port name="input_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_key" sRef="bin_function"/>
+      </port>
+      <port name="output_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="bin_function"/>
       </port>
       <port name="task_port_read">
         <visualDescription h="10" w="10" x="0" y="0"/>

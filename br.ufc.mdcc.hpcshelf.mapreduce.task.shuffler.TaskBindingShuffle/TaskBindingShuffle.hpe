@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002f20339604a54352eec6718d24e76b723dd865ed4cd91dc0d3330f8ffc0ca692a12fc5c048b505637284ff162e784834f1dd55866cbcb65d2ff9a12cea5b82c405b9d40e81d76a30897364be501928ac9bcb2c8c8bb0143a309ed5f51b08a2fce36082bf37cfc2fdf110ba8b6d5750a7016cdf5b538a40b3a4cdbe1964503e8b" isAbstract="true" kind="Synchronizer" name="TaskBindingShuffle" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000852ad6fe452db670b205d31e9036ac03df62b6f50ef3781986f6c7d75627c83131463cd3b8ea9b64ece6bec51c3555dcbee9d704a15ff51417a3ea7e917f840da9c50ef1fd6864ab6e0a6216fdc199fd7c0f8701ae2dc73c47e5bc81673115e16c7654b79888099987f75a28dab365fb99316e9114ee616eddf814c486e486ce" isAbstract="true" kind="Synchronizer" name="TaskBindingShuffle" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -38,7 +38,7 @@
           <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffle/bin/1.0.0.0/ITaskPorttypeShuffle.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle&#xA;{&#xA;&#x9;public interface ITaskBindingShuffle : BaseITaskBindingShuffle&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITaskBindingShuffle.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle/bin/1.0.0.0/ITaskBindingShuffle.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle&#xA;{&#xA;&#x9;public interface ITaskBindingShuffle : BaseITaskBindingShuffle&#xA;&#x9;{&#xA;&#x9;}&#xA;&#x9;public class ITaskBindingShuffleAction&#xA;&#x9;{&#xA;&#x9;&#x9;public static object READ_CHUNK_I = new object();&#xA;&#x9;&#x9;public static object PARTITION = new object();&#xA;&#x9;&#x9;public static object CHUNK_READY_J = new object();&#xA;&#x9;}&#xA;}" name="ITaskBindingShuffle.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle/bin/1.0.0.0/ITaskBindingShuffle.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffle/bin/1.0.0.0/BaseITaskBindingShuffle.dll</dependency>
         </file>
       </sources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000753e3e62ae1cfe717207e9cfc79f68402d9f3690cb00022a1243be63d110f19d7bf7247767939644e48bf361610cac992287af70ba786702ca1e5403693f8c70cff5be1c79a597fe4ef94905c7db0d11d83abee92eeccd9cd29dac251fc5c938e13841aa3b5e6bda735fbd47ec09ecf686bc2c889aebf70df0d2f12c612951bf" isAbstract="true" kind="Computation" name="MapFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ebfa7437e147f91a2b50d06672df5d005867e892936018616476f6ee1cf81d67dc0a8052901ed6b8c998c620eb149d7d56535eb3f1428e99d69bf98604d5dd16c51a9cd68df3f9b73f98863fd4f3a69b8575f76ca7da86090dfd10774769653cbe3b9d6d78d544b6048f8add40edd29b5d6d9d2c1231c2e1bc23a9ca90b374cd" isAbstract="true" kind="Computation" name="MapFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>

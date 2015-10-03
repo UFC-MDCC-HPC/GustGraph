@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001145bd8168b2ed301a42a938e04526d6fbed1a0500fd56bd25d9fa5560b2cab911c2d2316e006a7da702f8371fb763d33c6aab9ccf091ff862c9f1c7763df0e63ca8934156621bc245c7467fcc7813fc083b6ece834e2f03206a548470a8f03fce0c5576b953002baac75e5c1edb5500405e4b0aa29981302fe8ad7be2043a9c" isAbstract="true" kind="Computation" name="Reducer" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c9ab5660c052e86d0d68f3912581c3058e82c186ab1b3d8c1b48f18a546c7a4d877e8620e854bcdced9d5e14b64b697a07d4da13697b3f37b7bc90c55808485a5c2ca38cd1cba4302639fa07584bad83ba0c6388b013cf72c1051a90651a2cf75f5d18bb51a4a804d158a5f86d1d846ad0c21471e8259245d420c33df0c00a9f" isAbstract="true" kind="Computation" name="Reducer" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -59,7 +59,7 @@
         <visualDescription h="45" w="96" x="230" y="72">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###618962902"/>
+        <parameter formFieldId="value_type" varName="X###1140333684"/>
         <parameter formFieldId="key_type" varName="OMK"/>
         <unitBounds parallel="false" uRef="kv_pair">
           <visualDescription h="20" w="20" x="5" y="2"/>
@@ -87,7 +87,7 @@
         <visualDescription h="60" w="132" x="287" y="474">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###1518345411"/>
+        <parameter formFieldId="task_port_type" varName="X###600846513"/>
         <unitBounds parallel="true" uRef="peer_left">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -152,7 +152,7 @@
         <visualDescription h="20" w="20" x="43" y="38"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="C###618962902" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###1140333684" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="152" x="455" y="455">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -161,19 +161,19 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###618962902" varName="X###618962902"/>
-    <innerComponent localRef="C###1518345411" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
-      <visualDescription h="60" w="153" x="422" y="422">
+    <supplyParameter cRef="C###1140333684" varName="X###1140333684"/>
+    <innerComponent localRef="C###600846513" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+      <visualDescription h="60" w="199" x="193" y="529">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="task_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1518345411" varName="X###1518345411"/>
+    <supplyParameter cRef="C###600846513" varName="X###600846513"/>
     <innerRenaming cNewName="task_port_reduce" cOldName="task_port" cRef="task_reduce"/>
-    <innerRenaming cNewName="output_item" cOldName="output" cRef="reduce_function"/>
     <innerRenaming cNewName="input_item" cOldName="input" cRef="reduce_function"/>
+    <innerRenaming cNewName="output_item" cOldName="output" cRef="reduce_function"/>
     <interface iRef="IReducerLeft" nArgs="6">
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IClientBase"/>
@@ -224,10 +224,10 @@
       </port>
       <parameter iname="IEnvironmentPortTypeMultiplePartner" order="4" parid="client_port_type" uname="environment_port_type" varid="C"/>
       <parameter iname="IReduceFunction" order="5" parid="reduce_function" uname="reduce_function" varid="RF"/>
-      <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="OMK"/>
-      <parameter iname="IData" order="1" parid="input_value_type" uname="data" varid="OMV"/>
       <parameter iname="IData" order="2" parid="output_key_type" uname="data" varid="ORK"/>
       <parameter iname="IData" order="3" parid="output_value_type" uname="data" varid="ORV"/>
+      <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="OMK"/>
+      <parameter iname="IData" order="1" parid="input_value_type" uname="data" varid="OMV"/>
       <action id="main">
         <protocol/>
       </action>

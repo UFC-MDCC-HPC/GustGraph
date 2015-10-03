@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000efe7c2d6d13a975767141db9e0ccb0d3f922fa767f35b06a37bff9804ee794fb51ad0c98e8704dfc1102e76efc44ce350706512b44702544994b12ef31d5e3f773155666535a252654ec18f2da7948d32bd4bbfe517d0f8b9593ecbea7c83dd42b972b02b5febf5b9aba206614a936a2fa949371537478bd486da2cc10b72c80" isAbstract="false" kind="Synchronizer" name="TaskBindingSplitterImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d9af45ef19c7a2329d150f8161363909c2f68bfab25f4edb8c2aa8caf385bb44e1ca3e361d257b514fb7c7165e698fa4ec34dd061bf798997be946dce5d5009b69245f8f59c003044566d77a33206b64713ed6cb8247bb7b06b10fedd51bf21b8329ea9e260ad6ad19b3db7a957ca27d7d906a50a145e8d55668efd0270f5da7" isAbstract="false" kind="Synchronizer" name="TaskBindingSplitterImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f39eaba1f8c8ee43189356d47ac0faca214cadd6276ef8eaa59cb461365cb8fbe20c2e63055b3877f6ed6e9d8a83180a1c365fac1d9925a3d76498e0916acdccd447649281731cd92659713eead99442d4f9b9559d4cdada6ff22db867c913d9ea88e465f496704bfa917e2fe1f38a4cd8d06e00fb6d99da988a8d2e2092f189" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter/TaskBindingSplitter.hpe" name="TaskBindingSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter" version="1.0.0.0">
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000000173b7d3fc211544a11ed478178145e2e0afa09a025b397deb4b5ed7e1d391ea23c91e7884b49b563cc2f1690522a3517debffc609d718eb924c9f515beb355599cb940c8406d5ca274305501d0f527893f7366d5c7715c10111952ac0323c1629e51343fc89881de0de53cc2f9092c45e1933eb06ab6901e06ab3b49c889ec0" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter/TaskBindingSplitter.hpe" name="TaskBindingSplitter" package="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter" version="1.0.0.0">
         <visualDescription h="60" w="100" x="341" y="407">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -13,7 +13,7 @@
           <visualDescription h="60" w="151" x="141" y="464">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###954997812"/>
+          <parameter formFieldId="task_port_type" varName="X###491446654"/>
           <unitBounds parallel="true" uRef="peer_left">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -46,7 +46,7 @@
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/bin/1.0.0.0/ITaskPorttypeSplitter.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter/bin/1.0.0.0/Base.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterImpl&#xA;{&#xA;&#x9;public class ITaskBindingSplitterImpl : BaseITaskBindingSplitterImpl, ITaskBindingSplitter&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="ITaskBindingSplitterImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterImpl/bin/1.0.0.0/ITaskBindingSplitterImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskPortType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterImpl&#xA;{&#xA;&#x9;public class ITaskBindingSplitterImpl : BaseITaskBindingSplitterImpl, ITaskBindingSplitter&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;public override void on_initialize ()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;ActionDef.action_ids[ITaskBindingSplitterAction.READ_SOURCE]  = 1;&#xA;&#x9;&#x9;&#x9;ActionDef.action_ids[ITaskBindingSplitterAction.READ_CHUNK_J] = 2;&#xA;&#x9;&#x9;&#x9;ActionDef.action_ids[ITaskBindingSplitterAction.PARTITION]    = 3;&#xA;&#x9;&#x9;&#x9;ActionDef.action_ids[ITaskBindingSplitterAction.CHUNK_READY_I]= 20;&#xA;&#x9;&#x9;&#x9;ActionDef.action_ids[ITaskBindingSplitterAction.WRITE_SINK]   = 21;&#xA;&#x9;&#x9;&#x9;ActionDef.action_ids[ITaskBindingSplitterAction.TERMINATE]    = 22;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="ITaskBindingSplitterImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterImpl/bin/1.0.0.0/ITaskBindingSplitterImpl.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterImpl/bin/1.0.0.0/BaseITaskBindingSplitterImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter/bin/1.0.0.0/.dll</dependency>
         </file>

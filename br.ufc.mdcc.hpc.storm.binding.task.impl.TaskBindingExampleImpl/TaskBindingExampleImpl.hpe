@@ -5,7 +5,7 @@
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000089d8e57313cdea24550ed3778e1d5580d41a1a722c1d9d1ad3980216a00b36296a2991aba8254a4d8be0a2a2247ee0601523e98cff44a7e7f6e722626e932aeff73eacc4b2b34af9954e0644f95e9872b894dbd675a2c7b24ccb7651eab6e9a93e70057561a443449544fb2db9fadad9b17b31afadad53a4cefe8d42e20c52db" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingExample/TaskBindingExample.hpe" name="TaskBindingExample" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c5662e2c5293ba74f42172adaa4d9dab614e4086b01954303cde981ea8e289d68ecdb947309fc780c1556ac660b5a963d05e7b09cde8b284f530d1175ac98c3754a56372d87b9f7746626b77c4a1469eac3341c502ea46d6a1fc039ea2612bc0d9d876a99e40144bd6937644c0efd714bcaad4c27b66a0e8d9568ede8126a9b7" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingExample/TaskBindingExample.hpe" name="TaskBindingExample" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
         <visualDescription h="60" w="100" x="256" y="308">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -13,7 +13,7 @@
           <visualDescription h="60" w="158" x="215" y="455">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###157476508"/>
+          <parameter formFieldId="task_port_type" varName="X###415155691"/>
           <unitBounds parallel="true" uRef="peer_left">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>

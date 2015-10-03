@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d3d9b64b97e0206feae81b58758a42fdd4adaf9d6767798d52897eaca19a9031b9313a1e70cd0383954f84728767820b03f6690ef6c3016248555e14105d04208e20afb2add68841037da82e65c54b93f1db1fae07546e0852bded637bea1c709e8dafb4222540a4fafb9171a0e1e4a9cb0dceedefa9b2894035142de0a0fe8c" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000043fc06537d0332d2c5335890f2b8459f57589f35587890350845dcebf493997478b46d5c999fe87d3a23dd9812d52a8ab10473ea358858fa591c6faf93a99ecb2d0a3a74c4e1ff9a8fc58f6e5a9c5c821ab29284f49cc3c987aab31c65cf48d35ee4ab85c7931e705b25183403406628784058b008094a1d4667a7fd71ea12b4" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -59,7 +59,7 @@
         <visualDescription h="44" w="168" x="455" y="182">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###1153955756"/>
+        <parameter formFieldId="value_type" varName="X###1271918732"/>
         <unitBounds parallel="false" uRef="set">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -86,7 +86,7 @@
         <visualDescription h="60" w="129" x="221" y="490">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###1666978376"/>
+        <parameter formFieldId="task_port_type" varName="X###86646127"/>
         <unitBounds parallel="true" uRef="peer_left">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -151,7 +151,7 @@
         <visualDescription h="20" w="20" x="37" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="C###1153955756" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###1271918732" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="437" y="287">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -161,16 +161,16 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1153955756" varName="X###1153955756"/>
-    <innerComponent localRef="C###1666978376" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
-      <visualDescription h="60" w="181" x="225" y="489">
+    <supplyParameter cRef="C###1271918732" varName="X###1271918732"/>
+    <innerComponent localRef="C###86646127" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+      <visualDescription h="60" w="142" x="217" y="525">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="task_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1666978376" varName="X###1666978376"/>
+    <supplyParameter cRef="C###86646127" varName="X###86646127"/>
     <innerRenaming cNewName="task_port_mapper" cOldName="task_port" cRef="task_mapper"/>
     <interface iRef="IMapperLeft" nArgs="6">
       <slice isRef="collect_pairs">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000021c9577a46438ae40e2f25f4ed4ce477d08d2d5de54094dd75d404c398830b689c3ee763009550ae3045a74754710366fa1cec1b11aece0c32fff22f0af567e1ed1f940584b9a34fa4916fc5baed0226d3128eaa3a44ebec75da05e2a057d6cdd034f6ada5c39acad9677ce3134e4fa8b9bb96968df36f5ee19a1e9101455991" isAbstract="true" kind="Computation" name="DataSink" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a5cfd0dcd31ca163b46bc83a11c249e48d89eee45c12f0ec250977970700e6961db430eb75bbc456e2616d35e7d0f2086623aa9fe2f2f7d484a53f454c94396ae126ed54b5342eb5b4af2274303e511037a2d53bdb42356f1f516bcbe82a432201803039e94096c35a667e25579273039b1bf74435e4c7fc14c3d65146c78ca3" isAbstract="true" kind="Computation" name="DataSink" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>

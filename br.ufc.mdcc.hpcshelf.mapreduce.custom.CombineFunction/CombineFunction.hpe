@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ddafd92ac6e0adb24ceff43d2e4c617a9cc50f40395afd846b0c58995f9fa5ce3c37caa630ea589ed1d6d6f5c65de9dda01869ab24c6b44f3c8a2938f53c29223923d8b296be6922eba39ccff43277c314dd303e48a3d26ecbf2d518dafdaa48c85df2097d9ac3f5c3d84196d52f66a0e499499fd90613a215642a5f34d51481" isAbstract="true" kind="Computation" name="CombineFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000053d472123ba5571a9e3923ac1aefa26d61f49d4fc440ac54ec69259f601a4a7e7f52305c7c199d47c7801066d0d6ef13107b30514036b03b0c7d1e1ddc1bba84a19b5fdff0accbd1899a1ad61868ede30a7549719e04b99b9af077dfcd45cdab1d94b280aaefe5efe41ac769a89e7e27850f02b70358bb28b6cd58f1825888da" isAbstract="true" kind="Computation" name="CombineFunction" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.custom">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
