@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000594276edc2cc63525417776c7bc2bd8df86e4ef8717fb6139a7fc5fe30aaa83b9e1be4eb1b1700cce9ef8a13bca8dcdf717281f7332dfda30b4a160cbfadd52d355c711b0df4859bc18612ce3bc4a2c39e1a7f7f60dd22209e02aad7480701e716d0c3d4fd03fc20689972d49190cacfcd2781c2278f09315de642957410cf8f" isAbstract="true" kind="Synchronizer" name="TaskBindingShuffleReduce" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+      <visualDescription h="60" w="100" x="152" y="391">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="task_port_type" varName="T"/>
+      <unitBounds parallel="true" uRef="peer">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffleReduce/TaskPortTypeShuffleReduce.hpe" multiple="false" name="TaskPortTypeShuffleReduce" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+      <visualDescription h="60" w="141" x="375" y="426">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="task_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="task_port_type" direct="true" varName="T"/>
+    <interface iRef="ITaskBindingShuffleReduce" nArgs="0">
+      <slice isRef="task_port">
+        <originRef cRef="task_port" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="9" y="23"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffleReduce;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffleReduce&#xA;{&#xA;&#x9;public interface BaseITaskBindingShuffleReduce : ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPortTypeShuffleReduce> Task_port {get;}&#xA;&#x9;}&#xA;}" name="BaseITaskBindingShuffleReduce.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffleReduce/bin/1.0.0.0/BaseITaskBindingShuffleReduce.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeShuffleReduce/bin/1.0.0.0/ITaskPortTypeShuffleReduce.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffleReduce&#xA;{&#xA;&#x9;public interface ITaskBindingShuffleReduce : BaseITaskBindingShuffleReduce&#xA;&#x9;{&#xA;&#x9;}&#xA;&#x9;public class ITaskBindingShuffleReduceAction&#xA;&#x9;{&#xA;&#x9;&#x9;public static object READ_CHUNK_I = new object();&#xA;&#x9;&#x9;public static object PARTITION = new object();&#xA;&#x9;&#x9;public static object CHUNK_READY_J = new object();&#xA;&#x9;}&#xA;}" name="ITaskBindingShuffleReduce.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffleReduce/bin/1.0.0.0/ITaskBindingShuffleReduce.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.TaskBindingShuffleReduce/bin/1.0.0.0/BaseITaskBindingShuffleReduce.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="128" x="133" y="204">
+        <color b="0" g="128" r="0"/>
+      </visualDescription>
+      <port name="task_port">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_port" sRef="task_port"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ITaskBindingShuffleReduce" multiple="true" private="false" replica="0" uRef="peer" visibleInterface="true">
+      <slices cRef="task_port" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_port" transitive="false">
+        <visualDescription h="10" w="10" x="89" y="28"/>
+      </slices>
+      <visualDescription h="40" w="123" x="44" y="294"/>
+    </unit>
+  </componentInfo>
+</component:component>

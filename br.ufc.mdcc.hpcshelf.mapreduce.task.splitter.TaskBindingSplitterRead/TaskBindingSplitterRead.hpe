@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001175e2cf18bdcd3ffb5d56b95cfa60f6d8d09837f40c246854298c20043a6465ec9fe8aa1b1ae38e4b299d0350fde40e79564daa34ba2958dabc96f531a3405bb168564a3671b957fecbbd7b28d2c1511514ef456b0b64d2b492feb3ddb3feebed291342ee5f1c914d989a25ca6825f0cba60a4037c494b7f338dcbb03d38c9b" isAbstract="true" kind="Synchronizer" name="TaskBindingSplitterRead" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+      <visualDescription h="60" w="151" x="150" y="363">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="task_port_type" varName="T"/>
+      <unitBounds parallel="true" uRef="peer">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitterRead/TaskPortTypeSplitterRead.hpe" multiple="false" name="TaskPortTypeSplitterRead" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+      <visualDescription h="60" w="164" x="389" y="294">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="task_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="task_port_type" direct="true" varName="T"/>
+    <interface iRef="ITaskBindingSplitterRead" nArgs="0">
+      <slice isRef="task_port">
+        <originRef cRef="task_port" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="83" y="29"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitterRead;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter&#xA;{&#xA;&#x9;public interface BaseITaskBindingSplitter : ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPortTypeSplitterRead> Task_port {get;}&#xA;&#x9;}&#xA;}" name="BaseITaskBindingSplitterRead.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitterRead/bin/1.0.0.0/BaseITaskBindingSplitterRead.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitterRead/bin/1.0.0.0/ITaskPortTypeSplitterRead.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitter&#xA;{&#xA;&#x9;public interface ITaskBindingSplitter : BaseITaskBindingSplitter&#xA;&#x9;{&#xA;&#x9;}&#xA;&#x9;public class ITaskBindingSplitterAction&#xA;&#x9;{&#xA;&#x9;&#x9;public static object READ_SOURCE = new object();&#xA;&#x9;&#x9;public static object READ_CHUNK_J = new object();&#xA;&#x9;&#x9;public static object PARTITION = new object();&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;public static object CHUNK_READY_I = new object();&#xA;&#x9;&#x9;public static object WRITE_SINK = new object();&#xA;&#x9;&#x9;public static object TERMINATE = new object();&#xA;&#x9;}&#xA;}" name="ITaskBindingSplitterRead.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitterRead/bin/1.0.0.0/ITaskBindingSplitterRead.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitterRead/bin/1.0.0.0/BaseITaskBindingSplitterRead.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="210" x="76" y="190">
+        <color b="184" g="99" r="33"/>
+      </visualDescription>
+      <port name="task_port">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_port" sRef="task_port"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ITaskBindingSplitterRead" multiple="true" private="false" replica="0" uRef="peer" visibleInterface="true">
+      <slices cRef="task_port" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_port" transitive="false">
+        <visualDescription h="10" w="10" x="83" y="29"/>
+      </slices>
+      <visualDescription h="40" w="119" x="49" y="284"/>
+    </unit>
+  </componentInfo>
+</component:component>

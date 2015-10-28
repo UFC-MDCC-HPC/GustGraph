@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ed2b8b1978bed3ace016d4d356415856535390a7f4caf2f3653cf7bea346beb99e688350a28210620cd421bf49fc1e61100ae4316622e7dc28301b062eb445d702fdb10cfaee608f9538ef343b666dea1694aae8a576b4eab83cddefd366a5389cc7c093003a1d229930b52ce7f3183fb33ab83dd4613a44edfa2c1e20f0d486" isAbstract="false" kind="Synchronizer" name="TaskBindingSplitterReadImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001175e2cf18bdcd3ffb5d56b95cfa60f6d8d09837f40c246854298c20043a6465ec9fe8aa1b1ae38e4b299d0350fde40e79564daa34ba2958dabc96f531a3405bb168564a3671b957fecbbd7b28d2c1511514ef456b0b64d2b492feb3ddb3feebed291342ee5f1c914d989a25ca6825f0cba60a4037c494b7f338dcbb03d38c9b" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitterRead/TaskBindingSplitterRead.hpe" name="TaskBindingSplitterRead" package="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="341" y="407">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="60" w="151" x="141" y="464">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###1378230133"/>
+          <unitBounds parallel="true" uRef="peer">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="true" uRef="peer">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="ITaskBindingSplitterReadImpl" nArgs="0">
+      <slice isRef="task_port">
+        <originRef cRef="task_port" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="83" y="29"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitterRead;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterReadImpl &#xA;{&#xA;&#x9;public abstract class BaseITaskBindingSplitterReadImpl: Synchronizer, BaseITaskBindingSplitterRead&#xA;&#x9;{&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPorttypeSplitter> task_port = null;&#xA;&#xA;&#x9;&#x9;public ITaskPort&lt;ITaskPorttypeSplitter> Task_port&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_port == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_port = (ITaskPort&lt;ITaskPorttypeSplitter>) Services.getPort(&quot;task_port&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_port;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseITaskBindingSplitterReadImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterReadImpl/bin/1.0.0.0/BaseITaskBindingSplitterReadImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter/bin/1.0.0.0/ITaskPorttypeSplitter.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitterRead/bin/1.0.0.0/BaseITaskBindingSplitterRead.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitterRead;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterReadImpl&#xA;{&#xA;&#x9;public class ITaskBindingSplitterReadImpl : BaseITaskBindingSplitterReadImpl, ITaskBindingSplitterRead&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="ITaskBindingSplitterReadImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterReadImpl/bin/1.0.0.0/ITaskBindingSplitterReadImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterReadImpl/bin/1.0.0.0/BaseITaskBindingSplitterReadImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.TaskBindingSplitterRead/bin/1.0.0.0/ITaskBindingSplitterRead.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="210" x="49" y="204">
+        <color b="184" g="99" r="33"/>
+      </visualDescription>
+      <port name="task_port">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_port" sRef="task_port"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ITaskBindingSplitterReadImpl" multiple="true" private="false" replica="0" uRef="peer" visibleInterface="true">
+      <super cRef="base" uRef="peer"/>
+      <visualDescription h="40" w="119" x="49" y="284"/>
+    </unit>
+  </componentInfo>
+</component:component>
