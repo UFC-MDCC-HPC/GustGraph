@@ -85,9 +85,5 @@
       <Project>{B785892B-10B1-43BA-897F-E6F02CC932D0}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskPortType</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter\br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter.csproj">
-      <Project>{20438860-777F-4276-BD0F-E20A2E2E1407}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypeSplitter</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>

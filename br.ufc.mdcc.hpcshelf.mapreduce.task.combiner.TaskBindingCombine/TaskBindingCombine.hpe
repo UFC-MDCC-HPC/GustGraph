@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000657a75ce7e4d6b5aca16f26a0e3affea1d8f9be4ff0d3198a8288c2d6ab30a8702dd6f3ae878daf6cff8b59c4e9c59cd254f85835b2b39f9bc280f392a973250024ebb0636cf26d6d3d9e07a4ddd75c9530f495e14d0a9c0589ecfe2871629644692d64719bf9e330a363bc8af5134bd73b4f3cf68d84ee43e2d96a3fd4a0ab5" isAbstract="true" kind="Synchronizer" name="TaskBindingCombine" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.combiner">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e135d5cab0915999ef51ae30a3f47803a549e048b7253a0b9dca30c8962ae1a9edde70e560b28875feecfd1ed59abdf31f03390045e3f599fbd5b80af8759502243298f11eb518fe3fd549af3d416374792e07360c1f44f3bf98cc13081cb41fd1e743e9f1511b5a30834a31a4e7651e0477e31a0ccc85850ba4f086a120c692" isAbstract="true" kind="Synchronizer" name="TaskBindingCombine" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.task.combiner">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -12,11 +12,8 @@
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="T"/>
-      <unitBounds parallel="true" uRef="peer_left">
+      <unitBounds parallel="true" uRef="peer">
         <visualDescription h="20" w="20" x="8" y="19"/>
-      </unitBounds>
-      <unitBounds parallel="true" uRef="peer_right">
-        <visualDescription h="20" w="20" x="121" y="19"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
@@ -31,7 +28,7 @@
     <interface iRef="ITaskBindingCombine" nArgs="0">
       <slice isRef="task_port">
         <originRef cRef="task_port" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="11" y="19"/>
+        <visualDescription h="10" w="10" x="90" y="19"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.task.combiner.TaskBindingCombine&#xA;{&#xA;&#x9;public interface BaseITaskBindingCombine : ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPorttypePhases> Task_port {get;}&#xA;&#x9;}&#xA;}" name="BaseITaskBindingCombine.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.task.combiner.TaskBindingCombine/bin/1.0.0.0/BaseITaskBindingCombine.dll" versionId="1.0.0.0">
@@ -53,17 +50,11 @@
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="ITaskBindingCombine" multiple="true" private="false" replica="0" uRef="peer_left" visibleInterface="true">
-      <slices cRef="task_port" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_port" transitive="false">
-        <visualDescription h="10" w="10" x="69" y="25"/>
+    <unit facet="0" iRef="ITaskBindingCombine" multiple="true" private="false" replica="0" uRef="peer" visibleInterface="true">
+      <slices cRef="task_port" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_port" transitive="false">
+        <visualDescription h="10" w="10" x="90" y="19"/>
       </slices>
       <visualDescription h="40" w="134" x="126" y="296"/>
-    </unit>
-    <unit facet="0" iRef="ITaskBindingCombine" multiple="true" private="false" replica="0" uRef="peer_right" visibleInterface="true">
-      <slices cRef="task_port" inner_replica="0" slice_replica="0" uRef="peer_right" sliceName="task_port" transitive="false">
-        <visualDescription h="10" w="10" x="11" y="19"/>
-      </slices>
-      <visualDescription h="40" w="127" x="353" y="298"/>
     </unit>
   </componentInfo>
 </component:component>

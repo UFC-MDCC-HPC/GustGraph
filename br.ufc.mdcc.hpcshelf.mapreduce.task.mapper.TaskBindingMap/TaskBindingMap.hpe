@@ -12,11 +12,8 @@
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="T"/>
-      <unitBounds parallel="true" uRef="peer_left">
+      <unitBounds parallel="true" uRef="peer">
         <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-      <unitBounds parallel="true" uRef="peer_right">
-        <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
@@ -53,17 +50,11 @@
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="ITaskBindingMap" multiple="true" private="false" replica="0" uRef="peer_left" visibleInterface="true">
-      <slices cRef="task_port" inner_replica="0" slice_replica="0" uRef="peer_left" sliceName="task_port" transitive="false">
+    <unit facet="0" iRef="ITaskBindingMap" multiple="true" private="false" replica="0" uRef="peer" visibleInterface="true">
+      <slices cRef="task_port" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_port" transitive="false">
         <visualDescription h="10" w="10" x="81" y="19"/>
       </slices>
       <visualDescription h="40" w="137" x="174" y="304"/>
-    </unit>
-    <unit facet="0" iRef="ITaskBindingMap" multiple="true" private="false" replica="0" uRef="peer_right" visibleInterface="true">
-      <slices cRef="task_port" inner_replica="0" slice_replica="0" uRef="peer_right" sliceName="task_port" transitive="false">
-        <visualDescription h="10" w="10" x="13" y="27"/>
-      </slices>
-      <visualDescription h="40" w="138" x="357" y="304"/>
     </unit>
   </componentInfo>
 </component:component>

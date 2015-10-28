@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009b0a4339e8abcaa31349fc1046445d3a983c0e900d8eb84e749a74246c6150128acffde4756e771afe54a646d26da4a7277f260cf9832676c15265433ce4aac5edd63127f0e9d28841fd06a4eed04001816ea358b3c144afe6a131d7e4502aeffed59779265e0cb04f09bdc42809622298b88b660f73d0d5b2f8c3e6b8a5b6af" isAbstract="true" kind="Computation" name="Combiner" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e3607891a11e640c4ab2fece6a6f124c16df2720b9a745a95b090c26e07140d4b8a2519b78e67156fe2720fbf44d65b368968f5bdfcb2e329770802ca6eb21d0e6a67b32f1939fa444b603ecb82c002d1a1271eb0ede01243252213b34bc426775f780eb280dfcb82bdefa94f8516830c33cefe16e7f12559c5bcfe8947d27b0" isAbstract="true" kind="Computation" name="Combiner" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.workflow">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -49,7 +49,7 @@
         <visualDescription h="60" w="100" x="481" y="51">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###1003920374"/>
+        <parameter formFieldId="value_type" varName="X###1247888857"/>
         <parameter formFieldId="key_type" varName="OMK"/>
         <unitBounds parallel="false" uRef="kv_pair">
           <visualDescription h="20" w="20" x="5" y="2"/>
@@ -67,7 +67,7 @@
         <visualDescription h="35" w="146" x="243" y="438">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###1713853627"/>
+        <parameter formFieldId="task_port_type" varName="X###942722997"/>
         <unitBounds parallel="true" uRef="peer_left">
           <visualDescription h="20" w="20" x="8" y="19"/>
         </unitBounds>
@@ -110,8 +110,8 @@
       <visualDescription h="60" w="100" x="393" y="346">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="server_port_type" varName="S"/>
       <parameter formFieldId="client_port_type" varName="C"/>
+      <parameter formFieldId="server_port_type" varName="S"/>
       <unitBounds parallel="false" uRef="client">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -123,8 +123,8 @@
       <visualDescription h="60" w="100" x="77" y="351">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="server_port_type" varName="S"/>
       <parameter formFieldId="client_port_type" varName="C"/>
+      <parameter formFieldId="server_port_type" varName="S"/>
       <unitBounds parallel="false" uRef="client">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -132,7 +132,7 @@
         <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="C###1003920374" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###1247888857" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="393" y="224">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -141,8 +141,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1003920374" varName="X###1003920374"/>
-    <innerComponent localRef="C###1713853627" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
+    <supplyParameter cRef="C###1247888857" varName="X###1247888857"/>
+    <innerComponent localRef="C###942722997" location="br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/TaskPortTypePhases.hpe" multiple="false" name="TaskPortTypePhases" package="br.ufc.mdcc.hpcshelf.mapreduce.task" exposed="false">
       <visualDescription h="60" w="289" x="134" y="115">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -150,9 +150,9 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1713853627" varName="X###1713853627"/>
+    <supplyParameter cRef="C###942722997" varName="X###942722997"/>
     <innerRenaming cNewName="task_port_combine" cOldName="task_port" cRef="task_combine"/>
-    <interface iRef="ICombinerLeft" nArgs="4">
+    <interface iRef="ICombiner" nArgs="5">
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IClientBase"/>
         <visualDescription h="10" w="10" x="9" y="29"/>
@@ -164,6 +164,10 @@
       <slice isRef="combine_function">
         <originRef cRef="combine_function" iRef="ICombineFunction"/>
         <visualDescription h="10" w="10" x="74" y="20"/>
+      </slice>
+      <slice isRef="feed_pairs">
+        <originRef cRef="feed_pairs" iRef="IServerBase"/>
+        <visualDescription h="10" w="10" x="81" y="28"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.common.Set;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.CombineFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner&#xA;{&#xA;&#x9;public interface BaseICombinerLeft&lt;C, CF, OMK, OMV> : IComputationKind &#xA;&#x9;&#x9;where C:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;&#x9;where CF:ICombineFunction&lt;OMK, OMV>&#xA;&#x9;&#x9;where OMK:IData&#xA;&#x9;&#x9;where OMV:IData&#xA;&#x9;{&#xA;&#x9;&#x9;IKVPair&lt;OMK, ISet&lt;OMV>> Input_data {get;}&#xA;&#x9;&#x9;IKVPair&lt;OMK, OMV> Output_data {get;}&#xA;&#x9;}&#xA;}" name="BaseICombinerLeft.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner/bin/1.0.0.0/BaseICombinerLeft.dll" versionId="1.0.0.0">
@@ -201,46 +205,15 @@
         <slice pRef="input_data" sRef="combine_function"/>
       </port>
       <parameter iname="IEnvironmentPortTypeMultiplePartner" order="2" parid="client_port_type" uname="environment_port_type" varid="C"/>
-      <parameter iname="ICombineFunction" order="3" parid="combine_function" uname="combine_function" varid="CF"/>
+      <parameter iname="ICombineFunction" parid="combine_function" uname="combine_function" varid="CF"/>
       <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="OMK"/>
       <parameter iname="IData" order="1" parid="input_value_type" uname="data" varid="OMV"/>
+      <parameter iname="IEnvironmentPortTypeMultiplePartner" order="3" parid="server_port_type" uname="environment_port_type" varid="S"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
-    <interface iRef="ICombinerRight" nArgs="1">
-      <slice isRef="feed_pairs">
-        <originRef cRef="feed_pairs" iRef="IServerBase"/>
-        <visualDescription h="10" w="10" x="60" y="24"/>
-      </slice>
-      <slice isRef="task_combine">
-        <originRef cRef="task_combine" iRef="ITaskBindingCombine"/>
-        <visualDescription h="10" w="10" x="16" y="29"/>
-      </slice>
-      <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner&#xA;{&#xA;&#x9;public interface BaseICombinerRight&lt;S> : IComputationKind &#xA;&#x9;&#x9;where S:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseICombinerRight.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner/bin/1.0.0.0/BaseICombinerRight.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.task.TaskPortTypePhases/bin/1.0.0.0/ITaskPorttypePhases.dll</dependency>
-          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/IEnvironmentPortTypeMultiplePartner.dll</dependency>
-        </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner&#xA;{&#xA;&#x9;public interface ICombinerRight&lt;S> : BaseICombinerRight&lt;S>&#xA;&#x9;&#x9;where S:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ICombinerRight.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner/bin/1.0.0.0/ICombinerRight.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/IEnvironmentPortTypeMultiplePartner.dll</dependency>
-          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Combiner/bin/1.0.0.0/BaseICombinerRight.dll</dependency>
-        </file>
-      </sources>
-      <visualDescription h="40" w="110" x="356" y="181">
-        <color b="0" g="0" r="255"/>
-      </visualDescription>
-      <port name="task_port_combine">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_port" sRef="task_combine"/>
-      </port>
-      <parameter iname="IEnvironmentPortTypeMultiplePartner" order="0" parid="server_port_type" uname="environment_port_type" varid="S"/>
-      <action id="main">
-        <protocol/>
-      </action>
-    </interface>
-    <unit facet="0" iRef="ICombinerLeft" multiple="true" private="false" replica="0" uRef="left_unit" visibleInterface="true">
+    <unit facet="0" iRef="ICombiner" multiple="true" private="false" replica="0" uRef="combiner" visibleInterface="true">
       <slices cRef="input_data" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="input_data" transitive="true">
         <visualDescription h="10" w="10" x="10" y="21"/>
       </slices>
@@ -262,20 +235,10 @@
         <port>input_data</port>
         <port>output_data</port>
       </slices>
-      <visualDescription h="40" w="107" x="102" y="261"/>
-    </unit>
-    <unit facet="0" iRef="ICombinerRight" multiple="true" private="false" replica="0" uRef="right_unit" visibleInterface="true">
-      <slices cRef="task_port_combine" inner_replica="0" slice_replica="0" uRef="peer_right" sliceName="task_port_combine" transitive="true">
-        <visualDescription h="10" w="10" x="11" y="19"/>
-      </slices>
       <slices cRef="feed_pairs" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed_pairs" transitive="false">
-        <visualDescription h="10" w="10" x="60" y="24"/>
+        <visualDescription h="10" w="10" x="81" y="28"/>
       </slices>
-      <slices cRef="task_combine" inner_replica="0" slice_replica="0" uRef="peer_right" sliceName="task_combine" transitive="false">
-        <visualDescription h="10" w="10" x="16" y="29"/>
-        <port>task_port_combine</port>
-      </slices>
-      <visualDescription h="40" w="110" x="356" y="261"/>
+      <visualDescription h="40" w="107" x="102" y="261"/>
     </unit>
   </componentInfo>
 </component:component>

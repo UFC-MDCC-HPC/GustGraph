@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000192a0366bd7cc76dff96a16f994f3163e3285e6167b7b0ce1db18d8535ee99375fb01f2b62a397b2c9eb8fb7fd577e360d2c52e8e816a2fdb54ea7e346d7aa3625c46a522633b9dc1af762fe62a110b6e73d8d6107b49965173d155011f0b987ab97a295b31316b8b2c136cf7f06783862d7bd67097094045eb998c2bf5272ac" isAbstract="false" kind="Synchronizer" name="TaskBindingBaseImpl" packagePath="br.ufc.mdcc.hpc.storm.binding.task.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000797487089ece9e1c2327ecd2fbd6d3a98b0010d60f03af4b5e7e2b5b422794a6b457808eee1e8645c6b9ee0fba3b998078b15ee7933af665c70b5dc3c642c339efec34a6fc62abdf3d32a78a310a5e180d61a9eb2a17399e6db8fa6acdc36776aef0de8f07abaa141b1f70abfe4e6037edfc88aa26aa2846872c4df81769a580" isAbstract="false" kind="Synchronizer" name="TaskBindingBaseImpl" packagePath="br.ufc.mdcc.hpc.storm.binding.task.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c30345bfefca3f63e75844ea2be2e9761ad507021559d14d519136e1b6f89d815d57c4a4099d17300f18acc764bc2da8770f7a624c3adc43f82432f83fb1b6a39917d2d5f8e50bbcd1aae4a4f1c40be5695d18e049f0b17e8e3dc7500c4b1b8713df922a8fed4bef7319e517c6a5e53f4d2872794ed5134f2f98037069e79080" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c92538073efed3b6da2abb966a344d01e071ba700af8755cdcc6b89b244c9821e9067b9687ab338b003a6f9f29a056b7b0c1e9a3cd474dd1aa25e0524d61c72f3e75b5e495963cd53aa2e75eae4497a75a7d814260b6ede6b274b5a097c837f24cf6e3c693b6365749ce538a40db1b4b73f2d2892ef01b7f6fc6da7e4baa28a1" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
         <visualDescription h="60" w="141" x="194" y="353">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="task_port_type" varName="T"/>
-        <unitBounds parallel="true" uRef="peer_left">
+        <unitBounds parallel="true" uRef="peer">
           <visualDescription h="20" w="20" x="17" y="24"/>
-        </unitBounds>
-        <unitBounds parallel="true" uRef="peer_right">
-          <visualDescription h="20" w="20" x="92" y="22"/>
         </unitBounds>
       </component>
     </baseType>
@@ -58,13 +55,9 @@
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="TaskPort" multiple="true" private="false" replica="0" uRef="peer_left" visibleInterface="true">
-      <super cRef="base" uRef="peer_left"/>
-      <visualDescription h="40" w="80" x="47" y="265"/>
-    </unit>
-    <unit facet="0" iRef="TaskPort" multiple="true" private="false" replica="0" uRef="peer_right" visibleInterface="true">
-      <super cRef="base" uRef="peer_right"/>
-      <visualDescription h="40" w="80" x="436" y="215"/>
+    <unit facet="0" iRef="TaskPort" multiple="true" private="false" replica="0" uRef="peer" visibleInterface="true">
+      <super cRef="base" uRef="peer"/>
+      <visualDescription h="40" w="80" x="59" y="254"/>
     </unit>
   </componentInfo>
 </component:component>
