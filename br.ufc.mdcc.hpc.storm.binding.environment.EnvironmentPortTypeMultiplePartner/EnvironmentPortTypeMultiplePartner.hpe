@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ef82e69ec40f2d9aa1d6a9458be5a7dffb10cd8cb40350d44f14787186aff7a3f56d75ec6cb3bf0a892780fd4782175b9c91febf010e77f624931c5998bb841ffa678f1b49237713c28cc8750112a7b5aba8d604ea35a87b452481db50e00f114c1ed87fea6e46d711bf949107afdd2888bf4b646cfcf799a26d12d88abca98a" isAbstract="true" kind="Qualifier" name="EnvironmentPortTypeMultiplePartner" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c5904b87007923b74a821c561f452c879bad5e579679b60f872ea8a1bb53a10e371a4895a890a3fcff914a47e27069f23005667dc0390e374d24e6ed67e36c46fb23595fa9619b08b8b25cd5fe0c1e2c365b779bf966ca6895dd94ca44d0a2b738aefc7977aeaa51a33b42a53fd7b93f0d00348fbd019ae22c9326bc3ddc6aa8" isAbstract="true" kind="Qualifier" name="EnvironmentPortTypeMultiplePartner" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
     <baseType>
       <extensionType>
         <extends>true</extends>
@@ -32,7 +32,7 @@
           <externalDependency>System.Runtime.Serialization</externalDependency>
         </file>
       </sources>
-      <visualDescription h="57" w="361" x="15" y="81">
+      <visualDescription h="57" w="361" x="42" y="80">
         <color b="144" g="238" r="144"/>
       </visualDescription>
     </interface>

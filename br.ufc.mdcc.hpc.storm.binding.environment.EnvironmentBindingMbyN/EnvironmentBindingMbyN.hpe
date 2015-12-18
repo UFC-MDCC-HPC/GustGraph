@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e1aece3313935241905c86e7054690bbc6a1f0b346c74fb82c695a75a99ef45a1bb598bdb5f6556fae195ecd0e4a96e7a1d2896caac950df76829c43c96e2c3788cb1a51331f5f1ee35afa96bd42df620db3fd4f3eeb8809b0cb7d607f7a04ace09592733c30c418c21cabf75d4540db91199ee59897aeabc73ea5c4bc044e9f" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMbyN" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d9e93f41ecdc24c151691986404104691fc2b4c524c9bc6317b05885a2cea9975c441bc9a9339284a55d4fbf1d7f823c026b8bba14661b578a973db0e5417436963dc58083ffd494aa312ef3b4f8b3b4b7d5cf3f03f39a874207d655148bd32f89785cd862e93165cd9ec40b8a09f27b326d1238b158bbd796774dae2ae44dc2" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMbyN" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
     <baseType>
       <extensionType>
         <extends>true</extends>
@@ -9,8 +9,8 @@
         <visualDescription h="60" w="253" x="91" y="247">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="server_port_type" varName="S"/>
         <parameter formFieldId="client_port_type" varName="C"/>
+        <parameter formFieldId="server_port_type" varName="S"/>
         <unitBounds parallel="true" uRef="client">
           <visualDescription h="20" w="20" x="45" y="24"/>
         </unitBounds>
@@ -55,7 +55,7 @@
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="122" x="59" y="90">
+      <visualDescription h="40" w="122" x="60" y="83">
         <color b="0" g="255" r="255"/>
       </visualDescription>
       <parameter iname="IEnvironmentPortTypeMultiplePartner" order="0" parid="client_port_type" uname="environment_port_type" varid="C"/>

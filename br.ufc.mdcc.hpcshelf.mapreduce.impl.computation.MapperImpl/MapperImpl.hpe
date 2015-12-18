@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a11164bc5dfe132646ca90535b3d1831ab953444616900bc43ee643ceeee5ae65fc6eaf7cd6db12004e5eb6ea4c1ddc301076510a30c198e9b3553f903dd9640e93a6de07350e15bcbe25b884555e9adbe5dbeec03be263cf6bf8ce6c8bba35c5e70c41a632255fbcd4cddd533bda6c3433ab4d9691abd95646a14303e0cca8c" isAbstract="false" kind="Computation" name="MapperImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000065d6722cda58d09e22591eb27ed35bdbac954a3743303cb1841c7f25641511591fbda883117c544b4488e063da9d2fab1f516e3f73ac70051ee029154d0cdc841cb03ddf3ccc3605fe5e53b229b56ac3d3f4381c17fc7d833a3e011be34f68919f3ee7c6661a747d75add8f323bccf48c6dcbd566b491668fefb6ce826c1c5cc" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper/Mapper.hpe" name="Mapper" package="br.ufc.mdcc.hpcshelf.mapreduce.computation" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="382" y="467">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="output_value_type" varName="OMV"/>
+        <parameter formFieldId="platform" varName="P"/>
+        <parameter formFieldId="input_key_type" varName="IMK"/>
+        <parameter formFieldId="input_value_type" varName="IMV"/>
+        <parameter formFieldId="map_function" varName="MF"/>
+        <parameter formFieldId="output_key_type" varName="OMK"/>
+        <port localRef="output_pairs" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="60" w="209" x="553" y="470">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="value_type" varName="X###827817012"/>
+          <unitBounds parallel="false" uRef="set">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="input_pair" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="60" w="135" x="92" y="462">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="value_type" varName="IMV"/>
+          <parameter formFieldId="key_type" varName="IMK"/>
+          <unitBounds parallel="false" uRef="kv_pair">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="true" uRef="mapper">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="imk" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="231" y="86">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="omk" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="476" y="75">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="imv" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="243" y="174">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="omv" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="488" y="145">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="platform" location="br.ufc.mdcc.common.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="684" y="101">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="platform">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="mf" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction/MapFunction.hpe" multiple="false" name="MapFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" exposed="false">
+      <visualDescription h="60" w="100" x="631" y="553">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="output_value_type" varName="OMV"/>
+      <parameter formFieldId="input_key_type" varName="IMK"/>
+      <parameter formFieldId="input_value_type" varName="IMV"/>
+      <parameter formFieldId="output_key_type" varName="OMK"/>
+      <port localRef="output_pairs" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="60" w="209" x="553" y="470">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="value_type" varName="X###1721455418"/>
+        <unitBounds parallel="false" uRef="set">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <port localRef="input_pair" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="60" w="135" x="92" y="462">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="value_type" varName="IMV"/>
+        <parameter formFieldId="key_type" varName="IMK"/>
+        <unitBounds parallel="false" uRef="kv_pair">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <unitBounds parallel="false" uRef="map_function">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="c" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="287" y="525">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="s" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="288" y="607">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="imk" direct="true" varName="IMK"/>
+    <supplyParameter cRef="imv" direct="true" varName="IMV"/>
+    <supplyParameter cRef="omk" direct="true" varName="OMK"/>
+    <supplyParameter cRef="omv" direct="true" varName="OMV"/>
+    <supplyParameter cRef="platform" direct="true" varName="P"/>
+    <supplyParameter cRef="c" direct="true" varName="C"/>
+    <supplyParameter cRef="s" direct="true" varName="S"/>
+    <supplyParameter cRef="mf" direct="true" varName="MF"/>
+    <innerComponent localRef="C###1721455418" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="437" y="287">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="OMV"/>
+      <parameter formFieldId="key_type" varName="OMK"/>
+      <unitBounds parallel="false" uRef="kv_pair">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="C###1721455418" varName="X###1721455418"/>
+    <interface iRef="IMapperImpl" nArgs="5">
+      <slice isRef="collect_pairs">
+        <originRef cRef="collect_pairs" iRef="IClientBase"/>
+        <visualDescription h="10" w="10" x="18" y="28"/>
+      </slice>
+      <slice isRef="map_function">
+        <originRef cRef="map_function" iRef="IMapFunction"/>
+        <visualDescription h="10" w="10" x="78" y="9"/>
+      </slice>
+      <slice isRef="feed_pairs">
+        <originRef cRef="feed_pairs" iRef="IServerBase"/>
+        <visualDescription h="10" w="10" x="79" y="24"/>
+      </slice>
+      <slice isRef="task_mapper">
+        <originRef cRef="task_mapper" iRef="ITaskBindingAdvance"/>
+        <visualDescription h="10" w="10" x="55" y="0"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;&#xA;using br.ufc.mdcc.common.Set;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl &#xA;{&#xA;&#x9;public abstract class BaseIMapperImpl: Computation, BaseIMapper&lt;MF, IMK, IMV, OMK, OMV>&#xA;&#x9;&#x9;where MF:IMapFunction&lt;IMK, IMV, OMK, OMV>&#xA;&#x9;&#x9;where IMK:IData&#xA;&#x9;&#x9;where IMV:IData&#xA;&#x9;&#x9;where OMK:IData&#xA;&#x9;&#x9;where OMV:IData&#xA;&#x9;{&#xA;&#x9;&#x9;private IClientBase&lt;IPortTypeIterator> collect_pairs = null;&#xA;&#xA;&#x9;&#x9;protected IClientBase&lt;IPortTypeIterator> Collect_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.collect_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.collect_pairs = (IClientBase&lt;IPortTypeIterator>) Services.getPort(&quot;collect_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.collect_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private MF map_function = default(MF);&#xA;&#xA;&#x9;&#x9;protected MF Map_function&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.map_function == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.map_function = (MF) Services.getPort(&quot;map_function&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.map_function;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskBindingAdvance task_mapper = null;&#xA;&#xA;&#x9;&#x9;protected ITaskBindingAdvance Task_mapper&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_mapper == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_mapper = (ITaskBindingAdvance) Services.getPort(&quot;task_mapper&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_mapper;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ISet&lt;IKVPair&lt;OMK, OMV>> output_pairs = null;&#xA;&#xA;&#x9;&#x9;public ISet&lt;IKVPair&lt;OMK, OMV>> Output_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_pairs = (ISet&lt;IKVPair&lt;OMK, OMV>>) Services.getPort(&quot;output_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeIterator> feed_pairs = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;IPortTypeIterator> Feed_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.feed_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.feed_pairs = (IServerBase&lt;IPortTypeIterator>) Services.getPort(&quot;feed_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.feed_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_port_mapper = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvance> Task_port_mapper&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_port_mapper == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_port_mapper = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_port_mapper&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_port_mapper;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IKVPair&lt;IMK, IMV> input_pair = null;&#xA;&#xA;&#x9;&#x9;public IKVPair&lt;IMK, IMV> Input_pair&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_pair == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_pair = (IKVPair&lt;IMK, IMV>) Services.getPort(&quot;input_pair&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_pair;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIMapperImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl/bin/1.0.0.0/BaseIMapperImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction/bin/1.0.0.0/IMapFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance/bin/1.0.0.0/ITaskBindingAdvance.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Set/bin/1.0.0.0/ISet.dll</dependency>
+          <dependency>br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper/bin/1.0.0.0/BaseIMapper.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl&#xA;{&#xA;&#x9;public class IMapperImpl : BaseIMapperImpl, IMapper&lt;MF, IMK, IMV, OMK, OMV>&#xA;where MF:IMapFunction&lt;IMK, IMV, OMK, OMV>&#xA;where IMK:IData&#xA;where IMV:IData&#xA;where OMK:IData&#xA;where OMV:IData&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IMapperImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl/bin/1.0.0.0/IMapperImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction/bin/1.0.0.0/IMapFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl/bin/1.0.0.0/BaseIMapperImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper/bin/1.0.0.0/IMapper.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="99" x="155" y="97">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <port name="input_pair">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_pair" sRef="map_function"/>
+      </port>
+      <port name="output_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_pairs" sRef="map_function"/>
+      </port>
+      <port name="task_port_mapper">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_port" sRef="task_mapper"/>
+      </port>
+      <parameter iname="IMapFunction" order="4" parid="map_function" uname="map_function" varid="MF"/>
+      <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="IMK"/>
+      <parameter iname="IData" order="1" parid="input_value_type" uname="data" varid="IMV"/>
+      <parameter iname="IData" order="2" parid="output_key_type" uname="data" varid="OMK"/>
+      <parameter iname="IData" order="3" parid="output_value_type" uname="data" varid="OMV"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IMapperImpl" multiple="true" private="false" replica="0" uRef="mapper" visibleInterface="true">
+      <super cRef="base" uRef="mapper"/>
+      <visualDescription h="40" w="103" x="487" y="343"/>
+    </unit>
+  </componentInfo>
+</component:component>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/heron/hpe/heron/cache" default="all" name="PortTypeDataSinkInterfaceSplitter">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="PortTypeDataSinkInterfaceSplitter-1.0.0.0">
+    <ifnot targetexists="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterfaceSplitter/bin/1.0.0.0">
+      <mkdir dir="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterfaceSplitter/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterfaceSplitter/PortTypeDataSinkInterfaceSplitter.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterfaceSplitter/bin/1.0.0.0/BaseIPortTypeDataSinkInterfaceSplitter.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterfaceSplitter/src/1.0.0.0/BaseIPortTypeDataSinkInterfaceSplitter.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/BaseIEnvironmentPortTypeSinglePartner.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterfaceSplitter/PortTypeDataSinkInterfaceSplitter.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterfaceSplitter/bin/1.0.0.0/IPortTypeDataSinkInterfaceSplitter.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterfaceSplitter/src/1.0.0.0/IPortTypeDataSinkInterfaceSplitter.cs"/>
+      </sources>
+      <references>
+        <include name="/br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterfaceSplitter/bin/1.0.0.0/BaseIPortTypeDataSinkInterfaceSplitter.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="PortTypeDataSinkInterfaceSplitter-1.0.0.0" name="all"/>
+</project>

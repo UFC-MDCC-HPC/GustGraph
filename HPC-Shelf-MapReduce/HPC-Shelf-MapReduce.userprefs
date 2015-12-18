@@ -1,15 +1,13 @@
 ﻿<Properties StartupItem="HPC-Shelf-MapReduce/HPC-Shelf-MapReduce.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.impl.TaskBindingShuffleMapImpl/src/1.0.0.0/BaseITaskBindingShuffleMapImpl.cs">
-    <Files>
-      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterMapImpl/src/1.0.0.0/ITaskBindingSplitterMapImpl.cs" Line="18" Column="37" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterMapImpl/src/1.0.0.0/BaseITaskBindingSplitterMapImpl.cs" Line="22" Column="91" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterReadImpl/src/1.0.0.0/BaseITaskBindingSplitterReadImpl.cs" Line="22" Column="97" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterReduceImpl/src/1.0.0.0/BaseITaskBindingSplitterReduceImpl.cs" Line="22" Column="95" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.task.splitter.impl.TaskBindingSplitterWriteImpl/src/1.0.0.0/BaseITaskBindingSplitterWriteImpl.cs" Line="22" Column="96" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.impl.TaskBindingShuffleMapImpl/src/1.0.0.0/BaseITaskBindingShuffleMapImpl.cs" Line="23" Column="27" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.task.shuffler.impl.TaskBindingShuffleReduceImpl/src/1.0.0.0/BaseITaskBindingShuffleReduceImpl.cs" Line="22" Column="95" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HPC-Shelf-MapReduce" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
