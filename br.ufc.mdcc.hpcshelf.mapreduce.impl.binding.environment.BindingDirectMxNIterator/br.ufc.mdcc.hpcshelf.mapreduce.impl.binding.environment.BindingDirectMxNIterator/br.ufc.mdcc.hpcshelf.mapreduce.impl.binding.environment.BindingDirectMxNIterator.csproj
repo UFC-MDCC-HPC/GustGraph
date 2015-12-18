@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99F99D20-6FC8-4E82-845B-6C02560D9F2F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator</RootNamespace>
+    <AssemblyName>br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\src\1.0.0.0\IBindingDirectMxNIteratorClient.cs">
+      <Link>IBindingDirectMxNIteratorClient.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\BaseIBindingDirectMxNIteratorClient.cs">
+      <Link>BaseIBindingDirectMxNIteratorClient.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IBindingDirectMxNIteratorServer.cs">
+      <Link>IBindingDirectMxNIteratorServer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\BaseIBindingDirectMxNIteratorServer.cs">
+      <Link>BaseIBindingDirectMxNIteratorServer.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
