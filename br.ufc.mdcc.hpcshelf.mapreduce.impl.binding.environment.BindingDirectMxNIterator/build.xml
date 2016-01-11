@@ -4,12 +4,12 @@
   <property name="build" value="bin"/>
   <property name="src" value="src"/>
   <target name="BindingDirectMxNIterator-1.0.0.0">
-    <ifnot targetexists="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.BindingDirectMxNIterator/bin/1.0.0.0">
-      <mkdir dir="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.BindingDirectMxNIterator/bin/1.0.0.0"/>
+    <ifnot targetexists="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0">
+      <mkdir dir="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0"/>
     </ifnot>
-    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.BindingDirectMxNIterator/BindingDirectMxNIterator.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.BindingDirectMxNIterator/bin/1.0.0.0/BaseIBindingDirectMxNIteratorClient.dll" target="library" unsafe="false">
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0/BaseIBindingDirectMxNIteratorClient.dll" target="library" unsafe="false">
       <sources>
-        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.BindingDirectMxNIterator/src/1.0.0.0/BaseIBindingDirectMxNIteratorClient.cs"/>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator/src/1.0.0.0/BaseIBindingDirectMxNIteratorClient.cs"/>
       </sources>
       <references>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll"/>
@@ -17,19 +17,19 @@
         <include/>
       </references>
     </csc>
-    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.BindingDirectMxNIterator/BindingDirectMxNIterator.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.BindingDirectMxNIterator/bin/1.0.0.0/IBindingDirectMxNIteratorClient.dll" target="library" unsafe="false">
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0/IBindingDirectMxNIteratorClient.dll" target="library" unsafe="false">
       <sources>
-        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.BindingDirectMxNIterator/src/1.0.0.0/IBindingDirectMxNIteratorClient.cs"/>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator/src/1.0.0.0/IBindingDirectMxNIteratorClient.cs"/>
       </sources>
       <references>
-        <include name="/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.BindingDirectMxNIterator/bin/1.0.0.0/BaseIBindingDirectMxNIteratorClient.dll"/>
+        <include name="/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0/BaseIBindingDirectMxNIteratorClient.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/IClientMbyNIntra.dll"/>
         <include/>
       </references>
     </csc>
-    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.BindingDirectMxNIterator/BindingDirectMxNIterator.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.BindingDirectMxNIterator/bin/1.0.0.0/BaseIBindingDirectMxNIteratorServer.dll" target="library" unsafe="false">
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0/BaseIBindingDirectMxNIteratorServer.dll" target="library" unsafe="false">
       <sources>
-        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.BindingDirectMxNIterator/src/1.0.0.0/BaseIBindingDirectMxNIteratorServer.cs"/>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator/src/1.0.0.0/BaseIBindingDirectMxNIteratorServer.cs"/>
       </sources>
       <references>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll"/>
@@ -37,12 +37,12 @@
         <include/>
       </references>
     </csc>
-    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.BindingDirectMxNIterator/BindingDirectMxNIterator.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.BindingDirectMxNIterator/bin/1.0.0.0/IBindingDirectMxNIteratorServer.dll" target="library" unsafe="false">
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0/IBindingDirectMxNIteratorServer.dll" target="library" unsafe="false">
       <sources>
-        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.BindingDirectMxNIterator/src/1.0.0.0/IBindingDirectMxNIteratorServer.cs"/>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator/src/1.0.0.0/IBindingDirectMxNIteratorServer.cs"/>
       </sources>
       <references>
-        <include name="/br.ufc.mdcc.hpcshelf.mapreduce.environment.impl.BindingDirectMxNIterator/bin/1.0.0.0/BaseIBindingDirectMxNIteratorServer.dll"/>
+        <include name="/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0/BaseIBindingDirectMxNIteratorServer.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/IServerMbyNIntra.dll"/>
         <include/>
       </references>

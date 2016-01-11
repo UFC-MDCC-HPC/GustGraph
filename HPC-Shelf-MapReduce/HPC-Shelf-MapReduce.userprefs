@@ -1,13 +1,13 @@
 ﻿<Properties StartupItem="HPC-Shelf-MapReduce/HPC-Shelf-MapReduce.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="HPC-Shelf-MapReduce" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
+  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.common.Iterator/src/1.0.0.0/IIterator.cs">
+    <Files>
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/src/1.0.0.0/ISplitterWriteSink.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/src/1.0.0.0/ISplitterReduceCollector.cs" Line="1" Column="14" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/src/1.0.0.0/ISplitterReadSource.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/src/1.0.0.0/ISplitterMapFeeder.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.common.Iterator/src/1.0.0.0/IIterator.cs" Line="1" Column="1" />
+    </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>

@@ -6,5 +6,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction
 	public interface IPartitionFunction<IPK> : BaseIPartitionFunction<IPK>
 		where IPK:IData
 	{
+		int NumberOfPartitions {set; get;}
 	}
 }

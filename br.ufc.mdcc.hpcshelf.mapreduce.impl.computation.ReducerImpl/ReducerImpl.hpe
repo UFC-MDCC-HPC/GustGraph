@@ -19,7 +19,7 @@
           <visualDescription h="60" w="181" x="79" y="483">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###1598362822"/>
+          <parameter formFieldId="value_type" varName="X###415034262"/>
           <parameter formFieldId="key_type" varName="OMK"/>
           <unitBounds parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="5" y="2"/>
@@ -98,7 +98,7 @@
         <visualDescription h="60" w="181" x="79" y="483">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###1309701488"/>
+        <parameter formFieldId="value_type" varName="X###1639134984"/>
         <parameter formFieldId="key_type" varName="OMK"/>
         <unitBounds parallel="false" uRef="kv_pair">
           <visualDescription h="20" w="20" x="5" y="2"/>
@@ -142,7 +142,7 @@
     <supplyParameter cRef="rf" direct="true" varName="RF"/>
     <supplyParameter cRef="c" direct="true" varName="C"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>
-    <innerComponent localRef="C###1309701488" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###1639134984" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="152" x="455" y="455">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -151,7 +151,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1309701488" varName="X###1309701488"/>
+    <supplyParameter cRef="C###1639134984" varName="X###1639134984"/>
     <interface iRef="IReducerImpl" nArgs="5">
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IClientBase"/>
@@ -193,13 +193,13 @@
       <visualDescription h="40" w="91" x="202" y="188">
         <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="output_item">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output" sRef="reduce_function"/>
-      </port>
       <port name="input_item">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input" sRef="reduce_function"/>
+      </port>
+      <port name="output_item">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output" sRef="reduce_function"/>
       </port>
       <port name="task_port_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>

@@ -5,12 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{CC4908F8-3F6B-4F14-9179-64EF033B3371}</ProjectGuid>
+    <ProjectGuid>{1784C0D3-7632-4F38-8FFF-FA8008E2A724}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction</RootNamespace>
-    <AssemblyName>br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction</AssemblyName>
-    <BaseDirectory>..\src\1.0.0.0</BaseDirectory>
+    <RootNamespace>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator</RootNamespace>
+    <AssemblyName>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\PortTypeIterator.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,27 +34,27 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="DGAC">
-      <HintPath>..\..\HPC-Shelf-MapReduce\lib\DGAC.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\usr\lib\mono\DGAC\DGAC.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\src\1.0.0.0\IMapFunction.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseIMapFunction.cs" />
+    <Compile Include="..\src\1.0.0.0\IPortTypeIterator.cs">
+      <Link>IPortTypeIterator.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\BaseIPortTypeIterator.cs">
+      <Link>BaseIPortTypeIterator.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\..\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data.csproj">
-      <Project>{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}</Project>
-      <Name>br.ufc.mdcc.common.Data</Name>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner.csproj">
+      <Project>{B1988D74-54AE-4031-B185-E046226BC359}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.common.KVPair\br.ufc.mdcc.common.KVPair\br.ufc.mdcc.common.KVPair.csproj">
-      <Project>{9B499C49-DA84-475A-B783-2A3D2DEAAA97}</Project>
-      <Name>br.ufc.mdcc.common.KVPair</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.common.Iterator\br.ufc.mdcc.common.Iterator\br.ufc.mdcc.common.Iterator.csproj">
-      <Project>{807A087E-123C-4745-B029-C31FC9458A61}</Project>
-      <Name>br.ufc.mdcc.common.Iterator</Name>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType.csproj">
+      <Project>{4BB52CBE-64B0-4E9C-812F-921ED3FB87AF}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

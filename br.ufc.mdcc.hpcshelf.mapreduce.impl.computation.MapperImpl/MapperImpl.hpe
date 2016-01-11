@@ -19,7 +19,7 @@
           <visualDescription h="60" w="209" x="553" y="470">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###827817012"/>
+          <parameter formFieldId="value_type" varName="X###1595934713"/>
           <unitBounds parallel="false" uRef="set">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -97,7 +97,7 @@
         <visualDescription h="60" w="209" x="553" y="470">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###1721455418"/>
+        <parameter formFieldId="value_type" varName="X###1053953141"/>
         <unitBounds parallel="false" uRef="set">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -140,7 +140,7 @@
     <supplyParameter cRef="c" direct="true" varName="C"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>
     <supplyParameter cRef="mf" direct="true" varName="MF"/>
-    <innerComponent localRef="C###1721455418" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###1053953141" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="437" y="287">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -150,7 +150,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1721455418" varName="X###1721455418"/>
+    <supplyParameter cRef="C###1053953141" varName="X###1053953141"/>
     <interface iRef="IMapperImpl" nArgs="5">
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IClientBase"/>
@@ -192,13 +192,13 @@
       <visualDescription h="40" w="99" x="155" y="97">
         <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="input_pair">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_pair" sRef="map_function"/>
-      </port>
       <port name="output_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_pairs" sRef="map_function"/>
+      </port>
+      <port name="input_pair">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_pair" sRef="map_function"/>
       </port>
       <port name="task_port_mapper">
         <visualDescription h="10" w="10" x="0" y="0"/>
