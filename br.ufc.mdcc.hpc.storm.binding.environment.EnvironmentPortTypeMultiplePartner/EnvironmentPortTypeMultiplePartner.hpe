@@ -5,7 +5,7 @@
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a7f4455ed771d35b8c63aac38fe6cb44633078b88be6469674af51bf43b72d9072e92c5545b298d1aa4c0ce137ca4e5a9705f3b8df339ade181b3339f649aacde35c9007d58dc7695f20f3afe73d3d80a771011f119628af69a205ab0b9dfc35474820f4bfa19913fa2085c1d869a2303eca96af62c3371e545548417f24e783" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/EnvironmentPortType.hpe" name="EnvironmentPortType" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005bc53a70a68f27b943cd21d1930a58ff12464c81346292751c30e61517082128e5e58b9b0887d03fdd61471ca2775c7139b9a746119f4a1f27a7786da523003ce7875acd08a96d8c7fafa301e75fb89259de95ee60f533bdb50b1d57155263ceb9443fa175f4a00a58f611c1dc8a261ebbcfcc14c51f290051effdd4600553c0" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/EnvironmentPortType.hpe" name="EnvironmentPortType" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
         <visualDescription h="60" w="100" x="197" y="182">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -29,7 +29,6 @@
           <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/BaseIEnvironmentPortTypeMultiplePartner.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
           <externalDependency>MPI</externalDependency>
-          <externalDependency>System.Runtime.Serialization</externalDependency>
         </file>
       </sources>
       <visualDescription h="57" w="361" x="42" y="80">

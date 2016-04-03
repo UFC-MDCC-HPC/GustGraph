@@ -11,6 +11,8 @@
     <AssemblyName>br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter</AssemblyName>
     <BaseDirectory>..\src\1.0.0.0</BaseDirectory>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Splitter.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

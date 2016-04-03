@@ -15,24 +15,38 @@
         <parameter formFieldId="input_value_type" varName="OMV"/>
         <parameter formFieldId="reduce_function" varName="RF"/>
         <parameter formFieldId="output_key_type" varName="ORK"/>
-        <port localRef="input_item" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
-          <visualDescription h="60" w="181" x="79" y="483">
+        <port localRef="task_reduce" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance/TaskBindingAdvance.hpe" multiple="false" name="TaskBindingAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.task" exposed="true">
+          <visualDescription h="60" w="182" x="269" y="455">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###415034262"/>
-          <parameter formFieldId="key_type" varName="OMK"/>
-          <unitBounds parallel="false" uRef="kv_pair">
+          <unitBounds parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <port localRef="output_item" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
-          <visualDescription h="60" w="100" x="372" y="499">
+        <port localRef="feed_pairs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
+          <visualDescription h="60" w="112" x="457" y="378">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="ORV"/>
-          <parameter formFieldId="key_type" varName="ORK"/>
-          <unitBounds parallel="false" uRef="kv_pair">
+          <parameter formFieldId="client_port_type" varName="X###1299611552"/>
+          <parameter formFieldId="server_port_type" varName="X###2137578332"/>
+          <unitBounds parallel="false" uRef="client">
+            <visualDescription h="20" w="20" x="43" y="36"/>
+          </unitBounds>
+          <unitBounds parallel="false" uRef="server">
+            <visualDescription h="20" w="20" x="42" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="collect_pairs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
+          <visualDescription h="60" w="111" x="63" y="265">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="client_port_type" varName="X###1025095261"/>
+          <parameter formFieldId="server_port_type" varName="X###1662235393"/>
+          <unitBounds parallel="false" uRef="client">
             <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+          <unitBounds parallel="false" uRef="server">
+            <visualDescription h="20" w="20" x="28" y="2"/>
           </unitBounds>
         </port>
         <unitBounds parallel="true" uRef="reducer">
@@ -94,26 +108,6 @@
       <parameter formFieldId="input_key_type" varName="OMK"/>
       <parameter formFieldId="input_value_type" varName="OMV"/>
       <parameter formFieldId="output_key_type" varName="ORK"/>
-      <port localRef="input" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="60" w="181" x="79" y="483">
-          <color b="255" g="255" r="255"/>
-        </visualDescription>
-        <parameter formFieldId="value_type" varName="X###1639134984"/>
-        <parameter formFieldId="key_type" varName="OMK"/>
-        <unitBounds parallel="false" uRef="kv_pair">
-          <visualDescription h="20" w="20" x="5" y="2"/>
-        </unitBounds>
-      </port>
-      <port localRef="output" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="60" w="100" x="372" y="499">
-          <color b="255" g="255" r="255"/>
-        </visualDescription>
-        <parameter formFieldId="value_type" varName="ORV"/>
-        <parameter formFieldId="key_type" varName="ORK"/>
-        <unitBounds parallel="false" uRef="kv_pair">
-          <visualDescription h="20" w="20" x="5" y="2"/>
-        </unitBounds>
-      </port>
       <unitBounds parallel="false" uRef="reduce_function">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -142,35 +136,29 @@
     <supplyParameter cRef="rf" direct="true" varName="RF"/>
     <supplyParameter cRef="c" direct="true" varName="C"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>
-    <innerComponent localRef="C###1639134984" location="br.ufc.mdcc.common.Set/Set.hpe" multiple="false" name="Set" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="152" x="455" y="455">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="value_type" varName="OMV"/>
-      <unitBounds parallel="false" uRef="set">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <supplyParameter cRef="C###1639134984" varName="X###1639134984"/>
     <interface iRef="IReducerImpl" nArgs="5">
-      <slice isRef="collect_pairs">
-        <originRef cRef="collect_pairs" iRef="IClientBase"/>
-        <visualDescription h="10" w="10" x="46" y="26"/>
-      </slice>
-      <slice isRef="reduce_function">
-        <originRef cRef="reduce_function" iRef="IReduceFunction"/>
-        <visualDescription h="10" w="10" x="2" y="10"/>
-      </slice>
       <slice isRef="feed_pairs">
         <originRef cRef="feed_pairs" iRef="IServerBase"/>
         <visualDescription h="10" w="10" x="69" y="14"/>
+      </slice>
+      <slice isRef="collect_pairs">
+        <originRef cRef="collect_pairs" iRef="IClientBase"/>
+        <visualDescription h="10" w="10" x="46" y="26"/>
       </slice>
       <slice isRef="task_reduce">
         <originRef cRef="task_reduce" iRef="ITaskBindingAdvance"/>
         <visualDescription h="10" w="10" x="0" y="23"/>
       </slice>
+      <slice isRef="reduce_function">
+        <originRef cRef="reduce_function" iRef="IReduceFunction"/>
+        <visualDescription h="10" w="10" x="2" y="10"/>
+      </slice>
+      <slice isRef="output">
+        <originRef cRef="output" iRef="IIterator"/>
+        <visualDescription h="10" w="10" x="60" y="25"/>
+      </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;&#xA;using br.ufc.mdcc.common.Set;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl &#xA;{&#xA;&#x9;public abstract class BaseIReducerImpl: Computation, BaseIReducer&lt;RF, ORK, ORV, OMK, OMV>&#xA;&#x9;&#x9;where RF:IReduceFunction&lt;ORK, ORV, OMK, OMV>&#xA;&#x9;&#x9;where ORK:IData&#xA;&#x9;&#x9;where ORV:IData&#xA;&#x9;&#x9;where OMK:IData&#xA;&#x9;&#x9;where OMV:IData&#xA;&#x9;{&#xA;&#x9;&#x9;private IKVPair&lt;ORK, ORV> output_item = null;&#xA;&#xA;&#x9;&#x9;public IKVPair&lt;ORK, ORV> Output_item&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_item == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_item = (IKVPair&lt;ORK, ORV>) Services.getPort(&quot;output_item&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_item;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IClientBase&lt;IPortTypeIterator> collect_pairs = null;&#xA;&#xA;&#x9;&#x9;protected IClientBase&lt;IPortTypeIterator> Collect_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.collect_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.collect_pairs = (IClientBase&lt;IPortTypeIterator>) Services.getPort(&quot;collect_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.collect_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private RF reduce_function = default(RF);&#xA;&#xA;&#x9;&#x9;protected RF Reduce_function&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.reduce_function == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.reduce_function = (RF) Services.getPort(&quot;reduce_function&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.reduce_function;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskBindingAdvance task_reduce = null;&#xA;&#xA;&#x9;&#x9;protected ITaskBindingAdvance Task_reduce&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_reduce == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_reduce = (ITaskBindingAdvance) Services.getPort(&quot;task_reduce&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_reduce;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IKVPair&lt;OMK, ISet&lt;OMV>> input_item = null;&#xA;&#xA;&#x9;&#x9;public IKVPair&lt;OMK, ISet&lt;OMV>> Input_item&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_item == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_item = (IKVPair&lt;OMK, ISet&lt;OMV>>) Services.getPort(&quot;input_item&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_item;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeIterator> feed_pairs = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;IPortTypeIterator> Feed_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.feed_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.feed_pairs = (IServerBase&lt;IPortTypeIterator>) Services.getPort(&quot;feed_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.feed_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_port_reduce = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvance> Task_port_reduce&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_port_reduce == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_port_reduce = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_port_reduce&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_port_reduce;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIReducerImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl/bin/1.0.0.0/BaseIReducerImpl.dll" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl &#xA;{&#xA;&#x9;public abstract class BaseIReducerImpl&lt;RF, ORK, ORV, OMK, OMV>: Computation, BaseIReducer&lt;RF, ORK, ORV, OMK, OMV>&#xA;&#x9;&#x9;where RF:IReduceFunction&lt;ORK, ORV, OMK, OMV>&#xA;&#x9;&#x9;where ORK:IData&#xA;&#x9;&#x9;where ORV:IData&#xA;&#x9;&#x9;where OMK:IData&#xA;&#x9;&#x9;where OMV:IData&#xA;&#x9;{&#xA;&#x9;&#x9;private IKVPair&lt;ORK, ORV> output_reduce = null;&#xA;&#xA;&#x9;&#x9;protected IKVPair&lt;ORK, ORV> Output_reduce&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_reduce == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_reduce = (IKVPair&lt;ORK, ORV>) Services.getPort(&quot;output_reduce&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_reduce;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IClientBase&lt;IPortTypeIterator> collect_pairs = null;&#xA;&#xA;&#x9;&#x9;protected IClientBase&lt;IPortTypeIterator> Collect_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.collect_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.collect_pairs = (IClientBase&lt;IPortTypeIterator>) Services.getPort(&quot;collect_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.collect_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private RF reduce_function = default(RF);&#xA;&#xA;&#x9;&#x9;protected RF Reduce_function&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.reduce_function == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.reduce_function = (RF) Services.getPort(&quot;reduce_function&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.reduce_function;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskBindingAdvance task_reduce = null;&#xA;&#xA;&#x9;&#x9;protected ITaskBindingAdvance Task_reduce&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_reduce == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_reduce = (ITaskBindingAdvance) Services.getPort(&quot;task_reduce&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_reduce;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IKVPair&lt;OMK, IIterator&lt;OMV>> input_reduce = null;&#xA;&#xA;&#x9;&#x9;protected IKVPair&lt;OMK, IIterator&lt;OMV>> Input_reduce&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_reduce == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_reduce = (IKVPair&lt;OMK, IIterator&lt;OMV>>) Services.getPort(&quot;input_reduce&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_reduce;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeIterator> feed_pairs = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;IPortTypeIterator> Feed_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.feed_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.feed_pairs = (IServerBase&lt;IPortTypeIterator>) Services.getPort(&quot;feed_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.feed_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_port_reduce = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvance> Task_port_reduce&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_port_reduce == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_port_reduce = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_port_reduce&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_port_reduce;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IIterator&lt;IKVPair&lt;ORK,ORV>> output = null;&#xA;&#x9;&#x9;protected IIterator&lt;IKVPair&lt;ORK,ORV>> Output {&#xA;&#x9;&#x9;&#x9;get {&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output = (IIterator&lt;IKVPair&lt;ORK,ORV>>)Services.getPort(&quot;output&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;}&#xA;}" name="BaseIReducerImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl/bin/1.0.0.0/BaseIReducerImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll</dependency>
@@ -183,7 +171,7 @@
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer/bin/1.0.0.0/BaseIReducer.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl&#xA;{&#xA;&#x9;public class IReducerImpl : BaseIReducerImpl, IReducer&lt;RF, ORK, ORV, OMK, OMV>&#xA;where RF:IReduceFunction&lt;ORK, ORV, OMK, OMV>&#xA;where ORK:IData&#xA;where ORV:IData&#xA;where OMK:IData&#xA;where OMV:IData&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IReducerImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl/bin/1.0.0.0/IReducerImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;&#xA;using System.Diagnostics;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl&#xA;{&#xA;&#x9;public class IReducerImpl&lt;RF, ORK, ORV, OMK, OMV> : BaseIReducerImpl&lt;RF, ORK, ORV, OMK, OMV>, IReducer&lt;RF, ORK, ORV, OMK, OMV>&#xA;where RF:IReduceFunction&lt;ORK, ORV, OMK, OMV>&#xA;where ORK:IData&#xA;where ORV:IData&#xA;where OMK:IData&#xA;where OMV:IData&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main() {&#xA;&#x9;&#x9;&#x9;/* 1. Ler pares chave (OMK) e valores (OMV) de Input.&#xA;             * 2. Para cada par, atribuir a Key e Values e chamar Reduce_function.go();&#xA;             * 3. Pegar o resultado de Reduction_function.go() de Output_reduce (ORV) &#xA;             *    e colocar no iterator Output.&#xA;             */&#xA;&#x9;&#x9;&#x9;readPair_OMK_OMVs(); //startThreads();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private void readPair_OMK_OMVs() &#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;OMK, IIterator&lt;OMV>>> input_instance = (IIteratorInstance&lt;IKVPair&lt;OMK, IIterator&lt;OMV>>>)Collect_pairs.Service;&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;ORV> output_instance = (IIteratorInstance&lt;ORV>)Output.Instance;&#xA;&#x9;&#x9;&#x9;Feed_pairs.Service = output_instance;&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture sync_perform;&#xA;&#xA;&#x9;&#x9;&#x9;while (true)    // new iteration&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;bool end_iteration = false;&#xA;&#x9;&#x9;&#x9;&#x9;while (!end_iteration)    // take next chunk ...&#xA;&#x9;&#x9;&#x9;&#x9;{          &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_port_reduce.invoke (ITaskPortAdvance.READ_CHUNK);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_port_reduce.invoke (ITaskPortAdvance.PERFORM, out sync_perform);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IKVPairInstance&lt;OMK, IIterator&lt;OMV>> kvpair = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;object kvpair_object;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (input_instance.fetch_next (out kvpair_object)) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;kvpair = (IKVPairInstance&lt;OMK, IIterator&lt;OMV>>)kvpair_object;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Input_reduce.Instance = kvpair;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Reduce_function.go ();&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;output_instance.put (Output_reduce.Instance);&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;while (input_instance.fetch_next (out kvpair_object)) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;kvpair = (IKVPairInstance&lt;OMK, IIterator&lt;OMV>>)kvpair_object;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Input_reduce.Instance = kvpair;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Reduce_function.go ();&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;output_instance.put (Output_reduce.Instance);&#x9; &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;} &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;end_iteration = true;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sync_perform.wait ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;output_instance.finish ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_port_reduce.invoke (ITaskPortAdvance.CHUNK_READY);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;/* levando em conta que h&#xe1; sincroniza&#xe7;&#xe3;o pelos iteradores, talvez n&#xe3;o haja necessidade de sincronizar o CHUNK_READY para o&#xA;&#x9;&#x9;&#x9;     &#x9; * shuffler come&#xe7;ar a ler os pares */&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private void startThreads() {&#xA;&#x9;&#x9;&#x9;/*Instancias*/&#xA;&#x9;&#x9;&#x9;Thread treadPairOMKOMV = new Thread(new ThreadStart(readPair_OMK_OMVs));&#xA;&#xA;&#x9;&#x9;&#x9;/*Starting*/&#xA;&#x9;&#x9;&#x9;treadPairOMKOMV.Start(); &#x9;&#xA;&#x9;&#x9;&#x9;/* Joins*/&#xA;&#x9;&#x9;&#x9;treadPairOMKOMV.Join();&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;}&#xA;}&#xA;" name="IReducerImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl/bin/1.0.0.0/IReducerImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/bin/1.0.0.0/IReduceFunction.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl/bin/1.0.0.0/BaseIReducerImpl.dll</dependency>
@@ -193,13 +181,17 @@
       <visualDescription h="40" w="91" x="202" y="188">
         <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="input_item">
+      <port name="feed_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input" sRef="reduce_function"/>
+        <slice pRef="feed_pairs" sRef="feed_pairs"/>
       </port>
-      <port name="output_item">
+      <port name="collect_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output" sRef="reduce_function"/>
+        <slice pRef="collect_pairs" sRef="collect_pairs"/>
+      </port>
+      <port name="task_reduce">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_reduce" sRef="task_reduce"/>
       </port>
       <port name="task_port_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>

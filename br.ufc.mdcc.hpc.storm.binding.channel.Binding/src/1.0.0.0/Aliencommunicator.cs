@@ -60,32 +60,32 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 
 		// Value versions ...
 
-		void Send<T> (T value, Tuple<int,int> dest, int tag);
+		void Send<T> (T value, Tuple<int,int,int> dest, int tag);
 
 		//		void SendReceive<T> (T inValue, int dest, int tag, out T outValue); /* ok */
 		//		void SendReceive<T> (T inValue, int dest, int sendTag, int source, int recvTag, out T outValue); /* ok */
 		//		void SendReceive<T> (T inValue, int dest, int sendTag, int source, int recvTag, out T outValue, out CompletedStatus status);
 
-		T Receive<T> (Tuple<int,int> source, int tag); /* ok */
-		void Receive<T>(Tuple<int,int> source, int tag, out T value); /* ok */
-		void Receive<T> (Tuple<int,int> source, int tag, out T value, out CompletedStatus status);
+		T Receive<T> (Tuple<int,int,int> source, int tag); /* ok */
+		void Receive<T>(Tuple<int,int,int> source, int tag, out T value); /* ok */
+		void Receive<T> (Tuple<int,int,int> source, int tag, out T value, out CompletedStatus status);
 
-		Request ImmediateSend<T> (T value, Tuple<int,int> dest, int tag);
-		ReceiveRequest ImmediateReceive<T> (Tuple<int,int> source, int tag);
+		Request ImmediateSend<T> (T value, Tuple<int,int,int> dest, int tag);
+		ReceiveRequest ImmediateReceive<T> (Tuple<int,int,int> source, int tag);
 
 		// Array versions ... 
-		void Send<T> (T[] values, Tuple<int,int> dest, int tag);
+		void Send<T> (T[] values, Tuple<int,int,int> dest, int tag);
 
-		void Receive<T> (Tuple<int,int> source, int tag, ref T[] values); /* ok */
-		void Receive<T> (Tuple<int,int> source, int tag, ref T[] values, out CompletedStatus status);
+		void Receive<T> (Tuple<int,int,int> source, int tag, ref T[] values); /* ok */
+		void Receive<T> (Tuple<int,int,int> source, int tag, ref T[] values, out CompletedStatus status);
 
-		Request ImmediateSend<T> (T[] values, Tuple<int,int> dest, int tag);
-		ReceiveRequest ImmediateReceive<T> (Tuple<int,int> source, int tag, T[] values);
+		Request ImmediateSend<T> (T[] values, Tuple<int,int,int> dest, int tag);
+		ReceiveRequest ImmediateReceive<T> (Tuple<int,int,int> source, int tag, T[] values);
 
 		// Probe.
 
-		Status Probe (Tuple<int,int> source, int tag);
-		Status ImmediateProbe (Tuple<int,int> source, int tag);
+		Status Probe (Tuple<int,int,int> source, int tag);
+		Status ImmediateProbe (Tuple<int,int,int> source, int tag);
 
 		//		void SendReceive<T>(T[] inValues, int dest, int tag, ref T[] outValues); /* ok */
 		//		void SendReceive<T>(T[] inValues, int dest, int sendTag, int source, int recvTag, ref T[] outValues); /* ok */
@@ -170,18 +170,18 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		/// <summary>
 		///   Constructs a <code>Status</code> object from a low-level <see cref="Unsafe.MPI_Status"/> structure.
 		/// </summary>
-		internal Status(MPI.Status internal_status, Tuple<int,int> source)
+		internal Status(MPI.Status internal_status, Tuple<int,int,int> source)
 		{
 			this.source = source;
 			this.internal_status = internal_status;
 		}
 
-		Tuple<int,int> source;
+		Tuple<int,int,int> source;
 
 		/// <summary>
 		/// The rank of the process that sent the message.
 		/// </summary>
-		public Tuple<int,int> Source
+		public Tuple<int,int,int> Source
 		{
 			get
 			{
@@ -243,12 +243,12 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		///   Constructs a <code>Status</code> object from a low-level <see cref="Unsafe.MPI_Status"/> structure
 		///   and a count of the number of elements received.
 		/// </summary>
-		internal CompletedStatus(MPI.CompletedStatus internal_status, Tuple<int,int> source) : base(internal_status, source)
+		internal CompletedStatus(MPI.CompletedStatus internal_status, Tuple<int,int,int> source) : base(internal_status, source)
 		{
 			this.internal_status = internal_status;
 		}
 
-		public static CompletedStatus createStatus(MPI.CompletedStatus internal_status, Tuple<int,int> source)
+		public static CompletedStatus createStatus(MPI.CompletedStatus internal_status, Tuple<int,int,int> source)
 		{
 			return new CompletedStatus(internal_status, source);
 		}
@@ -278,9 +278,9 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 	public class Request
 	{
 		private MPI.Request internal_request;
-		private Tuple<int,int> source;
+		private Tuple<int,int,int> source;
 
-		internal Request(MPI.Request internal_request, Tuple<int,int> source)
+		internal Request(MPI.Request internal_request, Tuple<int,int,int> source)
 		{
 			this.internal_request = internal_request;
 			this.source = source;
@@ -320,7 +320,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 			internal_request.Cancel ();
 		}
 
-		public static Request createRequest(MPI.Request internal_status, Tuple<int,int> source)
+		public static Request createRequest(MPI.Request internal_status, Tuple<int,int,int> source)
 		{
 			return new Request(internal_status, source);
 		}
@@ -359,7 +359,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 	public abstract class ReceiveRequest : Request
 	{
 
-		internal ReceiveRequest(MPI.ReceiveRequest internal_request, Tuple<int,int> source) : base(internal_request, source)
+		internal ReceiveRequest(MPI.ReceiveRequest internal_request, Tuple<int,int,int> source) : base(internal_request, source)
 		{
 		}
 		/// <summary>
@@ -382,7 +382,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 	{
 		private MPI.ReceiveRequest internal_request;
 
-		internal ValueReceiveRequest(MPI.ReceiveRequest internal_request, Tuple<int,int> source) : base(internal_request, source)
+		internal ValueReceiveRequest(MPI.ReceiveRequest internal_request, Tuple<int,int,int> source) : base(internal_request, source)
 		{
 			this.internal_request = internal_request;
 		}
@@ -398,7 +398,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 			return (T) ByteArrayToObject(v);
 		}
 
-		public static ValueReceiveRequest<T> createRequest(MPI.ReceiveRequest internal_status, Tuple<int,int> source)
+		public static ValueReceiveRequest<T> createRequest(MPI.ReceiveRequest internal_status, Tuple<int,int,int> source)
 		{
 			return new ValueReceiveRequest<T>(internal_status, source);
 		}
@@ -418,7 +418,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		private MPI.ReceiveRequest internal_request;
 		private T[] values = null;
 
-		internal ArrayReceiveRequest(MPI.ReceiveRequest internal_request, Tuple<int,int> source, T[] values) : base(internal_request, source)
+		internal ArrayReceiveRequest(MPI.ReceiveRequest internal_request, Tuple<int,int,int> source, T[] values) : base(internal_request, source)
 		{
 			this.internal_request = internal_request;
 			this.values = values;
@@ -442,7 +442,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 			return values;
 		}
 
-		public static ArrayReceiveRequest<T> createRequest(MPI.ReceiveRequest internal_status, Tuple<int,int> source, T[] values)
+		public static ArrayReceiveRequest<T> createRequest(MPI.ReceiveRequest internal_status, Tuple<int,int,int> source, T[] values)
 		{
 			return new ArrayReceiveRequest<T>(internal_status, source, values);
 		}

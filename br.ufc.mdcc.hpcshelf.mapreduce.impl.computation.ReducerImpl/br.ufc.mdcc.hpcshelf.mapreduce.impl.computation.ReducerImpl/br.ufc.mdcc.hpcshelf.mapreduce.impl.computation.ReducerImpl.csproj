@@ -11,6 +11,8 @@
     <AssemblyName>br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl</AssemblyName>
     <BaseDirectory>..\src\1.0.0.0</BaseDirectory>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\ReducerImpl.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

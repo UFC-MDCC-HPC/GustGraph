@@ -1,12 +1,15 @@
 ﻿<Properties StartupItem="HPC-Shelf-MapReduce/HPC-Shelf-MapReduce.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.common.Iterator/src/1.0.0.0/IIterator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../mapreduce.impl.SystemImpl/src/1.0.0.0/IPeer_0Impl.cs">
     <Files>
-      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/src/1.0.0.0/ISplitterWriteSink.cs" Line="1" Column="1" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/src/1.0.0.0/ISplitterReduceCollector.cs" Line="1" Column="14" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/src/1.0.0.0/ISplitterReadSource.cs" Line="1" Column="1" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/src/1.0.0.0/ISplitterMapFeeder.cs" Line="1" Column="1" />
-      <File FileName="../br.ufc.mdcc.common.Iterator/src/1.0.0.0/IIterator.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource/src/1.0.0.0/BaseIDataSource.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource/src/1.0.0.0/IDataSource.cs" Line="1" Column="1" />
+      <File FileName="../mapreduce.impl.SystemImpl/src/1.0.0.0/IPeer_3Impl.cs" Line="40" Column="32" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/src/1.0.0.0/ISplitterReduceCollector.cs" Line="1" Column="1" />
+      <File FileName="../mapreduce.impl.SystemImpl/src/1.0.0.0/IPeer_0Impl.cs" Line="35" Column="33" />
+      <File FileName="../mapreduce.impl.SystemImpl/src/1.0.0.0/IPeer_1Impl.cs" Line="35" Column="33" />
+      <File FileName="../mapreduce.impl.SystemImpl/src/1.0.0.0/IPeer_2Impl.cs" Line="40" Column="33" />
+      <File FileName="../mapreduce.impl.SystemImpl/src/1.0.0.0/IRootImpl.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

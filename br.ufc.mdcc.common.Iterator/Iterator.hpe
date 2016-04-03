@@ -9,7 +9,7 @@
         <visualDescription h="60" w="100" x="323" y="135">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <unitBounds parallel="false" uRef="data">
+        <unitBounds parallel="true" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -62,7 +62,7 @@
       </visualDescription>
       <parameter iname="IData" order="0" parid="item_type" uname="data" varid="T"/>
     </interface>
-    <unit facet="0" iRef="IIterator" multiple="false" private="false" replica="0" uRef="iterator" visibleInterface="true">
+    <unit facet="0" iRef="IIterator" multiple="true" private="false" replica="0" uRef="iterator" visibleInterface="true">
       <super cRef="base" uRef="data"/>
       <slices cRef="item_factory" inner_replica="0" slice_replica="0" uRef="data" sliceName="item_factory" transitive="false">
         <visualDescription h="10" w="10" x="22" y="26"/>

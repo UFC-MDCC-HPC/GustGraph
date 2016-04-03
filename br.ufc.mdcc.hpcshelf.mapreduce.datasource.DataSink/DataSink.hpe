@@ -9,7 +9,7 @@
   <componentInfo>
     <parameter componentRef="data_type" formFieldId="data_type" order="0" variance="contravariant" varName="OUT"/>
     <parameter componentRef="platform" formFieldId="platform" order="3" variance="contravariant" varName="P"/>
-    <innerComponent localRef="data_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="data_type" exposed="true">
+    <innerComponent localRef="data_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="data_type" exposed="false">
       <visualDescription h="60" w="100" x="100" y="367">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -18,14 +18,14 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="platform" location="br.ufc.mdcc.common.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.common" parameter_id="platform" exposed="false">
-      <visualDescription h="60" w="100" x="452" y="278">
+      <visualDescription h="60" w="100" x="381" y="338">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="platform">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="writer" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+    <innerComponent localRef="writer" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
       <visualDescription h="60" w="100" x="252" y="356">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -48,28 +48,26 @@
     </innerComponent>
     <supplyParameter cRef="server_port_type" direct="true" varName="S"/>
     <interface iRef="IDataSink" nArgs="2">
-      <slice isRef="data_type">
-        <originRef cRef="data_type" iRef="IData"/>
-        <visualDescription h="10" w="10" x="21" y="26"/>
-      </slice>
       <slice isRef="writer">
         <originRef cRef="writer" iRef="IServerBase"/>
         <visualDescription h="10" w="10" x="87" y="24"/>
+      </slice>
+      <slice isRef="data_type">
+        <originRef cRef="data_type" iRef="IData"/>
+        <visualDescription h="10" w="10" x="21" y="26"/>
       </slice>
       <slice isRef="platform">
         <originRef cRef="platform" iRef="IPlatform"/>
         <visualDescription h="10" w="10" x="149" y="20"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;using br.ufc.mdcc.common.Platform;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink&#xA;{&#xA;&#x9;public interface BaseIDataSink&lt;OUT, C, S, P> : IComputationKind &#xA;&#x9;&#x9;where OUT:IData&#xA;&#x9;&#x9;where C:IEnvironmentPortTypeSinglePartner&#xA;&#x9;&#x9;where S:IEnvironmentPortTypeSinglePartner&#xA;&#x9;&#x9;where P:IPlatform&#xA;&#x9;{&#xA;&#x9;&#x9;OUT Data_type {get;}&#xA;&#x9;}&#xA;}" name="BaseIDataSink.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/BaseIDataSink.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.common.Platform;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink&#xA;{&#xA;&#x9;public interface BaseIDataSink&lt;OUT, P> : IComputationKind &#xA;&#x9;&#x9;where OUT:IData&#xA;&#x9;&#x9;where P:IPlatform&#xA;&#x9;{&#xA;&#x9;&#x9;OUT Data_type {get;}&#xA;&#x9;}&#xA;}" name="BaseIDataSink.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/BaseIDataSink.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
-          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll</dependency>
           <dependency>br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;using br.ufc.mdcc.common.Platform;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink&#xA;{&#xA;&#x9;public interface IDataSink&lt;OUT, C, S, P> : BaseIDataSink&lt;OUT, C, S, P>&#xA;&#x9;&#x9;where OUT:IData&#xA;&#x9;&#x9;where C:IEnvironmentPortTypeSinglePartner&#xA;&#x9;&#x9;where S:IEnvironmentPortTypeSinglePartner&#xA;&#x9;&#x9;where P:IPlatform&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDataSink.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/IDataSink.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.common.Platform;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink&#xA;{&#xA;&#x9;public interface IDataSink&lt;OUT, P> : BaseIDataSink&lt;OUT, P>&#xA;&#x9;&#x9;where OUT:IData&#xA;&#x9;&#x9;where P:IPlatform&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDataSink.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/IDataSink.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
-          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll</dependency>
           <dependency>br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/BaseIDataSink.dll</dependency>
         </file>
@@ -77,9 +75,9 @@
       <visualDescription h="40" w="174" x="179" y="169">
         <color b="0" g="128" r="0"/>
       </visualDescription>
-      <port name="data_type">
+      <port name="writer">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="data_type" sRef="data_type"/>
+        <slice pRef="writer" sRef="writer"/>
       </port>
       <parameter iname="IData" order="0" parid="data_type" uname="data" varid="OUT"/>
       <parameter iname="IPlatform" order="1" parid="platform" uname="platform" varid="P"/>
@@ -88,11 +86,11 @@
       </action>
     </interface>
     <unit facet="0" iRef="IDataSink" multiple="true" private="false" replica="0" uRef="data_sink" visibleInterface="true">
-      <slices cRef="data_type" inner_replica="0" slice_replica="0" uRef="data" sliceName="data_type" transitive="false">
-        <visualDescription h="10" w="10" x="21" y="26"/>
-      </slices>
       <slices cRef="writer" inner_replica="0" slice_replica="0" uRef="server" sliceName="writer" transitive="false">
         <visualDescription h="10" w="10" x="87" y="24"/>
+      </slices>
+      <slices cRef="data_type" inner_replica="0" slice_replica="0" uRef="data" sliceName="data_type" transitive="false">
+        <visualDescription h="10" w="10" x="21" y="26"/>
       </slices>
       <slices cRef="platform" inner_replica="0" slice_replica="0" uRef="platform" sliceName="platform" transitive="false">
         <visualDescription h="10" w="10" x="149" y="20"/>

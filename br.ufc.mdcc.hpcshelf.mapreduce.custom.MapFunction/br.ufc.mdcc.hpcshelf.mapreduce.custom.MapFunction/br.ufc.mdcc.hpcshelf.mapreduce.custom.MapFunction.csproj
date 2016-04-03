@@ -11,6 +11,8 @@
     <AssemblyName>br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction</AssemblyName>
     <BaseDirectory>..\src\1.0.0.0</BaseDirectory>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\MapFunction.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

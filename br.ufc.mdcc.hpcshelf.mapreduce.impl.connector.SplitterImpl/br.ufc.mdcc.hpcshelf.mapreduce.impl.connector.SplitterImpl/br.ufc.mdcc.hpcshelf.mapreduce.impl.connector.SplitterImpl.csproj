@@ -11,6 +11,8 @@
     <AssemblyName>br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl</AssemblyName>
     <BaseDirectory>..\src\1.0.0.0</BaseDirectory>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\SplitterImpl.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -104,10 +106,6 @@
       <Project>{90623C03-B24B-4448-A81E-901BB4017F36}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterfaceSplitter\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterfaceSplitter\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterfaceSplitter.csproj">
-      <Project>{69A9231E-A7FF-49B6-989F-D18E27CAA778}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterfaceSplitter</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator.csproj">
       <Project>{1784C0D3-7632-4F38-8FFF-FA8008E2A724}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator</Name>
@@ -119,10 +117,6 @@
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance.csproj">
       <Project>{62252C8E-B7D2-493E-B84B-FD5A9F7FB725}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterfaceSplitter\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterfaceSplitter\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterfaceSplitter.csproj">
-      <Project>{D754541B-EC4D-4415-A70E-69B4E7307BAC}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterfaceSplitter</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.common.Iterator\br.ufc.mdcc.common.Iterator\br.ufc.mdcc.common.Iterator.csproj">
       <Project>{807A087E-123C-4745-B029-C31FC9458A61}</Project>

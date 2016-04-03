@@ -64,13 +64,10 @@
       <references>
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll"/>
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction/bin/1.0.0.0/ISplitFunction.dll"/>
-        <include name="br.ufc.mdcc.common.Set/bin/1.0.0.0/ISet.dll"/>
-        <include name="br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterfaceSplitter/bin/1.0.0.0/IPortTypeDataSourceInterfaceSplitter.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/bin/1.0.0.0/BaseISplitterReadInput.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/bin/1.0.0.0/BaseISplitterReadSource.dll"/>
         <include/>
       </references>
     </csc>
@@ -79,11 +76,10 @@
         <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl/src/1.0.0.0/ISplitterReadSourceImpl.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.SplitFunction/bin/1.0.0.0/ISplitFunction.dll"/>
-        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl/bin/1.0.0.0/BaseISplitterReadSourceImpl.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/bin/1.0.0.0/ISplitterReadInput.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/bin/1.0.0.0/ISplitterReadSource.dll"/>
         <include/>
       </references>
     </csc>

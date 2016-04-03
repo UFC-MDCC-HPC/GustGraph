@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000004f5ac993456911dd285830fd8701657d71df064029e25441c112c124aa40e9238379822f026bdc130780a73adcdb948d5fc493fe4c7d73fd784fe008fb110ed34bbe4ce04444e62269d7a8d3ebcd17b93a79eba91c2ab15cd9842c7b197b9f53446b6dbea0aaee7f6d2eda8622c1743e58ead5c219f213b00ac7f5369ac392a8" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMbyNInter" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c31d324de445dc9fe255b9cedb5a0436196b2e2987ec8513f2b6b1ad6333c427eaa973a901096e3442dbdce672d05f5d80bcf8e73c6268843859c2a9b93a63d62e274ee1b7ab95d1208e82a8e79c6b3c92960dd407cd8b2ef51dddeed1e4c92e851d0ef4dd4463fd08c4b7d10f32d241b53f6bbceb70139b51e05d7d916274c6" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMbyNInter" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e1aece3313935241905c86e7054690bbc6a1f0b346c74fb82c695a75a99ef45a1bb598bdb5f6556fae195ecd0e4a96e7a1d2896caac950df76829c43c96e2c3788cb1a51331f5f1ee35afa96bd42df620db3fd4f3eeb8809b0cb7d607f7a04ace09592733c30c418c21cabf75d4540db91199ee59897aeabc73ea5c4bc044e9f" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/EnvironmentBindingMbyN.hpe" name="EnvironmentBindingMbyN" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d9e93f41ecdc24c151691986404104691fc2b4c524c9bc6317b05885a2cea9975c441bc9a9339284a55d4fbf1d7f823c026b8bba14661b578a973db0e5417436963dc58083ffd494aa312ef3b4f8b3b4b7d5cf3f03f39a874207d655148bd32f89785cd862e93165cd9ec40b8a09f27b326d1238b158bbd796774dae2ae44dc2" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/EnvironmentBindingMbyN.hpe" name="EnvironmentBindingMbyN" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
         <visualDescription h="60" w="135" x="172" y="198">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="server_port_type" varName="S"/>
         <parameter formFieldId="client_port_type" varName="C"/>
+        <parameter formFieldId="server_port_type" varName="S"/>
         <unitBounds parallel="true" uRef="client">
           <visualDescription h="20" w="20" x="18" y="22"/>
         </unitBounds>
@@ -73,7 +73,7 @@
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/IClientMbyN.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="162" x="59" y="90">
+      <visualDescription h="40" w="162" x="67" y="88">
         <color b="0" g="255" r="255"/>
       </visualDescription>
       <parameter iname="IEnvironmentPortTypeMultiplePartner" order="0" parid="client_port_type" uname="environment_port_type" varid="C"/>

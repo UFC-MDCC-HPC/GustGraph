@@ -6,10 +6,11 @@ using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.EnvironmentBindingWriteData 
 {
-	public abstract class BaseIClientWriteData: Synchronizer, BaseIClientBase<IPortTypeDataSinkInterfaceSplitter>
+	public abstract class BaseIClientWriteData: Synchronizer, BaseIClientBase<IPortTypeIterator>
 	{
 		private IEnvironmentPortType client_port_type = null;
 
