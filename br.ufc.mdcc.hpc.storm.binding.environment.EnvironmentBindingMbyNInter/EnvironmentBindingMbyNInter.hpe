@@ -6,7 +6,7 @@
         <extends>true</extends>
       </extensionType>
       <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d9e93f41ecdc24c151691986404104691fc2b4c524c9bc6317b05885a2cea9975c441bc9a9339284a55d4fbf1d7f823c026b8bba14661b578a973db0e5417436963dc58083ffd494aa312ef3b4f8b3b4b7d5cf3f03f39a874207d655148bd32f89785cd862e93165cd9ec40b8a09f27b326d1238b158bbd796774dae2ae44dc2" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/EnvironmentBindingMbyN.hpe" name="EnvironmentBindingMbyN" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
-        <visualDescription h="60" w="135" x="172" y="198">
+        <visualDescription h="60" w="135" x="184" y="182">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="client_port_type" varName="C"/>

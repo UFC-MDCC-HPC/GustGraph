@@ -12,41 +12,49 @@ using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-using EnvelopType = System.Tuple<int /*AliencommunicatorOperation*/,int,int,int,int,int>;
+using EnvelopType = System.Tuple<int,int,int,int,int,int>;
+using System.Diagnostics;
 
 namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 {
 	public class IChannelRootImpl : BaseIChannelRootImpl, IChannelRoot
 	{
 		public const int TAG_SEND_OPERATION = 999;
-
-		private Thread[] thread_receive_requests = null;
+			
+		private IDictionary<int,Thread> thread_receive_requests = null;
 
 		#region implemented abstract members of BindingRoot
 		public override void server ()
 		{
+			this.TraceFlag = true;
+
+			Trace.WriteLineIf(this.TraceFlag==true, this.GlobalRank + ": BEFORE CREATE SOCKETS !!! " + this.ThisFacet + " / " + this.ThisFacetInstance + " : " + this.CID.getInstanceName());
+
 			createSockets ();
 
-			Console.WriteLine ("CREATED SOCKETS !!!");
+			Trace.WriteLineIf(this.TraceFlag==true, this.GlobalRank + ": AFTER CREATED SOCKETS !!! " + this.ThisFacet + " / " + this.ThisFacetInstance + " : " + this.CID.getInstanceName());
 
-			synchronizer_monitor = new SynchronizerMonitor (this.ThisFacet, client_socket_facet);
-			//sockets_initialized_flag = true;
+			synchronizer_monitor = new SynchronizerMonitor (this, client_socket_facet, this.ThisFacetInstance, this.GlobalRank, this.CID.getInstanceName());
+
 			sockets_initialized_flag.Set ();
 
 			// Create the threads that will listen the sockets for each other facet.
-			thread_receive_requests = new Thread[server_socket_facet.Count];
-			for (int facet=0; facet < server_socket_facet.Count; facet ++) 
+			thread_receive_requests = new Dictionary<int, Thread>();
+
+			foreach (int facet in this.Facet.Keys) 
 			{
-				if (facet != this.ThisFacet)
-				{
+				if (facet != this.ThisFacetInstance)
+			    {
+					Trace.WriteLineIf(this.TraceFlag==true, "loop create thread_receive_requests: " + facet + " / " + this.ThisFacetInstance);
 					Socket server_socket = server_socket_facet [facet];
-					thread_receive_requests[facet] = new Thread (new ThreadStart (() => synchronizer_monitor.serverReceiveRequests(server_socket)));
+					thread_receive_requests[facet] = new Thread (new ThreadStart (() => synchronizer_monitor.serverReceiveRequests(facet, server_socket)));
 					thread_receive_requests[facet].Start ();
 				}
 			}
 
 			while (true) 
 			{
+				Thread.Sleep (100);
 				synchronizer_monitor.serverReadRequest ();
 			}
 
@@ -56,10 +64,12 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 		public override void client ()
 		{
+			this.TraceFlag = true;
+
 			//while (!sockets_initialized_flag)	Thread.Sleep (100);
 			sockets_initialized_flag.WaitOne ();
 
-			Console.WriteLine ("GO LISTEN WORKERS !!!");
+			Trace.WriteLineIf(this.TraceFlag==true, "GO LISTEN WORKERS !!!");
 			while (true) 
 			{
 			   listen_worker ();
@@ -67,7 +77,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 		}
 		#endregion
 
-		SynchronizerMonitor synchronizer_monitor;
+		private SynchronizerMonitor synchronizer_monitor;
 
 		private IDictionary<int, Socket> client_socket_facet = new Dictionary<int, Socket>();
 		private IDictionary<int, Socket> server_socket_facet = new Dictionary<int, Socket>();
@@ -77,31 +87,31 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 			foreach (KeyValuePair<int, FacetAccess> facet_access in this.Facet) 
 			{
 				int facet = facet_access.Key;
-				if (facet != this.ThisFacet)
+				if (facet != this.ThisFacetInstance)
 				{
 					Socket socket = client_socket_facet [facet];
-					IPEndPoint endPoint = end_point [facet];
+					IPEndPoint endPoint = end_point_client [facet];
 
 					bool isConnected = false;
 					int tries = 0;
 					while (!isConnected && tries <=30) 
 					{
 						try {
-							Console.WriteLine ("CONNECTING " + endPoint);
+							//Trace.WriteLineIf(this.TraceFlag==true, "CONNECTING " + "facet=" + facet + " / " + endPoint+ " / " + this.CID.getInstanceName());
 							socket.Connect (endPoint);
 							isConnected = true;
-							Console.WriteLine ("CONNECTED " + endPoint);
+							//Trace.WriteLineIf(this.TraceFlag==true, "CONNECTED " + "facet=" + facet + " / " + endPoint+ " / " + this.CID.getInstanceName());
 						}
 						catch (Exception e) 
 						{
-							tries ++;
-							isConnected = false;
-							Console.WriteLine("CONNECTION FAILED N --- ATTEMPT #" + tries + " *** " + e.Message);
+							//tries ++;
+							//isConnected = false;
+							//Trace.WriteLineIf(this.TraceFlag==true, "CONNECTION FAILED N --- ATTEMPT #" + tries + " *** " + e.Message + " --- " + endPoint);
 							Thread.Sleep(1000);
 						}
 					}
 					if (!isConnected) {
-						Console.WriteLine ("createSockets --- It was not possible to talk to the server");
+						Trace.WriteLineIf(this.TraceFlag==true, "createSockets --- It was not possible to talk to the server");
 						throw new Exception ("createSockets --- It was not possible to talk to the server");
 					}
 				}
@@ -113,51 +123,61 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 			foreach (KeyValuePair<int, FacetAccess> facet_access in this.Facet) 
 			{
 				int facet = facet_access.Key;
-				if (facet != this.ThisFacet) 
+				if (facet != this.ThisFacetInstance) 
 				{
 					Socket socket = server_socket_facet [facet];
-					IPEndPoint endPoint = end_point [this.ThisFacet];
-					Console.WriteLine ("BINDING " + endPoint);
-					socket.Bind (endPoint);
+					IPEndPoint endPoint = end_point_server [facet];
+					Trace.WriteLineIf(this.TraceFlag==true, "BINDING " + endPoint + " -- " + facet + " / " + this.CID.getInstanceName());
+					socket.Bind (endPoint) ;
 					socket.Listen (10);
 					server_socket_facet[facet] = socket.Accept ();
-					Console.WriteLine ("BINDED " + endPoint);
+					Trace.WriteLineIf(this.TraceFlag==true, "BINDED " + endPoint + " -- " + facet + " / " + this.CID.getInstanceName());
 				}
 			}
 		}
 
-		private IDictionary<int,IPEndPoint> end_point = new Dictionary<int,IPEndPoint>();
+		private IDictionary<int,IPEndPoint> end_point_client = new Dictionary<int,IPEndPoint>();
+		private IDictionary<int,IPEndPoint> end_point_server = new Dictionary<int,IPEndPoint>();
 
 
 		private void createSockets ()
 		{
-			foreach (KeyValuePair<int, FacetAccess> facet_access in this.Facet)
+			FacetAccess facet_acess_server = this.Facet [ThisFacetInstance];
+
+			foreach (KeyValuePair<int, FacetAccess> facet_access_client in this.Facet)
 			{
-				int facet = facet_access.Key;
-				string ip_address = facet_access.Value.ip_address;
-				int port = facet_access.Value.port;
-
-				// Establish the remote endpoint for the socket.
-				IPHostEntry ipHostInfo = Dns.GetHostEntry(ip_address);
-				IPAddress ipAddress = ipHostInfo.AddressList[0];
-				IPEndPoint endPoint = new IPEndPoint(ipAddress,port);
-
-				end_point [facet] = endPoint;
-
-				if (facet != this.ThisFacet) 
+				int facet_instance = facet_access_client.Key;
+				if (facet_instance != this.ThisFacetInstance) 
 				{
-					Console.WriteLine ("CREATE SOCKETS facet=" + facet + ", port=" + port + ", ip_address=" + ip_address);
+					string ip_address_client = facet_access_client.Value.ip_address;
+					int port_client = facet_access_client.Value.port + this.ThisFacetInstance;
+					IPHostEntry ipHostInfo_client = Dns.GetHostEntry (ip_address_client);
+					IPAddress ipAddress_client = ipHostInfo_client.AddressList [0];
+					IPEndPoint endPoint_client = new IPEndPoint (ipAddress_client, port_client);
+					end_point_client [facet_instance] = endPoint_client;
+
+					Trace.WriteLineIf (this.TraceFlag == true, "CREATE SOCKETS - end_point_client[" + facet_instance + "]=" + endPoint_client);
+
+					string ip_address_server = facet_acess_server.ip_address;
+					int port_server = facet_acess_server.port + facet_instance;
+					IPHostEntry ipHostInfo_server = Dns.GetHostEntry (ip_address_server);
+					IPAddress ipAddress_server = ipHostInfo_server.AddressList [0];
+					IPEndPoint endPoint_server = new IPEndPoint (ipAddress_server, port_server);
+					end_point_server [facet_instance] = endPoint_server;
+
+					Trace.WriteLineIf (this.TraceFlag == true, "CREATE SOCKETS - end_point_server[" + facet_instance + "]=" + endPoint_server);
 
 					// Create a TCP/IP client socket.
 					Socket client_socket = new Socket (AddressFamily.InterNetwork, 
-					                                 SocketType.Stream, System.Net.Sockets.ProtocolType.Tcp);
+						                       SocketType.Stream, System.Net.Sockets.ProtocolType.Tcp);
 
 					// Create a TCP/IP server socket.
 					Socket server_socket = new Socket (AddressFamily.InterNetwork, 
-					                                 SocketType.Stream, System.Net.Sockets.ProtocolType.Tcp);
+						                       SocketType.Stream, System.Net.Sockets.ProtocolType.Tcp);
 
-					client_socket_facet [facet] = client_socket;
-					server_socket_facet [facet] = server_socket;
+					server_socket.SendTimeout = server_socket.ReceiveTimeout = client_socket.SendTimeout = client_socket.ReceiveTimeout = -1;
+					client_socket_facet [facet_instance] = client_socket;
+					server_socket_facet [facet_instance] = server_socket;
 				}
 			}
 
@@ -167,8 +187,12 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 			thread_connect_sockets.Start();
 			thread_accept_sockets.Start ();
 
+			Trace.WriteLineIf(this.TraceFlag==true, "CREATE_SOCKETS - connectSockets and acceptSockets launched !!!");
+
 			thread_connect_sockets.Join ();
 			thread_accept_sockets.Join ();
+
+			Trace.WriteLineIf(this.TraceFlag==true, "CREATE_SOCKETS - connectSockets and acceptSockets finished !!!");
 		}			
 
 
@@ -178,7 +202,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 			Tuple<int /*AliencommunicatorOperation*/,int> operation;
 			MPI.CompletedStatus status = null;
 
-			Console.WriteLine ("listen_workers - WAITING ... " + MPI.Environment.Threading);
+			Trace.WriteLineIf(this.TraceFlag==true, "listen_workers - WAITING ... " + MPI.Environment.Threading);
 
 			RootCommunicator.Receive<Tuple<int /*AliencommunicatorOperation*/,int>>
 									(MPI.Communicator.anySource, 
@@ -186,7 +210,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 									 out operation,
 									 out status);
 
-			Console.WriteLine ("listen_workers - RECEIVED FROM WORKER source=" + status.Source + ", tag=" + status.Tag + " / operation = " + operation);
+			Trace.WriteLineIf(this.TraceFlag==true, "listen_workers - RECEIVED FROM WORKER source=" + status.Source + ", tag=" + status.Tag + " / operation = " + operation);
 
 			switch (operation.Item1) 
 			{
@@ -247,7 +271,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 					(new Thread(() => handle_REDUCE(operation, status))).Start();
 					break;
 				default:
-					Console.WriteLine ("UNRECOGNIZED OPERATION");
+					Trace.WriteLineIf(this.TraceFlag==true, "UNRECOGNIZED OPERATION");
 					throw new ArgumentOutOfRangeException ();
 			}
 		}
@@ -255,59 +279,63 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 		void handle_SEND (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
 		{
 
-			Console.WriteLine (status.Source + ": handle_SEND 1");
+			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_SEND 1 " + operation);
 
 			Tuple<int,int,int,byte[]> operation_info;
 			int conversation_tag = operation.Item2;
 			this.RootCommunicator.Receive<Tuple<int,int,int,byte[]>> (status.Source, conversation_tag, out operation_info);
 
-			Console.WriteLine (status.Source + ": handle_SEND 2");
+			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_SEND 2 --- operation = " + operation);
 
 			int /*AliencommunicatorOperation*/ operation_type = operation.Item1;
-			int facet_src = this.ThisFacet;
+			int facet_src = this.ThisFacetInstance;
 			int facet_dst = operation_info.Item1;
 			int src = status.Source;
 			int dst = operation_info.Item2;
 			int tag = operation_info.Item3;
 
-			Console.WriteLine (status.Source + ": handle_SEND 3 --- " + facet_src + "," + facet_dst + "," + src + "," + dst + "," + tag);
+			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_SEND 3 --- " + facet_src + "," + facet_dst + "," + src + "," + dst + "," + tag + ", operation = " + operation);
 
-			EnvelopType envelop = new EnvelopType (operation_type,facet_src,facet_dst,src,dst,tag);
+			EnvelopType envelop = new EnvelopType (operation_type, facet_src, facet_dst, src, dst, tag);
 			byte[] message1 = operation_info.Item4;
-			Console.WriteLine (status.Source + ": handle_SEND 4");
+			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_SEND 4 --- operation = " + operation);
 
-			synchronizer_monitor.clientSendRequest (envelop, message1);
-			Console.WriteLine (status.Source + ": handle_SEND 5");
+			if (tag >=0 /* tag */)
+				synchronizer_monitor.clientSendRequest (envelop, message1);
+			else
+				synchronizer_monitor.clientSendRequestAnyTag (envelop, message1, ref tag);
+			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_SEND 5 --- operation = " + operation);
 
 		}
 
 		void handle_RECEIVE (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
 		{
 			int conversation_tag = operation.Item2;
-			Console.WriteLine (status.Source + ": handle_RECEIVE 1 - source=" + status.Source + ", tag=" + conversation_tag);
+			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_RECEIVE 1 - source=" + status.Source + ", tag=" + conversation_tag);
 			Tuple<int,int,int> operation_info;
 
 			this.RootCommunicator.Receive<Tuple<int,int,int>> (status.Source, conversation_tag, out operation_info);
 
-			Console.WriteLine (status.Source + ": handle_RECEIVE 2");
+			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_RECEIVE 2");
 
 			int /*AliencommunicatorOperation*/ operation_type = operation.Item1;
-			int facet_src = this.ThisFacet;
+			int facet_src = this.ThisFacetInstance;
 			int facet_dst = operation_info.Item1;
 			int src = status.Source;
 			int dst = operation_info.Item2;
 			int tag = operation_info.Item3;
 
-			Console.WriteLine (status.Source + ": handle_RECEIVE 3 --- " + facet_src + "," + facet_dst + "," + src + "," + dst + "," + tag);
+			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_RECEIVE 3 --- " + facet_src + "," + facet_dst + "," + src + "," + dst + "," + tag);
 
-			EnvelopType envelop = new EnvelopType (operation_type,facet_src,facet_dst,src,dst,tag);
-			byte[] message2 = synchronizer_monitor.clientSendRequest (envelop, new byte[0]);
+			EnvelopType envelop = new EnvelopType (operation_type, facet_src, facet_dst, src, dst, tag);
+			byte[] message2 = tag < 0 ? synchronizer_monitor.clientSendRequestAnyTag (envelop, new byte[0], ref tag) : 
+				                        synchronizer_monitor.clientSendRequest       (envelop, new byte[0]);
 
-			Console.WriteLine (status.Source + ": handle_RECEIVE 4 " + (message2 == null));
+			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_RECEIVE 4 " + (message2 == null));
 
 			this.RootCommunicator.Send<byte[]>(message2, src, tag);
 
-			Console.WriteLine (status.Source + ": handle_RECEIVE 5");
+			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_RECEIVE 5");
 
 		}
 
@@ -386,9 +414,10 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 			{
 				if (disposing)
 				{
-					Console.WriteLine ("DISPOSING BINDING ROOT ...");
-					for (int i=0; i<thread_receive_requests.Length; i++)
-						if (i != this.ThisFacet)
+					Trace.WriteLineIf(this.TraceFlag==true, "DISPOSING BINDING ROOT ...");
+					foreach (int i in thread_receive_requests.Keys)
+					//for (int i=0; i<thread_receive_requests.Count; i++)
+						if (i != this.ThisFacetInstance)
 						   thread_receive_requests[i].Abort ();
 				}
 				base.Dispose (disposing);
@@ -404,22 +433,29 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 	class SynchronizerMonitor
 	{
 		private int server_facet = default(int);
-		private IDictionary<int, Socket> client_socket_facet = new Dictionary<int, Socket>();
-		private IDictionary<EnvelopKey, Queue<byte[]>> reply_pending_list = new Dictionary<EnvelopKey,Queue<byte[]>>();
-		private IDictionary<EnvelopKey, AutoResetEvent> request_pending_list = new Dictionary<EnvelopKey,AutoResetEvent>();
+		private int rank = default(int);
+		private string instance_name = null;
+		private IDictionary<int,Socket> client_socket_facet = new Dictionary<int,Socket>();
+		private IDictionary<EnvelopKey, IDictionary<int,Queue<byte[]>>> reply_pending_list = new Dictionary<EnvelopKey,IDictionary<int,Queue<byte[]>>>();
+		private IDictionary<EnvelopKey, IDictionary<int,Queue<AutoResetEvent>>> request_pending_list = new Dictionary<EnvelopKey,IDictionary<int,Queue<AutoResetEvent>>>();
+		private IChannelRootImpl unit;
 
 		private object sync = new object();
 
-		public SynchronizerMonitor (int server_facet, IDictionary<int, Socket> client_socket_facet)
+		public SynchronizerMonitor (IChannelRootImpl unit, IDictionary<int,Socket> client_socket_facet, int server_facet, int rank, string instance_name)
 		{
-			this.server_facet = server_facet;
+			this.unit = unit;
 			this.client_socket_facet = client_socket_facet;
+			this.server_facet = server_facet;
+			this.rank = rank;
+			this.instance_name = instance_name;
 		}
 
 		public byte[] clientSendRequest(EnvelopType envelop, byte[] messageSide1)
 		{
 			EnvelopKey envelop_key = new EnvelopKey (envelop);
-			Console.WriteLine ("clientSendRequest 1" + " / "  + envelop_key);
+			int envelop_tag = envelop.Item6;
+			Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequest 1" + " / "  + envelop_key +" -- " + instance_name);
 
 			byte[] messageSide2 = null;
 			Monitor.Enter (sync);
@@ -427,7 +463,9 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 			{
 				// envia a requisição para o root parceiro
 				int facet = envelop.Item3;
-				Console.WriteLine("clientSendRequest send to facet " + facet + " - nofsockets=" + client_socket_facet.Count + " / "  + envelop_key);
+				Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequest send to facet " + facet + " - nofsockets=" + client_socket_facet.Count + " / "  + envelop_key+" -- " + instance_name);
+				foreach (int f in client_socket_facet.Keys)
+					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequest --- FACET KEY=" + f);
 				Socket socket = client_socket_facet [facet];
 				byte[] messageSide1_enveloped_raw = ObjectToByteArray (new Tuple<EnvelopType,byte[]> (envelop, messageSide1));
 				Int32 length = messageSide1_enveloped_raw.Length;
@@ -437,32 +475,125 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 				socket.Send (messageSide1_enveloped_raw_);
 
-				Console.WriteLine ("clientSendRequest 2 nbytes=" + messageSide1_enveloped_raw.Length + " / "  + envelop_key);
+				Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequest 2 nbytes=" + messageSide1_enveloped_raw.Length + " / "  + envelop_key);
 
 				// Verifica se já há resposta para a requisição no "conjunto de respostas pendentes de requisição"
-				if (!reply_pending_list.ContainsKey (envelop_key) || 
-				          (reply_pending_list.ContainsKey (envelop_key) && reply_pending_list [envelop_key].Count == 0)) 
+				if (!(reply_pending_list.ContainsKey (envelop_key) && reply_pending_list [envelop_key].ContainsKey(envelop_tag)) || 
+					(reply_pending_list.ContainsKey (envelop_key) && reply_pending_list [envelop_key].ContainsKey(envelop_tag) && reply_pending_list [envelop_key][envelop_tag].Count == 0)) 
 				{
-					Console.WriteLine ("clientSendRequest 3 - BEFORE WAIT " + envelop_key);
+					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequest 3 - BEFORE WAIT " + envelop_key);
 					// Se não houver, coloca um item no "conjunto de requisições pendentes de resposta" e espera.
 
 					if (!request_pending_list.ContainsKey(envelop_key))
-						request_pending_list [envelop_key] = new AutoResetEvent(false);
+						request_pending_list [envelop_key] = new Dictionary<int,Queue<AutoResetEvent>>();
 
-					AutoResetEvent sync_send = request_pending_list [envelop_key];
+					if (!request_pending_list [envelop_key].ContainsKey(envelop_tag))
+					{
+						request_pending_list [envelop_key][envelop_tag] = new Queue<AutoResetEvent>();
+						request_pending_list [envelop_key][envelop_tag].Enqueue(new AutoResetEvent(false));
+					}
+					
+					AutoResetEvent sync_send = request_pending_list [envelop_key][envelop_tag].Peek();
 
-					request_pending_list [envelop_key] = sync_send;
+					//request_pending_list [envelop_key][envelop_tag] = sync_send;
 					Monitor.Exit(sync);
+					Console.WriteLine("clientSendRequest - WAIT / " + unit.CID.getInstanceName() + "/" + sync_send.GetHashCode()  + " BEFORE !!! " );
 					sync_send.WaitOne();
+					Console.WriteLine("clientSendRequest - WAIT / " + unit.CID.getInstanceName()  + "/" + sync_send.GetHashCode()  + " AFTER !!! " );
 					Monitor.Enter(sync);
-					Console.WriteLine ("clientSendRequest 3 - AFTER WAIT " + envelop_key);
+					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequest 3 - AFTER WAIT " + envelop_key);
 				}
-				Console.WriteLine ("clientSendRequest 4" + " / "  + envelop_key);
+				Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequest 4" + " / "  + envelop_key);
 
-				Queue<byte[]> pending_replies = reply_pending_list [envelop_key];
-				Console.WriteLine ("clientSendRequest 5 -- pending_replies.Count = " + pending_replies.Count);
+				Queue<byte[]> pending_replies = reply_pending_list [envelop_key][envelop_tag];
+				Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequest 5 -- pending_replies.Count = " + pending_replies.Count);
 				if (pending_replies.Count > 0)
-				   messageSide2 = reply_pending_list[envelop_key].Dequeue();
+				   messageSide2 = reply_pending_list[envelop_key][envelop_tag].Dequeue();
+				
+				if (pending_replies.Count == 0)
+					reply_pending_list[envelop_key].Remove(envelop_tag);
+
+				if (reply_pending_list[envelop_key].Count == 0)
+					reply_pending_list.Remove(envelop_key);
+				
+				//reply_pending_list.Remove(envelop_key);
+			}
+			finally 
+			{
+				Monitor.Exit (sync);
+			}
+
+			Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequest 5");
+			// retorna a menagem ...
+			return messageSide2;
+		}
+
+		public byte[] clientSendRequestAnyTag(EnvelopType envelop, byte[] messageSide1, ref int envelop_tag)
+		{
+			EnvelopKey envelop_key = new EnvelopKey (envelop);
+			Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequestAnyTag 1" + " / "  + envelop_key +" -- " + instance_name);
+
+			byte[] messageSide2 = null;
+			Monitor.Enter (sync);
+			try
+			{
+				// envia a requisição para o root parceiro
+				int facet = envelop.Item3;
+				Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequestAnyTag send to facet " + facet + " - nofsockets=" + client_socket_facet.Count + " / "  + envelop_key+" -- " + instance_name);
+				foreach (int f in client_socket_facet.Keys)
+					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequestAnyTag --- FACET KEY=" + f);
+				Socket socket = client_socket_facet [facet];
+				byte[] messageSide1_enveloped_raw = ObjectToByteArray (new Tuple<EnvelopType,byte[]> (envelop, messageSide1));
+				Int32 length = messageSide1_enveloped_raw.Length;
+				byte[] messageSide1_enveloped_raw_ = new byte[4 + length];
+				BitConverter.GetBytes(length).CopyTo(messageSide1_enveloped_raw_,0);
+				Array.Copy(messageSide1_enveloped_raw, 0, messageSide1_enveloped_raw_, 4, length);
+
+				socket.Send (messageSide1_enveloped_raw_);
+
+				Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequestAnyTag 2 nbytes=" + messageSide1_enveloped_raw.Length + " / "  + envelop_key);
+
+				// Verifica se já há resposta para a requisição no "conjunto de respostas pendentes de requisição"
+				if (!reply_pending_list.ContainsKey (envelop_key))
+				{
+					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequestAnyTag 3 - BEFORE WAIT " + envelop_key);
+					// Se não houver, coloca um item no "conjunto de requisições pendentes de resposta" e espera.
+
+					if (!request_pending_list.ContainsKey(envelop_key))
+						request_pending_list [envelop_key] = new Dictionary<int,Queue<AutoResetEvent>>();
+
+					if (!request_pending_list [envelop_key].ContainsKey(-1))
+					{
+						request_pending_list [envelop_key][-1] = new Queue<AutoResetEvent>();
+						request_pending_list [envelop_key][-1].Enqueue(new AutoResetEvent(false));
+					}
+
+					AutoResetEvent sync_send = request_pending_list [envelop_key][-1].Peek();
+
+					//request_pending_list [envelop_key][envelop_tag] = sync_send;
+					Monitor.Exit(sync);
+					Console.WriteLine("clientSendRequestAny - WAIT / " + unit.CID.getInstanceName() + "/" + sync_send.GetHashCode()  + " BEFORE !!! " );
+					sync_send.WaitOne()	;
+					Console.WriteLine("clientSendRequestAny - WAIT / " + unit.CID.getInstanceName()  + "/" + sync_send.GetHashCode()  + " AFTER !!! " );
+					Monitor.Enter(sync);
+					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequestAnyTag 3 - AFTER WAIT " + envelop_key);
+				}
+				Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequestAnyTag 4" + " / "  + envelop_key);
+
+				int[] keys_vector = new int[reply_pending_list[envelop_key].Keys.Count];
+				reply_pending_list[envelop_key].Keys.CopyTo(keys_vector,0);
+
+				envelop_tag = keys_vector[0];
+				Queue<byte[]> pending_replies = reply_pending_list [envelop_key][envelop_tag];
+				Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequestAnyTag 5 -- pending_replies.Count = " + pending_replies.Count);
+				if (pending_replies.Count > 0)
+					messageSide2 = reply_pending_list[envelop_key][envelop_tag].Dequeue();
+				
+				if (pending_replies.Count == 0)
+					reply_pending_list[envelop_key].Remove(envelop_tag);
+				
+				if (reply_pending_list[envelop_key].Count == 0)
+					reply_pending_list.Remove(envelop_key);
 
 				//reply_pending_list.Remove(envelop_key);
 			}
@@ -471,21 +602,32 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 				Monitor.Exit (sync);
 			}
 
-			Console.WriteLine ("clientSendRequest 5");
+			Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequest 5");
 			// retorna a menagem ...
 			return messageSide2;
 		}
 
-		private static int BUFFER_SIZE = 64000;
+		private static int BUFFER_SIZE = 1024*1024;
 
-		public void serverReceiveRequests(Socket server_socket)
+		public void serverReceiveRequests(int facet, Socket server_socket)
 		{
-			//Socket socket = client_socket_facet [server_facet];
 			byte[] buffer = new byte[BUFFER_SIZE];
 			byte[] buffer2 = new byte[BUFFER_SIZE];
-			int nbytes = server_socket.Receive (buffer);		    
 
-			Console.WriteLine ("serverReceiveRequests 1 - RECEIVED " + nbytes + " bytes");
+			int nbytes = default(int);
+
+			Trace.WriteLineIf(unit.TraceFlag==true, "serverReceiveRequest RECEIVE " + unit.CID.getInstanceName() + " / facet=" + facet + " BEFORE 1");
+			nbytes = server_socket.Receive (buffer);		    
+			Trace.WriteLineIf(unit.TraceFlag==true, "serverReceiveRequest RECEIVE " + unit.CID.getInstanceName() + " / facet=" + facet + " AFTER 1");
+
+			Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReceiveRequests 1 - RECEIVED " + nbytes + " bytes -- " + instance_name);
+
+			if (nbytes == 0) 
+			{
+				string error_message = server_facet + "/" + rank + ": serverReceiveRequests  -- the partner " + this.server_facet + " is died " + instance_name;
+				Trace.WriteLineIf(unit.TraceFlag==true, error_message);
+				throw new Exception(error_message);
+			}
 
 			while (true)
 			{
@@ -493,86 +635,124 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 				nbytes = nbytes - 4;
 				byte[] message = new byte[length];
 
-				Console.WriteLine ("serverReceiveRequests 2 - length is " + length + " bytes");
+				Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReceiveRequests 2 - length is " + length + " bytes" + " / nbytes = " + nbytes);
 
-				//while (nbytes < length) 
-				//	nbytes += socket.Receive (buffer);
-
-				Array.Copy (buffer, 4, message, 0, length);
+				Array.Copy(buffer, 4, message, 0, length);
 				requestQueue.Add (message);
 
 				if (nbytes == length) 
 				{
+					Trace.WriteLineIf(unit.TraceFlag==true,"serverReceiveRequest RECEIVE " + unit.CID.getInstanceName() + " / facet=" + facet + " BEFORE 2");
 					nbytes = server_socket.Receive (buffer);
-					Console.WriteLine ("serverReceiveRequests 3 - RECEIVED " + nbytes + " bytes");
+					Trace.WriteLineIf(unit.TraceFlag==true,"serverReceiveRequest RECEIVE " + unit.CID.getInstanceName() + " / facet=" + facet + " AFTER 2");
+					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReceiveRequests 3 - RECEIVED " + nbytes + " bytes --- " + instance_name);
+
+					if (nbytes == 0) 
+					{
+						string error_message = server_facet + "/" + rank + ": serverReceiveRequests  -- the partner " + this.server_facet + " is died " + instance_name;
+						Trace.WriteLineIf(unit.TraceFlag==true, error_message);
+						throw new Exception(error_message);
+					}
 				} 
-				else // nbytes > length 
+				else if (nbytes > length) 
 				{ 
 					// assume that nbytes - length > 4
 					byte[] aux = buffer;
 					nbytes = nbytes - length;
+
 					Array.Copy(buffer, length + 4, buffer2, 0, nbytes);
 					buffer = buffer2;
 					buffer2 = aux;
-					Console.WriteLine ("serverReceiveRequests 4 - nbytes=" + nbytes);
+					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReceiveRequests 4 - nbytes=" + nbytes);
+				}
+				else
+				{
+					string error_message = server_facet + "/" + rank + ": UNEXPECTED CONDITION nbytes=" + nbytes + " < length=" + length;
+					Trace.WriteLineIf(unit.TraceFlag==true, error_message);
+					throw new Exception(error_message);
 				}
 			}
 
 		}
 
-
 		private ProducerConsumerQueue<byte[]> requestQueue = new ProducerConsumerQueue<byte[]>();
 
 		public void serverReadRequest() 
 		{
-			Console.WriteLine ("clientReceiveRequest 1 " + server_facet);
+			Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReadRequest 1 ");
 
 			byte[] buffer =	requestQueue.Take ();
 			int nbytes =  buffer.Length;
 
-			Console.WriteLine ("clientReceiveRequest 2 " + nbytes + " bytes received.");
+			Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReadRequest 2 " + nbytes + " bytes received.");
 
 			Monitor.Enter (sync);
 			try
 			{
 				// Aguarda uma resposta proveniente do outro root parceiro.
 				byte[] messageSide1_enveloped_raw = new byte[nbytes];
-				Console.WriteLine ("clientReceiveRequest 2-1 nbytes=" + nbytes);
+				Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReadRequest 2-1 nbytes=" + nbytes);
 
 				// TODO: otimizar isso ...
 				for (int i=0; i<nbytes; i++)
 					messageSide1_enveloped_raw[i] = buffer[i];
+				
 				Tuple<EnvelopType,byte[]> messageSide1_enveloped = (Tuple<EnvelopType,byte[]>) ByteArrayToObject (messageSide1_enveloped_raw);
 
 				EnvelopType envelop = messageSide1_enveloped.Item1;
 				EnvelopKey envelop_key = new EnvelopKey (envelop);
+				int envelop_tag = envelop.Item6;
 
 				// Coloca a resposta no "conjunto de respostas pendentes de requisição"
 				if (!reply_pending_list.ContainsKey(envelop_key))
-					reply_pending_list [envelop_key] = new Queue<byte[]>();
+					reply_pending_list [envelop_key] = new Dictionary<int,Queue<byte[]>>();
 
-				reply_pending_list [envelop_key].Enqueue(messageSide1_enveloped.Item2);
+				if (!reply_pending_list [envelop_key].ContainsKey(envelop_tag))
+					reply_pending_list [envelop_key][envelop_tag] = new Queue<byte[]>();
+				
+				reply_pending_list [envelop_key][envelop_tag].Enqueue(messageSide1_enveloped.Item2);
 
-				Console.WriteLine ("clientReceiveRequest 3 " + envelop.Item1 + "," +  envelop_key);
+				Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReadRequest 3 " + envelop.Item1 + "," +  envelop_key);
 				foreach (EnvelopKey ek in request_pending_list.Keys) 
-					Console.WriteLine("key: " + ek);
+					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + ": key: " + ek);
 
 				// Busca, no "conjunto de requisições pendentes de resposta", a requisição correspondente a resposta.
-				if (request_pending_list.ContainsKey (envelop_key)) 
+				if (request_pending_list.ContainsKey (envelop_key) && request_pending_list[envelop_key].ContainsKey(envelop_tag)) 
 				{
-					Console.WriteLine ("clientReceiveRequest 3-1" + " / "  + envelop_key);
-					AutoResetEvent sync_send = request_pending_list[envelop_key];
+					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReadRequest 3-1" + " / "  + envelop_key);
+					AutoResetEvent sync_send = request_pending_list[envelop_key][envelop_tag].Dequeue();
+
+					sync_send.Set();
+
+					if (request_pending_list[envelop_key][envelop_tag].Count == 0)
+						request_pending_list[envelop_key].Remove(envelop_tag);
+					
+					if (request_pending_list[envelop_key].Count==0)
+						request_pending_list.Remove(envelop_key);
+					
+					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReadRequest 3-2"+ " / "  + envelop_key) ;
+				} 
+				else if (request_pending_list.ContainsKey (envelop_key) && request_pending_list[envelop_key].ContainsKey(-1)) 
+				{
+					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReadRequest 3-1" + " / "  + envelop_key);
+					AutoResetEvent sync_send = request_pending_list[envelop_key][-1].Dequeue();
 					//Monitor.Pulse (sync_send);
 					sync_send.Set();
-					request_pending_list.Remove(envelop_key);
-					Console.WriteLine ("clientReceiveRequest 3-2"+ " / "  + envelop_key) ;
-				}
+
+					if (request_pending_list[envelop_key][-1].Count == 0)
+						request_pending_list[envelop_key].Remove(-1);
+					
+					if (request_pending_list[envelop_key].Count==0)
+						request_pending_list.Remove(envelop_key);
+
+					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReadRequest 3-2"+ " / "  + envelop_key) ;
+				}  
 			}
 			finally 
 			{
 				Monitor.Exit (sync);
 			}
-			Console.WriteLine ("clientReceiveRequest 4");
+			Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReadRequest 4");
 		}
 
 		// Convert an object to a byte array
@@ -612,11 +792,13 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 			switch (envelop.Item1) {
 			case AliencommunicatorOperation.SEND:
 			case AliencommunicatorOperation.SEND_ARRAY:
-				key = string.Format ("SR-{0}-{1}-{2}-{3}-{4}",envelop.Item2, envelop.Item3, envelop.Item4, envelop.Item5, envelop.Item6);
+//				key = string.Format ("SR-{0}-{1}-{2}-{3}-{4}",envelop.Item2, envelop.Item3, envelop.Item4, envelop.Item5, envelop.Item6);
+				key = string.Format ("SR-{0}-{1}-{2}-{3}",envelop.Item2, envelop.Item3, envelop.Item4, envelop.Item5);
 				break;
 			case AliencommunicatorOperation.RECEIVE:
 			case AliencommunicatorOperation.RECEIVE_ARRAY:
-				key = string.Format ("SR-{1}-{0}-{3}-{2}-{4}",envelop.Item2, envelop.Item3, envelop.Item4, envelop.Item5, envelop.Item6);
+//				key = string.Format ("SR-{1}-{0}-{3}-{2}-{4}",envelop.Item2, envelop.Item3, envelop.Item4, envelop.Item5, envelop.Item6);
+				key = string.Format ("SR-{1}-{0}-{3}-{2}",envelop.Item2, envelop.Item3, envelop.Item4, envelop.Item5);
 				break;
 			case AliencommunicatorOperation.PROBE:
 				break;

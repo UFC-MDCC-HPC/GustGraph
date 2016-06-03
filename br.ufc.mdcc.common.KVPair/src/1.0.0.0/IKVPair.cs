@@ -12,7 +12,7 @@ namespace br.ufc.mdcc.common.KVPair {
 	//	IKVPairInstance<K,V> newInstance(object key, object value);
 	} // end main interface 
 
-	public interface IKVPairInstance<K,V> : ICloneable
+	public interface IKVPairInstance<K,V> : IDataInstance, ICloneable
 		where K:IData
 		where V:IData
 	{

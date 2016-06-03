@@ -55,7 +55,7 @@
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="151" x="52" y="59">
+      <visualDescription h="40" w="151" x="41" y="58">
         <color b="0" g="255" r="255"/>
       </visualDescription>
       <parameter iname="IEnvironmentPortTypeSinglePartner" order="0" parid="client_port_type" uname="environment_port_type" varid="C"/>

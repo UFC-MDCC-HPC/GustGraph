@@ -44,7 +44,7 @@
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/BaseIPartitionFunction.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="167" x="138" y="239">
+      <visualDescription h="40" w="167" x="148" y="181">
         <color b="230" g="216" r="173"/>
       </visualDescription>
       <port name="input_key">

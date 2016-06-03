@@ -13,7 +13,7 @@ namespace br.ufc.mdcc.common.Iterator {
 
 	} // end main interface 
 
-	public interface IIteratorInstance<T> : ICloneable, IPortTypeIterator
+	public interface IIteratorInstance<T> : IDataInstance, ICloneable, IPortTypeIterator
 		where T:IData
 	{
 		// consumer:

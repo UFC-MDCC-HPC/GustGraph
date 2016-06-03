@@ -6,6 +6,6 @@ namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase
 	public interface IClientBase<C> : BaseIClientBase<C>
 		where C:IEnvironmentPortType
 	{
-		C Service { get; }
+		C Client { get; }
 	}
 }

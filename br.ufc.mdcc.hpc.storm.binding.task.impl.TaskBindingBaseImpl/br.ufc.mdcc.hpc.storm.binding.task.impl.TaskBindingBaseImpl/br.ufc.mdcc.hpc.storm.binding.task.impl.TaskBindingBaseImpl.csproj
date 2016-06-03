@@ -34,10 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="DGAC">
-      <HintPath>..\..\..\..\..\..\..\usr\lib\mono\DGAC\DGAC.dll</HintPath>
-    </Reference>
-    <Reference Include="MPI">
-      <HintPath>..\..\..\..\..\..\..\usr\lib\mono\MPI\MPI.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\usr\lib\mono\DGAC\DGAC.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +55,14 @@
     <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase\br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase\br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase.csproj">
       <Project>{816B876F-E438-4F9E-85D8-B98BCCE57044}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.channel.Binding\br.ufc.mdcc.hpc.storm.binding.channel.Binding\br.ufc.mdcc.hpc.storm.binding.channel.Binding.csproj">
+      <Project>{40488558-F21F-4863-A466-15F96A6CD131}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.channel.Binding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.kind.Binding\br.ufc.mdcc.hpc.storm.kind.Binding\br.ufc.mdcc.hpc.storm.kind.Binding.csproj">
+      <Project>{75954E48-9C52-4F6D-8947-13E9D574FBEA}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.kind.Binding</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

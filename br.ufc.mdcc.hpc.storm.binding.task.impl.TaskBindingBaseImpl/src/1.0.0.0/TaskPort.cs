@@ -6,94 +6,133 @@ using br.ufc.mdcc.hpc.storm.binding.task.TaskPortType;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using System.Collections.Generic;
 using System.Threading;
+using System.Diagnostics;
+using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
 
 namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 {
 	public class TaskPort<T> : BaseTaskPort<T>, ITaskPort<T>
       where T:ITaskPortType
 	{
+
 		public override void main()
 		{
 		}
-		public static void writeFile(string PATH, string saida, bool manter){ 
-			using (System.IO.StreamWriter file = new System.IO.StreamWriter (@PATH, manter)) {
-				file.WriteLine (saida);
-			}
-		}
-		
+
 		public override void after_initialize ()
 		{
-			int remote_leader = this.Id_unit.Equals("peer_right") ? this.UnitRanks ["peer_left"] [0] : this.UnitRanks ["peer_right"] [0];
-			channel = new MPI.Intercommunicator(this.PeerComm, 0, this.Communicator, remote_leader, 0);
-			writeFile ("./LOG-TaskPort.TXT","INICIO TaskPort"+
-				" remote_leader:"+remote_leader+
-				" this.Rank:"+this.Rank+
-				" this.PeerRank:"+this.PeerRank+
-				" this.PeerSize:"+this.PeerSize, false);
+			foreach (KeyValuePair<int,IDictionary<string,int>> rrr in this.UnitSizeInFacet)
+				foreach (KeyValuePair<string,int> sss in rrr.Value)
+					Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": : TASK PORT --- facet_instance=" + rrr.Key + " / unit_id=" + sss.Key + " / size=" + sss.Value + " --- " + this.CID.getInstanceName());
 		}
 
-		private MPI.Intercommunicator channel;
+		public new bool TraceFlag 
+		{
+			get {
+				return base.TraceFlag;
+			}
+			set {
+				base.TraceFlag = value;
+				Channel.TraceFlag = base.TraceFlag;
+			}
+		}
+
+		//private MPI.Intercommunicator channel;
+
+		private RequestList synchronize_action(object action_id)
+		{
+			int value = ActionDef.action_ids[action_id];
+			RequestList request_list = new RequestList ();
+
+			Trace.WriteLineIf(this.TraceFlag==true, this.ThisFacetInstance + "/" + this.Rank  + ": synchronize_action " + action_id + " -1");
+
+			Trace.WriteLineIf(this.TraceFlag==true, this.ThisFacetInstance + "/" + this.Rank  + ": synchronize_action " + action_id + " 0");
+
+			foreach (KeyValuePair<int,IDictionary<string,int>> facet in Channel.UnitSizeInFacet)
+				if (facet.Key != this.ThisFacetInstance)
+					foreach (KeyValuePair<string,int> unit_team in facet.Value) 
+						for (int i=0; i < unit_team.Value; i++)
+						{
+							Trace.WriteLineIf(this.TraceFlag==true,  "synchronize_action " + action_id + " LOOP SEND " + facet.Key + "/" + i);
+							Request req = Channel.ImmediateSend<object> (value, new Tuple<int, int> (facet.Key, i), value);
+							request_list.Add (req);
+						}
+			
+			Trace.WriteLineIf(this.TraceFlag==true, this.ThisFacetInstance + "/" + this.Rank  + ": synchronize_action " + action_id + " 1");
+
+			foreach (KeyValuePair<int,IDictionary<string,int>> facet in Channel.UnitSizeInFacet)
+				if (facet.Key != this.ThisFacetInstance)
+					foreach (KeyValuePair<string,int> unit_team in facet.Value) 
+						for (int i=0; i < unit_team.Value; i++)
+						{
+							Trace.WriteLineIf(this.TraceFlag==true,  "synchronize_action " + action_id + " LOOP RECV " + facet.Key + "/" + i);
+							ReceiveRequest req = Channel.ImmediateReceive<object> (new Tuple<int, int> (facet.Key, i), value);
+							request_list.Add (req);
+						}
+
+			Trace.WriteLineIf(this.TraceFlag==true, this.ThisFacetInstance + "/" + this.Rank  + ": synchronize_action " + action_id + " 2");
+			return request_list;
+
+		}
 
 		#region ITaskPort implementation
 
 		public void invoke (object action_id)
 		{
-			int partner_size = channel.RemoteSize;
-			int value = ActionDef.action_ids[action_id];
-
-			MPI.RequestList request_list = new MPI.RequestList ();
-
-			for (int i=0; i<partner_size; i++) 
+			object invoke_lock;
+			if (!action_lock.TryGetValue (action_id, out invoke_lock)) 
 			{
-				MPI.Request req = channel.ImmediateSend<object>(value, i, value);
-				request_list.Add (req);
+				invoke_lock = new object ();
+				action_lock [action_id] = invoke_lock;
 			}
 
-			for (int i=0; i<partner_size; i++) 
+			lock (invoke_lock)
 			{
-				MPI.ReceiveRequest req = channel.ImmediateReceive<object>(i, value);
-				request_list.Add (req);
-			}
+				Trace.WriteLineIf (this.TraceFlag == true, this.ThisFacetInstance + "/" + this.Rank + ": INVOKE SYNC " + action_id + " BEFORE LOCK");
+				RequestList request_list = synchronize_action (action_id);
 
-			Console.WriteLine (channel.Rank + ": BEFORE WAIT ALL");
-			request_list.WaitAll ();
-			Console.WriteLine (channel.Rank + ": AFTER WAIT ALL");
+				Trace.WriteLineIf (this.TraceFlag == true, this.ThisFacetInstance + "/" + this.Rank + ": INVOKE SYNC " + action_id + " BEFORE WAIT ALL");
+				request_list.WaitAll ();
+				Trace.WriteLineIf (this.TraceFlag == true, this.ThisFacetInstance + "/" + this.Rank + ": INVOKE SYNC " + action_id + " AFTER WAIT ALL");
+			}
 		}
+
+		private IDictionary<object, object> action_lock = new Dictionary<object,object>();
+
 
 		public void invoke (object action_id, out IActionFuture future)
 		{
-			int value = ActionDef.action_ids[action_id];
-			int partner_size = channel.RemoteSize;
+			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE FUTURE " + action_id + " 0");
 
-			MPI.RequestList request_list = new MPI.RequestList ();
+			RequestList request_list = synchronize_action (action_id);
 
-			for (int i=0; i<partner_size; i++) 
-			{
-				MPI.Request req = channel.ImmediateSend<object>(value, i, value);
-				request_list.Add (req);
-			}
-
-			for (int i=0; i<partner_size; i++) 
-			{
-				MPI.ReceiveRequest req = channel.ImmediateReceive<object>(i, value);
-				request_list.Add (req);
-			}
+			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE FUTURE " + action_id + " 1");
 
 			ManualResetEvent sync = new ManualResetEvent (false);
 
-			ActionFuture future_ = new ActionFuture(request_list);
+			ActionFuture future_ = new ActionFuture(request_list, sync);
 			future = future_;
+
+			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE FUTURE " + action_id + " 2");
 
 			Thread t = new Thread(new ThreadStart(() => handle_request(future_, sync)));
 
+			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE FUTURE " + action_id + " 3");
+
 			t.Start();
+
+			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE FUTURE " + action_id + " 4");
 		}
 
 		void handle_request (ActionFuture future, ManualResetEvent sync)
 		{
+			Trace.WriteLineIf (this.TraceFlag == true, this.ThisFacetInstance + "/" + this.Rank  + ": HANDLE REQUEST 1");
 			future.RequestList.WaitAll ();
+			Trace.WriteLineIf (this.TraceFlag == true, this.ThisFacetInstance + "/" + this.Rank  + ": HANDLE REQUEST 2");
 			sync.Set ();
+			Trace.WriteLineIf (this.TraceFlag == true, this.ThisFacetInstance + "/" + this.Rank  + ": HANDLE REQUEST 3");
 			future.setCompleted ();
+			Trace.WriteLineIf (this.TraceFlag == true, this.ThisFacetInstance + "/" + this.Rank  + ": HANDLE REQUEST 4");
 		}
 
 		void handle_request (ActionFuture future, ManualResetEvent sync, Action reaction)
@@ -104,36 +143,24 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 
 		public Thread invoke (object action_id, Action reaction, out IActionFuture future)
 		{
-			int partner_size = channel.RemoteSize;
-			int value = ActionDef.action_ids[action_id];
+			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE ACTION " + action_id + " 0");
 
-			MPI.RequestList request_list = new MPI.RequestList ();
+			RequestList request_list = synchronize_action (action_id);
 
-			for (int i=0; i<partner_size; i++) 
-			{
-				MPI.Request req = channel.ImmediateSend<object>(value, i, value);
-				request_list.Add (req);
-			}
-
-			for (int i=0; i<partner_size; i++) 
-			{
-				MPI.ReceiveRequest req = channel.ImmediateReceive<object>(i, value);
-				request_list.Add (req);
-			}
+			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE ACTION " + action_id + " 1");
 
 			ManualResetEvent sync = new ManualResetEvent (false);
 
 			ActionFuture future_ = new ActionFuture(request_list, sync);
 			future = future_;
 
+			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE ACTION " + action_id + " 2");
+
 			Thread t = new Thread(new ThreadStart(() => handle_request(future_, sync, reaction)));
 
 			t.Start();
 
-			writeFile ("./LOG-TaskPort.TXT","End TaskPort"+
-				" this.Rank:"+this.Rank+
-				" this.PeerRank:"+this.PeerRank
-				+" this.PeerSize:"+this.PeerSize, true);
+			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE ACTION " + action_id + " 3");
 
 			return t;
 		}
@@ -143,16 +170,16 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 	
     internal class ActionFuture : IActionFuture
 	{
-		private MPI.RequestList request_list = null;
+		private RequestList request_list = null;
 	    private ManualResetEvent sync = null;
 		private bool completed = false;
 
-		public ActionFuture (MPI.RequestList request_list)
+		public ActionFuture (RequestList request_list)
 		{
 			this.request_list = request_list;
 		}
 
-		public ActionFuture (MPI.RequestList request_list, ManualResetEvent sync)
+		public ActionFuture (RequestList request_list, ManualResetEvent sync)
 		{
 			this.request_list = request_list;
 			this.sync = sync;
@@ -178,46 +205,94 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 
 		#endregion
 
+		public object waiting_lock = new object ();
+
 		public void setCompleted()
 		{
-			completed = true;
+			lock (waiting_lock) 
+			{
+				completed = true;
+				foreach (AutoResetEvent waiting_set in waiting_sets)
+					waiting_set.Set ();
+			}
 		}
 
-		public MPI.RequestList RequestList { get { return request_list; } } 
+		private IList<AutoResetEvent> waiting_sets = new List<AutoResetEvent> ();
+
+		public RequestList RequestList { get { return request_list; } } 
+
+		public void registerWaitingSet(AutoResetEvent waiting_set)
+		{
+			lock (waiting_lock) 
+			{
+				if (completed)
+					waiting_set.Set ();
+				waiting_sets.Add (waiting_set);
+			}
+		}
+
+		public void unregisterWaitingSet(AutoResetEvent waiting_set)
+		{
+			waiting_sets.Remove (waiting_set);
+		}
 	}
 
 	internal class ActionFutureSet : IActionFutureSet
 	{
 		IList<IActionFuture> pending_list = new List<IActionFuture>();
-		IList<IActionFuture> completed_list = new List<IActionFuture>();
 
 		#region ActionFutureSet implementation
 		public void addAction (IActionFuture new_future)
-		{			
-			pending_list.Add (new_future);
+		{								
+			lock (sync_oper)
+				pending_list.Add (new_future);
+				
+			if (sync_future != null)
+				new_future.registerWaitingSet (sync_future);
 		}
+
 		public void waitAll ()
 		{
-			foreach (IActionFuture action_future in pending_list)
-				action_future.wait ();
-
 			foreach (IActionFuture action_future in pending_list) 
-				completed_list.Add (action_future);
+				lock(sync_oper)	action_future.wait ();			
+
 			pending_list.Clear ();
 		}
 
+		AutoResetEvent sync_future = null;
 
 		public IActionFuture waitAny ()
 		{
-			while (true) 
+			sync_future = new AutoResetEvent(false);
+
+			lock (sync_oper)
+				foreach (IActionFuture action_future in pending_list) 
+						action_future.registerWaitingSet (sync_future);	
+				
+			sync_future.WaitOne ();
+			sync_future = null;
+
+			IActionFuture f = this.testAny ();
+
+			lock (sync_oper)
+				foreach (IActionFuture action_future in pending_list) 
+					action_future.unregisterWaitingSet (sync_future);	
+
+
+		/*	while (true)
 			{
-				IActionFuture f = this.testAny ();
+				Thread.Sleep (200);
+				f = testAny();
 				if (f != null)
 					return f;
-			}
+			}*/
 
-		}
+
+			return f;
+		} 
 		 
+		private object sync_oper = new object (); 
+
 		public bool testAll ()
 		{
 			lock (sync_oper) 
@@ -234,10 +309,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 				}
 
 				foreach (IActionFuture f in tobeRemoved) 
-				{
 					pending_list.Remove (f);
-					completed_list.Add (f);
-				}
 			
 				return completed;
 			}
@@ -245,40 +317,34 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 
 		public IActionFuture testAny ()
 		{
+			IActionFuture completed_action_future = null;
+
 			lock (sync_oper) 
-			{
+			{				
 				foreach (IActionFuture action_future in pending_list) 
 				{
 					if (action_future.test ()) 
 					{
-						pending_list.Remove (action_future);
-						completed_list.Add (action_future);
-						return action_future;
+						completed_action_future = action_future;
+						break;
 					}
 				}
+				pending_list.Remove (completed_action_future);
 			}
 
-			return null;
+			return completed_action_future;
 		}
-		public IActionFuture[] Completed 
-		{
-			get 
-			{
-				IActionFuture[] f = new IActionFuture[completed_list.Count];
-				completed_list.CopyTo (f, 0);
-				return f;
-			}
-		}
-
-		private object sync_oper = new object (); 
 
 		public IActionFuture[] Pending 
 		{
 			get 
 			{
-				IActionFuture[] f = new IActionFuture[pending_list.Count];
-				pending_list.CopyTo (f, 0);
-				return f;
+				lock (sync_oper) 
+				{				
+					IActionFuture[] f = new IActionFuture[pending_list.Count];
+					pending_list.CopyTo (f, 0);
+					return f;
+				}
 			}
 		}
 		#endregion

@@ -34,7 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="DGAC">
-      <HintPath>..\..\..\..\..\..\..\usr\lib\mono\DGAC\DGAC.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\usr\lib\mono\DGAC\DGAC.dll</HintPath>
     </Reference>
     <Reference Include="MPI">
       <HintPath>..\..\..\..\..\..\..\usr\lib\mono\MPI\MPI.dll</HintPath>
@@ -42,17 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseIClientMbyNIntra.cs">
-      <Link>BaseIClientMbyNIntra.cs</Link>
+    <Compile Include="..\src\1.0.0.0\IMbyNIntra.cs">
+      <Link>IMbyNIntra.cs</Link>
     </Compile>
-    <Compile Include="..\src\1.0.0.0\BaseIServerMbyNIntra.cs">
-      <Link>BaseIServerMbyNIntra.cs</Link>
-    </Compile>
-    <Compile Include="..\src\1.0.0.0\IClientMbyNIntra.cs">
-      <Link>IClientMbyNIntra.cs</Link>
-    </Compile>
-    <Compile Include="..\src\1.0.0.0\IServerMbyNIntra.cs">
-      <Link>IServerMbyNIntra.cs</Link>
+    <Compile Include="..\src\1.0.0.0\BaseIMbyNIntra.cs">
+      <Link>BaseIMbyNIntra.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -72,6 +66,10 @@
     <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner.csproj">
       <Project>{B1988D74-54AE-4031-B185-E046226BC359}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner.csproj">
+      <Project>{CFC8E9C1-30F7-4A4A-9B1E-9AFA4B474D9A}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

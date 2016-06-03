@@ -73,6 +73,11 @@ namespace br.ufc.mdcc.common.impl.IteratorImpl
 				items.Enqueue (c);
 		}
 
+		public object ObjValue {
+			get { return items; }
+			set { this.items = (ConcurrentQueue<Option<object>>) value;}
+		}
+
 		public void GetObjectData (SerializationInfo info, StreamingContext context)  
 		{
 			Option<object>[] items_array = items.ToArray ();
@@ -88,7 +93,7 @@ namespace br.ufc.mdcc.common.impl.IteratorImpl
 		public ICloneable createItem() 
 		{
 			ICloneable r = (ICloneable) item_factory.Clone();
-			Trace.WriteLine ("CREATE ITEM " + r.GetType());
+			// Trace.WriteLine ("CREATE ITEM " + r.GetType());
 			return r;  
 		}
 
@@ -103,7 +108,7 @@ namespace br.ufc.mdcc.common.impl.IteratorImpl
 
 			lock (not_empty) { Monitor.Pulse(not_empty); }
 		}
-
+			
 		public void putAll (IIteratorInstance<T> items)
 		{
 			object item;
@@ -144,7 +149,12 @@ namespace br.ufc.mdcc.common.impl.IteratorImpl
 
 		public bool has_next()
 		{
-			return false;
+			while (items.IsEmpty)
+				lock (not_empty) { Monitor.Wait(not_empty); }
+
+			Option<object> item;
+			items.TryPeek (out item);
+			return item.IsSome;
 		}
 
 	}

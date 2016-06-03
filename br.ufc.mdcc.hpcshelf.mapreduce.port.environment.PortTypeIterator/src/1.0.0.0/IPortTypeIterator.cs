@@ -1,10 +1,18 @@
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;
+using System;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator
 {
 	public interface IPortTypeIterator : BaseIPortTypeIterator, IEnvironmentPortTypeMultiplePartner
 	{
+		ICloneable createItem ();
+
+		void put(object item);
+
+		// - raises exception if has finished and not restarted
+		void finish();
+
 		// tests whether there is an item to be read in the chunk
 		bool has_next(); 
 

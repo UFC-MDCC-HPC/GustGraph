@@ -33,11 +33,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="DGAC">
-      <HintPath>..\..\..\..\..\..\..\usr\lib\mono\DGAC\DGAC.dll</HintPath>
-    </Reference>
     <Reference Include="MPI">
-      <HintPath>..\..\..\..\..\..\..\usr\lib\mono\MPI\MPI.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\usr\lib\mono\MPI\MPI.dll</HintPath>
+    </Reference>
+    <Reference Include="DGAC">
+      <HintPath>..\..\..\..\..\..\..\..\usr\lib\mono\DGAC\DGAC.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

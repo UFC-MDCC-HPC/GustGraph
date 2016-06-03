@@ -7,8 +7,8 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <parameter componentRef="intermediate_key_type" formFieldId="intermediate_key_type" order="0" variance="contravariant" varName="OMK"/>
-    <parameter componentRef="intermediate_value_type" formFieldId="intermediate_value_type" order="1" variance="contravariant" varName="OMV"/>
+    <parameter componentRef="intermediate_key_type" formFieldId="intermediate_key_type" order="0" variance="contravariant" varName="TKey"/>
+    <parameter componentRef="intermediate_value_type" formFieldId="intermediate_value_type" order="1" variance="contravariant" varName="TValue"/>
     <parameter componentRef="partition_function" formFieldId="partition_function" order="3" variance="contravariant" varName="PF"/>
     <innerComponent localRef="shuffler_channel" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" multiple="false" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" exposed="false">
       <visualDescription h="61" w="183" x="233" y="242">
@@ -53,7 +53,7 @@
       <visualDescription h="64" w="125" x="121" y="150">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="input_key" varName="OMK"/>
+      <parameter formFieldId="input_key" varName="TKey"/>
       <port localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
         <visualDescription h="60" w="100" x="241" y="70">
           <color b="255" g="255" r="255"/>
@@ -74,30 +74,22 @@
         <visualDescription h="20" w="20" x="54" y="42"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="collect_pairs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
-      <visualDescription h="60" w="100" x="61" y="403">
+    <innerComponent localRef="collect_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
+      <visualDescription h="60" w="100" x="78" y="434">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="client_port_type" varName="C"/>
       <parameter formFieldId="server_port_type" varName="S"/>
-      <unitBounds parallel="false" uRef="client">
+      <unitBounds parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
-      <unitBounds parallel="false" uRef="server">
-        <visualDescription h="20" w="20" x="28" y="2"/>
-      </unitBounds>
     </innerComponent>
-    <innerComponent localRef="feed_pairs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
+    <innerComponent localRef="feed_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
       <visualDescription h="60" w="100" x="517" y="411">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="client_port_type" varName="C"/>
       <parameter formFieldId="server_port_type" varName="S"/>
-      <unitBounds parallel="false" uRef="client">
+      <unitBounds parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-      <unitBounds parallel="false" uRef="server">
-        <visualDescription h="20" w="20" x="28" y="2"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="task_binding_shuffle" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance/TaskBindingAdvance.hpe" multiple="false" name="TaskBindingAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.task" exposed="true">
@@ -108,7 +100,7 @@
         <visualDescription h="60" w="100" x="234" y="345">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###229359385"/>
+        <parameter formFieldId="task_port_type" varName="X###649936952"/>
         <unitBounds parallel="true" uRef="peer">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -150,7 +142,7 @@
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="value_type" varName="OUT_SHUFFLE_V"/>
-      <parameter formFieldId="key_type" varName="OMK"/>
+      <parameter formFieldId="key_type" varName="TKey"/>
       <unitBounds parallel="false" uRef="kv_pair">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -159,7 +151,7 @@
       <visualDescription h="60" w="100" x="141" y="485">
         <color b="203" g="192" r="255"/>
       </visualDescription>
-      <parameter formFieldId="item_type" varName="OMV"/>
+      <parameter formFieldId="item_type" varName="TValue"/>
       <unitBounds parallel="true" uRef="iterator">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -168,7 +160,7 @@
       <visualDescription h="60" w="137" x="696" y="363">
         <color b="203" g="192" r="255"/>
       </visualDescription>
-      <parameter formFieldId="item_type" varName="OMV"/>
+      <parameter formFieldId="item_type" varName="TValue"/>
       <unitBounds parallel="true" uRef="iterator">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -177,17 +169,9 @@
       <visualDescription h="60" w="100" x="25" y="288">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="value_type" varName="OMV_INPUT_COLLECTOR_V"/>
-      <parameter formFieldId="key_type" varName="OMK"/>
+      <parameter formFieldId="value_type" varName="TValue"/>
+      <parameter formFieldId="key_type" varName="TKey"/>
       <unitBounds parallel="false" uRef="kv_pair">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="input_map_collector_v" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="100" x="116" y="482">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -195,9 +179,8 @@
     <supplyParameter cRef="shuffler_port_type_client" direct="true" varName="C"/>
     <supplyParameter cRef="output_item_type" direct="true" varName="OUT_SHUFFLER"/>
     <supplyParameter cRef="output_item_value_type" direct="true" varName="OUT_SHUFFLE_V"/>
-    <supplyParameter cRef="input_map_collector_v" direct="true" varName="OMV_INPUT_COLLECTOR_V"/>
     <supplyParameter cRef="input_map_collector_kv" direct="true" varName="INPUT_MAP_COLLECTOR_T"/>
-    <innerComponent localRef="C###229359385" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <innerComponent localRef="C###649936952" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
       <visualDescription h="60" w="142" x="217" y="525">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -205,16 +188,16 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###229359385" varName="X###229359385"/>
+    <supplyParameter cRef="C###649936952" varName="X###649936952"/>
     <innerRenaming cNewName="task_port_shuffle" cOldName="task_port" cRef="task_binding_shuffle"/>
     <interface iRef="IShufflerReduceFeeder" nArgs="2">
+      <slice isRef="feed_pairs">
+        <originRef cRef="feed_pairs" iRef="IBindingDirectMxNIterator"/>
+        <visualDescription h="10" w="10" x="85" y="28"/>
+      </slice>
       <slice isRef="task_binding_shuffle">
         <originRef cRef="task_binding_shuffle" iRef="ITaskBindingAdvance"/>
         <visualDescription h="10" w="10" x="0" y="20"/>
-      </slice>
-      <slice isRef="feed_pairs">
-        <originRef cRef="feed_pairs" iRef="IServerBase"/>
-        <visualDescription h="10" w="10" x="85" y="28"/>
       </slice>
       <slice isRef="shuffler_channel">
         <originRef cRef="shuffler_channel" iRef="IChannel"/>
@@ -229,18 +212,22 @@
         <visualDescription h="10" w="10" x="11" y="24"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler&#xA;{&#xA;&#x9;public interface BaseIShufflerReduceFeeder&lt;OMK, OMV> : ISynchronizerKind &#xA;&#x9;&#x9;where OMK:IData&#xA;&#x9;&#x9;where OMV:IData&#xA;&#x9;{&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPortTypeAdvance> Task_port_shuffle {get;}&#xA;&#x9;&#x9;IChannel Shuffler_channel {get;}&#xA;&#x9;}&#xA;}" name="BaseIShufflerReduceFeeder.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/1.0.0.0/BaseIShufflerReduceFeeder.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler&#xA;{&#xA;&#x9;public interface BaseIShufflerReduceFeeder&lt;TKey, TValue> : ISynchronizerKind &#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;{&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPortTypeAdvance> Task_port_shuffle {get;}&#xA;&#x9;&#x9;IChannel Shuffler_channel {get;}&#xA;&#x9;}&#xA;}" name="BaseIShufflerReduceFeeder.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/1.0.0.0/BaseIShufflerReduceFeeder.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler&#xA;{&#xA;&#x9;public interface IShufflerReduceFeeder&lt;OMK, OMV> : BaseIShufflerReduceFeeder&lt;OMK, OMV>&#xA;&#x9;&#x9;where OMK:IData&#xA;&#x9;&#x9;where OMV:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IShufflerReduceFeeder.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/1.0.0.0/IShufflerReduceFeeder.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler&#xA;{&#xA;&#x9;public interface IShufflerReduceFeeder&lt;TKey, TValue> : BaseIShufflerReduceFeeder&lt;TKey, TValue>&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IShufflerReduceFeeder.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/1.0.0.0/IShufflerReduceFeeder.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/1.0.0.0/BaseIShufflerReduceFeeder.dll</dependency>
         </file>
       </sources>
       <visualDescription h="74" w="213" x="542" y="87">
         <color b="0" g="0" r="255"/>
       </visualDescription>
+      <port name="feed_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="feed_pairs"/>
+      </port>
       <port name="task_binding_shuffle">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_shuffle" sRef="task_binding_shuffle"/>
@@ -249,23 +236,19 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_binding_shuffle"/>
       </port>
-      <port name="feed_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="feed_pairs"/>
-      </port>
-      <parameter iname="IData" order="0" parid="intermediate_key_type" uname="data" varid="OMK"/>
-      <parameter iname="IData" order="1" parid="intermediate_value_type" uname="data" varid="OMV"/>
+      <parameter iname="IData" order="0" parid="intermediate_key_type" uname="data" varid="TKey"/>
+      <parameter iname="IData" order="1" parid="intermediate_value_type" uname="data" varid="TValue"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
-    <interface iRef="IShufflerMapCollector" nArgs="2">
+    <interface iRef="IShufflerMapCollector" nArgs="3">
       <slice isRef="task_binding_shuffle">
         <originRef cRef="task_binding_shuffle" iRef="ITaskBindingAdvance"/>
         <visualDescription h="10" w="10" x="0" y="31"/>
       </slice>
       <slice isRef="collect_pairs">
-        <originRef cRef="collect_pairs" iRef="IClientBase"/>
+        <originRef cRef="collect_pairs" iRef="IBindingDirectMxNIterator"/>
         <visualDescription h="10" w="10" x="1" y="28"/>
       </slice>
       <slice isRef="shuffler_channel">
@@ -281,7 +264,7 @@
         <visualDescription h="10" w="10" x="28" y="30"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler&#xA;{&#xA;&#x9;public interface BaseIShufflerMapCollector&lt;PF, IMK> : ISynchronizerKind &#xA;&#x9;&#x9;where PF:IPartitionFunction&lt;IMK>&#xA;&#x9;&#x9;where IMK:IData&#xA;&#x9;{&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPortTypeAdvance> Task_port_shuffle {get;}&#xA;&#x9;&#x9;IChannel Shuffler_channel {get;}&#xA;&#x9;}&#xA;}" name="BaseIShufflerMapCollector.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/1.0.0.0/BaseIShufflerMapCollector.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler&#xA;{&#xA;&#x9;public interface BaseIShufflerMapCollector&lt;TKey,TValue,PF> : ISynchronizerKind &#xA;&#x9;&#x9;where PF:IPartitionFunction&lt;TKey>&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;{&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPortTypeAdvance> Task_port_shuffle {get;}&#xA;&#x9;&#x9;IChannel Shuffler_channel {get;}&#xA;&#x9;}&#xA;}" name="BaseIShufflerMapCollector.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/1.0.0.0/BaseIShufflerMapCollector.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll</dependency>
@@ -290,13 +273,13 @@
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler&#xA;{&#xA;&#x9;public interface IShufflerMapCollector&lt;PF, IMK> : BaseIShufflerMapCollector&lt;PF, IMK>&#xA;&#x9;&#x9;where PF:IPartitionFunction&lt;IMK>&#xA;&#x9;&#x9;where IMK:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IShufflerMapCollector.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/1.0.0.0/IShufflerMapCollector.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler&#xA;{&#xA;&#x9;public interface IShufflerMapCollector&lt;TKey,TValue,PF> : BaseIShufflerMapCollector&lt;TKey,TValue,PF>&#xA;&#x9;&#x9;where PF:IPartitionFunction&lt;TKey>&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IShufflerMapCollector.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/1.0.0.0/IShufflerMapCollector.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/1.0.0.0/BaseIShufflerMapCollector.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="66" w="187" x="33" y="46">
+      <visualDescription h="66" w="187" x="22" y="85">
         <color b="0" g="0" r="255"/>
       </visualDescription>
       <port name="task_binding_shuffle">
@@ -311,30 +294,31 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_pairs" sRef="collect_pairs"/>
       </port>
-      <port name="input_key">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key" sRef="partition_function"/>
-      </port>
       <port name="output_key">
         <visualDescription h="10" w="10" x="169" y="4"/>
         <slice pRef="output_key" sRef="partition_function"/>
       </port>
-      <parameter iname="IPartitionFunction" order="0" parid="partition_function" uname="partition_function" varid="PF"/>
-      <parameter iname="IData" order="1" parid="intermediate_key_type" uname="data" varid="OMK"/>
+      <port name="input_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="partition_function"/>
+      </port>
+      <parameter iname="IPartitionFunction" order="2" parid="partition_function" uname="partition_function" varid="PF"/>
+      <parameter iname="IData" order="0" parid="intermediate_key_type" uname="data" varid="TKey"/>
+      <parameter iname="IData" order="1" parid="intermediate_value_type" uname="data" varid="TValue"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IShufflerReduceFeeder" multiple="true" private="false" replica="0" uRef="reduce_feeder" visibleInterface="true">
-      <slices cRef="feed_pairs" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed_pairs" transitive="false">
-        <visualDescription h="10" w="10" x="85" y="28"/>
-      </slices>
       <slices cRef="task_port_shuffle" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_port_shuffle" transitive="true">
         <visualDescription h="10" w="10" x="81" y="19"/>
       </slices>
       <slices cRef="task_binding_shuffle" inner_replica="0" slice_replica="1" uRef="peer" sliceName="task_binding_shuffle" transitive="false">
         <visualDescription h="10" w="10" x="0" y="20"/>
         <port>task_port_shuffle</port>
+      </slices>
+      <slices cRef="feed_pairs" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="feed_pairs" transitive="false">
+        <visualDescription h="10" w="10" x="85" y="28"/>
       </slices>
       <slices cRef="shuffler_channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="shuffler_channel" transitive="false">
         <visualDescription h="10" w="10" x="5" y="8"/>
@@ -358,7 +342,7 @@
       <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
         <visualDescription h="10" w="10" x="24" y="26"/>
       </slices>
-      <slices cRef="collect_pairs" inner_replica="0" slice_replica="0" uRef="client" sliceName="collect_pairs" transitive="false">
+      <slices cRef="collect_pairs" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="collect_pairs" transitive="false">
         <visualDescription h="10" w="10" x="1" y="28"/>
       </slices>
       <slices cRef="output_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_key" transitive="true">

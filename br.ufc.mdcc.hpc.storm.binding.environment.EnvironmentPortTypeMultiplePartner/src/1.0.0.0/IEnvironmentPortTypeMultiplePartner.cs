@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using MPI;
 using System;
 using System.Runtime.Serialization;
+using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;
 
 namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner
 {
-	public interface IEnvironmentPortTypeMultiplePartner : BaseIEnvironmentPortTypeMultiplePartner, IEnvironmentPortType
+	public interface IEnvironmentPortTypeMultiplePartner : BaseIEnvironmentPortTypeMultiplePartner, IEnvironmentPortTypeSinglePartner
 	{
 
 	}

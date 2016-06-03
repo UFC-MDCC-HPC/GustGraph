@@ -13,4 +13,9 @@ public interface IData : BaseIData
 
 } // end main interface 
 
+	public interface IDataInstance
+	{
+		object ObjValue { set; get; }
+	}
+
 } // end namespace 

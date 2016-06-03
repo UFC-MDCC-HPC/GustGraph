@@ -9,7 +9,7 @@ namespace br.ufc.mdcc.common.Integer {
 		IIntegerInstance newInstance(int i);
 	} // end main interface 
 
-	public interface IIntegerInstance : ICloneable
+	public interface IIntegerInstance : IDataInstance, ICloneable
 	{
 		int Value { set; get; }
 	}

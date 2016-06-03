@@ -23,6 +23,8 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase
 		void wait();
 		bool test();
 		IActionFutureSet createSet();
+		void registerWaitingSet (AutoResetEvent waiting_set);
+		void unregisterWaitingSet (AutoResetEvent waiting_set);
 	}
 
 	public interface IActionFutureSet 
@@ -35,7 +37,6 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase
 		bool testAll();
 		IActionFuture testAny();
 
-		IActionFuture[] Completed { get; }
 		IActionFuture[] Pending { get; }
 	}
 }

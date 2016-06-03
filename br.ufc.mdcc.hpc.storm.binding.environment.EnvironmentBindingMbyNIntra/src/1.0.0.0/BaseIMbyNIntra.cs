@@ -6,7 +6,8 @@ using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN;
 
 namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra
 {
-	public interface BaseIServerMbyNIntra<S> : BaseIServerMbyN<S>, ISynchronizerKind 
+	public interface BaseIMbyNIntra<C,S> : BaseIClientMbyN<C>, BaseIServerMbyN<S>, ISynchronizerKind 
+		where C:IEnvironmentPortTypeMultiplePartner
 		where S:IEnvironmentPortTypeMultiplePartner
 	{
 	}
