@@ -1,0 +1,6 @@
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.platform_data.Application/mapreduce.platform_data.Application/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.platform_data.Application/mapreduce.platform_data.Application/bin/Debug/mapreduce.platform_data.Application.dll.mdb
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.platform_data.Application/mapreduce.platform_data.Application/bin/Debug/mapreduce.platform_data.Application.dll
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.platform_data.Application/mapreduce.platform_data.Application/obj/Debug/mapreduce.platform_data.Application.dll
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.platform_data.Application/mapreduce.platform_data.Application/obj/Debug/mapreduce.platform_data.Application.dll.mdb
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.platform_data.Application/mapreduce.platform_data.Application/bin/Debug/DGAC.dll

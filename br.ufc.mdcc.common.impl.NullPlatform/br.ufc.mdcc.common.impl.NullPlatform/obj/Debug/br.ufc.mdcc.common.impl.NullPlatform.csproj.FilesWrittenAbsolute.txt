@@ -1,0 +1,16 @@
+/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/br.ufc.mdcc.common.impl.NullPlatform/br.ufc.mdcc.common.impl.NullPlatform/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/br.ufc.mdcc.common.impl.NullPlatform/br.ufc.mdcc.common.impl.NullPlatform/bin/Debug/br.ufc.mdcc.common.impl.NullPlatform.dll.mdb
+/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/br.ufc.mdcc.common.impl.NullPlatform/br.ufc.mdcc.common.impl.NullPlatform/bin/Debug/br.ufc.mdcc.common.impl.NullPlatform.dll
+/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/br.ufc.mdcc.common.impl.NullPlatform/br.ufc.mdcc.common.impl.NullPlatform/obj/Debug/br.ufc.mdcc.common.impl.NullPlatform.dll
+/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/br.ufc.mdcc.common.impl.NullPlatform/br.ufc.mdcc.common.impl.NullPlatform/obj/Debug/br.ufc.mdcc.common.impl.NullPlatform.dll.mdb
+/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/br.ufc.mdcc.common.impl.NullPlatform/br.ufc.mdcc.common.impl.NullPlatform/bin/Debug/DGAC.dll
+/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/br.ufc.mdcc.common.impl.NullPlatform/br.ufc.mdcc.common.impl.NullPlatform/bin/Debug/br.ufc.mdcc.common.Platform.dll
+/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/br.ufc.mdcc.common.impl.NullPlatform/br.ufc.mdcc.common.impl.NullPlatform/bin/Debug/br.ufc.mdcc.common.Platform.dll.mdb
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.NullPlatform/br.ufc.mdcc.common.impl.NullPlatform/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.NullPlatform/br.ufc.mdcc.common.impl.NullPlatform/bin/Debug/br.ufc.mdcc.common.impl.NullPlatform.dll.mdb
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.NullPlatform/br.ufc.mdcc.common.impl.NullPlatform/bin/Debug/br.ufc.mdcc.common.impl.NullPlatform.dll
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.NullPlatform/br.ufc.mdcc.common.impl.NullPlatform/obj/Debug/br.ufc.mdcc.common.impl.NullPlatform.dll
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.NullPlatform/br.ufc.mdcc.common.impl.NullPlatform/obj/Debug/br.ufc.mdcc.common.impl.NullPlatform.dll.mdb
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.NullPlatform/br.ufc.mdcc.common.impl.NullPlatform/bin/Debug/DGAC.dll
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.NullPlatform/br.ufc.mdcc.common.impl.NullPlatform/bin/Debug/br.ufc.mdcc.common.Platform.dll
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.NullPlatform/br.ufc.mdcc.common.impl.NullPlatform/bin/Debug/br.ufc.mdcc.common.Platform.dll.mdb

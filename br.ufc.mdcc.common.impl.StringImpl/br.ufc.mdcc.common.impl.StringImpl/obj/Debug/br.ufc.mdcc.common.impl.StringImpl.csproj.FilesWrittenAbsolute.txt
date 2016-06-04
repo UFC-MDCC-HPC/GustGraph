@@ -1,0 +1,10 @@
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.StringImpl/br.ufc.mdcc.common.impl.StringImpl/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.StringImpl/br.ufc.mdcc.common.impl.StringImpl/bin/Debug/br.ufc.mdcc.common.impl.StringImpl.dll.mdb
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.StringImpl/br.ufc.mdcc.common.impl.StringImpl/bin/Debug/br.ufc.mdcc.common.impl.StringImpl.dll
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.StringImpl/br.ufc.mdcc.common.impl.StringImpl/obj/Debug/br.ufc.mdcc.common.impl.StringImpl.dll
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.StringImpl/br.ufc.mdcc.common.impl.StringImpl/obj/Debug/br.ufc.mdcc.common.impl.StringImpl.dll.mdb
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.StringImpl/br.ufc.mdcc.common.impl.StringImpl/bin/Debug/DGAC.dll
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.StringImpl/br.ufc.mdcc.common.impl.StringImpl/bin/Debug/br.ufc.mdcc.common.Data.dll
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.StringImpl/br.ufc.mdcc.common.impl.StringImpl/bin/Debug/br.ufc.mdcc.common.Data.dll.mdb
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.StringImpl/br.ufc.mdcc.common.impl.StringImpl/bin/Debug/br.ufc.mdcc.common.String.dll
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.common.impl.StringImpl/br.ufc.mdcc.common.impl.StringImpl/bin/Debug/br.ufc.mdcc.common.String.dll.mdb

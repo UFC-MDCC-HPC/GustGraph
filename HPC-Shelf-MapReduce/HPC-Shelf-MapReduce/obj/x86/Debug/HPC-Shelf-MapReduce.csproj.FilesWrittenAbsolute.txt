@@ -1,0 +1,5 @@
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/HPC-Shelf-MapReduce/HPC-Shelf-MapReduce/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/HPC-Shelf-MapReduce/HPC-Shelf-MapReduce/bin/Debug/DGAC.dll
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/HPC-Shelf-MapReduce/HPC-Shelf-MapReduce/bin/Debug/MPI.dll
+/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/HPC-Shelf-MapReduce/HPC-Shelf-MapReduce/bin/Debug/MySql.Data.dll
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/HPC-Shelf-MapReduce/HPC-Shelf-MapReduce/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009b668612f5f9857c9a16262048f30575ad7f88ea11cb1b884444504ec4024dae5f0bd2d641537e09aa33c489cc47201c2cc6382d3c7171ce97b322e02b102896f43c62504106f76174e0c0edfddcb3bbcdfe5e94f014882885d06085ffb27c694d0e7d56d3d434698c3eb1dc1f1d79d7dc96faa3c63096a9fed4746e3fcff2d4" isAbstract="false" kind="Synchronizer" name="TaskBindingDataImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.task">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f7948330a8551587520fa4d6764f891ec75131f60d0e714087e64dae70cb293c7ecc46491722f710e004441491cbea944834798a451fef3996a198e01bf003cb6a6e886b573d758edcb2e04ace3cfebff8dfde68b48703c2b093c4e7a08abc2d375135b392b82186fa02f89401274c1246039cac1b340b57fbcd44c1988b0b99" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData/TaskBindingData.hpe" name="TaskBindingData" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.task" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="207" y="186">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="60" w="163" x="186" y="281">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###1262574723"/>
+          <unitBounds parallel="true" uRef="peer">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="true" uRef="peer">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="ITaskPortDataImpl" nArgs="0">
+      <slice isRef="task_port">
+        <originRef cRef="task_port" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="93" y="24"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.task.TaskBindingDataImpl &#xA;{&#xA;&#x9;public abstract class BaseITaskPortDataImpl: Synchronizer, BaseITaskBindingData&#xA;&#x9;{&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeData> task_port = null;&#xA;&#xA;&#x9;&#x9;public ITaskPort&lt;ITaskPortTypeData> Task_port&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_port == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_port = (ITaskPort&lt;ITaskPortTypeData>) Services.getPort(&quot;task_port&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_port;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseITaskPortDataImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.task.TaskBindingDataImpl/bin/1.0.0.0/BaseITaskPortDataImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData/bin/1.0.0.0/BaseITaskBindingData.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskPortType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.task.TaskBindingDataImpl&#xA;{&#xA;&#x9;public class ITaskPortDataImpl : BaseITaskPortDataImpl, ITaskBindingData&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;public override void on_initialize ()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;ActionDef.action_ids[ITaskPortData.READ_SOURCE] = 10;&#xA;&#x9;&#x9;&#x9;ActionDef.action_ids[ITaskPortData.TERMINATE] = 11;&#xA;&#x9;&#x9;&#x9;ActionDef.action_ids[ITaskPortData.WRITE_SINK] = 12;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="ITaskPortDataImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.task.TaskBindingDataImpl/bin/1.0.0.0/ITaskPortDataImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.task.TaskBindingDataImpl/bin/1.0.0.0/BaseITaskPortDataImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData/bin/1.0.0.0/ITaskBindingData.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="143" x="64" y="46">
+        <color b="230" g="216" r="173"/>
+      </visualDescription>
+      <port name="task_port">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_port" sRef="task_port"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ITaskPortDataImpl" multiple="true" private="false" replica="0" uRef="peer" visibleInterface="true">
+      <super cRef="base" uRef="peer"/>
+      <visualDescription h="40" w="143" x="64" y="126"/>
+    </unit>
+  </componentInfo>
+</component:component>
