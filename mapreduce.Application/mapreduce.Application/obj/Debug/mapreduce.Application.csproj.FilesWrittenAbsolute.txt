@@ -10,3 +10,7 @@
 /home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.Application/mapreduce.Application/obj/Debug/mapreduce.Application.dll
 /home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.Application/mapreduce.Application/obj/Debug/mapreduce.Application.dll.mdb
 /home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.Application/mapreduce.Application/bin/Debug/DGAC.dll
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.Application/mapreduce.Application/bin/Debug/br.ufc.mdcc.hpcshelf.platform.Maintainer.dll
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.Application/mapreduce.Application/bin/Debug/br.ufc.mdcc.hpcshelf.platform.Maintainer.dll.mdb
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.Application/mapreduce.Application/bin/Debug/br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost.dll
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.Application/mapreduce.Application/bin/Debug/br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost.dll.mdb

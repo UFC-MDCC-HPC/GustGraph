@@ -17,15 +17,18 @@ using br.ufc.mdcc.common.Integer;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl 
 {
-	public abstract class BaseISplitterReduceCollectorImpl<IKey,IValue,OKey,OValue,BF>: Synchronizer, BaseISplitterReduceCollector<IKey,IValue,OKey, OValue, BF>
+	public abstract class BaseISplitterReduceCollectorImpl<M0,IKey,IValue,OKey,OValue,BF,TF>: Synchronizer, BaseISplitterReduceCollector<M0,IKey,IValue,OKey, OValue, BF,TF>
+		where M0:IMaintainer
 		where IKey:IData
 		where IValue:IData
 		where OKey:IData
 		where OValue:IData
 		where BF:IPartitionFunction<IKey>
+		where TF:ITerminateFunction<IKey,IValue,OKey,OValue>
 	{
 		static protected int FACET_REDUCE = 0;
 		static protected int FACET_MAP = 1;
@@ -134,13 +137,13 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 			}
 		}
 
-		private ITerminateFunction<IKey,IValue,OKey,OValue> terminate_function = null;
-		protected ITerminateFunction<IKey,IValue,OKey,OValue> Terminate_function
+		private TF terminate_function = default(TF);
+		protected TF Terminate_function
 		{
 			get
 			{
 				if (this.terminate_function == null)
-					this.terminate_function = (ITerminateFunction<IKey,IValue,OKey,OValue>) Services.getPort("terminate_function");
+					this.terminate_function = (TF) Services.getPort("terminate_function");
 				return this.terminate_function;
 			}
 		}

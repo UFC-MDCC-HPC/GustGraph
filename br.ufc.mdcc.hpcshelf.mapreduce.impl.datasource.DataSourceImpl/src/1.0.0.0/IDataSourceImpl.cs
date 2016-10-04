@@ -2,16 +2,16 @@ using System;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.common.Platform;
 using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface;
 using System.Collections.Generic;
 using System.IO;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl
 {
 	public class IDataSourceImpl<P> : BaseIDataSourceImpl<P>, IDataSource<P>
-    where P:IPlatform
+    where P:IMaintainer
 	{
 		public override void main()
 		{

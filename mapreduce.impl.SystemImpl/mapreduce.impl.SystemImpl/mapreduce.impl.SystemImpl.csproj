@@ -166,5 +166,33 @@
       <Project>{F8166152-ED2A-473F-A191-3FC88F611512}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.Platform\br.ufc.mdcc.hpcshelf.platform.Platform\br.ufc.mdcc.hpcshelf.platform.Platform.csproj">
+      <Project>{37C2BDBB-CD4E-4CE5-B1B9-6B852F335535}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.Platform</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer.csproj">
+      <Project>{F7ABD722-31F4-4ACC-B8B6-A14DDAEB022B}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.Maintainer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.maintainer.LocalHost\br.ufc.mdcc.hpcshelf.platform.maintainer.LocalHost\br.ufc.mdcc.hpcshelf.platform.maintainer.LocalHost.csproj">
+      <Project>{40CFA347-9E18-47A2-B1D1-0CDA69B0F570}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.maintainer.LocalHost</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction.csproj">
+      <Project>{D20F8E33-1C0C-44FF-83AD-818C99718420}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost\br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost\br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.csproj">
+      <Project>{B9018D06-D120-45ED-9A37-A713D5B715E5}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.csproj">
+      <Project>{22FB1B6B-A788-4107-967C-7D5070B8885E}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost.csproj">
+      <Project>{40D35DEE-28A1-4CE9-81EE-50280672C8DE}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

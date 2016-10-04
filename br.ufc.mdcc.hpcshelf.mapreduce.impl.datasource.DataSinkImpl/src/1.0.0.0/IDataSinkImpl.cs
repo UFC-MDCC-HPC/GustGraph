@@ -2,16 +2,16 @@ using System;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.common.Platform;
 using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink;
 using System.Collections.Generic;
 using System.IO;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
           
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl
 {
 	public class IDataSinkImpl<P> : BaseIDataSinkImpl<P>, IDataSink<P>
-    where P:IPlatform
+    where P:IMaintainer
 	{
 		public override void main()
 		{

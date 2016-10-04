@@ -14,10 +14,12 @@ using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 using br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper;
 using br.ufc.mdcc.common.Iterator;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl 
 {
-	public abstract class BaseIMapperImpl<IKey, IValue, TKey, TValue, MF>: Computation, BaseIMapper<IKey, IValue, TKey, TValue, MF>
+	public abstract class BaseIMapperImpl<M,IKey, IValue, TKey, TValue, MF>: Computation, BaseIMapper<M,IKey, IValue, TKey, TValue, MF>
+		where M:IMaintainer
 		where MF:IMapFunction<IKey, IValue, TKey, TValue>
 		where IKey:IData
 		where IValue:IData

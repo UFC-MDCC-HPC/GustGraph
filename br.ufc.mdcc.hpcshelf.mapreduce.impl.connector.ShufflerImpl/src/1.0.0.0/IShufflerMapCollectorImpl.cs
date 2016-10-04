@@ -12,10 +12,12 @@ using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using System.Collections.Generic;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl	
 {
-	public class IShufflerMapCollectorImpl<TKey,TValue,PF> : BaseIShufflerMapCollectorImpl<TKey,TValue,PF>, IShufflerMapCollector<TKey,TValue,PF>
+	public class IShufflerMapCollectorImpl<M1,TKey,TValue,PF> : BaseIShufflerMapCollectorImpl<M1,TKey,TValue,PF>, IShufflerMapCollector<M1,TKey,TValue,PF>
+		where M1:IMaintainer
 		where PF:IPartitionFunction<TKey>
 		where TKey:IData
 		where TValue:IData

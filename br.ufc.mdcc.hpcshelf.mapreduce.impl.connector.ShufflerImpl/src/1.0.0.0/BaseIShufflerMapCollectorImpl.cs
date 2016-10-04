@@ -14,10 +14,12 @@ using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;
 using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl 
 {
-	public abstract class BaseIShufflerMapCollectorImpl<TKey,TValue,PF>: Synchronizer, BaseIShufflerMapCollector<TKey,TValue,PF>
+	public abstract class BaseIShufflerMapCollectorImpl<M0,TKey,TValue,PF>: Synchronizer, BaseIShufflerMapCollector<M0,TKey,TValue,PF>
+		where M0:IMaintainer
 		where PF:IPartitionFunction<TKey>
 		where TKey:IData
 		where TValue:IData

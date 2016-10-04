@@ -10,10 +10,12 @@ using br.ufc.mdcc.common.KVPair;
 using System.Diagnostics;
 using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl
 {
-	public class IMapperImpl<IKey, IValue, TKey, TValue, MF> : BaseIMapperImpl<IKey, IValue, TKey, TValue, MF>, IMapper<IKey, IValue, TKey, TValue, MF>
+	public class IMapperImpl<M,IKey, IValue, TKey, TValue, MF> : BaseIMapperImpl<M,IKey, IValue, TKey, TValue, MF>, IMapper<M,IKey, IValue, TKey, TValue, MF>
+		where M:IMaintainer
 		where MF:IMapFunction<IKey, IValue, TKey, TValue>
 		where IKey:IData
 		where IValue:IData

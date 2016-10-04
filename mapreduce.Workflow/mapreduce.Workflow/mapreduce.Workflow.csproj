@@ -42,9 +42,6 @@
     <Compile Include="..\src\1.0.0.0\IWorkflow.cs">
       <Link>IWorkflow.cs</Link>
     </Compile>
-    <Compile Include="..\src\1.0.0.0\BaseIWorkflow.cs">
-      <Link>BaseIWorkflow.cs</Link>
-    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -67,6 +64,14 @@
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData\br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData\br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData.csproj">
       <Project>{CDBEB1A1-F777-46A3-9644-A669E302DCE3}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer.csproj">
+      <Project>{F7ABD722-31F4-4ACC-B8B6-A14DDAEB022B}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.Maintainer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost.csproj">
+      <Project>{40D35DEE-28A1-4CE9-81EE-50280672C8DE}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

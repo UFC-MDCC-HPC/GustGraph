@@ -8,10 +8,12 @@ using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter
 {
-	public interface BaseISplitterMapFeeder<IKey, IValue> : ISynchronizerKind 
+	public interface BaseISplitterMapFeeder<M1,IKey, IValue> : ISynchronizerKind 
+		where M1: IMaintainer
 		where IKey:IData
 		where IValue:IData
 	{

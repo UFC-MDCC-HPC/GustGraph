@@ -12,10 +12,12 @@ using System.Threading;
 using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using System.Collections.Generic;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 {
-	public class IReducerImpl<TKey, TValue, OKey, OValue, RF> : BaseIReducerImpl<TKey, TValue, OKey, OValue, RF>, IReducer<TKey, TValue, OKey, OValue, RF>
+	public class IReducerImpl<M,TKey, TValue, OKey, OValue, RF> : BaseIReducerImpl<M,TKey, TValue, OKey, OValue, RF>, IReducer<M,TKey, TValue, OKey, OValue, RF>
+		where M:IMaintainer
 		where RF:IReduceFunction<TKey, TValue, OKey, OValue>
 		where TKey:IData
 		where TValue:IData

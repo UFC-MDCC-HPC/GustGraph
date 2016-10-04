@@ -14,10 +14,12 @@ using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;
 using br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingWriteData;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface;
 using br.ufc.mdcc.common.Data;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl 
 {
-	public abstract class BaseISplitterWriteSinkImpl<OKey,OValue>: Synchronizer, BaseISplitterWriteSink<OKey,OValue>
+	public abstract class BaseISplitterWriteSinkImpl<M3,OKey,OValue>: Synchronizer, BaseISplitterWriteSink<M3,OKey,OValue>
+		where M3:IMaintainer
 		where OKey:IData
 		where OValue:IData
 	{

@@ -14,10 +14,12 @@ using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Data;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl 
 {
-	public abstract class BaseIShufflerReduceFeederImpl<TKey, TValue>: Synchronizer, BaseIShufflerReduceFeeder<TKey, TValue>
+	public abstract class BaseIShufflerReduceFeederImpl<M0,TKey, TValue>: Synchronizer, BaseIShufflerReduceFeeder<M0,TKey, TValue>
+		where M0:IMaintainer
 		where TKey:IData
 		where TValue:IData	
 	{

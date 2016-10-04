@@ -73,5 +73,9 @@
       <Project>{012D8E07-D3CE-4C77-B2AA-C54BE042E041}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.EnvironmentBindingWriteData</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer.csproj">
+      <Project>{F7ABD722-31F4-4ACC-B8B6-A14DDAEB022B}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.Maintainer</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

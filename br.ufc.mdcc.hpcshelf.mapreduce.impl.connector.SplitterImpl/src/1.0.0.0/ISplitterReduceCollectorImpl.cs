@@ -12,15 +12,19 @@ using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using System.Collections.Generic;
 using br.ufc.mdcc.common.Integer;
 using System.Threading;
+using br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 {
-	public class ISplitterReduceCollectorImpl<IKey, IValue, OKey, OValue, BF> : BaseISplitterReduceCollectorImpl<IKey, IValue, OKey, OValue, BF>, ISplitterReduceCollector<IKey, IValue, OKey, OValue, BF>
+	public class ISplitterReduceCollectorImpl<M0,IKey, IValue, OKey, OValue, BF, TF> : BaseISplitterReduceCollectorImpl<M0,IKey, IValue, OKey, OValue, BF, TF>, ISplitterReduceCollector<M0,IKey, IValue, OKey, OValue, BF, TF>
+		where M0:IMaintainer
 		where IKey:IData
 		where IValue:IData
 		where OKey:IData
 		where OValue:IData
 		where BF:IPartitionFunction<IKey>
+		where TF:ITerminateFunction<IKey,IValue,OKey,OValue>
 	{
 		static private int TAG_SPLIT_NEW_CHUNK = 246;
 		static private int TAG_SPLIT_END_CHUNK = 247;

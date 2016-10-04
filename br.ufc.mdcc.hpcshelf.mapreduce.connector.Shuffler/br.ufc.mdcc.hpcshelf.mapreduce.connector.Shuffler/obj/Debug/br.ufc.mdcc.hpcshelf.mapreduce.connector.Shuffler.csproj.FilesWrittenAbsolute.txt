@@ -43,3 +43,5 @@
 /home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/Debug/br.ufc.mdcc.hpc.storm.kind.Binding.dll.mdb
 /home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/Debug/MPI.dll
 /home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/Debug/DGAC.dll
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/Debug/br.ufc.mdcc.hpcshelf.platform.Maintainer.dll
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/Debug/br.ufc.mdcc.hpcshelf.platform.Maintainer.dll.mdb

@@ -100,7 +100,7 @@
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/bin/1.0.0.0/BaseIReduceFunction.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="190" x="134" y="154">
+      <visualDescription h="40" w="190" x="395" y="131">
         <color b="0" g="165" r="255"/>
       </visualDescription>
       <port name="output_value">

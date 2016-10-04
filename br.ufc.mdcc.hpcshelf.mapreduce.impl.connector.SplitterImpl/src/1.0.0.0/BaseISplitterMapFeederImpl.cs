@@ -15,10 +15,12 @@ using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl 
 {
-	public abstract class BaseISplitterMapFeederImpl<IKey, IValue>: Synchronizer, BaseISplitterMapFeeder<IKey, IValue>
+	public abstract class BaseISplitterMapFeederImpl<M1,IKey, IValue>: Synchronizer, BaseISplitterMapFeeder<M1,IKey, IValue>
+		where M1:IMaintainer
 		where IKey:IData
 		where IValue:IData
 	{

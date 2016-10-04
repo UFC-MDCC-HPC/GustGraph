@@ -6,14 +6,14 @@
         <implements>true</implements>
       </extensionType>
       <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000065d6722cda58d09e22591eb27ed35bdbac954a3743303cb1841c7f25641511591fbda883117c544b4488e063da9d2fab1f516e3f73ac70051ee029154d0cdc841cb03ddf3ccc3605fe5e53b229b56ac3d3f4381c17fc7d833a3e011be34f68919f3ee7c6661a747d75add8f323bccf48c6dcbd566b491668fefb6ce826c1c5cc" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper/Mapper.hpe" name="Mapper" package="br.ufc.mdcc.hpcshelf.mapreduce.computation" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="382" y="467">
+        <visualDescription h="60" w="100" x="348" y="452">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="output_value_type" varName="TValue"/>
-        <parameter formFieldId="platform" varName="P"/>
         <parameter formFieldId="input_key_type" varName="IKey"/>
         <parameter formFieldId="input_value_type" varName="IValue"/>
         <parameter formFieldId="map_function" varName="MF"/>
+        <parameter formFieldId="platform_maintainer" varName="M"/>
         <parameter formFieldId="output_key_type" varName="TKey"/>
         <port localRef="task_map" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance/TaskBindingAdvance.hpe" multiple="false" name="TaskBindingAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.task" exposed="true">
           <visualDescription h="60" w="188" x="220" y="573">
@@ -27,17 +27,26 @@
           <visualDescription h="72" w="118" x="58" y="414">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1200754094"/>
+          <parameter formFieldId="server_port_type" varName="X###1944525899"/>
           <unitBounds parallel="false" uRef="client_server">
-            <visualDescription h="20" w="20" x="5" y="2"/>
+            <visualDescription h="20" w="20" x="46" y="8"/>
           </unitBounds>
         </port>
         <port localRef="feed_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
           <visualDescription h="63" w="100" x="412" y="408">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###158645814"/>
+          <parameter formFieldId="server_port_type" varName="X###924452281"/>
           <unitBounds parallel="false" uRef="client_server">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="platform_map" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
+          <visualDescription h="60" w="100" x="253" y="118">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="maintainer" varName="M"/>
+          <unitBounds parallel="true" uRef="node">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
@@ -120,6 +129,14 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="maintainer" location="br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost/ComputeHost.hpe" multiple="false" name="ComputeHost" package="br.ufc.mdcc.hpcshelf.platform.maintainer" exposed="false">
+      <visualDescription h="60" w="100" x="36" y="231">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="compute_host">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
     <supplyParameter cRef="imk" direct="true" varName="IKey"/>
     <supplyParameter cRef="imv" direct="true" varName="IValue"/>
     <supplyParameter cRef="omk" direct="true" varName="TKey"/>
@@ -128,7 +145,8 @@
     <supplyParameter cRef="c" direct="true" varName="C"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>
     <supplyParameter cRef="mf" direct="true" varName="MF"/>
-    <interface iRef="IMapperImpl" nArgs="5">
+    <supplyParameter cRef="maintainer" direct="true" varName="M"/>
+    <interface iRef="IMapperImpl" nArgs="6">
       <slice isRef="feed_pairs">
         <originRef cRef="feed_pairs" iRef="IBindingDirectMxNIterator"/>
         <visualDescription h="10" w="10" x="79" y="24"/>
@@ -136,6 +154,10 @@
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IBindingDirectMxNIterator"/>
         <visualDescription h="10" w="10" x="18" y="28"/>
+      </slice>
+      <slice isRef="platform_map">
+        <originRef cRef="platform_map" iRef="IProcessingNode"/>
+        <visualDescription h="10" w="10" x="9" y="12"/>
       </slice>
       <slice isRef="task_map">
         <originRef cRef="task_map" iRef="ITaskBindingAdvance"/>
@@ -146,7 +168,7 @@
         <visualDescription h="10" w="10" x="78" y="9"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl &#xA;{&#xA;&#x9;public abstract class BaseIMapperImpl&lt;IKey, IValue, TKey, TValue, MF>: Computation, BaseIMapper&lt;IKey, IValue, TKey, TValue, MF>&#xA;&#x9;&#x9;where MF:IMapFunction&lt;IKey, IValue, TKey, TValue>&#xA;&#x9;&#x9;where IKey:IData&#xA;&#x9;&#x9;where IValue:IData&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;{&#xA;&#x9;&#x9;private IClientBase&lt;IPortTypeIterator> collect_pairs = null;&#xA;&#xA;&#x9;&#x9;protected IClientBase&lt;IPortTypeIterator> Collect_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.collect_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.collect_pairs = (IClientBase&lt;IPortTypeIterator>) Services.getPort(&quot;collect_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.collect_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private MF map_function = default(MF);&#xA;&#xA;&#x9;&#x9;protected MF Map_function&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.map_function == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.map_function = (MF) Services.getPort(&quot;map_function&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.map_function;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskBindingAdvance task_mapper = null;&#xA;&#xA;&#x9;&#x9;protected ITaskBindingAdvance Task_mapper&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_mapper == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_mapper = (ITaskBindingAdvance) Services.getPort(&quot;task_mapper&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_mapper;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeIterator> feed_pairs = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;IPortTypeIterator> Feed_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.feed_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.feed_pairs = (IServerBase&lt;IPortTypeIterator>) Services.getPort(&quot;feed_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.feed_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_port_mapper = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvance> Task_port_mapper&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_port_mapper == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_port_mapper = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_port_mapper&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_port_mapper;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IKey map_key = default(IKey);&#xA;&#xA;&#x9;&#x9;protected IKey Map_key {&#xA;&#x9;&#x9;&#x9;get {&#xA;&#x9;&#x9;&#x9;&#x9;if (this.map_key == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.map_key = (IKey) Services.getPort(&quot;map_key&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.map_key;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IIterator&lt;IKVPair&lt;TKey, TValue>> output = null;&#xA;&#xA;&#x9;&#x9;public IIterator&lt;IKVPair&lt;TKey, TValue>> Output {&#xA;&#x9;&#x9;&#x9;get {&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output = (IIterator&lt;IKVPair&lt;TKey, TValue>>) Services.getPort(&quot;output&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IValue map_value = default(IValue);&#xA;&#xA;&#x9;&#x9;protected IValue Map_value {&#xA;&#x9;&#x9;&#x9;get {&#xA;&#x9;&#x9;&#x9;&#x9;if (this.map_value == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.map_value = (IValue) Services.getPort(&quot;map_value&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.map_value;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;}&#xA;}" name="BaseIMapperImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl/bin/1.0.0.0/BaseIMapperImpl.dll" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl &#xA;{&#xA;&#x9;public abstract class BaseIMapperImpl&lt;M,IKey, IValue, TKey, TValue, MF>: Computation, BaseIMapper&lt;M,IKey, IValue, TKey, TValue, MF>&#xA;&#x9;&#x9;where M:IMaintainer&#xA;&#x9;&#x9;where MF:IMapFunction&lt;IKey, IValue, TKey, TValue>&#xA;&#x9;&#x9;where IKey:IData&#xA;&#x9;&#x9;where IValue:IData&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;{&#xA;&#x9;&#x9;private IClientBase&lt;IPortTypeIterator> collect_pairs = null;&#xA;&#xA;&#x9;&#x9;protected IClientBase&lt;IPortTypeIterator> Collect_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.collect_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.collect_pairs = (IClientBase&lt;IPortTypeIterator>) Services.getPort(&quot;collect_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.collect_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private MF map_function = default(MF);&#xA;&#xA;&#x9;&#x9;protected MF Map_function&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.map_function == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.map_function = (MF) Services.getPort(&quot;map_function&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.map_function;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskBindingAdvance task_mapper = null;&#xA;&#xA;&#x9;&#x9;protected ITaskBindingAdvance Task_mapper&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_mapper == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_mapper = (ITaskBindingAdvance) Services.getPort(&quot;task_mapper&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_mapper;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeIterator> feed_pairs = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;IPortTypeIterator> Feed_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.feed_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.feed_pairs = (IServerBase&lt;IPortTypeIterator>) Services.getPort(&quot;feed_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.feed_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_port_mapper = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvance> Task_port_mapper&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_port_mapper == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_port_mapper = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_port_mapper&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_port_mapper;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IKey map_key = default(IKey);&#xA;&#xA;&#x9;&#x9;protected IKey Map_key {&#xA;&#x9;&#x9;&#x9;get {&#xA;&#x9;&#x9;&#x9;&#x9;if (this.map_key == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.map_key = (IKey) Services.getPort(&quot;map_key&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.map_key;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IIterator&lt;IKVPair&lt;TKey, TValue>> output = null;&#xA;&#xA;&#x9;&#x9;public IIterator&lt;IKVPair&lt;TKey, TValue>> Output {&#xA;&#x9;&#x9;&#x9;get {&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output = (IIterator&lt;IKVPair&lt;TKey, TValue>>) Services.getPort(&quot;output&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IValue map_value = default(IValue);&#xA;&#xA;&#x9;&#x9;protected IValue Map_value {&#xA;&#x9;&#x9;&#x9;get {&#xA;&#x9;&#x9;&#x9;&#x9;if (this.map_value == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.map_value = (IValue) Services.getPort(&quot;map_value&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.map_value;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;}&#xA;}" name="BaseIMapperImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl/bin/1.0.0.0/BaseIMapperImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction/bin/1.0.0.0/IMapFunction.dll</dependency>
@@ -159,14 +181,14 @@
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper/bin/1.0.0.0/BaseIMapper.dll</dependency>
         </file>
-        <file contents="&#x9;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using System.Diagnostics;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl&#xA;{&#xA;&#x9;public class IMapperImpl&lt;IKey, IValue, TKey, TValue, MF> : BaseIMapperImpl&lt;IKey, IValue, TKey, TValue, MF>, IMapper&lt;IKey, IValue, TKey, TValue, MF>&#xA;&#x9;&#x9;where MF:IMapFunction&lt;IKey, IValue, TKey, TValue>&#xA;&#x9;&#x9;where IKey:IData&#xA;&#x9;&#x9;where IValue:IData&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: STARTING MAPPER ...1&quot;);&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;IKey,IValue>> input_instance = (IIteratorInstance&lt;IKVPair&lt;IKey,IValue>>)Collect_pairs.Client;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: STARTING MAPPER ...2 &quot; + (input_instance == null));&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;TKey,TValue>> output_instance = (IIteratorInstance&lt;IKVPair&lt;TKey,TValue>>)Output.Instance;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: STARTING MAPPER ...3&quot;);&#xA;&#x9;&#x9;&#x9;Feed_pairs.Server = output_instance;&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture sync_perform;&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;bool end_computation = false;&#xA;&#x9;&#x9;&#x9;while (!end_computation) // next iteration&#xA;&#x9;&#x9;&#x9;{  &#xA;&#x9;&#x9;&#x9;&#x9;bool finished_stream = false;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: STARTING MAPPER ...4&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;end_computation = true;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;while (!finished_stream)  // take next chunk ...&#xA;&#x9;&#x9;&#x9;&#x9;{        &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: LOOP CHUNK MAPPER ... 1&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_port_mapper.invoke (ITaskPortAdvance.READ_CHUNK);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_port_mapper.invoke (ITaskPortAdvance.PERFORM, out sync_perform);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: LOOP CHUNK MAPPER ... 2&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;object bin_object = null;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (!input_instance.has_next ())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;finished_stream = true;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;end_computation = false;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: LOOP CHUNK MAPPER ... 3&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IKVPairInstance&lt;IKey,IValue> bin;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;// READ_CHUNK / PERFORM&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;while (input_instance.fetch_next (out bin_object)) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;bin = (IKVPairInstance&lt;IKey,IValue>)bin_object;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Map_key.Instance = bin.Key;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Map_value.Instance = bin.Value;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Map_function.go ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: LOOP CHUNK MAPPER ... 4&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sync_perform.wait ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: LOOP CHUNK MAPPER ... 5&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;output_instance.finish ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: LOOP CHUNK MAPPER ... 6&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_port_mapper.invoke (ITaskPortAdvance.CHUNK_READY);  //****&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;/* levando em conta que h&#xfffd; sincroniza&#xfffd;&#xfffd;o pelos iteradores, talvez n&#xfffd;o haja necessidade de sincronizar o CHUNK_READY para o&#xA;&#x9;&#x9;&#x9;&#x9;     * shuffler come&#xfffd;ar a ler os pares */&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: LOOP CHUNK MAPPER ... 7&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: LOOP CHUNK MAPPER ... FINISH ITERATION 1&quot;);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: MAPPER FINISH !&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IMapperImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl/bin/1.0.0.0/IMapperImpl.dll" versionId="1.0.0.0">
+        <file contents="&#x9;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using System.Diagnostics;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl&#xA;{&#xA;&#x9;public class IMapperImpl&lt;M,IKey, IValue, TKey, TValue, MF> : BaseIMapperImpl&lt;M,IKey, IValue, TKey, TValue, MF>, IMapper&lt;M,IKey, IValue, TKey, TValue, MF>&#xA;&#x9;&#x9;where M:IMaintainer&#xA;&#x9;&#x9;where MF:IMapFunction&lt;IKey, IValue, TKey, TValue>&#xA;&#x9;&#x9;where IKey:IData&#xA;&#x9;&#x9;where IValue:IData&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: STARTING MAPPER ...1&quot;);&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;IKey,IValue>> input_instance = (IIteratorInstance&lt;IKVPair&lt;IKey,IValue>>)Collect_pairs.Client;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: STARTING MAPPER ...2 &quot; + (input_instance == null));&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;TKey,TValue>> output_instance = (IIteratorInstance&lt;IKVPair&lt;TKey,TValue>>)Output.Instance;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: STARTING MAPPER ...3&quot;);&#xA;&#x9;&#x9;&#x9;Feed_pairs.Server = output_instance;&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture sync_perform;&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;bool end_computation = false;&#xA;&#x9;&#x9;&#x9;while (!end_computation) // next iteration&#xA;&#x9;&#x9;&#x9;{  &#xA;&#x9;&#x9;&#x9;&#x9;bool finished_stream = false;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: STARTING MAPPER ...4&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;end_computation = true;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;while (!finished_stream)  // take next chunk ...&#xA;&#x9;&#x9;&#x9;&#x9;{        &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: LOOP CHUNK MAPPER ... 1&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_port_mapper.invoke (ITaskPortAdvance.READ_CHUNK);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_port_mapper.invoke (ITaskPortAdvance.PERFORM, out sync_perform);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: LOOP CHUNK MAPPER ... 2&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;object bin_object = null;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (!input_instance.has_next ())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;finished_stream = true;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;end_computation = false;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: LOOP CHUNK MAPPER ... 3&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IKVPairInstance&lt;IKey,IValue> bin;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;// READ_CHUNK / PERFORM&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;while (input_instance.fetch_next (out bin_object)) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;bin = (IKVPairInstance&lt;IKey,IValue>)bin_object;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Map_key.Instance = bin.Key;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Map_value.Instance = bin.Value;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Map_function.go ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: LOOP CHUNK MAPPER ... 4&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sync_perform.wait ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: LOOP CHUNK MAPPER ... 5&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;output_instance.finish ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: LOOP CHUNK MAPPER ... 6&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_port_mapper.invoke (ITaskPortAdvance.CHUNK_READY);  //****&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;/* levando em conta que h&#xfffd; sincroniza&#xfffd;&#xfffd;o pelos iteradores, talvez n&#xfffd;o haja necessidade de sincronizar o CHUNK_READY para o&#xA;&#x9;&#x9;&#x9;&#x9;     * shuffler come&#xfffd;ar a ler os pares */&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: LOOP CHUNK MAPPER ... 7&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: LOOP CHUNK MAPPER ... FINISH ITERATION 1&quot;);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: MAPPER FINISH !&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IMapperImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl/bin/1.0.0.0/IMapperImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction/bin/1.0.0.0/IMapFunction.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl/bin/1.0.0.0/BaseIMapperImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper/bin/1.0.0.0/IMapper.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="99" x="95" y="117">
+      <visualDescription h="40" w="99" x="101" y="150">
         <color b="0" g="0" r="255"/>
       </visualDescription>
       <port name="feed_pairs">
@@ -177,6 +199,10 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_pairs" sRef="collect_pairs"/>
       </port>
+      <port name="platform_map">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_map" sRef="platform_map"/>
+      </port>
       <port name="task_map">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_map" sRef="task_map"/>
@@ -184,6 +210,10 @@
       <port name="task_port_mapper">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_map"/>
+      </port>
+      <port name="map_value">
+        <visualDescription h="10" w="10" x="46" y="20"/>
+        <slice pRef="input_value" sRef="map_function"/>
       </port>
       <port name="output">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -193,15 +223,12 @@
         <visualDescription h="10" w="10" x="15" y="4"/>
         <slice pRef="input_key" sRef="map_function"/>
       </port>
-      <port name="map_value">
-        <visualDescription h="10" w="10" x="46" y="20"/>
-        <slice pRef="input_value" sRef="map_function"/>
-      </port>
-      <parameter iname="IMapFunction" order="4" parid="map_function" uname="map_function" varid="MF"/>
-      <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="IKey"/>
-      <parameter iname="IData" order="1" parid="input_value_type" uname="data" varid="IValue"/>
-      <parameter iname="IData" order="2" parid="output_key_type" uname="data" varid="TKey"/>
-      <parameter iname="IData" order="3" parid="output_value_type" uname="data" varid="TValue"/>
+      <parameter iname="IComputeHost" order="0" parid="platform_maintainer" uname="compute_host" varid="M"/>
+      <parameter iname="IMapFunction" order="5" parid="map_function" uname="map_function" varid="MF"/>
+      <parameter iname="IData" order="1" parid="input_key_type" uname="data" varid="IKey"/>
+      <parameter iname="IData" order="2" parid="input_value_type" uname="data" varid="IValue"/>
+      <parameter iname="IData" order="3" parid="output_key_type" uname="data" varid="TKey"/>
+      <parameter iname="IData" order="4" parid="output_value_type" uname="data" varid="TValue"/>
       <action id="main">
         <protocol/>
       </action>

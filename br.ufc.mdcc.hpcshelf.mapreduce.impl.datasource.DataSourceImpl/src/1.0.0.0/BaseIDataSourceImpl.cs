@@ -6,13 +6,13 @@ using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface;
-using br.ufc.mdcc.common.Platform;
 using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl 
 {
 	public abstract class BaseIDataSourceImpl<P>: Computation, BaseIDataSource<P>
-		where P:IPlatform
+		where P:IMaintainer
 	{
 		private IServerBase<IPortTypeDataSourceInterface> reader = null;
 

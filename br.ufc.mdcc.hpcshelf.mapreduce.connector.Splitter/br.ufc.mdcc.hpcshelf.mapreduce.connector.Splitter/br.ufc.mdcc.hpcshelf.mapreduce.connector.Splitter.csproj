@@ -143,5 +143,13 @@
       <Project>{168E10F4-B1B8-4695-8586-CDC5598F79B8}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction.csproj">
+      <Project>{D20F8E33-1C0C-44FF-83AD-818C99718420}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer.csproj">
+      <Project>{F7ABD722-31F4-4ACC-B8B6-A14DDAEB022B}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.Maintainer</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

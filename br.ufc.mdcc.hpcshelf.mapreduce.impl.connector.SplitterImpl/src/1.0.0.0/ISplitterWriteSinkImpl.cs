@@ -12,10 +12,12 @@ using br.ufc.mdcc.common.Iterator;
 using System.Diagnostics;
 using br.ufc.mdcc.common.Data;
 using System.Threading;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 {
-	public class ISplitterWriteSinkImpl<OKey,OValue> : BaseISplitterWriteSinkImpl<OKey,OValue>, ISplitterWriteSink<OKey,OValue>
+	public class ISplitterWriteSinkImpl<M3,OKey,OValue> : BaseISplitterWriteSinkImpl<M3,OKey,OValue>, ISplitterWriteSink<M3,OKey,OValue>
+		where M3:IMaintainer
 		where OKey:IData
 		where OValue:IData
 	{

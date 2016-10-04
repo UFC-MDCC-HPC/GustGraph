@@ -11,10 +11,12 @@ using System.Collections.Generic;
 using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
 using System.Diagnostics;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 {
-	public class IShufflerReduceFeederImpl<TKey, TValue> : BaseIShufflerReduceFeederImpl<TKey, TValue>, IShufflerReduceFeeder<TKey, TValue>
+	public class IShufflerReduceFeederImpl<M0,TKey, TValue> : BaseIShufflerReduceFeederImpl<M0,TKey, TValue>, IShufflerReduceFeeder<M0,TKey, TValue>
+		where M0:IMaintainer
 		where TKey:IData
 		where TValue:IData
 	{

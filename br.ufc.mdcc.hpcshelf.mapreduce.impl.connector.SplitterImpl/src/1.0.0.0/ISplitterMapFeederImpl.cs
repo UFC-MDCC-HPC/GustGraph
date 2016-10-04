@@ -13,10 +13,12 @@ using System.Diagnostics;
 using System.Threading;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 {
-	public class ISplitterMapFeederImpl<IKey, IValue>: BaseISplitterMapFeederImpl<IKey, IValue>, ISplitterMapFeeder<IKey, IValue>
+	public class ISplitterMapFeederImpl<M1,IKey, IValue>: BaseISplitterMapFeederImpl<M1,IKey, IValue>, ISplitterMapFeeder<M1,IKey, IValue>
+		where M1:IMaintainer
 		where IKey:IData
 		where IValue:IData
 	{
@@ -60,6 +62,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 		//	}
 
 			// TODO: READ_SOURCE é necessário ? Não no map feeder. Tirar fatia de Task_binding data ...
+
+			Task_port_data.TraceFlag = true;
 			Task_port_data.invoke (ITaskPortData.READ_SOURCE);
 			// Do nothing ... 
 

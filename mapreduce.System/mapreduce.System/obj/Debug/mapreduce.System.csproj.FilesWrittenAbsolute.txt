@@ -67,3 +67,5 @@
 /home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.System/mapreduce.System/bin/Debug/br.ufc.mdcc.hpc.storm.binding.task.TaskPortType.dll
 /home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.System/mapreduce.System/bin/Debug/br.ufc.mdcc.hpc.storm.binding.task.TaskPortType.dll.mdb
 /home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.System/mapreduce.System/bin/Debug/DGAC.dll
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.System/mapreduce.System/bin/Debug/br.ufc.mdcc.hpcshelf.platform.Maintainer.dll
+/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.System/mapreduce.System/bin/Debug/br.ufc.mdcc.hpcshelf.platform.Maintainer.dll.mdb

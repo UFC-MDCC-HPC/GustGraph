@@ -14,10 +14,12 @@ using br.ufc.mdcc.common.Integer;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
 using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData;
 using System.Threading;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 {
-	public class ISplitterReadSourceImpl<IKey, IValue, BF> : BaseISplitterReadSourceImpl<IKey, IValue, BF>, ISplitterReadSource<IKey, IValue, BF>
+	public class ISplitterReadSourceImpl<M2,IKey, IValue, BF> : BaseISplitterReadSourceImpl<M2,IKey, IValue, BF>, ISplitterReadSource<M2,IKey, IValue, BF>
+		where M2:IMaintainer
 		where IKey:IData
 		where IValue:IData
 		where BF:IPartitionFunction<IKey>
@@ -27,13 +29,19 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 		public override void main()
 		{
+			Console.WriteLine (this.Rank + ": SPLITTER 1 ");
+
 			IPortTypeIterator input_instance = (IPortTypeIterator) Source.Client;
 
 			// TODO: será que READ_SOURCE é necessária ???
 			Task_port_data.TraceFlag = true;
 			Task_port_data.invoke (ITaskPortData.READ_SOURCE);
 
+			Console.WriteLine (this.Rank + ": SPLITTER 2 ");
+
 			Source.startReadSource ();
+
+			Console.WriteLine (this.Rank + ": SPLITTER 3 ");
 
 			object bin_object = null;
 
@@ -48,6 +56,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 					unit_ref [j] = new Tuple<int,int> (i/*, 0 INDEX OF map_feeder */,k);
 			}
 
+			Console.WriteLine (this.Rank + ": SPLITTER 4 ");
+
 			Task_port_split_first.TraceFlag = true;
 			Split_channel.TraceFlag = true;
 
@@ -58,6 +68,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 				}));
 
 			t_output.Start ();
+
+			Console.WriteLine (this.Rank + ": SPLITTER 5 ");
 
 			bool end_iteration = false;
 			while (!end_iteration) // take next chunk

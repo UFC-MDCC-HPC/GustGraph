@@ -86,5 +86,9 @@
       <Project>{75954E48-9C52-4F6D-8947-13E9D574FBEA}</Project>
       <Name>br.ufc.mdcc.hpc.storm.kind.Binding</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer.csproj">
+      <Project>{F7ABD722-31F4-4ACC-B8B6-A14DDAEB022B}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.Maintainer</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

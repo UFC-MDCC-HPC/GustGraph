@@ -14,10 +14,12 @@ using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl 
 {
-	public abstract class BaseIReducerImpl<TKey, TValue, OKey, OValue, RF>: Computation, BaseIReducer<TKey, TValue, OKey, OValue, RF>
+	public abstract class BaseIReducerImpl<M,TKey, TValue, OKey, OValue, RF>: Computation, BaseIReducer<M,TKey, TValue, OKey, OValue, RF>
+		where M:IMaintainer
 		where RF:IReduceFunction<TKey, TValue, OKey, OValue>
 		where OKey:IData
 		where OValue:IData

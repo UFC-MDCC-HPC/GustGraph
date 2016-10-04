@@ -18,10 +18,12 @@ using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;
 using br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface;
+using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl 
 {
-	public abstract class BaseISplitterReadSourceImpl<IKey, IValue, BF>: Synchronizer, BaseISplitterReadSource<IKey, IValue, BF>
+	public abstract class BaseISplitterReadSourceImpl<M2,IKey, IValue, BF>: Synchronizer, BaseISplitterReadSource<M2,IKey, IValue, BF>
+		where M2:IMaintainer
 		where IKey:IData
 		where IValue:IData
 		where BF:IPartitionFunction<IKey>
