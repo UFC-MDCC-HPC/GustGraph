@@ -26,14 +26,14 @@ namespace mapreduce.impl.SystemImpl {
         }
         
         public override void main() {
-            IDataSource<br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost> data_source = ((IDataSource<br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost>)(this.Services.getPort("data_source")));
+          /*  IDataSource<br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost> data_source = ((IDataSource<br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost>)(this.Services.getPort("data_source")));
             Thread go_data_source = new Thread(new ParameterizedThreadStart(this.Go));
             go_data_source.Start(data_source);
             ISplitterReadSource<br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction.IPartitionFunction<br.ufc.mdcc.common.Integer.IInteger>> splitter = ((ISplitterReadSource<br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction.IPartitionFunction<br.ufc.mdcc.common.Integer.IInteger>>)(this.Services.getPort("splitter")));
             Thread go_splitter = new Thread(new ParameterizedThreadStart(this.Go));
             go_splitter.Start(splitter);
             go_data_source.Join();
-            go_splitter.Join();
+            go_splitter.Join();*/
         }
     }
 }

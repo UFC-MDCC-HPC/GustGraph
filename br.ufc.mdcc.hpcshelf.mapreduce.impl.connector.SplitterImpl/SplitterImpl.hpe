@@ -23,7 +23,7 @@
           <visualDescription h="60" w="156" x="485" y="18">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###989668272"/>
+          <parameter formFieldId="server_port_type" varName="X###883042367"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="120" y="23"/>
           </unitBounds>
@@ -32,7 +32,7 @@
           <visualDescription h="60" w="175" x="375" y="104">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1139802245"/>
+          <parameter formFieldId="server_port_type" varName="X###491558527"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="15" y="18"/>
           </unitBounds>
@@ -41,7 +41,7 @@
           <visualDescription h="60" w="124" x="255" y="482">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1228032511"/>
+          <parameter formFieldId="server_port_type" varName="X###368402838"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -50,7 +50,7 @@
           <visualDescription h="60" w="126" x="674" y="513">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###300928356"/>
+          <parameter formFieldId="server_port_type" varName="X###224529359"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -377,13 +377,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_binding_split_next"/>
       </port>
-      <port name="output_key_iterate">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_key" sRef="bin_function_iterate"/>
-      </port>
       <port name="input_key_iterate">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_key" sRef="bin_function_iterate"/>
+      </port>
+      <port name="output_key_iterate">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="bin_function_iterate"/>
       </port>
       <parameter iname="IComputeHost" order="0" parid="platform_reduce_maintainer" uname="compute_host" varid="M0"/>
       <parameter iname="IPartitionFunction" order="5" parid="bin_function" uname="partition_function" varid="BF"/>
@@ -556,13 +556,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_binding_data"/>
       </port>
-      <port name="input_key_iterate">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key" sRef="bin_function"/>
-      </port>
       <port name="output_key_iterate">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_key" sRef="bin_function"/>
+      </port>
+      <port name="input_key_iterate">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="bin_function"/>
       </port>
       <parameter iname="IDataHost" order="0" parid="platform_data_source_maintainer" uname="data_host" varid="M2"/>
       <parameter iname="IPartitionFunction" order="3" parid="bin_function" uname="partition_function" varid="BF"/>

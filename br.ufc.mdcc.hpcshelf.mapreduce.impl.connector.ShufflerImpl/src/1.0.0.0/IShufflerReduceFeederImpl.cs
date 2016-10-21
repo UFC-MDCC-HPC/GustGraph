@@ -25,6 +25,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 
 		public override void main()
 		{
+			Console.WriteLine (this.Rank + ": SHUFFLER REDUCE COLLECTOR START");
+
 			IIteratorInstance<IKVPair<TKey,IIterator<TValue>>> output_instance = (IIteratorInstance<IKVPair<TKey,IIterator<TValue>>>) Output.Instance;
 			Feed_pairs.Server = output_instance;
 

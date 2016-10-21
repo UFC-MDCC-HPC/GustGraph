@@ -65,7 +65,7 @@
         <visualDescription h="60" w="181" x="64" y="390">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###174933183"/>
+        <parameter formFieldId="value_type" varName="X###1092842652"/>
         <parameter formFieldId="key_type" varName="TKey"/>
         <unitBounds parallel="false" uRef="kv_pair">
           <visualDescription h="20" w="20" x="137" y="20"/>
@@ -93,7 +93,7 @@
         <visualDescription h="60" w="163" x="95" y="529">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###196893938"/>
+        <parameter formFieldId="task_port_type" varName="X###2126303020"/>
         <unitBounds parallel="true" uRef="peer">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -186,7 +186,7 @@
     <supplyParameter cRef="reducer_port_type_server" direct="true" varName="S"/>
     <supplyParameter cRef="output_item_ttype" direct="true" varName="OUTPUT_REDUCE"/>
     <supplyParameter cRef="output_item_type" direct="true" varName="OUT_REDUCE"/>
-    <innerComponent localRef="C###174933183" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###1092842652" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="152" x="455" y="455">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -195,8 +195,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###174933183" varName="X###174933183"/>
-    <innerComponent localRef="C###196893938" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <supplyParameter cRef="C###1092842652" varName="X###1092842652"/>
+    <innerComponent localRef="C###2126303020" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
       <visualDescription h="60" w="142" x="217" y="525">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -204,7 +204,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###196893938" varName="X###196893938"/>
+    <supplyParameter cRef="C###2126303020" varName="X###2126303020"/>
     <innerRenaming cNewName="task_port_reduce" cOldName="task_port" cRef="task_reduce"/>
     <interface iRef="IReducer" nArgs="6">
       <slice isRef="feed_pairs">
@@ -272,6 +272,10 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_reduce"/>
       </port>
+      <port name="continuation_value">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="continuation_value" sRef="reduce_function"/>
+      </port>
       <port name="input_values">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_values" sRef="reduce_function"/>
@@ -279,10 +283,6 @@
       <port name="output_value">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_value" sRef="reduce_function"/>
-      </port>
-      <port name="continuation_value">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="continuation_value" sRef="reduce_function"/>
       </port>
       <parameter iname="IMaintainer" order="0" parid="platform_maintainer" uname="maintainer" varid="M"/>
       <parameter iname="IReduceFunction" order="5" parid="reduce_function" uname="reduce_function" varid="RF"/>

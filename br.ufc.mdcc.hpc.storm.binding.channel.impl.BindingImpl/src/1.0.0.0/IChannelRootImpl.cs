@@ -199,12 +199,13 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 		private void listen_worker ()
 		{
-			Tuple<int /*AliencommunicatorOperation*/,int> operation;
+			Tuple<int,int> operation;
 			MPI.CompletedStatus status = null;
 
 			Trace.WriteLineIf(this.TraceFlag==true, "listen_workers - WAITING ... " + MPI.Environment.Threading);
 
-			RootCommunicator.Receive<Tuple<int /*AliencommunicatorOperation*/,int>>
+			//lock (lock_recv)
+				RootCommunicator.Receive<Tuple<int,int>>
 									(MPI.Communicator.anySource, 
 									 TAG_SEND_OPERATION,
 									 out operation,
@@ -276,18 +277,19 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 			}
 		}
 
-		void handle_SEND (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
+		void handle_SEND (Tuple<int, int> operation, MPI.CompletedStatus status)
 		{
 
 			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_SEND 1 " + operation);
 
 			Tuple<int,int,int,byte[]> operation_info;
 			int conversation_tag = operation.Item2;
-			this.RootCommunicator.Receive<Tuple<int,int,int,byte[]>> (status.Source, conversation_tag, out operation_info);
+			//lock (lock_recv) 
+				this.RootCommunicator.Receive<Tuple<int,int,int,byte[]>> (status.Source, conversation_tag, out operation_info);
 
 			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_SEND 2 --- operation = " + operation);
 
-			int /*AliencommunicatorOperation*/ operation_type = operation.Item1;
+			int operation_type = operation.Item1;
 			int facet_src = this.ThisFacetInstance;
 			int facet_dst = operation_info.Item1;
 			int src = status.Source;
@@ -308,17 +310,20 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 		}
 
-		void handle_RECEIVE (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
+		//private object lock_recv = new object();
+
+		void handle_RECEIVE (Tuple<int, int> operation, MPI.CompletedStatus status)
 		{
 			int conversation_tag = operation.Item2;
 			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_RECEIVE 1 - source=" + status.Source + ", tag=" + conversation_tag);
 			Tuple<int,int,int> operation_info;
 
-			this.RootCommunicator.Receive<Tuple<int,int,int>> (status.Source, conversation_tag, out operation_info);
+			//lock (lock_recv)
+				this.RootCommunicator.Receive<Tuple<int,int,int>> (status.Source, conversation_tag, out operation_info);
 
 			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_RECEIVE 2");
 
-			int /*AliencommunicatorOperation*/ operation_type = operation.Item1;
+			int operation_type = operation.Item1;
 			int facet_src = this.ThisFacetInstance;
 			int facet_dst = operation_info.Item1;
 			int src = status.Source;
@@ -333,73 +338,74 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_RECEIVE 4 " + (message2 == null));
 
-			this.RootCommunicator.Send<byte[]>(message2, src, tag);
+			//lock (lock_recv)
+				this.RootCommunicator.Send<byte[]>(message2, src, tag);
 
 			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_RECEIVE 5");
 
 		}
 
-		void handle_PROBE (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
+		void handle_PROBE (Tuple<int, int> operation, MPI.CompletedStatus status)
 		{
 			throw new NotImplementedException ();
 		}
 
-		void handle_ALL_GATHER (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
+		void handle_ALL_GATHER (Tuple<int, int> operation, MPI.CompletedStatus status)
 		{
 			throw new NotImplementedException ();
 		}
 
-		void handle_ALL_GATHER_FLATTENED (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
+		void handle_ALL_GATHER_FLATTENED (Tuple<int, int> operation, MPI.CompletedStatus status)
 		{
 			throw new NotImplementedException ();
 		}
 
-		void handle_ALL_REDUCE (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
+		void handle_ALL_REDUCE (Tuple<int, int> operation, MPI.CompletedStatus status)
 		{
 			throw new NotImplementedException ();
 		}
 
-		void handle_ALL_TO_ALL (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
+		void handle_ALL_TO_ALL (Tuple<int, int> operation, MPI.CompletedStatus status)
 		{
 			throw new NotImplementedException ();
 		}
 
-		void handle_ALL_TO_ALL_FLATTENED (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
+		void handle_ALL_TO_ALL_FLATTENED (Tuple<int, int> operation, MPI.CompletedStatus status)
 		{
 			throw new NotImplementedException ();
 		}
 
-		void handle_REDUCE_SCATTER (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
+		void handle_REDUCE_SCATTER (Tuple<int, int> operation, MPI.CompletedStatus status)
 		{
 			throw new NotImplementedException ();
 		}
 
-		void handle_BROADCAST (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
+		void handle_BROADCAST (Tuple<int, int> operation, MPI.CompletedStatus status)
 		{
 			throw new NotImplementedException ();
 		}
 
-		void handle_SCATTER (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
+		void handle_SCATTER (Tuple<int, int> operation, MPI.CompletedStatus status)
 		{
 			throw new NotImplementedException ();
 		}
 
-		void handle_SCATTER_FROM_FLATTENED (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
+		void handle_SCATTER_FROM_FLATTENED (Tuple<int, int> operation, MPI.CompletedStatus status)
 		{
 			throw new NotImplementedException ();
 		}
 
-		void handle_GATHER (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
+		void handle_GATHER (Tuple<int, int> operation, MPI.CompletedStatus status)
 		{
 			throw new NotImplementedException ();
 		}
 
-		void handle_GATHER_FLATTENED (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
+		void handle_GATHER_FLATTENED (Tuple<int, int> operation, MPI.CompletedStatus status)
 		{
 			throw new NotImplementedException ();
 		}
 
-		void handle_REDUCE (Tuple<int /*AliencommunicatorOperation*/, int> operation, MPI.CompletedStatus status)
+		void handle_REDUCE (Tuple<int, int> operation, MPI.CompletedStatus status)
 		{
 			throw new NotImplementedException ();
 		}

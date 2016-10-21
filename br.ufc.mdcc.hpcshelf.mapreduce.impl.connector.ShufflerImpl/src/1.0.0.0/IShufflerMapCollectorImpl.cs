@@ -27,7 +27,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 
 		public override void main()
 		{
-			Console.WriteLine (this.GlobalRank + ": STARTING SHUFFLER ...1");
+			Console.WriteLine (this.GlobalRank + ": STARTING SHUFFLER MAP ...1");
 			IIteratorInstance<IKVPair<TKey,TValue>> input_instance = (IIteratorInstance<IKVPair<TKey,TValue>>) Collect_pairs.Client;
 			object bin_object = null;
 
@@ -37,22 +37,22 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 			IDictionary<int,Tuple<int,int>> unit_ref = new Dictionary<int, Tuple<int,int>> ();
 			int nf = this.FacetMultiplicity [FACET_REDUCE];
 			int reduce_size = 0;
-			Console.WriteLine (this.GlobalRank + ": STARTING SHUFFLER ...2");
+			Console.WriteLine (this.GlobalRank + ": STARTING SHUFFLER MAP ...2");
 			foreach (int i in this.FacetIndexes[FACET_REDUCE]) 
 			{   
 				int nr0 = reduce_size;
-				Console.WriteLine (this.GlobalRank + ": STARTING SHUFFLER ...3 - BEGIN 1 - i=" + i);
+				Console.WriteLine (this.GlobalRank + ": STARTING SHUFFLER MAP ...3 - BEGIN 1 - i=" + i);
 				foreach (KeyValuePair<int,IDictionary<string,int>> ttt in this.UnitSizeInFacet) 
 				{
-					Console.WriteLine (this.GlobalRank + ": STARTING SHUFFLER ...3 - " + (ttt.Value == null));
+					Console.WriteLine (this.GlobalRank + ": STARTING SHUFFLER MAP ...3 - " + (ttt.Value == null));
 					foreach (KeyValuePair<string,int> tttt in ttt.Value)
-						Console.WriteLine (this.GlobalRank + ": STARTING SHUFFLER ...3 --- " + ttt.Key + " / " + tttt.Key + " / " + tttt.Value);
+						Console.WriteLine (this.GlobalRank + ": STARTING SHUFFLER MAP ...3 --- " + ttt.Key + " / " + tttt.Key + " / " + tttt.Value);
 				}														 
 				reduce_size += this.UnitSizeInFacet [i] ["reduce_feeder"];
-				Console.WriteLine (this.GlobalRank + ": STARTING SHUFFLER ...3 - BEGIN 2 - " + i);
+				Console.WriteLine (this.GlobalRank + ": STARTING SHUFFLER MAP ...3 - BEGIN 2 - " + i);
 				for (int k=0, j=nr0; j < reduce_size; k++, j++) 
 					unit_ref [j] = new Tuple<int,int> (i/*,0 INDEX OF reduce_feeder*/,k);
-				Console.WriteLine (this.GlobalRank + ": STARTING SHUFFLER ...3 - END - " + i);
+				Console.WriteLine (this.GlobalRank + ": STARTING SHUFFLER MAP ...3 - END - " + i);
 			}
 
 			Partition_function.NumberOfPartitions = reduce_size;

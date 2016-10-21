@@ -26,14 +26,14 @@ namespace mapreduce.impl.SystemImpl {
         }
         
         public override void main() {
-            IDataSink<br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost> data_sink = ((IDataSink<br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost>)(this.Services.getPort("data_sink")));
+         /*   IDataSink<br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost> data_sink = ((IDataSink<br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost>)(this.Services.getPort("data_sink")));
             Thread go_data_sink = new Thread(new ParameterizedThreadStart(this.Go));
             go_data_sink.Start(data_sink);
             ISplitterWriteSink<br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger> splitter = ((ISplitterWriteSink<br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger>)(this.Services.getPort("splitter")));
             Thread go_splitter = new Thread(new ParameterizedThreadStart(this.Go));
             go_splitter.Start(splitter);
             go_data_sink.Join();
-            go_splitter.Join();
+            go_splitter.Join();*/
         }
     }
 }

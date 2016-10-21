@@ -27,7 +27,7 @@ namespace mapreduce.impl.SystemImpl {
         }
         
         public override void main() {
-            IReducer<br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.example.cw.Tallier.ITallier> reducer = ((IReducer<br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.example.cw.Tallier.ITallier>)(this.Services.getPort("reducer")));
+           /* IReducer<br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.example.cw.Tallier.ITallier> reducer = ((IReducer<br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.example.cw.Tallier.ITallier>)(this.Services.getPort("reducer")));
             Thread go_reducer = new Thread(new ParameterizedThreadStart(this.Go));
             go_reducer.Start(reducer);
             ISplitterReduceCollector<br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction.IPartitionFunction<br.ufc.mdcc.common.Integer.IInteger>, br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction.ITerminateFunction<br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger>> splitter = ((ISplitterReduceCollector<br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction.IPartitionFunction<br.ufc.mdcc.common.Integer.IInteger>, br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction.ITerminateFunction<br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger>>)(this.Services.getPort("splitter")));
@@ -38,7 +38,7 @@ namespace mapreduce.impl.SystemImpl {
             go_shuffler.Start(shuffler);
             go_reducer.Join();
             go_splitter.Join();
-            go_shuffler.Join();
+            go_shuffler.Join();*/
         }
     }
 }

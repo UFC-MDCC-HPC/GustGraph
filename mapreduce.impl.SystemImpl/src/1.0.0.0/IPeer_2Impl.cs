@@ -27,7 +27,7 @@ namespace mapreduce.impl.SystemImpl {
         }
         
         public override void main() {
-            IMapper<br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.example.cw.WordCounter.IWordCounter> mapper = ((IMapper<br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.example.cw.WordCounter.IWordCounter>)(this.Services.getPort("mapper")));
+          /*  IMapper<br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.example.cw.WordCounter.IWordCounter> mapper = ((IMapper<br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.example.cw.WordCounter.IWordCounter>)(this.Services.getPort("mapper")));
             Thread go_mapper = new Thread(new ParameterizedThreadStart(this.Go));
             go_mapper.Start(mapper);
             ISplitterMapFeeder<br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString> splitter = ((ISplitterMapFeeder<br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString>)(this.Services.getPort("splitter")));
@@ -38,7 +38,7 @@ namespace mapreduce.impl.SystemImpl {
             go_shuffler.Start(shuffler);
             go_mapper.Join();
             go_splitter.Join();
-            go_shuffler.Join();
+            go_shuffler.Join();*/
         }
     }
 }

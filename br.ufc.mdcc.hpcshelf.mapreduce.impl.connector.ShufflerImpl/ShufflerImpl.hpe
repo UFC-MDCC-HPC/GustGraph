@@ -18,7 +18,7 @@
           <visualDescription h="60" w="100" x="61" y="403">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###171722114"/>
+          <parameter formFieldId="server_port_type" varName="X###1986265354"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -27,7 +27,7 @@
           <visualDescription h="60" w="100" x="517" y="411">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###594814801"/>
+          <parameter formFieldId="server_port_type" varName="X###1662156058"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>

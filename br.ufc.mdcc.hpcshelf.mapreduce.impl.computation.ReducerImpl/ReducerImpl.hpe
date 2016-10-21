@@ -27,7 +27,7 @@
           <visualDescription h="60" w="112" x="457" y="378">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1474595196"/>
+          <parameter formFieldId="server_port_type" varName="X###1401075383"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -36,7 +36,7 @@
           <visualDescription h="60" w="111" x="51" y="234">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###388325542"/>
+          <parameter formFieldId="server_port_type" varName="X###410694607"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -155,13 +155,13 @@
         <originRef cRef="collect_pairs" iRef="IBindingDirectMxNIterator"/>
         <visualDescription h="10" w="10" x="46" y="26"/>
       </slice>
-      <slice isRef="task_reduce">
-        <originRef cRef="task_reduce" iRef="ITaskBindingAdvance"/>
-        <visualDescription h="10" w="10" x="0" y="23"/>
-      </slice>
       <slice isRef="platform_reduce">
         <originRef cRef="platform_reduce" iRef="IProcessingNode"/>
         <visualDescription h="10" w="10" x="11" y="26"/>
+      </slice>
+      <slice isRef="task_reduce">
+        <originRef cRef="task_reduce" iRef="ITaskBindingAdvance"/>
+        <visualDescription h="10" w="10" x="0" y="23"/>
       </slice>
       <slice isRef="reduce_function">
         <originRef cRef="reduce_function" iRef="IReduceFunction"/>
@@ -203,6 +203,10 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_pairs" sRef="collect_pairs"/>
       </port>
+      <port name="platform_reduce">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_reduce" sRef="platform_reduce"/>
+      </port>
       <port name="task_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_reduce" sRef="task_reduce"/>
@@ -210,10 +214,6 @@
       <port name="task_port_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_reduce"/>
-      </port>
-      <port name="platform_reduce">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_reduce" sRef="platform_reduce"/>
       </port>
       <parameter iname="IComputeHost" order="0" parid="platform_maintainer" uname="compute_host" varid="M"/>
       <parameter iname="IReduceFunction" order="5" parid="reduce_function" uname="reduce_function" varid="RF"/>

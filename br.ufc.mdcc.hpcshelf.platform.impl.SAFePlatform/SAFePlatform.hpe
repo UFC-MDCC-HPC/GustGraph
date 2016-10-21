@@ -46,7 +46,7 @@
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.platform.impl.SAFePlatform/bin/1.0.0.0/BaseISafePlatform.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
         </file>
-        <file contents="http://localhost:8081/BackEnd.asmx&#xA;1" name="platform.settings" srcType="platform.settings" uri="br.ufc.mdcc.hpcshelf.platform.impl.SAFePlatform/bin/1.0.0.0/platform.dll" versionId="1.0.0.0"/>
+        <file contents="http://localhost:8081/BackendServices.asmx&#xA;1" name="platform.settings" srcType="platform.settings" uri="br.ufc.mdcc.hpcshelf.platform.impl.SAFePlatform/bin/1.0.0.0/platform.dll" versionId="1.0.0.0"/>
       </sources>
       <visualDescription h="40" w="80" x="224" y="115">
         <color b="0" g="128" r="0"/>

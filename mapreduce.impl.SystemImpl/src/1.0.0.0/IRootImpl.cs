@@ -27,14 +27,14 @@ namespace mapreduce.impl.SystemImpl {
         }
         
         public override void main() {
-			IWorkflow<ISAFeHost> workflow = ((IWorkflow<ISAFeHost>)(this.Services.getPort("workflow")));
+		/*	IWorkflow<ISAFeHost> workflow = ((IWorkflow<ISAFeHost>)(this.Services.getPort("workflow")));
             Thread go_workflow = new Thread(new ParameterizedThreadStart(this.Go));
             go_workflow.Start(workflow);
 			IApplication<ISAFeHost> application = ((IApplication<ISAFeHost>)(this.Services.getPort("application")));
             Thread go_application = new Thread(new ParameterizedThreadStart(this.Go));
             go_application.Start(application);
             go_workflow.Join();
-            go_application.Join();
+            go_application.Join();*/
         }
     }
 }

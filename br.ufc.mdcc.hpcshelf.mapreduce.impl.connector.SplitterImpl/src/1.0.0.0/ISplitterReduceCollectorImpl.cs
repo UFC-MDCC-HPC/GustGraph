@@ -37,6 +37,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 		public override void main()
 		{
+			Console.WriteLine (this.Rank + ": SPLITTER REDUCE COLLECTOR START");
+
 			IIteratorInstance<IKVPair<OKey,OValue>> input_instance = (IIteratorInstance<IKVPair<OKey,OValue>>) Collect_pairs.Client;
 			Terminate_function.Iterate_pairs = input_instance;
 

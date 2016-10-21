@@ -102,7 +102,7 @@
         <visualDescription h="60" w="100" x="234" y="345">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###1303071942"/>
+        <parameter formFieldId="task_port_type" varName="X###1385249106"/>
         <unitBounds parallel="true" uRef="peer">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -216,7 +216,7 @@
     <supplyParameter cRef="output_item_type" direct="true" varName="OUT_SHUFFLER"/>
     <supplyParameter cRef="output_item_value_type" direct="true" varName="OUT_SHUFFLE_V"/>
     <supplyParameter cRef="input_map_collector_kv" direct="true" varName="INPUT_MAP_COLLECTOR_T"/>
-    <innerComponent localRef="C###1303071942" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <innerComponent localRef="C###1385249106" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
       <visualDescription h="60" w="142" x="217" y="525">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -224,7 +224,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1303071942" varName="X###1303071942"/>
+    <supplyParameter cRef="C###1385249106" varName="X###1385249106"/>
     <innerRenaming cNewName="task_port_shuffle" cOldName="task_port" cRef="task_binding_shuffle"/>
     <interface iRef="IShufflerReduceFeeder" nArgs="3">
       <slice isRef="feed_pairs">

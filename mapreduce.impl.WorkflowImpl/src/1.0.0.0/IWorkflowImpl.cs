@@ -344,7 +344,7 @@ namespace mapreduce.impl.WorkflowImpl {
 			get 
 			{  
 				if (task_port_map == null)
-					task_port_map = (ITaskPort<ITaskPortTypeAdvance>) this.Services.getPort ("task_port_map");
+					task_port_map = (ITaskPort<ITaskPortTypeAdvance>) this.Services.getPort ("task_port_mapper");
 				return task_port_map;
 			}
 		}
