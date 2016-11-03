@@ -73,7 +73,7 @@
         <visualDescription h="69" w="188" x="657" y="210">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###1058604213"/>
+        <parameter formFieldId="item_type" varName="X###722165796"/>
         <unitBounds parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -82,21 +82,13 @@
         <visualDescription h="12" w="13" x="82" y="38"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_map" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance/TaskBindingAdvance.hpe" multiple="false" name="TaskBindingAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.task" exposed="true">
-      <visualDescription h="122" w="188" x="374" y="517">
+    <innerComponent localRef="task_map" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+      <visualDescription h="122" w="188" x="334" y="509">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="false">
-        <visualDescription h="60" w="129" x="275" y="780">
-          <color b="255" g="255" r="255"/>
-        </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###58992496"/>
-        <unitBounds parallel="true" uRef="peer">
-          <visualDescription h="20" w="20" x="5" y="2"/>
-        </unitBounds>
-      </port>
+      <parameter formFieldId="task_port_type" varName="TAdvance"/>
       <unitBounds parallel="true" uRef="peer">
-        <visualDescription h="20" w="20" x="84" y="18"/>
+        <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="collect_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
@@ -150,9 +142,18 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="task_port_type_advance" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+      <visualDescription h="60" w="100" x="149" y="464">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="task_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
     <supplyParameter cRef="mapper_port_type_client" direct="true" varName="C"/>
     <supplyParameter cRef="mapper_port_type_server" direct="true" varName="S"/>
-    <innerComponent localRef="C###1058604213" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <supplyParameter cRef="task_port_type_advance" direct="true" varName="TAdvance"/>
+    <innerComponent localRef="C###722165796" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="93" y="410">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -162,20 +163,10 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1058604213" varName="X###1058604213"/>
-    <innerComponent localRef="C###58992496" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
-      <visualDescription h="60" w="142" x="217" y="525">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="true" uRef="task_port_type">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <supplyParameter cRef="C###58992496" varName="X###58992496"/>
-    <innerRenaming cNewName="task_port_mapper" cOldName="task_port" cRef="task_map"/>
-    <innerRenaming cNewName="output" cOldName="output_data" cRef="map_function"/>
-    <innerRenaming cNewName="map_key" cOldName="input_key" cRef="map_function"/>
+    <supplyParameter cRef="C###722165796" varName="X###722165796"/>
     <innerRenaming cNewName="map_value" cOldName="input_value" cRef="map_function"/>
+    <innerRenaming cNewName="map_key" cOldName="input_key" cRef="map_function"/>
+    <innerRenaming cNewName="output" cOldName="output_data" cRef="map_function"/>
     <interface iRef="IMapper" nArgs="6">
       <slice isRef="feed_pairs">
         <originRef cRef="feed_pairs" iRef="IBindingDirectMxNIterator"/>
@@ -190,7 +181,7 @@
         <visualDescription h="10" w="10" x="9" y="12"/>
       </slice>
       <slice isRef="task_map">
-        <originRef cRef="task_map" iRef="ITaskBindingAdvance"/>
+        <originRef cRef="task_map" iRef="ITaskPort"/>
         <visualDescription h="10" w="10" x="55" y="0"/>
       </slice>
       <slice isRef="map_function">
@@ -234,14 +225,6 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_map" sRef="task_map"/>
       </port>
-      <port name="task_port_mapper">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_port" sRef="task_map"/>
-      </port>
-      <port name="map_value">
-        <visualDescription h="10" w="10" x="46" y="20"/>
-        <slice pRef="input_value" sRef="map_function"/>
-      </port>
       <port name="map_key">
         <visualDescription h="10" w="10" x="15" y="4"/>
         <slice pRef="input_key" sRef="map_function"/>
@@ -249,6 +232,10 @@
       <port name="output">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_data" sRef="map_function"/>
+      </port>
+      <port name="map_value">
+        <visualDescription h="10" w="10" x="46" y="20"/>
+        <slice pRef="input_value" sRef="map_function"/>
       </port>
       <parameter iname="IMaintainer" order="0" parid="platform_maintainer" uname="maintainer" varid="M"/>
       <parameter iname="IMapFunction" order="5" parid="map_function" uname="map_function" varid="MF"/>
@@ -270,9 +257,6 @@
       <slices cRef="map_value" inner_replica="0" slice_replica="0" uRef="data" sliceName="map_value" transitive="true">
         <visualDescription h="10" w="10" x="13" y="19"/>
       </slices>
-      <slices cRef="task_port_mapper" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_port_mapper" transitive="true">
-        <visualDescription h="10" w="10" x="81" y="19"/>
-      </slices>
       <slices cRef="output" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="output" transitive="true">
         <visualDescription h="10" w="10" x="121" y="19"/>
       </slices>
@@ -284,7 +268,6 @@
       </slices>
       <slices cRef="task_map" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_map" transitive="false">
         <visualDescription h="10" w="10" x="55" y="0"/>
-        <port>task_port_mapper</port>
       </slices>
       <slices cRef="map_function" inner_replica="0" slice_replica="0" uRef="map_function" sliceName="map_function" transitive="false">
         <visualDescription h="10" w="10" x="78" y="9"/>

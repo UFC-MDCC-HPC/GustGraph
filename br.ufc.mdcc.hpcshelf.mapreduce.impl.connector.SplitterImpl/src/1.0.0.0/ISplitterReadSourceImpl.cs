@@ -9,12 +9,12 @@ using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Iterator;
 using System.Collections.Generic;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;
 using br.ufc.mdcc.common.Integer;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData;
 using System.Threading;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 {
@@ -34,8 +34,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 			IPortTypeIterator input_instance = (IPortTypeIterator) Source.Client;
 
 			// TODO: será que READ_SOURCE é necessária ???
-			Task_port_data.TraceFlag = true;
-			Task_port_data.invoke (ITaskPortData.READ_SOURCE);
+			Task_binding_data.TraceFlag = true;
+			Task_binding_data.invoke (ITaskPortData.READ_SOURCE);
 
 			Console.WriteLine (this.Rank + ": SPLITTER 2 ");
 
@@ -58,13 +58,13 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 			Console.WriteLine (this.Rank + ": SPLITTER 4 ");
 
-			Task_port_split_first.TraceFlag = true;
+			Task_binding_split_first.TraceFlag = true;
 			Split_channel.TraceFlag = true;
 
 			Thread t_output = new Thread (new ThreadStart (delegate 
 				{
-					Task_port_data.invoke (ITaskPortData.TERMINATE);
-					Task_port_data.invoke (ITaskPortData.WRITE_SINK);
+					Task_binding_data.invoke (ITaskPortData.TERMINATE);
+					Task_binding_data.invoke (ITaskPortData.WRITE_SINK);
 				}));
 
 			t_output.Start ();
@@ -80,8 +80,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 				/* All the pairs will be read from the source in a single chunk */
 
-				Task_port_split_first.invoke (ITaskPortAdvance.READ_CHUNK); //****
-				Task_port_split_first.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+				Task_binding_split_first.invoke (ITaskPortAdvance.READ_CHUNK); //****
+				Task_binding_split_first.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
 
 				Bin_function.NumberOfPartitions = m_size;
 
@@ -118,7 +118,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 				Console.WriteLine (this.Rank + ": END SENDING CHUNKS to the MAPPERS ");
 
-				Task_port_split_first.invoke (ITaskPortAdvance.CHUNK_READY);
+				Task_binding_split_first.invoke (ITaskPortAdvance.CHUNK_READY);
 			}
 
 			Console.WriteLine (this.Rank + ": FINISH SPLITTER READ SOURCE ");

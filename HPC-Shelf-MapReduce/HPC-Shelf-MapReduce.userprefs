@@ -1,6 +1,15 @@
 ﻿<Properties StartupItem="HPC-Shelf-MapReduce/HPC-Shelf-MapReduce.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceImpl/src/1.0.0.0/ITaskPortTypeAdvanceImpl.cs">
+    <Files>
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance/src/1.0.0.0/ITaskBindingAdvance.cs" Line="14" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData/src/1.0.0.0/ITaskBindingData.cs" Line="11" Column="3" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.task.TaskBindingDataImpl/src/1.0.0.0/ITaskPortDataImpl.cs" Line="22" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/src/1.0.0.0/ITaskPortTypeAdvance.cs" Line="6" Column="30" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/src/1.0.0.0/ITaskPortTypeData.cs" Line="6" Column="28" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceImpl/src/1.0.0.0/ITaskPortTypeAdvanceImpl.cs" Line="14" Column="10" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/MapReduce-for-HPE/MapReduce-for-HPE/Program.cs" line="24" column="16" />

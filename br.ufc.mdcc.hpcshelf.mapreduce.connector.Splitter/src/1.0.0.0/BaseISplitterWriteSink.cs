@@ -3,10 +3,11 @@
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
 using br.ufc.mdcc.common.Data;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface;
 using br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingWriteData;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter
 {
@@ -16,6 +17,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter
 		where OValue:IData
 	{
 		IWriteData<IPortTypeDataSinkInterface> Sink { get; }
-		ITaskBindingData Task_binding_data { get; }
+		ITaskPort<ITaskPortTypeData> Task_binding_data { get; }
 	}
 }

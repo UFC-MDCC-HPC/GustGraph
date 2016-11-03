@@ -5,11 +5,12 @@ using br.ufc.mdcc.common.Integer;
 using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData;
 using br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter
 {
@@ -19,8 +20,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter
 		where IValue:IData
 		where BF:IPartitionFunction<IKey>
 	{
-		ITaskBindingAdvance Task_binding_split_first {get;}
-		ITaskBindingData Task_binding_data	{ get; } 
+		ITaskPort<ITaskPortTypeAdvance> Task_binding_split_first {get;}
+		ITaskPort<ITaskPortTypeData> Task_binding_data	{ get; } 
 		IReadData<IPortTypeDataSourceInterface> Source { get; }
 	}
 }

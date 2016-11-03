@@ -7,7 +7,6 @@ using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
 using br.ufc.mdcc.common.Integer;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 using br.ufc.mdcc.common.Data;
@@ -39,26 +38,15 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 			}
 		}
 
-		private ITaskBindingAdvance task_binding_shuffle = null;
+		private ITaskPort<ITaskPortTypeAdvance> task_binding_shuffle = null;
 
-		protected ITaskBindingAdvance Task_binding_shuffle
+		public ITaskPort<ITaskPortTypeAdvance> Task_binding_shuffle
 		{
 			get
 			{
 				if (this.task_binding_shuffle == null)
-					this.task_binding_shuffle = (ITaskBindingAdvance) Services.getPort("task_binding_shuffle");
+					this.task_binding_shuffle = (ITaskPort<ITaskPortTypeAdvance>) Services.getPort("task_binding_shuffle");
 				return this.task_binding_shuffle;
-			}
-		}
-		private ITaskPort<ITaskPortTypeAdvance> task_port_shuffle = null;
-
-		public ITaskPort<ITaskPortTypeAdvance> Task_port_shuffle
-		{
-			get
-			{
-				if (this.task_port_shuffle == null)
-					this.task_port_shuffle = (ITaskPort<ITaskPortTypeAdvance>) Services.getPort("task_port_shuffle");
-				return this.task_port_shuffle;
 			}
 		}
 

@@ -69,14 +69,6 @@
       <Project>{1784C0D3-7632-4F38-8FFF-FA8008E2A724}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance\br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance\br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance.csproj">
-      <Project>{274D8A60-F469-4382-B1D5-419F2C503A2D}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData\br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData\br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData.csproj">
-      <Project>{CDBEB1A1-F777-46A3-9644-A669E302DCE3}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface.csproj">
       <Project>{504A4A55-3292-4433-B83E-290ABB32ACDF}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface</Name>

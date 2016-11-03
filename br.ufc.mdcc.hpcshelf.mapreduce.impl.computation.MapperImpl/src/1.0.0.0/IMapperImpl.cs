@@ -8,9 +8,9 @@ using br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using System.Diagnostics;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl
 {
@@ -47,8 +47,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl
 				{        
 					Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 1");
 
-					Task_port_mapper.invoke (ITaskPortAdvance.READ_CHUNK);
-					Task_port_mapper.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+					Task_map.invoke (ITaskPortAdvance.READ_CHUNK);
+					Task_map.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
 
 					Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 2");
 
@@ -80,7 +80,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl
 
 					Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 6");
 
-					Task_port_mapper.invoke (ITaskPortAdvance.CHUNK_READY);  //****
+					Task_map.invoke (ITaskPortAdvance.CHUNK_READY);  //****
 					/* levando em conta que há sincronização pelos iteradores, talvez não haja necessidade de sincronizar o CHUNK_READY para o
 				     * shuffler começar a ler os pares */
 					Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 7");

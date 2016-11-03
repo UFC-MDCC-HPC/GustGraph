@@ -8,7 +8,6 @@ using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction;
 using br.ufc.mdcc.common.Data;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
@@ -48,17 +47,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl
 				return this.map_function;
 			}
 		}
-		private ITaskBindingAdvance task_mapper = null;
-
-		protected ITaskBindingAdvance Task_mapper
-		{
-			get
-			{
-				if (this.task_mapper == null)
-					this.task_mapper = (ITaskBindingAdvance) Services.getPort("task_mapper");
-				return this.task_mapper;
-			}
-		}
 
 		private IServerBase<IPortTypeIterator> feed_pairs = null;
 
@@ -71,15 +59,15 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl
 				return this.feed_pairs;
 			}
 		}
-		private ITaskPort<ITaskPortTypeAdvance> task_port_mapper = null;
+		private ITaskPort<ITaskPortTypeAdvance> task_map = null;
 
-		protected ITaskPort<ITaskPortTypeAdvance> Task_port_mapper
+		protected ITaskPort<ITaskPortTypeAdvance> Task_map
 		{
 			get
 			{
-				if (this.task_port_mapper == null)
-					this.task_port_mapper = (ITaskPort<ITaskPortTypeAdvance>) Services.getPort("task_port_mapper");
-				return this.task_port_mapper;
+				if (this.task_map == null)
+					this.task_map = (ITaskPort<ITaskPortTypeAdvance>) Services.getPort("task_map");
+				return this.task_map;
 			}
 		}
 

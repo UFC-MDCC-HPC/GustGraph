@@ -3,7 +3,6 @@ using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
 using System.Collections.Generic;
 using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
@@ -13,6 +12,7 @@ using System.Diagnostics;
 using br.ufc.mdcc.common.Data;
 using System.Threading;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 {
@@ -27,15 +27,15 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 		public override void main()
 		{
 			Split_channel.TraceFlag = true;
-			Task_port_data.TraceFlag = true;
+			Task_binding_data.TraceFlag = true;
 			Console.WriteLine ("SPLITER WRITE SINK 0");
 
 			IPortTypeIterator output_instance = (IPortTypeIterator) Sink.Client;
 
 			Console.WriteLine ("SPLITER WRITE SINK 1");
 
-			Task_port_data.TraceFlag = true;
-			Task_port_data.invoke (ITaskPortData.READ_SOURCE);
+			Task_binding_data.TraceFlag = true;
+			Task_binding_data.invoke (ITaskPortData.READ_SOURCE);
 			// Do nothing ... 
 
 
@@ -57,8 +57,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 			Thread t_output = new Thread (new ThreadStart (delegate 
 									{
-										Task_port_data.invoke (ITaskPortData.TERMINATE);
-										Task_port_data.invoke (ITaskPortData.WRITE_SINK);
+										Task_binding_data.invoke (ITaskPortData.TERMINATE);
+										Task_binding_data.invoke (ITaskPortData.WRITE_SINK);
 										Sink.startWriteSink ();
 									}));
 
@@ -85,7 +85,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 			Console.WriteLine ("SPLITER WRITE SINK - WRITTER FINISH");
 
 			Split_channel.TraceFlag = false;
-			Task_port_data.TraceFlag = false;
+			Task_binding_data.TraceFlag = false;
 
 		}
 

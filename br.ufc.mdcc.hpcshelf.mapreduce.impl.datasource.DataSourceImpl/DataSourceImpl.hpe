@@ -14,8 +14,8 @@
           <visualDescription h="60" w="100" x="197" y="381">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###1389735351"/>
-          <parameter formFieldId="server_port_type" varName="X###375609441"/>
+          <parameter formFieldId="client_port_type" varName="X###881108747"/>
+          <parameter formFieldId="server_port_type" varName="X###1490303538"/>
           <unitBounds parallel="false" uRef="client">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>

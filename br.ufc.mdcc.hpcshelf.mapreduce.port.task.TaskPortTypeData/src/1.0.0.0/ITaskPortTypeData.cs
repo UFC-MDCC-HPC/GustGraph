@@ -6,4 +6,11 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData
 	public interface ITaskPortTypeData : BaseITaskPortTypeData, ITaskPortType
 	{
 	}
+
+	public class ITaskPortData
+	{
+		public static object READ_SOURCE = new object();
+		public static object TERMINATE = new object();
+		public static object WRITE_SINK = new object();
+	}
 }

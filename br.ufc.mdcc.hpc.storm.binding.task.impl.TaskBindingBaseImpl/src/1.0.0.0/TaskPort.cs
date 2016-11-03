@@ -41,6 +41,8 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 
 		private RequestList synchronize_action(object action_id)
 		{
+			Console.WriteLine ("ActionDef.action_ids.Count = " + ActionDef.action_ids.Count);
+
 			int value = ActionDef.action_ids[action_id];
 			RequestList request_list = new RequestList ();
 
@@ -53,7 +55,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 					foreach (KeyValuePair<string,int> unit_team in facet.Value) 
 						for (int i=0; i < unit_team.Value; i++)
 						{
-							Trace.WriteLineIf(this.TraceFlag==true,  "synchronize_action " + action_id + " LOOP SEND " + facet.Key + "/" + i);
+							Trace.WriteLineIf(this.TraceFlag==true, "synchronize_action " + action_id + " LOOP SEND " + facet.Key + "/" + i);
 							Request req = Channel.ImmediateSend<object> (value, new Tuple<int, int> (facet.Key, i), value);
 							request_list.Add (req);
 						}
@@ -65,7 +67,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 					foreach (KeyValuePair<string,int> unit_team in facet.Value) 
 						for (int i=0; i < unit_team.Value; i++)
 						{
-							Trace.WriteLineIf(this.TraceFlag==true,  "synchronize_action " + action_id + " LOOP RECV " + facet.Key + "/" + i);
+							Trace.WriteLineIf(this.TraceFlag==true, "synchronize_action " + action_id + " LOOP RECV " + facet.Key + "/" + i);
 							ReceiveRequest req = Channel.ImmediateReceive<object> (new Tuple<int, int> (facet.Key, i), value);
 							request_list.Add (req);
 						}

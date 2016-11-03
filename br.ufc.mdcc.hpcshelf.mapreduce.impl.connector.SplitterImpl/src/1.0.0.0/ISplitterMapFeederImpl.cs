@@ -7,13 +7,13 @@ using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using System.Collections.Generic;
 using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;
 using br.ufc.mdcc.common.Data;
 using System.Diagnostics;
 using System.Threading;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 {
@@ -63,8 +63,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 			// TODO: READ_SOURCE é necessário ? Não no map feeder. Tirar fatia de Task_binding data ...
 
-			Task_port_data.TraceFlag = true;
-			Task_port_data.invoke (ITaskPortData.READ_SOURCE);
+			Task_binding_data.TraceFlag = true;
+			Task_binding_data.invoke (ITaskPortData.READ_SOURCE);
 			// Do nothing ... 
 
 
@@ -80,8 +80,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 				Console.WriteLine (this.Rank + ": SPLITTER MAP FEEDER - BEFORE READ_CHUNK");
 
-				Task_port_split_first.invoke (ITaskPortAdvance.READ_CHUNK);  //****
-				Task_port_split_first.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+				Task_binding_split_first.invoke (ITaskPortAdvance.READ_CHUNK);  //****
+				Task_binding_split_first.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
 
 				Console.WriteLine (this.Rank + ": SPLITTER MAP FEEDER !!! PERFORM OK !");
 
@@ -99,7 +99,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 				// CHUNK_READY
 				Console.WriteLine (this.Rank + ": SPLITTER MAP FEEDER 1");
 
-				Task_port_split_first.invoke (ITaskPortAdvance.CHUNK_READY);
+				Task_binding_split_first.invoke (ITaskPortAdvance.CHUNK_READY);
 
 				Console.WriteLine (this.Rank + ": SPLITTER MAP FEEDER 2");
 			} 
@@ -119,8 +119,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 					Console.WriteLine (this.Rank + ": SPLITTER MAP FEEDER NEXT 1");
 
-					Task_port_split_next.invoke (ITaskPortAdvance.READ_CHUNK);
-					Task_port_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+					Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK);
+					Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
 
 					Console.WriteLine (this.Rank + ": SPLITTER MAP FEEDER NEXT 2");
 
@@ -160,7 +160,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 					Console.WriteLine (this.Rank + ": SPLITTER MAP FEEDER NEXT 4");
 
 					// CHUNK_READY
-					Task_port_split_next.invoke (ITaskPortAdvance.CHUNK_READY);
+					Task_binding_split_next.invoke (ITaskPortAdvance.CHUNK_READY);
 
 					Console.WriteLine (this.Rank + ": SPLITTER MAP FEEDER NEXT 5");
 				}
@@ -168,8 +168,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 			Console.WriteLine (this.Rank + ": SPLITTER MAP FEEDER FINISH 1 !");
 
-			Task_port_data.invoke (ITaskPortData.TERMINATE);
-			Task_port_data.invoke (ITaskPortData.WRITE_SINK);
+			Task_binding_data.invoke (ITaskPortData.TERMINATE);
+			Task_binding_data.invoke (ITaskPortData.WRITE_SINK);
 
 			Console.WriteLine (this.Rank + ": SPLITTER MAP FEEDER FINISH 2 !");
 		}

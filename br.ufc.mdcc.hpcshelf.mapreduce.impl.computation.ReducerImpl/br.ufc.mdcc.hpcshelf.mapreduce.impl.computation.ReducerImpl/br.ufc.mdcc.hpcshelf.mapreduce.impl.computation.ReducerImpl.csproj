@@ -96,10 +96,6 @@
       <Project>{1784C0D3-7632-4F38-8FFF-FA8008E2A724}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance\br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance\br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance.csproj">
-      <Project>{274D8A60-F469-4382-B1D5-419F2C503A2D}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.common.Iterator\br.ufc.mdcc.common.Iterator\br.ufc.mdcc.common.Iterator.csproj">
       <Project>{807A087E-123C-4745-B029-C31FC9458A61}</Project>
       <Name>br.ufc.mdcc.common.Iterator</Name>

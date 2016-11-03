@@ -9,7 +9,7 @@
   <componentInfo>
     <parameter componentRef="task_port_type" formFieldId="task_port_type" order="0" variance="contravariant" varName="T"/>
     <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/TaskPortType.hpe" multiple="false" name="TaskPortType" package="br.ufc.mdcc.hpc.storm.binding.task" parameter_id="task_port_type" exposed="false">
-      <visualDescription h="94" w="179" x="101" y="400">
+      <visualDescription h="94" w="179" x="86" y="390">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="task_port_type">

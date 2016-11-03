@@ -4,7 +4,6 @@ using System;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
@@ -29,47 +28,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 		static protected int FACET_SOURCE = 2;
 		static protected int FACET_SINK = 3;
 
-		private ITaskBindingAdvance task_binding_split_first = null;
-		public ITaskBindingAdvance Task_binding_split_first
-		{
-			get
-			{
-				if (this.task_binding_split_first == null)
-					this.task_binding_split_first = (ITaskBindingAdvance) Services.getPort("task_binding_split_first");
-				return this.task_binding_split_first;
-			}
-		}
-		private ITaskPort<ITaskPortTypeAdvance> task_port_split_first = null;
-		protected ITaskPort<ITaskPortTypeAdvance> Task_port_split_first
-		{
-			get
-			{
-				if (this.task_port_split_first == null)
-					this.task_port_split_first = (ITaskPort<ITaskPortTypeAdvance>) Services.getPort("task_port_split_first");
-				return this.task_port_split_first;
-			}
-		}
-
-		private ITaskBindingAdvance task_binding_split_next = null;
-		public ITaskBindingAdvance Task_binding_split_next
-		{
-			get
-			{
-				if (this.task_binding_split_next == null)
-					this.task_binding_split_next = (ITaskBindingAdvance) Services.getPort("task_binding_split_next");
-				return this.task_binding_split_next;
-			}
-		}
-		private ITaskPort<ITaskPortTypeAdvance> task_port_split_next = null;
-		protected ITaskPort<ITaskPortTypeAdvance> Task_port_split_next
-		{
-			get
-			{
-				if (this.task_port_split_next == null)
-					this.task_port_split_next = (ITaskPort<ITaskPortTypeAdvance>) Services.getPort("task_port_split_next");
-				return this.task_port_split_next;
-			}
-		}
 
 		private IServerBase<IPortTypeIterator> feed_pairs = null;
 
@@ -104,14 +62,36 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 			}
 		}
 
-		private ITaskPort<ITaskPortTypeData> task_port_data = null;
-		public ITaskPort<ITaskPortTypeData> Task_port_data
+		private ITaskPort<ITaskPortTypeAdvance> task_binding_split_first = null;
+		public ITaskPort<ITaskPortTypeAdvance> Task_binding_split_first
 		{
 			get
 			{
-				if (this.task_port_data == null)
-					this.task_port_data = (ITaskPort<ITaskPortTypeData>) Services.getPort("task_port_data");
-				return this.task_port_data;
+				if (this.task_binding_split_first == null)
+					this.task_binding_split_first = (ITaskPort<ITaskPortTypeAdvance>) Services.getPort("task_binding_split_first");
+				return this.task_binding_split_first;
+			}
+		}
+
+		private ITaskPort<ITaskPortTypeAdvance> task_binding_split_next = null;
+		public ITaskPort<ITaskPortTypeAdvance> Task_binding_split_next
+		{
+			get
+			{
+				if (this.task_binding_split_next == null)
+					this.task_binding_split_next = (ITaskPort<ITaskPortTypeAdvance>) Services.getPort("task_binding_split_next");
+				return this.task_binding_split_next;
+			}
+		}
+
+		private ITaskPort<ITaskPortTypeData> task_binding_data = null;
+		public ITaskPort<ITaskPortTypeData> Task_binding_data
+		{
+			get
+			{
+				if (this.task_binding_data == null)
+					this.task_binding_data = (ITaskPort<ITaskPortTypeData>) Services.getPort("task_binding_data");
+				return this.task_binding_data;
 			}
 		}
 	}

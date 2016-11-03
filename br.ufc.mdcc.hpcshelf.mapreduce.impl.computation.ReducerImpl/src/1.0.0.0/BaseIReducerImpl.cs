@@ -9,7 +9,6 @@ using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
@@ -69,17 +68,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 				return this.reduce_function;
 			}
 		}
-		private ITaskBindingAdvance task_reduce = null;
 
-		protected ITaskBindingAdvance Task_reduce
-		{
-			get
-			{
-				if (this.task_reduce == null)
-					this.task_reduce = (ITaskBindingAdvance) Services.getPort("task_reduce");
-				return this.task_reduce;
-			}
-		}
 		private IKVPair<TKey, IIterator<TValue>> input_values = null;
 
 		protected IKVPair<TKey, IIterator<TValue>> Input_values
@@ -102,15 +91,15 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 				return this.feed_pairs;
 			}
 		}
-		private ITaskPort<ITaskPortTypeAdvance> task_port_reduce = null;
+		private ITaskPort<ITaskPortTypeAdvance> task_reduce = null;
 
-		protected ITaskPort<ITaskPortTypeAdvance> Task_port_reduce
+		public ITaskPort<ITaskPortTypeAdvance> Task_reduce
 		{
 			get
 			{
-				if (this.task_port_reduce == null)
-					this.task_port_reduce = (ITaskPort<ITaskPortTypeAdvance>) Services.getPort("task_port_reduce");
-				return this.task_port_reduce;
+				if (this.task_reduce == null)
+					this.task_reduce = (ITaskPort<ITaskPortTypeAdvance>) Services.getPort("task_reduce");
+				return this.task_reduce;
 			}
 		}
 

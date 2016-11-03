@@ -9,10 +9,10 @@ using System.Diagnostics;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using System.Threading;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using System.Collections.Generic;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 {
@@ -63,8 +63,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 				{          
 					Console.WriteLine (this.Rank + ": REDUCER ITERATE 1");
 
-					Task_port_reduce.invoke (ITaskPortAdvance.READ_CHUNK);
-					Task_port_reduce.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+					Task_reduce.invoke (ITaskPortAdvance.READ_CHUNK);
+					Task_reduce.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
 
 					Console.WriteLine (this.Rank + ": REDUCER ITERATE 2");
 
@@ -108,7 +108,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 				int chunk_counter = 1;
 
 				IActionFuture reduce_chunk_ready;
-				Task_port_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out reduce_chunk_ready);  //***
+				Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out reduce_chunk_ready);  //***
 
 				foreach (KeyValuePair<object,object> output_pair in cont_dict) 
 				{					

@@ -17,7 +17,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler
 		where TKey:IData
 		where TValue:IData
 	{
-		ITaskPort<ITaskPortTypeAdvance> Task_port_shuffle {get;}
-		IChannel Shuffler_channel {get;}
+		ITaskPort<ITaskPortTypeAdvance> Task_binding_shuffle {get;}
 	}
 }

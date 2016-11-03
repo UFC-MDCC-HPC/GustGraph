@@ -7,13 +7,13 @@ using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using System.Collections.Generic;
 using br.ufc.mdcc.common.Integer;
 using System.Threading;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 {
@@ -93,8 +93,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 				end_computation = true;
 
 				//Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE 1");
-				//Task_port_split_next.invoke (ITaskPortAdvance.READ_CHUNK);  //****
-				//Task_port_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+				//Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK);  //****
+				//Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
 				//Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE 2");
 
 				// SEND TO SINK
@@ -154,8 +154,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 					if (count % CHUNK_SIZE == 0) 
 					{
-						Task_port_split_next.invoke (ITaskPortAdvance.READ_CHUNK);
-						Task_port_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+						Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK);
+						Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
 
 						for (int i = 0; i < m_size; i++) 
 						{
@@ -164,7 +164,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 							buffer [i].Clear();
 						}
 						sync_perform.wait ();
-						Task_port_split_next.invoke (ITaskPortAdvance.CHUNK_READY);
+						Task_binding_split_next.invoke (ITaskPortAdvance.CHUNK_READY);
 						Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE 3-5");
 					}
 
@@ -175,8 +175,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 				Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE 5");
 
-				Task_port_split_next.invoke (ITaskPortAdvance.READ_CHUNK);
-				Task_port_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+				Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK);
+				Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
 
 				// SEND REMAINING PAIRS AND CLOSES THE CHUNK LIST
 				Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE 6-1");
@@ -186,7 +186,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 				sync_perform.wait ();
 
 				Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE 7-1");
-				Task_port_split_next.invoke (ITaskPortAdvance.CHUNK_READY);
+				Task_binding_split_next.invoke (ITaskPortAdvance.CHUNK_READY);
 
 				Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE 7-2");
 				thread_send_output.Join();

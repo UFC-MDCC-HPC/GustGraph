@@ -7,12 +7,12 @@ using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;
 using System.Diagnostics;
 using br.ufc.mdcc.common.Integer;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using System.Collections.Generic;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl	
 {
@@ -67,8 +67,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 				{  
 					Console.WriteLine (this.GlobalRank + ": SHUFFLER MAP ...4");
 
-					Task_port_shuffle.invoke (ITaskPortAdvance.READ_CHUNK);
-					Task_port_shuffle.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+					Task_binding_shuffle.invoke (ITaskPortAdvance.READ_CHUNK);
+					Task_binding_shuffle.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
 
 					Console.WriteLine (this.GlobalRank + ": SHUFFLER MAP ...5");
 
@@ -112,7 +112,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 
 					Console.WriteLine (this.GlobalRank + ": SHUFFLER MAP ...11");
 
-					Task_port_shuffle.invoke (ITaskPortAdvance.CHUNK_READY);  //****
+					Task_binding_shuffle.invoke (ITaskPortAdvance.CHUNK_READY);  //****
 					Console.WriteLine (this.GlobalRank + ": SHUFFLER MAP ...12");
 				}			
 

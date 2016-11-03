@@ -5,10 +5,10 @@ using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
 using br.ufc.mdcc.common.Data;
-using br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter
 {
@@ -17,8 +17,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter
 		where IKey:IData
 		where IValue:IData
 	{
-		ITaskBindingAdvance Task_binding_split_first {get;}
-		ITaskBindingAdvance Task_binding_split_next {get;}
+		ITaskPort<ITaskPortTypeAdvance> Task_binding_split_first {get;}
+		ITaskPort<ITaskPortTypeAdvance> Task_binding_split_next {get;}
 		IServerBase<IPortTypeIterator> Feed_pairs { get; }
 	}
 }
