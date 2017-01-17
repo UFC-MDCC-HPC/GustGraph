@@ -136,7 +136,7 @@ namespace mapreduce.impl.WorkflowImpl {
 							Task_map.invoke (ITaskPortAdvance.READ_CHUNK); 
 							Console.WriteLine ("INVOKE MAPPER READ_CHUNK - AFTER");
 							IActionFuture future_map_perform = null;
-							Thread thread_map_perform = Task_map.invoke (ITaskPortAdvance.PERFORM, map_perform, out future_map_perform);
+							Task_map.invoke (ITaskPortAdvance.PERFORM, map_perform, out future_map_perform);
 
 							Console.WriteLine ("END INVOKE SPLITTER CHUNK_READY");
 						});
@@ -175,7 +175,7 @@ namespace mapreduce.impl.WorkflowImpl {
 							Task_binding_shuffle.invoke (ITaskPortAdvance.READ_CHUNK);   // 
 							Console.WriteLine ("INVOKE SHUFFLER READ_CHUNK - AFTER");   // 47 completados 
 							IActionFuture future_shuffle_perform = null;
-							Thread thread_shuffle_perform = Task_binding_shuffle.invoke (ITaskPortAdvance.PERFORM, shuffle_perform, out future_shuffle_perform);
+							Task_binding_shuffle.invoke (ITaskPortAdvance.PERFORM, shuffle_perform, out future_shuffle_perform);
 
 							Console.WriteLine ("END INVOKE MAPPER CHUNK_READY");
 						});
@@ -195,7 +195,7 @@ namespace mapreduce.impl.WorkflowImpl {
 							Task_reduce.invoke (ITaskPortAdvance.READ_CHUNK); // ****
 							Console.WriteLine ("INVOKE REDUCER READ_CHUNK - AFTER");
 							IActionFuture future_reduce_perform = null;
-							Thread thread_reduce_perform = Task_reduce.invoke (ITaskPortAdvance.PERFORM, reduce_perform, out future_reduce_perform);
+							Task_reduce.invoke (ITaskPortAdvance.PERFORM, reduce_perform, out future_reduce_perform);
 
 							Console.WriteLine ("END INVOKE SHUFFLER CHUNK_READY");
 						});
@@ -215,7 +215,7 @@ namespace mapreduce.impl.WorkflowImpl {
 							Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK);  // ****
 							Console.WriteLine ("INVOKE SPLITTER NEXT READ_CHUNK - AFTER");
 							IActionFuture future_split_perform = null;
-							Thread thread_split_perform = Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, split_perform, out future_split_perform);
+							Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, split_perform, out future_split_perform);
 
 							Console.WriteLine ("END INVOKE REDUCER CHUNK_READY");
 						});
@@ -231,7 +231,7 @@ namespace mapreduce.impl.WorkflowImpl {
 							Task_map.invoke (ITaskPortAdvance.READ_CHUNK);   // 
 							Console.WriteLine ("INVOKE MAP READ_CHUNK NEXT - AFTER");    
 							IActionFuture future_map_perform = null;
-							Thread thread_map_perform = Task_map.invoke (ITaskPortAdvance.PERFORM, map_perform, out future_map_perform);
+							Task_map.invoke (ITaskPortAdvance.PERFORM, map_perform, out future_map_perform);
 
 							Console.WriteLine ("END INVOKE SPLIT NEXT CHUNK_READY");
 						});

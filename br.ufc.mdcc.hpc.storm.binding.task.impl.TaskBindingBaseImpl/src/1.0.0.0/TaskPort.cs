@@ -143,7 +143,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 			reaction ();
 		}
 
-		public Thread invoke (object action_id, Action reaction, out IActionFuture future)
+		public void invoke (object action_id, Action reaction, out IActionFuture future)
 		{
 			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE ACTION " + action_id + " 0");
 
@@ -164,7 +164,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 
 			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE ACTION " + action_id + " 3");
 
-			return t;
+			//return t;
 		}
 
 		#endregion

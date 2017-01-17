@@ -15,7 +15,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase
 		void invoke(object action_id, out IActionFuture future);
 
 		// (3) As (2), but it only completes after executing a procedure.
-		Thread invoke(object action_id, Action reaction, out IActionFuture future);
+		void invoke(object action_id, Action reaction, out IActionFuture future);
 	}
 	
 	public interface IActionFuture
