@@ -16,7 +16,7 @@ using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl	
 {
-	public class IShufflerMapCollectorImpl<M1,TKey,TValue,PF> : BaseIShufflerMapCollectorImpl<M1,TKey,TValue,PF>, IShufflerMapCollector<M1,TKey,TValue,PF>
+	public class IShufflerCollectorImpl<M1,TKey,TValue,PF> : BaseIShufflerCollectorImpl<M1,TKey,TValue,PF>, IShufflerCollector<M1,TKey,TValue,PF>
 		where M1:IMaintainer
 		where PF:IPartitionFunction<TKey>
 		where TKey:IData

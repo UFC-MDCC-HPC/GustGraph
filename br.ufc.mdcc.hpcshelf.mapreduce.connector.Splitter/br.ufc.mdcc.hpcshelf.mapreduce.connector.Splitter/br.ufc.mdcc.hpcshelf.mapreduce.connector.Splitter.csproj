@@ -40,14 +40,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\src\1.0.0.0\ISplitterReduceCollector.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseISplitterReduceCollector.cs" />
-    <Compile Include="..\src\1.0.0.0\ISplitterMapFeeder.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseISplitterMapFeeder.cs" />
-    <Compile Include="..\src\1.0.0.0\ISplitterReadSource.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseISplitterReadSource.cs" />
-    <Compile Include="..\src\1.0.0.0\ISplitterWriteSink.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseISplitterWriteSink.cs" />
+    <Compile Include="..\src\1.0.0.0\ISplitterCollector.cs" />
+    <Compile Include="..\src\1.0.0.0\ISplitterFeeder.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseISplitterCollector.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseISplitterFeeder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

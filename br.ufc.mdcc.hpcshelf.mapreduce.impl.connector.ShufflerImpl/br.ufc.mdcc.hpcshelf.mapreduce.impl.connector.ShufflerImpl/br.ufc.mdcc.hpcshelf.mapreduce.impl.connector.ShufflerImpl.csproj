@@ -42,17 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\src\1.0.0.0\IShufflerReduceFeederImpl.cs">
-      <Link>IShufflerReduceFeederImpl.cs</Link>
+    <Compile Include="..\src\1.0.0.0\BaseIShufflerCollectorImpl.cs">
+      <Link>BaseIShufflerCollectorImpl.cs</Link>
     </Compile>
-    <Compile Include="..\src\1.0.0.0\IShufflerMapCollectorImpl.cs">
-      <Link>IShufflerMapCollectorImpl.cs</Link>
+    <Compile Include="..\src\1.0.0.0\BaseIShufflerFeederImpl.cs">
+      <Link>BaseIShufflerFeederImpl.cs</Link>
     </Compile>
-    <Compile Include="..\src\1.0.0.0\BaseIShufflerReduceFeederImpl.cs">
-      <Link>BaseIShufflerReduceFeederImpl.cs</Link>
+    <Compile Include="..\src\1.0.0.0\IShufflerCollectorImpl.cs">
+      <Link>IShufflerCollectorImpl.cs</Link>
     </Compile>
-    <Compile Include="..\src\1.0.0.0\BaseIShufflerMapCollectorImpl.cs">
-      <Link>BaseIShufflerMapCollectorImpl.cs</Link>
+    <Compile Include="..\src\1.0.0.0\IShufflerFeederImpl.cs">
+      <Link>IShufflerFeederImpl.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

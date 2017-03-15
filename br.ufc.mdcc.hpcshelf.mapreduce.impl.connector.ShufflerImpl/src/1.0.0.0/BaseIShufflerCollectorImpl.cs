@@ -6,25 +6,37 @@ using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
+using br.ufc.mdcc.common.Integer;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
-using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
-using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;
-using br.ufc.mdcc.common.Iterator;
-using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Data;
+using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
+using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;
+using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl 
 {
-	public abstract class BaseIShufflerReduceFeederImpl<M0,TKey, TValue>: Synchronizer, BaseIShufflerReduceFeeder<M0,TKey, TValue>
+	public abstract class BaseIShufflerCollectorImpl<M0,TKey,TValue,PF>: Synchronizer, BaseIShufflerCollector<M0,TKey,TValue,PF>
 		where M0:IMaintainer
+		where PF:IPartitionFunction<TKey>
 		where TKey:IData
-		where TValue:IData	
+		where TValue:IData
 	{
 		static protected int FACET_REDUCE = 0;
 		static protected int FACET_MAP = 1;
 
+		private IClientBase<IPortTypeIterator> collect_pairs = null;
+
+		protected IClientBase<IPortTypeIterator> Collect_pairs
+		{
+			get
+			{
+				if (this.collect_pairs == null)
+					this.collect_pairs = (IClientBase<IPortTypeIterator>) Services.getPort("collect_pairs");
+				return this.collect_pairs;
+			}
+		}
 
 		private ITaskPort<ITaskPortTypeAdvance> task_binding_shuffle = null;
 
@@ -38,15 +50,25 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 			}
 		}
 
-		private IServerBase<IPortTypeIterator> feed_pairs = null;
-
-		protected IServerBase<IPortTypeIterator> Feed_pairs
+		private TKey input_key = default(TKey);
+		protected TKey Input_key
 		{
 			get
 			{
-				if (this.feed_pairs == null)
-					this.feed_pairs = (IServerBase<IPortTypeIterator>) Services.getPort("feed_pairs");
-				return this.feed_pairs;
+				if (this.input_key == null)
+					this.input_key = (TKey) Services.getPort("input_key");
+				return this.input_key;
+			}
+		}
+
+		private IInteger output_key = null;
+		protected IInteger Output_key
+		{
+			get
+			{
+				if (this.output_key == null)
+					this.output_key = (IInteger) Services.getPort("output_key");
+				return this.output_key;
 			}
 		}
 
@@ -61,22 +83,15 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 				return this.shuffler_channel;
 			}
 		}
+		private PF partition_function = default(PF);
 
-		private IIterator<IKVPair<TKey,IIterator<TValue>>> output = null;
-		protected IIterator<IKVPair<TKey,IIterator<TValue>>> Output {
-			get {
-				if (this.output == null)
-					this.output = (IIterator<IKVPair<TKey,IIterator<TValue>>>)Services.getPort("output");
-				return this.output;
-			}
-		}
-
-		private IIterator<TValue> value_factory = null;
-		protected IIterator<TValue> Value_factory {
-			get {
-				if (this.value_factory == null)
-					this.value_factory = (IIterator<TValue>)Services.getPort("value_factory");
-				return this.value_factory;
+		protected PF Partition_function
+		{
+			get
+			{
+				if (this.partition_function == null)
+					this.partition_function = (PF) Services.getPort("partition_function");
+				return this.partition_function;
 			}
 		}
 	}

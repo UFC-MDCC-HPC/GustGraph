@@ -43,14 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\src\1.0.0.0\ISplitterWriteSinkImpl.cs" />
-    <Compile Include="..\src\1.0.0.0\ISplitterReduceCollectorImpl.cs" />
-    <Compile Include="..\src\1.0.0.0\ISplitterReadSourceImpl.cs" />
-    <Compile Include="..\src\1.0.0.0\ISplitterMapFeederImpl.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseISplitterWriteSinkImpl.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseISplitterReduceCollectorImpl.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseISplitterReadSourceImpl.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseISplitterMapFeederImpl.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseISplitterCollectorImpl.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseISplitterFeederImpl.cs" />
+    <Compile Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter\src\1.0.0.0\ISplitterCollector.cs">
+      <Link>ISplitterCollector.cs</Link>
+    </Compile>
+    <Compile Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter\src\1.0.0.0\ISplitterFeeder.cs">
+      <Link>ISplitterFeeder.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

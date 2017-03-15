@@ -15,7 +15,7 @@ using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 {
-	public class IShufflerReduceFeederImpl<M0,TKey, TValue> : BaseIShufflerReduceFeederImpl<M0,TKey, TValue>, IShufflerReduceFeeder<M0,TKey, TValue>
+	public class IShufflerFeederImpl<M0,TKey, TValue> : BaseIShufflerFeederImpl<M0,TKey, TValue>, IShufflerFeeder<M0,TKey, TValue>
 		where M0:IMaintainer
 		where TKey:IData
 		where TValue:IData
