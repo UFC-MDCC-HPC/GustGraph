@@ -144,6 +144,9 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 		{
 			FacetAccess facet_acess_server = this.Facet [ThisFacetInstance];
 
+			IPHostEntry ipHostInfo_server = Dns.Resolve(Dns.GetHostName());
+			IPAddress ipAddress_server = ipHostInfo_server.AddressList [0];
+
 			foreach (KeyValuePair<int, FacetAccess> facet_access_client in this.Facet)
 			{
 				int facet_instance = facet_access_client.Key;
@@ -158,10 +161,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 					Trace.WriteLineIf (this.TraceFlag == true, "CREATE SOCKETS - end_point_client[" + facet_instance + "]=" + endPoint_client);
 
-					string ip_address_server = facet_acess_server.ip_address;
 					int port_server = facet_acess_server.port + facet_instance;
-					IPHostEntry ipHostInfo_server = Dns.GetHostEntry (ip_address_server);
-					IPAddress ipAddress_server = ipHostInfo_server.AddressList [0];
 					IPEndPoint endPoint_server = new IPEndPoint (ipAddress_server, port_server);
 					end_point_server [facet_instance] = endPoint_server;
 
@@ -637,11 +637,21 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 			while (true)
 			{
-				int length = BitConverter.ToInt32(buffer,0);
+				int length = BitConverter.ToInt32 (buffer, 0);
 				nbytes = nbytes - 4;
 				byte[] message = new byte[length];
 
 				Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReceiveRequests 2 - length is " + length + " bytes" + " / nbytes = " + nbytes);
+
+				while (nbytes < length) 
+				{
+					int nbytes2 = server_socket.Receive (buffer2);
+					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReceiveRequests 2 - LOOP - length is " + length + " bytes" + " / nbytes2 = " + nbytes2 + " / nbytes = " + nbytes);
+					Array.Copy (buffer2, 0, buffer, nbytes + 4, nbytes2);
+					nbytes += nbytes2;
+				}
+
+				Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReceiveRequests 2 - AFTER LOOP - length is " + length + " bytes" + " / nbytes = " + nbytes);
 
 				Array.Copy(buffer, 4, message, 0, length);
 				requestQueue.Add (message);
@@ -671,14 +681,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 					buffer2 = aux;
 					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReceiveRequests 4 - nbytes=" + nbytes);
 				}
-				else
-				{
-					string error_message = server_facet + "/" + rank + ": UNEXPECTED CONDITION nbytes=" + nbytes + " < length=" + length;
-					Trace.WriteLineIf(unit.TraceFlag==true, error_message);
-					throw new Exception(error_message);
-				}
 			}
-
 		}
 
 		private ProducerConsumerQueue<byte[]> requestQueue = new ProducerConsumerQueue<byte[]>();
@@ -700,8 +703,10 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 				Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReadRequest 2-1 nbytes=" + nbytes);
 
 				// TODO: otimizar isso ...
-				for (int i=0; i<nbytes; i++)
-					messageSide1_enveloped_raw[i] = buffer[i];
+				//for (int i=0; i<nbytes; i++)
+				//	messageSide1_enveloped_raw[i] = buffer[i];
+
+				Array.Copy(buffer,0,messageSide1_enveloped_raw,0,nbytes);
 				
 				Tuple<EnvelopType,byte[]> messageSide1_enveloped = (Tuple<EnvelopType,byte[]>) ByteArrayToObject (messageSide1_enveloped_raw);
 

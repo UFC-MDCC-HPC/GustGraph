@@ -37,40 +37,11 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 		public override void main()
 		{
-			Console.WriteLine (this.Rank + ": SPLITTER REDUCE COLLECTOR START");
 
-			IIteratorInstance<IKVPair<OKey,OValue>> input_instance = (IIteratorInstance<IKVPair<OKey,OValue>>) Collect_pairs.Client;
-			Terminate_function.Iterate_pairs = input_instance;
 
-			Thread thread_terminate_function = new Thread (new ThreadStart(terminate_go));
-			thread_terminate_function.Start ();
-
-			Thread thread_send_to_mappers = new Thread (new ThreadStart (send_to_mappers));
-			thread_send_to_mappers.Start ();
-
-			thread_terminate_function.Join ();
-			thread_send_to_mappers.Join ();
-
-			Console.WriteLine (this.Rank + ": SPLITTER REDUCE COLLECTOR FINISH");
-
-		//	Thread thread_send_to_sink = new Thread (new ThreadStart (send_to_sink));
-		//	thread_send_to_sink.Start ();
-
-		}
-			
-		private static int CHUNK_SIZE = 50;
-
-		private void send_to_mappers ()
-		{
-			Console.WriteLine (this.Rank + ": ISplitterReduceCollector 1");
-
-			IIteratorInstance<IKVPair<OKey,OValue>> output_instance = (IIteratorInstance<IKVPair<OKey,OValue>>) Output_pairs.Instance;
 			IIteratorInstance<IKVPair<IKey,IValue>> input_instance = (IIteratorInstance<IKVPair<IKey,IValue>>) Input_pairs.Instance;
 
 			object bin_object = null;
-
-			// DETERMINE COMMUNICATION TARGETs
-			Tuple<int,int> sink_ref = new Tuple<int,int> (this.FacetIndexes [FACET_SINK] [0], 0);
 
 			IDictionary<int,Tuple<int,int>> unit_ref = new Dictionary<int, Tuple<int,int>> ();
 			int m_size = 0;
@@ -78,56 +49,16 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 			{   
 				int nr0 = m_size;
 				m_size += this.UnitSizeInFacet [i] ["map_feeder"];
-				for (int k=0, j=nr0; j < m_size; k++, j++) 
-					unit_ref [j] = new Tuple<int,int> (i/*,0 index of MAP_FEEDER*/,k);
+				for (int k = 0, j = nr0; j < m_size; k++, j++)
+					unit_ref [j] = new Tuple<int,int> (i/*,0 index of MAP_FEEDER*/, k);
 			}
-
-			Console.WriteLine (this.Rank + ": ISplitterReduceCollector 2");
-
+				
 			IActionFuture sync_perform;
 
-			bool end_computation = false;
-			while (!end_computation) // new iteration
+			bool end_iteration = false;
+			while (!end_iteration) // new iteration
 			{    
-				Console.WriteLine (this.Rank + ": ISplitterReduceCollector LOOP");
-				end_computation = true;
-
-				//Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE 1");
-				//Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK);  //****
-				//Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
-				//Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE 2");
-
-				// SEND TO SINK
-
-				IList<IKVPairInstance<OKey,OValue>> buffer_sink = new List<IKVPairInstance<OKey,OValue>>();
-
-				end_computation = !input_instance.has_next();
-
-				Thread thread_send_output = new Thread(new ThreadStart(delegate {
-					int count1 = 0;
-					while (output_instance.fetch_next (out bin_object)) 
-					{
-						IKVPairInstance<OKey,OValue> item = (IKVPairInstance<OKey,OValue>)bin_object;
-						buffer_sink.Add (item);
-						if (count1 % CHUNK_SIZE == 0) 
-						{
-							// PERFORM
-							Console.WriteLine (this.Rank + ": ISplitterReduceCollector SINK SEND CHUNK 3-1 count=" + count1);
-							Split_channel.Send (buffer_sink, sink_ref, TAG_SPLIT_NEW_CHUNK);
-							Console.WriteLine (this.Rank + ": ISplitterReduceCollector SINK SEND CHUNK 3-2 count=" + count1);
-							buffer_sink.Clear ();
-						}
-						count1++;
-					}
-					if (buffer_sink.Count >0)
-					{
-						Console.WriteLine (this.Rank + ": ISplitterReduceCollector SINK SEND CHUNK 3-3 count=" + count1);
-						Split_channel.Send (buffer_sink, sink_ref, TAG_SPLIT_NEW_CHUNK);
-						Console.WriteLine (this.Rank + ": ISplitterReduceCollector SINK SEND CHUNK 3-4 count=" + count1);
-					}
-				}));
-
-				thread_send_output.Start();
+				end_iteration = true;
 
 				// SEND BACK TO MAPPER (new iteration)
 
@@ -137,13 +68,14 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 				for (int i = 0; i < m_size; i++)
 					buffer [i] = new List<IKVPairInstance<OKey,OValue>> ();
 
-				Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE 3 end_computation=" + end_computation);
+				end_iteration = !input_instance.has_next();
+
+				Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK);
+				Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
 
 				int count = 0;
 				while (input_instance.fetch_next (out bin_object)) 
 				{
-					Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE LOOP 4-1 count=" + count);
-
 					IKVPairInstance<OKey,OValue> item = (IKVPairInstance<OKey,OValue>)bin_object;
 
 					this.Input_key_iterate.Instance = item.Key;
@@ -152,55 +84,35 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 					buffer [index].Add (item);
 
-					if (count % CHUNK_SIZE == 0) 
-					{
-						Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK);
-						Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
-
-						for (int i = 0; i < m_size; i++) 
-						{
-							Console.WriteLine ("SPLITTER REDUCE COLLECTOR - Sending chunk of " + buffer[i].Count + " elements");
-							Split_channel.Send (buffer [i], unit_ref [i], TAG_SPLIT_NEW_CHUNK);
-							buffer [i].Clear();
-						}
-						sync_perform.wait ();
-						Task_binding_split_next.invoke (ITaskPortAdvance.CHUNK_READY);
-						Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE 3-5");
-					}
-
-					Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE LOOP 4-2 count=" + count);
-
 					count++;
 				}
 
-				Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE 5");
+				for (int i = 0; i < m_size; i++) 
+				{
+					Split_channel.Send (buffer [i], unit_ref [i], TAG_SPLIT_NEW_CHUNK);
+					buffer [i].Clear();
+				}
+
+				sync_perform.wait ();
+
+				Task_binding_split_next.invoke (ITaskPortAdvance.CHUNK_READY);
 
 				Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK);
 				Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
 
 				// SEND REMAINING PAIRS AND CLOSES THE CHUNK LIST
-				Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE 6-1");
 				for (int i = 0; i < m_size; i++) 
 					Split_channel.Send (buffer [i], unit_ref [i], TAG_SPLIT_END_CHUNK);
 
 				sync_perform.wait ();
 
-				Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE 7-1");
 				Task_binding_split_next.invoke (ITaskPortAdvance.CHUNK_READY);
-
-				Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE 7-2");
-				thread_send_output.Join();
-
-				//sync_perform.wait ();
-
-				Console.WriteLine (this.Rank + ": ISplitterReduceCollector ITERATE 7-3");
 			}
 
 			Console.WriteLine (this.Rank + ": ISplitterReduceCollector END COMPUTATION ");
 
 			input_instance.finish ();
-			output_instance.finish ();
-			Split_channel.Send (new List<IKVPairInstance<OKey,OValue>>(), sink_ref, TAG_SPLIT_END_CHUNK);
 		}
+			
 	}
 }

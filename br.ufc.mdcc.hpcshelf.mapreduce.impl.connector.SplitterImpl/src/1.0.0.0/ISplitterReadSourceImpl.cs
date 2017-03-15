@@ -29,27 +29,15 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 		public override void main()
 		{
-			Console.WriteLine (this.Rank + ": SPLITTER 1 ");
 
 			IPortTypeIterator input_instance = (IPortTypeIterator) Source.Client;
 
-			// TODO: será que READ_SOURCE é necessária ???
-			Task_binding_data.TraceFlag = true;
-			Task_binding_data.invoke (ITaskPortData.READ_SOURCE);
-
-			Console.WriteLine (this.Rank + ": SPLITTER 2 ");
-
-			Source.startReadSource ();
-
-			Console.WriteLine (this.Rank + ": SPLITTER 3 ");
-
 			object bin_object = null;
 
-			// CALCULATE TARGETs
 			IDictionary<int,Tuple<int,int>> unit_ref = new Dictionary<int, Tuple<int,int>> ();
-			int nf = this.FacetMultiplicity [FACET_MAP];
 			int m_size = 0;
-			foreach (int i in this.FacetIndexes[FACET_MAP]) {   
+			foreach (int i in this.FacetIndexes[FACET_MAP]) 
+			{   
 				int nr0 = m_size;
 				m_size += this.UnitSizeInFacet [i] ["map_feeder"];
 				for (int k = 0, j = nr0; j < m_size; k++, j++)
@@ -61,11 +49,11 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 			Task_binding_split_first.TraceFlag = true;
 			Split_channel.TraceFlag = true;
 
-			Thread t_output = new Thread (new ThreadStart (delegate 
-				{
-					Task_binding_data.invoke (ITaskPortData.TERMINATE);
-					Task_binding_data.invoke (ITaskPortData.WRITE_SINK);
-				}));
+			//Thread t_output = new Thread (new ThreadStart (delegate 
+			//	{
+			//		Task_binding_data.invoke (ITaskPortData.TERMINATE);
+			//		Task_binding_data.invoke (ITaskPortData.WRITE_SINK);
+			//	}));
 
 			t_output.Start ();
 

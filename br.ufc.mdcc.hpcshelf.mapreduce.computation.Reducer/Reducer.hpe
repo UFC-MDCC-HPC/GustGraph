@@ -94,20 +94,22 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="feed_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
+    <innerComponent localRef="feed_pairs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/EnvironmentBindingBaseDirect.hpe" multiple="false" name="EnvironmentBindingBaseDirect" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
       <visualDescription h="60" w="112" x="457" y="378">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C0"/>
       <unitBounds parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="collect_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
+    <innerComponent localRef="collect_pairs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/EnvironmentBindingBaseDirect.hpe" multiple="false" name="EnvironmentBindingBaseDirect" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
       <visualDescription h="60" w="111" x="63" y="265">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="server_port_type" varName="S0"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
       <unitBounds parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>

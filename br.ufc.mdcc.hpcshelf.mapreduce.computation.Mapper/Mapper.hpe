@@ -5,6 +5,7 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <parameter componentRef="input_key_type" formFieldId="input_key_type" order="1" variance="contravariant" varName="IKey"/>
@@ -62,7 +63,7 @@
         </unitBounds>
       </port>
       <port localRef="input_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-        <visualDescription h="60" w="100" x="32" y="242">
+        <visualDescription h="60" w="100" x="52" y="264">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -73,7 +74,7 @@
         <visualDescription h="69" w="188" x="657" y="210">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###722165796"/>
+        <parameter formFieldId="item_type" varName="X###2037363955"/>
         <unitBounds parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -88,22 +89,24 @@
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="TAdvance"/>
       <unitBounds parallel="true" uRef="peer">
-        <visualDescription h="20" w="20" x="5" y="2"/>
+        <visualDescription h="20" w="20" x="76" y="20"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="collect_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
+    <innerComponent localRef="collect_pairs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/EnvironmentBindingBaseDirect.hpe" multiple="false" name="EnvironmentBindingBaseDirect" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
       <visualDescription h="72" w="118" x="58" y="414">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
+      <parameter formFieldId="server_port_type" varName="S0"/>
       <unitBounds parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="46" y="8"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="feed_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
+    <innerComponent localRef="feed_pairs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/EnvironmentBindingBaseDirect.hpe" multiple="false" name="EnvironmentBindingBaseDirect" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
       <visualDescription h="81" w="100" x="554" y="372">
         <color b="255" g="255" r="255"/>
       </visualDescription>
+      <parameter formFieldId="client_port_type" varName="C0"/>
       <parameter formFieldId="server_port_type" varName="S"/>
       <unitBounds parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="5" y="2"/>
@@ -153,7 +156,7 @@
     <supplyParameter cRef="mapper_port_type_client" direct="true" varName="C"/>
     <supplyParameter cRef="mapper_port_type_server" direct="true" varName="S"/>
     <supplyParameter cRef="task_port_type_advance" direct="true" varName="TAdvance"/>
-    <innerComponent localRef="C###722165796" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###2037363955" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="93" y="410">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -163,13 +166,13 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###722165796" varName="X###722165796"/>
-    <innerRenaming cNewName="map_value" cOldName="input_value" cRef="map_function"/>
+    <supplyParameter cRef="C###2037363955" varName="X###2037363955"/>
     <innerRenaming cNewName="map_key" cOldName="input_key" cRef="map_function"/>
     <innerRenaming cNewName="output" cOldName="output_data" cRef="map_function"/>
+    <innerRenaming cNewName="map_value" cOldName="input_value" cRef="map_function"/>
     <interface iRef="IMapper" nArgs="6">
       <slice isRef="feed_pairs">
-        <originRef cRef="feed_pairs" iRef="IBindingDirectMxNIterator"/>
+        <originRef cRef="feed_pairs" iRef="IBindingDirect"/>
         <visualDescription h="10" w="10" x="79" y="24"/>
       </slice>
       <slice isRef="collect_pairs">
@@ -206,7 +209,7 @@
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper/bin/1.0.0.0/BaseIMapper.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="99" x="74" y="157">
+      <visualDescription h="40" w="99" x="52" y="153">
         <color b="0" g="0" r="255"/>
       </visualDescription>
       <port name="feed_pairs">

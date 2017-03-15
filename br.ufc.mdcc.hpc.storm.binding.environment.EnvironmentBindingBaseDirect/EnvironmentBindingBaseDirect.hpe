@@ -23,6 +23,7 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <parameter componentRef="client_port_type" formFieldId="client_port_type" order="0" variance="invariant" varName="C"/>
@@ -58,7 +59,7 @@
           <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/bin/1.0.0.0/BaseIBindingDirect.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="80" x="96" y="95">
+      <visualDescription h="40" w="80" x="109" y="86">
         <color b="0" g="0" r="255"/>
       </visualDescription>
       <parameter iname="IEnvironmentPortTypeSinglePartner" order="0" parid="client_port_type" uname="environment_port_type" varid="C"/>

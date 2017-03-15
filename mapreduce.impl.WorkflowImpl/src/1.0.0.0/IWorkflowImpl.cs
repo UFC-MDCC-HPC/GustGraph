@@ -239,24 +239,25 @@ namespace mapreduce.impl.WorkflowImpl {
 					bag_of_tasks.Add(t1);
 					t1.Start();
 
-					Thread t2 = new Thread((ThreadStart)delegate() 
-						{ 
-							Console.WriteLine ("INVOKE SPLITTER NEXT READ_CHUNK");
-							Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK);
-							Console.WriteLine ("INVOKE SPLITTER NEXT PERFORM");
-							Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM);
-							Console.WriteLine ("INVOKE SPLITTER NEXT READ_CHUNK/PERFORM - AFTER");
+					//Thread t2 = new Thread((ThreadStart)delegate() 
+					//	{ 
+							// Heron: aparentemente não faz sentido ...
+							//Console.WriteLine ("INVOKE SPLITTER NEXT READ_CHUNK");
+							//Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK);
+							//Console.WriteLine ("INVOKE SPLITTER NEXT PERFORM");
+							//Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM);
+							//Console.WriteLine ("INVOKE SPLITTER NEXT READ_CHUNK/PERFORM - AFTER");
 
 							IActionFuture future_split_next_chunk_ready_ = null;
 							Task_binding_split_next.invoke (ITaskPortAdvance.CHUNK_READY, out future_split_next_chunk_ready_);
 							action_id_split_next_chunk_ready = future_split_next_chunk_ready_.GetHashCode ();
 							future_iteration.addAction(future_split_next_chunk_ready_);
-						});
+					//	});
 
 					Console.WriteLine ("THREAD LAUNCHED 1");
 
-					bag_of_tasks.Add(t2);
-					t2.Start();
+					//bag_of_tasks.Add(t2);
+					//t2.Start();
 
 					Console.WriteLine ("THREAD LAUNCHED 5");
 				}	

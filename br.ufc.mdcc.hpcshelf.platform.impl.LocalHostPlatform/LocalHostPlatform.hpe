@@ -46,7 +46,7 @@
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.platform.impl.LocalHostPlatform/bin/1.0.0.0/BaseIProcessingNodeImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
         </file>
-        <file contents="http://localhost:8081/BackEnd.asmx&#xA;4" name="platform.settings" srcType="platform.settings" uri="br.ufc.mdcc.hpcshelf.platform.impl.LocalHostPlatform/bin/1.0.0.0/platform.dll" versionId="1.0.0.0"/>
+        <file contents="http://200.19.177.89:8001/backendservices/&#xA;1984" name="platform.settings" srcType="platform.settings" uri="br.ufc.mdcc.hpcshelf.platform.impl.LocalHostPlatform/bin/1.0.0.0/platform.dll" versionId="1.0.0.0"/>
       </sources>
       <visualDescription h="40" w="80" x="208" y="129">
         <color b="0" g="128" r="0"/>

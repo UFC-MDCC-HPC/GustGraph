@@ -23,6 +23,7 @@
   </header>
   <componentInfo>
     <parameter componentRef="server_port_type" formFieldId="server_port_type" order="0" variance="invariant" varName="S"/>
+    <parameter componentRef="client_port_type" formFieldId="client_port_type" order="0" variance="invariant" varName="C"/>
     <innerComponent localRef="client_port_type" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="124" y="144">
         <color b="255" g="255" r="255"/>
@@ -39,7 +40,6 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="client_port_type" direct="true" varName="C"/>
     <interface iRef="IBindingDirectMxNIterator" nArgs="1">
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator&#xA;{&#xA;&#x9;public interface BaseIBindingDirectMxNIterator&lt;S> : BaseIBindingDirect&lt;IPortTypeIterator,S>, ISynchronizerKind &#xA;&#x9;&#x9;where S:IPortTypeIterator&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIBindingDirectMxNIterator.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0/BaseIBindingDirectMxNIterator.dll" versionId="1.0.0.0">

@@ -8,7 +8,7 @@
   </header>
   <componentInfo>
     <parameter componentRef="platform_maintainer" formFieldId="platform_maintainer" order="3" variance="contravariant" varName="M"/>
-    <innerComponent localRef="reader" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
+    <innerComponent localRef="input_data" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
       <visualDescription h="60" w="100" x="233" y="383">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -48,8 +48,8 @@
     </innerComponent>
     <supplyParameter cRef="server_port_type" direct="true" varName="S"/>
     <interface iRef="IDataSource" nArgs="1">
-      <slice isRef="reader">
-        <originRef cRef="reader" iRef="IServerBase"/>
+      <slice isRef="input_data">
+        <originRef cRef="input_data" iRef="IServerBase"/>
         <visualDescription h="10" w="10" x="154" y="31"/>
       </slice>
       <slice isRef="platform_data_source">
@@ -71,9 +71,9 @@
       <visualDescription h="40" w="213" x="101" y="159">
         <color b="0" g="128" r="0"/>
       </visualDescription>
-      <port name="reader">
+      <port name="input_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="reader" sRef="reader"/>
+        <slice pRef="input_data" sRef="input_data"/>
       </port>
       <port name="platform_data_source">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -85,11 +85,11 @@
       </action>
     </interface>
     <unit facet="0" iRef="IDataSource" multiple="true" private="false" replica="0" uRef="data_source" visibleInterface="true">
-      <slices cRef="reader" inner_replica="0" slice_replica="0" uRef="server" sliceName="reader" transitive="false">
-        <visualDescription h="10" w="10" x="154" y="31"/>
-      </slices>
       <slices cRef="platform_data_source" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_data_source" transitive="false">
         <visualDescription h="10" w="10" x="20" y="23"/>
+      </slices>
+      <slices cRef="input_data" inner_replica="0" slice_replica="0" uRef="server" sliceName="input_data" transitive="false">
+        <visualDescription h="10" w="10" x="154" y="31"/>
       </slices>
       <visualDescription h="40" w="213" x="86" y="278"/>
     </unit>

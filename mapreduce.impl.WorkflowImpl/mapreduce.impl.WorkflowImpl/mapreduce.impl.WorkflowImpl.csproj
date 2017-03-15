@@ -42,6 +42,7 @@
     <Compile Include="..\src\1.0.0.0\IWorkflowImpl.cs">
       <Link>IWorkflowImpl.cs</Link>
     </Compile>
+    <Compile Include="EmptyClass.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
