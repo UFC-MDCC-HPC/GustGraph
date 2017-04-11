@@ -5,6 +5,7 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <parameter componentRef="input_key" formFieldId="input_key_type" order="0" variance="contravariant" varName="IKey"/>
@@ -15,7 +16,7 @@
       <visualDescription h="60" w="100" x="108" y="117">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -23,7 +24,7 @@
       <visualDescription h="60" w="100" x="59" y="275">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -32,7 +33,7 @@
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="item_type" varName="T"/>
-      <unitBounds parallel="false" uRef="iterator">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="iterator">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -40,7 +41,7 @@
       <visualDescription h="60" w="100" x="103" y="444">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -48,7 +49,7 @@
       <visualDescription h="60" w="100" x="162" y="536">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -58,7 +59,7 @@
       </visualDescription>
       <parameter formFieldId="value_type" varName="TValue"/>
       <parameter formFieldId="key_type" varName="TKey"/>
-      <unitBounds parallel="false" uRef="kv_pair">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="kv_pair">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>

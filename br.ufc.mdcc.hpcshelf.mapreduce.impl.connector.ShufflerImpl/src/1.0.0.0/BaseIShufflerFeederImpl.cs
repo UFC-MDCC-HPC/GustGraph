@@ -7,40 +7,50 @@ using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
-using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
 using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Data;
-using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvancePerform;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl 
 {
-	public abstract class BaseIShufflerFeederImpl<M0,TKey, TValue>: Synchronizer, BaseIShufflerFeeder<M0,TKey, TValue>
-		where M0:IMaintainer
+	public abstract class BaseIShufflerFeederImpl<TKey, TValue>: Synchronizer, BaseIShufflerFeeder<TKey, TValue>
 		where TKey:IData
 		where TValue:IData	
 	{
-		static protected int FACET_REDUCE = 0;
-		static protected int FACET_MAP = 1;
+		static protected int FACET_FEED = 0;
+		static protected int FACET_COLLECT = 1;
 
 
-		private ITaskPort<ITaskPortTypeAdvance> task_binding_shuffle = null;
-
-		public ITaskPort<ITaskPortTypeAdvance> Task_binding_shuffle
+		private ITaskPort<ITaskPortTypeAdvancePerform> task_binding_shuffle_perform = null;
+		public ITaskPort<ITaskPortTypeAdvancePerform> Task_binding_shuffle_perform
 		{
 			get
 			{
-				if (this.task_binding_shuffle == null)
-					this.task_binding_shuffle = (ITaskPort<ITaskPortTypeAdvance>) Services.getPort("task_binding_shuffle");
-				return this.task_binding_shuffle;
+				if (this.task_binding_shuffle_perform == null)
+					this.task_binding_shuffle_perform = (ITaskPort<ITaskPortTypeAdvancePerform>) Services.getPort("task_binding_shuffle_perform");
+				return this.task_binding_shuffle_perform;
 			}
 		}
 
+		private ITaskPort<ITaskPortTypeAdvanceChunkReady> task_binding_shuffle_chunk_ready = null;
+		public ITaskPort<ITaskPortTypeAdvanceChunkReady> Task_binding_shuffle_chunk_ready
+		{
+			get
+			{
+				if (this.task_binding_shuffle_chunk_ready == null)
+					this.task_binding_shuffle_chunk_ready = (ITaskPort<ITaskPortTypeAdvanceChunkReady>) Services.getPort("task_binding_shuffle_chunk_ready");
+				return this.task_binding_shuffle_chunk_ready;
+			}
+		}
+
+
 		private IServerBase<IPortTypeIterator> feed_pairs = null;
 
-		protected IServerBase<IPortTypeIterator> Feed_pairs
+		public IServerBase<IPortTypeIterator> Feed_pairs
 		{
 			get
 			{

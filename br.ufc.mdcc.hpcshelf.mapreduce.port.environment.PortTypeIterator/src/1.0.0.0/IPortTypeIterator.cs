@@ -4,6 +4,8 @@ using System;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator
 {
+	public delegate void is_empty_delegate ();
+
 	public interface IPortTypeIterator : BaseIPortTypeIterator, IEnvironmentPortTypeMultiplePartner
 	{
 		ICloneable createItem ();
@@ -20,5 +22,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator
 		// After dequeing the next chunk item, the return is true if has_next() is true or false, otherwise.
 		// If the chunk is empty, an exception is thrown.
 		bool fetch_next (out object result);
+
+		is_empty_delegate IsEmptyAction { set; }
 	}
 }

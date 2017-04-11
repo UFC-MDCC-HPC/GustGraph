@@ -9,7 +9,7 @@
         <visualDescription h="60" w="100" x="206" y="188">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <unitBounds parallel="true" uRef="task_port_type">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="task_port_type">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -18,14 +18,27 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <interface iRef="ITaskPortTypeAdvanceImpl" nArgs="0">
+      <slice isRef="perform">
+        <originRef cRef="perform" iRef="IPerform"/>
+        <visualDescription h="10" w="10" x="10" y="24"/>
+      </slice>
+      <slice isRef="read_chunk">
+        <originRef cRef="read_chunk" iRef="IReadChunk"/>
+        <visualDescription h="10" w="10" x="51" y="25"/>
+      </slice>
+      <slice isRef="chunk_ready">
+        <originRef cRef="chunk_ready" iRef="IChunkReady"/>
+        <visualDescription h="10" w="10" x="120" y="25"/>
+      </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceImpl &#xA;{&#xA;&#x9;public abstract class BaseITaskPortTypeAdvanceImpl: br.ufc.pargo.hpe.kinds.Environment, BaseITaskPortTypeAdvance&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseITaskPortTypeAdvanceImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceImpl/bin/1.0.0.0/BaseITaskPortTypeAdvanceImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/BaseITaskPortType.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskPortType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceImpl&#xA;{&#xA;&#x9;public class ITaskPortTypeAdvanceImpl : BaseITaskPortTypeAdvanceImpl, ITaskPortTypeAdvance&#xA;&#x9;{&#xA;&#x9;&#x9;public override void on_initialize ()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;SETTING ADVANCE ACTIONS --- on_initialize of ITaskPortTypeAdvanceImpl&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;ActionDef.action_ids[ITaskPortAdvance.READ_CHUNK] = 20;&#xA;&#x9;&#x9;&#x9;ActionDef.action_ids[ITaskPortAdvance.PERFORM] = 21;&#xA;&#x9;&#x9;&#x9;ActionDef.action_ids[ITaskPortAdvance.CHUNK_READY] = 22;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="ITaskPortTypeAdvanceImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceImpl/bin/1.0.0.0/ITaskPortTypeAdvanceImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskPortType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceImpl&#xA;{&#xA;&#x9;public class ITaskPortTypeAdvanceImpl : BaseITaskPortTypeAdvanceImpl, ITaskPortTypeAdvance&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="ITaskPortTypeAdvanceImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceImpl/bin/1.0.0.0/ITaskPortTypeAdvanceImpl.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceImpl/bin/1.0.0.0/BaseITaskPortTypeAdvanceImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortType.dll</dependency>
         </file>

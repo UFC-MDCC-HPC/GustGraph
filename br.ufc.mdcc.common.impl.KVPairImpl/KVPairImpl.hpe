@@ -11,7 +11,7 @@
         </visualDescription>
         <parameter formFieldId="value_type" varName="V"/>
         <parameter formFieldId="key_type" varName="K"/>
-        <unitBounds parallel="false" uRef="kv_pair">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -20,13 +20,14 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <innerComponent localRef="key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="87" y="334">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -34,7 +35,7 @@
       <visualDescription h="60" w="100" x="201" y="383">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>

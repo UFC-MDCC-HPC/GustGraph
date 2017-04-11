@@ -10,23 +10,23 @@
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="input_key" varName="IPK"/>
-        <port localRef="input_key" location="br.ufc.mdcc.common.String/String.hpe" multiple="false" name="String" package="br.ufc.mdcc.common" exposed="true">
+        <port index_replica="0" localRef="input_key" location="br.ufc.mdcc.common.String/String.hpe" multiple="false" name="String" package="br.ufc.mdcc.common" exposed="true">
           <visualDescription h="60" w="100" x="104" y="63">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <unitBounds parallel="false" uRef="data">
+          <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <port localRef="output_key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="true">
+        <port index_replica="0" localRef="output_key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="true">
           <visualDescription h="60" w="100" x="168" y="459">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <unitBounds parallel="false" uRef="data">
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <unitBounds parallel="false" uRef="partition_function">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="partition_function">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -35,13 +35,14 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <innerComponent localRef="key_type" location="br.ufc.mdcc.common.String/String.hpe" multiple="false" name="String" package="br.ufc.mdcc.common" exposed="true">
       <visualDescription h="60" w="100" x="104" y="63">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -49,11 +50,11 @@
     <interface iRef="IPartitionStringKeyDefaultImpl" nArgs="1">
       <slice isRef="input_key">
         <originRef cRef="input_key" iRef="IData"/>
-        <visualDescription h="10" w="10" x="12" y="6"/>
+        <visualDescription h="10" w="10" x="24" y="26"/>
       </slice>
       <slice isRef="output_key">
         <originRef cRef="output_key" iRef="IInteger"/>
-        <visualDescription h="10" w="10" x="147" y="28"/>
+        <visualDescription h="10" w="10" x="130" y="24"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.common.String;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionStringKeyDefault { &#xA;&#xA;public abstract class BaseIPartitionStringKeyDefaultImpl&lt;TKey>: Computation, BaseIPartitionFunction&lt;TKey>&#xA;where TKey:IString&#xA;{&#xA;&#xA;private IInteger output_key = null;&#xA;&#xA;public IInteger Output_key {&#xA;&#x9;get {&#xA;&#x9;&#x9;if (this.output_key == null)&#xA;&#x9;&#x9;&#x9;this.output_key = (IInteger) Services.getPort(&quot;output_key&quot;);&#xA;&#x9;&#x9;return this.output_key;&#xA;&#x9;}&#xA;}&#xA;&#xA;private TKey input_key = default(TKey);&#xA;&#xA;public TKey Input_key {&#xA;&#x9;get {&#xA;&#x9;&#x9;if (this.input_key == null)&#xA;&#x9;&#x9;&#x9;this.input_key = (TKey) Services.getPort(&quot;input_key&quot;);&#xA;&#x9;&#x9;return this.input_key;&#xA;&#x9;}&#xA;}&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;}&#xA;" name="BaseIPartitionStringKeyDefaultImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionStringKeyDefault/bin/1.0.0.0/BaseIPartitionStringKeyDefaultImpl.dll" versionId="1.0.0.0">

@@ -5,6 +5,7 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <parameter componentRef="input_key_type" formFieldId="input_key_type" order="1" variance="contravariant" varName="TKey"/>
@@ -17,7 +18,7 @@
       <visualDescription h="60" w="163" x="101" y="125">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -25,7 +26,7 @@
       <visualDescription h="60" w="166" x="286" y="128">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -33,7 +34,7 @@
       <visualDescription h="60" w="201" x="490" y="127">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -41,7 +42,7 @@
       <visualDescription h="60" w="189" x="516" y="198">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -53,35 +54,35 @@
       <parameter formFieldId="input_key_type" varName="TKey"/>
       <parameter formFieldId="input_value_type" varName="TValue"/>
       <parameter formFieldId="output_key_type" varName="OKey"/>
-      <port localRef="continuation_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <port index_replica="0" localRef="continuation_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
         <visualDescription h="60" w="170" x="0" y="193">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <unitBounds parallel="false" uRef="data">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="161" y="22"/>
         </unitBounds>
       </port>
-      <port localRef="input_values" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+      <port index_replica="0" localRef="input_values" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
         <visualDescription h="60" w="181" x="64" y="390">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###1508788041"/>
+        <parameter formFieldId="value_type" varName="X###514869862"/>
         <parameter formFieldId="key_type" varName="TKey"/>
-        <unitBounds parallel="false" uRef="kv_pair">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
           <visualDescription h="20" w="20" x="137" y="20"/>
         </unitBounds>
       </port>
-      <port localRef="output_value" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+      <port index_replica="0" localRef="output_value" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
         <visualDescription h="60" w="100" x="318" y="98">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="value_type" varName="OValue"/>
         <parameter formFieldId="key_type" varName="OKey"/>
-        <unitBounds parallel="false" uRef="kv_pair">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
           <visualDescription h="20" w="20" x="7" y="21"/>
         </unitBounds>
       </port>
-      <unitBounds parallel="false" uRef="reduce_function">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="reduce_function">
         <visualDescription h="20" w="20" x="57" y="41"/>
       </unitBounds>
     </innerComponent>
@@ -90,7 +91,7 @@
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="TAdvance"/>
-      <unitBounds parallel="true" uRef="peer">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -98,9 +99,9 @@
       <visualDescription h="60" w="112" x="457" y="378">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="server_port_type" varName="S"/>
       <parameter formFieldId="client_port_type" varName="C0"/>
-      <unitBounds parallel="false" uRef="client_server">
+      <parameter formFieldId="server_port_type" varName="S"/>
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -108,9 +109,9 @@
       <visualDescription h="60" w="111" x="63" y="265">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="server_port_type" varName="S0"/>
       <parameter formFieldId="client_port_type" varName="C"/>
-      <unitBounds parallel="false" uRef="client_server">
+      <parameter formFieldId="server_port_type" varName="S0"/>
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -118,7 +119,7 @@
       <visualDescription h="60" w="100" x="401" y="99">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -126,7 +127,7 @@
       <visualDescription h="60" w="100" x="472" y="196">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -135,7 +136,7 @@
         <color b="203" g="192" r="255"/>
       </visualDescription>
       <parameter formFieldId="item_type" varName="OUT_REDUCE"/>
-      <unitBounds parallel="true" uRef="iterator">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="iterator">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -145,7 +146,7 @@
       </visualDescription>
       <parameter formFieldId="value_type" varName="OValue"/>
       <parameter formFieldId="key_type" varName="OKey"/>
-      <unitBounds parallel="false" uRef="kv_pair">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="kv_pair">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -155,7 +156,7 @@
       </visualDescription>
       <parameter formFieldId="value_type" varName="OValue"/>
       <parameter formFieldId="key_type" varName="OKey"/>
-      <unitBounds parallel="false" uRef="kv_pair">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="kv_pair">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -164,7 +165,7 @@
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="maintainer" varName="M"/>
-      <unitBounds parallel="true" uRef="node">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="node">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -172,7 +173,7 @@
       <visualDescription h="60" w="100" x="311" y="355">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="maintainer">
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="maintainer">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -180,7 +181,7 @@
       <visualDescription h="60" w="100" x="151" y="494">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="task_port_type">
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="task_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -189,23 +190,23 @@
     <supplyParameter cRef="output_item_ttype" direct="true" varName="OUTPUT_REDUCE"/>
     <supplyParameter cRef="output_item_type" direct="true" varName="OUT_REDUCE"/>
     <supplyParameter cRef="task_port_type_advance" direct="true" varName="TAdvance"/>
-    <innerComponent localRef="C###1508788041" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###514869862" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="152" x="455" y="455">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="item_type" varName="TValue"/>
-      <unitBounds parallel="false" uRef="iterator">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="iterator">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1508788041" varName="X###1508788041"/>
+    <supplyParameter cRef="C###514869862" varName="X###514869862"/>
     <interface iRef="IReducer" nArgs="6">
       <slice isRef="feed_pairs">
-        <originRef cRef="feed_pairs" iRef="IBindingDirectMxNIterator"/>
+        <originRef cRef="feed_pairs" iRef="IBindingDirect"/>
         <visualDescription h="10" w="10" x="69" y="14"/>
       </slice>
       <slice isRef="collect_pairs">
-        <originRef cRef="collect_pairs" iRef="IBindingDirectMxNIterator"/>
+        <originRef cRef="collect_pairs" iRef="IBindingDirect"/>
         <visualDescription h="10" w="10" x="46" y="26"/>
       </slice>
       <slice isRef="platform_reduce">

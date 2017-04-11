@@ -9,35 +9,35 @@
         <visualDescription h="60" w="100" x="104" y="200">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <port localRef="continuation_value" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="true">
+        <port index_replica="0" localRef="continuation_value" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="true">
           <visualDescription h="60" w="170" x="91" y="96">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <unitBounds parallel="false" uRef="data">
+          <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <port localRef="input_values" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+        <port index_replica="0" localRef="input_values" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
           <visualDescription h="60" w="181" x="64" y="390">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###1086242556"/>
+          <parameter formFieldId="value_type" varName="X###634706968"/>
           <parameter formFieldId="key_type" varName="TKey"/>
-          <unitBounds parallel="false" uRef="kv_pair">
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="137" y="20"/>
           </unitBounds>
         </port>
-        <port localRef="output_value" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+        <port index_replica="0" localRef="output_value" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
           <visualDescription h="60" w="100" x="310" y="411">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <parameter formFieldId="value_type" varName="OValue"/>
           <parameter formFieldId="key_type" varName="OKey"/>
-          <unitBounds parallel="false" uRef="kv_pair">
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="7" y="21"/>
           </unitBounds>
         </port>
-        <unitBounds parallel="false" uRef="reduce_function">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="reduce_function">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -46,6 +46,7 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <interface iRef="ITallierImpl" nArgs="0">

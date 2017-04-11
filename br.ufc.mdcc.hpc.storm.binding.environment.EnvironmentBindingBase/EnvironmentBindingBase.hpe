@@ -5,6 +5,7 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <parameter componentRef="client_port_type" formFieldId="client_port_type" order="0" variance="invariant" varName="C"/>
@@ -13,7 +14,7 @@
       <visualDescription h="87" w="181" x="66" y="403">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="environment_port_type">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="73" y="10"/>
       </unitBounds>
     </innerComponent>
@@ -21,7 +22,7 @@
       <visualDescription h="89" w="228" x="342" y="410">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="environment_port_type">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="1" parallel="false" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="43" y="8"/>
       </unitBounds>
     </innerComponent>
@@ -75,7 +76,7 @@
       </slices>
       <visualDescription h="40" w="80" x="107" y="219"/>
     </unit>
-    <unit facet="0" iRef="IServerBase" multiple="false" private="false" replica="0" uRef="server" visibleInterface="true">
+    <unit facet="1" iRef="IServerBase" multiple="false" private="false" replica="0" uRef="server" visibleInterface="true">
       <slices cRef="server_port_type" inner_replica="0" slice_replica="0" uRef="environment_port_type" sliceName="server_port_type" transitive="false">
         <visualDescription h="10" w="10" x="10" y="28"/>
       </slices>

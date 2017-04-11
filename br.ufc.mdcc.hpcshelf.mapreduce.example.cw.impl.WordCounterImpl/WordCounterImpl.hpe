@@ -9,32 +9,32 @@
         <visualDescription h="60" w="100" x="139" y="204">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <port localRef="input_key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
+        <port index_replica="0" localRef="input_key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
           <visualDescription h="60" w="100" x="118" y="401">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <unitBounds parallel="false" uRef="data">
+          <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <port localRef="input_value" location="br.ufc.mdcc.common.String/String.hpe" multiple="false" name="String" package="br.ufc.mdcc.common" exposed="false">
+        <port index_replica="0" localRef="input_value" location="br.ufc.mdcc.common.String/String.hpe" multiple="false" name="String" package="br.ufc.mdcc.common" exposed="false">
           <visualDescription h="60" w="100" x="395" y="331">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <unitBounds parallel="false" uRef="data">
+          <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <port localRef="output_data" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+        <port index_replica="0" localRef="output_data" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
           <visualDescription h="69" w="188" x="244" y="453">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###377240188"/>
-          <unitBounds parallel="false" uRef="iterator">
+          <parameter formFieldId="item_type" varName="X###228350845"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="iterator">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <unitBounds parallel="false" uRef="map_function">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="map_function">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -43,6 +43,7 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <interface iRef="IWordCounterImpl" nArgs="0">

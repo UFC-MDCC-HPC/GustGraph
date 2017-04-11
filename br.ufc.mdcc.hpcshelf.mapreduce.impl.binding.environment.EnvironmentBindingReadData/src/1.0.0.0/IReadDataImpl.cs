@@ -30,7 +30,17 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.EnvironmentBin
 		public override void after_initialize()
 		{
 			client = Input_pairs_iterator.newIteratorInstance ();
+			client.IsEmptyAction = ask_for_next_item;
+			startReadSource ();
 		}
+
+		private void ask_for_next_item()
+		{
+			e.Set ();
+		}
+
+		AutoResetEvent e = new AutoResetEvent(false);
+		AutoResetEvent server_ok = new AutoResetEvent(false);
 
 		public void startReadSource()
 		{
@@ -42,7 +52,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.EnvironmentBin
 		public IPortTypeIterator Client { get {	return client; } }
 		
 		private S server = default(S);
-		public S Server { set {	server = value; } }
+		public S Server { set {	server = value; server_ok.Set (); } }
 
 		private static int CHUNK_SIZE = 50;
 
@@ -53,14 +63,26 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.EnvironmentBin
 
 		private void file_reader()
 		{
+			server_ok.WaitOne ();
+
+			Console.WriteLine ("STARTING FILE READER - FETCHING NAMES");
+
 			if (file_name_list == null)
 				file_name_list = server.fetchFileNames ();
 
+			Console.WriteLine ("STARTING FILE READER - ENTER READING FILES");
+
 			foreach (string fn in file_name_list) 
 			{
+				Console.WriteLine ("FILE READER - READING FILE {0}", fn);
+
 				IEnumerable<string> file_line_list = server.fetchFileContents (fn);	
 				foreach (string line in file_line_list) 
 				{
+					e.WaitOne ();
+
+					Console.WriteLine ("FILE READER - READING LINE {0} of FILE {1}", fn, line);
+
 					IKVPairInstance<IInteger,IString> item = (IKVPairInstance<IInteger,IString>) client.createItem ();
 					((IIntegerInstance)item.Key).Value = counter_write_global;
 					((IStringInstance)item.Value).Value = line;
@@ -78,8 +100,14 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.EnvironmentBin
 				}
 			}
 
+			// CLOSE THE LAST CHUNK.
+			if (counter_write_chunk > 0)
+				client.finish ();
+
+			// SEND ITERATION TERMINATION CHUNK.
 			client.finish ();
 
+			// SEND COMPUTATION TERMINATION CHUNK.
 			client.finish ();
 
 			Console.WriteLine ("FINISHING READING DATA SOURCE");

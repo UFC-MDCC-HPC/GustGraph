@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Diagnostics;
 using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
+using br.ufc.mdcc.hpc.storm.binding.task.ActionType;
 
 namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 {
@@ -41,9 +42,9 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 
 		private RequestList synchronize_action(object action_id)
 		{
-			Console.WriteLine ("ActionDef.action_ids.Count = " + ActionDef.action_ids.Count);
+		//	Console.WriteLine ("ActionDef.action_ids.Count = " + ActionDef.action_ids.Count);
 
-			int value = ActionDef.action_ids[action_id];
+			int value = (int)action_id;
 			RequestList request_list = new RequestList ();
 
 			Trace.WriteLineIf(this.TraceFlag==true, this.ThisFacetInstance + "/" + this.Rank  + ": synchronize_action " + action_id + " -1");

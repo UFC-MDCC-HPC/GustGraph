@@ -7,8 +7,4 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.TaskPortType
 	{
 	}
 
-	public class ActionDef
-	{
-		public static IDictionary<object,int> action_ids = new Dictionary<object,int>();
-	}
 }

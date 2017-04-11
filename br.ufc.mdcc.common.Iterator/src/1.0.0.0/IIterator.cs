@@ -33,6 +33,8 @@ namespace br.ufc.mdcc.common.Iterator {
 		bool fetch_next (out object result);
 
 		bool has_next(); 
+
+		is_empty_delegate IsEmptyAction { set;}
 	}
 
 

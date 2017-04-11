@@ -11,6 +11,9 @@ using System.Diagnostics;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl
 {
@@ -24,6 +27,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl
 	{
 		public override void main()
 		{
+			// Collect_pairs.TraceFlag = true;	Output.TraceFlag = true; Task_map.TraceFlag = true;
+
 			Console.WriteLine (this.Rank + ": STARTING MAPPER ...1");
 			IIteratorInstance<IKVPair<IKey,IValue>> input_instance = (IIteratorInstance<IKVPair<IKey,IValue>>)Collect_pairs.Client;
 			Console.WriteLine (this.Rank + ": STARTING MAPPER ...2 " + (input_instance == null));
@@ -31,31 +36,30 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl
 			Console.WriteLine (this.Rank + ": STARTING MAPPER ...3");
 			Feed_pairs.Server = output_instance;
 
-			IActionFuture sync_perform;
-		
+			IActionFuture sync_perform;		
 
 			bool end_computation = false;
 			while (!end_computation) // next iteration
 			{  
-				bool finished_stream = false;
+				bool end_iteration = false;
 
 				Console.WriteLine (this.Rank + ": STARTING MAPPER ...4");
 
 				end_computation = true;
 
-				while (!finished_stream)  // take next chunk ...
+				while (!end_iteration)  // take next chunk ...
 				{        
 					Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 1");
 
-					Task_map.invoke (ITaskPortAdvance.READ_CHUNK);
-					Task_map.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+					Task_map.invoke (READ_CHUNK.name);
+					Task_map.invoke (PERFORM.name, out sync_perform);
 
 					Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 2");
 
 					object bin_object = null;
 
 					if (!input_instance.has_next ())
-						finished_stream = true;
+						end_iteration = true;
 					else
 						end_computation = false;
 
@@ -69,7 +73,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl
 						Map_key.Instance = bin.Key;
 						Map_value.Instance = bin.Value;
 						Map_function.go ();
-						Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 4");
+						//Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 4");
 					}
 
 					sync_perform.wait ();
@@ -80,7 +84,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl
 
 					Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 6");
 
-					Task_map.invoke (ITaskPortAdvance.CHUNK_READY);  //****
+					Task_map.invoke (CHUNK_READY.name);  //****
 					/* levando em conta que há sincronização pelos iteradores, talvez não haja necessidade de sincronizar o CHUNK_READY para o
 				     * shuffler começar a ler os pares */
 					Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 7");

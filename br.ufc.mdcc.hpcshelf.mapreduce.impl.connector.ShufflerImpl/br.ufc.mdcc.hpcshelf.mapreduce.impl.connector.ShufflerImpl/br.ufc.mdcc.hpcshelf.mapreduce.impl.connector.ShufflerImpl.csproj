@@ -81,10 +81,6 @@
       <Project>{816B876F-E438-4F9E-85D8-B98BCCE57044}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance.csproj">
-      <Project>{62252C8E-B7D2-493E-B84B-FD5A9F7FB725}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.kind.Binding\br.ufc.mdcc.hpc.storm.kind.Binding\br.ufc.mdcc.hpc.storm.kind.Binding.csproj">
       <Project>{75954E48-9C52-4F6D-8947-13E9D574FBEA}</Project>
       <Name>br.ufc.mdcc.hpc.storm.kind.Binding</Name>
@@ -124,6 +120,30 @@
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer.csproj">
       <Project>{F7ABD722-31F4-4ACC-B8B6-A14DDAEB022B}</Project>
       <Name>br.ufc.mdcc.hpcshelf.platform.Maintainer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvancePerform\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvancePerform\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvancePerform.csproj">
+      <Project>{3266CC03-1786-4F24-AD75-CCD75A3885D6}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvancePerform</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceReadChunk\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceReadChunk\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceReadChunk.csproj">
+      <Project>{FFC3C137-5860-41DE-AA3C-6673B4F1FEBC}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceReadChunk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady.csproj">
+      <Project>{F11ACCBE-2F11-497A-8F79-7F4D2CA2FE25}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType.csproj">
+      <Project>{A1632F8E-8F73-4C55-9AD5-D9DC487C0B7D}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType.csproj">
+      <Project>{DBE47941-F490-4F61-A8C5-4492FC4209A4}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType.csproj">
+      <Project>{2E673EB9-0B04-4503-A15F-498E8335311D}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

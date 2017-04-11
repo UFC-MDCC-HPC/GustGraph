@@ -97,6 +97,10 @@ namespace br.ufc.mdcc.common.impl.IteratorImpl
 			return r;  
 		}
 
+		private is_empty_delegate is_empty_action = null;
+
+		public is_empty_delegate IsEmptyAction { set { this.is_empty_action = value; } }
+
 		[NonSerialized]
 		private ConcurrentQueue<Option<object>> items = new ConcurrentQueue<Option<object>>();
 
@@ -120,7 +124,6 @@ namespace br.ufc.mdcc.common.impl.IteratorImpl
 			this.items.Enqueue(new None<object>());
 
 			lock (not_empty) { Monitor.Pulse(not_empty); }
-
 		}
 
 		public bool fetch_next (out object result)
@@ -129,8 +132,7 @@ namespace br.ufc.mdcc.common.impl.IteratorImpl
 
 			result = null;
 
-			while (items.IsEmpty)
-				lock (not_empty) { Monitor.Wait(not_empty); }
+			check_empty ();
 
 			Option<object> item;
 			items.TryDequeue(out item);
@@ -147,10 +149,23 @@ namespace br.ufc.mdcc.common.impl.IteratorImpl
 			return !has_finished;
 		}
 
-		public bool has_next()
+		private void check_empty()
 		{
 			while (items.IsEmpty)
-				lock (not_empty) { Monitor.Wait(not_empty); }
+				lock (not_empty) 
+				{
+					if (is_empty_action != null) 
+					{
+						Thread t = new Thread (new ThreadStart (is_empty_action));
+						t.Start ();
+					}
+					Monitor.Wait(not_empty); 
+				}
+		}
+
+		public bool has_next()
+		{
+			check_empty ();
 
 			Option<object> item;
 			items.TryPeek (out item);

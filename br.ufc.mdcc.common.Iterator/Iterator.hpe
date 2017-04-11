@@ -9,7 +9,7 @@
         <visualDescription h="60" w="100" x="323" y="135">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <unitBounds parallel="true" uRef="data">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -18,6 +18,7 @@
     <visualAttributes>
       <color b="203" g="192" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <parameter componentRef="item_factory" formFieldId="item_type" order="0" variance="contravariant" varName="T"/>
@@ -25,7 +26,7 @@
       <visualDescription h="60" w="134" x="90" y="255">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -33,7 +34,7 @@
       <visualDescription h="60" w="100" x="201" y="118">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -51,7 +52,7 @@
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using System;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;&#xA;&#xA;namespace br.ufc.mdcc.common.Iterator { &#xA;&#x9;&#xA;&#x9;public interface IIterator&lt;T> : IData, BaseIIterator&lt;T>&#xA;&#x9;&#x9;where T:IData&#xA;&#x9;{&#xA;&#x9;&#x9;IIteratorInstance&lt;T> newIteratorInstance();&#xA;&#x9;&#x9;object createItem ();&#xA;&#xA;&#x9;} // end main interface &#xA;&#xA;&#x9;public interface IIteratorInstance&lt;T> : IDataInstance, ICloneable, IPortTypeIterator&#xA;&#x9;&#x9;where T:IData&#xA;&#x9;{&#xA;&#x9;&#x9;// consumer:&#xA;&#x9;&#x9;ICloneable createItem ();&#xA;&#xA;&#x9;&#x9;// - raises exception if has finished&#xA;&#x9;&#x9;void put(object item);&#xA;&#xA;&#x9;&#x9;void putAll(IIteratorInstance&lt;T> items);&#xA;&#xA;&#x9;&#x9;// - raises exception if has finished and not restarted&#xA;&#x9;&#x9;void finish();&#xA;&#xA;&#x9;&#x9;// producer:&#xA;&#xA;&#x9;&#x9;// - raises exception if has finished&#xA;&#x9;&#x9;bool fetch_next (out object result);&#xA;&#xA;&#x9;&#x9;bool has_next(); &#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;} // end namespace &#xA;" name="IIterator.cs" srcType="user" uri="br.ufc.mdcc.common.Iterator/bin/1.0.0.0/IIterator.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using System;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;&#xA;&#xA;namespace br.ufc.mdcc.common.Iterator { &#xA;&#x9;&#xA;&#x9;public interface IIterator&lt;T> : IData, BaseIIterator&lt;T>&#xA;&#x9;&#x9;where T:IData&#xA;&#x9;{&#xA;&#x9;&#x9;IIteratorInstance&lt;T> newIteratorInstance();&#xA;&#x9;&#x9;object createItem ();&#xA;&#xA;&#x9;} // end main interface &#xA;&#xA;&#x9;public interface IIteratorInstance&lt;T> : IDataInstance, ICloneable, IPortTypeIterator&#xA;&#x9;&#x9;where T:IData&#xA;&#x9;{&#xA;&#x9;&#x9;// consumer:&#xA;&#x9;&#x9;ICloneable createItem ();&#xA;&#xA;&#x9;&#x9;// - raises exception if has finished&#xA;&#x9;&#x9;void put(object item);&#xA;&#xA;&#x9;&#x9;void putAll(IIteratorInstance&lt;T> items);&#xA;&#xA;&#x9;&#x9;// - raises exception if has finished and not restarted&#xA;&#x9;&#x9;void finish();&#xA;&#xA;&#x9;&#x9;// producer:&#xA;&#xA;&#x9;&#x9;// - raises exception if has finished&#xA;&#x9;&#x9;bool fetch_next (out object result);&#xA;&#xA;&#x9;&#x9;bool has_next(); &#xA;&#xA;&#x9;&#x9;is_empty_delegate IsEmptyAction { set;}&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;} // end namespace &#xA;" name="IIterator.cs" srcType="user" uri="br.ufc.mdcc.common.Iterator/bin/1.0.0.0/IIterator.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.common.Iterator/bin/1.0.0.0/BaseIIterator.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>

@@ -53,6 +53,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		public const int GATHER_FLATTENED = 17;
 		public const int REDUCE = 18;
 		public const int REDUCE_ARRAY = 19;
+		public const int SYNC_SEND = 20; 
 	};
 
 	public interface Aliencommunicator

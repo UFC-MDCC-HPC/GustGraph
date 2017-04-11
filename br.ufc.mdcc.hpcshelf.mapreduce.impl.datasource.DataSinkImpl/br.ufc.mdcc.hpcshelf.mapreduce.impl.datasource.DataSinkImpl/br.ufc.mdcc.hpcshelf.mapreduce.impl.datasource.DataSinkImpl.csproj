@@ -35,7 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="DGAC">
-      <HintPath>..\..\..\..\..\..\..\..\usr\lib\mono\DGAC\DGAC.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\opt\mono-4.2.2\lib\mono\DGAC\DGAC.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +76,10 @@
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer.csproj">
       <Project>{F7ABD722-31F4-4ACC-B8B6-A14DDAEB022B}</Project>
       <Name>br.ufc.mdcc.hpcshelf.platform.Maintainer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.impl.IteratorImpl\br.ufc.mdcc.common.impl.IteratorImpl\br.ufc.mdcc.common.impl.IteratorImpl.csproj">
+      <Project>{BCB96804-B787-4ED7-BB0F-127F3649E5D7}</Project>
+      <Name>br.ufc.mdcc.common.impl.IteratorImpl</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

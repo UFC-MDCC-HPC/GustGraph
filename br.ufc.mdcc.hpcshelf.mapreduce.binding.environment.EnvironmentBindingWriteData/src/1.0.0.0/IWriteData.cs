@@ -5,9 +5,9 @@ using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingWriteData
 {
-	public interface IWriteData<S> : BaseIWriteData<S>, IBindingDirect<IPortTypeIterator,S>
-		where S:IPortTypeDataSinkInterface
+	public interface IWriteData<S> : BaseIWriteData<S>, IBindingDirect<IPortTypeDataSinkInterface,S>
+		where S:IPortTypeIterator
 	{
-		void startWriteSink();
+		
 	}
 }

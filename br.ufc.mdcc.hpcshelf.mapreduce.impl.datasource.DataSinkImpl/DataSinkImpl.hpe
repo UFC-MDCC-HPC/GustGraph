@@ -10,29 +10,26 @@
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="platform_maintainer" varName="M"/>
-        <port localRef="collect_pairs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
-          <visualDescription h="60" w="187" x="252" y="356">
+        <port index_replica="0" localRef="output_data" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/EnvironmentBindingBaseDirect.hpe" multiple="false" name="EnvironmentBindingBaseDirect" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
+          <visualDescription h="60" w="187" x="238" y="357">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###1931862837"/>
-          <parameter formFieldId="server_port_type" varName="X###1013442466"/>
-          <unitBounds parallel="false" uRef="client">
-            <visualDescription h="20" w="20" x="5" y="2"/>
-          </unitBounds>
-          <unitBounds parallel="false" uRef="server">
-            <visualDescription h="20" w="20" x="28" y="2"/>
+          <parameter formFieldId="client_port_type" varName="X###1360297715"/>
+          <parameter formFieldId="server_port_type" varName="X###1390072891"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
+            <visualDescription h="20" w="20" x="51" y="2"/>
           </unitBounds>
         </port>
-        <port localRef="platform_data_sink" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
+        <port index_replica="0" localRef="platform_data_sink" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
           <visualDescription h="60" w="100" x="121" y="454">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <parameter formFieldId="maintainer" varName="M"/>
-          <unitBounds parallel="true" uRef="node">
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="node">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <unitBounds parallel="true" uRef="data_sink">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="data_sink">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -41,13 +38,14 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <innerComponent localRef="out" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
       <visualDescription h="60" w="100" x="424" y="274">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -55,7 +53,7 @@
       <visualDescription h="60" w="100" x="587" y="493">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="platform">
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="platform">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -63,7 +61,7 @@
       <visualDescription h="60" w="100" x="475" y="596">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -71,7 +69,7 @@
       <visualDescription h="60" w="100" x="90" y="234">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="data_host">
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="data_host">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -80,23 +78,23 @@
     <supplyParameter cRef="s" direct="true" varName="S"/>
     <supplyParameter cRef="maintainer" direct="true" varName="M"/>
     <interface iRef="IDataSinkImpl" nArgs="1">
-      <slice isRef="collect_pairs">
-        <originRef cRef="collect_pairs" iRef="IClientBase"/>
-        <visualDescription h="10" w="10" x="87" y="24"/>
-      </slice>
       <slice isRef="platform_data_sink">
         <originRef cRef="platform_data_sink" iRef="IProcessingNode"/>
         <visualDescription h="10" w="10" x="22" y="22"/>
       </slice>
+      <slice isRef="output_data">
+        <originRef cRef="output_data" iRef="IBindingDirect"/>
+        <visualDescription h="10" w="10" x="87" y="24"/>
+      </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataSinkImpl&lt;P>: Computation, BaseIDataSink&lt;P>&#xA;&#x9;&#x9;where P:IMaintainer&#xA;&#x9;{&#xA;&#x9;&#x9;private P platform = default(P);&#xA;&#xA;&#x9;&#x9;protected P Platform&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform = (P) Services.getPort(&quot;platform&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IClientBase&lt;IPortTypeDataSinkInterface> output_data = null;&#xA;&#xA;&#x9;&#x9;protected IClientBase&lt;IPortTypeDataSinkInterface> Output_data&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_data == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_data = (IClientBase&lt;IPortTypeDataSinkInterface>) Services.getPort(&quot;output_data&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_data;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataSinkImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0/BaseIDataSinkImpl.dll" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataSinkImpl&lt;P>: Computation, BaseIDataSink&lt;P>&#xA;&#x9;&#x9;where P:IMaintainer&#xA;&#x9;{&#xA;&#x9;&#x9;private P platform_sink = default(P);&#xA;&#xA;&#x9;&#x9;protected P Platform_sink&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform_sink == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform_sink = (P) Services.getPort(&quot;platform_sink&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform_sink;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IClientBase&lt;IPortTypeDataSinkInterface> output_data = null;&#xA;&#xA;&#x9;&#x9;protected IClientBase&lt;IPortTypeDataSinkInterface> Output_data&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_data == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_data = (IClientBase&lt;IPortTypeDataSinkInterface>) Services.getPort(&quot;output_data&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_data;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataSinkImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0/BaseIDataSinkImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface/bin/1.0.0.0/IPortTypeDataSinkInterface.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/BaseIDataSink.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink;&#xA;using System.Collections.Generic;&#xA;using System.IO;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;          &#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl&#xA;{&#xA;&#x9;public class IDataSinkImpl&lt;P> : BaseIDataSinkImpl&lt;P>, IDataSink&lt;P>&#xA;    where P:IMaintainer&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Output_data.Server = new DataSinkWriter();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private static string PATH_TEXT_FILES_WORD_COUNTER_OUTPUT = &quot;PATH_TEXT_FILES_WORD_COUNTER_OUTPUT&quot;;&#xA;&#xA;&#x9;&#x9;private class DataSinkWriter : IPortTypeDataSinkInterface&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;public void resetOutput() &#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;string path = System.Environment.GetEnvironmentVariable (PATH_TEXT_FILES_WORD_COUNTER_OUTPUT);&#xA;&#x9;&#x9;&#x9;&#x9;File.Delete (path);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;public void writeLines(IEnumerable&lt;string> pairs)&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;string path = System.Environment.GetEnvironmentVariable (PATH_TEXT_FILES_WORD_COUNTER_OUTPUT);&#xA;&#x9;&#x9;&#x9;&#x9;File.AppendAllLines(path, pairs);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;public IEnumerable&lt;string> readOutput()&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;string path = System.Environment.GetEnvironmentVariable (PATH_TEXT_FILES_WORD_COUNTER_OUTPUT);&#xA;&#x9;&#x9;&#x9;&#x9;return File.ReadAllLines (path);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IDataSinkImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0/IDataSinkImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink;&#xA;using System.Collections.Generic;&#xA;using System.IO;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using System.Collections;&#xA;using System.Collections.Concurrent;&#xA;using System.Threading;&#xA;          &#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl&#xA;{&#xA;&#x9;public class IDataSinkImpl&lt;P> : BaseIDataSinkImpl&lt;P>, IDataSink&lt;P>&#xA;    where P:IMaintainer&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;//Output_data.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;IDataSink: START 1&quot;);&#xA;&#x9;&#x9;&#x9;IPortTypeDataSinkInterface pair_reader = Output_data.Client;&#xA;&#x9;&#x9;&#x9;ConcurrentQueue&lt;Tuple&lt;string,int>> pairs = pair_reader.readCounts();&#xA;&#x9;&#x9;&#x9;Semaphore not_empty = pair_reader.NotEmpty;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;IDataSink: BEFORE LOOP&quot;);&#xA;&#x9;&#x9;&#x9;bool terminate = false;&#xA;&#x9;&#x9;&#x9;Tuple&lt;string,int> pair;&#xA;&#x9;&#x9;&#x9;do &#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;not_empty.WaitOne ();&#xA;&#x9;&#x9;&#x9;&#x9;pairs.TryDequeue (out pair);&#xA;&#x9;&#x9;&#x9;&#x9;if (pair.Item2 > 0)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (&quot;{0}: {1}&quot;, pair.Item1, pair.Item2);&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;} while (pair.Item2 > 0);&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;IDataSink: FINISH&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IDataSinkImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0/IDataSinkImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0/BaseIDataSinkImpl.dll</dependency>
@@ -106,13 +104,13 @@
       <visualDescription h="40" w="174" x="99" y="125">
         <color b="0" g="128" r="0"/>
       </visualDescription>
-      <port name="collect_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="collect_pairs"/>
-      </port>
       <port name="platform_data_sink">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_data_sink" sRef="platform_data_sink"/>
+      </port>
+      <port name="output_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_data" sRef="output_data"/>
       </port>
       <parameter iname="IDataHost" order="0" parid="platform_maintainer" uname="data_host" varid="M"/>
       <action id="main">

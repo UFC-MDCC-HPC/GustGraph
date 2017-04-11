@@ -13,6 +13,9 @@ using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using System.Collections.Generic;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 {
@@ -35,6 +38,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 
 		private void readPair_OMK_OMVs() 	
 		{
+		//	Collect_pairs.TraceFlag = true;	Feed_pairs.TraceFlag = true;Task_reduce.TraceFlag = true;
+
 			Console.WriteLine (this.Rank + ": REDUCE 1");
 
 			IIteratorInstance<IKVPair<TKey, IIterator<TValue>>> input_instance = (IIteratorInstance<IKVPair<TKey, IIterator<TValue>>>)Collect_pairs.Client;
@@ -46,8 +51,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 			// TODO: Dividir em chunks a saa de pares (OKey,OValue)
 
 			Console.WriteLine (this.Rank + ": REDUCER 2");
-
-//			object reduce_lock = new object ();
 
 			bool end_computation = false;
 			while (!end_computation)    // new iteration
@@ -63,8 +66,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 				{          
 					Console.WriteLine (this.Rank + ": REDUCER ITERATE 1");
 
-					Task_reduce.invoke (ITaskPortAdvance.READ_CHUNK);
-					Task_reduce.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+					Task_reduce.invoke (READ_CHUNK.name);
+					Task_reduce.invoke (PERFORM.name, out sync_perform);
 
 					Console.WriteLine (this.Rank + ": REDUCER ITERATE 2");
 
@@ -79,7 +82,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 					int count=0;
 					while (input_instance.fetch_next (out kvpair_object)) 
 					{
-						Console.WriteLine (this.Rank + ": REDUCER ITERATE INNER LOOP 3 count=" + count);
+//						Console.WriteLine (this.Rank + ": REDUCER ITERATE INNER LOOP 3 count=" + count);
 
 						kvpair = (IKVPairInstance<TKey, IIterator<TValue>>)kvpair_object;
 
@@ -105,10 +108,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 
 				Console.WriteLine (this.Rank + ": REDUCER ITERATE END ITERATION");
 
-				int chunk_counter = 1;
-
 				IActionFuture reduce_chunk_ready;
-				Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out reduce_chunk_ready);  //***
+				Task_reduce.invoke (CHUNK_READY.name, out reduce_chunk_ready);  //***
 
 				foreach (KeyValuePair<object,object> output_pair in cont_dict) 
 				{					
@@ -119,11 +120,15 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 				}
 
 				output_instance.finish ();
-
 				reduce_chunk_ready.wait ();
+
+				output_instance.finish ();
+				Task_reduce.invoke (CHUNK_READY.name);
 
 				Console.WriteLine (this.Rank + ": REDUCER ITERATE FINISH");
 			}
+
+			output_instance.finish ();
 
 			Console.WriteLine (this.Rank + ": REDUCER FINISH ... ");
 		}

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009344522cf374a2f9e7f9c8d3e50a076974d4f2e7e6d7ffb0f8c225c89f5538221b2d873bbedb4ab76e524861b4ff0a3b3283da3b318205d4947e298215176808d73b771c7f544a2cb07615466fe0dca08ca9b8e00510ddfbc0cd8b3d1ce8f579a9de0e744aa4ce02a76b28a5560088a6d6c027500a23721e33a7c1b53055a0da" isAbstract="true" kind="Data" name="Set" packagePath="br.ufc.mdcc.common">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cd61f3041880026ff64d2a34e15a12a3e49c7bed4545b4754b99df6df8880e1cb02044205235ae968fdd22641f0f8572634db1abea8f0720c23d958c1381e7a303a7de0db7471d12d4391c5a8b4bed63c5d087f2b0d06c73ec4ff958cac96dd071b4f7b93635f025fcabfa296ead8f8fef682c689e811f1e14d88aeae0c13f8f" isAbstract="true" kind="Data" name="Set" packagePath="br.ufc.mdcc.common">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000013c5d956e8ca7627c1fe8513efbb0bec405dff82347769461c6ae03bfa16c10e2d46b08e13add22a3b1c2fb521aa3167f6131ba6e14496e7958c784dd4b8d168fa8fb30602fe38ea801a0431f68c465cacba41bf2248242d7ab3062f69f7a6f3472bf7b8ea2fc28b9cf97410164ea497517d49779c2c5932dfaed53a4b479d80" localRef="base" location="br.ufc.mdcc.common.Data/Data.hpe" name="Data" package="br.ufc.mdcc.common" version="1.0.0.0">
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002b679e8f63c6925bfcc928a7cc3013906b15c175a4e98fab23a035f735fa6c0ad73ed2eae507a31345dd1d315a36138fc3377a2b0953350e14b7cf31e6b06c33f4f4ee03b53200f4bfdbaab49b63edb35bda74c698665df952a90b9df4bdf2e6bc62129a9da0a4ba4ee78fb225d5b4353e96afd6e47927b6943bf6ace9cf0cb0" localRef="base" location="br.ufc.mdcc.common.Data/Data.hpe" name="Data" package="br.ufc.mdcc.common" version="1.0.0.0">
         <visualDescription h="60" w="100" x="361" y="345">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <unitBounds parallel="false" uRef="data">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -18,6 +18,7 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <parameter componentRef="item_factory" formFieldId="value_type" order="0" variance="contravariant" varName="T"/>
@@ -25,7 +26,7 @@
       <visualDescription h="60" w="100" x="196" y="336">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>

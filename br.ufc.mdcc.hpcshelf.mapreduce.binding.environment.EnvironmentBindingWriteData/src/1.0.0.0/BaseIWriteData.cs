@@ -7,8 +7,8 @@ using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingWriteData
 {
-	public interface BaseIWriteData<S> : BaseIBindingDirect<IPortTypeIterator,S>, ISynchronizerKind 
-		where S:IPortTypeDataSinkInterface
+	public interface BaseIWriteData<S> : BaseIBindingDirect<IPortTypeDataSinkInterface,S>, ISynchronizerKind 
+		where S:IPortTypeIterator
 	{
 	}
 }

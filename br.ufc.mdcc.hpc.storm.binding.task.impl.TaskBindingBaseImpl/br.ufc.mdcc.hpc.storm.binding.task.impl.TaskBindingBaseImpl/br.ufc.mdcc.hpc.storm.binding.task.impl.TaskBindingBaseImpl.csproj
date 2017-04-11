@@ -64,5 +64,9 @@
       <Project>{75954E48-9C52-4F6D-8947-13E9D574FBEA}</Project>
       <Name>br.ufc.mdcc.hpc.storm.kind.Binding</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.task.ActionType\br.ufc.mdcc.hpc.storm.binding.task.ActionType\br.ufc.mdcc.hpc.storm.binding.task.ActionType.csproj">
+      <Project>{82E10F73-80D6-4209-BFC9-3EBE92806395}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.task.ActionType</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

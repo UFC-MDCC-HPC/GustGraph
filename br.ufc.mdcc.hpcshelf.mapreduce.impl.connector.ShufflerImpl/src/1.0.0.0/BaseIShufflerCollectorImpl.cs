@@ -8,27 +8,26 @@ using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
 using br.ufc.mdcc.common.Integer;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
-using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;
 using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;
-using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvancePerform;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceReadChunk;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl 
 {
-	public abstract class BaseIShufflerCollectorImpl<M0,TKey,TValue,PF>: Synchronizer, BaseIShufflerCollector<M0,TKey,TValue,PF>
-		where M0:IMaintainer
+	public abstract class BaseIShufflerCollectorImpl<TKey,TValue,PF>: Synchronizer, BaseIShufflerCollector<TKey,TValue,PF>
 		where PF:IPartitionFunction<TKey>
 		where TKey:IData
 		where TValue:IData
 	{
-		static protected int FACET_REDUCE = 0;
-		static protected int FACET_MAP = 1;
+		static protected int FACET_FEED = 0;
+		static protected int FACET_COLLECT = 1;
 
 		private IClientBase<IPortTypeIterator> collect_pairs = null;
 
-		protected IClientBase<IPortTypeIterator> Collect_pairs
+		public IClientBase<IPortTypeIterator> Collect_pairs
 		{
 			get
 			{
@@ -38,15 +37,25 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 			}
 		}
 
-		private ITaskPort<ITaskPortTypeAdvance> task_binding_shuffle = null;
-
-		public ITaskPort<ITaskPortTypeAdvance> Task_binding_shuffle
+		private ITaskPort<ITaskPortTypeAdvancePerform> task_binding_shuffle_perform = null;
+		public ITaskPort<ITaskPortTypeAdvancePerform> Task_binding_shuffle_perform
 		{
 			get
 			{
-				if (this.task_binding_shuffle == null)
-					this.task_binding_shuffle = (ITaskPort<ITaskPortTypeAdvance>) Services.getPort("task_binding_shuffle");
-				return this.task_binding_shuffle;
+				if (this.task_binding_shuffle_perform == null)
+					this.task_binding_shuffle_perform = (ITaskPort<ITaskPortTypeAdvancePerform>) Services.getPort("task_binding_shuffle_perform");
+				return this.task_binding_shuffle_perform;
+			}
+		}
+
+		private ITaskPort<ITaskPortTypeAdvanceReadChunk> task_binding_shuffle_read_chunk = null;
+		public ITaskPort<ITaskPortTypeAdvanceReadChunk> Task_binding_shuffle_read_chunk
+		{
+			get
+			{
+				if (this.task_binding_shuffle_read_chunk == null)
+					this.task_binding_shuffle_read_chunk = (ITaskPort<ITaskPortTypeAdvanceReadChunk>) Services.getPort("task_binding_shuffle_read_chunk");
+				return this.task_binding_shuffle_read_chunk;
 			}
 		}
 

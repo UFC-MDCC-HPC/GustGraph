@@ -20,13 +20,14 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 	public class IChannelRootImpl : BaseIChannelRootImpl, IChannelRoot
 	{
 		public const int TAG_SEND_OPERATION = 999;
-			
+		public const int TAG_REPLY = 998;
+
 		private IDictionary<int,Thread> thread_receive_requests = null;
 
 		#region implemented abstract members of BindingRoot
 		public override void server ()
 		{
-			this.TraceFlag = true;
+			//this.TraceFlag = true;
 
 			Trace.WriteLineIf(this.TraceFlag==true, this.GlobalRank + ": BEFORE CREATE SOCKETS !!! " + this.ThisFacet + " / " + this.ThisFacetInstance + " : " + this.CID.getInstanceName());
 
@@ -44,7 +45,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 			foreach (int facet in this.Facet.Keys) 
 			{
 				if (facet != this.ThisFacetInstance)
-			    {
+				{
 					Trace.WriteLineIf(this.TraceFlag==true, "loop create thread_receive_requests: " + facet + " / " + this.ThisFacetInstance);
 					Socket server_socket = server_socket_facet [facet];
 					thread_receive_requests[facet] = new Thread (new ThreadStart (() => synchronizer_monitor.serverReceiveRequests(facet, server_socket)));
@@ -64,7 +65,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 		public override void client ()
 		{
-			this.TraceFlag = true;
+			// this.TraceFlag = true;
 
 			//while (!sockets_initialized_flag)	Thread.Sleep (100);
 			sockets_initialized_flag.WaitOne ();
@@ -72,7 +73,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 			Trace.WriteLineIf(this.TraceFlag==true, "GO LISTEN WORKERS !!!");
 			while (true) 
 			{
-			   listen_worker ();
+				listen_worker ();
 			}
 		}
 		#endregion
@@ -144,9 +145,6 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 		{
 			FacetAccess facet_acess_server = this.Facet [ThisFacetInstance];
 
-			IPHostEntry ipHostInfo_server = Dns.Resolve(Dns.GetHostName());
-			IPAddress ipAddress_server = ipHostInfo_server.AddressList [0];
-
 			foreach (KeyValuePair<int, FacetAccess> facet_access_client in this.Facet)
 			{
 				int facet_instance = facet_access_client.Key;
@@ -161,7 +159,10 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 					Trace.WriteLineIf (this.TraceFlag == true, "CREATE SOCKETS - end_point_client[" + facet_instance + "]=" + endPoint_client);
 
+					string ip_address_server = facet_acess_server.ip_address;
 					int port_server = facet_acess_server.port + facet_instance;
+					IPHostEntry ipHostInfo_server = Dns.GetHostEntry (ip_address_server);
+					IPAddress ipAddress_server = ipHostInfo_server.AddressList [0];
 					IPEndPoint endPoint_server = new IPEndPoint (ipAddress_server, port_server);
 					end_point_server [facet_instance] = endPoint_server;
 
@@ -169,11 +170,11 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 					// Create a TCP/IP client socket.
 					Socket client_socket = new Socket (AddressFamily.InterNetwork, 
-						                       SocketType.Stream, System.Net.Sockets.ProtocolType.Tcp);
+						SocketType.Stream, System.Net.Sockets.ProtocolType.Tcp);
 
 					// Create a TCP/IP server socket.
 					Socket server_socket = new Socket (AddressFamily.InterNetwork, 
-						                       SocketType.Stream, System.Net.Sockets.ProtocolType.Tcp);
+						SocketType.Stream, System.Net.Sockets.ProtocolType.Tcp);
 
 					server_socket.SendTimeout = server_socket.ReceiveTimeout = client_socket.SendTimeout = client_socket.ReceiveTimeout = -1;
 					client_socket_facet [facet_instance] = client_socket;
@@ -205,75 +206,78 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 			Trace.WriteLineIf(this.TraceFlag==true, "listen_workers - WAITING ... " + MPI.Environment.Threading);
 
 			//lock (lock_recv)
-				RootCommunicator.Receive<Tuple<int,int>>
-									(MPI.Communicator.anySource, 
-									 TAG_SEND_OPERATION,
-									 out operation,
-									 out status);
+			RootCommunicator.Receive<Tuple<int,int>>
+			(MPI.Communicator.anySource, 
+				TAG_SEND_OPERATION,
+				out operation,
+				out status);
 
 			Trace.WriteLineIf(this.TraceFlag==true, "listen_workers - RECEIVED FROM WORKER source=" + status.Source + ", tag=" + status.Tag + " / operation = " + operation);
 
 			switch (operation.Item1) 
 			{
-				case AliencommunicatorOperation.SEND:
-				case AliencommunicatorOperation.SEND_ARRAY:
-					(new Thread(() => handle_SEND (operation, status))).Start();
-					break;
-				case AliencommunicatorOperation.RECEIVE:
-				case AliencommunicatorOperation.RECEIVE_ARRAY:
-					(new Thread(() => handle_RECEIVE (operation, status))).Start();
-					break;
-				case AliencommunicatorOperation.PROBE:
-					(new Thread(() => handle_PROBE(operation, status))).Start();
-					break;
-				case AliencommunicatorOperation.ALL_GATHER:
-					(new Thread(() => handle_ALL_GATHER(operation, status))).Start();
-					break;
-				case AliencommunicatorOperation.ALL_GATHER_FLATTENED:
-					(new Thread(() => handle_ALL_GATHER_FLATTENED(operation, status))).Start();
-					break;
-				case AliencommunicatorOperation.ALL_REDUCE:
-					handle_ALL_REDUCE(operation, status);
-					break;
-				case AliencommunicatorOperation.ALL_REDUCE_ARRAY:
-					(new Thread(() => handle_ALL_REDUCE(operation, status))).Start();
-					break;
-				case AliencommunicatorOperation.ALL_TO_ALL:
-					(new Thread(() => handle_ALL_TO_ALL(operation, status))).Start();
-					break;
-				case AliencommunicatorOperation.ALL_TO_ALL_FLATTENED:
-					(new Thread(() => handle_ALL_TO_ALL_FLATTENED(operation, status))).Start();
-					break;
-				case AliencommunicatorOperation.REDUCE_SCATTER:
-					(new Thread(() => handle_REDUCE_SCATTER(operation, status))).Start();
-					break;
-				case AliencommunicatorOperation.BROADCAST:
-					(new Thread(() => handle_BROADCAST(operation, status))).Start();
-					break;
-				case AliencommunicatorOperation.BROADCAST_ARRAY:
-					(new Thread(() => handle_BROADCAST(operation, status))).Start();
-					break;
-				case AliencommunicatorOperation.SCATTER:
-					handle_SCATTER(operation, status);
-					break;
-				case AliencommunicatorOperation.SCATTER_FROM_FLATTENED:
-					(new Thread(() => 	handle_SCATTER_FROM_FLATTENED(operation, status))).Start();
-					break;
-				case AliencommunicatorOperation.GATHER:
-					(new Thread(() => handle_GATHER(operation, status))).Start();
-					break;
-				case AliencommunicatorOperation.GATHER_FLATTENED:
-					(new Thread(() => handle_GATHER_FLATTENED(operation, status))).Start();
-					break;
-				case AliencommunicatorOperation.REDUCE:
-					(new Thread(() => handle_REDUCE(operation, status))).Start();
-					break;
-				case AliencommunicatorOperation.REDUCE_ARRAY:
-					(new Thread(() => handle_REDUCE(operation, status))).Start();
-					break;
-				default:
-					Trace.WriteLineIf(this.TraceFlag==true, "UNRECOGNIZED OPERATION");
-					throw new ArgumentOutOfRangeException ();
+			case AliencommunicatorOperation.SEND:
+			case AliencommunicatorOperation.SEND_ARRAY:
+				(new Thread(() => handle_SEND (operation, status))).Start();
+				break;
+			case AliencommunicatorOperation.SYNC_SEND:
+				(new Thread(() => handle_SYNCSEND (operation, status))).Start();
+				break;
+			case AliencommunicatorOperation.RECEIVE:
+			case AliencommunicatorOperation.RECEIVE_ARRAY:
+				(new Thread(() => handle_RECEIVE (operation, status))).Start();
+				break;
+			case AliencommunicatorOperation.PROBE:
+				(new Thread(() => handle_PROBE(operation, status))).Start();
+				break;
+			case AliencommunicatorOperation.ALL_GATHER:
+				(new Thread(() => handle_ALL_GATHER(operation, status))).Start();
+				break;
+			case AliencommunicatorOperation.ALL_GATHER_FLATTENED:
+				(new Thread(() => handle_ALL_GATHER_FLATTENED(operation, status))).Start();
+				break;
+			case AliencommunicatorOperation.ALL_REDUCE:
+				handle_ALL_REDUCE(operation, status);
+				break;
+			case AliencommunicatorOperation.ALL_REDUCE_ARRAY:
+				(new Thread(() => handle_ALL_REDUCE(operation, status))).Start();
+				break;
+			case AliencommunicatorOperation.ALL_TO_ALL:
+				(new Thread(() => handle_ALL_TO_ALL(operation, status))).Start();
+				break;
+			case AliencommunicatorOperation.ALL_TO_ALL_FLATTENED:
+				(new Thread(() => handle_ALL_TO_ALL_FLATTENED(operation, status))).Start();
+				break;
+			case AliencommunicatorOperation.REDUCE_SCATTER:
+				(new Thread(() => handle_REDUCE_SCATTER(operation, status))).Start();
+				break;
+			case AliencommunicatorOperation.BROADCAST:
+				(new Thread(() => handle_BROADCAST(operation, status))).Start();
+				break;
+			case AliencommunicatorOperation.BROADCAST_ARRAY:
+				(new Thread(() => handle_BROADCAST(operation, status))).Start();
+				break;
+			case AliencommunicatorOperation.SCATTER:
+				handle_SCATTER(operation, status);
+				break;
+			case AliencommunicatorOperation.SCATTER_FROM_FLATTENED:
+				(new Thread(() => 	handle_SCATTER_FROM_FLATTENED(operation, status))).Start();
+				break;
+			case AliencommunicatorOperation.GATHER:
+				(new Thread(() => handle_GATHER(operation, status))).Start();
+				break;
+			case AliencommunicatorOperation.GATHER_FLATTENED:
+				(new Thread(() => handle_GATHER_FLATTENED(operation, status))).Start();
+				break;
+			case AliencommunicatorOperation.REDUCE:
+				(new Thread(() => handle_REDUCE(operation, status))).Start();
+				break;
+			case AliencommunicatorOperation.REDUCE_ARRAY:
+				(new Thread(() => handle_REDUCE(operation, status))).Start();
+				break;
+			default:
+				Trace.WriteLineIf(this.TraceFlag==true, "UNRECOGNIZED OPERATION");
+				throw new ArgumentOutOfRangeException ();
 			}
 		}
 
@@ -285,7 +289,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 			Tuple<int,int,int,byte[]> operation_info;
 			int conversation_tag = operation.Item2;
 			//lock (lock_recv) 
-				this.RootCommunicator.Receive<Tuple<int,int,int,byte[]>> (status.Source, conversation_tag, out operation_info);
+			this.RootCommunicator.Receive<Tuple<int,int,int,byte[]>> (status.Source, conversation_tag, out operation_info);
 
 			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_SEND 2 --- operation = " + operation);
 
@@ -310,6 +314,12 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 		}
 
+		void handle_SYNCSEND (Tuple<int, int> operation, MPI.CompletedStatus status)
+		{
+			handle_SEND (operation, status);
+			this.RootCommunicator.Send<bool> (true, status.Source, TAG_REPLY);
+		}
+
 		//private object lock_recv = new object();
 
 		void handle_RECEIVE (Tuple<int, int> operation, MPI.CompletedStatus status)
@@ -319,7 +329,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 			Tuple<int,int,int> operation_info;
 
 			//lock (lock_recv)
-				this.RootCommunicator.Receive<Tuple<int,int,int>> (status.Source, conversation_tag, out operation_info);
+			this.RootCommunicator.Receive<Tuple<int,int,int>> (status.Source, conversation_tag, out operation_info);
 
 			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_RECEIVE 2");
 
@@ -334,12 +344,12 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 			EnvelopType envelop = new EnvelopType (operation_type, facet_src, facet_dst, src, dst, tag);
 			byte[] message2 = tag < 0 ? synchronizer_monitor.clientSendRequestAnyTag (envelop, new byte[0], ref tag) : 
-				                        synchronizer_monitor.clientSendRequest       (envelop, new byte[0]);
+				synchronizer_monitor.clientSendRequest       (envelop, new byte[0]);
 
 			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_RECEIVE 4 " + (message2 == null));
 
 			//lock (lock_recv)
-				this.RootCommunicator.Send<byte[]>(message2, src, tag);
+			this.RootCommunicator.Send<byte[]>(message2, src, tag);
 
 			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_RECEIVE 5");
 
@@ -422,9 +432,9 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 				{
 					Trace.WriteLineIf(this.TraceFlag==true, "DISPOSING BINDING ROOT ...");
 					foreach (int i in thread_receive_requests.Keys)
-					//for (int i=0; i<thread_receive_requests.Count; i++)
+						//for (int i=0; i<thread_receive_requests.Count; i++)
 						if (i != this.ThisFacetInstance)
-						   thread_receive_requests[i].Abort ();
+							thread_receive_requests[i].Abort ();
 				}
 				base.Dispose (disposing);
 			}
@@ -498,14 +508,14 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 						request_pending_list [envelop_key][envelop_tag] = new Queue<AutoResetEvent>();
 						request_pending_list [envelop_key][envelop_tag].Enqueue(new AutoResetEvent(false));
 					}
-					
+
 					AutoResetEvent sync_send = request_pending_list [envelop_key][envelop_tag].Peek();
 
 					//request_pending_list [envelop_key][envelop_tag] = sync_send;
 					Monitor.Exit(sync);
-					Console.WriteLine("clientSendRequest - WAIT / " + unit.CID.getInstanceName() + "/" + sync_send.GetHashCode()  + " BEFORE !!! " );
+					Trace.WriteLineIf(unit.TraceFlag==true, "clientSendRequest - WAIT / " + unit.CID.getInstanceName() + "/" + sync_send.GetHashCode()  + " BEFORE !!! " );
 					sync_send.WaitOne();
-					Console.WriteLine("clientSendRequest - WAIT / " + unit.CID.getInstanceName()  + "/" + sync_send.GetHashCode()  + " AFTER !!! " );
+					Trace.WriteLineIf(unit.TraceFlag==true, "clientSendRequest - WAIT / " + unit.CID.getInstanceName()  + "/" + sync_send.GetHashCode()  + " AFTER !!! " );
 					Monitor.Enter(sync);
 					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequest 3 - AFTER WAIT " + envelop_key);
 				}
@@ -514,14 +524,14 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 				Queue<byte[]> pending_replies = reply_pending_list [envelop_key][envelop_tag];
 				Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequest 5 -- pending_replies.Count = " + pending_replies.Count);
 				if (pending_replies.Count > 0)
-				   messageSide2 = reply_pending_list[envelop_key][envelop_tag].Dequeue();
-				
+					messageSide2 = reply_pending_list[envelop_key][envelop_tag].Dequeue();
+
 				if (pending_replies.Count == 0)
 					reply_pending_list[envelop_key].Remove(envelop_tag);
 
 				if (reply_pending_list[envelop_key].Count == 0)
 					reply_pending_list.Remove(envelop_key);
-				
+
 				//reply_pending_list.Remove(envelop_key);
 			}
 			finally 
@@ -578,9 +588,9 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 					//request_pending_list [envelop_key][envelop_tag] = sync_send;
 					Monitor.Exit(sync);
-					Console.WriteLine("clientSendRequestAny - WAIT / " + unit.CID.getInstanceName() + "/" + sync_send.GetHashCode()  + " BEFORE !!! " );
+					Trace.WriteLineIf(unit.TraceFlag==true,"clientSendRequestAny - WAIT / " + unit.CID.getInstanceName() + "/" + sync_send.GetHashCode()  + " BEFORE !!! " );
 					sync_send.WaitOne()	;
-					Console.WriteLine("clientSendRequestAny - WAIT / " + unit.CID.getInstanceName()  + "/" + sync_send.GetHashCode()  + " AFTER !!! " );
+					Trace.WriteLineIf(unit.TraceFlag==true,"clientSendRequestAny - WAIT / " + unit.CID.getInstanceName()  + "/" + sync_send.GetHashCode()  + " AFTER !!! " );
 					Monitor.Enter(sync);
 					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequestAnyTag 3 - AFTER WAIT " + envelop_key);
 				}
@@ -594,10 +604,10 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 				Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": clientSendRequestAnyTag 5 -- pending_replies.Count = " + pending_replies.Count);
 				if (pending_replies.Count > 0)
 					messageSide2 = reply_pending_list[envelop_key][envelop_tag].Dequeue();
-				
+
 				if (pending_replies.Count == 0)
 					reply_pending_list[envelop_key].Remove(envelop_tag);
-				
+
 				if (reply_pending_list[envelop_key].Count == 0)
 					reply_pending_list.Remove(envelop_key);
 
@@ -802,13 +812,14 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 			string key=base.ToString();
 			switch (envelop.Item1) {
 			case AliencommunicatorOperation.SEND:
+			case AliencommunicatorOperation.SYNC_SEND:
 			case AliencommunicatorOperation.SEND_ARRAY:
-//				key = string.Format ("SR-{0}-{1}-{2}-{3}-{4}",envelop.Item2, envelop.Item3, envelop.Item4, envelop.Item5, envelop.Item6);
+				//				key = string.Format ("SR-{0}-{1}-{2}-{3}-{4}",envelop.Item2, envelop.Item3, envelop.Item4, envelop.Item5, envelop.Item6);
 				key = string.Format ("SR-{0}-{1}-{2}-{3}",envelop.Item2, envelop.Item3, envelop.Item4, envelop.Item5);
 				break;
 			case AliencommunicatorOperation.RECEIVE:
 			case AliencommunicatorOperation.RECEIVE_ARRAY:
-//				key = string.Format ("SR-{1}-{0}-{3}-{2}-{4}",envelop.Item2, envelop.Item3, envelop.Item4, envelop.Item5, envelop.Item6);
+				//				key = string.Format ("SR-{1}-{0}-{3}-{2}-{4}",envelop.Item2, envelop.Item3, envelop.Item4, envelop.Item5, envelop.Item6);
 				key = string.Format ("SR-{1}-{0}-{3}-{2}",envelop.Item2, envelop.Item3, envelop.Item4, envelop.Item5);
 				break;
 			case AliencommunicatorOperation.PROBE:

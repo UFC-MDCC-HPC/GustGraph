@@ -18,7 +18,7 @@
       <visualDescription h="60" w="148" x="615" y="131">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -26,7 +26,7 @@
       <visualDescription h="60" w="160" x="817" y="129">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -34,7 +34,7 @@
       <visualDescription h="60" w="158" x="629" y="259">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -42,7 +42,7 @@
       <visualDescription h="60" w="175" x="847" y="252">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -54,32 +54,32 @@
       <parameter formFieldId="output_item_value_type" varName="TValue"/>
       <parameter formFieldId="input_value_type" varName="IValue"/>
       <parameter formFieldId="output_item_key_type" varName="TKey"/>
-      <port localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <port index_replica="0" localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
         <visualDescription h="60" w="100" x="393" y="62">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <unitBounds parallel="false" uRef="data">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
-      <port localRef="input_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <port index_replica="0" localRef="input_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
         <visualDescription h="60" w="100" x="52" y="264">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <unitBounds parallel="false" uRef="data">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
-      <port localRef="output_data" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
+      <port index_replica="0" localRef="output_data" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
         <visualDescription h="69" w="188" x="657" y="210">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###2037363955"/>
-        <unitBounds parallel="false" uRef="iterator">
+        <parameter formFieldId="item_type" varName="X###1229965559"/>
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
-      <unitBounds parallel="false" uRef="map_function">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="map_function">
         <visualDescription h="12" w="13" x="82" y="38"/>
       </unitBounds>
     </innerComponent>
@@ -88,7 +88,7 @@
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="TAdvance"/>
-      <unitBounds parallel="true" uRef="peer">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
         <visualDescription h="20" w="20" x="76" y="20"/>
       </unitBounds>
     </innerComponent>
@@ -98,7 +98,7 @@
       </visualDescription>
       <parameter formFieldId="client_port_type" varName="C"/>
       <parameter formFieldId="server_port_type" varName="S0"/>
-      <unitBounds parallel="false" uRef="client_server">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="46" y="8"/>
       </unitBounds>
     </innerComponent>
@@ -108,7 +108,7 @@
       </visualDescription>
       <parameter formFieldId="client_port_type" varName="C0"/>
       <parameter formFieldId="server_port_type" varName="S"/>
-      <unitBounds parallel="false" uRef="client_server">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -116,7 +116,7 @@
       <visualDescription h="60" w="100" x="93" y="514">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -124,7 +124,7 @@
       <visualDescription h="60" w="100" x="372" y="265">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -133,7 +133,7 @@
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="maintainer" varName="M"/>
-      <unitBounds parallel="true" uRef="node">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="node">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -141,7 +141,7 @@
       <visualDescription h="60" w="100" x="60" y="75">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="maintainer">
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="maintainer">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -149,34 +149,34 @@
       <visualDescription h="60" w="100" x="149" y="464">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="task_port_type">
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="task_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="mapper_port_type_client" direct="true" varName="C"/>
     <supplyParameter cRef="mapper_port_type_server" direct="true" varName="S"/>
     <supplyParameter cRef="task_port_type_advance" direct="true" varName="TAdvance"/>
-    <innerComponent localRef="C###2037363955" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###1229965559" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="93" y="410">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="value_type" varName="TValue"/>
       <parameter formFieldId="key_type" varName="TKey"/>
-      <unitBounds parallel="false" uRef="kv_pair">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="kv_pair">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###2037363955" varName="X###2037363955"/>
-    <innerRenaming cNewName="map_key" cOldName="input_key" cRef="map_function"/>
-    <innerRenaming cNewName="output" cOldName="output_data" cRef="map_function"/>
-    <innerRenaming cNewName="map_value" cOldName="input_value" cRef="map_function"/>
+    <supplyParameter cRef="C###1229965559" varName="X###1229965559"/>
+    <innerRenaming cNewName="map_value" cOldName="input_value" cRef="map_function" index_replica="0"/>
+    <innerRenaming cNewName="map_key" cOldName="input_key" cRef="map_function" index_replica="0"/>
+    <innerRenaming cNewName="output" cOldName="output_data" cRef="map_function" index_replica="0"/>
     <interface iRef="IMapper" nArgs="6">
       <slice isRef="feed_pairs">
         <originRef cRef="feed_pairs" iRef="IBindingDirect"/>
         <visualDescription h="10" w="10" x="79" y="24"/>
       </slice>
       <slice isRef="collect_pairs">
-        <originRef cRef="collect_pairs" iRef="IBindingDirectMxNIterator"/>
+        <originRef cRef="collect_pairs" iRef="IBindingDirect"/>
         <visualDescription h="10" w="10" x="18" y="28"/>
       </slice>
       <slice isRef="platform_map">
@@ -228,17 +228,17 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_map" sRef="task_map"/>
       </port>
-      <port name="map_key">
-        <visualDescription h="10" w="10" x="15" y="4"/>
-        <slice pRef="input_key" sRef="map_function"/>
+      <port name="map_value">
+        <visualDescription h="10" w="10" x="46" y="20"/>
+        <slice pRef="input_value" sRef="map_function"/>
       </port>
       <port name="output">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_data" sRef="map_function"/>
       </port>
-      <port name="map_value">
-        <visualDescription h="10" w="10" x="46" y="20"/>
-        <slice pRef="input_value" sRef="map_function"/>
+      <port name="map_key">
+        <visualDescription h="10" w="10" x="15" y="4"/>
+        <slice pRef="input_key" sRef="map_function"/>
       </port>
       <parameter iname="IMaintainer" order="0" parid="platform_maintainer" uname="maintainer" varid="M"/>
       <parameter iname="IMapFunction" order="5" parid="map_function" uname="map_function" varid="MF"/>

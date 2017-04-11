@@ -13,25 +13,25 @@
         <parameter formFieldId="input_key_type" varName="IKey"/>
         <parameter formFieldId="input_value_type" varName="IValue"/>
         <parameter formFieldId="output_key_type" varName="OKey"/>
-        <port localRef="output_pairs" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+        <port index_replica="0" localRef="output_pairs" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
           <visualDescription h="60" w="195" x="201" y="405">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###238985884"/>
-          <unitBounds parallel="true" uRef="iterator">
+          <parameter formFieldId="item_type" varName="X###1819291578"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="iterator">
             <visualDescription h="20" w="20" x="22" y="18"/>
           </unitBounds>
         </port>
-        <port localRef="input_pairs" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+        <port index_replica="0" localRef="input_pairs" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
           <visualDescription h="60" w="209" x="312" y="238">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###1242962038"/>
-          <unitBounds parallel="true" uRef="iterator">
+          <parameter formFieldId="item_type" varName="X###338466192"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="iterator">
             <visualDescription h="20" w="20" x="20" y="17"/>
           </unitBounds>
         </port>
-        <unitBounds parallel="true" uRef="terminate_function">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="terminate_function">
           <visualDescription h="20" w="20" x="37" y="11"/>
         </unitBounds>
       </component>
@@ -40,13 +40,14 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <innerComponent localRef="input_key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="118" y="41">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -54,7 +55,7 @@
       <visualDescription h="60" w="100" x="154" y="82">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -62,7 +63,7 @@
       <visualDescription h="60" w="100" x="109" y="124">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -70,7 +71,7 @@
       <visualDescription h="60" w="100" x="148" y="163">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>

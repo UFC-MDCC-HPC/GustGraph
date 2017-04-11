@@ -11,7 +11,7 @@
         </visualDescription>
         <parameter formFieldId="client_port_type" varName="C"/>
         <parameter formFieldId="server_port_type" varName="S"/>
-        <unitBounds parallel="true" uRef="client_server">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="client_server">
           <visualDescription h="20" w="20" x="31" y="26"/>
         </unitBounds>
       </component>
@@ -20,6 +20,7 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <parameter componentRef="server_port_type" formFieldId="server_port_type" order="0" variance="invariant" varName="S"/>
@@ -27,7 +28,7 @@
       <visualDescription h="60" w="100" x="195" y="320">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -35,7 +36,7 @@
       <visualDescription h="60" w="100" x="107" y="99">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -45,7 +46,7 @@
       </visualDescription>
       <parameter formFieldId="value_type" varName="V"/>
       <parameter formFieldId="key_type" varName="K"/>
-      <unitBounds parallel="false" uRef="kv_pair">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="kv_pair">
         <visualDescription h="20" w="20" x="61" y="50"/>
       </unitBounds>
     </innerComponent>
@@ -53,7 +54,7 @@
       <visualDescription h="60" w="100" x="105" y="145">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -61,7 +62,7 @@
       <visualDescription h="60" w="100" x="149" y="202">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -70,7 +71,7 @@
         <color b="203" g="192" r="255"/>
       </visualDescription>
       <parameter formFieldId="item_type" varName="T"/>
-      <unitBounds parallel="true" uRef="iterator">
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="iterator">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>

@@ -108,5 +108,17 @@
       <Project>{F7ABD722-31F4-4ACC-B8B6-A14DDAEB022B}</Project>
       <Name>br.ufc.mdcc.hpcshelf.platform.Maintainer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType.csproj">
+      <Project>{2E673EB9-0B04-4503-A15F-498E8335311D}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType.csproj">
+      <Project>{A1632F8E-8F73-4C55-9AD5-D9DC487C0B7D}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType.csproj">
+      <Project>{DBE47941-F490-4F61-A8C5-4492FC4209A4}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

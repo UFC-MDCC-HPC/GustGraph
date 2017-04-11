@@ -10,29 +10,26 @@
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="platform_maintainer" varName="M"/>
-        <port localRef="reader" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
-          <visualDescription h="60" w="100" x="233" y="383">
+        <port index_replica="0" localRef="input_data" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/EnvironmentBindingBaseDirect.hpe" multiple="false" name="EnvironmentBindingBaseDirect" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
+          <visualDescription h="105" w="105" x="195" y="377">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###1726793015"/>
-          <parameter formFieldId="server_port_type" varName="X###1116197547"/>
-          <unitBounds parallel="false" uRef="client">
-            <visualDescription h="20" w="20" x="5" y="2"/>
-          </unitBounds>
-          <unitBounds parallel="false" uRef="server">
-            <visualDescription h="20" w="20" x="28" y="2"/>
+          <parameter formFieldId="client_port_type" varName="X###221228488"/>
+          <parameter formFieldId="server_port_type" varName="X###2116939977"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
+            <visualDescription h="20" w="20" x="51" y="2"/>
           </unitBounds>
         </port>
-        <port localRef="platform_data_source" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
+        <port index_replica="0" localRef="platform_data_source" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
           <visualDescription h="60" w="100" x="67" y="439">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <parameter formFieldId="maintainer" varName="M"/>
-          <unitBounds parallel="true" uRef="node">
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="node">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <unitBounds parallel="true" uRef="data_source">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="data_source">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -41,13 +38,14 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <innerComponent localRef="s" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface/PortTypeDataSourceInterface.hpe" multiple="false" name="PortTypeDataSourceInterface" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="322" y="539">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="environment_port_type">
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -55,7 +53,7 @@
       <visualDescription h="60" w="100" x="76" y="489">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -63,7 +61,7 @@
       <visualDescription h="60" w="100" x="109" y="689">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="platform">
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="platform">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -71,7 +69,7 @@
       <visualDescription h="60" w="100" x="100" y="225">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="data_host">
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="data_host">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -80,23 +78,23 @@
     <supplyParameter cRef="platform" direct="true" varName="P"/>
     <supplyParameter cRef="maintainer" direct="true" varName="M"/>
     <interface iRef="IDataSourceImpl" nArgs="1">
-      <slice isRef="reader">
-        <originRef cRef="reader" iRef="IServerBase"/>
-        <visualDescription h="10" w="10" x="154" y="31"/>
-      </slice>
       <slice isRef="platform_data_source">
         <originRef cRef="platform_data_source" iRef="IProcessingNode"/>
         <visualDescription h="10" w="10" x="20" y="23"/>
       </slice>
+      <slice isRef="input_data">
+        <originRef cRef="input_data" iRef="IBindingDirect"/>
+        <visualDescription h="10" w="10" x="154" y="31"/>
+      </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataSourceImpl&lt;P>: Computation, BaseIDataSource&lt;P>&#xA;&#x9;&#x9;where P:IMaintainer&#xA;&#x9;{&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeDataSourceInterface> input_data = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;IPortTypeDataSourceInterface> Input_data&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_data == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_data = (IServerBase&lt;IPortTypeDataSourceInterface>) Services.getPort(&quot;input_data&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_data;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private P platform = default(P);&#xA;&#xA;&#x9;&#x9;protected P Platform&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform = (P) Services.getPort(&quot;platform&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataSourceImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl/bin/1.0.0.0/BaseIDataSourceImpl.dll" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataSourceImpl&lt;P>: Computation, BaseIDataSource&lt;P>&#xA;&#x9;&#x9;where P:IMaintainer&#xA;&#x9;{&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeDataSourceInterface> input_data = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;IPortTypeDataSourceInterface> Input_data&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_data == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_data = (IServerBase&lt;IPortTypeDataSourceInterface>) Services.getPort(&quot;input_data&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_data;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private P platform_source = default(P);&#xA;&#xA;&#x9;&#x9;protected P Platform_source&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform_source == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform_source = (P) Services.getPort(&quot;platform_source&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform_source;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataSourceImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl/bin/1.0.0.0/BaseIDataSourceImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface/bin/1.0.0.0/IPortTypeDataSourceInterface.dll</dependency>
           <dependency>br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource/bin/1.0.0.0/BaseIDataSource.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface;&#xA;using System.Collections.Generic;&#xA;using System.IO;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl&#xA;{&#xA;&#x9;public class IDataSourceImpl&lt;P> : BaseIDataSourceImpl&lt;P>, IDataSource&lt;P>&#xA;    where P:IMaintainer&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Input_data.Server = new DataSourceReader();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private static string PATH_TEXT_FILES_WORD_COUNTER_INPUT = &quot;PATH_TEXT_FILES_WORD_COUNTER_INPUT&quot;;&#xA;&#xA;&#x9;&#x9;private class DataSourceReader : IPortTypeDataSourceInterface&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;public string[] fetchFileNames ()&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;string path = System.Environment.GetEnvironmentVariable (PATH_TEXT_FILES_WORD_COUNTER_INPUT);&#xA;&#x9;&#x9;&#x9;&#x9;string[] filenames = Directory.GetFiles (path);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (&quot;FETCH FILE NAMES: &quot;);&#xA;&#x9;&#x9;&#x9;&#x9;foreach (string fn in filenames)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (fn);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;return filenames;&#x9;&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;public IEnumerable&lt;string> fetchFileContents(string fileName)&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;string path = System.Environment.GetEnvironmentVariable (PATH_TEXT_FILES_WORD_COUNTER_INPUT);&#xA;&#x9;&#x9;&#x9;&#x9;return File.ReadLines (fileName);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IDataSourceImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl/bin/1.0.0.0/IDataSourceImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface;&#xA;using System.Collections.Generic;&#xA;using System.IO;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl&#xA;{&#xA;&#x9;public class IDataSourceImpl&lt;P> : BaseIDataSourceImpl&lt;P>, IDataSource&lt;P>&#xA;    where P:IMaintainer&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void after_initialize()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;//Input_data.TraceFlag = true;&#xA;&#xA;&#x9;&#x9;&#x9;Input_data.Server = new DataSourceReader();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private static string PATH_TEXT_FILES_WORD_COUNTER_INPUT = &quot;PATH_TEXT_FILES_WORD_COUNTER_INPUT&quot;;&#xA;&#xA;&#x9;&#x9;private class DataSourceReader : IPortTypeDataSourceInterface&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;public string[] fetchFileNames ()&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;string path = System.Environment.GetEnvironmentVariable (PATH_TEXT_FILES_WORD_COUNTER_INPUT);&#xA;&#x9;&#x9;&#x9;&#x9;string[] filenames = Directory.GetFiles (path);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (&quot;FETCH FILE NAMES: &quot;);&#xA;&#x9;&#x9;&#x9;&#x9;foreach (string fn in filenames)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (fn);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;return filenames;&#x9;&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;public IEnumerable&lt;string> fetchFileContents(string fileName)&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;string path = System.Environment.GetEnvironmentVariable (PATH_TEXT_FILES_WORD_COUNTER_INPUT);&#xA;&#x9;&#x9;&#x9;&#x9;return File.ReadLines (fileName);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IDataSourceImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl/bin/1.0.0.0/IDataSourceImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl/bin/1.0.0.0/BaseIDataSourceImpl.dll</dependency>
@@ -106,13 +104,13 @@
       <visualDescription h="40" w="213" x="74" y="122">
         <color b="0" g="128" r="0"/>
       </visualDescription>
-      <port name="reader">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="reader" sRef="reader"/>
-      </port>
       <port name="platform_data_source">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_data_source" sRef="platform_data_source"/>
+      </port>
+      <port name="input_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_data" sRef="input_data"/>
       </port>
       <parameter iname="IDataHost" order="0" parid="platform_maintainer" uname="data_host" varid="M"/>
       <action id="main">

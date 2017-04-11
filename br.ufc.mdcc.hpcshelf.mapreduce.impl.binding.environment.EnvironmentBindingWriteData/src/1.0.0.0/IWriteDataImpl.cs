@@ -12,73 +12,98 @@ using System.Collections.Generic;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Integer;
 using br.ufc.mdcc.common.String;
+using System.Collections.Concurrent;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.EnvironmentBindingWriteData
 {
 	public class IWriteDataImpl<S> : BaseIWriteDataImpl<S>, IWriteData<S>
-		where S:IPortTypeDataSinkInterface
+		where S:IPortTypeIterator
 	{
+		private ConcurrentQueue<Tuple<string,int>> lines = new ConcurrentQueue<Tuple<string, int>>();
+
 		public override void main()
-		{
+		{	
 		}
 
 		private Thread thread_file_writer = null;
 
 		public override void after_initialize()
 		{
-			client = Output_pairs_iterator.newIteratorInstance ();
+			client = new IPortTypeDataSinkInterfaceImpl (lines);
 		}
 
-		public void startWriteSink()
+		internal class IPortTypeDataSinkInterfaceImpl : IPortTypeDataSinkInterface
 		{
-			thread_file_writer = new Thread (file_writer);
-			thread_file_writer.Start ();
-		}
+			private Semaphore not_empty = new Semaphore(0,int.MaxValue);
+			private S server;
+			private ConcurrentQueue<Tuple<string,int>> lines;
+			AutoResetEvent e = new AutoResetEvent(false);
 
-		private IPortTypeIterator client = null;
-		public IPortTypeIterator Client { get {	return client; } }
+			public S Server { set {	server = value; e.Set (); } }
 
-		private S server = default(S);
-		public S Server { set {	server = value; } }
-
-		private static int CHUNK_SIZE = 50;
-
-		private string[] file_name_list = null;	
-
-		int counter_write_chunk = 0;
-		int counter_write_global = 0;
-
-		private string[] output_buffer = null;
-
-		private void file_writer()
-		{
-			object pair_obj = null;
-			output_buffer = new string[CHUNK_SIZE];
-			int pair_counter = 0;
-
-			bool end_iteration = false;
-			while (!end_iteration) 
+			public IPortTypeDataSinkInterfaceImpl(ConcurrentQueue<Tuple<string,int>> lines)
 			{
-				if (!client.has_next ())
-					end_iteration = true;
-
-				while (client.fetch_next (out pair_obj)) 
-				{
-					IKVPairInstance<IString,IInteger> pair = (IKVPairInstance<IString,IInteger>)pair_obj;
-					output_buffer [pair_counter] = pair.Key + ": " + pair.Value;
-					pair_counter++;
-					if (pair_counter >= CHUNK_SIZE) 
-					{
-						server.writeLines (output_buffer);
-						pair_counter = 0;
-					}
-				}
+				this.e = e;
+				this.lines = lines;
+				this.server = server;
 			}
 
-			for (int i = pair_counter; i < CHUNK_SIZE; i++)
-				output_buffer [i] = "";
 
-			server.writeLines (output_buffer);
+			public ConcurrentQueue<Tuple<string,int>> readCounts ()
+			{	
+
+				Thread t = new Thread(new ThreadStart(() => 
+				{
+					e.WaitOne();
+					object bin_object = null;
+
+					Console.WriteLine("READ COUNTS START");
+					// SINGLE ITERATION (Count Words)
+					bool end_iteration = false;
+					while (!end_iteration) 
+					{
+					    Console.WriteLine("READ COUNTS - ITERATION " + (server==null));
+						if (!server.has_next ())
+							end_iteration = true;
+
+						int count = 0;
+						IKVPairInstance<IString,IInteger> bin;
+						while (server.fetch_next (out bin_object)) 
+						{
+							Console.WriteLine("READ COUNTS - READ " + count);
+
+							bin = (IKVPairInstance<IString,IInteger>)bin_object;
+							string s = ((IStringInstance)bin.Key).Value;
+							int c = (int) bin.Value;
+							
+							Tuple<string, int> tt = new Tuple<string, int> (s, c);
+							lines.Enqueue (tt);
+							count = not_empty.Release();
+						}
+						Console.WriteLine("READ COUNTS - END CHUNK ");
+					}
+					
+					Console.WriteLine("READ COUNTS - END ITERATION ");
+					
+					lines.Enqueue(new Tuple<string,int>(null,0));
+					not_empty.Release();
+				}));
+
+				t.Start();
+
+				return lines;
+			}
+
+			public Semaphore NotEmpty { get { return not_empty; } }
 		}
+
+
+
+		private IPortTypeDataSinkInterface client = null;
+		public IPortTypeDataSinkInterface Client { get {	return client; } }
+
+		private S server = default(S);
+		public S Server { set {	server = value; ((IPortTypeDataSinkInterfaceImpl)client).Server = server; } }
+
 	}
 }
