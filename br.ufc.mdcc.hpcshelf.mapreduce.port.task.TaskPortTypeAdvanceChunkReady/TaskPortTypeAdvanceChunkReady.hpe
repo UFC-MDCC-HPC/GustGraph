@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000006be5be567be158e4257cccabc2305b7b0227669bba5838ea673ce7833c208751fa52bc6ee7cd5566d28865383c30cc57e9a809eeef39f32be7a82cae3a49e0b42f4d2376521702854c40ffc8fb3523955829b23f97debb953401ab0c626fc1ec7a6bbc7085f7db62d85ecd3e2c2d3b2cf4462bdbc5a301f09df03754a944a587" isAbstract="true" kind="Environment" name="TaskPortTypeAdvanceChunkReady" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.port.task">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000004daa1ee2938e29c032e1bfd578bc01e6b54f60176df2b00f4dee47b56f06c8456587bbdf638394e9571f559e8927ca4f05ddf3db00078919c5eb020f9a90765ebde8ceada7d0b17dac25fa926e084deb80271de15d62a4df665e31a30b644531ed8c9257cc26d4e877ec42492c86527b3ff535411b8f68bc7019a638b767f69c" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/TaskPortType.hpe" name="TaskPortType" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="369" y="270">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="task_port_type">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="chunk_ready" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType/ChunkReadyActionType.hpe" multiple="false" name="ChunkReadyActionType" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance" exposed="false">
+      <visualDescription h="60" w="100" x="46" y="224">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="chunk_ready">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <interface iRef="ITaskPortTypeAdvanceChunkReady" nArgs="0">
+      <slice isRef="chunk_ready">
+        <originRef cRef="chunk_ready" iRef="IChunkReady"/>
+        <visualDescription h="10" w="10" x="15" y="17"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskPortType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady&#xA;{&#xA;&#x9;public interface BaseITaskPortTypeAdvanceChunkReady : BaseITaskPortType, IEnvironmentKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseITaskPortTypeAdvanceChunkReady.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady/bin/1.0.0.0/BaseITaskPortTypeAdvanceChunkReady.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/bin/1.0.0.0/BaseITaskPortType.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskPortType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady&#xA;{&#xA;&#x9;public interface ITaskPortTypeAdvanceChunkReady : BaseITaskPortTypeAdvanceChunkReady, ITaskPortType&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITaskPortTypeAdvanceChunkReady.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady/bin/1.0.0.0/ITaskPortTypeAdvanceChunkReady.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady/bin/1.0.0.0/BaseITaskPortTypeAdvanceChunkReady.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/bin/1.0.0.0/ITaskPortType.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="189" x="167" y="143">
+        <color b="230" g="216" r="173"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="ITaskPortTypeAdvanceChunkReady" multiple="true" private="false" replica="0" uRef="task_port_type" visibleInterface="true">
+      <super cRef="base" uRef="task_port_type"/>
+      <slices cRef="chunk_ready" inner_replica="0" slice_replica="0" uRef="chunk_ready" sliceName="chunk_ready" transitive="false">
+        <visualDescription h="10" w="10" x="15" y="17"/>
+      </slices>
+      <visualDescription h="40" w="189" x="43" y="384"/>
+    </unit>
+  </componentInfo>
+</component:component>
