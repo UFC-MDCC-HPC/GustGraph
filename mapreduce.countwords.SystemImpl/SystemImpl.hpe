@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d14bb2f4eea617c02ab3a6dbac606531d7d6d1cf07f84e93e542b952ebc60d6488a218f9f62cf185c3e7971cbd4bc5be879dffd39eea5b062f2dd6fcaf34f3cab8e3803e1d31b341efc60c0a5799551d1f70db99164bd2f8de30e8eeff84d3d579c2a074a12973075df6f735b1c4f184fc6b6d203991dc68b397ac9059f99692" isAbstract="false" kind="Application" name="SystemImpl" packagePath="mapreduce.countwords">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cb5208b37c56f25bd1e58eacb0f69195efcfa8b5420e98453684d592e87de7067afb2016fb15849e4f3e833799588f5df482239d3a534d1bcaa34a483aa727ea21aa4bd0987d0f5b99a154237005eda34bf568034f8a921fcc89a3b413d60bd5476029dcdb1cfd12a16767a2661fa19f8caca4d2673c6fe1837837b19f711c95" localRef="base" location="mapreduce.countwords.System/System.hpe" name="System" package="mapreduce.countwords" version="1.0.0.0">
+        <visualDescription h="60" w="119" x="353" y="268">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer_0">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+        <unitBounds facet="3" facet_instance="0" facet_instance_enclosing="3" parallel="true" uRef="peer_3">
+          <visualDescription h="20" w="20" x="28" y="2"/>
+        </unitBounds>
+        <unitBounds facet="2" facet_instance="0" facet_instance_enclosing="2" parallel="true" uRef="peer_2">
+          <visualDescription h="20" w="20" x="51" y="2"/>
+        </unitBounds>
+        <unitBounds facet="1" facet_instance="0" facet_instance_enclosing="1" parallel="true" uRef="peer_1">
+          <visualDescription h="20" w="20" x="74" y="2"/>
+        </unitBounds>
+        <unitBounds facet="4" facet_instance="0" facet_instance_enclosing="4" parallel="true" uRef="root">
+          <visualDescription h="20" w="20" x="97" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
+    <facet_configuration facet="1" multiple="false"/>
+    <facet_configuration facet="2" multiple="false"/>
+    <facet_configuration facet="3" multiple="false"/>
+    <facet_configuration facet="4" multiple="false"/>
+  </header>
+  <componentInfo>
+    <interface iRef="IPeer0Impl" nArgs="0">
+      <slice isRef="source">
+        <originRef cRef="source" iRef="IDataSource"/>
+        <visualDescription h="10" w="10" x="120" y="14"/>
+      </slice>
+      <slice isRef="splitter_input">
+        <originRef cRef="splitter_input" iRef="ISplitterCollector"/>
+        <visualDescription h="10" w="10" x="117" y="46"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using mapreduce.countwords.System;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost;&#xA;using br.ufc.mdcc.common.String;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace mapreduce.countwords.SystemImpl&#xA;{&#xA;&#x9;public class IPeer0Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_0&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IDataSource&lt;IDataHost> source = ((IDataSource&lt;IDataHost>)(this.Services.getPort(&quot;source&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_source = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_source.Start(source);&#xA;            ISplitterCollector&lt;IInteger, IString, IPartitionFunction&lt;IInteger>> splitter_input = ((ISplitterCollector&lt;IInteger, IString, IPartitionFunction&lt;IInteger>>)(this.Services.getPort(&quot;splitter_input&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_splitter_input = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_splitter_input.Start(splitter_input);&#xA;            go_source.Join();&#xA;            go_splitter_input.Join();&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;FINISH PEER 0&quot;);&#xA;&#x9;&#x9;&#x9;AutoResetEvent e = new AutoResetEvent (false);&#xA;&#x9;&#x9;&#x9;e.WaitOne ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IPeer0Impl.cs" srcType="user" uri="mapreduce.countwords.SystemImpl/bin/1.0.0.0/IPeer0Impl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/mapreduce.countwords.SystemImpl/bin/1.0.0.0/BaseIPeer0Impl.dll</dependency>
+          <dependency>mapreduce.countwords.System/bin/1.0.0.0/IPeer_0.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="41" w="136" x="9" y="700">
+        <color b="0" g="255" r="255"/>
+      </visualDescription>
+      <port name="platform_data_source">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_data_source" sRef="source"/>
+      </port>
+      <port name="input_pairs_source">
+        <visualDescription h="10" w="10" x="99" y="6"/>
+        <slice pRef="input_data" sRef="source"/>
+      </port>
+      <port name="input_pairs_source">
+        <visualDescription h="10" w="10" x="99" y="6"/>
+        <slice pRef="collect_pairs" sRef="splitter_input"/>
+      </port>
+      <port name="task_split_input_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_perform" sRef="splitter_input"/>
+      </port>
+      <port name="task_split_input_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_read_chunk" sRef="splitter_input"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IPeer3Impl" nArgs="0">
+      <slice isRef="sink">
+        <originRef cRef="sink" iRef="IDataSink"/>
+        <visualDescription h="10" w="10" x="122" y="44"/>
+      </slice>
+      <slice isRef="splitter_output">
+        <originRef cRef="splitter_output" iRef="ISplitterFeeder"/>
+        <visualDescription h="10" w="10" x="125" y="12"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using mapreduce.countwords.System;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost;&#xA;using br.ufc.mdcc.common.String;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace mapreduce.countwords.SystemImpl&#xA;{&#xA;&#x9;public class IPeer3Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_3&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IDataSink&lt;IDataHost> sink = ((IDataSink&lt;IDataHost>)(this.Services.getPort(&quot;sink&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_sink = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_sink.Start(sink);&#xA;&#x9;&#x9;&#x9;ISplitterFeeder&lt;IString, IInteger> splitter_output = ((ISplitterFeeder&lt;IString, IInteger>)(this.Services.getPort(&quot;splitter_output&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_splitter_output = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_splitter_output.Start(splitter_output);&#xA;&#x9;&#x9;&#x9;go_sink.Join();&#xA;&#x9;&#x9;&#x9;go_splitter_output.Join();&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;FINISH PEER 3&quot;);&#xA;&#x9;&#x9;&#x9;AutoResetEvent e = new AutoResetEvent (false);&#xA;&#x9;&#x9;&#x9;e.WaitOne ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IPeer3Impl.cs" srcType="user" uri="mapreduce.countwords.SystemImpl/bin/1.0.0.0/IPeer3Impl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/mapreduce.countwords.SystemImpl/bin/1.0.0.0/BaseIPeer3Impl.dll</dependency>
+          <dependency>mapreduce.countwords.System/bin/1.0.0.0/IPeer_3.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="134" x="528" y="692">
+        <color b="0" g="213" r="255"/>
+      </visualDescription>
+      <port name="platform_data_sink">
+        <visualDescription h="10" w="10" x="92" y="5"/>
+        <slice pRef="platform_data_sink" sRef="sink"/>
+      </port>
+      <port name="output_pairs_sink">
+        <visualDescription h="10" w="10" x="65" y="6"/>
+        <slice pRef="output_data" sRef="sink"/>
+      </port>
+      <port name="task_split_output_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_perform" sRef="splitter_output"/>
+      </port>
+      <port name="output_pairs_sink">
+        <visualDescription h="10" w="10" x="65" y="6"/>
+        <slice pRef="feed_pairs" sRef="splitter_output"/>
+      </port>
+      <port name="task_split_output_chunk_ready">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_chunk_ready" sRef="splitter_output"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IPeer2Impl" nArgs="0">
+      <slice isRef="reducer">
+        <originRef cRef="reducer" iRef="IReducer"/>
+        <visualDescription h="10" w="10" x="144" y="38"/>
+      </slice>
+      <slice isRef="shuffler">
+        <originRef cRef="shuffler" iRef="IShufflerFeeder"/>
+        <visualDescription h="10" w="10" x="144" y="16"/>
+      </slice>
+      <slice isRef="splitter_output">
+        <originRef cRef="splitter_output" iRef="ISplitterCollector"/>
+        <visualDescription h="10" w="10" x="145" y="59"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using mapreduce.countwords.System;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost;&#xA;using br.ufc.mdcc.common.String;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.example.cw.Tallier;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace mapreduce.countwords.SystemImpl&#xA;{&#xA;&#x9;public class IPeer2Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_2&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IReducer&lt;IComputeHost, IString, IInteger, IString, IInteger, ITallier> reducer = ((IReducer&lt;IComputeHost, IString, IInteger, IString, IInteger, ITallier>)(this.Services.getPort(&quot;reducer&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_reducer = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_reducer.Start(reducer);&#xA;&#x9;&#x9;&#x9;ISplitterCollector&lt;IString, IInteger, IPartitionFunction&lt;IString>> splitter_output = ((ISplitterCollector&lt;IString, IInteger, IPartitionFunction&lt;IString>>)(this.Services.getPort(&quot;splitter_output&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_splitter_output = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_splitter_output.Start(splitter_output);&#xA;&#x9;&#x9;&#x9;IShufflerFeeder&lt;IString, IInteger> shuffler = ((IShufflerFeeder&lt;IString, IInteger>)(this.Services.getPort(&quot;shuffler&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_shuffler = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_shuffler.Start(shuffler);&#xA;&#x9;&#x9;&#x9;go_reducer.Join();&#xA;&#x9;&#x9;&#x9;go_splitter_output.Join();&#xA;&#x9;&#x9;&#x9;go_shuffler.Join();&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;FINISH PEER 2&quot;);&#xA;&#x9;&#x9;&#x9;AutoResetEvent e = new AutoResetEvent (false);&#xA;&#x9;&#x9;&#x9;e.WaitOne ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IPeer2Impl.cs" srcType="user" uri="mapreduce.countwords.SystemImpl/bin/1.0.0.0/IPeer2Impl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/mapreduce.countwords.SystemImpl/bin/1.0.0.0/BaseIPeer2Impl.dll</dependency>
+          <dependency>mapreduce.countwords.System/bin/1.0.0.0/IPeer_2.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="388" y="720">
+        <color b="0" g="165" r="255"/>
+      </visualDescription>
+      <port name="global_intermediate_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="reducer"/>
+      </port>
+      <port name="output_pairs_reduce">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="reducer"/>
+      </port>
+      <port name="platform_reduce">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_reduce" sRef="reducer"/>
+      </port>
+      <port name="task_reduce">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_reduce" sRef="reducer"/>
+      </port>
+      <port name="task_shuffle_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_shuffle_perform" sRef="shuffler"/>
+      </port>
+      <port name="global_intermediate_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="shuffler"/>
+      </port>
+      <port name="task_shuffle_chunk_ready">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_shuffle_chunk_ready" sRef="shuffler"/>
+      </port>
+      <port name="task_split_output_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_read_chunk" sRef="splitter_output"/>
+      </port>
+      <port name="task_split_output_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_perform" sRef="splitter_output"/>
+      </port>
+      <port name="output_pairs_reduce">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="splitter_output"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IPeer1Impl" nArgs="0">
+      <slice isRef="mapper">
+        <originRef cRef="mapper" iRef="IMapper"/>
+        <visualDescription h="10" w="10" x="127" y="34"/>
+      </slice>
+      <slice isRef="shuffler">
+        <originRef cRef="shuffler" iRef="IShufflerCollector"/>
+        <visualDescription h="10" w="10" x="125" y="58"/>
+      </slice>
+      <slice isRef="splitter_input">
+        <originRef cRef="splitter_input" iRef="ISplitterFeeder"/>
+        <visualDescription h="10" w="10" x="124" y="12"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using mapreduce.countwords.System;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;&#xA;using br.ufc.mdcc.common.String;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.example.cw.WordCounter;&#xA;&#xA;namespace mapreduce.countwords.SystemImpl&#xA;{&#xA;&#x9;public class IPeer1Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_1&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IMapper&lt;IComputeHost, IInteger, IString, IString, IInteger, IWordCounter> mapper = ((IMapper&lt;IComputeHost, IInteger, IString, IString, IInteger, IWordCounter>)(this.Services.getPort(&quot;mapper&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_mapper = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_mapper.Start(mapper);&#xA;&#x9;&#x9;&#x9;ISplitterFeeder&lt;IInteger, IString> splitter_input = (ISplitterFeeder&lt;IInteger, IString>)(this.Services.getPort(&quot;splitter_input&quot;));&#xA;&#x9;&#x9;&#x9;Thread go_splitter_input = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_splitter_input.Start(splitter_input);&#xA;&#x9;&#x9;&#x9;IShufflerCollector&lt;IString, IInteger, IPartitionFunction&lt;IString>> shuffler = ((IShufflerCollector&lt;IString, IInteger, IPartitionFunction&lt;IString>>)(this.Services.getPort(&quot;shuffler&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_shuffler = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_shuffler.Start(shuffler);&#xA;&#x9;&#x9;&#x9;go_mapper.Join();&#xA;&#x9;&#x9;&#x9;go_splitter_input.Join();&#xA;&#x9;&#x9;&#x9;go_shuffler.Join();&#xA;&#x9;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;FINISH PEER 1&quot;);&#xA;&#x9;&#x9;&#x9;AutoResetEvent e = new AutoResetEvent (false);&#xA;&#x9;&#x9;&#x9;e.WaitOne ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IPeer1Impl.cs" srcType="user" uri="mapreduce.countwords.SystemImpl/bin/1.0.0.0/IPeer1Impl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/mapreduce.countwords.SystemImpl/bin/1.0.0.0/BaseIPeer1Impl.dll</dependency>
+          <dependency>mapreduce.countwords.System/bin/1.0.0.0/IPeer_1.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="214" y="708">
+        <color b="0" g="136" r="255"/>
+      </visualDescription>
+      <port name="task_map">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_map" sRef="mapper"/>
+      </port>
+      <port name="input_pairs_map">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="mapper"/>
+      </port>
+      <port name="local_intermediate_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="mapper"/>
+      </port>
+      <port name="platform_map">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_map" sRef="mapper"/>
+      </port>
+      <port name="local_intermediate_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="shuffler"/>
+      </port>
+      <port name="task_shuffle_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_shuffle_read_chunk" sRef="shuffler"/>
+      </port>
+      <port name="task_shuffle_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_shuffle_perform" sRef="shuffler"/>
+      </port>
+      <port name="task_split_input_chunk_ready">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_chunk_ready" sRef="splitter_input"/>
+      </port>
+      <port name="task_split_input_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_perform" sRef="splitter_input"/>
+      </port>
+      <port name="input_pairs_map">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="splitter_input"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IRootImpl" nArgs="0">
+      <slice isRef="workflow">
+        <originRef cRef="workflow" iRef="IWorkflow"/>
+        <visualDescription h="10" w="10" x="9" y="13"/>
+      </slice>
+      <slice isRef="application">
+        <originRef cRef="application" iRef="IApplication"/>
+        <visualDescription h="10" w="10" x="13" y="57"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using mapreduce.countwords.System;&#xA;using mapreduce.countwords.Workflow;&#xA;using System.Threading;&#xA;using mapreduce.countwords.Application;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace mapreduce.countwords.SystemImpl&#xA;{&#xA;&#x9;public class IRootImpl : br.ufc.pargo.hpe.kinds.Application, IRoot&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IWorkflow&lt;ISAFeHost> workflow = ((IWorkflow&lt;ISAFeHost>)(this.Services.getPort(&quot;workflow&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_workflow = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_workflow.Start(workflow);&#xA;&#x9;&#x9;&#x9;IApplication&lt;ISAFeHost> application = ((IApplication&lt;ISAFeHost>)(this.Services.getPort(&quot;application&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_application = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_application.Start(application);&#xA;&#x9;&#x9;&#x9;go_workflow.Join();&#xA;&#x9;&#x9;&#x9;go_application.Join();&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;FINISH ROOT&quot;);&#xA;&#x9;&#x9;&#x9;AutoResetEvent e = new AutoResetEvent (false);&#xA;&#x9;&#x9;&#x9;e.WaitOne ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IRootImpl.cs" srcType="user" uri="mapreduce.countwords.SystemImpl/bin/1.0.0.0/IRootImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/mapreduce.countwords.SystemImpl/bin/1.0.0.0/BaseIRootImpl.dll</dependency>
+          <dependency>mapreduce.countwords.System/bin/1.0.0.0/IRoot.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="734" y="674">
+        <color b="255" g="0" r="0"/>
+      </visualDescription>
+      <port name="task_map">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_map" sRef="workflow"/>
+      </port>
+      <port name="task_split_input_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_split_input_perform" sRef="workflow"/>
+      </port>
+      <port name="task_shuffle_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_shuffle_read_chunk" sRef="workflow"/>
+      </port>
+      <port name="task_reduce">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_reduce" sRef="workflow"/>
+      </port>
+      <port name="task_shuffle_chunk_ready">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_shuffle_chunk_ready" sRef="workflow"/>
+      </port>
+      <port name="task_split_output_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_split_output_perform" sRef="workflow"/>
+      </port>
+      <port name="task_split_input_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_split_input_read_chunk" sRef="workflow"/>
+      </port>
+      <port name="task_shuffle_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_shuffle_perform" sRef="workflow"/>
+      </port>
+      <port name="task_split_output_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_split_output_read_chunk" sRef="workflow"/>
+      </port>
+      <port name="task_split_output_chunk_ready">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_split_output_chunk_ready" sRef="workflow"/>
+      </port>
+      <port name="platform_SAFe">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_SAFe" sRef="workflow"/>
+      </port>
+      <port name="task_split_input_chunk_ready">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_split_input_chunk_ready" sRef="workflow"/>
+      </port>
+      <port name="platform_SAFe">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_SAFe" sRef="application"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IPeer0Impl" multiple="true" private="false" replica="0" uRef="peer_0" visibleInterface="true">
+      <super cRef="base" uRef="peer_0"/>
+      <visualDescription h="40" w="97" x="45" y="578"/>
+    </unit>
+    <unit facet="3" iRef="IPeer3Impl" multiple="true" private="false" replica="0" uRef="peer_3" visibleInterface="true">
+      <super cRef="base" uRef="peer_3"/>
+      <visualDescription h="59" w="150" x="528" y="554"/>
+    </unit>
+    <unit facet="2" iRef="IPeer2Impl" multiple="true" private="false" replica="0" uRef="peer_2" visibleInterface="true">
+      <super cRef="base" uRef="peer_2"/>
+      <visualDescription h="59" w="133" x="349" y="547"/>
+    </unit>
+    <unit facet="1" iRef="IPeer1Impl" multiple="true" private="false" replica="0" uRef="peer_1" visibleInterface="true">
+      <super cRef="base" uRef="peer_1"/>
+      <visualDescription h="44" w="100" x="198" y="573"/>
+    </unit>
+    <unit facet="4" iRef="IRootImpl" multiple="true" private="false" replica="0" uRef="root" visibleInterface="true">
+      <super cRef="base" uRef="root"/>
+      <visualDescription h="77" w="148" x="694" y="543"/>
+    </unit>
+  </componentInfo>
+</component:component>

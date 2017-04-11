@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000057204a0fc151233e1105d43e52fbc3288126dc4dec4ab1519ef42da2efcac320610b8a0b6291be6cf4dd31fbb4c5494cb55f622a6acb2dd06555f728878283d05441b5cfc20c90ba5793bacb85f708f0af5810e7cff0ed2db3771fbc1a987fc2b68114941216a9c3e36828ac48264d613ae15dfdf26011e2eea7b8f8fc4c4688" isAbstract="false" kind="Environment" name="TaskPortTypeAdvanceChunkReadyImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000006be5be567be158e4257cccabc2305b7b0227669bba5838ea673ce7833c208751fa52bc6ee7cd5566d28865383c30cc57e9a809eeef39f32be7a82cae3a49e0b42f4d2376521702854c40ffc8fb3523955829b23f97debb953401ab0c626fc1ec7a6bbc7085f7db62d85ecd3e2c2d3b2cf4462bdbc5a301f09df03754a944a587" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady/TaskPortTypeAdvanceChunkReady.hpe" name="TaskPortTypeAdvanceChunkReady" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="165" y="194">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="task_port_type">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
+  </header>
+  <componentInfo>
+    <interface iRef="ITaskPortTypeAdvanceChunkReadyImpl" nArgs="0">
+      <slice isRef="chunk_ready">
+        <originRef cRef="chunk_ready" iRef="IChunkReady"/>
+        <visualDescription h="10" w="10" x="15" y="17"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceChunkReadyImpl &#xA;{&#xA;&#x9;public abstract class BaseITaskPortTypeAdvanceChunkReadyImpl: br.ufc.pargo.hpe.kinds.Environment, BaseITaskPortTypeAdvanceChunkReady&#xA;&#x9;{&#xA;&#x9;&#x9;private IChunkReady chunk_ready = null;&#xA;&#xA;&#x9;&#x9;protected IChunkReady Chunk_ready&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.chunk_ready == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.chunk_ready = (IChunkReady) Services.getPort(&quot;chunk_ready&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.chunk_ready;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseITaskPortTypeAdvanceChunkReadyImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceChunkReadyImpl/bin/1.0.0.0/BaseITaskPortTypeAdvanceChunkReadyImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType/bin/1.0.0.0/IChunkReady.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady/bin/1.0.0.0/BaseITaskPortTypeAdvanceChunkReady.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceChunkReadyImpl&#xA;{&#xA;&#x9;public class ITaskPortTypeAdvanceChunkReadyImpl : BaseITaskPortTypeAdvanceChunkReadyImpl, ITaskPortTypeAdvanceChunkReady&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="ITaskPortTypeAdvanceChunkReadyImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceChunkReadyImpl/bin/1.0.0.0/ITaskPortTypeAdvanceChunkReadyImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceChunkReadyImpl/bin/1.0.0.0/BaseITaskPortTypeAdvanceChunkReadyImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady/bin/1.0.0.0/ITaskPortTypeAdvanceChunkReady.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="189" x="0" y="116">
+        <color b="230" g="216" r="173"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="ITaskPortTypeAdvanceChunkReadyImpl" multiple="true" private="false" replica="0" uRef="task_port_type" visibleInterface="true">
+      <super cRef="base" uRef="task_port_type"/>
+      <visualDescription h="40" w="189" x="43" y="384"/>
+    </unit>
+  </componentInfo>
+</component:component>

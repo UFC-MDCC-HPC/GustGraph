@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24715DA7-70D5-41FC-83AA-2EFE51DC0004}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>mapreduce.countwords.WorkflowImpl</RootNamespace>
+    <AssemblyName>mapreduce.countwords.WorkflowImpl</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\WorkflowImpl.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="DGAC">
+      <HintPath>..\..\..\..\..\..\..\..\opt\mono-4.2.2\lib\mono\DGAC\DGAC.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\src\1.0.0.0\IWorkflowImpl.cs">
+      <Link>IWorkflowImpl.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\mapreduce.countwords.Workflow\mapreduce.countwords.Workflow\mapreduce.countwords.Workflow.csproj">
+      <Project>{FE0E3D8D-6D7A-42B4-B077-342B6A99C635}</Project>
+      <Name>mapreduce.countwords.Workflow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost.csproj">
+      <Project>{40D35DEE-28A1-4CE9-81EE-50280672C8DE}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer.csproj">
+      <Project>{F7ABD722-31F4-4ACC-B8B6-A14DDAEB022B}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.Maintainer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase\br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase\br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase.csproj">
+      <Project>{816B876F-E438-4F9E-85D8-B98BCCE57044}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.task.TaskPortType\br.ufc.mdcc.hpc.storm.binding.task.TaskPortType\br.ufc.mdcc.hpc.storm.binding.task.TaskPortType.csproj">
+      <Project>{B785892B-10B1-43BA-897F-E6F02CC932D0}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskPortType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance.csproj">
+      <Project>{62252C8E-B7D2-493E-B84B-FD5A9F7FB725}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceReadChunk\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceReadChunk\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceReadChunk.csproj">
+      <Project>{FFC3C137-5860-41DE-AA3C-6673B4F1FEBC}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceReadChunk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvancePerform\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvancePerform\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvancePerform.csproj">
+      <Project>{3266CC03-1786-4F24-AD75-CCD75A3885D6}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvancePerform</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady.csproj">
+      <Project>{F11ACCBE-2F11-497A-8F79-7F4D2CA2FE25}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType.csproj">
+      <Project>{DBE47941-F490-4F61-A8C5-4492FC4209A4}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType.csproj">
+      <Project>{A1632F8E-8F73-4C55-9AD5-D9DC487C0B7D}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType.csproj">
+      <Project>{2E673EB9-0B04-4503-A15F-498E8335311D}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

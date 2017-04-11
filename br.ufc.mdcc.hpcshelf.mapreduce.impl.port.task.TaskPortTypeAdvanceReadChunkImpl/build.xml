@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/heron/hpe/heron/cache" default="all" name="TaskPortTypeAdvanceReadChunkImpl">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="TaskPortTypeAdvanceReadChunkImpl-1.0.0.0">
+    <ifnot targetexists="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceReadChunkImpl/bin/1.0.0.0">
+      <mkdir dir="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceReadChunkImpl/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceReadChunkImpl/TaskPortTypeAdvanceReadChunkImpl.snk" optimize="true" output="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceReadChunkImpl/bin/1.0.0.0/BaseITaskPortTypeAdvanceReadChunkImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceReadChunkImpl/src/1.0.0.0/BaseITaskPortTypeAdvanceReadChunkImpl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType/bin/1.0.0.0/IReadChunk.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceReadChunk/bin/1.0.0.0/BaseITaskPortType.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceReadChunkImpl/TaskPortTypeAdvanceReadChunkImpl.snk" optimize="true" output="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceReadChunkImpl/bin/1.0.0.0/ITaskPortTypeAdvanceReadChunkImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceReadChunkImpl/src/1.0.0.0/ITaskPortTypeAdvanceReadChunkImpl.cs"/>
+      </sources>
+      <references>
+        <include name="/br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvanceReadChunkImpl/bin/1.0.0.0/BaseITaskPortTypeAdvanceReadChunkImpl.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceReadChunk/bin/1.0.0.0/ITaskPortType.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="TaskPortTypeAdvanceReadChunkImpl-1.0.0.0" name="all"/>
+</project>

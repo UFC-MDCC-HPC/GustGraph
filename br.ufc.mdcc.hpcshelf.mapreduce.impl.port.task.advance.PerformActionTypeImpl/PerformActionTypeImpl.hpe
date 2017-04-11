@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000735528f91a38dde2092b7f0c6ac1455efba11b7d871397e436dee3a1fc80cef3c0beef896b94b64f92137c3006bdcc8cccd8feb95ee054e42fc1ff6f38f81ac6ba5fa8934a10755696b6546ebc4d542692f9c2ce2269c00bf0e2f7d3efc4226b67b8535254a91e66a265ae9b68e61f48976dbad039fc15c80cc3633707a34784" isAbstract="false" kind="Environment" name="PerformActionTypeImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000859ede1c6f3087bcb496b64c125d92de3804677dff8cf7f6300311706ca99149f819bbed852b5bbd4300d38417356114a993ba7af676875257417b3e9d371b63ffc330bce67b27962768caf8fc2928be29f9b7a15406bab52e30f195119e895d3c8ae752aad87eb3e8fe557ce8a5b538b62628f64cbc5c09785fcc523ce33293" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType/PerformActionType.hpe" name="PerformActionType" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="111" y="170">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="perform">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
+  </header>
+  <componentInfo>
+    <interface iRef="IPerformImpl" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.ActionType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.PerformActionTypeImpl &#xA;{&#xA;&#x9;public abstract class BaseIPerformImpl: br.ufc.pargo.hpe.kinds.Environment, BaseIActionType&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIPerformImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.PerformActionTypeImpl/bin/1.0.0.0/BaseIPerformImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType/bin/1.0.0.0/BaseIActionType.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.ActionType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.PerformActionTypeImpl&#xA;{&#xA;&#x9;public class IPerformImpl : BaseIPerformImpl, IActionType&#xA;&#x9;{&#xA;&#x9;&#x9;public override void on_initialize ()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IPerformImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.PerformActionTypeImpl/bin/1.0.0.0/IPerformImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.PerformActionTypeImpl/bin/1.0.0.0/BaseIPerformImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType/bin/1.0.0.0/IActionType.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="39" y="105">
+        <color b="0" g="255" r="255"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IPerformImpl" multiple="true" private="false" replica="0" uRef="perform" visibleInterface="true">
+      <super cRef="base" uRef="perform"/>
+      <visualDescription h="40" w="112" x="44" y="261"/>
+    </unit>
+  </componentInfo>
+</component:component>

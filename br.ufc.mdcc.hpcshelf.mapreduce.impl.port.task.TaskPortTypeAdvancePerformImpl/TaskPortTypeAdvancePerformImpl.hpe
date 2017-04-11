@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003f3271a2d5804739102c2f170f49ea0dec06e133fabfcce52ce8ed77e0e9b178638702401e81b007aee310d06fc8eb59acb15d1d488e005b5e1227a3920cd762d969975716c5bb715f0ef72ae179d84db09cc6173bdaf341be2b0d37b6c3eb4877a10c16ecf7c239d3d4b36b51cd9bc2695677f2a57640317b556b0f99cbc0ee" isAbstract="false" kind="Environment" name="TaskPortTypeAdvancePerformImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000004fb2ede62ffa4b22f8f7e0425b509e5f677c19ed540b76966dfd472154ba144459bc875c786578475ee99b327fd54f0a0594094388c05f8ab5f8aa2beaef478c68c66dd2f2ebca5e7dc7261d859c32a2345d15e207e4da222da491c75a18b076d394820055c4f0724f4ee221a4ee21d19e8176448c23b4cefe70e5dc535022a8" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvancePerform/TaskPortTypeAdvancePerform.hpe" name="TaskPortTypeAdvancePerform" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="182" y="184">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="task_port_type">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
+  </header>
+  <componentInfo>
+    <interface iRef="ITaskPortTypeAdvancePerformImpl" nArgs="0">
+      <slice isRef="perform">
+        <originRef cRef="perform" iRef="IPerform"/>
+        <visualDescription h="10" w="10" x="9" y="16"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvancePerform;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskPortType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvancePerformImpl &#xA;{&#xA;&#x9;public abstract class BaseITaskPortTypeAdvancePerformImpl: br.ufc.pargo.hpe.kinds.Environment, BaseITaskPortType&#xA;&#x9;{&#xA;&#x9;&#x9;private IPerform perform = null;&#xA;&#xA;&#x9;&#x9;protected IPerform Perform&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.perform == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.perform = (IPerform) Services.getPort(&quot;perform&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.perform;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseITaskPortTypeAdvancePerformImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvancePerformImpl/bin/1.0.0.0/BaseITaskPortTypeAdvancePerformImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType/bin/1.0.0.0/IPerform.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvancePerform/bin/1.0.0.0/BaseITaskPortType.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvancePerform;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskPortType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvancePerformImpl&#xA;{&#xA;&#x9;public class ITaskPortTypeAdvancePerformImpl : BaseITaskPortTypeAdvancePerformImpl, ITaskPortType&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="ITaskPortTypeAdvancePerformImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvancePerformImpl/bin/1.0.0.0/ITaskPortTypeAdvancePerformImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.TaskPortTypeAdvancePerformImpl/bin/1.0.0.0/BaseITaskPortTypeAdvancePerformImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvancePerform/bin/1.0.0.0/ITaskPortType.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="189" x="6" y="132">
+        <color b="230" g="216" r="173"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="ITaskPortTypeAdvancePerformImpl" multiple="true" private="false" replica="0" uRef="task_port_type" visibleInterface="true">
+      <super cRef="base" uRef="task_port_type"/>
+      <visualDescription h="40" w="189" x="60" y="359"/>
+    </unit>
+  </componentInfo>
+</component:component>

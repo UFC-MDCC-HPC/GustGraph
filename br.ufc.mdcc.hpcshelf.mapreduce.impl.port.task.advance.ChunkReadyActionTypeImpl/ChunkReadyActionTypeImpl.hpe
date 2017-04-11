@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cfc46b3dc1a2d6151ad4e46307eaa66feeda6cb3a6276ecdfa8d88626ba701da0de4b4f89cc7b955c34794010e479efa586fc008025ff88738b70a31504fda98ac7cdf79bb026c4a130e1502fbc069f87381a20c9fe15ebf58ca012a98595de4d6c6af128357e13f8a57bb146ddfa151f1fa5d0134019f3a24665cb38b15df84" isAbstract="false" kind="Environment" name="ChunkReadyActionTypeImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bbccf682f422d0e3e156a48062cd97d9b37cf6c28e4b56a3768df561d3731b1f52a7c5a411cc1536aab514989965c019c154af41344d17a1bad4b58b6477884f438bee9dc26147c2cf7e57ba1e9d501fe0621ccb1da35a902644c9bf3fae4e8defe1ac0d88da073d1592ec9208cc25364ae989800ab30e8b33661c5c49897dac" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType/ChunkReadyActionType.hpe" name="ChunkReadyActionType" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="233" y="177">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="chunk_ready">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
+  </header>
+  <componentInfo>
+    <interface iRef="IChunkReadyImpl" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.ActionType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.ChunkReadyActionTypeImpl &#xA;{&#xA;&#x9;public abstract class BaseIChunkReadyImpl: br.ufc.pargo.hpe.kinds.Environment, BaseIActionType&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIChunkReadyImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.ChunkReadyActionTypeImpl/bin/1.0.0.0/BaseIChunkReadyImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType/bin/1.0.0.0/BaseIActionType.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.ActionType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.ChunkReadyActionTypeImpl&#xA;{&#xA;&#x9;public class IChunkReadyImpl : BaseIChunkReadyImpl, IActionType&#xA;&#x9;{&#xA;&#x9;&#x9;public override void on_initialize ()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IChunkReadyImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.ChunkReadyActionTypeImpl/bin/1.0.0.0/IChunkReadyImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.ChunkReadyActionTypeImpl/bin/1.0.0.0/BaseIChunkReadyImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType/bin/1.0.0.0/IActionType.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="154" x="84" y="112">
+        <color b="0" g="255" r="255"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IChunkReadyImpl" multiple="true" private="false" replica="0" uRef="chunk_ready" visibleInterface="true">
+      <super cRef="base" uRef="chunk_ready"/>
+      <visualDescription h="40" w="123" x="99" y="220"/>
+    </unit>
+  </componentInfo>
+</component:component>

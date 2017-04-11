@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bbccf682f422d0e3e156a48062cd97d9b37cf6c28e4b56a3768df561d3731b1f52a7c5a411cc1536aab514989965c019c154af41344d17a1bad4b58b6477884f438bee9dc26147c2cf7e57ba1e9d501fe0621ccb1da35a902644c9bf3fae4e8defe1ac0d88da073d1592ec9208cc25364ae989800ab30e8b33661c5c49897dac" isAbstract="true" kind="Environment" name="ChunkReadyActionType" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000490ab725063a448d68da7d15056715372803d7217feb5fbc25938af2396b35f7a0fa38b0a75d6296fb72fc328d73b6ffabee2248d5916b776a8f7c3355d868f46213e9d95e64a465c8142c1c741f1eba46feddee2dfcb3512312edfa13a6335d5d32af41ca87a2e0d0908ee8c386cb55736e4b7c9d17098fdb506a213ab39081" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.ActionType/ActionType.hpe" name="ActionType" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="182" y="369">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="action">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
+  </header>
+  <componentInfo>
+    <interface iRef="IChunkReady" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType&#xA;{&#xA;&#x9;public interface BaseIChunkReady : IEnvironmentKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIChunkReady.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType/bin/1.0.0.0/BaseIChunkReady.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.ActionType/bin/1.0.0.0/BaseIActionType.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType&#xA;{&#xA;&#x9;public interface IChunkReady : BaseIChunkReady&#xA;&#x9;{&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;public class CHUNK_READY&#xA;&#x9;{&#xA;&#x9;&#x9;//public static object name = &quot;CHUNK_READY&quot;;&#xA;&#x9;&#x9;public const int name = 21;&#xA;&#x9;}&#xA;}" name="IChunkReady.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType/bin/1.0.0.0/IChunkReady.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType/bin/1.0.0.0/BaseIChunkReady.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.ActionType/bin/1.0.0.0/IActionType.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="154" x="84" y="112">
+        <color b="0" g="255" r="255"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IChunkReady" multiple="true" private="false" replica="0" uRef="chunk_ready" visibleInterface="true">
+      <super cRef="base" uRef="action"/>
+      <visualDescription h="40" w="123" x="99" y="220"/>
+    </unit>
+  </componentInfo>
+</component:component>

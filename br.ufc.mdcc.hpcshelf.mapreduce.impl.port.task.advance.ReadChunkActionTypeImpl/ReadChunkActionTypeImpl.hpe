@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c32221580bde4f7e755ca46084e184cb46cd2af04c1b5235a2315d0a84fe87b655da88a62ed996a4f8e460b25b4cbec681640cf39c855018ce80f111bcb8457071075ed31519332f18a6e6abe9512143ca91a9f71d7196337a716e0067860a09f2d8b6881656830bee9ef35e09d2923c4d31548d3d0733b8144e94931f8e01b4" isAbstract="false" kind="Environment" name="ReadChunkActionTypeImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000008f0e43d1dba1e978085a2708f3e2ccc68b3b545e9fea1e47064c770ef810786c2bd38c9153cc42a65dcf054872823162e5f28bfdc3cb477065f52aa1b498e10c41fcde74c4b9d8782e59fd02c69017cf0e03cd326bcf9684fc90383c33dff0434290be57acbaa793732feefbd0ef32cdd6c53ed0f6f33a580af271c3ab037e8f" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType/ReadChunkActionType.hpe" name="ReadChunkActionType" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="145" y="248">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="read_chunk">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
+  </header>
+  <componentInfo>
+    <interface iRef="IReadChunkImpl" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.ActionType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.ReadChunkActionTypeImpl &#xA;{&#xA;&#x9;public abstract class BaseIReadChunkImpl: br.ufc.pargo.hpe.kinds.Environment, BaseIActionType&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIReadChunkImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.ReadChunkActionTypeImpl/bin/1.0.0.0/BaseIReadChunkImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType/bin/1.0.0.0/BaseIActionType.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.ActionType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.ReadChunkActionTypeImpl&#xA;{&#xA;&#x9;public class IReadChunkImpl : BaseIReadChunkImpl, IActionType&#xA;&#x9;{&#xA;&#x9;&#x9;public override void on_initialize ()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IReadChunkImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.ReadChunkActionTypeImpl/bin/1.0.0.0/IReadChunkImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.ReadChunkActionTypeImpl/bin/1.0.0.0/BaseIReadChunkImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType/bin/1.0.0.0/IActionType.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="197" x="134" y="126">
+        <color b="0" g="255" r="255"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IReadChunkImpl" multiple="true" private="false" replica="0" uRef="read_chunk" visibleInterface="true">
+      <super cRef="base" uRef="read_chunk"/>
+      <visualDescription h="40" w="176" x="33" y="190"/>
+    </unit>
+  </componentInfo>
+</component:component>

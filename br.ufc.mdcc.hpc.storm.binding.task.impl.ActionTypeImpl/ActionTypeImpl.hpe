@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000799d63ed62090cdf6b0c7ef4e5e0212b4508f9787625193e3dc03304af727f33012f4fa4f318aeb728e86323e4cb34471d7c0e2ab07b961677c64aee33146bffcba8f8b10255305c2fa84f44a5156ad971e0a763bc858c7ccc8caff48da470e703a24d049da6c9777c8e960c0f429cc99c835f76b3b90fe8aa9657d72c9c139f" isAbstract="false" kind="Environment" name="ActionTypeImpl" packagePath="br.ufc.mdcc.hpc.storm.binding.task.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000490ab725063a448d68da7d15056715372803d7217feb5fbc25938af2396b35f7a0fa38b0a75d6296fb72fc328d73b6ffabee2248d5916b776a8f7c3355d868f46213e9d95e64a465c8142c1c741f1eba46feddee2dfcb3512312edfa13a6335d5d32af41ca87a2e0d0908ee8c386cb55736e4b7c9d17098fdb506a213ab39081" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.ActionType/ActionType.hpe" name="ActionType" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="177" y="173">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="action">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
+  </header>
+  <componentInfo>
+    <interface iRef="IActionImpl" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.ActionType;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.task.impl.ActionTypeImpl &#xA;{&#xA;&#x9;public abstract class BaseIActionImpl: br.ufc.pargo.hpe.kinds.Environment, BaseIActionType&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIActionImpl.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.task.impl.ActionTypeImpl/bin/1.0.0.0/BaseIActionImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.ActionType/bin/1.0.0.0/BaseIActionType.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.ActionType;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.task.impl.ActionTypeImpl&#xA;{&#xA;&#x9;public class IActionImpl : BaseIActionImpl, IActionType&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="IActionImpl.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.task.impl.ActionTypeImpl/bin/1.0.0.0/IActionImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.task.impl.ActionTypeImpl/bin/1.0.0.0/BaseIActionImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.ActionType/bin/1.0.0.0/IActionType.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="64" y="111">
+        <color b="0" g="255" r="255"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IActionImpl" multiple="true" private="false" replica="0" uRef="action" visibleInterface="true">
+      <super cRef="base" uRef="action"/>
+      <visualDescription h="40" w="80" x="61" y="259"/>
+    </unit>
+  </componentInfo>
+</component:component>

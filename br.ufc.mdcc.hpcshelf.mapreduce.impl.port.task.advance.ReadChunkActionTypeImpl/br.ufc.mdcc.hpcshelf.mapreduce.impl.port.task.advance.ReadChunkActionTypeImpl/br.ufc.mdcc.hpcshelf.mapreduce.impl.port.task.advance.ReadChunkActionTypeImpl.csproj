@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1773F22-77F0-4A2F-8DBE-794912E5E605}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.ReadChunkActionTypeImpl</RootNamespace>
+    <AssemblyName>br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.ReadChunkActionTypeImpl</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\ReadChunkActionTypeImpl.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="DGAC">
+      <HintPath>..\..\..\..\..\..\..\..\opt\mono-4.2.2\lib\mono\DGAC\DGAC.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseIReadChunkImpl.cs">
+      <Link>BaseIReadChunkImpl.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IReadChunkImpl.cs">
+      <Link>IReadChunkImpl.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType\br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType.csproj">
+      <Project>{2E673EB9-0B04-4503-A15F-498E8335311D}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.task.ActionType\br.ufc.mdcc.hpc.storm.binding.task.ActionType\br.ufc.mdcc.hpc.storm.binding.task.ActionType.csproj">
+      <Project>{82E10F73-80D6-4209-BFC9-3EBE92806395}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.task.ActionType</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
