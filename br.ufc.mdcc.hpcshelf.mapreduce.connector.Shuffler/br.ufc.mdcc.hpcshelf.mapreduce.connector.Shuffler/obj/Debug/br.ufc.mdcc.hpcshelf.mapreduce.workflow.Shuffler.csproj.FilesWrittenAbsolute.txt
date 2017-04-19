@@ -1,2 +1,0 @@
-/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffler/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffler/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffler/br.ufc.mdcc.hpcshelf.mapreduce.workflow.Shuffler/bin/Debug/DGAC.dll
