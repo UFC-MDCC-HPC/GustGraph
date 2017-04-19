@@ -24,13 +24,5 @@ Debug
 bin
 obj
 local_files
-to_deploy.txt2
-to_deploy.txt3
 .metadata
-
-# begin temp
-Teste.cs
-Program.cs
-commit
-#end temp
 
