@@ -19,6 +19,7 @@ RemoteSystemsTempFiles
 *.dll
 *.snk
 *.pub
+*.userprefs
 
 Debug
 bin
