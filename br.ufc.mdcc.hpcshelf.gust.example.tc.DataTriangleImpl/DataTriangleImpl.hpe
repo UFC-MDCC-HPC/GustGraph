@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b7091f25390311de389ac46b2354c1dd4b9bfce242845709a32b9a5311a77ee4e70450121fc1542757cd124a2121949217dee0f08acf39921ffecdd26ad6108c1bf14a61a099a74a023566a07f4aa18eb464a688fc58869cead333dab176cc93b3edfbd7d31b9305ee9f281743c0cd13735a023ca74557751b06fb0e4dedf18c" isAbstract="false" kind="Data" name="DataTriangleImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.example.tc">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000099e22c202edf779f6a14b3fbfbfdd19b1be39d1465cfe8e298fcf78bb6cdebedf50d2823e8c86fcd3f9c39368d3c853a1e1d5365c795a0b624c2d765f6f77ed69d03b211a6c34ae9d58ef7ea8f064c5a860220afed1fdf0a0a7fedddedda4aad2832043e5d7fd9075f3c20abc757ad188dc00df074fb53c4c8749c43fc6798e9" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle/DataTriangle.hpe" name="DataTriangle" package="br.ufc.mdcc.hpcshelf.gust.example.tc" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="283" y="504">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IDataTriangleImpl" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataTriangleImpl: DataStructure, BaseIDataTriangle&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDataTriangleImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl/bin/1.0.0.0/BaseIDataTriangleImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle/bin/1.0.0.0/BaseIDataTriangle.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl {&#xA;&#x9;public class IDataTriangleImpl : BaseIDataTriangleImpl, IDataTriangle {&#xA;&#x9;&#x9;public IDataTriangleImpl () {}&#xA;&#xA;&#x9;&#x9;override public void after_initialize () {&#xA;&#x9;&#x9;&#x9;newInstance (); &#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public IDataTriangleInstance newInstance (int v) {&#xA;&#x9;&#x9;&#x9;IDataTriangleInstance instance = (IDataTriangleInstance)newInstance ();&#xA;&#x9;&#x9;&#x9;instance.V = v;&#xA;&#x9;&#x9;&#x9;return instance;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;public IDataTriangleInstance newInstance (int v, int w) {&#xA;&#x9;&#x9;&#x9;IDataTriangleInstance instance = (IDataTriangleInstance)newInstance ();&#xA;&#x9;&#x9;&#x9;instance.V = v;&#xA;&#x9;&#x9;&#x9;instance.W = w;&#xA;&#x9;&#x9;&#x9;return instance;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public object newInstance () {&#xA;&#x9;&#x9;&#x9;this.instance = new IDataTriangleInstanceImpl ();&#xA;&#x9;&#x9;&#x9;return this.Instance;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IDataTriangleInstance instance;&#xA;&#xA;&#x9;&#x9;public object Instance {&#xA;&#x9;&#x9;&#x9;get { return instance; }&#xA;&#x9;&#x9;&#x9;set { this.instance = (IDataTriangleInstance)value; }&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#xA;&#x9;[Serializable]&#xA;&#x9;public class IDataTriangleInstanceImpl : IDataTriangleInstance {&#xA;&#x9;&#x9;#region IDataTriangleInstance implementation&#xA;&#xA;&#x9;&#x9;private int v;&#xA;&#x9;&#x9;public int V {&#xA;&#x9;&#x9;&#x9;get { return this.v; }&#xA;&#x9;&#x9;&#x9;set { this.v = value; }&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private int w;&#xA;&#x9;&#x9;public int W {&#xA;&#x9;&#x9;&#x9;get { return this.w; }&#xA;&#x9;&#x9;&#x9;set { this.w = value; }&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public object ObjValue {&#xA;&#x9;&#x9;&#x9;get { return new Tuple&lt;int,int>(v,w); }&#xA;&#x9;&#x9;&#x9;set { &#xA;&#x9;&#x9;&#x9;&#x9;this.v = ((Tuple&lt;int,int>)value).Item1;&#xA;&#x9;&#x9;&#x9;&#x9;this.w = ((Tuple&lt;int,int>)value).Item2;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;public override int GetHashCode () { return pairingFunction (this.v, this.w ); }&#xA;&#x9;&#x9;public override string ToString () { return &quot;[&quot;+this.v+&quot;,&quot;+this.w+&quot;]&quot;; }&#xA;&#xA;&#x9;&#x9;public override bool Equals (object obj) {&#xA;&#x9;&#x9;&#x9;if (obj is IDataTriangleInstanceImpl)&#xA;&#x9;&#x9;&#x9;&#x9;return ( ((IDataTriangleInstanceImpl)obj).V==this.v &amp;&amp; ((IDataTriangleInstanceImpl)obj).W == this.w );&#xA;&#x9;&#x9;&#x9;else &#xA;&#x9;&#x9;&#x9;&#x9;return false;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;public static int pairingFunction (int a, int b) {&#xA;&#x9;&#x9;&#x9;var A = (ulong)(a >= 0 ? 2 * (long)a : -2 * (long)a - 1);&#xA;&#x9;&#x9;&#x9;var B = (ulong)(b >= 0 ? 2 * (long)b : -2 * (long)b - 1);&#xA;&#x9;&#x9;&#x9;var C = (long)((A >= B ? A * A + A + B : A + B * B) / 2);&#xA;&#x9;&#x9;&#x9;var R = a &lt; 0 &amp;&amp; b &lt; 0 || a >= 0 &amp;&amp; b >= 0 ? C : -C - 1;&#xA;&#x9;&#x9;&#x9;return (int)R;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;#endregion&#xA;&#xA;&#x9;&#x9;#region ICloneable implementation&#xA;&#xA;&#x9;&#x9;public object Clone () {&#xA;&#x9;&#x9;&#x9;IDataTriangleInstance clone = new IDataTriangleInstanceImpl ();&#xA;&#x9;&#x9;&#x9;clone.V = this.v;&#xA;&#x9;&#x9;&#x9;clone.W = this.w;&#xA;&#x9;&#x9;&#x9;return clone;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;#endregion&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;" name="IDataTriangleImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl/bin/1.0.0.0/IDataTriangleImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl/bin/1.0.0.0/BaseIDataTriangleImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle/bin/1.0.0.0/IDataTriangle.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="185" x="107" y="300">
+        <color b="168" g="127" r="173"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IDataTriangleImpl" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
+      <super cRef="base" uRef="data"/>
+      <visualDescription h="40" w="80" x="212" y="391"/>
+    </unit>
+  </componentInfo>
+</component:component>
