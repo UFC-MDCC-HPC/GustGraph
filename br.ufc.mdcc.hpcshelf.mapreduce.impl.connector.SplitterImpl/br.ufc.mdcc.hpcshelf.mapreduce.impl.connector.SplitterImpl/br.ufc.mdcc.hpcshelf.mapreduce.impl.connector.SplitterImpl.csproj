@@ -70,10 +70,6 @@
       <Project>{816B876F-E438-4F9E-85D8-B98BCCE57044}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.common.Set\br.ufc.mdcc.common.Set\br.ufc.mdcc.common.Set.csproj">
-      <Project>{22022ACE-A645-40B7-908A-441CD854EA9A}</Project>
-      <Name>br.ufc.mdcc.common.Set</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.common.KVPair\br.ufc.mdcc.common.KVPair\br.ufc.mdcc.common.KVPair.csproj">
       <Project>{9B499C49-DA84-475A-B783-2A3D2DEAAA97}</Project>
       <Name>br.ufc.mdcc.common.KVPair</Name>
