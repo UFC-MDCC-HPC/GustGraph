@@ -114,7 +114,7 @@ where E:IEdge<V> {
 						return default(TE);
 					}
 
-					if (!delegator.Container.AllowingLoops && sourceVertex.Equals (targetVertex)) { throw new ArgumentException ("loops not allowed"); }
+					if (!delegator.Container.AllowingLoops && sourceVertex.Equals (targetVertex)) { Console.WriteLine ("LOOPS NOT ALLOWED"); return default(TE); }
 
 					TE e = (TE) delegator.Container.EdgeFactory.newInstance (sourceVertex, targetVertex);
 					addEdgeToContainer (e);
@@ -123,8 +123,8 @@ where E:IEdge<V> {
 				return default(TE);
 			}
 			public bool addEdge (TE e) {
-				if (e == null || e.Source == null || e.Target == null) {
-					throw new EntryPointNotFoundException ();
+				if (e == null || e.Source == null || e.Target == null) { 
+					return false; 
 				} 
 				if (containsVertex (e.Source) && containsVertex (e.Target)) {
 					if (!delegator.Container.AllowingMultipleEdges && containsEdge (e.Source, e.Target)) {
@@ -132,7 +132,8 @@ where E:IEdge<V> {
 					}
 
 					if (!delegator.Container.AllowingLoops && e.Source.Equals (e.Target)) {
-						throw new ArgumentException ("loops not allowed");
+						Console.WriteLine ("LOOPS NOT ALLOWED");  
+						return false; 
 					}
 					addEdgeToContainer (e);
 					return true;
@@ -156,8 +157,10 @@ where E:IEdge<V> {
 				return false;
 			}
 			public bool containsVertex (TV v){
-				if(v==null)
-					throw new ArgumentNullException ("WARNING: Method containsVertex receive parameter null! ");
+				if (v == null) {
+					Console.WriteLine ("WARNING: containsVertex(PARAMETER NULL!) ");
+					return false;
+				}
 				return delegator.containsVertex (v);
 			}
 			public IEnumerator<TE> edgeSet () {
@@ -253,7 +256,7 @@ where E:IEdge<V> {
 				setAllEdgeWeight (e.Source, e.Target, weight);
 			}
 			public void setAllEdgeWeight (TV sourceVertex, TV targetVertex, float weight){
-				throw new NotSupportedException ("SetEdgeWeight not Supported");
+				Console.WriteLine ("WARNING: Operation setAllEdgeWeight not Supported");
 			}
 			public float getEdgeWeight (TV sourceVertex, TV targetVertex){
 				return delegator.Container.EdgeFactory.newInstance (sourceVertex, targetVertex).Weight;

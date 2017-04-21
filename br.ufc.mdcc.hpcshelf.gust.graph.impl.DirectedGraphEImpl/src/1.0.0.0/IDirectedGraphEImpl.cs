@@ -115,7 +115,7 @@ where E:IEdge<V>
 						return default(TE);
 					}
 
-					if (!delegator.Container.AllowingLoops && sourceVertex.Equals (targetVertex)) { throw new ArgumentException ("loops not allowed"); }
+					if (!delegator.Container.AllowingLoops && sourceVertex.Equals (targetVertex)) { Console.WriteLine ("LOOPS NOT ALLOWED"); return default(TE); }
 
 					TE e = (TE) delegator.Container.EdgeFactory.newInstance (sourceVertex, targetVertex);
 
@@ -126,7 +126,7 @@ where E:IEdge<V>
 			}
 			public bool addEdge (TE e) {
 				if (e == null || e.Source == null || e.Target == null) {
-					throw new EntryPointNotFoundException ();
+					return false;
 				} 
 				if (containsVertex (e.Source) && containsVertex (e.Target)) {
 					if (!delegator.Container.AllowingMultipleEdges && containsEdge (e.Source, e.Target)) {
@@ -134,7 +134,8 @@ where E:IEdge<V>
 					}
 
 					if (!delegator.Container.AllowingLoops && e.Source.Equals (e.Target)) {
-						throw new ArgumentException ("loops not allowed");
+						Console.WriteLine ("LOOPS NOT ALLOWED");
+						return false;
 					}
 					addEdgeToContainer (e);
 					return true;
@@ -158,8 +159,10 @@ where E:IEdge<V>
 				return false;
 			}
 			public bool containsVertex (TV v){
-				if(v==null)
-					throw new ArgumentNullException ("WARNING: Method containsVertex receive parameter null! ");
+				if (v == null) {
+					Console.WriteLine ("WARNING: containsVertex(parameter null!) ");
+					return false;
+				}
 				return delegator.containsVertex (v);
 			}
 			public IEnumerator<TE> edgeSet () {
