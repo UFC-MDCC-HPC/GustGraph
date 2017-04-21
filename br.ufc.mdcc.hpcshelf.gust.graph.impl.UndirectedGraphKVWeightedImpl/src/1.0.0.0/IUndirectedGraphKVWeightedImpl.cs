@@ -128,7 +128,7 @@ where E:IEdge<V> {
 			}
 			public bool addEdge (TE e) {
 				if (e == null || e.Source == null || e.Target == null) {
-					throw new EntryPointNotFoundException ();
+					return false;
 				} 
 				if (containsVertex (e.Source) && containsVertex (e.Target)) {
 					if (!delegator.Container.AllowingMultipleEdges && containsEdge (e.Source, e.Target)) {
@@ -159,8 +159,10 @@ where E:IEdge<V> {
 				return false;
 			}
 			public bool containsVertex (TV v){
-				if(v==null)
-					throw new ArgumentNullException ("WARNING: Method containsVertex receive parameter null! ");
+				if (v == null) {
+					Console.WriteLine ("WARNING: containsVertex(parameter null!) ");
+					return false;
+				}
 				return delegator.containsVertex (v);
 			}
 			public IEnumerator<TE> edgeSet () {
