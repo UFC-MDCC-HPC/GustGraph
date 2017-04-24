@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000776473890058b71fa3fa35a8b9966b1b0d703c9ab01cb17d6beb124658285ee2d72367780ab779e844c38568b0d7316c8e87bfaf3377633a23900c6d702b683b32ba691eedf599fec0f388205fb85fa574b0932eefc33c7a28aef04b9f29be8f96810b53abc23f6781a5449eb805da83a1c7142d1fc54a4d72712c405fff86c5" isAbstract="false" kind="Computation" name="GustyImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.impl.computation">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000fd0066e1b11706d2697d3f915b1b0a6cab76b4fd39e69f2faa0d8cf902f37ba995ff41e9efa10921224e5e21f10501719d0ffa52dae8ad4a54759743096ddde3714bfedf01c22fffa8fc964c078f9f6c869056143e5df548dd23313083ee8c909752b4b545caab0b3a2c947c4b51f887249292b81a3676053c3102f8f3650f99" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.computation.Gusty/Gusty.hpe" name="Gusty" package="br.ufc.mdcc.hpcshelf.gust.computation" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="344" y="345">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="output_value_type" varName="OValue"/>
+        <parameter formFieldId="graph_type" varName="G"/>
+        <parameter formFieldId="input_key_type" varName="TKey"/>
+        <parameter formFieldId="input_value_type" varName="TValue"/>
+        <parameter formFieldId="platform_maintainer" varName="M"/>
+        <parameter formFieldId="reduce_function" varName="RF"/>
+        <parameter formFieldId="output_key_type" varName="OKey"/>
+        <port index_replica="0" localRef="task_reduce" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="60" w="182" x="146" y="420">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###2006723688"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port index_replica="0" localRef="feed_pairs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/EnvironmentBindingBaseDirect.hpe" multiple="false" name="EnvironmentBindingBaseDirect" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
+          <visualDescription h="60" w="112" x="541" y="444">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="client_port_type" varName="X###774348081"/>
+          <parameter formFieldId="server_port_type" varName="X###717296547"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port index_replica="0" localRef="collect_pairs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/EnvironmentBindingBaseDirect.hpe" multiple="false" name="EnvironmentBindingBaseDirect" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
+          <visualDescription h="60" w="154" x="110" y="303">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="client_port_type" varName="X###1777354818"/>
+          <parameter formFieldId="server_port_type" varName="X###504896356"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port index_replica="0" localRef="platform_reduce" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
+          <visualDescription h="60" w="178" x="581" y="315">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="maintainer" varName="M"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="node">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="reducer">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="tkey" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="234" y="557">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="tvalue" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="357" y="562">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="okey" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="251" y="645">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="ovalue" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="68" w="203" x="657" y="328">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="g" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="60" w="146" x="343" y="507">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="rf" location="br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/GustyFunction.hpe" multiple="false" name="GustyFunction" package="br.ufc.mdcc.hpcshelf.gust.custom" exposed="false">
+      <visualDescription h="60" w="100" x="613" y="191">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="output_value_type" varName="OValue"/>
+      <parameter formFieldId="graph_type" varName="G"/>
+      <parameter formFieldId="input_key_type" varName="TKey"/>
+      <parameter formFieldId="input_value_type" varName="TValue"/>
+      <parameter formFieldId="output_key_type" varName="OKey"/>
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="reduce_function">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="m" location="br.ufc.mdcc.hpcshelf.platform.Maintainer/Maintainer.hpe" multiple="false" name="Maintainer" package="br.ufc.mdcc.hpcshelf.platform" exposed="false">
+      <visualDescription h="60" w="100" x="547" y="180">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="maintainer">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="m" direct="true" varName="M"/>
+    <supplyParameter cRef="tkey" direct="true" varName="TKey"/>
+    <supplyParameter cRef="tvalue" direct="true" varName="TValue"/>
+    <supplyParameter cRef="okey" direct="true" varName="OKey"/>
+    <supplyParameter cRef="ovalue" direct="true" varName="OValue"/>
+    <supplyParameter cRef="g" direct="true" varName="G"/>
+    <supplyParameter cRef="rf" direct="true" varName="RF"/>
+    <interface iRef="IGustyImpl" nArgs="7">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpcshelf.platform.Platform;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.computation.Gusty;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl &#xA;{&#xA;&#x9;public abstract class BaseIGustyImpl: Computation, BaseIGusty&lt;M, RF, OKey, OValue, TKey, TValue, G>&#xA;&#x9;&#x9;where M:IMaintainer&#xA;&#x9;&#x9;where RF:IGustyFunction&lt;OKey, OValue, TKey, TValue, G>&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;&#x9;where G:IData&#xA;&#x9;{&#xA;&#x9;&#x9;private IIterator&lt;IKVPair&lt;OKey, OValue>> output = null;&#xA;&#xA;&#x9;&#x9;protected IIterator&lt;IKVPair&lt;OKey, OValue>> Output&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output = (IIterator&lt;IKVPair&lt;OKey, OValue>>) Services.getPort(&quot;output&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private RF reduce_function = default(RF);&#xA;&#xA;&#x9;&#x9;protected RF Reduce_function&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.reduce_function == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.reduce_function = (RF) Services.getPort(&quot;reduce_function&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.reduce_function;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IBindingDirect&lt;IPortTypeIterator> feed_pairs = null;&#xA;&#xA;&#x9;&#x9;public IBindingDirect&lt;IPortTypeIterator> Feed_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.feed_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.feed_pairs = (IBindingDirect&lt;IPortTypeIterator>) Services.getPort(&quot;feed_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.feed_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IBindingDirect&lt;IPortTypeIterator> collect_pairs = null;&#xA;&#xA;&#x9;&#x9;public IBindingDirect&lt;IPortTypeIterator> Collect_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.collect_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.collect_pairs = (IBindingDirect&lt;IPortTypeIterator>) Services.getPort(&quot;collect_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.collect_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_reduce = null;&#xA;&#xA;&#x9;&#x9;public ITaskPort&lt;ITaskPortTypeAdvance> Task_reduce&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_reduce == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_reduce = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_reduce&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_reduce;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IProcessingNode&lt;M> platform_reduce = null;&#xA;&#xA;&#x9;&#x9;public IProcessingNode&lt;M> Platform_reduce&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform_reduce == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform_reduce = (IProcessingNode&lt;M>) Services.getPort(&quot;platform_reduce&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform_reduce;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIGustyImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl/bin/1.0.0.0/BaseIGustyImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Iterator/bin/1.0.0.0/IIterator.dll</dependency>
+          <dependency>br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/bin/1.0.0.0/IReduceFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/bin/1.0.0.0/IBindingDirect.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Maintainer/bin/1.0.0.0/IMaintainer.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/IGustyFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.computation.Gusty/bin/1.0.0.0/BaseIGusty.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.gust.computation.Gusty;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl&#xA;{&#xA;&#x9;public class IGustyImpl : BaseIGustyImpl, IGusty&lt;M, RF, OKey, OValue, TKey, TValue, G>&#xA;where M:IMaintainer&#xA;where RF:IGustyFunction&lt;OKey, OValue, TKey, TValue, G>&#xA;where OKey:IData&#xA;where OValue:IData&#xA;where TKey:IData&#xA;where TValue:IData&#xA;where G:IData&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IGustyImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl/bin/1.0.0.0/IGustyImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Maintainer/bin/1.0.0.0/IMaintainer.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/IGustyFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl/bin/1.0.0.0/BaseIGustyImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.computation.Gusty/bin/1.0.0.0/IGusty.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="47" w="195" x="251" y="135">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <parameter iname="IMaintainer" parid="platform_maintainer" uname="maintainer" varid="M"/>
+      <parameter iname="IGustyFunction" parid="reduce_function" uname="reduce_function" varid="RF"/>
+      <parameter iname="IData" order="2" parid="output_key_type" uname="data" varid="OKey"/>
+      <parameter iname="IData" order="3" parid="output_value_type" uname="data" varid="OValue"/>
+      <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="TKey"/>
+      <parameter iname="IData" order="1" parid="input_value_type" uname="data" varid="TValue"/>
+      <parameter iname="IData" order="4" parid="graph_type" uname="data" varid="G"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IGustyImpl" multiple="true" private="false" replica="0" uRef="reducer" visibleInterface="true">
+      <super cRef="base" uRef="reducer"/>
+      <visualDescription h="60" w="165" x="295" y="224"/>
+    </unit>
+  </componentInfo>
+</component:component>
