@@ -4,7 +4,7 @@ using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;
 
 namespace br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction
 {
-	public interface IGustyFunction<TKey, TValue, OKey, OValue, G> : BaseIGustyFunction<TKey, TValue, OKey, OValue, G>, IReduceFunction<TKey, TValue, OKey, OValue, G>
+	public interface IGustyFunction<TKey, TValue, OKey, OValue, G> : BaseIGustyFunction<TKey, TValue, OKey, OValue, G>, IReduceFunction<TKey, TValue, OKey, OValue>
 		where TKey:IData
 		where TValue:IData
 		where OKey:IData
