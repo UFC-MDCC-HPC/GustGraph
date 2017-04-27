@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000735d16a31307fe814bd78994d83ff92ec49b2247b1d91f2be48605d071034ac28a9faad2be6fe882c3b00bef49975d8446546c6b388ffffdc65e5ef45ece348ba1454f5c5be08d73fa75a7add1617347909223d899e31922e9b7defebf0d3ea705f51d5e0f7c8639a066a75dfd9ab4cb7e606340623c946e98488ee3489a0db6" isAbstract="false" kind="Data" name="DataPGRANKImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.example.pgr">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bbada1b8835ff7621f6f74e1707e57c48ac21dd04be3e9332892658dc34aa4827707deb76aa9f573b2c922dc92bc3f41c2f6454488225bd60f87b606fbecd1653ebefec98b6b72c285b20503becdb8e83b98791fc98627df6af09f538febff8deeedb71e5193124e940b320d13d5a10999c7346a6757bbd5c515ee44a9d3159a" isAbstract="false" kind="Data" name="DataPGRANKImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.example.pgr">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000000f8ac9ba1744482475c10d3a70d19c5789d9e0a8678600795e1c167f2fc2a801d62489928de966d79316d59b3acc3b25dcb4a0fbd09fba0bf42e0aa36a119993c6cb80d1697c58ab17ad96d55adb2cc1253b399559b5cb28569da5eecf172b9e634cd6eb8fe855124e400bab2095a78133f4d30ba02ee78abad760500f23fa81" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/DataPGRANK.hpe" name="DataPGRANK" package="br.ufc.mdcc.hpcshelf.gust.example.pgr" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="204" y="513">
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000079928504c19eb186050c5a7db2d3a2e3a6ae4f26e43b51451f147f5d961b49eff2679bb0b0d9efb4116c9873f5781214c70445424fc4a4acca5a494675a2eb4ea18902d8d6b9754e95c762d20fb9c8c101d390e98e29239109bdacf73c537dc32020f5fa2b6dcca608848df54a6db8939fba1982a0db7184588f88093a58ad98" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/DataPGRANK.hpe" name="DataPGRANK" package="br.ufc.mdcc.hpcshelf.gust.example.pgr" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="234" y="423">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <unitBounds parallel="false" uRef="data">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -18,6 +18,7 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <interface iRef="IDataPGRANKImpl" nArgs="0">
@@ -25,18 +26,18 @@
         <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANKImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataPGRANKImpl: DataStructure, BaseIDataPGRANK&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDataPGRANKImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANKImpl/bin/1.0.0.0/BaseIDataPGRANKImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/bin/1.0.0.0/BaseIDataPGRANK.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using System.Collections.Generic;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANKImpl&#xA;{&#xA;&#x9;public class IDataPGRANKImpl : BaseIDataPGRANKImpl, IDataPGRANK {&#xA;&#xA;&#x9;&#x9;public IDataPGRANKImpl () { }&#xA;&#xA;&#x9;&#x9;override public void after_initialize () {&#xA;&#x9;&#x9;&#x9;newInstance (); &#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public object newInstance () {&#xA;&#x9;&#x9;&#x9;this.instance = new IDataPGRANKInstanceImpl ();&#xA;&#x9;&#x9;&#x9;return this.Instance;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IDataPGRANKInstance instance;&#xA;&#xA;&#x9;&#x9;public object Instance {&#xA;&#x9;&#x9;&#x9;get { return instance; }&#xA;&#x9;&#x9;&#x9;set { this.instance = (IDataPGRANKInstance)value; }&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;public IDataPGRANKInstance InstanceDataPGRANK {&#xA;&#x9;&#x9;&#x9;get { return instance; }&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#xA;&#x9;[Serializable]&#xA;&#x9;public class IDataPGRANKInstanceImpl : IDataPGRANKInstance {&#xA;&#xA;&#x9;&#x9;#region IDataPGRANKInstance implementation&#xA;&#xA;&#x9;&#x9;private IDictionary&lt;int, float> ranks = new Dictionary&lt;int, float>();&#xA;&#x9;&#x9;private float slice = 0.0f;&#xA;&#xA;&#x9;&#x9;public IDataPGRANKInstanceImpl(){ }&#xA;&#xA;&#x9;&#x9;public IDictionary&lt;int, float> Ranks {&#xA;&#x9;&#x9;&#x9;get { return this.ranks; }&#xA;&#x9;&#x9;&#x9;set { this.ranks = (IDictionary&lt;int, float>) value; }&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public float Slice {&#xA;&#x9;&#x9;&#x9;get { return this.slice; }&#xA;&#x9;&#x9;&#x9;set { this.slice = (float) value; }&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public object ObjValue {&#xA;&#x9;&#x9;&#x9;get { return new Tuple&lt;IDictionary&lt;int, float>, float>(this.ranks, this.slice); }&#xA;&#x9;&#x9;&#x9;set { &#xA;&#x9;&#x9;&#x9;&#x9;this.ranks = ((Tuple&lt;IDictionary&lt;int, float>, float>)value).Item1;&#xA;&#x9;&#x9;&#x9;&#x9;this.slice = ((Tuple&lt;IDictionary&lt;int, float>, float>)value).Item2;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override string ToString () { &#xA;&#x9;&#x9;&#x9;System.Text.StringBuilder sb = new System.Text.StringBuilder();&#xA;&#x9;&#x9;&#x9;IEnumerator&lt;KeyValuePair&lt;int, float>> iterator = this.Ranks.GetEnumerator ();&#xA;&#x9;&#x9;&#x9;if (iterator.MoveNext ()) {&#xA;&#x9;&#x9;&#x9;&#x9;sb.Append (iterator.Current.Key + &quot;:&quot; + iterator.Current.Value);&#xA;&#x9;&#x9;&#x9;&#x9;while (iterator.MoveNext ())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sb.Append (System.Environment.NewLine+iterator.Current.Key + &quot;:&quot; + iterator.Current.Value);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;string r = sb.ToString ();&#xA;&#x9;&#x9;&#x9;sb.Clear ();&#xA;&#x9;&#x9;&#x9;return r;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;#endregion&#xA;&#xA;&#x9;&#x9;#region ICloneable implementation&#xA;&#x9;&#x9;public object Clone () {&#xA;&#x9;&#x9;&#x9;IDataPGRANKInstance clone = new IDataPGRANKInstanceImpl ();&#xA;&#x9;&#x9;&#x9;clone.Ranks = new Dictionary&lt;int, float> (this.Ranks);&#xA;&#x9;&#x9;&#x9;clone.Slice = this.slice;&#xA;&#x9;&#x9;&#x9;return clone;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;#endregion&#xA;&#x9;}&#xA;}&#xA;&#xA;&#xA;" name="IDataPGRANKImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANKImpl/bin/1.0.0.0/IDataPGRANKImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANKImpl&#xA;{&#xA;&#x9;public class IDataPGRANKImpl : BaseIDataPGRANKImpl, IDataPGRANK&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="IDataPGRANKImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANKImpl/bin/1.0.0.0/IDataPGRANKImpl.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANKImpl/bin/1.0.0.0/BaseIDataPGRANKImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/bin/1.0.0.0/IDataPGRANK.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="158" x="142" y="356">
-        <color b="110" g="185" r="233"/>
+      <visualDescription h="40" w="226" x="111" y="252">
+        <color b="6" g="154" r="78"/>
       </visualDescription>
     </interface>
     <unit facet="0" iRef="IDataPGRANKImpl" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
       <super cRef="base" uRef="data"/>
-      <visualDescription h="40" w="80" x="199" y="431"/>
+      <visualDescription h="40" w="187" x="167" y="336"/>
     </unit>
   </componentInfo>
 </component:component>

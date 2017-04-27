@@ -1,16 +1,16 @@
 using System;
 using System.Collections.Generic;
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.common.Data;
+using br.ufc.mdcc.hpcshelf.gust.graph.DataObject;
 
 namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK
 {
-	public interface IDataPGRANK : BaseIDataPGRANK, IData {
+	public interface IDataPGRANK : BaseIDataPGRANK, IDataObject {
 		IDataPGRANKInstance InstanceDataPGRANK { get; }
-	} // end main interface 
+	} // end main interface
 
-	public interface IDataPGRANKInstance : IDataInstance, ICloneable {
+	public interface IDataPGRANKInstance : IDataObjectInstance, ICloneable {
 		IDictionary<int, float> Ranks { get; set; }
 		float Slice { get; set; }
 	}
-} // end namespace 
+} // end namespace

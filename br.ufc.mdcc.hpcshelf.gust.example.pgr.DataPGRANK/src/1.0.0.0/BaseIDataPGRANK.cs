@@ -1,11 +1,11 @@
 /* AUTOMATICALLY GENERATE CODE */
 
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.common.Data;
+using br.ufc.mdcc.hpcshelf.gust.graph.DataObject;
 
 namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK
 {
-	public interface BaseIDataPGRANK : BaseIData, IDataStructureKind 
+	public interface BaseIDataPGRANK : BaseIDataObject, IDataStructureKind 
 	{
 	}
 }

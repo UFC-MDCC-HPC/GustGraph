@@ -1,16 +1,16 @@
 using System;
 using System.Collections.Generic;
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.common.Data;
+using br.ufc.mdcc.hpcshelf.gust.graph.DataObject;
 
 namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP
 {
-	public interface IDataSSSP : BaseIDataSSSP, IData {
+	public interface IDataSSSP : BaseIDataSSSP, IDataObject {
 		IDataSSSPInstance InstanceDataSSSP { get; }
-	} // end main interface 
+	} // end main interface
 
-	public interface IDataSSSPInstance : IDataInstance, ICloneable {
+	public interface IDataSSSPInstance : IDataObjectInstance, ICloneable {
 		IDictionary<int, float> Path_size { get; set; }
 		int Halt { get; set; }
 	}
-} // end namespace 
+} // end namespace

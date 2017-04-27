@@ -4,25 +4,25 @@
   <property name="build" value="bin"/>
   <property name="src" value="src"/>
   <target name="DataSSSP-1.0.0.0">
-    <ifnot targetexists="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/bin/1.0.0.0">
-      <mkdir dir="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/bin/1.0.0.0"/>
+    <ifnot targetexists="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/bin/1.0.0.0">
+      <mkdir dir="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/bin/1.0.0.0"/>
     </ifnot>
-    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/DataSSSP.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/bin/1.0.0.0/BaseIDataSSSP.dll" target="library" unsafe="false">
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/DataSSSP.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/bin/1.0.0.0/BaseIDataSSSP.dll" target="library" unsafe="false">
       <sources>
-        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/src/1.0.0.0/BaseIDataSSSP.cs"/>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/src/1.0.0.0/BaseIDataSSSP.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DataObject/bin/1.0.0.0/BaseIDataObject.dll"/>
         <include/>
       </references>
     </csc>
-    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/DataSSSP.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/bin/1.0.0.0/IDataSSSP.dll" target="library" unsafe="false">
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/DataSSSP.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/bin/1.0.0.0/IDataSSSP.dll" target="library" unsafe="false">
       <sources>
-        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/src/1.0.0.0/IDataSSSP.cs"/>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/src/1.0.0.0/IDataSSSP.cs"/>
       </sources>
       <references>
         <include name="/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/bin/1.0.0.0/BaseIDataSSSP.dll"/>
-        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DataObject/bin/1.0.0.0/IDataObject.dll"/>
         <include/>
       </references>
     </csc>

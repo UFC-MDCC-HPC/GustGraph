@@ -56,5 +56,9 @@
       <Project>{7EC50954-0082-44F4-A493-65AC530F3D91}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.DataObject\br.ufc.mdcc.hpcshelf.gust.graph.DataObject\br.ufc.mdcc.hpcshelf.gust.graph.DataObject.csproj">
+      <Project>{06DB92D2-F97E-4E39-99E9-40A80B8A1778}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.DataObject</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

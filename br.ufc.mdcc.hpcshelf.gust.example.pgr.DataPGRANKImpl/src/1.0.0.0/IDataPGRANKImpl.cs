@@ -12,7 +12,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANKImpl
 		public IDataPGRANKImpl () { }
 
 		override public void after_initialize () {
-			newInstance (); 
+			newInstance ();
 		}
 
 		public object newInstance () {
@@ -41,6 +41,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANKImpl
 
 		public IDataPGRANKInstanceImpl(){ }
 
+		object _value = null;
+		public object Value {
+		   get { return this._value; }
+		   set { this._value = value; }
+		}
+
 		public IDictionary<int, float> Ranks {
 			get { return this.ranks; }
 			set { this.ranks = (IDictionary<int, float>) value; }
@@ -52,14 +58,15 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANKImpl
 		}
 
 		public object ObjValue {
-			get { return new Tuple<IDictionary<int, float>, float>(this.ranks, this.slice); }
-			set { 
-				this.ranks = ((Tuple<IDictionary<int, float>, float>)value).Item1;
-				this.slice = ((Tuple<IDictionary<int, float>, float>)value).Item2;
+			get { return new Tuple<IDictionary<int, float>, float, object>(this.ranks, this.slice, this._value); }
+			set {
+				this.ranks = ((Tuple<IDictionary<int, float>, float, object>)value).Item1;
+				this.slice = ((Tuple<IDictionary<int, float>, float, object>)value).Item2;
+				this._value = ((Tuple<IDictionary<int, float>, float, object>)value).Item3;
 			}
 		}
 
-		public override string ToString () { 
+		public override string ToString () {
 			System.Text.StringBuilder sb = new System.Text.StringBuilder();
 			IEnumerator<KeyValuePair<int, float>> iterator = this.Ranks.GetEnumerator ();
 			if (iterator.MoveNext ()) {
@@ -79,10 +86,9 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANKImpl
 			IDataPGRANKInstance clone = new IDataPGRANKInstanceImpl ();
 			clone.Ranks = new Dictionary<int, float> (this.Ranks);
 			clone.Slice = this.slice;
+			clone.Value = this._value;
 			return clone;
 		}
 		#endregion
 	}
 }
-
-

@@ -4,25 +4,25 @@
   <property name="build" value="bin"/>
   <property name="src" value="src"/>
   <target name="DataPGRANK-1.0.0.0">
-    <ifnot targetexists="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/bin/1.0.0.0">
-      <mkdir dir="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/bin/1.0.0.0"/>
+    <ifnot targetexists="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/bin/1.0.0.0">
+      <mkdir dir="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/bin/1.0.0.0"/>
     </ifnot>
-    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/DataPGRANK.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/bin/1.0.0.0/BaseIDataPGRANK.dll" target="library" unsafe="false">
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/DataPGRANK.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/bin/1.0.0.0/BaseIDataPGRANK.dll" target="library" unsafe="false">
       <sources>
-        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/src/1.0.0.0/BaseIDataPGRANK.cs"/>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/src/1.0.0.0/BaseIDataPGRANK.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DataObject/bin/1.0.0.0/BaseIDataObject.dll"/>
         <include/>
       </references>
     </csc>
-    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/DataPGRANK.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/bin/1.0.0.0/IDataPGRANK.dll" target="library" unsafe="false">
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/DataPGRANK.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/bin/1.0.0.0/IDataPGRANK.dll" target="library" unsafe="false">
       <sources>
-        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/src/1.0.0.0/IDataPGRANK.cs"/>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/src/1.0.0.0/IDataPGRANK.cs"/>
       </sources>
       <references>
         <include name="/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/bin/1.0.0.0/BaseIDataPGRANK.dll"/>
-        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DataObject/bin/1.0.0.0/IDataObject.dll"/>
         <include/>
       </references>
     </csc>

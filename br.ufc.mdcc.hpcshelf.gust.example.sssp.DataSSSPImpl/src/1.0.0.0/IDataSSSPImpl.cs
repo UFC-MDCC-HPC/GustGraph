@@ -12,7 +12,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSPImpl
 		public IDataSSSPImpl () { }
 
 		override public void after_initialize () {
-			newInstance (); 
+			newInstance ();
 		}
 
 		public object newInstance () {
@@ -41,6 +41,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSPImpl
 
 		public IDataSSSPInstanceImpl(){ }
 
+		object _value = null;
+		public object Value {
+		   get { return this._value; }
+		   set { this._value = value; }
+		}
+
 		public int Halt { get { return halt; } set { halt = (int) value; } }
 
 		public IDictionary<int, float> Path_size {
@@ -49,14 +55,15 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSPImpl
 		}
 
 		public object ObjValue {
-			get { return new Tuple<IDictionary<int, float>, int>(this.path_size, this.halt); }
-			set { 
-				this.path_size = ((Tuple<IDictionary<int, float>, int>)value).Item1;
-				this.halt =  ((Tuple<IDictionary<int, float>, int>)value).Item2;
+			get { return new Tuple<IDictionary<int, float>, int, object>(this.path_size, this.halt, this._value); }
+			set {
+				this.path_size = ((Tuple<IDictionary<int, float>, int, object>)value).Item1;
+				this.halt =  ((Tuple<IDictionary<int, float>, int, object>)value).Item2;
+				this._value = ((Tuple<IDictionary<int, float>, int, object>)value).Item3;
 			}
 		}
 
-		public override string ToString () { 
+		public override string ToString () {
 			System.Text.StringBuilder sb = new System.Text.StringBuilder();
 			IEnumerator<KeyValuePair<int, float>> iterator = this.Path_size.GetEnumerator ();
 			if (iterator.MoveNext ()) {
@@ -76,10 +83,9 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSPImpl
 			IDataSSSPInstance clone = new IDataSSSPInstanceImpl ();
 			clone.Halt = this.Halt;
 			clone.Path_size = new Dictionary<int, float> (this.Path_size);
+			clone.Value = this._value;
 			return clone;
 		}
 		#endregion
 	}
 }
-
-

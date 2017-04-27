@@ -4,12 +4,13 @@ using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;
 
-namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl {
+namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl
+{
 	public class IDataTriangleImpl : BaseIDataTriangleImpl, IDataTriangle {
 		public IDataTriangleImpl () {}
 
 		override public void after_initialize () {
-			newInstance (); 
+			newInstance ();
 		}
 
 		public IDataTriangleInstance newInstance (int v) {
@@ -41,6 +42,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl {
 	public class IDataTriangleInstanceImpl : IDataTriangleInstance {
 		#region IDataTriangleInstance implementation
 
+		object _value = null;
+		public object Value {
+		   get { return this._value; }
+		   set { this._value = value; }
+		}
+
 		private int v;
 		public int V {
 			get { return this.v; }
@@ -53,10 +60,11 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl {
 		}
 
 		public object ObjValue {
-			get { return new Tuple<int,int>(v,w); }
-			set { 
-				this.v = ((Tuple<int,int>)value).Item1;
-				this.w = ((Tuple<int,int>)value).Item2;
+			get { return new Tuple<int,int,object>(v,w,this._value); }
+			set {
+				this.v = ((Tuple<int,int,object>)value).Item1;
+				this.w = ((Tuple<int,int,object>)value).Item2;
+				this._value = ((Tuple<int,int,object>)value).Item3;
 			}
 		}
 		public override int GetHashCode () { return pairingFunction (this.v, this.w ); }
@@ -65,7 +73,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl {
 		public override bool Equals (object obj) {
 			if (obj is IDataTriangleInstanceImpl)
 				return ( ((IDataTriangleInstanceImpl)obj).V==this.v && ((IDataTriangleInstanceImpl)obj).W == this.w );
-			else 
+			else
 				return false;
 		}
 		public static int pairingFunction (int a, int b) {
@@ -84,6 +92,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl {
 			IDataTriangleInstance clone = new IDataTriangleInstanceImpl ();
 			clone.V = this.v;
 			clone.W = this.w;
+			clone.Value = this._value;
 			return clone;
 		}
 
