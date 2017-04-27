@@ -14,12 +14,12 @@ using br.ufc.mdcc.common.Integer;
 namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK
 {
 	public interface IPGRANK : BaseIPGRANK, IGustyFunction<
-	IInputFormat, 
-	IInteger, 
-	IDataPGRANK, 
-	IInteger, 
-	IDataPGRANK, 
-	IDirectedGraph<IDataContainerKV<IVertex, IEdgeWeighted<IVertex>>, IVertex, IEdgeWeighted<IVertex>>
+	IInteger,
+	IDataPGRANK,
+	IInteger,
+	IDataPGRANK,
+	IDirectedGraph<IDataContainerKV<IVertex, IEdgeWeighted<IVertex>>, IVertex, IEdgeWeighted<IVertex>>,
+	IInputFormat
 	>
 	{
 	}

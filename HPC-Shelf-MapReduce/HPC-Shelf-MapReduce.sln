@@ -266,6 +266,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.e
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl", "..\br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl\br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl\br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl.csproj", "{166AE228-B73A-451C-A177-2DB2308E4842}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK", "..\br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK\br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK\br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK.csproj", "{933A9ADA-B4A0-4200-9112-A3A20E18D462}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -592,6 +594,10 @@ Global
 		{90671855-07C4-4E67-8F2F-2384704D1F6B}.Debug|x86.Build.0 = Debug|Any CPU
 		{90671855-07C4-4E67-8F2F-2384704D1F6B}.Release|x86.ActiveCfg = Release|Any CPU
 		{90671855-07C4-4E67-8F2F-2384704D1F6B}.Release|x86.Build.0 = Release|Any CPU
+		{933A9ADA-B4A0-4200-9112-A3A20E18D462}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{933A9ADA-B4A0-4200-9112-A3A20E18D462}.Debug|x86.Build.0 = Debug|Any CPU
+		{933A9ADA-B4A0-4200-9112-A3A20E18D462}.Release|x86.ActiveCfg = Release|Any CPU
+		{933A9ADA-B4A0-4200-9112-A3A20E18D462}.Release|x86.Build.0 = Release|Any CPU
 		{94DFD526-4EDD-4372-9047-695F5751DBBA}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{94DFD526-4EDD-4372-9047-695F5751DBBA}.Debug|x86.Build.0 = Debug|Any CPU
 		{94DFD526-4EDD-4372-9047-695F5751DBBA}.Release|x86.ActiveCfg = Release|Any CPU
