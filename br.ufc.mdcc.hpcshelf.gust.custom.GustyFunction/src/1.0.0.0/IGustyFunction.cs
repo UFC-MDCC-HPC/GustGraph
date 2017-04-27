@@ -15,10 +15,10 @@ namespace br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction
 	   int Superstep { get; set; }
 
 		// Método construtor de grafos
-		void graph_creator();
+		// void graph_creator();
 
 		// Método getMessages
-		void input_messages();
+		//void input_messages();
 
 		// Algoritmo deve possuir pelo menos uma etapa, onde a assinatura é gustx, para x>=0
 		void gust0();

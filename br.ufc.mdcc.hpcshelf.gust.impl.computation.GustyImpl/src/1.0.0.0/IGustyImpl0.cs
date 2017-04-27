@@ -33,7 +33,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 		public override void main() {
 			/* 1. Ler pares chave (TKey) e valores (TValue) de Input.
              * 2. Para cada par, atribuir a Key e Values e chamar Gusty_function.go();
-             * 3. Pegar o resultado de Reduction_function.go() de Output_gusty (OValue) 
+             * 3. Pegar o resultado de Reduction_function.go() de Output_gusty (OValue)
              *    e colocar no iterator Output.
              */
 			graph_creator ();
@@ -87,7 +87,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 
 			IIteratorInstance<IKVPair<TKey, IIterator<TValue>>> input_instance = (IIteratorInstance<IKVPair<TKey, IIterator<TValue>>>)Collect_pairs.Client;
 
-			IList<MethodInfo> phases = getGustMethods (Gusty_function); 
+			IList<MethodInfo> phases = getGustMethods (Gusty_function);
 			IEnumerator<MethodInfo> current_phase = phases.GetEnumerator ();
 
 			IActionFuture sync_perform;
@@ -114,7 +114,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 
 				bool end_iteration = false;
 				while (!end_iteration)    // take next chunk ...
-				{          
+				{
 					Console.WriteLine (this.Rank + ": REDUCER ITERATE 1");
 
 					Task_gusty.invoke (ITaskPortAdvance.READ_CHUNK);
@@ -131,7 +131,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 						end_computation = false;
 
 					int count=0;
-					while (input_instance.fetch_next (out kvpair_object)) 
+					while (input_instance.fetch_next (out kvpair_object))
 					{
 						Console.WriteLine (this.Rank + ": REDUCER ITERATE INNER LOOP 3 count=" + count);
 
@@ -142,8 +142,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 //							cont_dict[kvpair.Key] = new object();
 //						else
 //							((IDataInstance)Continue_value.Instance).ObjValue = acc_value;
-						
-						Input_values.Instance = kvpair; 
+
+						Input_values.Instance = kvpair;
 						Gusty_function.pull ();
 						//Gusty_function.go ();
 
@@ -166,12 +166,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 				IActionFuture gusty_chunk_ready;
 				Task_gusty.invoke (ITaskPortAdvance.CHUNK_READY, out gusty_chunk_ready);  //***
 
-//				foreach (KeyValuePair<object,object> output_pair in cont_dict) 
-//				{					
+//				foreach (KeyValuePair<object,object> output_pair in cont_dict)
+//				{
 //					IKVPairInstance<OKey,OValue> new_pair = (IKVPairInstance<OKey,OValue>) Output_value.newInstance ();
 //					new_pair.Key = output_pair.Key;
 //					new_pair.Value = output_pair.Value;
-//					output_instance.put (new_pair);	 
+//					output_instance.put (new_pair);
 //				}
 
 				output_instance.finish ();
@@ -183,18 +183,20 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 
 			Console.WriteLine (this.Rank + ": REDUCER FINISH ... ");
 		}
-		private static IList<MethodInfo> getGustMethods(object o){
-			IList<MethodInfo> gusts_methods = new List<MethodInfo> ();
+		private static ICollection<MethodInfo> getGustMethods(object o){
+			IDictionary<int,MethodInfo> dic = new Dictionary<int,MethodInfo> ();
 			IList<MethodInfo> all_methods = new List<MethodInfo> (o.GetType ().GetMethods ());
-			for (int i = 0; i < all_methods.Count; i++) {
-				MethodInfo m = all_methods.ElementAt (i);
+			foreach (MethodInfo m in all_methods) {
 				if (m.Name.Length >= 4) {
 					if (m.Name.Substring (0, 4).ToLower().Equals ("gust") && (m.GetParameters ().Length == 0) ) {
-						gusts_methods.Add (m);
+						int id = -1;
+						if (int.TryParse (m.Name.Substring (4), out id)) dic [id] = m;
 					}
 				}
 			}
-			return gusts_methods;
+			all_methods.Clear (); int[] array = ( new List<int>(dic.Keys) ).ToArray(); Array.Sort (array);
+			for(int i=0;i<array.Length;i++) all_methods.Add(dic[array[i]]);
+			return all_methods;
 		}
 	}
 }
