@@ -17,17 +17,19 @@ using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 {
-	public class IGustyImpl<M,TKey, TValue, OKey, OValue, RF, G> : BaseIGustyImpl<M,TKey, TValue, OKey, OValue, RF, G>, IGusty<M,TKey, TValue, OKey, OValue, RF, G>
+	public class IGustyImpl<M,TKey, TValue, OKey, OValue, RF, G, GIF> : BaseIGustyImpl<M,TKey, TValue, OKey, OValue, RF, G, GIF>, IGusty<M,TKey, TValue, OKey, OValue, RF, G, GIF>
 		where M:IMaintainer
-		where RF:IGustyFunction<TKey, TValue, OKey, OValue, G>
+		where RF:IGustyFunction<TKey, TValue, OKey, OValue, G, GIF>
 		where OKey:IData
 		where OValue:IData
 		where TKey:IData
 		where TValue:IData
 		where G:IData
+		where GIF:IInputFormat
 	{
 		public override void main() {
 			/* 1. Ler pares chave (TKey) e valores (TValue) de Input.
@@ -56,7 +58,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 
 			//Gust ###
 			int superstep = -1;
-			ICollection<MethodInfo> collection_methods = getGustMethods (Reduce_function); 
+			ICollection<MethodInfo> collection_methods = getGustMethods (Reduce_function);
 			IEnumerator<MethodInfo> gust_methods = collection_methods.GetEnumerator ();
 			// ###
 

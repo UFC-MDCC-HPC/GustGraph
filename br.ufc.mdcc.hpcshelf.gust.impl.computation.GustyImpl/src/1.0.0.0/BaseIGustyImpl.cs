@@ -14,17 +14,19 @@ using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 using br.ufc.mdcc.hpcshelf.gust.computation.Gusty;//using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 {
-	public abstract class BaseIGustyImpl<M,TKey, TValue, OKey, OValue, RF, G>: Computation, BaseIGusty<M,TKey, TValue, OKey, OValue, RF, G>
+	public abstract class BaseIGustyImpl<M,TKey, TValue, OKey, OValue, RF, G, GIF>: Computation, BaseIGusty<M,TKey, TValue, OKey, OValue, RF, G, GIF>
 		where M:IMaintainer
-		where RF:IGustyFunction<TKey, TValue, OKey, OValue, G>
+		where RF:IGustyFunction<TKey, TValue, OKey, OValue, G, GIF>
 		where OKey:IData
 		where OValue:IData
 		where TKey:IData
 		where TValue:IData
 		where G:IData
+		where GIF:IInputFormat
 	{
 		private IKVPair<OKey, OValue> output_value = null;
 		protected IKVPair<OKey, OValue> Output_value

@@ -23,6 +23,7 @@
         <include name="br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.platform.Maintainer/bin/1.0.0.0/IMaintainer.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/IGustyFunction.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.computation.Gusty/bin/1.0.0.0/BaseIGusty.dll"/>
         <include/>
       </references>
@@ -35,6 +36,7 @@
         <include name="br.ufc.mdcc.hpcshelf.platform.Maintainer/bin/1.0.0.0/IMaintainer.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/IGustyFunction.dll"/>
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl/bin/1.0.0.0/BaseIGustyImpl.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.computation.Gusty/bin/1.0.0.0/IGusty.dll"/>
         <include/>
