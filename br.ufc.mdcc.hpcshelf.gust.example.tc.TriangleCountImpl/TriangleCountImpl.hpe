@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000017c119f717acd5005720a551879ec19cd84b1e86dc8ec1e95095cfb1dcf344db102c9b585ac3de526539b3cd5bf8218720bc04bd4ae794283b53da64957a09eb69931c9fb36bd305fe0d459667e6d3885a2ead3cade7c4f8e3064f405c762750e99a21b5a8a27a5c9f765e07ef6e16d0b0ba2c288f149503ea66d78402f412a3" isAbstract="false" kind="Computation" name="TriangleCountImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.example.tc">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo/>
+</component:component>

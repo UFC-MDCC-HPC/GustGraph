@@ -16,13 +16,13 @@ using br.ufc.mdcc.common.Integer;
 namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP
 {
 	public interface BaseISSSP : BaseIGustyFunction<
-	IInputFormat, 
-	IInteger, 
-	IDataSSSP, 
-	IInteger, 
-	IDataSSSP, 
-	IDirectedGraph<IDataContainerKV<IVertex, IEdgeWeighted<IVertex>>, IVertex, IEdgeWeighted<IVertex>>
-	>, IComputationKind 
+	IInteger,
+	IDataSSSP,
+	IInteger,
+	IDataSSSP,
+	IDirectedGraph<IDataContainerKV<IVertex, IEdgeWeighted<IVertex>>, IVertex, IEdgeWeighted<IVertex>>,
+	IInputFormat
+	>, IComputationKind
 	{
 	}
 }
