@@ -19,22 +19,10 @@ using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;
 
-namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl 
+namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl
 {
 	public abstract class BaseIPGRANKImpl: Computation, BaseIPGRANK
 	{
-		private IIterator<IKVPair<IInteger, IInputFormat>> output_gif = null;
-
-		public IIterator<IKVPair<IInteger, IInputFormat>> Output_gif
-		{
-			get
-			{
-				if (this.output_gif == null)
-					this.output_gif = (IIterator<IKVPair<IInteger, IInputFormat>>) Services.getPort("output_gif");
-				return this.output_gif;
-			}
-		}
-
 		private IDirectedGraph<IDataContainerKV<IVertex, IEdgeWeighted<IVertex>>, IVertex, IEdgeWeighted<IVertex>> graph = null;
 		public IDirectedGraph<IDataContainerKV<IVertex, IEdgeWeighted<IVertex>>, IVertex, IEdgeWeighted<IVertex>> Graph
 		{
@@ -45,26 +33,15 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl
 				return this.graph;
 			}
 		}
-		
-		private IKVPair<IInteger, IIterator<IInputFormat>> graph_values = null;
-		public IKVPair<IInteger, IIterator<IInputFormat>> Graph_values
-		{
-			get
-			{
-				if (this.graph_values == null)
-					this.graph_values = (IKVPair<IInteger, IIterator<IInputFormat>>) Services.getPort("graph_values");
-				return this.graph_values;
-			}
-		}
-		private IIterator<IKVPair<IInteger, IDataPGRANK>> output = null;
+		private IIterator<IKVPair<IInteger, IDataPGRANK>> output_messages = null;
 
-		public IIterator<IKVPair<IInteger, IDataPGRANK>> Output
+		public IIterator<IKVPair<IInteger, IDataPGRANK>> Output_messages
 		{
 			get
 			{
-				if (this.output == null)
-					this.output = (IIterator<IKVPair<IInteger, IDataPGRANK>>) Services.getPort("output");
-				return this.output;
+				if (this.output_messages == null)
+					this.output_messages = (IIterator<IKVPair<IInteger, IDataPGRANK>>) Services.getPort("output_messages");
+				return this.output_messages;
 			}
 		}
 		private IKVPair<IInteger, IIterator<IDataPGRANK>> input_values = null;
@@ -78,5 +55,40 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl
 				return this.input_values;
 			}
 		}
+		private IDataPGRANK continuation_value = null;
+
+		public IDataPGRANK Continuation_value
+		{
+			get
+			{
+				if (this.continuation_value == null)
+					this.continuation_value = (IDataPGRANK) Services.getPort("continuation_value");
+				return this.continuation_value;
+			}
+		}
+		private IInputFormat input_format = null;
+
+		protected IInputFormat Input_format
+		{
+			get
+			{
+				if (this.input_format == null)
+					this.input_format = (IInputFormat) Services.getPort("input_format");
+				return this.input_format;
+			}
+		}
+		private IKVPair<IInteger, IDataPGRANK> output_value = null;
+
+		public IKVPair<IInteger, IDataPGRANK> Output_value
+		{
+			get
+			{
+				if (this.output_value == null)
+					this.output_value = (IKVPair<IInteger, IDataPGRANK>) Services.getPort("output_value");
+				return this.output_value;
+			}
+		}
+		private int superstep = 0;
+		public int Superstep { get{ return this.superstep; } set{ this.superstep = (int) value; } }
 	}
 }
