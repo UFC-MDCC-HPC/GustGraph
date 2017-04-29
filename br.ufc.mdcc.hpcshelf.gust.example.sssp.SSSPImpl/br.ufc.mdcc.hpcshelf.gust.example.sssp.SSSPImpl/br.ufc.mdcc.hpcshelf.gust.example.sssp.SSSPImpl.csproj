@@ -124,5 +124,13 @@
       <Project>{F8166152-ED2A-473F-A191-3FC88F611512}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.DataObject\br.ufc.mdcc.hpcshelf.gust.graph.DataObject\br.ufc.mdcc.hpcshelf.gust.graph.DataObject.csproj">
+      <Project>{06DB92D2-F97E-4E39-99E9-40A80B8A1778}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.DataObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator.csproj">
+      <Project>{1784C0D3-7632-4F38-8FFF-FA8008E2A724}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

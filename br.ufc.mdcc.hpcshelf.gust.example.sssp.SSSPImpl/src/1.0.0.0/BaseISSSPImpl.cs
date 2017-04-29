@@ -88,5 +88,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl
 				return this.continuation_value;
 			}
 		}
+		private int superstep = 0;
+		public int Superstep { get{ return this.superstep; } set{ this.superstep = (int) value; } }
 	}
 }
