@@ -131,13 +131,11 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl {
 		private void emite(){
 			IIteratorInstance<IKVPair<IInteger,IDataPGRANK>> output_value_instance = (IIteratorInstance<IKVPair<IInteger,IDataPGRANK>>)Output_messages.Instance;
 			if (this.Superstep == MAX_ITERATION) {
-				output_value_instance.finish ();
-
 				IKVPairInstance<IInteger,IDataPGRANK> ITEM = (IKVPairInstance<IInteger,IDataPGRANK>)Output_messages.createItem ();
 				((IIntegerInstance)ITEM.Key).Value = this.partid;
 				((IDataPGRANKInstance)ITEM.Value).Ranks = messages [((IIntegerInstance)ITEM.Key).Value];
 				output_value_instance.put (ITEM);
-
+				output_value_instance.finish ();
 			} else {
 				for (int i = 0; i < partition_size; i++) {
 					IKVPairInstance<IInteger,IDataPGRANK> ITEM = (IKVPairInstance<IInteger,IDataPGRANK>)Output_messages.createItem ();

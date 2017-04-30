@@ -95,14 +95,13 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 			foreach (bool any in emite)
 				any_emite = any_emite || any;
 			if (!any_emite && halt_sum == 0) {
-				output_value_instance.finish (); // TerminatedFunctionSSSP é avisado com um finish(), preparando-se para a emissão definitiva de saída
-
 				IKVPairInstance<IInteger,IDataSSSP> ITEM = (IKVPairInstance<IInteger,IDataSSSP>)Output_messages.createItem ();
 				((IIntegerInstance)ITEM.Key).Value = this.partid;
 				((IDataSSSPInstance)ITEM.Value).Path_size = messages [((IIntegerInstance)ITEM.Key).Value];
 				((IDataSSSPInstance)ITEM.Value).Halt = 0;
 				output_value_instance.put (ITEM);
 
+				output_value_instance.finish (); //finish(), preparando-se para a emissão definitiva de saída
 			} else {
 				for (int i = 0; i < partition_size; i++) {
 					IKVPairInstance<IInteger,IDataSSSP> ITEM = (IKVPairInstance<IInteger,IDataSSSP>)Output_messages.createItem ();
