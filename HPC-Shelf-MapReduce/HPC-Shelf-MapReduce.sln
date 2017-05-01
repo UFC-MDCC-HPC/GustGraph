@@ -280,6 +280,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.e
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionVertexBasicKeyDefault", "..\br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionVertexBasicKeyDefault\br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionVertexBasicKeyDefault\br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionVertexBasicKeyDefault.csproj", "{B765EE7A-6D5C-4FBD-9646-8A8E74870032}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.MapFunctionDefault", "..\br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.MapFunctionDefault\br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.MapFunctionDefault\br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.MapFunctionDefault.csproj", "{1A66C175-6C26-4A40-AFC4-90C9D4E7C1E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -362,6 +364,10 @@ Global
 		{1A45736A-A938-4026-B292-AEA8ED4A8651}.Debug|x86.Build.0 = Debug|Any CPU
 		{1A45736A-A938-4026-B292-AEA8ED4A8651}.Release|x86.ActiveCfg = Release|Any CPU
 		{1A45736A-A938-4026-B292-AEA8ED4A8651}.Release|x86.Build.0 = Release|Any CPU
+		{1A66C175-6C26-4A40-AFC4-90C9D4E7C1E3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1A66C175-6C26-4A40-AFC4-90C9D4E7C1E3}.Debug|x86.Build.0 = Debug|Any CPU
+		{1A66C175-6C26-4A40-AFC4-90C9D4E7C1E3}.Release|x86.ActiveCfg = Release|Any CPU
+		{1A66C175-6C26-4A40-AFC4-90C9D4E7C1E3}.Release|x86.Build.0 = Release|Any CPU
 		{1BDCF1F2-63F0-45C8-8576-CCB2A46C94A2}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{1BDCF1F2-63F0-45C8-8576-CCB2A46C94A2}.Debug|x86.Build.0 = Debug|Any CPU
 		{1BDCF1F2-63F0-45C8-8576-CCB2A46C94A2}.Release|x86.ActiveCfg = Release|Any CPU
