@@ -43,10 +43,15 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl
 
 		#region IVertexBasicInstance implementation
 		private int val;
+		private byte pid = 0;
 
 		public int Id {
 			get { return val; }
 			set { this.val = value; }
+		}
+		public byte PId {
+			get { return pid; }
+			set { this.pid = (byte)value; }
 		}
 
 		public object ObjValue {
@@ -59,12 +64,19 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl
 		}
 
 		public override int GetHashCode () {
-			return this.Id;
+			return pairingFunction(this.Id, this.PId);
 		}
 		public override bool Equals (object obj) {
-			if (typeof(IVertexInstance).IsAssignableFrom (obj.GetType ()))
-				return this.Id == ((IVertexInstance)obj).Id;
+			if (typeof(IVertexBasicInstance).IsAssignableFrom (obj.GetType ()))
+				return (this.Id == ((IVertexBasicInstance)obj).Id && this.PId == ((IVertexBasicInstance)obj).PId);
 			return false;
+		}
+		public int pairingFunction (int a, int b) {
+			var A = (ulong)(a >= 0 ? 2 * (long)a : -2 * (long)a - 1);
+			var B = (ulong)(b >= 0 ? 2 * (long)b : -2 * (long)b - 1);
+			var C = (long)((A >= B ? A * A + A + B : A + B * B) / 2);
+			var R = a < 0 && b < 0 || a >= 0 && b >= 0 ? C : -C - 1;
+			return (int)R;
 		}
 		#endregion
 
@@ -72,6 +84,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl
 		public object Clone () {
 			IVertexBasicInstance clone = new IVertexBasicInstanceImpl ();
 			clone.Id = this.Id;
+			clone.PId = this.PId;
 			return clone;
 		}
 		#endregion

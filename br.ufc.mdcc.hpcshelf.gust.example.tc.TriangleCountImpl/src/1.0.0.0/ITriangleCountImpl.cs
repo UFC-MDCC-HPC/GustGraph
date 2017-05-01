@@ -24,7 +24,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 		private int partid = 0;
 		private int partition_size = 0;
 		private int count = 0;
-		private IDictionary<int, IList<KeyValuePair<int,int>>> triangles = new Dictionary<int, IList<KeyValuePair<int,int>>>();
+		private IDictionary<int, IList<int>> Messages = new Dictionary<int, IList<int>>();
 		public bool isGhost(int v){ return !partition_own[this.partition [v - 1]]; }
 
 		public override void main() { this.input_messages (); }
@@ -67,6 +67,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 							if (isGhost(w)) {
 								IKVPairInstance<IVertexBasic,IDataTriangle> item = (IKVPairInstance<IVertexBasic,IDataTriangle>)Output_messages.createItem ();
 								((IVertexBasicInstance)item.Key).Id = w;
+								((IVertexBasicInstance)item.Key).PId = (byte)this.partition[w-1];
 								((IDataTriangleInstance)item.Value).V = v;
 								output_value_instance.put (item);
 							} else {
@@ -95,12 +96,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 				if (this.Superstep == 0)
 					this.graph_creator ((IInputFormatInstance) dt.Value);
 				else {
-					IList<KeyValuePair<int,int>> l;
-					if (!triangles.TryGetValue (w, out l)) {
-						l = new List<KeyValuePair<int,int>> ();
-						triangles [w] = l;
+					IList<int> l;
+					if (!Messages.TryGetValue (w, out l)) {
+						l = new List<int> ();
+						Messages [w] = l;
 					}
-					l.Add (new KeyValuePair<int, int> (dt.V, dt.W));
+					l.Add (dt.V);
 				}
 			}
 		}
@@ -110,23 +111,21 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 			if (this.Superstep == 0)
 				this.startup ();
 			else {
-				foreach (KeyValuePair<int, IList<KeyValuePair<int,int>>> TRI in triangles) {
+				foreach (KeyValuePair<int, IList<int>> TRI in Messages) {
 					int w = TRI.Key;
-					foreach (KeyValuePair<int,int> TRY in TRI.Value) {
-						int v = TRY.Key;
-						int z = TRY.Value;
+					foreach (int v in TRI.Value) {
 						IEnumerator<int> wneighbors = g .iteratorNeighborsOf (w);
 						while (wneighbors.MoveNext ()) {
-							int zw = wneighbors.Current;
-							if (w < zw) {
-								if (this.Superstep == 1) {// z == 0
+							int vw = wneighbors.Current;
+							if (w < vw) {
+								if (this.Superstep == 1) {
 									IKVPairInstance<IVertexBasic,IDataTriangle> item = (IKVPairInstance<IVertexBasic,IDataTriangle>)Output_messages.createItem ();
 									((IVertexBasicInstance)item.Key).Id = v;
-									((IDataTriangleInstance)item.Value).V = w;
-									((IDataTriangleInstance)item.Value).W = zw;
+									((IVertexBasicInstance)item.Key).PId = (byte)this.partition[v-1];
+									((IDataTriangleInstance)item.Value).V = vw;
 									output_value.put (item);
 								} else {
-									if (z == zw) {
+									if (v == vw) {
 										count++;
 									}
 								}
@@ -138,11 +137,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 			if (this.Superstep == 2) { 
 				IKVPairInstance<IVertexBasic,IDataTriangle> item = (IKVPairInstance<IVertexBasic,IDataTriangle>)Output_messages.createItem ();
 				((IVertexBasicInstance)item.Key).Id = partid;
+				((IVertexBasicInstance)item.Key).PId = (byte)partid;
 				((IDataTriangleInstance)item.Value).V = count;
 				output_value.put (item);
 				output_value.finish ();
 			}
-			triangles .Clear ();
+			Messages .Clear ();
 		}
 		#endregion
 	}

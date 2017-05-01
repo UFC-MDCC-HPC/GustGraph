@@ -8,6 +8,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic
 	{
 	}
 	public interface IVertexBasicInstance : IVertexInstance, ICloneable {
-		//int Id { get; set; }
+		byte PId { get; set; }
 	}
 }

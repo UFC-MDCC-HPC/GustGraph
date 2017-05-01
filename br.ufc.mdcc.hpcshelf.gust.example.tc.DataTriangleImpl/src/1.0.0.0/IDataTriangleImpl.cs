@@ -13,25 +13,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl
 			newInstance ();
 		}
 
-		public IDataTriangleInstance newInstance (int v) {
-			IDataTriangleInstance instance = (IDataTriangleInstance)newInstance ();
-			instance.V = v;
-			return instance;
-		}
-		public IDataTriangleInstance newInstance (int v, int w) {
-			IDataTriangleInstance instance = (IDataTriangleInstance)newInstance ();
-			instance.V = v;
-			instance.W = w;
-			return instance;
-		}
-
 		public object newInstance () {
 			this.instance = new IDataTriangleInstanceImpl ();
 			return this.Instance;
 		}
 
 		private IDataTriangleInstance instance;
-
 		public object Instance {
 			get { return instance; }
 			set { this.instance = (IDataTriangleInstance)value; }
@@ -47,52 +34,33 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl
 		   get { return this._value; }
 		   set { this._value = value; }
 		}
-
-		private int v;
 		public int V {
-			get { return this.v; }
-			set { this.v = value; }
-		}
-		private int w;
-		public int W {
-			get { return this.w; }
-			set { this.w = value; }
+			get { return (int)this.Value; }
+			set { this.Value = (int) value; }
 		}
 
 		public object ObjValue {
-			get { return new Tuple<int,int,object>(v,w,this._value); }
+			get { return new Tuple<object>(this._value); }
 			set {
-				this.v = ((Tuple<int,int,object>)value).Item1;
-				this.w = ((Tuple<int,int,object>)value).Item2;
-				this._value = ((Tuple<int,int,object>)value).Item3;
+				this._value = ((Tuple<object>)value).Item1;
 			}
 		}
-		public override int GetHashCode () { return pairingFunction (this.v, this.w ); }
-		public override string ToString () { return "["+this.v+","+this.w+"]"; }
+		public override int GetHashCode () { return this.Value.GetHashCode(); }
+		public override string ToString () { return this.Value.ToString(); }
 
 		public override bool Equals (object obj) {
 			if (obj is IDataTriangleInstanceImpl)
-				return ( ((IDataTriangleInstanceImpl)obj).V==this.v && ((IDataTriangleInstanceImpl)obj).W == this.w );
+				return ( ((IDataTriangleInstanceImpl)obj).Value.Equals(this.Value) );
 			else
 				return false;
 		}
-		public static int pairingFunction (int a, int b) {
-			var A = (ulong)(a >= 0 ? 2 * (long)a : -2 * (long)a - 1);
-			var B = (ulong)(b >= 0 ? 2 * (long)b : -2 * (long)b - 1);
-			var C = (long)((A >= B ? A * A + A + B : A + B * B) / 2);
-			var R = a < 0 && b < 0 || a >= 0 && b >= 0 ? C : -C - 1;
-			return (int)R;
-		}
-
 		#endregion
 
 		#region ICloneable implementation
 
 		public object Clone () {
 			IDataTriangleInstance clone = new IDataTriangleInstanceImpl ();
-			clone.V = this.v;
-			clone.W = this.w;
-			clone.Value = this._value;
+			clone.Value = this.Value;
 			return clone;
 		}
 
