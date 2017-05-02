@@ -282,6 +282,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapred
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.MapFunctionDefault", "..\br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.MapFunctionDefault\br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.MapFunctionDefault\br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.MapFunctionDefault.csproj", "{1A66C175-6C26-4A40-AFC4-90C9D4E7C1E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceGraphInterface", "..\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceGraphInterface\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceGraphInterface\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceGraphInterface.csproj", "{C12FB923-5C5E-435E-8BA8-CAC030665FD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkGraphInterface", "..\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkGraphInterface\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkGraphInterface\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkGraphInterface.csproj", "{B2FE1193-730D-448C-A108-BB14E36E6E70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -672,6 +676,10 @@ Global
 		{B1988D74-54AE-4031-B185-E046226BC359}.Debug|x86.Build.0 = Debug|Any CPU
 		{B1988D74-54AE-4031-B185-E046226BC359}.Release|x86.ActiveCfg = Release|Any CPU
 		{B1988D74-54AE-4031-B185-E046226BC359}.Release|x86.Build.0 = Release|Any CPU
+		{B2FE1193-730D-448C-A108-BB14E36E6E70}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B2FE1193-730D-448C-A108-BB14E36E6E70}.Debug|x86.Build.0 = Debug|Any CPU
+		{B2FE1193-730D-448C-A108-BB14E36E6E70}.Release|x86.ActiveCfg = Release|Any CPU
+		{B2FE1193-730D-448C-A108-BB14E36E6E70}.Release|x86.Build.0 = Release|Any CPU
 		{B536EBC5-FFB6-49C3-B975-341250B38DDC}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{B536EBC5-FFB6-49C3-B975-341250B38DDC}.Debug|x86.Build.0 = Debug|Any CPU
 		{B536EBC5-FFB6-49C3-B975-341250B38DDC}.Release|x86.ActiveCfg = Release|Any CPU
@@ -708,6 +716,10 @@ Global
 		{BEE63437-0DC5-4A9F-A8A6-16E755AE9B3B}.Debug|x86.Build.0 = Debug|Any CPU
 		{BEE63437-0DC5-4A9F-A8A6-16E755AE9B3B}.Release|x86.ActiveCfg = Release|Any CPU
 		{BEE63437-0DC5-4A9F-A8A6-16E755AE9B3B}.Release|x86.Build.0 = Release|Any CPU
+		{C12FB923-5C5E-435E-8BA8-CAC030665FD7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C12FB923-5C5E-435E-8BA8-CAC030665FD7}.Debug|x86.Build.0 = Debug|Any CPU
+		{C12FB923-5C5E-435E-8BA8-CAC030665FD7}.Release|x86.ActiveCfg = Release|Any CPU
+		{C12FB923-5C5E-435E-8BA8-CAC030665FD7}.Release|x86.Build.0 = Release|Any CPU
 		{C596246A-A457-4518-B3A4-9A5A26019C2C}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{C596246A-A457-4518-B3A4-9A5A26019C2C}.Debug|x86.Build.0 = Debug|Any CPU
 		{C596246A-A457-4518-B3A4-9A5A26019C2C}.Release|x86.ActiveCfg = Release|Any CPU
