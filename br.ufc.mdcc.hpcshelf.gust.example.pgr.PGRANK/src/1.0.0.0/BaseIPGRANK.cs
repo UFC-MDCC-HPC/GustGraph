@@ -11,14 +11,14 @@ using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;
 using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;
-using br.ufc.mdcc.common.Integer;
+using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
 
 namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK
 {
 	public interface BaseIPGRANK : BaseIGustyFunction<
-	IInteger,
+	IVertexBasic,
 	IDataPGRANK,
-	IInteger,
+	IVertexBasic,
 	IDataPGRANK,
 	IDirectedGraph<IDataContainerKV<IVertex, IEdgeWeighted<IVertex>>, IVertex, IEdgeWeighted<IVertex>>,
 	IInputFormat

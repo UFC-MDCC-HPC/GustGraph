@@ -7,7 +7,6 @@ using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
-using br.ufc.mdcc.common.Integer;
 using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 using br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK;
 using br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK;
@@ -18,6 +17,7 @@ using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;
 using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;
+using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
 
 namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl {
 	public class IPGRANKImpl : BaseIPGRANKImpl, IPGRANK {
@@ -82,8 +82,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl {
 			}
 		}
 		public void input_messages() {
-			IKVPairInstance<IInteger,IIterator<IDataPGRANK>> input_values_instance = (IKVPairInstance<IInteger,IIterator<IDataPGRANK>>)Input_values.Instance;
-			IIntegerInstance ikey = (IIntegerInstance)input_values_instance.Key;
+			IKVPairInstance<IVertexBasic,IIterator<IDataPGRANK>> input_values_instance = (IKVPairInstance<IVertexBasic,IIterator<IDataPGRANK>>)Input_values.Instance;
+			IVertexBasicInstance ikey = (IVertexBasicInstance)input_values_instance.Key;
 			IIteratorInstance<IDataPGRANK> ivalues = (IIteratorInstance<IDataPGRANK>)input_values_instance.Value;
 
 			object o;
@@ -102,7 +102,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl {
 			if (this.Superstep == 0)
 				this.startup ();
 			else {
-				IIteratorInstance<IKVPair<IInteger,IDataPGRANK>> output_value_instance = (IIteratorInstance<IKVPair<IInteger,IDataPGRANK>>)Output_messages.Instance;
+				IIteratorInstance<IKVPair<IVertexBasic,IDataPGRANK>> output_value_instance = (IIteratorInstance<IKVPair<IVertexBasic,IDataPGRANK>>)Output_messages.Instance;
 
 				ICollection<int> vertices = g.vertexSet ();
 				foreach (int v in vertices)
@@ -129,17 +129,19 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl {
 			emite ();
 		}
 		private void emite(){
-			IIteratorInstance<IKVPair<IInteger,IDataPGRANK>> output_value_instance = (IIteratorInstance<IKVPair<IInteger,IDataPGRANK>>)Output_messages.Instance;
+			IIteratorInstance<IKVPair<IVertexBasic,IDataPGRANK>> output_value_instance = (IIteratorInstance<IKVPair<IVertexBasic,IDataPGRANK>>)Output_messages.Instance;
 			if (this.Superstep == MAX_ITERATION) {
-				IKVPairInstance<IInteger,IDataPGRANK> ITEM = (IKVPairInstance<IInteger,IDataPGRANK>)Output_messages.createItem ();
-				((IIntegerInstance)ITEM.Key).Value = this.partid;
-				((IDataPGRANKInstance)ITEM.Value).Ranks = messages [((IIntegerInstance)ITEM.Key).Value];
+				IKVPairInstance<IVertexBasic,IDataPGRANK> ITEM = (IKVPairInstance<IVertexBasic,IDataPGRANK>)Output_messages.createItem ();
+				((IVertexBasicInstance)ITEM.Key).Id = this.partid;
+				((IVertexBasicInstance)ITEM.Key).PId = (byte)this.partid;
+				((IDataPGRANKInstance)ITEM.Value).Ranks = messages [((IVertexBasicInstance)ITEM.Key).PId];
 				output_value_instance.put (ITEM);
 				output_value_instance.finish ();
 			} else {
 				for (int i = 0; i < partition_size; i++) {
-					IKVPairInstance<IInteger,IDataPGRANK> ITEM = (IKVPairInstance<IInteger,IDataPGRANK>)Output_messages.createItem ();
-					((IIntegerInstance)ITEM.Key).Value = i;
+					IKVPairInstance<IVertexBasic,IDataPGRANK> ITEM = (IKVPairInstance<IVertexBasic,IDataPGRANK>)Output_messages.createItem ();
+					((IVertexBasicInstance)ITEM.Key).Id = i;
+					((IVertexBasicInstance)ITEM.Key).PId = (byte) i;
 
 					if (partition_own [i])
 						((IDataPGRANKInstance)ITEM.Value).Ranks = new Dictionary<int, float> ();

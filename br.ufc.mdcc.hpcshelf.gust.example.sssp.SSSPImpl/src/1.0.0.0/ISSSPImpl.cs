@@ -7,7 +7,6 @@ using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
-using br.ufc.mdcc.common.Integer;
 using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 using br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP;
 using br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP;
@@ -18,6 +17,7 @@ using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;
 using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;
+using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
 
 namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 	public class ISSSPImpl : BaseISSSPImpl, ISSSP {
@@ -89,23 +89,25 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 			if (this.Superstep == 0)
 				this.startup ();
 
-			IIteratorInstance<IKVPair<IInteger,IDataSSSP>> output_value_instance = (IIteratorInstance<IKVPair<IInteger,IDataSSSP>>)Output_messages.Instance;
+			IIteratorInstance<IKVPair<IVertexBasic,IDataSSSP>> output_value_instance = (IIteratorInstance<IKVPair<IVertexBasic,IDataSSSP>>)Output_messages.Instance;
 
 			bool any_emite = false;
 			foreach (bool any in emite)
 				any_emite = any_emite || any;
 			if (!any_emite && halt_sum == 0) {
-				IKVPairInstance<IInteger,IDataSSSP> ITEM = (IKVPairInstance<IInteger,IDataSSSP>)Output_messages.createItem ();
-				((IIntegerInstance)ITEM.Key).Value = this.partid;
-				((IDataSSSPInstance)ITEM.Value).Path_size = messages [((IIntegerInstance)ITEM.Key).Value];
+				IKVPairInstance<IVertexBasic,IDataSSSP> ITEM = (IKVPairInstance<IVertexBasic,IDataSSSP>)Output_messages.createItem ();
+				((IVertexBasicInstance)ITEM.Key).Id = this.partid;
+				((IVertexBasicInstance)ITEM.Key).PId = (byte) this.partid;
+				((IDataSSSPInstance)ITEM.Value).Path_size = messages [((IVertexBasicInstance)ITEM.Key).PId];
 				((IDataSSSPInstance)ITEM.Value).Halt = 0;
 				output_value_instance.put (ITEM);
 
 				output_value_instance.finish (); //finish(), preparando-se para a emissão definitiva de saída
 			} else {
 				for (int i = 0; i < partition_size; i++) {
-					IKVPairInstance<IInteger,IDataSSSP> ITEM = (IKVPairInstance<IInteger,IDataSSSP>)Output_messages.createItem ();
-					((IIntegerInstance)ITEM.Key).Value = i;
+					IKVPairInstance<IVertexBasic,IDataSSSP> ITEM = (IKVPairInstance<IVertexBasic,IDataSSSP>)Output_messages.createItem ();
+					((IVertexBasicInstance)ITEM.Key).Id = i;
+					((IVertexBasicInstance)ITEM.Key).PId = (byte) i;
 
 					if (partition_own [i] || !emite [i])
 						((IDataSSSPInstance)ITEM.Value).Path_size = new Dictionary<int, float> ();
@@ -121,8 +123,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 		}
 
 		public void input_messages() {
-			IKVPairInstance<IInteger,IIterator<IDataSSSP>> input_values_instance = (IKVPairInstance<IInteger,IIterator<IDataSSSP>>)Input_values.Instance;
-			IIntegerInstance ikey = (IIntegerInstance)input_values_instance.Key;
+			IKVPairInstance<IVertexBasic,IIterator<IDataSSSP>> input_values_instance = (IKVPairInstance<IVertexBasic,IIterator<IDataSSSP>>)Input_values.Instance;
+			IVertexBasicInstance ikey = (IVertexBasicInstance)input_values_instance.Key;
 			IIteratorInstance<IDataSSSP> ivalues = (IIteratorInstance<IDataSSSP>)input_values_instance.Value;
 
 			object o; float distance_min;

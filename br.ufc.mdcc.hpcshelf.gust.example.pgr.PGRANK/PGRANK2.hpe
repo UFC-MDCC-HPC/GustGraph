@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000737d29c1905480c7ad80dff7667bd81b519d8915157085319c0790a45f701817fdee242484aa41545971163f1f89d3327010d52bb48269766fbe64d3a2755559a3f712cbc1eebd0d2f7b38781f105e0eeeba731e51b165fba279ffc093673d31a9ab3f6050f0d11614716d6ae1fd0abcbfbdb890e2d4ec610e195af2fe33a6d4" isAbstract="true" kind="Computation" name="SSSP" packagePath="br.ufc.mdcc.hpcshelf.gust.example.sssp">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c79bf844f7fddaf0fdc7e988448cf76995dde74601b4b2fe321ce10e31b24cf97ca3989c93f6bb51cfcdd6c966775c1dd638d1e65996be6ccca50bedf4af73e2599f23359a9b0e6cc48309ba354110850d826876c0e8314c222720b9fc495cca5592e2c12dc7fe5d8cd767d6872a705e7e424f1aa7c36cfc01cc078e7982a098" isAbstract="true" kind="Computation" name="PGRANK" packagePath="br.ufc.mdcc.hpcshelf.gust.example.pgr">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
       <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bdbfdec75e44b1f555035b08a0dc1218834c22fccf3804d5ffb916c853dbe116bb6b671b7440ce6726feec12664da1a6c9a3c8beee1624e3d914cca9a8867ecd7aa1d63205b469fe12a73af58d0e639cd2179b9fb73e42cedd5423d3ed7e75b2c749f24e073dea155fb4e77d77cfda2a5c935bbbc9ad32b0c5385a518cfaedb1" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/GustyFunction.hpe" name="GustyFunction" package="br.ufc.mdcc.hpcshelf.gust.custom" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="300" y="299">
+        <visualDescription h="60" w="100" x="355" y="302">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="output_value_type" varName="OValue"/>
@@ -15,8 +15,8 @@
         <parameter formFieldId="input_value_type" varName="TValue"/>
         <parameter formFieldId="graph_input_format" varName="GIF"/>
         <parameter formFieldId="output_key_type" varName="OKey"/>
-        <port index_replica="0" localRef="continuation_value" location="br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/DataSSSP.hpe" multiple="false" name="DataSSSP" package="br.ufc.mdcc.hpcshelf.gust.example.sssp" exposed="true">
-          <visualDescription h="68" w="203" x="436" y="259">
+        <port index_replica="0" localRef="continuation_value" location="br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/DataPGRANK.hpe" multiple="false" name="DataPGRANK" package="br.ufc.mdcc.hpcshelf.gust.example.pgr" exposed="true">
+          <visualDescription h="68" w="203" x="91" y="385">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
@@ -24,17 +24,17 @@
           </unitBounds>
         </port>
         <port index_replica="0" localRef="input_values" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
-          <visualDescription h="60" w="181" x="54" y="237">
+          <visualDescription h="60" w="181" x="101" y="307">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###1389959734"/>
+          <parameter formFieldId="value_type" varName="X###764943946"/>
           <parameter formFieldId="key_type" varName="TKey"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="137" y="20"/>
           </unitBounds>
         </port>
         <port index_replica="0" localRef="output_value" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
-          <visualDescription h="63" w="154" x="465" y="333">
+          <visualDescription h="63" w="154" x="508" y="401">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <parameter formFieldId="value_type" varName="OValue"/>
@@ -44,7 +44,7 @@
           </unitBounds>
         </port>
         <port index_replica="0" localRef="graph" location="br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/DirectedGraph.hpe" multiple="false" name="DirectedGraph" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
-          <visualDescription h="60" w="146" x="351" y="406">
+          <visualDescription h="60" w="146" x="344" y="412">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <parameter formFieldId="edge_type" varName="E"/>
@@ -55,10 +55,10 @@
           </unitBounds>
         </port>
         <port index_replica="0" localRef="output_messages" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
-          <visualDescription h="60" w="265" x="45" y="372">
+          <visualDescription h="60" w="265" x="518" y="314">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###726137272"/>
+          <parameter formFieldId="item_type" varName="X###1575789480"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="iterator">
             <visualDescription h="20" w="20" x="19" y="23"/>
           </unitBounds>
@@ -75,7 +75,15 @@
     <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
-    <innerComponent localRef="tvalue" location="br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/DataSSSP.hpe" multiple="false" name="DataSSSP" package="br.ufc.mdcc.hpcshelf.gust.example.sssp" exposed="false">
+    <innerComponent localRef="tkey" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="131" y="558">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="tvalue" location="br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/DataPGRANK.hpe" multiple="false" name="DataPGRANK" package="br.ufc.mdcc.hpcshelf.gust.example.pgr" exposed="false">
       <visualDescription h="60" w="100" x="257" y="554">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -83,8 +91,16 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="ovalue" location="br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/DataSSSP.hpe" multiple="false" name="DataSSSP" package="br.ufc.mdcc.hpcshelf.gust.example.sssp" exposed="true">
-      <visualDescription h="68" w="203" x="436" y="259">
+    <innerComponent localRef="okey" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="126" y="629">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="ovalue" location="br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/DataPGRANK.hpe" multiple="false" name="DataPGRANK" package="br.ufc.mdcc.hpcshelf.gust.example.pgr" exposed="true">
+      <visualDescription h="68" w="203" x="91" y="385">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
@@ -92,7 +108,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="gif" location="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/InputFormat.hpe" multiple="false" name="InputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
-      <visualDescription h="60" w="100" x="227" y="666">
+      <visualDescription h="60" w="100" x="310" y="532">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
@@ -100,7 +116,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="g" location="br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/DirectedGraph.hpe" multiple="false" name="DirectedGraph" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
-      <visualDescription h="60" w="146" x="351" y="406">
+      <visualDescription h="60" w="146" x="344" y="412">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="edge_type" varName="E"/>
@@ -111,7 +127,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="ctn" location="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV/DataContainerKV.hpe" multiple="false" name="DataContainerKV" package="br.ufc.mdcc.hpcshelf.gust.graph.container" exposed="false">
-      <visualDescription h="60" w="100" x="551" y="152">
+      <visualDescription h="60" w="100" x="682" y="578">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="edge_type" varName="E"/>
@@ -121,7 +137,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="v" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
-      <visualDescription h="60" w="142" x="654" y="84">
+      <visualDescription h="60" w="142" x="559" y="497">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
@@ -129,7 +145,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="e" location="br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted/EdgeWeighted.hpe" multiple="false" name="EdgeWeighted" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
-      <visualDescription h="60" w="161" x="434" y="73">
+      <visualDescription h="60" w="161" x="798" y="492">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="vertex_type" varName="V"/>
@@ -137,51 +153,35 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="tkey" location="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/VertexBasic.hpe" multiple="false" name="VertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
-      <visualDescription h="60" w="100" x="261" y="540">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="okey" location="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/VertexBasic.hpe" multiple="false" name="VertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
-      <visualDescription h="60" w="100" x="259" y="619">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
+    <supplyParameter cRef="tkey" direct="true" varName="TKey"/>
     <supplyParameter cRef="tvalue" direct="true" varName="TValue"/>
+    <supplyParameter cRef="okey" direct="true" varName="OKey"/>
     <supplyParameter cRef="ovalue" direct="true" varName="OValue"/>
     <supplyParameter cRef="v" direct="true" varName="V"/>
     <supplyParameter cRef="e" direct="true" varName="E"/>
     <supplyParameter cRef="ctn" direct="true" varName="CTN"/>
     <supplyParameter cRef="g" direct="true" varName="G"/>
     <supplyParameter cRef="gif" direct="true" varName="GIF"/>
-    <supplyParameter cRef="tkey" direct="true" varName="TKey"/>
-    <supplyParameter cRef="okey" direct="true" varName="OKey"/>
-    <interface iRef="ISSSP" nArgs="0">
+    <interface iRef="IPGRANK" nArgs="0">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP&#xA;{&#xA;&#x9;public interface BaseISSSP : BaseIGustyFunction&lt;&#xA;&#x9;IVertexBasic,&#xA;&#x9;IDataSSSP,&#xA;&#x9;IVertexBasic,&#xA;&#x9;IDataSSSP,&#xA;&#x9;IDirectedGraph&lt;IDataContainerKV&lt;IVertex, IEdgeWeighted&lt;IVertex>>, IVertex, IEdgeWeighted&lt;IVertex>>,&#xA;&#x9;IInputFormat&#xA;&#x9;>, IComputationKind&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseISSSP.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP/bin/1.0.0.0/BaseISSSP.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK&#xA;{&#xA;&#x9;public interface BaseIPGRANK : BaseIGustyFunction&lt;&#xA;&#x9;IInteger,&#xA;&#x9;IDataPGRANK,&#xA;&#x9;IInteger,&#xA;&#x9;IDataPGRANK,&#xA;&#x9;IDirectedGraph&lt;IDataContainerKV&lt;IVertex, IEdgeWeighted&lt;IVertex>>, IVertex, IEdgeWeighted&lt;IVertex>>,&#xA;&#x9;IInputFormat&#xA;&#x9;>, IComputationKind&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIPGRANK.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK/bin/1.0.0.0/BaseIPGRANK.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/BaseIGustyFunction.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP&#xA;{&#xA;&#x9;public interface ISSSP : BaseISSSP, IGustyFunction&lt;&#xA;&#x9;IVertexBasic,&#xA;&#x9;IDataSSSP,&#xA;&#x9;IVertexBasic,&#xA;&#x9;IDataSSSP,&#xA;&#x9;IDirectedGraph&lt;IDataContainerKV&lt;IVertex, IEdgeWeighted&lt;IVertex>>, IVertex, IEdgeWeighted&lt;IVertex>>,&#xA;&#x9;IInputFormat&#xA;&#x9;>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ISSSP.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP/bin/1.0.0.0/ISSSP.dll" versionId="1.0.0.0">
-          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP/bin/1.0.0.0/BaseISSSP.dll</dependency>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK&#xA;{&#xA;&#x9;public interface IPGRANK : BaseIPGRANK, IGustyFunction&lt;&#xA;&#x9;IInteger,&#xA;&#x9;IDataPGRANK,&#xA;&#x9;IInteger,&#xA;&#x9;IDataPGRANK,&#xA;&#x9;IDirectedGraph&lt;IDataContainerKV&lt;IVertex, IEdgeWeighted&lt;IVertex>>, IVertex, IEdgeWeighted&lt;IVertex>>,&#xA;&#x9;IInputFormat&#xA;&#x9;>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IPGRANK.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK/bin/1.0.0.0/IPGRANK.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK/bin/1.0.0.0/BaseIPGRANK.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/IGustyFunction.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="190" x="223" y="133">
+      <visualDescription h="40" w="190" x="249" y="150">
         <color b="0" g="165" r="255"/>
       </visualDescription>
       <action id="main">
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="ISSSP" multiple="false" private="false" replica="0" uRef="reduce_function" visibleInterface="true">
+    <unit facet="0" iRef="IPGRANK" multiple="false" private="false" replica="0" uRef="reduce_function" visibleInterface="true">
       <super cRef="base" uRef="reduce_function"/>
-      <visualDescription h="40" w="190" x="276" y="202"/>
+      <visualDescription h="40" w="190" x="254" y="221"/>
     </unit>
   </componentInfo>
 </component:component>

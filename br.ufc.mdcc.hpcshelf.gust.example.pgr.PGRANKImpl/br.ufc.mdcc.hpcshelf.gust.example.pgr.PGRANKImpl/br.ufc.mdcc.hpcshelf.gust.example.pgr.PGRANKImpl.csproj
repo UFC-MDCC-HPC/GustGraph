@@ -60,10 +60,6 @@
       <Project>{807A087E-123C-4745-B029-C31FC9458A61}</Project>
       <Name>br.ufc.mdcc.common.Iterator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.common.Integer\br.ufc.mdcc.common.Integer\br.ufc.mdcc.common.Integer.csproj">
-      <Project>{97B35E58-AC6B-44A6-A536-90FA39076265}</Project>
-      <Name>br.ufc.mdcc.common.Integer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer.csproj">
       <Project>{7B6A36EC-21B3-4C93-888C-01788A9423F8}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer</Name>
@@ -131,6 +127,10 @@
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator.csproj">
       <Project>{1784C0D3-7632-4F38-8FFF-FA8008E2A724}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic\br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic\br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic.csproj">
+      <Project>{DDD9658C-CDEA-4903-AEEC-5641EC96377E}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

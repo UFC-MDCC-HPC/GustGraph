@@ -7,7 +7,6 @@ using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
-using br.ufc.mdcc.common.Integer;
 using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 using br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK;
 using br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK;
@@ -18,6 +17,7 @@ using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;
 using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;
+using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
 
 namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl
 {
@@ -33,25 +33,25 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl
 				return this.graph;
 			}
 		}
-		private IIterator<IKVPair<IInteger, IDataPGRANK>> output_messages = null;
+		private IIterator<IKVPair<IVertexBasic, IDataPGRANK>> output_messages = null;
 
-		public IIterator<IKVPair<IInteger, IDataPGRANK>> Output_messages
+		public IIterator<IKVPair<IVertexBasic, IDataPGRANK>> Output_messages
 		{
 			get
 			{
 				if (this.output_messages == null)
-					this.output_messages = (IIterator<IKVPair<IInteger, IDataPGRANK>>) Services.getPort("output_messages");
+					this.output_messages = (IIterator<IKVPair<IVertexBasic, IDataPGRANK>>) Services.getPort("output_messages");
 				return this.output_messages;
 			}
 		}
-		private IKVPair<IInteger, IIterator<IDataPGRANK>> input_values = null;
+		private IKVPair<IVertexBasic, IIterator<IDataPGRANK>> input_values = null;
 
-		public IKVPair<IInteger, IIterator<IDataPGRANK>> Input_values
+		public IKVPair<IVertexBasic, IIterator<IDataPGRANK>> Input_values
 		{
 			get
 			{
 				if (this.input_values == null)
-					this.input_values = (IKVPair<IInteger, IIterator<IDataPGRANK>>) Services.getPort("input_values");
+					this.input_values = (IKVPair<IVertexBasic, IIterator<IDataPGRANK>>) Services.getPort("input_values");
 				return this.input_values;
 			}
 		}
@@ -77,14 +77,14 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl
 				return this.input_format;
 			}
 		}
-		private IKVPair<IInteger, IDataPGRANK> output_value = null;
+		private IKVPair<IVertexBasic, IDataPGRANK> output_value = null;
 
-		public IKVPair<IInteger, IDataPGRANK> Output_value
+		public IKVPair<IVertexBasic, IDataPGRANK> Output_value
 		{
 			get
 			{
 				if (this.output_value == null)
-					this.output_value = (IKVPair<IInteger, IDataPGRANK>) Services.getPort("output_value");
+					this.output_value = (IKVPair<IVertexBasic, IDataPGRANK>) Services.getPort("output_value");
 				return this.output_value;
 			}
 		}
