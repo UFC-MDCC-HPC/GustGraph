@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/cenez/hpe/cenez/cache" default="all" name="DataSourceGraphVertexBasicDataObjectImpl">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="DataSourceGraphVertexBasicDataObjectImpl-1.0.0.0">
+    <ifnot targetexists="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.custom.io.impl.DataSourceGraphVertexBasicDataObjectImpl/bin/1.0.0.0">
+      <mkdir dir="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.custom.io.impl.DataSourceGraphVertexBasicDataObjectImpl/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.custom.io.impl.DataSourceGraphVertexBasicDataObjectImpl/DataSourceGraphVertexBasicDataObjectImpl.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.custom.io.impl.DataSourceGraphVertexBasicDataObjectImpl/bin/1.0.0.0/BaseIDataSourceGraphImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.custom.io.impl.DataSourceGraphVertexBasicDataObjectImpl/src/1.0.0.0/BaseIDataSourceGraphImpl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/bin/1.0.0.0/IBindingDirect.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceGraphInterface/bin/1.0.0.0/IPortTypeDataSourceGraphInterface.dll"/>
+        <include name="br.ufc.mdcc.common.Iterator/bin/1.0.0.0/IIterator.dll"/>
+        <include name="br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/IVertexBasic.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DataObject/bin/1.0.0.0/IDataObject.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.custom.io.DataSourceGraph/bin/1.0.0.0/BaseIDataSourceGraph.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.custom.io.impl.DataSourceGraphVertexBasicDataObjectImpl/DataSourceGraphVertexBasicDataObjectImpl.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.custom.io.impl.DataSourceGraphVertexBasicDataObjectImpl/bin/1.0.0.0/IDataSourceGraphImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.custom.io.impl.DataSourceGraphVertexBasicDataObjectImpl/src/1.0.0.0/IDataSourceGraphImpl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/IVertexBasic.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DataObject/bin/1.0.0.0/IDataObject.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll"/>
+        <include name="/br.ufc.mdcc.hpcshelf.gust.custom.io.impl.DataSourceGraphVertexBasicDataObjectImpl/bin/1.0.0.0/BaseIDataSourceGraphImpl.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.custom.io.DataSourceGraph/bin/1.0.0.0/IDataSourceGraph.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="DataSourceGraphVertexBasicDataObjectImpl-1.0.0.0" name="all"/>
+</project>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001faeb566c425b3314dfbe8b39978b59d6f5a69e0ead253ae84f77f660b5cbfd511d1ca8d099bea9286806cc2f7d997413f6e9efd9cb5d7751d7a323315fb6171c8cdebc0a4c8b57f609b96028d226567e78c851e692c69595e0fad9cc14bd62215f4cf739f1a2125a0faa85b467cb6831c7aad9532c4f6f9282739d138b70eb6" isAbstract="false" kind="Synchronizer" name="EnvironmentBindingWriteDataGraphImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.binding.impl.environment">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bd91ad49c071f86622c8b4865922acdbea07d73525feed8c5dff23349a8fa17c8794131d2ac6aede1a3959402d7dc4e7c18b112f7a41cbb402238fd273242fee86f026008e0aa4e8f7d6e83d9074a8e0d2c55a3d3811966292fdcc788d2b5f6c5f71080e612b4ac859de0c9079c187c6b2b00638e093bc0fb87fecfdcada839a" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph/EnvironmentBindingWriteDataGraph.hpe" name="EnvironmentBindingWriteDataGraph" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="277" y="470">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="server_port_type" varName="S"/>
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="s" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="499" y="394">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="c" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkGraphInterface/PortTypeDataSinkGraphInterface.hpe" multiple="false" name="PortTypeDataSinkGraphInterface" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="501" y="264">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="s" direct="true" varName="S"/>
+    <supplyParameter cRef="c" direct="true" varName="C"/>
+    <interface iRef="IWriteDataGraphImpl" nArgs="1">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph;//&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkGraphInterface;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.binding.impl.environment.EnvironmentBindingWriteDataGraphImpl&#xA;{&#xA;&#x9;public abstract class BaseIWriteDataGraphImpl&lt;S>: Synchronizer, BaseIWriteDataGraph&lt;S>&#xA;&#x9;&#x9;//where C:IPortTypeIterator&#xA;&#x9;&#x9;where S:IPortTypeIterator&#xA;&#x9;{&#xA;&#x9;&#x9;private IPortTypeDataSinkGraphInterface client_port_type = default(IPortTypeDataSinkGraphInterface);&#xA;&#x9;&#x9;protected IPortTypeDataSinkGraphInterface Client_port_type&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.client_port_type == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.client_port_type = (IPortTypeDataSinkGraphInterface) Services.getPort(&quot;client_port_type&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.client_port_type;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private S server_port_type = default(S);&#xA;&#x9;&#x9;protected S Server_port_type&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.server_port_type == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.server_port_type = (S) Services.getPort(&quot;server_port_type&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.server_port_type;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIWriteDataGraphImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.binding.impl.environment.EnvironmentBindingWriteDataGraphImpl/bin/1.0.0.0/BaseIWriteDataGraphImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph/bin/1.0.0.0/BaseIWriteDataGraph.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph;//&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface;&#xA;using System.Threading;&#xA;using System.Collections.Generic;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.common.String;&#xA;using System.Collections.Concurrent;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.binding.impl.environment.EnvironmentBindingWriteDataGraphImpl&#xA;{&#xA;&#x9;public class IWriteDataGraphImpl&lt;S>: BaseIWriteDataGraphImpl&lt;S>, IWriteDataGraph&lt;S>&#xA;&#x9;&#x9;where S:IPortTypeIterator&#xA;&#x9;{&#xA;&#x9;&#x9;private ConcurrentQueue&lt;Tuple&lt;string,int>> lines = new ConcurrentQueue&lt;Tuple&lt;string, int>>();&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private Thread thread_file_writer = null;&#xA;&#xA;&#x9;&#x9;public override void after_initialize()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;client = new IPortTypeDataSinkInterfaceImpl (lines);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;internal class IPortTypeDataSinkInterfaceImpl : IPortTypeDataSinkInterface&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;private Semaphore not_empty = new Semaphore(0,int.MaxValue);&#xA;&#x9;&#x9;&#x9;private S server;&#xA;&#x9;&#x9;&#x9;private ConcurrentQueue&lt;Tuple&lt;string,int>> lines;&#xA;&#x9;&#x9;&#x9;AutoResetEvent e = new AutoResetEvent(false);&#xA;&#xA;&#x9;&#x9;&#x9;public S Server { set {&#x9;server = value; e.Set (); } }&#xA;&#xA;&#x9;&#x9;&#x9;public IPortTypeDataSinkInterfaceImpl(ConcurrentQueue&lt;Tuple&lt;string,int>> lines)&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;this.e = e;&#xA;&#x9;&#x9;&#x9;&#x9;this.lines = lines;&#xA;&#x9;&#x9;&#x9;&#x9;this.server = server;&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#xA;&#x9;&#x9;&#x9;public ConcurrentQueue&lt;Tuple&lt;string,int>> readCounts ()&#xA;&#x9;&#x9;&#x9;{&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Thread t = new Thread(new ThreadStart(() =>&#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;e.WaitOne();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;object bin_object = null;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;READ COUNTS START&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;// SINGLE ITERATION (Count Words)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;bool end_iteration = false;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;while (!end_iteration)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;    Console.WriteLine(&quot;READ COUNTS - ITERATION &quot; + (server==null));&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (!server.has_next ())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;end_iteration = true;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;int count = 0;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;IKVPairInstance&lt;IString,IInteger> bin;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;while (server.fetch_next (out bin_object))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;READ COUNTS - READ &quot; + count);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;bin = (IKVPairInstance&lt;IString,IInteger>)bin_object;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;string s = ((IStringInstance)bin.Key).Value;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;int c = (int) bin.Value;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple&lt;string, int> tt = new Tuple&lt;string, int> (s, c);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;lines.Enqueue (tt);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;count = not_empty.Release();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;READ COUNTS - END CHUNK &quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;READ COUNTS - END ITERATION &quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;lines.Enqueue(new Tuple&lt;string,int>(null,0));&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;not_empty.Release();&#xA;&#x9;&#x9;&#x9;&#x9;}));&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;t.Start();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;return lines;&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;public Semaphore NotEmpty { get { return not_empty; } }&#xA;&#x9;&#x9;}&#xA;&#xA;&#xA;&#xA;&#x9;&#x9;private IPortTypeDataSinkInterface client = null;&#xA;&#x9;&#x9;public IPortTypeDataSinkInterface Client { get {&#x9;return client; } }&#xA;&#xA;&#x9;&#x9;private S server = default(S);&#xA;&#x9;&#x9;public S Server { set {&#x9;server = value; ((IPortTypeDataSinkInterfaceImpl)client).Server = server; } }&#xA;&#xA;&#x9;}&#xA;}&#xA;" name="IWriteDataGraphImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.binding.impl.environment.EnvironmentBindingWriteDataGraphImpl/bin/1.0.0.0/IWriteDataGraphImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.binding.impl.environment.EnvironmentBindingWriteDataGraphImpl/bin/1.0.0.0/BaseIWriteDataGraphImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph/bin/1.0.0.0/IWriteDataGraph.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="296" x="153" y="296">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IWriteDataGraphImpl" multiple="false" private="false" replica="0" uRef="client_server" visibleInterface="true">
+      <super cRef="base" uRef="client_server"/>
+      <visualDescription h="40" w="201" x="189" y="391"/>
+    </unit>
+  </componentInfo>
+</component:component>

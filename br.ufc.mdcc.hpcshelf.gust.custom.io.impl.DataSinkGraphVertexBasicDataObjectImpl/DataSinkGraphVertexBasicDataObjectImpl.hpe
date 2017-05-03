@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000839a9b204efd0530cbe268fe2556f924cf99bcf8710e1e77adc5eadd93a8e3d99e7e6ebd5c0d216a0aced7348b4f1ba1d1be3133c63a7cda3d394c096048aed18184c29ded43a8b895b24588be341b0255d35d360434a699703af78cd7b8819e09ea9f301233b526579875315053cdf7e14892cea720d0d1799616df8cc794a9" isAbstract="false" kind="Computation" name="DataSinkGraphVertexBasicDataObjectImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.custom.io.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f76ecc04b30990df976bb10c7e812b0df9dfcfa6a88a708e19445af376d13b476cdfef61121c8dcff12db2846cca2cf5349acace6cf5557241206c0b7d26c766cc66989f6daa1654d5a7488cfa680c883ab90bb554e25ce77ddaa00e8162b6a81cd9373ccb00d948bbaaa2da96abe8b9a2a4e846f38c71b9dcd6d8ed0c75dce2" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.custom.io.DataSinkGraph/DataSinkGraph.hpe" name="DataSinkGraph" package="br.ufc.mdcc.hpcshelf.gust.custom.io" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="248" y="357">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="input_key_type" varName="IKey"/>
+        <parameter formFieldId="platform_maintainer" varName="M"/>
+        <parameter formFieldId="input_value_type" varName="IValue"/>
+        <parameter formFieldId="graph_output_format" varName="GOF"/>
+        <port index_replica="0" localRef="output_data" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/EnvironmentBindingBaseDirect.hpe" multiple="false" name="EnvironmentBindingBaseDirect" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
+          <visualDescription h="74" w="206" x="280" y="441">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="client_port_type" varName="X###1269791956"/>
+          <parameter formFieldId="server_port_type" varName="X###1848404253"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
+            <visualDescription h="20" w="20" x="100" y="2"/>
+          </unitBounds>
+        </port>
+        <port index_replica="0" localRef="platform_data_sink" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
+          <visualDescription h="67" w="194" x="68" y="442">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="maintainer" varName="M"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="node">
+            <visualDescription h="20" w="20" x="88" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="data_sink_graph">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="m" location="br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/DataHost.hpe" multiple="false" name="DataHost" package="br.ufc.mdcc.hpcshelf.platform.maintainer" exposed="false">
+      <visualDescription h="60" w="100" x="474" y="206">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="data_host">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="ikey" location="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/VertexBasic.hpe" multiple="false" name="VertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="100" x="189" y="619">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="ivalue" location="br.ufc.mdcc.hpcshelf.gust.graph.DataObject/DataObject.hpe" multiple="false" name="DataObject" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="100" x="325" y="612">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="gof" location="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/OutputFormat.hpe" multiple="false" name="OutputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="100" x="541" y="522">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="output_value_type" varName="IValue"/>
+      <parameter formFieldId="output_key_type" varName="IKey"/>
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="ikey" direct="true" varName="IKey"/>
+    <supplyParameter cRef="ivalue" direct="true" varName="IValue"/>
+    <supplyParameter cRef="m" direct="true" varName="M"/>
+    <supplyParameter cRef="gof" direct="true" varName="GOF"/>
+    <interface iRef="IDataSinkGraphImpl" nArgs="4">
+      <slice isRef="platform_data_sink">
+        <originRef cRef="platform_data_sink" iRef="IProcessingNode"/>
+        <visualDescription h="10" w="10" x="1" y="24"/>
+      </slice>
+      <slice isRef="output_data">
+        <originRef cRef="output_data" iRef="IBindingDirect"/>
+        <visualDescription h="10" w="10" x="24" y="25"/>
+      </slice>
+      <slice isRef="input_key">
+        <originRef cRef="input_key" iRef="IVertexBasic"/>
+        <visualDescription h="10" w="10" x="230" y="6"/>
+      </slice>
+      <slice isRef="input_value">
+        <originRef cRef="input_value" iRef="IDataObject"/>
+        <visualDescription h="10" w="10" x="239" y="12"/>
+      </slice>
+      <slice isRef="output_format">
+        <originRef cRef="output_format" iRef="IOutputFormat"/>
+        <visualDescription h="10" w="10" x="238" y="27"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DataObject;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkGraphInterface;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;using br.ufc.mdcc.hpcshelf.platform.Platform;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.io.DataSinkGraph;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.custom.io.impl.DataSinkGraphVertexBasicDataObjectImpl&#xA;{&#xA;&#x9;public abstract class BaseIDataSinkGraphImpl&lt;M, IKey, IValue, GOF>: Computation, BaseIDataSinkGraph&lt;M, IKey, IValue, GOF>&#xA;&#x9;&#x9;where M:IDataHost&#xA;&#x9;&#x9;where IKey:IVertexBasic&#xA;&#x9;&#x9;where IValue:IDataObject&#xA;&#x9;&#x9;where GOF:IOutputFormat&lt;IKey, IValue>&#xA;&#x9;{&#xA;&#x9;&#x9;private GOF graph_output_format = default(GOF);&#xA;&#xA;&#x9;&#x9;protected GOF Graph_output_format&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.graph_output_format == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.graph_output_format = (GOF) Services.getPort(&quot;output_format&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.graph_output_format;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IBindingDirect&lt;IPortTypeDataSinkGraphInterface, IEnvironmentPortTypeSinglePartner> output_data = null;&#xA;&#xA;&#x9;&#x9;public IBindingDirect&lt;IPortTypeDataSinkGraphInterface, IEnvironmentPortTypeSinglePartner> Output_data&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_data == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_data = (IBindingDirect&lt;IPortTypeDataSinkGraphInterface, IEnvironmentPortTypeSinglePartner>) Services.getPort(&quot;output_data&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_data;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IKey input_key = default(IKey);&#xA;&#xA;&#x9;&#x9;protected IKey Input_key&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_key == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_key = (IKey) Services.getPort(&quot;input_key&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_key;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IProcessingNode&lt;M> platform_data_sink = null;&#xA;&#xA;&#x9;&#x9;public IProcessingNode&lt;M> Platform_data_sink&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform_data_sink == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform_data_sink = (IProcessingNode&lt;M>) Services.getPort(&quot;platform_data_sink&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform_data_sink;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IValue input_value = default(IValue);&#xA;&#xA;&#x9;&#x9;protected IValue Input_value&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_value == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_value = (IValue) Services.getPort(&quot;input_value&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_value;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataSinkGraphImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.custom.io.impl.DataSinkGraphVertexBasicDataObjectImpl/bin/1.0.0.0/BaseIDataSinkGraphImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/bin/1.0.0.0/IOutputFormat.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/IVertexBasic.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DataObject/bin/1.0.0.0/IDataObject.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/bin/1.0.0.0/IBindingDirect.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkGraphInterface/bin/1.0.0.0/IPortTypeDataSinkGraphInterface.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.custom.io.DataSinkGraph/bin/1.0.0.0/BaseIDataSinkGraph.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DataObject;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.io.DataSinkGraph;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.custom.io.impl.DataSinkGraphVertexBasicDataObjectImpl&#xA;{&#xA;&#x9;public class IDataSinkGraphImpl : BaseIDataSinkGraphImpl, IDataSinkGraph&lt;M, IKey, IValue, GOF>&#xA;where M:IDataHost&#xA;where IKey:IVertexBasic&#xA;where IValue:IDataObject&#xA;where GOF:IOutputFormat&lt;IKey, IValue>&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IDataSinkGraphImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.custom.io.impl.DataSinkGraphVertexBasicDataObjectImpl/bin/1.0.0.0/IDataSinkGraphImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/IVertexBasic.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DataObject/bin/1.0.0.0/IDataObject.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/bin/1.0.0.0/IOutputFormat.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.custom.io.impl.DataSinkGraphVertexBasicDataObjectImpl/bin/1.0.0.0/BaseIDataSinkGraphImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.custom.io.DataSinkGraph/bin/1.0.0.0/IDataSinkGraph.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="261" x="134" y="189">
+        <color b="6" g="154" r="78"/>
+      </visualDescription>
+      <port name="platform_data_sink">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_data_sink" sRef="platform_data_sink"/>
+      </port>
+      <port name="output_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_data" sRef="output_data"/>
+      </port>
+      <parameter iname="IDataHost" order="0" parid="platform_maintainer" uname="data_host" varid="M"/>
+      <parameter iname="IVertexBasic" order="1" parid="input_key_type" uname="data" varid="IKey"/>
+      <parameter iname="IDataObject" parid="input_value_type" uname="data" varid="IValue"/>
+      <parameter iname="IOutputFormat" order="2" parid="graph_output_format" uname="data" varid="GOF"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IDataSinkGraphImpl" multiple="true" private="false" replica="0" uRef="data_sink_graph" visibleInterface="true">
+      <super cRef="base" uRef="data_sink_graph"/>
+      <visualDescription h="40" w="261" x="124" y="286"/>
+    </unit>
+  </componentInfo>
+</component:component>

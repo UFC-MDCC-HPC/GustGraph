@@ -11,6 +11,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat
 		where IKey:IData
 		where IValue:IData
 	{
-		IIterator<IKVPair<IKey, IValue>> Output_pairs {get;}
+		//IIterator<IKVPair<IKey, IValue>> Output_format_pairs {get;}
 	}
 }

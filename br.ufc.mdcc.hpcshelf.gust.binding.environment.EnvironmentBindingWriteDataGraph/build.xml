@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/cenez/hpe/cenez/cache" default="all" name="EnvironmentBindingWriteDataGraph">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="EnvironmentBindingWriteDataGraph-1.0.0.0">
+    <ifnot targetexists="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph/bin/1.0.0.0">
+      <mkdir dir="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph/EnvironmentBindingWriteDataGraph.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph/bin/1.0.0.0/BaseIWriteDataGraph.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph/src/1.0.0.0/BaseIWriteDataGraph.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/bin/1.0.0.0/BaseIBindingDirect.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph/EnvironmentBindingWriteDataGraph.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph/bin/1.0.0.0/IWriteDataGraph.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph/src/1.0.0.0/IWriteDataGraph.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
+        <include name="/br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph/bin/1.0.0.0/BaseIWriteDataGraph.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/bin/1.0.0.0/IBindingDirect.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="EnvironmentBindingWriteDataGraph-1.0.0.0" name="all"/>
+</project>

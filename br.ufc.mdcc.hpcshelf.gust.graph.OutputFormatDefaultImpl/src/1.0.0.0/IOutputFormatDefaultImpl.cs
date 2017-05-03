@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
@@ -19,7 +20,7 @@ where IValue:IData
 		}
 		public object newInstance ()
 		{
-			IIteratorInstance<IKVPair<IKey,IValue>> output_instance = (IIteratorInstance<IKVPair<IKey,IValue>>)this.Output_pairs.Instance;
+			IIteratorInstance<IKVPair<IKey,IValue>> output_instance = (IIteratorInstance<IKVPair<IKey,IValue>>)this.Output_format_pairs.Instance;
 			return this.Instance = new IOutputFormatInstanceImpl<IKey,IValue> (output_instance);
 		}
 		private IOutputFormatInstance<IKey,IValue> instance;
@@ -59,6 +60,12 @@ where IValue:IData
 		public string formatRepresentation(object kv_pair){
 			IKVPairInstance<IKey,IValue> kv = (IKVPairInstance<IKey,IValue>)kv_pair;
 			return kv.Key.ToString() + ":" + kv.Value.ToString();
+		}
+
+		public void sendToFile(string filename, object o){
+			IKVPairInstance<IKey,IValue> kv = (IKVPairInstance<IKey,IValue>)o;
+			string s = kv.Key.ToString() + " " + kv.Value.ToString();
+			File.AppendAllText(filename, s + System.Environment.NewLine);
 		}
 
 		#endregion

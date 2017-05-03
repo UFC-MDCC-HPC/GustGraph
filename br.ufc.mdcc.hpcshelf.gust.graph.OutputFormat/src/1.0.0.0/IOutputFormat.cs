@@ -14,7 +14,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat
 		where IKey:IData
 		where IValue:IData
 	{
-        object Iterator{get;}
-        string formatRepresentation(object kv_pair);
+        //object Iterator{get;}
+        //string formatRepresentation(object kv_pair);
+		void sendToFile(string filename, object o);
 	}
 }

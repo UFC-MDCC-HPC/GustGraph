@@ -15,15 +15,15 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.OutputFormatDefaultImpl
 		where IKey:IData
 		where IValue:IData
 	{
-		private IIterator<IKVPair<IKey, IValue>> output_pairs = null;
+		private IIterator<IKVPair<IKey, IValue>> output_format_pairs = null;
 
-		public IIterator<IKVPair<IKey, IValue>> Output_pairs
+		protected IIterator<IKVPair<IKey, IValue>> Output_format_pairs
 		{
 			get
 			{
-				if (this.output_pairs == null)
-					this.output_pairs = (IIterator<IKVPair<IKey, IValue>>) Services.getPort("output_pairs");
-				return this.output_pairs;
+				if (this.output_format_pairs == null)
+					this.output_format_pairs = (IIterator<IKVPair<IKey, IValue>>) Services.getPort("output_format_pairs");
+				return this.output_format_pairs;
 			}
 		}
 	}
