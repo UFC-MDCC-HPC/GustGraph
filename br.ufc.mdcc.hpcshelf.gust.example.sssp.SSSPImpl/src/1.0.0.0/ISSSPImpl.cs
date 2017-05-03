@@ -88,7 +88,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 		public void gust0(){ //emite saídas
 			if (this.Superstep == 0)
 				this.startup ();
-			
+
 			IIteratorInstance<IKVPair<IInteger,IDataSSSP>> output_value_instance = (IIteratorInstance<IKVPair<IInteger,IDataSSSP>>)Output_messages.Instance;
 
 			bool any_emite = false;
