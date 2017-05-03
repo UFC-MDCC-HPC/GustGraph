@@ -9,21 +9,21 @@ using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;
 
-namespace br.ufc.mdcc.hpcshelf.gust.graph.OutputFormatDefaultImpl 
+namespace br.ufc.mdcc.hpcshelf.gust.graph.OutputFormatDefaultImpl
 {
-	public abstract class BaseIOutputFormatDefaultImpl<OKey, OValue>: DataStructure, BaseIOutputFormat<OKey, OValue>
-		where OKey:IData
-		where OValue:IData
+	public abstract class BaseIOutputFormatDefaultImpl<IKey, IValue>: DataStructure, BaseIOutputFormat<IKey, IValue>
+		where IKey:IData
+		where IValue:IData
 	{
-		private IIterator<IKVPair<OKey, OValue>> output_pairs_iterator = null;
+		private IIterator<IKVPair<IKey, IValue>> output_pairs = null;
 
-		protected IIterator<IKVPair<OKey, OValue>> Output_pairs_iterator
+		public IIterator<IKVPair<IKey, IValue>> Output_pairs
 		{
 			get
 			{
-				if (this.output_pairs_iterator == null)
-					this.output_pairs_iterator = (IIterator<IKVPair<OKey, OValue>>) Services.getPort("output_pairs_iterator");
-				return this.output_pairs_iterator;
+				if (this.output_pairs == null)
+					this.output_pairs = (IIterator<IKVPair<IKey, IValue>>) Services.getPort("output_pairs");
+				return this.output_pairs;
 			}
 		}
 	}
