@@ -29,30 +29,39 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl
 	public class IDataTriangleInstanceImpl : IDataTriangleInstance {
 		#region IDataTriangleInstance implementation
 
-		object _value = null;
+		private object _value = null;
 		public object Value {
 		   get { return this._value; }
 		   set { this._value = value; }
 		}
-		public int V {
-			get { return (int)this.Value; }
-			set { this.Value = (int) value; }
+
+		private int count = 0;
+		public int Count {
+			get { return (int)this.count; }
+			set { this.count = (int) value; }
 		}
 
 		public object ObjValue {
-			get { return new Tuple<object>(this._value); }
+			get { return new Tuple<object, int>(this.Value, this.Count); }
 			set {
-				this._value = ((Tuple<object>)value).Item1;
+				this.Value = ((Tuple<object, int>)value).Item1;
+				this.Count = ((Tuple<object, int>)value).Item2;
 			}
 		}
-		public override int GetHashCode () { return this.Value.GetHashCode(); }
-		public override string ToString () { return this.Value.ToString(); }
-
+		public override int GetHashCode () { return pairingFunction (this.Value.GetHashCode(), this.Count); }
+		public override string ToString () { return this.Count.ToString(); }
 		public override bool Equals (object obj) {
 			if (obj is IDataTriangleInstanceImpl)
-				return ( ((IDataTriangleInstanceImpl)obj).Value.Equals(this.Value) );
+				return ( ((IDataTriangleInstanceImpl)obj).Value.Equals(this.Value) && ((IDataTriangleInstanceImpl)obj).Count == this.Count);
 			else
 				return false;
+		}
+		public static int pairingFunction (int a, int b) {
+			var A = (ulong)(a >= 0 ? 2 * (long)a : -2 * (long)a - 1);
+			var B = (ulong)(b >= 0 ? 2 * (long)b : -2 * (long)b - 1);
+			var C = (long)((A >= B ? A * A + A + B : A + B * B) / 2);
+			var R = a < 0 && b < 0 || a >= 0 && b >= 0 ? C : -C - 1;
+			return (int)R;
 		}
 		#endregion
 
@@ -61,6 +70,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl
 		public object Clone () {
 			IDataTriangleInstance clone = new IDataTriangleInstanceImpl ();
 			clone.Value = this.Value;
+			clone.Count = this.Count;
 			return clone;
 		}
 

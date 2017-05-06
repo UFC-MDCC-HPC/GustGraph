@@ -8,6 +8,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle
 	} // end main interface
 
 	public interface IDataTriangleInstance : IDataObjectInstance, ICloneable {
-		int V { set; get; }
+		int Count { set; get; }
 	}
 } // end namespace
