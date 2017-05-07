@@ -105,19 +105,18 @@ where E:IEdge<V> {
 
 			}
 		}
-		public override bool Equals (object obj) {
-			if (typeof(IDataContainerVInstance<V, E, TV, TE>).IsAssignableFrom (obj.GetType ())) {
-				IDataContainerVInstance<V, E, TV, TE> o = (IDataContainerVInstance<V, E, TV, TE>)obj;
-				if (o.PartitionID == this.PartitionID)
-					return true;
-			}
-			return false;
-		}
-		public override int GetHashCode () { return partition_id; }
-
 		public void newDataSet (int size) {
 			dataSet = new Dictionary<TV, IEdgeContainer<TV>> (size);
 		}
+//		public override bool Equals (object obj) {
+//			if (typeof(IDataContainerVInstance<V, E, TV, TE>).IsAssignableFrom (obj.GetType ())) {
+//				IDataContainerVInstance<V, E, TV, TE> o = (IDataContainerVInstance<V, E, TV, TE>)obj;
+//				if (o.PartitionID == this.PartitionID)
+//					return true;
+//			}
+//			return false;
+//		}
+//		public override int GetHashCode () { return partition_id; }
 		#endregion
 	}
 }

@@ -103,19 +103,18 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerEImpl {
 
 			}
 		}
-		public override bool Equals (object obj) {
-			if (typeof(IDataContainerEInstance<V, E, TV, TE>).IsAssignableFrom (obj.GetType ())) {
-				IDataContainerEInstance<V, E, TV, TE> o = (IDataContainerEInstance<V, E, TV, TE>)obj;
-				if (o.PartitionID == this.PartitionID)
-					return true;
-			}
-			return false;
-		}
-		public override int GetHashCode () { return partition_id; }
-
 		public void newDataSet (int size) {
 			dataSet = new Dictionary<TV, IEdgeContainer<TE>> (size);
 		}
+//		public override bool Equals (object obj) {
+//			if (typeof(IDataContainerEInstance<V, E, TV, TE>).IsAssignableFrom (obj.GetType ())) {
+//				IDataContainerEInstance<V, E, TV, TE> o = (IDataContainerEInstance<V, E, TV, TE>)obj;
+//				if (o.PartitionID == this.PartitionID)
+//					return true;
+//			}
+//			return false;
+//		}
+//		public override int GetHashCode () { return partition_id; }
 		#endregion
 	}
 }
