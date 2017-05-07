@@ -17,7 +17,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer
 	public interface IDataContainerInstance<V, E> : IDataInstance, ICloneable 
 		where V:IVertex 
 		where E:IEdge<V> {
-		int RankPartition { get; set; }
+		int PartitionID { get; set; }
 		bool AllowingMultipleEdges { get; set;}
 		bool AllowingLoops { get; set;}
 		void newDataSet (int size);
