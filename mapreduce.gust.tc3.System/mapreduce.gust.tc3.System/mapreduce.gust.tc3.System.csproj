@@ -1,75 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-<PropertyGroup>
-<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-<ProductVersion>8.0.30703</ProductVersion>
-<SchemaVersion>2.0</SchemaVersion>
-<ProjectGuid>{2ac8c3dd-2ee2-4b9d-8337-cd89f560304d}</ProjectGuid>
-<OutputType>Library</OutputType>
-<RootNamespace>mapreduce.gust.tc3.System</RootNamespace>
-<AssemblyName>mapreduce.gust.tc3.System</AssemblyName>
-<SignAssembly>true</SignAssembly>
-<AssemblyOriginatorKeyFile>..\System.snk</AssemblyOriginatorKeyFile>
-<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-</PropertyGroup>
-<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-<DebugSymbols>true</DebugSymbols>
-<DebugType>full</DebugType>
-<Optimize>false</Optimize>
-<OutputPath>bin\Debug</OutputPath>
-<DefineConstants>DEBUG;</DefineConstants>
-<ErrorReport>prompt</ErrorReport>
-<WarningLevel>4</WarningLevel>
-<ConsolePause>false</ConsolePause>
-</PropertyGroup>
-<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-<DebugType>full</DebugType>
-<Optimize>true</Optimize>
-<OutputPath>bin\Release</OutputPath>
-<ErrorReport>prompt</ErrorReport>
-<WarningLevel>4</WarningLevel>
-<ConsolePause>false</ConsolePause>
-</PropertyGroup>
-<ItemGroup>
-<Reference Include="System" />
-<Reference Include="DGAC">
-<HintPath>..\..\lib\DGAC.dll</HintPath>
-</Reference>
-</ItemGroup>
-<ItemGroup>
-<Compile Include="Properties\AssemblyInfo.cs" />
-<Compile Include="..\src\1.0.0.0\BaseIPeer_0.cs">
-<Link>BaseIPeer_0.cs</Link>
-</Compile>
-<Compile Include="..\src\1.0.0.0\BaseIPeer_1.cs">
-<Link>BaseIPeer_1.cs</Link>
-</Compile>
-<Compile Include="..\src\1.0.0.0\BaseIPeer_2.cs">
-<Link>BaseIPeer_2.cs</Link>
-</Compile>
-<Compile Include="..\src\1.0.0.0\BaseIPeer_3.cs">
-<Link>BaseIPeer_3.cs</Link>
-</Compile>
-<Compile Include="..\src\1.0.0.0\BaseIRoot.cs">
-<Link>BaseIRoot.cs</Link>
-</Compile>
-<Compile Include="..\src\1.0.0.0\IPeer_0.cs">
-<Link>IPeer_0.cs</Link>
-</Compile>
-<Compile Include="..\src\1.0.0.0\IPeer_1.cs">
-<Link>IPeer_1.cs</Link>
-</Compile>
-<Compile Include="..\src\1.0.0.0\IPeer_2.cs">
-<Link>IPeer_2.cs</Link>
-</Compile>
-<Compile Include="..\src\1.0.0.0\IPeer_3.cs">
-<Link>IPeer_3.cs</Link>
-</Compile>
-<Compile Include="..\src\1.0.0.0\IRoot.cs">
-<Link>IRoot.cs</Link>
-</Compile>
-</ItemGroup>
-<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-</Project>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2AC8C3DD-2EE2-4B9D-8337-CD89F560304D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>mapreduce.gust.tc3.System</RootNamespace>
+    <AssemblyName>mapreduce.gust.tc3.System</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\System.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="DGAC">
+      <HintPath>..\..\lib\DGAC.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseIPeer_0.cs">
+      <Link>BaseIPeer_0.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\BaseIPeer_1.cs">
+      <Link>BaseIPeer_1.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\BaseIPeer_2.cs">
+      <Link>BaseIPeer_2.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\BaseIPeer_3.cs">
+      <Link>BaseIPeer_3.cs</Link>
+    </Compile>
 
+    <Compile Include="..\src\1.0.0.0\BaseIPeer_4.cs">
+      <Link>BaseIPeer_4.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\BaseIPeer_5.cs">
+      <Link>BaseIPeer_5.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\BaseIPeer_6.cs">
+      <Link>BaseIPeer_6.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\BaseIPeer_7.cs">
+      <Link>BaseIPeer_7.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\BaseIRoot.cs">
+      <Link>BaseIRoot.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IPeer_0.cs">
+      <Link>IPeer_0.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IPeer_1.cs">
+      <Link>IPeer_1.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IPeer_2.cs">
+      <Link>IPeer_2.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IPeer_3.cs">
+      <Link>IPeer_3.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IPeer_4.cs">
+      <Link>IPeer_4.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IPeer_5.cs">
+      <Link>IPeer_5.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IPeer_6.cs">
+      <Link>IPeer_6.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IPeer_7.cs">
+      <Link>IPeer_7.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IRoot.cs">
+      <Link>IRoot.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
