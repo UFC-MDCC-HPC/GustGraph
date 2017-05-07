@@ -330,6 +330,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.e
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.example.tc.TC2Impl", "..\br.ufc.mdcc.hpcshelf.gust.example.tc.TC2Impl\br.ufc.mdcc.hpcshelf.gust.example.tc.TC2Impl\br.ufc.mdcc.hpcshelf.gust.example.tc.TC2Impl.csproj", "{CEB17A20-5226-445A-9AEA-C6CAC40E994D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mapreduce.gust.iterative.sssp.Application", "..\mapreduce.gust.iterative.sssp.Application\mapreduce.gust.iterative.sssp.Application\mapreduce.gust.iterative.sssp.Application.csproj", "{410E397A-D299-4F4E-9AB9-889639EB8C9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -548,6 +550,10 @@ Global
 		{40D35DEE-28A1-4CE9-81EE-50280672C8DE}.Debug|x86.Build.0 = Debug|Any CPU
 		{40D35DEE-28A1-4CE9-81EE-50280672C8DE}.Release|x86.ActiveCfg = Release|Any CPU
 		{40D35DEE-28A1-4CE9-81EE-50280672C8DE}.Release|x86.Build.0 = Release|Any CPU
+		{410E397A-D299-4F4E-9AB9-889639EB8C9F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{410E397A-D299-4F4E-9AB9-889639EB8C9F}.Debug|x86.Build.0 = Debug|Any CPU
+		{410E397A-D299-4F4E-9AB9-889639EB8C9F}.Release|x86.ActiveCfg = Release|Any CPU
+		{410E397A-D299-4F4E-9AB9-889639EB8C9F}.Release|x86.Build.0 = Release|Any CPU
 		{42DA4D67-A1AD-4540-BCE0-6FEB65C20E62}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{42DA4D67-A1AD-4540-BCE0-6FEB65C20E62}.Debug|x86.Build.0 = Debug|Any CPU
 		{42DA4D67-A1AD-4540-BCE0-6FEB65C20E62}.Release|x86.ActiveCfg = Release|Any CPU
