@@ -58,28 +58,29 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TC2Impl {
 		#region Algorithm implementation
 		public void input_messages(){
 			IKVPairInstance<IVertexBasic,IIterator<IDataTriangle>> input_values_instance = (IKVPairInstance<IVertexBasic,IIterator<IDataTriangle>>)Input_values.Instance;
-			IVertexBasicInstance ikey = (IVertexBasicInstance)input_values_instance.Key;
 			IIteratorInstance<IDataTriangle> ivalues = (IIteratorInstance<IDataTriangle>)input_values_instance.Value;
 
-			object o; int w = ikey.Id;
+			object o;
 			while (ivalues.fetch_next (out o)) {
 				IDataTriangleInstance dt = ((IDataTriangleInstance)o);
 				if (dt.Count >= 0)
 					this.graph_creator ((IInputFormatInstance) dt.Value, dt.Count);
 				else {
-					IList<int> tri = (IList<int>)dt.Value;
-					foreach (int v in tri) {
-						IList<int> l;
-						if (!InMessages.TryGetValue (w, out l)) {
-							l = new List<int> ();
-							InMessages[w] = l;
+					IDictionary<int, IList<int>> block = (IDictionary<int, IList<int>>)dt.Value;
+					foreach (KeyValuePair<int, IList<int>> kv in block) {
+						int w = kv.Key;
+						foreach (int v in kv.Value) {
+							IList<int> l;
+							if (!InMessages.TryGetValue (w, out l)) {
+								l = new List<int> ();
+								InMessages [w] = l;
+							}
+							l.Add (v);
 						}
-						l.Add (v);
 					}
 				}
 			}
 		}
-
 		public void gust0(){
 			foreach (KeyValuePair<int, IList<int>> TRI in InMessages) {
 				int w = TRI.Key;

@@ -25,7 +25,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TC1Impl {
 		private int partition_size = 0;
 		private int count = 0;
 		private IDictionary<int, IList<int>> InMessages = new Dictionary<int, IList<int>>();
-		private IDictionary<int, IList<int>> OutMessages = new Dictionary<int, IList<int>>();
+		private IDictionary<int, IList<int>>[] OutMessages = null;
 		private IList<IInputFormatInstance> OutGifs = new List<IInputFormatInstance> ();
 		public bool isGhost(int v){ return !partition_own[this.partition [v - 1]]; }
 
@@ -40,6 +40,9 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TC1Impl {
 				g.DataContainer.AllowingLoops = false; // não serão premitidos laços
 				g.DataContainer.AllowingMultipleEdges = false; // não serão permitidas múltiplas arestas
 				partition_own = new bool[partition_size];
+				OutMessages = new Dictionary<int, IList<int>>[partition_size];
+				for (int i = 0; i < partition_size; i++)
+					OutMessages [i] = new Dictionary<int, IList<int>> ();
 			}
 			partition_own [gif.PARTID] = true;
 			for (int i = 0; i < gif.ESIZE;) {
@@ -60,28 +63,29 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TC1Impl {
 		#region Algorithm implementation
 		public void input_messages(){
 			IKVPairInstance<IVertexBasic,IIterator<IDataTriangle>> input_values_instance = (IKVPairInstance<IVertexBasic,IIterator<IDataTriangle>>)Input_values.Instance;
-			IVertexBasicInstance ikey = (IVertexBasicInstance)input_values_instance.Key;
 			IIteratorInstance<IDataTriangle> ivalues = (IIteratorInstance<IDataTriangle>)input_values_instance.Value;
 
-			object o; int w = ikey.Id;
+			object o;
 			while (ivalues.fetch_next (out o)) {
 				IDataTriangleInstance dt = ((IDataTriangleInstance)o);
 				if (dt.Count >= 0)
 					this.graph_creator ((IInputFormatInstance) dt.Value, dt.Count);
 				else {
-					IList<int> tri = (IList<int>)dt.Value;
-					foreach (int v in tri) {
-						IList<int> l;
-						if (!InMessages.TryGetValue (w, out l)) {
-							l = new List<int> ();
-							InMessages[w] = l;
+					IDictionary<int, IList<int>> block = (IDictionary<int, IList<int>>)dt.Value;
+					foreach (KeyValuePair<int, IList<int>> kv in block) {
+						int w = kv.Key;
+						foreach (int v in kv.Value) {
+							IList<int> l;
+							if (!InMessages.TryGetValue (w, out l)) {
+								l = new List<int> ();
+								InMessages [w] = l;
+							}
+							l.Add (v);
 						}
-						l.Add (v);
 					}
 				}
 			}
 		}
-
 		public void gust0(){
 			foreach (KeyValuePair<int, IList<int>> TRI in InMessages) {
 				int w = TRI.Key;
@@ -91,9 +95,9 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TC1Impl {
 					if (w < vw) {
 						foreach (int v in TRI.Value) {
 							IList<int> l;
-							if (!OutMessages.TryGetValue (v, out l)) {
+							if (!OutMessages[partition[v-1]].TryGetValue (v, out l)) {
 								l = new List<int> ();
-								OutMessages[v] = l;
+								OutMessages[partition[v-1]][v] = l;
 							}
 							l.Add (vw);
 						}
@@ -104,13 +108,16 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TC1Impl {
 		}
 		public void emitter(){
 			IIteratorInstance<IKVPair<IVertexBasic,IDataTriangle>> output_value = (IIteratorInstance<IKVPair<IVertexBasic,IDataTriangle>>)Output_messages.Instance;
-			foreach (KeyValuePair<int, IList<int>> TRI in OutMessages) {
-				IKVPairInstance<IVertexBasic,IDataTriangle> item = (IKVPairInstance<IVertexBasic,IDataTriangle>)Output_messages.createItem ();
-				((IVertexBasicInstance)item.Key).Id = TRI.Key;
-				((IVertexBasicInstance)item.Key).PId = (byte)this.partition [TRI.Key - 1];
-				((IDataTriangleInstance)item.Value).Value = TRI.Value;
-				((IDataTriangleInstance)item.Value).Count = -1;
-				output_value.put (item);
+			for (int p = 0; p < partition_size; p++) {
+				IDictionary<int, IList<int>> block = OutMessages [p];
+				if (block.Count > 0) {
+					IKVPairInstance<IVertexBasic,IDataTriangle> item = (IKVPairInstance<IVertexBasic,IDataTriangle>)Output_messages.createItem ();
+					((IVertexBasicInstance)item.Key).Id = p;
+					((IVertexBasicInstance)item.Key).PId = (byte) p;
+					((IDataTriangleInstance)item.Value).Value = block;
+					((IDataTriangleInstance)item.Value).Count = -1;
+					output_value.put (item);
+				}
 			}
 			foreach (IInputFormatInstance gif in OutGifs) {
 				IKVPairInstance<IVertexBasic,IDataTriangle> item_own = (IKVPairInstance<IVertexBasic,IDataTriangle>)Output_messages.createItem ();
@@ -123,7 +130,9 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TC1Impl {
 			}
 			output_value.finish ();
 			InMessages.Clear ();
-			OutMessages.Clear ();
+			for (int p = 0; p < partition_size; p++) {
+				OutMessages [p] = new Dictionary<int, IList<int>> ();
+			}
 		}
 		#endregion
 	}
