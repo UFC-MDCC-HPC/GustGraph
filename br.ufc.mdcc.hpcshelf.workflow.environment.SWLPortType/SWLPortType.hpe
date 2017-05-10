@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a371a6cac17704e1a12221e61084ea85d170eedf4a46a448757e479182d127f55f8be105fa51e10a27004b93556a1f63f6848e867fbd309a0d24509e4d56216cf23c9d1461e5dd12ef38729304812000084a4b088cf5ba7e373183441a6988c205438cf3c0e050c4285801eda88d117981e69d88a1e05edcb9262d2c495cdd9b" isAbstract="true" kind="Qualifier" name="SWLPortType" packagePath="br.ufc.mdcc.hpcshelf.workflow.environment">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a7be83ca72fc4207aab5ffc4e509fd8229c5d9cc69950faa5a459e2b53faea2f2897fc2c4da9f9bb47503466804906f0cb7837609b28bd403b12a31f5cdb8706e1078e2940b32476608dda56dff819c4de624f356166c6b1f70962e1725315199cb6af341377e8501ffdced752fcfd93131468641d03bf6eb1e8e97e9adb489b" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/EnvironmentPortTypeSinglePartner.hpe" name="EnvironmentPortTypeSinglePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="160" y="281">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="environment_port_type">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
+  </header>
+  <componentInfo>
+    <interface iRef="ISWLPortType" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType&#xA;{&#xA;&#x9;public interface BaseISWLPortType : BaseIEnvironmentPortTypeSinglePartner, IQualifierKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseISWLPortType.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType/bin/1.0.0.0/BaseISWLPortType.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/BaseIEnvironmentPortType.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType&#xA;{&#xA;&#x9;public interface ISWLPortType : BaseISWLPortType, IEnvironmentPortTypeSinglePartner&#xA;&#x9;{&#xA;&#x9;   string Workflow { get; }&#xA;&#x9;}&#xA;}" name="ISWLPortType.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType/bin/1.0.0.0/ISWLPortType.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType/bin/1.0.0.0/BaseISWLPortType.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="57" w="308" x="44" y="86">
+        <color b="144" g="238" r="144"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="ISWLPortType" multiple="true" private="false" replica="0" uRef="environment_port_type" visibleInterface="true">
+      <super cRef="base" uRef="environment_port_type"/>
+      <visualDescription h="57" w="202" x="24" y="379"/>
+    </unit>
+  </componentInfo>
+</component:component>
