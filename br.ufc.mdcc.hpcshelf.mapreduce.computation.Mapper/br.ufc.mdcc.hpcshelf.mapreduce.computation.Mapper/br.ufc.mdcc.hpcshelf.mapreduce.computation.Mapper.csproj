@@ -53,10 +53,6 @@
       <Project>{9B499C49-DA84-475A-B783-2A3D2DEAAA97}</Project>
       <Name>br.ufc.mdcc.common.KVPair</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.common.Set\br.ufc.mdcc.common.Set\br.ufc.mdcc.common.Set.csproj">
-      <Project>{22022ACE-A645-40B7-908A-441CD854EA9A}</Project>
-      <Name>br.ufc.mdcc.common.Set</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction.csproj">
       <Project>{CC4908F8-3F6B-4F14-9179-64EF033B3371}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction</Name>

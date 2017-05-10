@@ -55,10 +55,6 @@
       <Project>{9B499C49-DA84-475A-B783-2A3D2DEAAA97}</Project>
       <Name>br.ufc.mdcc.common.KVPair</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.common.Set\br.ufc.mdcc.common.Set\br.ufc.mdcc.common.Set.csproj">
-      <Project>{22022ACE-A645-40B7-908A-441CD854EA9A}</Project>
-      <Name>br.ufc.mdcc.common.Set</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.channel.Binding\br.ufc.mdcc.hpc.storm.binding.channel.Binding\br.ufc.mdcc.hpc.storm.binding.channel.Binding.csproj">
       <Project>{40488558-F21F-4863-A466-15F96A6CD131}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.channel.Binding</Name>

@@ -16,9 +16,10 @@ hs_err_pid*
 RemoteSystemsTempFiles
 *.mdb
 *.exe
-*.dll
+#*.dll
 *.snk
 *.pub
+*.userprefs
 
 Debug
 bin
