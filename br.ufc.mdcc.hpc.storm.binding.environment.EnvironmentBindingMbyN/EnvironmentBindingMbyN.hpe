@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d9e93f41ecdc24c151691986404104691fc2b4c524c9bc6317b05885a2cea9975c441bc9a9339284a55d4fbf1d7f823c026b8bba14661b578a973db0e5417436963dc58083ffd494aa312ef3b4f8b3b4b7d5cf3f03f39a874207d655148bd32f89785cd862e93165cd9ec40b8a09f27b326d1238b158bbd796774dae2ae44dc2" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMbyN" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a5947a5e5cc9fb3c62401e6d43aa2aa9e09e581c423a33b4479e305f680144e144395d7808f561a8bb1b621243e2ffce2e55c080f26623bc5fec213a16e5d325188442eb1205495b63302afb02a9360bb555c24f7b7ee78d70622324caebc8df7fd7231c910da0ac11cd851f2f14d5b21944c1ed9337e40dbc9df9d5c764c5c3" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMbyN" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
     <baseType>
       <extensionType>
         <extends>true</extends>

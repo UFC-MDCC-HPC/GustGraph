@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bdc2f98b67d8572f8e76796a22350b39016c0f90e12569a81c361330cf003fadf889d9b3ca9a6783055a1051c75ca9f26845f774359cd6ba62e201905cdcdb0d90409abfdd56ddbc67e688d4919ff1064ac8330cd39faad0520d669071d9676ab570425df7259d2aa57c51f50c5eb9e574e8b8a43cf3da658f58a8da97c2a4a8" isAbstract="false" kind="Computation" name="DataSourceImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000008f4e9ce76922461ca99aae0cd93d789c88ef157d476a714ecf6eb31a21ca5f5c2c6d07aa176de24d75d13323eb3ecc4f0533e11b23553ed52a29a8ade16171512956df67f07dafc31c6890d742e697fdf6c0dd3011f99dca1d5659b187c5ece4c52dc82df3c3bcfa8fc1b122a1fb02c894f58b782bfed0cb5fe21b2d02cefc8a" isAbstract="false" kind="Computation" name="DataSourceImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource">
     <baseType>
       <extensionType>
         <implements>true</implements>
@@ -14,8 +14,8 @@
           <visualDescription h="105" w="105" x="195" y="377">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###221228488"/>
-          <parameter formFieldId="server_port_type" varName="X###2116939977"/>
+          <parameter formFieldId="client_port_type" varName="X###412455895"/>
+          <parameter formFieldId="server_port_type" varName="X###289717063"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="51" y="2"/>
           </unitBounds>

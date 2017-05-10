@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000095464ee47eb13b77977afe55fb21c1268843f7feb064ed4a2a10c511b6a019c1f8060c237d442a576df3f7ce1c1f36527b1b48f65579c326fd8a4dcdbefce7aeea373d23e1b4987d1c42ccc4d301bd893f7e7a8b54bcd32117b93bd90780d490e450d5dd5320fe3887e43cffa35f018ba37cd2e7237365920fe11e552abc6193" isAbstract="true" kind="Environment" name="TaskPortTypeAdvance" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.port.task">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b33c5c8654a700a1e4f50295ff64e33f2543522067b41c9343d2bac88d67f163eb13cada7ad1db98b72f0f1351905ff0a263a9021cdd15f01f35af3f841a487f4a2c158a4a57fd75da8537bdc1b7408e99703d4629ecd59286b6a027eb5eb27972f7c42bdc78c63cbf7b926b57876d444863d48c96e56eed158ecb2d30e3caa8" isAbstract="true" kind="Environment" name="TaskPortTypeAdvance" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.port.task">
     <baseType>
       <extensionType>
         <extends>true</extends>

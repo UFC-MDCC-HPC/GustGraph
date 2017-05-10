@@ -1,13 +1,13 @@
 using br.ufc.pargo.hpe.kinds;
+using br.ufc.mdcc.hpc.storm.binding.task.ActionType;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType
 {
-	public interface IPerform : BaseIPerform
+	public interface IPerform : BaseIPerform, IActionType
 	{
 	}
 	public class PERFORM
 	{
-		//public static object name = "PERFORM";
-		public const int name=22;
+		public const string name = "PERFORM";
 	}
 }

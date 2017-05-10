@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007d4900344900bee415a5c2d578f3d0c04ab3ed1027955a24d179a38af36f84c3fb81fbc4a1db69f0fc56f9a6f50952df7a9f1a51205597afa46a4250c284544375971498c184e67623776790b9ac655d32b73e29bee37534c448030ec10b9bf44fd6a936f3905afd8500333e84f223a109b46be1e749ec052ce9ea2dca321aaf" isAbstract="true" kind="Synchronizer" name="Shuffler" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.connector">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000dba540cd6607f65daec6bbd97acdd984bf77527c3a9a680ec60b1b1b5a3de11c5049fec6b1c8c49f0ee77d3d1e1fd8eec5b186c21297aaddf2d4e72e0e4d24705dc0d8f6cc9b39310c3e6bac67a915874970d31c02425ebc5df7090d72715bffdffc75866d6b038af2282f5cd5c3709752bc25fb8eac6f16f0e2fa8b8fef85bc" isAbstract="true" kind="Synchronizer" name="Shuffler" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.connector">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -13,7 +13,7 @@
     <parameter componentRef="intermediate_value_type" formFieldId="intermediate_value_type" order="3" variance="contravariant" varName="TValue"/>
     <parameter componentRef="partition_function" formFieldId="partition_function" order="4" variance="contravariant" varName="PF"/>
     <innerComponent localRef="shuffler_channel" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" multiple="false" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" exposed="false">
-      <visualDescription h="61" w="183" x="248" y="232">
+      <visualDescription h="61" w="183" x="253" y="243">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds facet="0" facet_instance="1" facet_instance_enclosing="1" parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
@@ -94,7 +94,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="task_binding_shuffle_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="83" w="228" x="319" y="389">
+      <visualDescription h="83" w="228" x="240" y="350">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="TAdvance"/>
@@ -177,7 +177,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="task_binding_shuffle_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="70" w="303" x="36" y="404">
+      <visualDescription h="70" w="303" x="0" y="407">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="TReadChunk"/>
@@ -186,7 +186,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="task_binding_shuffle_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="71" w="298" x="671" y="424">
+      <visualDescription h="71" w="298" x="595" y="169">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="TChunkReady"/>
@@ -275,13 +275,13 @@
       </action>
     </interface>
     <interface iRef="IShufflerCollector" nArgs="3">
-      <slice isRef="collect_pairs">
-        <originRef cRef="collect_pairs" iRef="IBindingDirect"/>
-        <visualDescription h="10" w="10" x="1" y="28"/>
-      </slice>
       <slice isRef="task_binding_shuffle_perform">
         <originRef cRef="task_binding_shuffle_perform" iRef="ITaskPort"/>
         <visualDescription h="10" w="10" x="0" y="31"/>
+      </slice>
+      <slice isRef="collect_pairs">
+        <originRef cRef="collect_pairs" iRef="IBindingDirect"/>
+        <visualDescription h="10" w="10" x="1" y="28"/>
       </slice>
       <slice isRef="task_binding_shuffle_read_chunk">
         <originRef cRef="task_binding_shuffle_read_chunk" iRef="ITaskPort"/>
@@ -318,25 +318,25 @@
       <visualDescription h="66" w="187" x="57" y="73">
         <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="collect_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="collect_pairs"/>
-      </port>
       <port name="task_binding_shuffle_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_shuffle_perform" sRef="task_binding_shuffle_perform"/>
+      </port>
+      <port name="collect_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="collect_pairs"/>
       </port>
       <port name="task_binding_shuffle_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_shuffle_read_chunk" sRef="task_binding_shuffle_read_chunk"/>
       </port>
-      <port name="output_key">
-        <visualDescription h="10" w="10" x="169" y="4"/>
-        <slice pRef="output_key" sRef="partition_function"/>
-      </port>
       <port name="input_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_key" sRef="partition_function"/>
+      </port>
+      <port name="output_key">
+        <visualDescription h="10" w="10" x="169" y="4"/>
+        <slice pRef="output_key" sRef="partition_function"/>
       </port>
       <parameter iname="IPartitionFunction" order="2" parid="partition_function" uname="partition_function" varid="PF"/>
       <parameter iname="IData" order="0" parid="intermediate_key_type" uname="data" varid="TKey"/>
@@ -370,11 +370,11 @@
       <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
         <visualDescription h="10" w="10" x="24" y="26"/>
       </slices>
-      <slices cRef="task_binding_shuffle_perform" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_binding_shuffle_perform" transitive="false">
-        <visualDescription h="10" w="10" x="0" y="31"/>
-      </slices>
       <slices cRef="collect_pairs" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="collect_pairs" transitive="false">
         <visualDescription h="10" w="10" x="1" y="28"/>
+      </slices>
+      <slices cRef="task_binding_shuffle_perform" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_binding_shuffle_perform" transitive="false">
+        <visualDescription h="10" w="10" x="0" y="31"/>
       </slices>
       <slices cRef="task_binding_shuffle_read_chunk" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_binding_shuffle_read_chunk" transitive="false">
         <visualDescription h="10" w="10" x="102" y="28"/>

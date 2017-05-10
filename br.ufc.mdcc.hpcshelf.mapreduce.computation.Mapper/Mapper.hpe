@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000065d6722cda58d09e22591eb27ed35bdbac954a3743303cb1841c7f25641511591fbda883117c544b4488e063da9d2fab1f516e3f73ac70051ee029154d0cdc841cb03ddf3ccc3605fe5e53b229b56ac3d3f4381c17fc7d833a3e011be34f68919f3ee7c6661a747d75add8f323bccf48c6dcbd566b491668fefb6ce826c1c5cc" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.computation">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005979d29b10571dbb174edfba8c6442acbb8873bf3d836074fea9f692839c9a79bd5280a9ce5b45baa5d6e69898204c3c8a7cbdb8d1380abdf7e11e35a226d3b1c5d415bd73078efcdffdfdd96de1c2f2f3eb1eee00f0c5702bb65689b404dd863b6198db1e35e11773afd028774239ce42d0ede15f3442bc1fa54768bfabbe86" isAbstract="true" kind="Computation" name="Mapper" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.computation">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -74,7 +74,7 @@
         <visualDescription h="69" w="188" x="657" y="210">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###1229965559"/>
+        <parameter formFieldId="item_type" varName="X###1937106697"/>
         <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -156,7 +156,7 @@
     <supplyParameter cRef="mapper_port_type_client" direct="true" varName="C"/>
     <supplyParameter cRef="mapper_port_type_server" direct="true" varName="S"/>
     <supplyParameter cRef="task_port_type_advance" direct="true" varName="TAdvance"/>
-    <innerComponent localRef="C###1229965559" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###1937106697" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="93" y="410">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -166,9 +166,9 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1229965559" varName="X###1229965559"/>
-    <innerRenaming cNewName="map_value" cOldName="input_value" cRef="map_function" index_replica="0"/>
+    <supplyParameter cRef="C###1937106697" varName="X###1937106697"/>
     <innerRenaming cNewName="map_key" cOldName="input_key" cRef="map_function" index_replica="0"/>
+    <innerRenaming cNewName="map_value" cOldName="input_value" cRef="map_function" index_replica="0"/>
     <innerRenaming cNewName="output" cOldName="output_data" cRef="map_function" index_replica="0"/>
     <interface iRef="IMapper" nArgs="6">
       <slice isRef="feed_pairs">
@@ -228,6 +228,10 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_map" sRef="task_map"/>
       </port>
+      <port name="map_key">
+        <visualDescription h="10" w="10" x="15" y="4"/>
+        <slice pRef="input_key" sRef="map_function"/>
+      </port>
       <port name="map_value">
         <visualDescription h="10" w="10" x="46" y="20"/>
         <slice pRef="input_value" sRef="map_function"/>
@@ -235,10 +239,6 @@
       <port name="output">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_data" sRef="map_function"/>
-      </port>
-      <port name="map_key">
-        <visualDescription h="10" w="10" x="15" y="4"/>
-        <slice pRef="input_key" sRef="map_function"/>
       </port>
       <parameter iname="IMaintainer" order="0" parid="platform_maintainer" uname="maintainer" varid="M"/>
       <parameter iname="IMapFunction" order="5" parid="map_function" uname="map_function" varid="MF"/>

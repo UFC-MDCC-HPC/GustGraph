@@ -9,7 +9,7 @@ using br.ufc.mdcc.hpc.storm.binding.task.ActionType;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.ReadChunkActionTypeImpl 
 {
-	public abstract class BaseIReadChunkImpl: br.ufc.pargo.hpe.kinds.Environment, BaseIActionType
+	public abstract class BaseIReadChunkImpl: br.ufc.pargo.hpe.kinds.Environment, BaseIReadChunk
 	{
 	}
 }

@@ -27,7 +27,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 		#region implemented abstract members of BindingRoot
 		public override void server ()
 		{
-			//this.TraceFlag = true;
+			this.TraceFlag = true;
 
 			Trace.WriteLineIf(this.TraceFlag==true, this.GlobalRank + ": BEFORE CREATE SOCKETS !!! " + this.ThisFacet + " / " + this.ThisFacetInstance + " : " + this.CID.getInstanceName());
 
@@ -65,7 +65,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 		public override void client ()
 		{
-			// this.TraceFlag = true;
+			this.TraceFlag = true;
 
 			//while (!sockets_initialized_flag)	Thread.Sleep (100);
 			sockets_initialized_flag.WaitOne ();

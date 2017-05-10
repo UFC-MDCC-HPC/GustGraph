@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e1c2f8e05ec1c8008860381a27f755c05466b7221f9e2f68a2fcd28d123a585963db43cd9c99a9f89e473de30ce4eabc25c2f8962f3f1e09abe2484aaed053092716d63c2b56a1ab10dae59402f2c28f3e36be21d81b7d384d58e03b90a0a42756a4845ec9a4c583bca48e05ccf8d3298c520525e8670fd9ab556e4dab464e90" isAbstract="false" kind="Environment" name="LocalHostPlatform" packagePath="br.ufc.mdcc.hpcshelf.platform.impl">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000011d873a116ebb0bef6fc45eaaa50f96c68c4172138eed8c4b8548d0ba5510754e8df6cabf411a634a08923ea399a7cbc19cc5cefdf8e142bd6fc668daa043c1f10897e86f76fe858dca6e956f394255655f5bf1526cf5391c8c1cc9004f848564fe60d09c8417250e4fc09c98a9f40fc4d899d5e74a12de1b712e67b022d1980" isAbstract="false" kind="Environment" name="LocalHostPlatform" packagePath="br.ufc.mdcc.hpcshelf.platform.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e329d6a53643eb306dc48521dda023ef22d14fc08b6cade5b6154e4f2b541ed2eb55fc70981d5c219d1f2dd35bdb69a6d66b6ae21ecf991fcd2a1bb00af79ad34f2c031afa7ee1eed9dd012267c82dbd5ccf59714fc520d46b66336a07c2fbe1cec00608e5b216def3f332a11152e263a6ea3ca330d78122ea0ffd015ce4b2a9" isAbstract="false" kind="Data" name="KVPairImpl" packagePath="br.ufc.mdcc.common.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c92da57e5a02a566648d8dd36844835069e7a344f52cbf9941581cdbf625b192ffde0b107efb52c6776033724010d57eb38f0eeabc556666dab63836e0fa1e5e885148198430ebf059bbef7de186cb9c986acd0228c5b2ebcb6d4fbda770665ef4233101db7b6887922749625d7c6bfdaadd451642daa7a5906ca4584c6a3ebd" isAbstract="false" kind="Data" name="KVPairImpl" packagePath="br.ufc.mdcc.common.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>

@@ -196,6 +196,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapred
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpc.storm.binding.task.impl.ActionTypeImpl", "..\br.ufc.mdcc.hpc.storm.binding.task.impl.ActionTypeImpl\br.ufc.mdcc.hpc.storm.binding.task.impl.ActionTypeImpl\br.ufc.mdcc.hpc.storm.binding.task.impl.ActionTypeImpl.csproj", "{04B142DB-2D30-4DCB-AD00-357A2A9DF28F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType", "..\br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType\br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType\br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType.csproj", "{66D711A9-8429-4C5F-8519-2928D8CF4A46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding", "..\br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding\br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding\br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding.csproj", "{1FAB107A-EDAE-4945-831B-A78F730DEED9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.workflow.impl.environment.SWLWorkflowBindingImpl", "..\br.ufc.mdcc.hpcshelf.workflow.impl.environment.SWLWorkflowBindingImpl\br.ufc.mdcc.hpcshelf.workflow.impl.environment.SWLWorkflowBindingImpl\br.ufc.mdcc.hpcshelf.workflow.impl.environment.SWLWorkflowBindingImpl.csproj", "{26C1D385-5B53-49BA-9EAA-871E99391F94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -262,6 +268,10 @@ Global
 		{1F1C11D1-910D-4B0B-AE3A-80EC9882759C}.Debug|x86.Build.0 = Debug|Any CPU
 		{1F1C11D1-910D-4B0B-AE3A-80EC9882759C}.Release|x86.ActiveCfg = Release|Any CPU
 		{1F1C11D1-910D-4B0B-AE3A-80EC9882759C}.Release|x86.Build.0 = Release|Any CPU
+		{1FAB107A-EDAE-4945-831B-A78F730DEED9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1FAB107A-EDAE-4945-831B-A78F730DEED9}.Debug|x86.Build.0 = Debug|Any CPU
+		{1FAB107A-EDAE-4945-831B-A78F730DEED9}.Release|x86.ActiveCfg = Release|Any CPU
+		{1FAB107A-EDAE-4945-831B-A78F730DEED9}.Release|x86.Build.0 = Release|Any CPU
 		{22022ACE-A645-40B7-908A-441CD854EA9A}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{22022ACE-A645-40B7-908A-441CD854EA9A}.Debug|x86.Build.0 = Debug|Any CPU
 		{22022ACE-A645-40B7-908A-441CD854EA9A}.Release|x86.ActiveCfg = Release|Any CPU
@@ -282,6 +292,10 @@ Global
 		{24715DA7-70D5-41FC-83AA-2EFE51DC0004}.Debug|x86.Build.0 = Debug|Any CPU
 		{24715DA7-70D5-41FC-83AA-2EFE51DC0004}.Release|x86.ActiveCfg = Release|Any CPU
 		{24715DA7-70D5-41FC-83AA-2EFE51DC0004}.Release|x86.Build.0 = Release|Any CPU
+		{26C1D385-5B53-49BA-9EAA-871E99391F94}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{26C1D385-5B53-49BA-9EAA-871E99391F94}.Debug|x86.Build.0 = Debug|Any CPU
+		{26C1D385-5B53-49BA-9EAA-871E99391F94}.Release|x86.ActiveCfg = Release|Any CPU
+		{26C1D385-5B53-49BA-9EAA-871E99391F94}.Release|x86.Build.0 = Release|Any CPU
 		{2740F5B5-682D-40F2-B578-FFF3EC0645FC}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{2740F5B5-682D-40F2-B578-FFF3EC0645FC}.Debug|x86.Build.0 = Debug|Any CPU
 		{2740F5B5-682D-40F2-B578-FFF3EC0645FC}.Release|x86.ActiveCfg = Release|Any CPU
@@ -378,6 +392,10 @@ Global
 		{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}.Debug|x86.Build.0 = Debug|Any CPU
 		{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}.Release|x86.ActiveCfg = Release|Any CPU
 		{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}.Release|x86.Build.0 = Release|Any CPU
+		{66D711A9-8429-4C5F-8519-2928D8CF4A46}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{66D711A9-8429-4C5F-8519-2928D8CF4A46}.Debug|x86.Build.0 = Debug|Any CPU
+		{66D711A9-8429-4C5F-8519-2928D8CF4A46}.Release|x86.ActiveCfg = Release|Any CPU
+		{66D711A9-8429-4C5F-8519-2928D8CF4A46}.Release|x86.Build.0 = Release|Any CPU
 		{6D208A70-1079-40B1-BB4B-C2A28E36A82E}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{6D208A70-1079-40B1-BB4B-C2A28E36A82E}.Debug|x86.Build.0 = Debug|Any CPU
 		{6D208A70-1079-40B1-BB4B-C2A28E36A82E}.Release|x86.ActiveCfg = Release|Any CPU

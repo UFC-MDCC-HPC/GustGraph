@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a11164bc5dfe132646ca90535b3d1831ab953444616900bc43ee643ceeee5ae65fc6eaf7cd6db12004e5eb6ea4c1ddc301076510a30c198e9b3553f903dd9640e93a6de07350e15bcbe25b884555e9adbe5dbeec03be263cf6bf8ce6c8bba35c5e70c41a632255fbcd4cddd533bda6c3433ab4d9691abd95646a14303e0cca8c" isAbstract="false" kind="Computation" name="MapperImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000063c6aa26e4e9825b2d3c237b5053fd12a0649086e202b66c8c22b99216d8a355f4e0d59e02b854aaa30aba2699fd74a0eb7c3988f8db97baa6eb9e99ef81e0257c0ff47b91589dabb4287e5b5e3471c621d5a478100c8b28d0ee549be9c324517262dcaddd46bed792f2513cc77e4726ac23386d8cd518d8bb7f58e1ad7c0691" isAbstract="false" kind="Computation" name="MapperImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation">
     <baseType>
       <extensionType>
         <implements>true</implements>
@@ -19,7 +19,7 @@
           <visualDescription h="60" w="188" x="220" y="573">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1933888317"/>
+          <parameter formFieldId="task_port_type" varName="X###56557715"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="76" y="20"/>
           </unitBounds>
@@ -28,8 +28,8 @@
           <visualDescription h="72" w="118" x="58" y="414">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###695946474"/>
-          <parameter formFieldId="server_port_type" varName="X###1576446956"/>
+          <parameter formFieldId="client_port_type" varName="X###1575247063"/>
+          <parameter formFieldId="server_port_type" varName="X###998987625"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="46" y="8"/>
           </unitBounds>
@@ -38,8 +38,8 @@
           <visualDescription h="63" w="100" x="412" y="408">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###1838236453"/>
-          <parameter formFieldId="server_port_type" varName="X###1540319829"/>
+          <parameter formFieldId="client_port_type" varName="X###957861129"/>
+          <parameter formFieldId="server_port_type" varName="X###1234577191"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -211,10 +211,6 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_map" sRef="task_map"/>
       </port>
-      <port name="output">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_data" sRef="map_function"/>
-      </port>
       <port name="map_key">
         <visualDescription h="10" w="10" x="15" y="4"/>
         <slice pRef="input_key" sRef="map_function"/>
@@ -222,6 +218,10 @@
       <port name="map_value">
         <visualDescription h="10" w="10" x="46" y="20"/>
         <slice pRef="input_value" sRef="map_function"/>
+      </port>
+      <port name="output">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_data" sRef="map_function"/>
       </port>
       <parameter iname="IComputeHost" order="0" parid="platform_maintainer" uname="compute_host" varid="M"/>
       <parameter iname="IMapFunction" order="5" parid="map_function" uname="map_function" varid="MF"/>

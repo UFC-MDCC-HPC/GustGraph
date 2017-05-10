@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005b27b7d5aeafa0c4504a854832157703202e4c9a35207e5b58958a6e88d34cb66c5fa403a5ab3bf94919420b99135247615e7473abbb6b3c1775e90661582bbc6de7e80dd11cb587417ad282070109720f3634da908310ad9a05a109b720186ac8ab9532a4c37f3e7837888e2beba7603bcaf55f32c66384c3e33d30df530eb3" isAbstract="true" kind="Binding" name="Binding" packagePath="br.ufc.mdcc.hpc.storm.binding.channel">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000008f55e794f708d1cbb5e337a05a27654ca5ca8c73f9768e51f69240f622c9d03f1ae40cd5fe058f59a2cf465affe53f20843d95ec4d7f0f5d56ca2da746d1b3c81fd84f23a4e138e9fc4095803bae2f3e9a6ff05c65fc18c2db9c76ee6ee0ecfd5add39fdc33b908bf203d7adb50bc43c7d818bdc3412c6126c3d17b968c459be" isAbstract="true" kind="Binding" name="Binding" packagePath="br.ufc.mdcc.hpc.storm.binding.channel">
     <baseType>
       <extensionType>
         <extends>true</extends>

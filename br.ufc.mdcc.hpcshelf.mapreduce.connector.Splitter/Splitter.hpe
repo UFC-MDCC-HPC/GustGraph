@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007d28c0f038750a5f0f5a5cab521d91d94a08babb3e92b7d64dedd4f606e7e806faa2463b992699b104ac4c1650623b43c824f10e500b4fba2532151da56ddd46a152d8893501afac175acc8c5de6d1f46e19207da85b8d991facb756f8b5dc17a4a020176fb54a2a4bd54c0e1fe52c8a80f0b5734733d902b8adf61deca2c99d" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.connector">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ffb9921fe8d9319f8271f11090c7b2bf7dd644342fc2b725923b0f2ee9155b08ee3816de13c19d49d1f42baec04b5f0a89c14fb5b1b4fbc73d21299e10d307d57968746feeb681c2d565fa46009f079ca2ded59d4261ef56ef8800fbb04301bfe374703f77782fefd6e6b2a2e0aad53c56c8128ee55d939c5246255af1c8dac5" isAbstract="true" kind="Synchronizer" name="Splitter" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.connector">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>

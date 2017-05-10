@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ad8c227a2773a1d5961a0ca05a33f05490062c27ddbdea684fe7e1be9132bc9d3257642d3ee65392dde1a6e69a236d2a9db054a3acca7231132781115985eb926c4f7e5b2b0cc5f19debd38c9b23ed9f9fabd6c216af5e7868bb5f01016c6136fb4df151b79f094d9a5be1bd41648e634fb53572a45b6a35a4bde9417225fd98" isAbstract="false" kind="Synchronizer" name="EnvironmentBindingReadData" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000029558c5d4db409c468596955dd9e9c8d52c8c13c1a9e8e051be0771e08524436fd2c47d75cca60f077b683dfefbfd96dca5e6267a77b919dfac985a2e921d4aa831a7c1b599a1155b2277890d91ba1200bffeea7c954ec160c8427715c630de37d0992a815a061ebc07d2bd78215ee463763222cf63fcf3caf9fa7cc9db97499" isAbstract="false" kind="Synchronizer" name="EnvironmentBindingReadData" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cff491d8fb5d92bc1cfd578a6b95113b12e7e098376c0219b1db8d0fdd49979eb38ae95d28a8f9cccaa5c41f12b7168683b83824ccd7c6ef7209a3697cb5396f924047b6696211ecf70da2e0e1f23ee1997974c74a8ae31a7b4418e8a0f145536ecce5d3110f329f611b877586c0d3d94b6d444b5f73f412b783965855ad3489" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData/EnvironmentBindingReadData.hpe" name="EnvironmentBindingReadData" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d104d8f12398a9c9a5981df5419219e9944be87c631fb9af378dadcaa5a58f42ec76e07035a9c8264bdfd88596f6553ed7f426ae629afbcf73c7da001e24e02f348b30e62b7077a3e9434975547ec651966f99877295c68875cff393bfc6379a5c33ba8f70ede03dff13f7e9fef05de5cda44d6e71f3fb78096efac5b0a46689" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData/EnvironmentBindingReadData.hpe" name="EnvironmentBindingReadData" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" version="1.0.0.0">
         <visualDescription h="60" w="100" x="398" y="443">
           <color b="255" g="255" r="255"/>
         </visualDescription>

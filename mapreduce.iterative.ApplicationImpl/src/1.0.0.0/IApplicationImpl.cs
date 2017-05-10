@@ -10,6 +10,9 @@
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;
 using mapreduce.iterative.Application;
+using br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType;
+using System.IO;
+using System;
 
 
 namespace mapreduce.iterative.ApplicationImpl {
@@ -22,4 +25,5 @@ namespace mapreduce.iterative.ApplicationImpl {
         public override void main() {
         }
     }
+
 }

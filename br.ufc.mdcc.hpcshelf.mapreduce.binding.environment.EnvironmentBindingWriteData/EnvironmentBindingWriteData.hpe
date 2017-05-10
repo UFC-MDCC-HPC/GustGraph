@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000047036540a5864a44e265412d71404d76f58475f1a9f1ad41c117e7e630b31c5b893d298c5a388f03c4ba622acec14731cfe43fa4bc0dca834760dfc7ec4249b1ba89dbc039f04036b9ae6766f3dafac761cf3766251c5012c40a79053bec297255e974aec62100f5b607b876c6a80dadcdc1db4f0bd635b1edf216eb52f562d4" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingWriteData" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005901f97c2468306dcf86613e7acc7f83ef5788ffcbca75974978d796d4d6b85583c8c62a22152313bdbda8855097dec82897d853132cf8c13283c1cb41e3fa69ed9b9bda3084980906dacd4c5149b0a5978b8576ae1b01ae15b1472d1cd6edc384c5915a7598c9dc067c45fe83028185ca41e8d3ec22184b50e58d9e4c3f2b81" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingWriteData" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment">
     <baseType>
       <extensionType>
         <extends>true</extends>

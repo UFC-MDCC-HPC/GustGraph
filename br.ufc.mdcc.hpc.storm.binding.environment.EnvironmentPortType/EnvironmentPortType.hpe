@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005bc53a70a68f27b943cd21d1930a58ff12464c81346292751c30e61517082128e5e58b9b0887d03fdd61471ca2775c7139b9a746119f4a1f27a7786da523003ce7875acd08a96d8c7fafa301e75fb89259de95ee60f533bdb50b1d57155263ceb9443fa175f4a00a58f611c1dc8a261ebbcfcc14c51f290051effdd4600553c0" isAbstract="true" kind="Qualifier" name="EnvironmentPortType" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000029c2a9a0c26d46eddc87884c159b68edafea66ca4be1cdbede5d65c43bc71f490bd78debe3945f01e1cd35ebc190812de69fff9b3dafcd972eabc0968dc37d2781537ac8357341a32313390dd124eaf80ef5a46f6854a489ec79b453eb68659e1976c4f0aed518a2862d6d5882095bbbb1f3bb28535bbecd6190d980e959a9b8" isAbstract="true" kind="Qualifier" name="EnvironmentPortType" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>

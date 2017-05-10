@@ -25,6 +25,8 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 			foreach (KeyValuePair<int,IDictionary<string,int>> rrr in this.UnitSizeInFacet)
 				foreach (KeyValuePair<string,int> sss in rrr.Value)
 					Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": : TASK PORT --- facet_instance=" + rrr.Key + " / unit_id=" + sss.Key + " / size=" + sss.Value + " --- " + this.CID.getInstanceName());
+			TraceFlag = true;
+			Channel.TraceFlag = true;
 		}
 
 		public new bool TraceFlag 
@@ -44,7 +46,15 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 		{
 		//	Console.WriteLine ("ActionDef.action_ids.Count = " + ActionDef.action_ids.Count);
 
-			int value = (int)action_id;
+			Console.WriteLine ("action is {0}", action_id);
+
+			foreach (string k in ActionTags.action_tags.Keys)
+				Console.WriteLine ("ActionTags.action_tags[{0}]={1}", k, ActionTags.action_tags[k]);
+
+			string value = (string)action_id;
+			int tag = ActionTags.action_tags [value];
+
+
 			RequestList request_list = new RequestList ();
 
 			Trace.WriteLineIf(this.TraceFlag==true, this.ThisFacetInstance + "/" + this.Rank  + ": synchronize_action " + action_id + " -1");
@@ -57,7 +67,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 						for (int i=0; i < unit_team.Value; i++)
 						{
 							Trace.WriteLineIf(this.TraceFlag==true, "synchronize_action " + action_id + " LOOP SEND " + facet.Key + "/" + i);
-							Request req = Channel.ImmediateSend<object> (value, new Tuple<int, int> (facet.Key, i), value);
+							Request req = Channel.ImmediateSend<object> (value, new Tuple<int, int> (facet.Key, i), tag);
 							request_list.Add (req);
 						}
 			
@@ -69,7 +79,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 						for (int i=0; i < unit_team.Value; i++)
 						{
 							Trace.WriteLineIf(this.TraceFlag==true, "synchronize_action " + action_id + " LOOP RECV " + facet.Key + "/" + i);
-							ReceiveRequest req = Channel.ImmediateReceive<object> (new Tuple<int, int> (facet.Key, i), value);
+							ReceiveRequest req = Channel.ImmediateReceive<object> (new Tuple<int, int> (facet.Key, i), tag);
 							request_list.Add (req);
 						}
 
@@ -80,7 +90,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 
 		#region ITaskPort implementation
 
-		public void invoke (object action_id)
+		public override void invoke (object action_id)
 		{
 			object invoke_lock;
 			if (!action_lock.TryGetValue (action_id, out invoke_lock)) 
@@ -103,7 +113,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 		private IDictionary<object, object> action_lock = new Dictionary<object,object>();
 
 
-		public void invoke (object action_id, out IActionFuture future)
+		public override void invoke (object action_id, out IActionFuture future)
 		{
 			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE FUTURE " + action_id + " 0");
 
@@ -144,7 +154,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 			reaction ();
 		}
 
-		public void invoke (object action_id, Action reaction, out IActionFuture future)
+		public override void invoke (object action_id, Action reaction, out IActionFuture future)
 		{
 			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE ACTION " + action_id + " 0");
 

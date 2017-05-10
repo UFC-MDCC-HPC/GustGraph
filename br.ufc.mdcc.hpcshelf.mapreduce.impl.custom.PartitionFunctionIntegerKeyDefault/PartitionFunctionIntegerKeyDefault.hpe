@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009106381fd55129a01867234348889f8c8af74cf325f4229358dcc1ee4068963ba0bd647bf5b253339a7233cec38848326781c9f38c3deb02f7a22fbccc6bfc29d32148694f2abf712e0c2657ad3d978714bbd246ed82c43a0ec2c543b4733248452f2fdeca3c6d1d4fbca4185ce042213cc745031da1ec2d3ccbe89864b352d3" isAbstract="false" kind="Computation" name="PartitionFunctionIntegerKeyDefault" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.custom">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009def78b5ea5724fd8564d6443e04a3fb5ea285c359cc7edfb34f3b57062fb81ff223781f81f58e2c227551173e0f2b5a4a7670fd5832601c21df3b13f10cf8e6903757c044fcbd19e32dc19cd3a72e6d27bb8096b2420e9ea4ef4756d1e2f8e35a265658877f375285417e486a8fa00ac96e941ac6ce34adf3eb9b61085325a8" isAbstract="false" kind="Computation" name="PartitionFunctionIntegerKeyDefault" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.custom">
     <baseType>
       <extensionType>
         <implements>true</implements>

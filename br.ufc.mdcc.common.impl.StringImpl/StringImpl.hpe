@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e7668be5344862444703b4de0c10140402535d501a3ed5c38bfc23ecb13e8af7dcf496e74935c4ab547043786363fb180bf0c47b6226251feb3bfb1be23b5618b160e672266c90c69d4810e9db94d640402f4a3c64a70c9f561426749458f52c11c451dbc0c99d32c4aba9350870418ea84c6c6107f14b0a1f8368f595885980" isAbstract="false" kind="Data" name="StringImpl" packagePath="br.ufc.mdcc.common.impl">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000011e676314e9cc2cac3148d9a0d3920a225bc838d0d428a6d57a87774349ea5e51199c91b5ad78a262d88ae69a7d6f860ffe3e5145601ca5b03ff82b927f4b12f6bd3013b489dda46df18d52aa7f842a4d241193db1aecfbd8d1a3990ec33da4d4f755c27a7d0e8f86db66be4518a3bf86aa69b1a245b34a7a83ad87ed311af8c" isAbstract="false" kind="Data" name="StringImpl" packagePath="br.ufc.mdcc.common.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000175cab655ae31efd8bff89d385e10cc24d577d6d9d268f87f7ac2ecf64590f5c73284b1350405a062f51224cc3a7201fd8acac7a5ae5d69aec26fa35fd3747a389f77f45552352a9d419aa1a85559992518a93c96695d9e6a2ed9f478bc5e57cbacf5c4be6e87880ec64e28bada489e8ab1205b04aaa73b1b1314b2f73541294" isAbstract="false" kind="Data" name="IteratorImpl" packagePath="br.ufc.mdcc.common.impl">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007f64e90be1036921ce73856a1589a0911d5610c11923294e5ca1529893e62d533065a31d406f08ee8761bb3ee6d17deb7233e038412bd371498c0e5469940c0fe035529ae85016e7bf59f86adfe9bfdcf20b99bb54a220f88e296029c09aeeac546fc7a9a23c7a0301cbecfcb315675151073a20448d46cdb58e314e206a3591" isAbstract="false" kind="Data" name="IteratorImpl" packagePath="br.ufc.mdcc.common.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a1d2d4f2ea9f962479f5322ab4d1b509fc8c95e67ad710c6bb2bc57522c8c96bb02c9f6dd000e20cf3098ef39cfffcb5af08f7fe86f5a1e1d0172e5578904f3160047cc21cbc9660df9c536444ce9e025fc3ca5bea6941da4aa0c6f38995d31933743052835857938e9f4726c55a065b54c9cd331a30361384b29cc34db7e285" localRef="base" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" name="Iterator" package="br.ufc.mdcc.common" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000671c4eb61035fb91437a3000ac3e70955a1cc4bdf504a212206a2d768f5f6a2dae3f99615b5f041e03eddde0bdbe898543483349c3cdd5e41b8ef4f7f0c1731590e933114b3dbeaeed8b1ce66108a655508c20a1fd93c9fa66e2ba1b9ed5588ece75fac55986497d8876450614d5b33123ad588663bc0c7e9a8b10a2c973fea2" localRef="base" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" name="Iterator" package="br.ufc.mdcc.common" version="1.0.0.0">
         <visualDescription h="60" w="100" x="69" y="119">
           <color b="203" g="192" r="255"/>
         </visualDescription>

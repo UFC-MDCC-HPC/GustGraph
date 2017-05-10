@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000063aaa20149c1acd16cd4ca4630ea26464456403e131766f4e1896769deb52387850c96475a267b51bd007d73cf35e351db352b16b595a3bbb3f90fbca0d3c1ff286db7a93802c235fd20e01883127b4039e7d19186f8b5651431496e08308d2dd5055a4c26b6e9de487baa29a8e1828ab08d0f0c5fa38486aaa5c22cc101599b" isAbstract="true" kind="Qualifier" name="PortTypeDataSourceInterface" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.port.environment">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000006ff855a3d385060febf1dda3f451e127de9935c90ab6c3b32072f1840dd8b78efa13750f0eea5195757dba6ea835d862dee01cc9fdaeedec89c7b2333906536823b31862cbafc3b9361bb42e1d21b9d9ae2146512a5ba0c0c2b2ebb497eddebdda332283bfbc861f02df265c209cc6eaecd75aab59f414aff1d05d13c2a16a9f" isAbstract="true" kind="Qualifier" name="PortTypeDataSourceInterface" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.port.environment">
     <baseType>
       <extensionType>
         <extends>true</extends>

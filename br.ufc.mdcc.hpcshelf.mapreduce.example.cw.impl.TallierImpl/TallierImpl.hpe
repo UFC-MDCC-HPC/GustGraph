@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bdd0a805b3e85ab269ea928b0149d7752251d058fc4d01ab9d17d49079f016e0603a5b20e5132cd36143efae23d6526c2eee91847ad2d26b5290c9117b9dc0744b0eaf626d90ad50c805d33fcc8234d3b57ddd561391cb2f38af301c0f32614c98a3653c6a6608bd5dfb0aafc1d2c4c6449ed928fc04c2c75b487f73383e29aa" isAbstract="false" kind="Computation" name="TallierImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.example.cw.impl">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000045a3bff2d733b82493071d50f07df2c1d0579e433b82381ccc199931d23891b7aad0ab5b62dd65e8f4c605f7a8b9642067a9a0f5e3bfd4b55d5764b4107961cced4240bd01662a54b1674e195998ffbf712adff40bc57321aebcf009e6d0515b9b5a25cd560c260ea4595a7ece92ef1e257030095ce31f2cc814c51a811a1e87" isAbstract="false" kind="Computation" name="TallierImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.example.cw.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b9069d8c0868c63e340d5359f76141a029280190caef343caaf2f2f41dee3bcaeb3c892982e58f9c13e84a6f10ae88a610c08e2850f2962f1297faceb0080533e01d40a8d3ea2a0a6c67c536a6a5bd7cfb6db744ffd7864dfb96e1a80c9a2d39c56b9c510549ec40ba3b736fc3ef96f744b0821317a2f4f263952fe59dfda4c8" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.example.cw.Tallier/Tallier.hpe" name="Tallier" package="br.ufc.mdcc.hpcshelf.mapreduce.example.cw" version="1.0.0.0">
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000095e4c466c6214efd92ae19c30503c18be52ba775d905e5a6d5bb3adb3c0f8fd4ac9149ab203ee923355c95af67528cabd035779f69173bbedbf68c7b30fc5d08906648dcc91490fc4f5f58d2bc77d6f67f242f43e73a7f8af1b3a179e83ab20e9e9cd247c008d0c7a9e7535b1ee0c6059fae1621fab2072a70e0aa42037add8e" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.example.cw.Tallier/Tallier.hpe" name="Tallier" package="br.ufc.mdcc.hpcshelf.mapreduce.example.cw" version="1.0.0.0">
         <visualDescription h="60" w="100" x="104" y="200">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -21,7 +21,7 @@
           <visualDescription h="60" w="181" x="64" y="390">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###634706968"/>
+          <parameter formFieldId="value_type" varName="X###452108540"/>
           <parameter formFieldId="key_type" varName="TKey"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="137" y="20"/>

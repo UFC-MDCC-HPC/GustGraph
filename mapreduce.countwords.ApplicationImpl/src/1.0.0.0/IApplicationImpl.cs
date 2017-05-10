@@ -10,6 +10,10 @@
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;
 using mapreduce.countwords.Application;
+using br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType;
+using System;
+using System.IO;
+using br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding;
 
 
 namespace mapreduce.countwords.ApplicationImpl {
@@ -17,9 +21,46 @@ namespace mapreduce.countwords.ApplicationImpl {
     
 	public class IApplicationImpl<M> : br.ufc.pargo.hpe.kinds.Computation , IApplication<M> 
 		where M:ISAFeHost
-	{
-        
-        public override void main() {
+	{        
+        public override void main() 
+		{
+			
         }
+
+		public override void after_initialize ()
+		{
+			this.SWLPort.Server = new SWLPortTypeImpl ();
+		}
+
+		private ISWLWorkflowBinding swl_port = null;
+		private ISWLWorkflowBinding SWLPort { 
+			get { 				
+				return swl_port == null ? (ISWLWorkflowBinding)this.Services.getPort ("swl_port") : swl_port;
+			}
+		}
     }
+
+
+	public class SWLPortTypeImpl : ISWLPortType
+	{
+		public string Architecture { 
+			get 
+			{
+				string file_name = Environment.GetEnvironmentVariable ("SWL_ARCHITECTURE_FILE_LOCATION");
+				string swl_code = File.ReadAllText (file_name);
+				Console.WriteLine ("ARCHITECTURE: {0}", swl_code);
+				return swl_code;
+			} 
+		}
+
+		public string Workflow { 
+			get 
+			{
+				string file_name = Environment.GetEnvironmentVariable ("SWL_ORQUESTRATION_FILE_LOCATION");
+				string swl_code = File.ReadAllText (file_name);
+				Console.WriteLine ("ORCHESTRATION: {0}", swl_code);
+				return swl_code;
+			} 
+		}
+	}
 }

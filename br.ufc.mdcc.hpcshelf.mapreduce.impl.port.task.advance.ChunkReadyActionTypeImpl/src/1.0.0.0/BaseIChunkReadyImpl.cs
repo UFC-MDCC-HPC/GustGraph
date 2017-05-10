@@ -9,7 +9,7 @@ using br.ufc.mdcc.hpc.storm.binding.task.ActionType;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.ChunkReadyActionTypeImpl 
 {
-	public abstract class BaseIChunkReadyImpl: br.ufc.pargo.hpe.kinds.Environment, BaseIActionType
+	public abstract class BaseIChunkReadyImpl: br.ufc.pargo.hpe.kinds.Environment, BaseIChunkReady
 	{
 	}
 }

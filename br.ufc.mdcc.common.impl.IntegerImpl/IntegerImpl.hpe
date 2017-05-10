@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003542b8d99944b5b861d11ab37e5185248938f05fb7e5e0690ac159d9ae80af868cfb8bd074ac66c72548e3cbd576f0e8bf085059ba947b029e8b9c00c6d4c0c4f73185857ac6c2648bfd6886ff86b93eae5421a06404dabce5e8679e75c9f6cb9a4fa264ef202c760a64f522e677d5bf27df148e4b0bc954291a286df0523b87" isAbstract="false" kind="Data" name="IntegerImpl" packagePath="br.ufc.mdcc.common.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c1919827712aac9612e4066adf201b059a2aacdf4d559237c253e0e2c91df432b304ff23a750c82e909a2213bdd5beb855354c2aa51631959cacd7032d7392d8f4bb2a7dd0e7af4dfa2cb702ca02ccb09f5e8e71caebe91069f46609b6fff1862ecbdbf1843ffeea350b8fa7af55b95859423aa465edccf1e68b7fde1c4f6d80" isAbstract="false" kind="Data" name="IntegerImpl" packagePath="br.ufc.mdcc.common.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>

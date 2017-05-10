@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c74f48803e22768fccd6d803ac7bd52e552e424f3cdcd9282d1c6477a945dd44febf94e1697d3bd215162db18218ad8731e9df4b02b13e190920631ab0d372671f1e2f144b3128478ae6b79e7b2950cd7ac8885db64314c6d1d0cf408da58ad59fc94ab60fecb8ce917e7edcb2340e0fa2068e6780eb15c025ca0ca191f41895" isAbstract="false" kind="Synchronizer" name="SplitterImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.connector">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000041261a2fda6ad7552a4449e302b9d920fc60153f921a1f14f962eec201078c1b4873be90645d36848c1e749b34495086b0f2fa395d6ca114590bb8e3504b9dfb0674b32d49936e3dbca4e2bd33dfd62f1b49eb373a77bf1aca69a79b12fed40017b09787d429823b0ce0b1075275d6563ed01345846311a97d4a6189e2ae86ee" isAbstract="false" kind="Synchronizer" name="SplitterImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.connector">
     <baseType>
       <extensionType>
         <implements>true</implements>
@@ -16,8 +16,8 @@
           <visualDescription h="60" w="124" x="255" y="482">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###316181901"/>
-          <parameter formFieldId="server_port_type" varName="X###1194667429"/>
+          <parameter formFieldId="client_port_type" varName="X###218657870"/>
+          <parameter formFieldId="server_port_type" varName="X###1245317146"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="53" y="7"/>
           </unitBounds>
@@ -26,8 +26,8 @@
           <visualDescription h="60" w="126" x="674" y="513">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###1950863400"/>
-          <parameter formFieldId="server_port_type" varName="X###380841404"/>
+          <parameter formFieldId="client_port_type" varName="X###669649160"/>
+          <parameter formFieldId="server_port_type" varName="X###1979121840"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="1" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="54" y="6"/>
           </unitBounds>
@@ -36,7 +36,7 @@
           <visualDescription h="83" w="228" x="353" y="397">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1300208968"/>
+          <parameter formFieldId="task_port_type" varName="X###726556497"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
             <visualDescription h="20" w="20" x="12" y="34"/>
           </unitBounds>
@@ -48,7 +48,7 @@
           <visualDescription h="70" w="303" x="7" y="405">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1966016951"/>
+          <parameter formFieldId="task_port_type" varName="X###643028237"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="135" y="6"/>
           </unitBounds>
@@ -57,7 +57,7 @@
           <visualDescription h="71" w="298" x="671" y="424">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1663502715"/>
+          <parameter formFieldId="task_port_type" varName="X###1237867555"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="1" parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="131" y="7"/>
           </unitBounds>

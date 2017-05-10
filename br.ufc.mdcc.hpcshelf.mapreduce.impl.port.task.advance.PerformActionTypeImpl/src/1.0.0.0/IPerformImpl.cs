@@ -7,10 +7,12 @@ using br.ufc.mdcc.hpc.storm.binding.task.ActionType;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance.PerformActionTypeImpl
 {
-	public class IPerformImpl : BaseIPerformImpl, IActionType
+	public class IPerformImpl : BaseIPerformImpl, IPerform
 	{
 		public override void on_initialize ()
 		{
+			Console.WriteLine ("ON INITIALIZE PERFORM NAME");
+			ActionTags.action_tags [PERFORM.name] = 22;
 		}
 	}
 }

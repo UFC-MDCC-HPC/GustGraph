@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003989e4b81c93da9f937cde4bd18bd3cf43b7ae0b19558d046454961c594b0fddec947b8a890fc18cd4879d40cf1cc7adfb3f39eb553a160f5e7549df9d380bcb91a4b5d575f7c6269bcb9d696a391490da482c398450846f0912be66489f83b0edfdf35cbc95a2d5ed2bb8a8aec469775363e5929da5cbe0d485b3437ae7ef8a" isAbstract="false" kind="Computation" name="DataSinkImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000004f81a78e29fbee0c3aa77a587353e16e0b3fcb7ac374caef7d128e83eb02d6ef7c23f2229057c7df35292cf19b934ea69633b2e54bcda54d1f891b40db0f57d919e024bf840f4293018759e34cb3678c422f2d81f211b794b922522b6270f861d529d27dae379286f05d36a5fcde7b4125fb880f4b4900e2bcb9f6a6c4f1b0c0" isAbstract="false" kind="Computation" name="DataSinkImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource">
     <baseType>
       <extensionType>
         <implements>true</implements>
@@ -14,8 +14,8 @@
           <visualDescription h="60" w="187" x="238" y="357">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###1360297715"/>
-          <parameter formFieldId="server_port_type" varName="X###1390072891"/>
+          <parameter formFieldId="client_port_type" varName="X###1118609896"/>
+          <parameter formFieldId="server_port_type" varName="X###1105733367"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="51" y="2"/>
           </unitBounds>

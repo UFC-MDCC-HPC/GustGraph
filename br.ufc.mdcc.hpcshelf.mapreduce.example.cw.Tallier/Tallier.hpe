@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b9069d8c0868c63e340d5359f76141a029280190caef343caaf2f2f41dee3bcaeb3c892982e58f9c13e84a6f10ae88a610c08e2850f2962f1297faceb0080533e01d40a8d3ea2a0a6c67c536a6a5bd7cfb6db744ffd7864dfb96e1a80c9a2d39c56b9c510549ec40ba3b736fc3ef96f744b0821317a2f4f263952fe59dfda4c8" isAbstract="true" kind="Computation" name="Tallier" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.example.cw">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000095e4c466c6214efd92ae19c30503c18be52ba775d905e5a6d5bb3adb3c0f8fd4ac9149ab203ee923355c95af67528cabd035779f69173bbedbf68c7b30fc5d08906648dcc91490fc4f5f58d2bc77d6f67f242f43e73a7f8af1b3a179e83ab20e9e9cd247c008d0c7a9e7535b1ee0c6059fae1621fab2072a70e0aa42037add8e" isAbstract="true" kind="Computation" name="Tallier" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.example.cw">
     <baseType>
       <extensionType>
         <extends>true</extends>
@@ -25,7 +25,7 @@
           <visualDescription h="60" w="181" x="64" y="390">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###2052051796"/>
+          <parameter formFieldId="value_type" varName="X###301781314"/>
           <parameter formFieldId="key_type" varName="TKey"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="137" y="20"/>

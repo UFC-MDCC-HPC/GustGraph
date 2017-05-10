@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bbd6c81af54305aba11c8a32b633c73f85c9c739a65ef2b387f61d964e86d1a532db31739bc37a0f4aa043229e7e8f53a38e84810402092f3720da887b1448d4b3d5d27c0b477a2d3e8e531d2ada2aa78b10d8403ec37cd8a7851160e725ff2bb9c087d31f5d6c7e5f78c202e6972cb787a42f0bb39658401d10f31ae0100d9c" isAbstract="false" kind="Computation" name="WordCounterImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.example.cw.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000538a261d09b5dab3f20ac569e2df4ffa09e7c99a91f28ae66986e8ecbc93d8b881329504244190f5c2ea85eaf8bcb6b7228895f8c423621ffe440cdb224f3adb4ddc6dcec2db99dc3ee791cb956d9e1b3645df31189d7939abfb3815f16b4f107dcd43cf2a990beca6b027f42a78ca8ff863422c736066cae3f7bca3fce7efd3" isAbstract="false" kind="Computation" name="WordCounterImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.example.cw.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
@@ -29,7 +29,7 @@
           <visualDescription h="69" w="188" x="244" y="453">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###228350845"/>
+          <parameter formFieldId="item_type" varName="X###404437178"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="iterator">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>

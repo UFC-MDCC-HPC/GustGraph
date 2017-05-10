@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d1154b5eadf3a0f208d178ce64134838d82769622316eb49d3135364ae2a307ef0e769c786ad596c08a9f02f83628bc22c17a5a78701c3b13386f5b8e5880b3b3133a47a2378d7f764a1f31f0a50fad9c2f3bb826f88990b134d3c29d4ec5ca99394c63028e177565e4f1ee92dffc05e041b9c4f9a03e33ed3f89ae923617d8f" isAbstract="true" kind="Qualifier" name="PortTypeDataSinkInterface" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.port.environment">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f55a349238e11097b2e9fecccadd51b8709377ffb5a449684e81d7ed60ecbc6f22e1ffef24ca856949b9307884554bbf662ab5d27da941a77e5a22c9854583b979180bb9fef454e358187964adc6dfe3fdee8be6c473d5e15d6f646dc65b589fffcf855b020fb38aeeb2c31aca98ef40a7ca9e1aacb310044479a40a259ef780" isAbstract="true" kind="Qualifier" name="PortTypeDataSinkInterface" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.port.environment">
     <baseType>
       <extensionType>
         <extends>true</extends>

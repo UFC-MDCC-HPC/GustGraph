@@ -10,7 +10,7 @@ using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
 
 namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl 
 {
-	public abstract class BaseTaskPort<T>: Synchronizer, BaseITaskPort<T>
+	public abstract class BaseTaskPort<T>: TaskBinding, BaseITaskPort<T>
 		where T:ITaskPortType
 	{
 		private T task_port_type = default(T);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001dd6c340b4e48c8cdec3b29abb8b833ac3d849c32648c1dbe9a27f6f372926f77a109d9d26942f08d12332a28dbbffcaac529a4c410990039268b5cda8755f71f86165234f8e0113acb0b181e1f57bc48b80992bc2c452411d7ffcf55c2660af4c24489ea877d6bcae863fcdb36f4ed6a137a3b9a5a93a49e232eec2bced759b" isAbstract="false" kind="Computation" name="ReducerImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f588951e95980076f769e332caac2598f4588ed2fba90840541b54b4e6c3040d87c1f2ca8fbb50b2c14af919cf201518a56e95d0dfa004669e8a4af2e8974dcf1293fbee1525d11525455db73815b4df44526440f3f3dda3dc42f58a5a8a9dea32fc7936135873b7748a44fddbdfcfc77a1e88683e7edeac8be2f26a597db489" isAbstract="false" kind="Computation" name="ReducerImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation">
     <baseType>
       <extensionType>
         <implements>true</implements>
@@ -19,7 +19,7 @@
           <visualDescription h="60" w="182" x="269" y="455">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1878171106"/>
+          <parameter formFieldId="task_port_type" varName="X###1218014695"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -28,8 +28,8 @@
           <visualDescription h="60" w="112" x="457" y="378">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###559651289"/>
-          <parameter formFieldId="server_port_type" varName="X###80840363"/>
+          <parameter formFieldId="client_port_type" varName="X###1945992229"/>
+          <parameter formFieldId="server_port_type" varName="X###115448993"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -38,8 +38,8 @@
           <visualDescription h="60" w="111" x="51" y="234">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###1474316037"/>
-          <parameter formFieldId="server_port_type" varName="X###1163314773"/>
+          <parameter formFieldId="client_port_type" varName="X###1173492110"/>
+          <parameter formFieldId="server_port_type" varName="X###392078722"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>

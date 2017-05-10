@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000069a76bfae61ad104ee75111d266fadd99748475fc225f644de5b81d7824509b18a1345bf8facedade18ef1c08b67aabe0b6c2f36fd6b36d03b1aca1b7ca82312ede239f4f706dae63fdb24905338ec0344f85aff0ded4184edff48a57a7d94ab4fb2295d617b1a7cc99a2a6c9684eff4859933b5e5a9f343ff260a217b17fa88" isAbstract="false" kind="Platform" name="NullPlatform" packagePath="br.ufc.mdcc.common.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000abcf3276bcbdf4d4222671f1e594fcca3d8c0959c752bcbc31ad5ac4b2f67dcf3ee226b71fd8cdecf32425b2d36333e0579a8dbea3aa6c3776f96d09f6720af19ca6d77dfffbdfd33f4eb1986b46348e45233db04fdf353aab277aab352fc6e6c97c4041203d8a573f086d9f04446034c0583f498869c218a717998d68156ab3" isAbstract="false" kind="Platform" name="NullPlatform" packagePath="br.ufc.mdcc.common.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000611b8f9bd697f844d17c106abd429d867bff585d6176e781a8a98137b7f0fee63bc38a79d2401755a4d1a9bd23a3634b415c561bd1bf19f72327abb6414df3490f5de9df409e9fcb4ea947c622d15b26139ff251511372fa3c13d09f21748d0811fb3d28f375409b985c70a2b940dd3b64dacd14a58051af15e0e524216fad9c" localRef="base" location="br.ufc.mdcc.common.Platform/Platform.hpe" name="Platform" package="br.ufc.mdcc.common" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000870bc19d88fcd7cc7695ac404e0866a0e67b85f119618c33076483ba13d9732f740df58dd687282b3daad4c430aad648597176bd926d12b857a011aa3d90c7adcf27ae5c3c83fa72efcb57995a30f22f61f31941cc2dc9b15f6732a0852160d8aa01978c81f3ef8aab5905450812c64783d01c9af7aa2466babc399705788e82" localRef="base" location="br.ufc.mdcc.common.Platform/Platform.hpe" name="Platform" package="br.ufc.mdcc.common" version="1.0.0.0">
         <visualDescription h="60" w="100" x="169" y="310">
           <color b="255" g="255" r="255"/>
         </visualDescription>

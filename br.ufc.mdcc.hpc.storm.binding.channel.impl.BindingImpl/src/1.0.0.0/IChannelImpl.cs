@@ -17,6 +17,11 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 		private int conversation_tag = 100;
 
+		public override void after_initialize()
+		{
+			this.TraceFlag = true;
+		}
+
 		object sync = new object();
 
 		private int takeNextConversationTag()

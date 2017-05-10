@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cd61f3041880026ff64d2a34e15a12a3e49c7bed4545b4754b99df6df8880e1cb02044205235ae968fdd22641f0f8572634db1abea8f0720c23d958c1381e7a303a7de0db7471d12d4391c5a8b4bed63c5d087f2b0d06c73ec4ff958cac96dd071b4f7b93635f025fcabfa296ead8f8fef682c689e811f1e14d88aeae0c13f8f" isAbstract="true" kind="Data" name="Set" packagePath="br.ufc.mdcc.common">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000031c5c7260986b9fa8352b6ae034221357597cccc15a702832c7398c363e6255bfb5b6e34170ef4e053921901d6bfbb02de8f5a117b854f24b0cd45ec2715e04e3a2af19b5261338ea27ee96e7c235f847dc771e48a281e6dcd418babd39704b3004b1b7178bedcecac4a3c0e74b2e8209d298d460a77926c7a4c8eb5a0a08291" isAbstract="true" kind="Data" name="Set" packagePath="br.ufc.mdcc.common">
     <baseType>
       <extensionType>
         <extends>true</extends>

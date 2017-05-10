@@ -5,6 +5,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.TaskPortType
 {
 	public interface ITaskPortType : BaseITaskPortType
 	{
+		
 	}
 
 }

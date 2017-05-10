@@ -14,7 +14,8 @@ using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;
 namespace mapreduce.countwords.Workflow {
     
     
-    public interface IWorkflow<M> : br.ufc.pargo.hpe.kinds.IComputationKind 
-		where M:ISAFeHost{
+    public interface IWorkflow<M> : br.ufc.pargo.hpe.kinds.IWorkflowKind 
+		where M:ISAFeHost
+	{
     }
 }

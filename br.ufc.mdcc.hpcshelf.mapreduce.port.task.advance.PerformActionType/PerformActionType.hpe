@@ -23,10 +23,10 @@
   <componentInfo>
     <interface iRef="IPerform" nArgs="0">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType&#xA;{&#xA;&#x9;public interface BaseIPerform : IEnvironmentKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIPerform.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType/bin/1.0.0.0/BaseIPerform.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.ActionType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType&#xA;{&#xA;&#x9;public interface BaseIPerform : IEnvironmentKind, BaseIActionType&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIPerform.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType/bin/1.0.0.0/BaseIPerform.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpc.storm.binding.task.ActionType/bin/1.0.0.0/BaseIActionType.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType&#xA;{&#xA;&#x9;public interface IPerform : BaseIPerform&#xA;&#x9;{&#xA;&#x9;}&#xA;&#x9;public class PERFORM&#xA;&#x9;{&#xA;&#x9;&#x9;//public static object name = &quot;PERFORM&quot;;&#xA;&#x9;&#x9;public const int name=22;&#xA;&#x9;}&#xA;}" name="IPerform.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType/bin/1.0.0.0/IPerform.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.ActionType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType&#xA;{&#xA;&#x9;public interface IPerform : BaseIPerform, IActionType&#xA;&#x9;{&#xA;&#x9;}&#xA;&#x9;public class PERFORM&#xA;&#x9;{&#xA;&#x9;&#x9;public const string name = &quot;PERFORM&quot;;&#xA;&#x9;}&#xA;}" name="IPerform.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType/bin/1.0.0.0/IPerform.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType/bin/1.0.0.0/BaseIPerform.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.task.ActionType/bin/1.0.0.0/IActionType.dll</dependency>
         </file>
