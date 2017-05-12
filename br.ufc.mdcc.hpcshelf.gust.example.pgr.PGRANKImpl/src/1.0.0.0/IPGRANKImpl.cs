@@ -50,8 +50,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl {
 				int s = gif.Source [i];
 				int t = gif.Target [i];
 				g.addVertex (s);
-				g.addVertex (t);
-				g.addEdge (s, t);
+				g.addVertex (t); //g.addEdge (s, t);
+				g.noSafeAdd (s, t);
 				if (s == 0 || t==0) { throw new ArgumentNullException ("WARNING: Vertex id is 0! "); }
 			}
 			partition_own [gif.PARTID] = true;
