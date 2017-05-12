@@ -51,7 +51,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TC1Impl {
 					int t = gif.Target [i] > gif.Source [i] ? gif.Target [i] : gif.Source [i];
 					g.addVertex (s);
 					g.addVertex (t);
-					g.noSafeAdd (s, t);
+					if(s!=t) g.noSafeAdd (s, t);
 					i++;
 				}
 			}

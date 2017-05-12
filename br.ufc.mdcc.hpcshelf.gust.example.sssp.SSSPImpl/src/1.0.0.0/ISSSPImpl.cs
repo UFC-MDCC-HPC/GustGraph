@@ -52,7 +52,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 				if(weighted) f = gif.Weight [i];
 				g.addVertex (s);
 				g.addVertex (t);
-				g.noSafeAdd (s, t, f);
+				if(s!=t) g.noSafeAdd (s, t, f);
 				if (s == 0 || t==0) { throw new ArgumentNullException ("WARNING: Vertex id is 0! "); }
 			}
 			gif.Clear ();
