@@ -187,10 +187,22 @@ where E:IEdge<V> {
 			public IEnumerator<TV> iteratorNeighborsOf (TV vertex){
 				ICollection<KeyValuePair<TV, float>> o = delegator.outgoing<KeyValuePair<TV, float>> (vertex);
 				ICollection<KeyValuePair<TV, float>> i = delegator.incoming<KeyValuePair<TV, float>> (vertex);
-				foreach (KeyValuePair<TV, float> kv in o)
-					yield return kv.Key;
-				foreach (KeyValuePair<TV, float> kv in i)
-					yield return kv.Key;
+				ICollection<TV> edges = new HashSet<TV> ();
+				if (!delegator.Container.AllowingMultipleEdges) {
+					foreach (KeyValuePair<TV, float> kv in o)
+						if (!edges.Contains (kv.Key)) {
+							edges.Add (kv.Key);
+							yield return kv.Key;
+						}
+					foreach(KeyValuePair<TV, float> kv in i)
+						if (!edges.Contains (kv.Key)) {
+							edges.Add (kv.Key);
+							yield return kv.Key;
+						}
+				} else {
+					foreach(KeyValuePair<TV, float> kv in o) yield return kv.Key;
+					foreach(KeyValuePair<TV, float> kv in i) yield return kv.Key;
+				}
 			}
 			//
 			public IEnumerator<KeyValuePair<TV, float>> iteratorVertexWeightOf(TV vertex){
@@ -205,7 +217,7 @@ where E:IEdge<V> {
 							yield return kv;
 						}
 					}
-					edges.Clear ();
+					//edges.Clear ();
 					foreach (KeyValuePair<TV, float> kv in i) {
 						bool contain = edges.Contains (kv.Key);
 						if (!contain) {
