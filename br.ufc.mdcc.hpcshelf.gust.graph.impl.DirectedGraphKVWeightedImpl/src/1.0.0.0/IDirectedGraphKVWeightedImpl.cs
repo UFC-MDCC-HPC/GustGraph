@@ -207,7 +207,7 @@ where E:IEdge<V>
 							edges.Add (kv.Key);
 							yield return kv.Key;
 						}
-					edges.Clear ();
+					//edges.Clear ();
 					foreach(KeyValuePair<TV, float> kv in i)
 						if (!edges.Contains (kv.Key)) {
 							edges.Add (kv.Key);

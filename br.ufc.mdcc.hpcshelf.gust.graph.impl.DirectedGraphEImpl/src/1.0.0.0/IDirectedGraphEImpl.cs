@@ -194,7 +194,7 @@ where E:IEdge<V>
 							edges.Add (e.Target);
 							yield return e.Target;
 						}
-					edges.Clear ();
+					//edges.Clear ();
 					foreach(TE e in i)
 						if (!edges.Contains (e.Source)) {
 							edges.Add (e.Source);

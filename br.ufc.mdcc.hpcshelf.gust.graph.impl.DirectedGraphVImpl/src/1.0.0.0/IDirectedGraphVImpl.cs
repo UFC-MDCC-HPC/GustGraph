@@ -339,7 +339,7 @@ where E:IEdge<V> {
 							edges.Add (v);
 							yield return v;
 						}
-					edges.Clear ();
+					//edges.Clear ();
 					foreach(TV v in i)
 						if (!edges.Contains (v)) {
 							edges.Add (v);
