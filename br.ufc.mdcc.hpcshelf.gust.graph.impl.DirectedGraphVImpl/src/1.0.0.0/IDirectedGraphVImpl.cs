@@ -332,42 +332,42 @@ where E:IEdge<V> {
 			public IEnumerator<TV> iteratorNeighborsOf (TV vertex){
 				ICollection<TV> o = delegator.outgoing<TV> (vertex);
 				ICollection<TV> i = delegator.incoming<TV> (vertex);
-				ICollection<TV> edges = new HashSet<TV> ();
-				if (!delegator.Container.AllowingMultipleEdges) {
-					foreach (TV v in o)
-						if (!edges.Contains (v)) {
-							edges.Add (v);
-							yield return v;
-						}
-					//edges.Clear ();
-					foreach(TV v in i)
-						if (!edges.Contains (v)) {
-							edges.Add (v);
-							yield return v;
-						}
-				} else {
+//				ICollection<TV> edges = new HashSet<TV> ();
+//				if (!delegator.Container.AllowingMultipleEdges) {
+//					foreach (TV v in o)
+//						if (!edges.Contains (v)) {
+//							edges.Add (v);
+//							yield return v;
+//						}
+//					//edges.Clear ();
+//					foreach(TV v in i)
+//						if (!edges.Contains (v)) {
+//							edges.Add (v);
+//							yield return v;
+//						}
+//				} else {
 					foreach(TV v in o) yield return v;
 					foreach(TV v in i) yield return v;
-				}
+//				}
 			}
 			//
 			public IEnumerator<KeyValuePair<TV, float>> iteratorVertexWeightOf(TV vertex){
 				float weight_default = ((TE) delegator.Container.EdgeFactory.newInstance(vertex, vertex)).Weight;
 				IEnumerator<TV> vneighbors = this.iteratorNeighborsOf (vertex);
-//				ICollection<TV> edges = new HashSet<TV> ();
-//				if (!delegator.Container.AllowingMultipleEdges) {
-//					while (vneighbors.MoveNext()) {
-//						KeyValuePair<TV, float> kv = (new KeyValuePair<TV, float>(vneighbors.Current, weight_default));
-//						bool contain = edges.Contains (kv.Key);
-//						if (!contain) {
-//							edges.Add (kv.Key);
-//							yield return kv;
-//						}
-//					}
-//				}
-//				else
-				while (vneighbors.MoveNext())
-					yield return (new KeyValuePair<TV, float>(vneighbors.Current, weight_default));
+				ICollection<TV> edges = new HashSet<TV> ();
+				if (!delegator.Container.AllowingMultipleEdges) {
+					while (vneighbors.MoveNext()) {
+						KeyValuePair<TV, float> kv = (new KeyValuePair<TV, float>(vneighbors.Current, weight_default));
+						bool contain = edges.Contains (kv.Key);
+						if (!contain) {
+							edges.Add (kv.Key);
+							yield return kv;
+						}
+					}
+				}
+				else
+					while (vneighbors.MoveNext())
+						yield return (new KeyValuePair<TV, float>(vneighbors.Current, weight_default));
 			}
 			public IEnumerator<KeyValuePair<TV, float>> iteratorOutgoingVertexWeightOf(TV vertex){
 				float weight_default = ((TE) delegator.Container.EdgeFactory.newInstance(vertex, vertex)).Weight;
