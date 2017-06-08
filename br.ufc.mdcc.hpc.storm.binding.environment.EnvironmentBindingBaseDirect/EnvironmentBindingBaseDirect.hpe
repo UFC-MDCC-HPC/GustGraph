@@ -5,12 +5,12 @@
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f12be4dbb127734abad30970f752dfc7e8ef1e07c6976b3405e50b0ae572b15ea5a010811ad1b96d05a7c4897e4f0574262fb25c25c70567416770a8fc070dc31a5ed91c36477ce03d0ce3ab91e55a9c6eb7537b7a8a29b657d48294f202fae0f1ebe0b07a32d16e5d98e43198d341b679f884ef426244521586153fa9b7a6e4" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000897ad946ac544b4893b1b8622a907bdbf77013571dfb27cb82505a86d47f258e007f9bca258c27740bc8af6327a5a611b79d0960b56d29028163f7ad0b4569ae9cfcda723787a19a4a40fed7d784e0d0fd96e82ea9a9a100cfd83adf6e1fa09e73928ba75b40190cef424e1b437966f54cfc8b73b1f5d8831cd6bc7871ada4c7" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
         <visualDescription h="60" w="100" x="235" y="423">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="client_port_type" varName="C"/>
         <parameter formFieldId="server_port_type" varName="S"/>
+        <parameter formFieldId="client_port_type" varName="C"/>
         <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>

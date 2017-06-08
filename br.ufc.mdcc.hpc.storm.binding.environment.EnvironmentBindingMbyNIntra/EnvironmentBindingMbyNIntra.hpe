@@ -9,8 +9,8 @@
         <visualDescription h="60" w="166" x="141" y="227">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="client_port_type" varName="C"/>
         <parameter formFieldId="server_port_type" varName="S"/>
+        <parameter formFieldId="client_port_type" varName="C"/>
         <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="client">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>

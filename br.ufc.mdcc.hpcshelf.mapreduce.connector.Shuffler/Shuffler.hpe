@@ -77,8 +77,8 @@
       <visualDescription h="79" w="100" x="58" y="450">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="client_port_type" varName="C0"/>
       <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C0"/>
       <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="1" parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="45" y="6"/>
       </unitBounds>
@@ -87,8 +87,8 @@
       <visualDescription h="114" w="100" x="574" y="420">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="client_port_type" varName="C"/>
       <parameter formFieldId="server_port_type" varName="S0"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
       <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="41" y="14"/>
       </unitBounds>
@@ -275,10 +275,6 @@
       </action>
     </interface>
     <interface iRef="IShufflerCollector" nArgs="3">
-      <slice isRef="task_binding_shuffle_perform">
-        <originRef cRef="task_binding_shuffle_perform" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="0" y="31"/>
-      </slice>
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IBindingDirect"/>
         <visualDescription h="10" w="10" x="1" y="28"/>
@@ -286,6 +282,10 @@
       <slice isRef="task_binding_shuffle_read_chunk">
         <originRef cRef="task_binding_shuffle_read_chunk" iRef="ITaskPort"/>
         <visualDescription h="10" w="10" x="102" y="28"/>
+      </slice>
+      <slice isRef="task_binding_shuffle_perform">
+        <originRef cRef="task_binding_shuffle_perform" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="0" y="31"/>
       </slice>
       <slice isRef="shuffler_channel">
         <originRef cRef="shuffler_channel" iRef="IChannel"/>
@@ -318,10 +318,6 @@
       <visualDescription h="66" w="187" x="57" y="73">
         <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="task_binding_shuffle_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_perform" sRef="task_binding_shuffle_perform"/>
-      </port>
       <port name="collect_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_pairs" sRef="collect_pairs"/>
@@ -330,13 +326,17 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_shuffle_read_chunk" sRef="task_binding_shuffle_read_chunk"/>
       </port>
-      <port name="input_key">
+      <port name="task_binding_shuffle_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key" sRef="partition_function"/>
+        <slice pRef="task_binding_shuffle_perform" sRef="task_binding_shuffle_perform"/>
       </port>
       <port name="output_key">
         <visualDescription h="10" w="10" x="169" y="4"/>
         <slice pRef="output_key" sRef="partition_function"/>
+      </port>
+      <port name="input_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="partition_function"/>
       </port>
       <parameter iname="IPartitionFunction" order="2" parid="partition_function" uname="partition_function" varid="PF"/>
       <parameter iname="IData" order="0" parid="intermediate_key_type" uname="data" varid="TKey"/>
@@ -367,28 +367,28 @@
       <visualDescription h="40" w="132" x="453" y="321"/>
     </unit>
     <unit facet="1" iRef="IShufflerCollector" multiple="true" private="false" replica="0" uRef="collector" visibleInterface="true">
-      <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
-        <visualDescription h="10" w="10" x="24" y="26"/>
-      </slices>
       <slices cRef="collect_pairs" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="collect_pairs" transitive="false">
         <visualDescription h="10" w="10" x="1" y="28"/>
       </slices>
-      <slices cRef="task_binding_shuffle_perform" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_binding_shuffle_perform" transitive="false">
-        <visualDescription h="10" w="10" x="0" y="31"/>
+      <slices cRef="output_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_key" transitive="true">
+        <visualDescription h="10" w="10" x="130" y="24"/>
       </slices>
       <slices cRef="task_binding_shuffle_read_chunk" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_binding_shuffle_read_chunk" transitive="false">
         <visualDescription h="10" w="10" x="102" y="28"/>
       </slices>
-      <slices cRef="output_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_key" transitive="true">
-        <visualDescription h="10" w="10" x="130" y="24"/>
+      <slices cRef="task_binding_shuffle_perform" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_binding_shuffle_perform" transitive="false">
+        <visualDescription h="10" w="10" x="0" y="31"/>
+      </slices>
+      <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
+        <visualDescription h="10" w="10" x="24" y="26"/>
       </slices>
       <slices cRef="shuffler_channel" inner_replica="0" slice_replica="0" uRef="peer" sliceName="shuffler_channel" transitive="false">
         <visualDescription h="10" w="10" x="79" y="8"/>
       </slices>
       <slices cRef="partition_function" inner_replica="0" slice_replica="0" uRef="partition_function" sliceName="partition_function" transitive="false">
         <visualDescription h="10" w="10" x="60" y="7"/>
-        <port>input_key</port>
         <port>output_key</port>
+        <port>input_key</port>
       </slices>
       <slices cRef="input_map_collector" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="input_map_collector" transitive="false">
         <visualDescription h="10" w="10" x="28" y="30"/>

@@ -5,21 +5,21 @@
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000065d6722cda58d09e22591eb27ed35bdbac954a3743303cb1841c7f25641511591fbda883117c544b4488e063da9d2fab1f516e3f73ac70051ee029154d0cdc841cb03ddf3ccc3605fe5e53b229b56ac3d3f4381c17fc7d833a3e011be34f68919f3ee7c6661a747d75add8f323bccf48c6dcbd566b491668fefb6ce826c1c5cc" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper/Mapper.hpe" name="Mapper" package="br.ufc.mdcc.hpcshelf.mapreduce.computation" version="1.0.0.0">
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005979d29b10571dbb174edfba8c6442acbb8873bf3d836074fea9f692839c9a79bd5280a9ce5b45baa5d6e69898204c3c8a7cbdb8d1380abdf7e11e35a226d3b1c5d415bd73078efcdffdfdd96de1c2f2f3eb1eee00f0c5702bb65689b404dd863b6198db1e35e11773afd028774239ce42d0ede15f3442bc1fa54768bfabbe86" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper/Mapper.hpe" name="Mapper" package="br.ufc.mdcc.hpcshelf.mapreduce.computation" version="1.0.0.0">
         <visualDescription h="60" w="100" x="348" y="452">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="output_value_type" varName="TValue"/>
+        <parameter formFieldId="output_key_type" varName="TKey"/>
         <parameter formFieldId="input_key_type" varName="IKey"/>
         <parameter formFieldId="input_value_type" varName="IValue"/>
-        <parameter formFieldId="map_function" varName="MF"/>
+        <parameter formFieldId="output_value_type" varName="TValue"/>
         <parameter formFieldId="platform_maintainer" varName="M"/>
-        <parameter formFieldId="output_key_type" varName="TKey"/>
+        <parameter formFieldId="map_function" varName="MF"/>
         <port index_replica="0" localRef="task_map" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
           <visualDescription h="60" w="188" x="220" y="573">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###56557715"/>
+          <parameter formFieldId="task_port_type" varName="X###1709988466"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="76" y="20"/>
           </unitBounds>
@@ -28,8 +28,8 @@
           <visualDescription h="72" w="118" x="58" y="414">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###1575247063"/>
-          <parameter formFieldId="server_port_type" varName="X###998987625"/>
+          <parameter formFieldId="server_port_type" varName="X###1543555375"/>
+          <parameter formFieldId="client_port_type" varName="X###510487899"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="46" y="8"/>
           </unitBounds>
@@ -38,8 +38,8 @@
           <visualDescription h="63" w="100" x="412" y="408">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###957861129"/>
-          <parameter formFieldId="server_port_type" varName="X###1234577191"/>
+          <parameter formFieldId="server_port_type" varName="X###2038080802"/>
+          <parameter formFieldId="client_port_type" varName="X###2118279093"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -109,10 +109,10 @@
       <visualDescription h="60" w="100" x="631" y="553">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="input_key_type" varName="IKey"/>
       <parameter formFieldId="output_item_value_type" varName="TValue"/>
-      <parameter formFieldId="input_value_type" varName="IValue"/>
+      <parameter formFieldId="input_key_type" varName="IKey"/>
       <parameter formFieldId="output_item_key_type" varName="TKey"/>
+      <parameter formFieldId="input_value_type" varName="IValue"/>
       <unitBounds facet="0" facet_instance="0" parallel="false" uRef="map_function">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -211,6 +211,10 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_map" sRef="task_map"/>
       </port>
+      <port name="output">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_data" sRef="map_function"/>
+      </port>
       <port name="map_key">
         <visualDescription h="10" w="10" x="15" y="4"/>
         <slice pRef="input_key" sRef="map_function"/>
@@ -218,10 +222,6 @@
       <port name="map_value">
         <visualDescription h="10" w="10" x="46" y="20"/>
         <slice pRef="input_value" sRef="map_function"/>
-      </port>
-      <port name="output">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_data" sRef="map_function"/>
       </port>
       <parameter iname="IComputeHost" order="0" parid="platform_maintainer" uname="compute_host" varid="M"/>
       <parameter iname="IMapFunction" order="5" parid="map_function" uname="map_function" varid="MF"/>

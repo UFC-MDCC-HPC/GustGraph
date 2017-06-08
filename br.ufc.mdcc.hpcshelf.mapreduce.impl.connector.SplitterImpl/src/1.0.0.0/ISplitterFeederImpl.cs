@@ -43,7 +43,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 					unit_ref [j] = new Tuple<int,int> (i, k);
 			}				
 				
-			Console.WriteLine ("{0}: ISplitterFeeder : ENTER LOOP",this.Rank);
+            Console.WriteLine ("<{0},{1}>: ISplitterFeeder : ENTER LOOP", this.Rank, this.ThisFacetInstance);
 
 			CompletedStatus status;
 
@@ -52,7 +52,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 			{
 				end_computation = true;
 
-				Console.WriteLine ("{0}: ISplitterFeeder : TRY READ CHUNK !", this.Rank);
+				Console.WriteLine ("<{0},{1}>: ISplitterFeeder : TRY READ CHUNK !", this.Rank, this.ThisFacetInstance);
 
 				IList<int> inactive_senders = new List<int>();
 				IList<int> active_senders = new List<int>();
@@ -66,11 +66,11 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 					Task_binding_split_perform.invoke (PERFORM.name, out sync_perform);
 
-					Console.WriteLine ("{0}: ISplitterFeeder : PERFORM started !",this.Rank);
+					Console.WriteLine ("<{0},{1}>: ISplitterFeeder : PERFORM started !",this.Rank, this.ThisFacetInstance);
 
 					foreach (int i in active_senders) 
 					{					
-						Console.WriteLine ("{0}: ISplitterFeeder : BEGIN RECEIVE FROM SENDER {1} !",this.Rank, i);
+                        Console.WriteLine ("<{0},{1}>: ISplitterFeeder : BEGIN RECEIVE FROM SENDER <{2},{3}> !",this.Rank, this.ThisFacetInstance, unit_ref[i].Item1, unit_ref[i].Item2);
 
 						IList<IKVPairInstance<IKey,IValue>> buffer;
 
@@ -85,7 +85,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 						foreach (IKVPairInstance<IKey,IValue> kv in buffer)
 							output_instance.put (kv);
 						
-						Console.WriteLine ("{0}: ISplitterFeeder : END RECEIVE FROM SENDER {1} !",this.Rank, i);
+						Console.WriteLine ("<{0},{1}>: ISplitterFeeder : END RECEIVE FROM SENDER {2} !",this.Rank, this.ThisFacetInstance, i);
 					}
 
 					if (has_chunk)
@@ -95,7 +95,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 					foreach (int i in inactive_senders)
 						active_senders.Remove (i);
 
-					Console.WriteLine ("{0}: ISplitterFeeder : FINISH CHUNK !",this.Rank);
+					Console.WriteLine ("<{0},{1}>: ISplitterFeeder : FINISH CHUNK !",this.Rank, this.ThisFacetInstance);
 
 					output_instance.finish ();
 
@@ -105,7 +105,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 					Task_binding_split_chunk_ready.invoke (CHUNK_READY.name);
 				}
 			}
-			Console.WriteLine ("{0}: ISplitterFeeder : END !",this.Rank);
+			Console.WriteLine ("<{0},{1}>: ISplitterFeeder : END !",this.Rank);
 		}
 	}
 }

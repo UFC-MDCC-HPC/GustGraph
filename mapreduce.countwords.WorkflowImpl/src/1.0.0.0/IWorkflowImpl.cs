@@ -28,20 +28,23 @@ using br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType;
 
 namespace mapreduce.countwords.WorkflowImpl 
 {
-	public class IWorkflowImpl<M> :br.ufc.pargo.hpe.kinds.Workflow ,IWorkflow<M> 
-		where M:ISAFeHost
-	{
-		public override void after_initialize () 
-		{
-			this.SWLOrchestration = SWLPort.Client.Workflow;
-		}
+    public class IWorkflowImpl<M> : br.ufc.pargo.hpe.kinds.Workflow, IWorkflow<M>
+        where M : ISAFeHost
+    {
+        public override void main()
+        {
+            Console.WriteLine("WORKFLOW IMPL !!!");
+            this.SWLOrchestration = SWLPort.Client.Workflow;
+            base.main();
+        }
 
-		private ISWLWorkflowBinding swl_port = null;
-		private ISWLWorkflowBinding SWLPort { 
-			get { 				
-				return swl_port == null ? (ISWLWorkflowBinding)this.Services.getPort ("swl_port") : swl_port;
-			}
-		}
-
-	}
+        private ISWLWorkflowBinding swl_port = null;
+        private ISWLWorkflowBinding SWLPort
+        {
+            get
+            {
+                return swl_port == null ? (ISWLWorkflowBinding)this.Services.getPort("swl_port") : swl_port;
+            }
+        }
+    }
 }

@@ -73,7 +73,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl
 						Map_key.Instance = bin.Key;
 						Map_value.Instance = bin.Value;
 						Map_function.go ();
-						//Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 4");
+						Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 4");
 					}
 
 					sync_perform.wait ();

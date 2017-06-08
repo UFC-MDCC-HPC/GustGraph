@@ -5,14 +5,14 @@
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e3c44ca2ef7242c86460d1aea3bb82e492795e45abf56be0ade7e944937e65848abe9fcb6250aea28274e4559ede0985ccde0970a7b645771a400d79607dfbd24db8c729a4a15d9d97424611a73a35bf5e1098d91ca6c67391c84cbe1803677226afa24134aae8c0a081323c2457399f4a8a68bd5a5cc54d541db0f832ad4294" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction/MapFunction.hpe" name="MapFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a5cb967d5a6b3a816cc361067d339f425870062e008d18221610ce5f926422874e04b50a9b80c85be359683ebccb0dea22643e9c10e7d3d8d570f846943900952b86fcfd50917c2d075f3225fae488cb57a7847016fa1b56bad874b411e77853c6c5fba9695637b80ed155fd297789d96669f56a53ec50715d28b0005b4833e4" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction/MapFunction.hpe" name="MapFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" version="1.0.0.0">
         <visualDescription h="60" w="100" x="328" y="245">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="input_key_type" varName="IKey"/>
         <parameter formFieldId="output_item_value_type" varName="TValue"/>
-        <parameter formFieldId="input_value_type" varName="IValue"/>
+        <parameter formFieldId="input_key_type" varName="IKey"/>
         <parameter formFieldId="output_item_key_type" varName="TKey"/>
+        <parameter formFieldId="input_value_type" varName="IValue"/>
         <port index_replica="0" localRef="input_key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="true">
           <visualDescription h="60" w="100" x="130" y="359">
             <color b="255" g="255" r="255"/>
@@ -33,7 +33,7 @@
           <visualDescription h="69" w="188" x="244" y="453">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###591499595"/>
+          <parameter formFieldId="item_type" varName="X###1717643607"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="iterator">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>

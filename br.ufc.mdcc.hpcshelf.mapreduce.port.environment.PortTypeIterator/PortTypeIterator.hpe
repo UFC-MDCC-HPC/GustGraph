@@ -5,7 +5,7 @@
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c5904b87007923b74a821c561f452c879bad5e579679b60f872ea8a1bb53a10e371a4895a890a3fcff914a47e27069f23005667dc0390e374d24e6ed67e36c46fb23595fa9619b08b8b25cd5fe0c1e2c365b779bf966ca6895dd94ca44d0a2b738aefc7977aeaa51a33b42a53fd7b93f0d00348fbd019ae22c9326bc3ddc6aa8" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ebf5bcf89a03f3e3be613256d4d4fe1be6f79d17a4c6d2c7b92a9938b7d0f4abf79a9e60a9a7d23d99cce2b1875a6d91d25816af710c7fbd5f58304bcedf6fff80be0a547b38c95437d7057e73e97a66742ce6b7405067db3030597fd4ffd70a497103468cbdb36b8e0041137ddd9adb81855cbc3d44338f37a69ceaedc19b92" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
         <visualDescription h="60" w="100" x="406" y="502">
           <color b="255" g="255" r="255"/>
         </visualDescription>

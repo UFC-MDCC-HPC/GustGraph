@@ -13,8 +13,8 @@
       <visualDescription h="60" w="187" x="238" y="357">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="client_port_type" varName="C"/>
       <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
       <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="51" y="2"/>
       </unitBounds>

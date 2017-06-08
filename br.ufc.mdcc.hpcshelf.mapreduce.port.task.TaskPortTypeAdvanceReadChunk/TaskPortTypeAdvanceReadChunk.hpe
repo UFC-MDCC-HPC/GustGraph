@@ -5,7 +5,7 @@
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000004daa1ee2938e29c032e1bfd578bc01e6b54f60176df2b00f4dee47b56f06c8456587bbdf638394e9571f559e8927ca4f05ddf3db00078919c5eb020f9a90765ebde8ceada7d0b17dac25fa926e084deb80271de15d62a4df665e31a30b644531ed8c9257cc26d4e877ec42492c86527b3ff535411b8f68bc7019a638b767f69c" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/TaskPortType.hpe" name="TaskPortType" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d105fc446f0023126cdf1179646a2a96940b6923bfd7b15ccb07145f710a464613de3316049df4fd1dda94c41aa290729e14272c11cd963f93998f554429f6fee96dcf8faba8764f68089c39e04b2dce89de0ed026d399a44df48d76ce469ebea4c4eb4559dead8a76c53e708d39ffa37348f5e4ec71fb979c0aa9eb9fc4b5ad" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/TaskPortType.hpe" name="TaskPortType" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
         <visualDescription h="60" w="100" x="142" y="133">
           <color b="255" g="255" r="255"/>
         </visualDescription>

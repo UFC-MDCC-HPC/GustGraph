@@ -5,21 +5,21 @@
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000006d25f85e56b7095a8bcfb18f74af86940eab579a6d829d9ad4bd64117f77e60463f0a17109772abb1fe03f5ea9aefc34ef2c181e3707522d61e00cea799eb02c127c1b4938344e6ff202c7325fd317ad244e5b944c8b6aba258c1aa6af3f8b6c987977512a58df9031c421f22a3620d57be7575298dad5fe962f46de66c977b2" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer/Reducer.hpe" name="Reducer" package="br.ufc.mdcc.hpcshelf.mapreduce.computation" version="1.0.0.0">
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001f40ffb293afece819fc1449a914b583e7e4ff66dd031b5eaca59d618e3af62325274f3bfeb21a908fa38d0cb159f19196cc6a877dca8d5bc9328cb797b15a83e629a3dd88da01e93e3ecb9a253fc9878538bc08724e8d7972e56ca30f0a3225641472d058fafebf77c08a2108916d6da5f8b7c8b0450e6d5c2e5c5e81487db7" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer/Reducer.hpe" name="Reducer" package="br.ufc.mdcc.hpcshelf.mapreduce.computation" version="1.0.0.0">
         <visualDescription h="60" w="100" x="349" y="220">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="output_value_type" varName="OValue"/>
+        <parameter formFieldId="output_key_type" varName="OKey"/>
         <parameter formFieldId="input_key_type" varName="TKey"/>
         <parameter formFieldId="input_value_type" varName="TValue"/>
-        <parameter formFieldId="platform_maintainer" varName="M"/>
         <parameter formFieldId="reduce_function" varName="RF"/>
-        <parameter formFieldId="output_key_type" varName="OKey"/>
+        <parameter formFieldId="output_value_type" varName="OValue"/>
+        <parameter formFieldId="platform_maintainer" varName="M"/>
         <port index_replica="0" localRef="task_reduce" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
           <visualDescription h="60" w="182" x="269" y="455">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1218014695"/>
+          <parameter formFieldId="task_port_type" varName="X###871346412"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -28,8 +28,8 @@
           <visualDescription h="60" w="112" x="457" y="378">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###1945992229"/>
-          <parameter formFieldId="server_port_type" varName="X###115448993"/>
+          <parameter formFieldId="server_port_type" varName="X###1346131486"/>
+          <parameter formFieldId="client_port_type" varName="X###720707195"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -38,8 +38,8 @@
           <visualDescription h="60" w="111" x="51" y="234">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###1173492110"/>
-          <parameter formFieldId="server_port_type" varName="X###392078722"/>
+          <parameter formFieldId="server_port_type" varName="X###814577975"/>
+          <parameter formFieldId="client_port_type" varName="X###2125190938"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -109,10 +109,10 @@
       <visualDescription h="60" w="100" x="676" y="326">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="output_value_type" varName="OValue"/>
+      <parameter formFieldId="output_key_type" varName="OKey"/>
       <parameter formFieldId="input_key_type" varName="TKey"/>
       <parameter formFieldId="input_value_type" varName="TValue"/>
-      <parameter formFieldId="output_key_type" varName="OKey"/>
+      <parameter formFieldId="output_value_type" varName="OValue"/>
       <unitBounds facet="0" facet_instance="0" parallel="false" uRef="reduce_function">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>

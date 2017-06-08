@@ -22,11 +22,11 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 
 		public override void after_initialize ()
 		{
+			TraceFlag = true;
+            Console.WriteLine("this.UnitSizeInFacet.Count=" + this.UnitSizeInFacet.Count);
 			foreach (KeyValuePair<int,IDictionary<string,int>> rrr in this.UnitSizeInFacet)
 				foreach (KeyValuePair<string,int> sss in rrr.Value)
-					Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": : TASK PORT --- facet_instance=" + rrr.Key + " / unit_id=" + sss.Key + " / size=" + sss.Value + " --- " + this.CID.getInstanceName());
-			TraceFlag = true;
-			Channel.TraceFlag = true;
+					Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": : TASK PORT --- facet_instance=" + rrr.Key + " / unit_id=" + sss.Key + " / size=" + sss.Value + " --- " + this.CID.getInstanceName());
 		}
 
 		public new bool TraceFlag 
@@ -44,9 +44,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 
 		private RequestList synchronize_action(object action_id)
 		{
-		//	Console.WriteLine ("ActionDef.action_ids.Count = " + ActionDef.action_ids.Count);
-
-			Console.WriteLine ("action is {0}", action_id);
+            Console.WriteLine ("action is {0} {1}", action_id, this.TraceFlag);
 
 			foreach (string k in ActionTags.action_tags.Keys)
 				Console.WriteLine ("ActionTags.action_tags[{0}]={1}", k, ActionTags.action_tags[k]);
@@ -57,33 +55,31 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 
 			RequestList request_list = new RequestList ();
 
-			Trace.WriteLineIf(this.TraceFlag==true, this.ThisFacetInstance + "/" + this.Rank  + ": synchronize_action " + action_id + " -1");
-
-			Trace.WriteLineIf(this.TraceFlag==true, this.ThisFacetInstance + "/" + this.Rank  + ": synchronize_action " + action_id + " 0");
+			Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": synchronize_action " + action_id + " tag=" + tag);
 
 			foreach (KeyValuePair<int,IDictionary<string,int>> facet in Channel.UnitSizeInFacet)
 				if (facet.Key != this.ThisFacetInstance)
 					foreach (KeyValuePair<string,int> unit_team in facet.Value) 
 						for (int i=0; i < unit_team.Value; i++)
 						{
-							Trace.WriteLineIf(this.TraceFlag==true, "synchronize_action " + action_id + " LOOP SEND " + facet.Key + "/" + i);
-							Request req = Channel.ImmediateSend<object> (value, new Tuple<int, int> (facet.Key, i), tag);
+							Console.WriteLine(this.ThisFacetInstance + "/" + ": synchronize_action " + action_id + " LOOP SEND " + facet.Key + "/" + i);
+							IRequest req = Channel.ImmediateSend<object> (value, new Tuple<int, int> (facet.Key, i), tag);
 							request_list.Add (req);
 						}
 			
-			Trace.WriteLineIf(this.TraceFlag==true, this.ThisFacetInstance + "/" + this.Rank  + ": synchronize_action " + action_id + " 1");
+			Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": synchronize_action " + action_id + " 1");
 
 			foreach (KeyValuePair<int,IDictionary<string,int>> facet in Channel.UnitSizeInFacet)
 				if (facet.Key != this.ThisFacetInstance)
 					foreach (KeyValuePair<string,int> unit_team in facet.Value) 
 						for (int i=0; i < unit_team.Value; i++)
 						{
-							Trace.WriteLineIf(this.TraceFlag==true, "synchronize_action " + action_id + " LOOP RECV " + facet.Key + "/" + i);
-							ReceiveRequest req = Channel.ImmediateReceive<object> (new Tuple<int, int> (facet.Key, i), tag);
+							Console.WriteLine(this.ThisFacetInstance + "/" + ": synchronize_action " + action_id + " LOOP RECV " + facet.Key + "/" + i);
+							IReceiveRequest req = Channel.ImmediateReceive<object> (new Tuple<int, int> (facet.Key, i), tag);
 							request_list.Add (req);
 						}
 
-			Trace.WriteLineIf(this.TraceFlag==true, this.ThisFacetInstance + "/" + this.Rank  + ": synchronize_action " + action_id + " 2");
+			Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": synchronize_action " + action_id + " 2");
 			return request_list;
 
 		}
@@ -101,12 +97,12 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 
 			lock (invoke_lock)
 			{
-				Trace.WriteLineIf (this.TraceFlag == true, this.ThisFacetInstance + "/" + this.Rank + ": INVOKE SYNC " + action_id + " BEFORE LOCK");
+				Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": INVOKE SYNC " + action_id + " BEFORE LOCK");
 				RequestList request_list = synchronize_action (action_id);
 
-				Trace.WriteLineIf (this.TraceFlag == true, this.ThisFacetInstance + "/" + this.Rank + ": INVOKE SYNC " + action_id + " BEFORE WAIT ALL");
+				Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": INVOKE SYNC " + action_id + " BEFORE WAIT ALL");
 				request_list.WaitAll ();
-				Trace.WriteLineIf (this.TraceFlag == true, this.ThisFacetInstance + "/" + this.Rank + ": INVOKE SYNC " + action_id + " AFTER WAIT ALL");
+				Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": INVOKE SYNC " + action_id + " AFTER WAIT ALL");
 			}
 		}
 
@@ -115,37 +111,37 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 
 		public override void invoke (object action_id, out IActionFuture future)
 		{
-			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE FUTURE " + action_id + " 0");
+			Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": INVOKE FUTURE " + action_id + " 0");
 
 			RequestList request_list = synchronize_action (action_id);
 
-			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE FUTURE " + action_id + " 1");
+			Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": INVOKE FUTURE " + action_id + " 1");
 
 			ManualResetEvent sync = new ManualResetEvent (false);
 
 			ActionFuture future_ = new ActionFuture(request_list, sync);
 			future = future_;
 
-			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE FUTURE " + action_id + " 2");
+			Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": INVOKE FUTURE " + action_id + " 2");
 
 			Thread t = new Thread(new ThreadStart(() => handle_request(future_, sync)));
 
-			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE FUTURE " + action_id + " 3");
+			Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": INVOKE FUTURE " + action_id + " 3");
 
 			t.Start();
 
-			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE FUTURE " + action_id + " 4");
+			Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": INVOKE FUTURE " + action_id + " 4");
 		}
 
 		void handle_request (ActionFuture future, ManualResetEvent sync)
 		{
-			Trace.WriteLineIf (this.TraceFlag == true, this.ThisFacetInstance + "/" + this.Rank  + ": HANDLE REQUEST 1");
+			Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": HANDLE REQUEST 1");
 			future.RequestList.WaitAll ();
-			Trace.WriteLineIf (this.TraceFlag == true, this.ThisFacetInstance + "/" + this.Rank  + ": HANDLE REQUEST 2");
+			Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": HANDLE REQUEST 2");
 			sync.Set ();
-			Trace.WriteLineIf (this.TraceFlag == true, this.ThisFacetInstance + "/" + this.Rank  + ": HANDLE REQUEST 3");
+			Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": HANDLE REQUEST 3");
 			future.setCompleted ();
-			Trace.WriteLineIf (this.TraceFlag == true, this.ThisFacetInstance + "/" + this.Rank  + ": HANDLE REQUEST 4");
+			Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": HANDLE REQUEST 4");
 		}
 
 		void handle_request (ActionFuture future, ManualResetEvent sync, Action reaction)
@@ -156,24 +152,24 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 
 		public override void invoke (object action_id, Action reaction, out IActionFuture future)
 		{
-			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE ACTION " + action_id + " 0");
+			Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": INVOKE ACTION " + action_id + " 0");
 
 			RequestList request_list = synchronize_action (action_id);
 
-			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE ACTION " + action_id + " 1");
+			Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": INVOKE ACTION " + action_id + " 1");
 
 			ManualResetEvent sync = new ManualResetEvent (false);
 
 			ActionFuture future_ = new ActionFuture(request_list, sync);
 			future = future_;
 
-			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE ACTION " + action_id + " 2");
+			Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": INVOKE ACTION " + action_id + " 2");
 
 			Thread t = new Thread(new ThreadStart(() => handle_request(future_, sync, reaction)));
 
 			t.Start();
 
-			Trace.WriteLineIf(this.TraceFlag==true,  this.ThisFacetInstance + "/" + this.Rank  + ": INVOKE ACTION " + action_id + " 3");
+			Console.WriteLine(this.ThisFacetInstance + "/" + /* this.Rank  + */": INVOKE ACTION " + action_id + " 3");
 
 			//return t;
 		}

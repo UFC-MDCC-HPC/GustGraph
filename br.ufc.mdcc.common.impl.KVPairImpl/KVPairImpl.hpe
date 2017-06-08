@@ -5,7 +5,7 @@
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ebb3897a2bb06809a6732f15788c21fa415682537f4977e12f8ad85082530fed15f306d2cdcda0d5988114ad38a759926b34dd5c58849954752ddab4ba6f75245c839ca636bc2804daefbbc00f57eda4a970464faac4a7b44541b5fc51f99509fc026596e1ccfa729c1398ba6d04d3eeb4c1186d157d7f6b757c04b55eb972ab" localRef="base" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" name="KVPair" package="br.ufc.mdcc.common" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ed362c1bf0ae8a59a3ff8b6f17355795a792ae618bddca9fd7fc576ac5dc67e44aa4855845b707a7d8631d4ff40c00c65e6f9defe96afbacde3e5ebc8de92956b19fab266b141c5737255df5c49bc6e74c71bce97309093e965ac5b427a36a1b5bbb853e141dfb7ef8a3bb1dcfa5c2a6277f14e75a2dc0d248a2851d4e6de191" localRef="base" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" name="KVPair" package="br.ufc.mdcc.common" version="1.0.0.0">
         <visualDescription h="60" w="100" x="177" y="278">
           <color b="255" g="255" r="255"/>
         </visualDescription>

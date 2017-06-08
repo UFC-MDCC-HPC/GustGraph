@@ -14,7 +14,7 @@ namespace br.ufc.mdcc.hpcshelf.workflow.impl.environment.SWLWorkflowBindingImpl
 		{
 		}
 
-		private ManualResetEvent e = new ManualResetEvent(false);
+        private ManualResetEvent e = new ManualResetEvent(false);
 
 		public ISWLPortType Client { get {	e.WaitOne (); return server; } }
 

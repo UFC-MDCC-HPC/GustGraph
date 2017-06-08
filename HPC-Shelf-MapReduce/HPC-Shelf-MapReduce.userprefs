@@ -1,12 +1,29 @@
-﻿<Properties StartupItem="HPC-Shelf-MapReduce/HPC-Shelf-MapReduce.csproj">
+﻿<Properties StartupConfiguration="{7AE08D52-2EA4-48E4-B7B9-379C3789B2B5}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.workflow.impl.environment.SWLWorkflowBindingImpl/src/1.0.0.0/BaseISWLWorkflowBindingImpl.cs">
+    <Files>
+      <File FileName="../br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl/src/1.0.0.0/IChannelRootImpl.cs" Line="332" Column="44" />
+      <File FileName="../br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl/src/1.0.0.0/IChannelImpl.cs" Line="151" Column="44" />
+      <File FileName="../br.ufc.mdcc.hpc.storm.binding.channel.impl.SAFeBindingImpl/src/1.0.0.0/IChannelImpl.cs" Line="5" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl/src/1.0.0.0/TaskPort.cs" Line="103" Column="118" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl/src/1.0.0.0/ISplitterFeederImpl.cs" Line="100" Column="32" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl/src/1.0.0.0/ISplitterCollectorImpl.cs" Line="82" Column="105" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.EnvironmentBindingReadData/src/1.0.0.0/IReadDataImpl.cs" Line="7" Column="7" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl/src/1.0.0.0/IMapperImpl.cs" Line="57" Column="63" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType/src/1.0.0.0/ISWLPortType.cs" Line="6" Column="24" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding/src/1.0.0.0/ISWLWorkflowBinding.cs" Line="7" Column="81" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.workflow.impl.environment.SWLWorkflowBindingImpl/src/1.0.0.0/BaseISWLWorkflowBindingImpl.cs" Line="32" Column="31" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/MapReduce-for-HPE/MapReduce-for-HPE/Program.cs" line="24" column="16" />
       <Breakpoint file="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/MapReduce-for-HPE/MapReduce-for-HPE/Program.cs" line="27" column="29" />
       <Breakpoint file="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/src/1.0.0.0/IClientBase.cs" line="2" column="1" />
+      <Breakpoint file="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/mapreduce.countwords.SystemImpl/src/1.0.0.0/IPeer1Impl.cs" line="41" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.HPC-Shelf-MapReduce PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
 </Properties>

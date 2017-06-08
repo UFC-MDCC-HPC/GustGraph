@@ -24,24 +24,24 @@ namespace mapreduce.countwords.ApplicationImpl {
 	{        
         public override void main() 
 		{
-			
+            Console.WriteLine("APPLICATION MAIN RUN !!!");
         }
 
 		public override void after_initialize ()
 		{
-			this.SWLPort.Server = new SWLPortTypeImpl ();
+	//		this.SWLPort.Server = new SWLPortTypeImpl ();
 		}
 
-		private ISWLWorkflowBinding swl_port = null;
-		private ISWLWorkflowBinding SWLPort { 
-			get { 				
-				return swl_port == null ? (ISWLWorkflowBinding)this.Services.getPort ("swl_port") : swl_port;
-			}
-		}
+	//	private ISWLWorkflowBinding swl_port = null;
+	//	private ISWLWorkflowBinding SWLPort { 
+	//		get { 				
+	//			return swl_port == null ? (ISWLWorkflowBinding)this.Services.getPort ("swl_port") : swl_port;
+	//		}
+	//	}
     }
 
 
-	public class SWLPortTypeImpl : ISWLPortType
+	/*public class SWLPortTypeImpl : ISWLPortType
 	{
 		public string Architecture { 
 			get 
@@ -62,5 +62,5 @@ namespace mapreduce.countwords.ApplicationImpl {
 				return swl_code;
 			} 
 		}
-	}
+	}*/
 }

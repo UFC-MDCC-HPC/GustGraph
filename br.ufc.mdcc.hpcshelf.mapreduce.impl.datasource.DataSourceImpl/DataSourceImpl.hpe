@@ -5,7 +5,7 @@
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000033fe2230098fdbccc0b5b5558d8b4fa7a8162b34565dd1570a8eb1ebd8cb92cb0f25516f245e9d186bcff0237232f6b316a7a5fba7039d452dadc6d09930b0d543cb427b48aa5cbc8268fc7ef756db3e08902306a56c39e2336db64fd7f3cbc4fa020aabdef996330d5d605039f3dce491536f8e45d026753758382f06b863c7" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource/DataSource.hpe" name="DataSource" package="br.ufc.mdcc.hpcshelf.mapreduce.datasource" version="1.0.0.0">
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000006997be0c1e913207042e229153765a28e890f3cd64aa66367cab6b3a1dd723253a8bc9f1197d14e976bf75f4ea9511738d1c2604734a6879e8b93f4382951fd3662963da8b0a0e790be69d4a21e80412cf49b4e738923901e0742a0ef7c8f9740f2c67c779c16a7eb0b25125652b272e5972b81b3fbcf60d4cc1fa71494d24b8" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource/DataSource.hpe" name="DataSource" package="br.ufc.mdcc.hpcshelf.mapreduce.datasource" version="1.0.0.0">
         <visualDescription h="60" w="100" x="232" y="467">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -14,8 +14,8 @@
           <visualDescription h="105" w="105" x="195" y="377">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###412455895"/>
-          <parameter formFieldId="server_port_type" varName="X###289717063"/>
+          <parameter formFieldId="server_port_type" varName="X###1901972692"/>
+          <parameter formFieldId="client_port_type" varName="X###1454713308"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="51" y="2"/>
           </unitBounds>

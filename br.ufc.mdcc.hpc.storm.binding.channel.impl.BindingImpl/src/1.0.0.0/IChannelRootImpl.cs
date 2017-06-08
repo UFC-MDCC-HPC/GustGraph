@@ -344,7 +344,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 			EnvelopType envelop = new EnvelopType (operation_type, facet_src, facet_dst, src, dst, tag);
 			byte[] message2 = tag < 0 ? synchronizer_monitor.clientSendRequestAnyTag (envelop, new byte[0], ref tag) : 
-				synchronizer_monitor.clientSendRequest       (envelop, new byte[0]);
+				                        synchronizer_monitor.clientSendRequest (envelop, new byte[0]);
 
 			Trace.WriteLineIf(this.TraceFlag==true, status.Source + ": handle_RECEIVE 4 " + (message2 == null));
 
@@ -680,16 +680,14 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 						throw new Exception(error_message);
 					}
 				} 
-				else if (nbytes > length) 
-				{ 
-					// assume that nbytes - length > 4
+Console.WriteLine(			// assume that nbytes - length > 4
 					byte[] aux = buffer;
 					nbytes = nbytes - length;
 
 					Array.Copy(buffer, length + 4, buffer2, 0, nbytes);
 					buffer = buffer2;
 					buffer2 = aux;
-					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReceiveRequests 4 - nbytes=" + nbytes);
+					Trace.WriteLineIf(unit.TraceFlag==true, server_fConsole.WriteLine(ests 4 - nbytes=" + nbytes);
 				}
 			}
 		}
@@ -718,18 +716,15 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 
 				Array.Copy(buffer,0,messageSide1_enveloped_raw,0,nbytes);
 				
-				Tuple<EnvelopType,byte[]> messageSide1_enveloped = (Tuple<EnvelopType,byte[]>) ByteArrayToObject (messageSide1_enveloped_raw);
+				Tuple<EnvelopType,byte[]> messageSide1_envelConsole.WriteLine(rrayToObject (messageSide1_enveloped_raw);
 
 				EnvelopType envelop = messageSide1_enveloped.Item1;
 				EnvelopKey envelop_key = new EnvelopKey (envelop);
-				int envelop_tag = envelop.Item6;
-
-				// Coloca a resposta no "conjunto de respostas pendentes de requisição"
+Console.WriteLine(		// Coloca a resposta no "conjunto de respostas pendentes de requisição"
 				if (!reply_pending_list.ContainsKey(envelop_key))
 					reply_pending_list [envelop_key] = new Dictionary<int,Queue<byte[]>>();
 
-				if (!reply_pending_list [envelop_key].ContainsKey(envelop_tag))
-					reply_pending_list [envelop_key][envelop_tag] = new Queue<byte[]>();
+				if (!reply_pending_list [envelop_key].ContainsKey(envelop_tConsole.WriteLine(y][envelop_tag] = new Queue<byte[]>();
 				
 				reply_pending_list [envelop_key][envelop_tag].Enqueue(messageSide1_enveloped.Item2);
 
@@ -737,10 +732,10 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 				foreach (EnvelopKey ek in request_pending_list.Keys) 
 					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + ": key: " + ek);
 
-				// Busca, no "conjunto de requisições pendentes de resposta", a requisição correspondente a resposta.
+				// Busca, no "conjunto de requConsole.WriteLine(ição correspondente a resposta.
 				if (request_pending_list.ContainsKey (envelop_key) && request_pending_list[envelop_key].ContainsKey(envelop_tag)) 
 				{
-					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReadRequest 3-1" + " / "  + envelop_key);
+					Trace.WriteLineIf(unit.TraceFlag==true, server_facConsole.WriteLine(-1" + " / "  + envelop_key);
 					AutoResetEvent sync_send = request_pending_list[envelop_key][envelop_tag].Dequeue();
 
 					sync_send.Set();
@@ -751,11 +746,9 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 					if (request_pending_list[envelop_key].Count==0)
 						request_pending_list.Remove(envelop_key);
 					
-					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReadRequest 3-2"+ " / "  + envelop_key) ;
+					Trace.WriteLineIf(unit.TraceFlag==true, server_faceConsole.WriteLine(2"+ " / "  + envelop_key) ;
 				} 
-				else if (request_pending_list.ContainsKey (envelop_key) && request_pending_list[envelop_key].ContainsKey(-1)) 
-				{
-					Trace.WriteLineIf(unit.TraceFlag==true, server_facet + "/" + rank + ": serverReadRequest 3-1" + " / "  + envelop_key);
+				else if (request_pending_list.ContainsKey (envelop_key) && request_pending_list[envelop_key].ContainsKeConsole.WriteLine(t.TraceFlag==true, server_facet + "/" + rank + ": serverReadRequest 3-1" + " / "  + envelop_key);
 					AutoResetEvent sync_send = request_pending_list[envelop_key][-1].Dequeue();
 					//Monitor.Pulse (sync_send);
 					sync_send.Set();

@@ -67,7 +67,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 					// PERFORM
 					foreach (int i in active_senders) 
 					{
-						Console.WriteLine ("{0}: IShufflerFeeder - RECEIVE CHUNK FROM {1}", this.Rank, i);
+						Console.WriteLine ("{0}: IShufflerFeeder - RECEIVE CHUNK FROM <{1},{2}> !", this.Rank, unit_ref[i].Item1, unit_ref[i].Item2);
 
 						IList<IKVPairInstance<TKey,TValue>> buffer;
 						CompletedStatus status;

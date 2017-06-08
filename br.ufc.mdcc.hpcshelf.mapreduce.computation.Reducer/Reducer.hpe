@@ -50,10 +50,10 @@
       <visualDescription h="63" w="132" x="97" y="74">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="output_value_type" varName="OValue"/>
+      <parameter formFieldId="output_key_type" varName="OKey"/>
       <parameter formFieldId="input_key_type" varName="TKey"/>
       <parameter formFieldId="input_value_type" varName="TValue"/>
-      <parameter formFieldId="output_key_type" varName="OKey"/>
+      <parameter formFieldId="output_value_type" varName="OValue"/>
       <port index_replica="0" localRef="continuation_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
         <visualDescription h="60" w="170" x="0" y="193">
           <color b="255" g="255" r="255"/>
@@ -66,7 +66,7 @@
         <visualDescription h="60" w="181" x="64" y="390">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###1538485263"/>
+        <parameter formFieldId="value_type" varName="X###1373620688"/>
         <parameter formFieldId="key_type" varName="TKey"/>
         <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
           <visualDescription h="20" w="20" x="137" y="20"/>
@@ -99,8 +99,8 @@
       <visualDescription h="60" w="112" x="457" y="378">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="client_port_type" varName="C0"/>
       <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C0"/>
       <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -109,8 +109,8 @@
       <visualDescription h="60" w="111" x="63" y="265">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="client_port_type" varName="C"/>
       <parameter formFieldId="server_port_type" varName="S0"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
       <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -190,7 +190,7 @@
     <supplyParameter cRef="output_item_ttype" direct="true" varName="OUTPUT_REDUCE"/>
     <supplyParameter cRef="output_item_type" direct="true" varName="OUT_REDUCE"/>
     <supplyParameter cRef="task_port_type_advance" direct="true" varName="TAdvance"/>
-    <innerComponent localRef="C###1538485263" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###1373620688" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="152" x="455" y="455">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -199,15 +199,15 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1538485263" varName="X###1538485263"/>
+    <supplyParameter cRef="C###1373620688" varName="X###1373620688"/>
     <interface iRef="IReducer" nArgs="6">
-      <slice isRef="feed_pairs">
-        <originRef cRef="feed_pairs" iRef="IBindingDirect"/>
-        <visualDescription h="10" w="10" x="69" y="14"/>
-      </slice>
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IBindingDirect"/>
         <visualDescription h="10" w="10" x="46" y="26"/>
+      </slice>
+      <slice isRef="feed_pairs">
+        <originRef cRef="feed_pairs" iRef="IBindingDirect"/>
+        <visualDescription h="10" w="10" x="69" y="14"/>
       </slice>
       <slice isRef="task_reduce">
         <originRef cRef="task_reduce" iRef="ITaskPort"/>
@@ -246,13 +246,13 @@
       <visualDescription h="40" w="91" x="226" y="204">
         <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="feed_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="feed_pairs"/>
-      </port>
       <port name="collect_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_pairs" sRef="collect_pairs"/>
+      </port>
+      <port name="feed_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="feed_pairs"/>
       </port>
       <port name="task_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -262,17 +262,17 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_reduce" sRef="platform_reduce"/>
       </port>
-      <port name="continuation_value">
+      <port name="output_value">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="continuation_value" sRef="reduce_function"/>
+        <slice pRef="output_value" sRef="reduce_function"/>
       </port>
       <port name="input_values">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_values" sRef="reduce_function"/>
       </port>
-      <port name="output_value">
+      <port name="continuation_value">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_value" sRef="reduce_function"/>
+        <slice pRef="continuation_value" sRef="reduce_function"/>
       </port>
       <parameter iname="IMaintainer" order="0" parid="platform_maintainer" uname="maintainer" varid="M"/>
       <parameter iname="IReduceFunction" order="5" parid="reduce_function" uname="reduce_function" varid="RF"/>
@@ -285,12 +285,6 @@
       </action>
     </interface>
     <unit facet="0" iRef="IReducer" multiple="true" private="false" replica="0" uRef="reducer" visibleInterface="true">
-      <slices cRef="output_value" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="output_value" transitive="true">
-        <visualDescription h="10" w="10" x="144" y="21"/>
-      </slices>
-      <slices cRef="feed_pairs" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="feed_pairs" transitive="false">
-        <visualDescription h="10" w="10" x="69" y="14"/>
-      </slices>
       <slices cRef="collect_pairs" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="collect_pairs" transitive="false">
         <visualDescription h="10" w="10" x="46" y="26"/>
       </slices>
@@ -300,17 +294,23 @@
       <slices cRef="input_values" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="input_values" transitive="true">
         <visualDescription h="10" w="10" x="11" y="25"/>
       </slices>
-      <slices cRef="platform_reduce" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_reduce" transitive="false">
-        <visualDescription h="10" w="10" x="11" y="26"/>
+      <slices cRef="feed_pairs" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="feed_pairs" transitive="false">
+        <visualDescription h="10" w="10" x="69" y="14"/>
       </slices>
       <slices cRef="task_reduce" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_reduce" transitive="false">
         <visualDescription h="10" w="10" x="0" y="23"/>
       </slices>
+      <slices cRef="platform_reduce" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_reduce" transitive="false">
+        <visualDescription h="10" w="10" x="11" y="26"/>
+      </slices>
+      <slices cRef="output_value" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="output_value" transitive="true">
+        <visualDescription h="10" w="10" x="144" y="21"/>
+      </slices>
       <slices cRef="reduce_function" inner_replica="0" slice_replica="0" uRef="reduce_function" sliceName="reduce_function" transitive="false">
         <visualDescription h="10" w="10" x="2" y="10"/>
-        <port>output_value</port>
         <port>continuation_value</port>
         <port>input_values</port>
+        <port>output_value</port>
       </slices>
       <slices cRef="output" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="output" transitive="false">
         <visualDescription h="10" w="10" x="60" y="25"/>

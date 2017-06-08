@@ -48,7 +48,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 			IActionFuture sync_perform;
 
-			Console.WriteLine ("{0}: ISplitterCollector : ENTER LOOP", this.Rank);
+			Console.WriteLine ("<{0},{1}>: ISplitterCollector : ENTER LOOP", this.Rank, this.ThisFacetInstance);
 
 			bool end_computation = false;
 			while (!end_computation) // new iteration
@@ -58,12 +58,12 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 				bool end_iteration = false;
 				while (!end_iteration) // take next chunk ...
 				{  
-					Console.WriteLine ("{0}: ISplitterCollector : TRY READ CHUNK !", this.Rank);
+					Console.WriteLine ("<{0},{1}>: ISplitterCollector : TRY READ CHUNK !", this.Rank, this.ThisFacetInstance);
 
 					Task_binding_split_read_chunk.invoke (READ_CHUNK.name);
 					Task_binding_split_perform.invoke (PERFORM.name, out sync_perform);
 
-					Console.WriteLine ("{0}: ISplitterCollector : PERFORM started !", this.Rank);	
+					Console.WriteLine ("<{0},{1}>: ISplitterCollector : PERFORM started !", this.Rank, this.ThisFacetInstance);	
 
 					IList<IKVPairInstance<IKey,IValue>>[] buffer = new IList<IKVPairInstance<IKey,IValue>>[m_size];
 					for (int i = 0; i < m_size; i++)
@@ -74,12 +74,12 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 					else
 						end_computation = false;
 
-					Console.WriteLine ("{0}: ISplitterCollector : START READING CHUNK ! {1}", this.Rank, end_iteration);
+					Console.WriteLine ("<{0},{1}>: ISplitterCollector : START READING CHUNK ! {2}", this.Rank, this.ThisFacetInstance, end_iteration);
 
 					int count = 0;
 					while (input_instance.fetch_next (out bin_object)) 
 					{
-						//Console.WriteLine ("{0}: ISplitterCollector : CHUNK {1}!", this.Rank, count);
+						Console.WriteLine ("<{0},{1}>: ISplitterCollector : CHUNK {2}!", this.Rank, this.ThisFacetInstance, count);
 						IKVPairInstance<IKey,IValue> item = (IKVPairInstance<IKey,IValue>)bin_object;
 						this.Input_key.Instance = item.Key;
 						Bin_function.go ();
@@ -96,7 +96,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 				}
 			}
 
-			Console.WriteLine ("{0}: ISplitterReduceCollector END COMPUTATION ", this.Rank);
+			Console.WriteLine ("<{0},{1}>: ISplitterReduceCollector END COMPUTATION ", this.Rank, this.ThisFacetInstance);
 
 			input_instance.finish ();
 		}

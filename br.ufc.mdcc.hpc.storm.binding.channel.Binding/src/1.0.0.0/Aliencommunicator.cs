@@ -72,8 +72,8 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		void Receive<T>(Tuple<int,int> source, int tag, out T value); /* ok */
 		void Receive<T> (Tuple<int,int> source, int tag, out T value, out CompletedStatus status);
 
-		Request ImmediateSend<T> (T value, Tuple<int,int> dest, int tag);
-		ReceiveRequest ImmediateReceive<T> (Tuple<int,int> source, int tag);
+		IRequest ImmediateSend<T> (T value, Tuple<int,int> dest, int tag);
+		IReceiveRequest ImmediateReceive<T> (Tuple<int,int> source, int tag);
 
 		// Array versions ... 
 		void Send<T> (T[] values, Tuple<int,int> dest, int tag);
@@ -81,13 +81,13 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		void Receive<T> (Tuple<int,int> source, int tag, ref T[] values); /* ok */
 		void Receive<T> (Tuple<int,int> source, int tag, ref T[] values, out CompletedStatus status);
 
-		Request ImmediateSend<T> (T[] values, Tuple<int,int> dest, int tag);
-		ReceiveRequest ImmediateReceive<T> (Tuple<int,int> source, int tag, T[] values);
+		IRequest ImmediateSend<T> (T[] values, Tuple<int,int> dest, int tag);
+		IReceiveRequest ImmediateReceive<T> (Tuple<int,int> source, int tag, T[] values);
 
 		// Probe.
 
-		Status Probe (Tuple<int,int> source, int tag);
-		Status ImmediateProbe (Tuple<int,int> source, int tag);
+		//TODO		Status Probe (Tuple<int,int> source, int tag);
+		//TODO		Status ImmediateProbe (Tuple<int,int> source, int tag);
 
 		//		void SendReceive<T>(T[] inValues, int dest, int tag, ref T[] outValues); /* ok */
 		//		void SendReceive<T>(T[] inValues, int dest, int sendTag, int source, int recvTag, ref T[] outValues); /* ok */
@@ -99,64 +99,64 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 
 		#region AllToAll
 
-		T[] Allgather<T> (int facet, T value);
-		void Allgather<T> (int facet, T inValue, ref T[] outValues);
+		//TODO		T[] Allgather<T> (int facet, T value);
+		//TODO		void Allgather<T> (int facet, T inValue, ref T[] outValues);
 
-		void AllgatherFlattened<T> (int facet, T[] inValues, int count, ref T[] outValues);
-		void AllgatherFlattened<T> (int facet, T[] inValues, int[] counts, ref T[] outValues);
+		//TODO		void AllgatherFlattened<T> (int facet, T[] inValues, int count, ref T[] outValues);
+		//TODO		void AllgatherFlattened<T> (int facet, T[] inValues, int[] counts, ref T[] outValues);
 
-		T Allreduce<T>(int facet, T value, ReductionOperation<T> op);
-		T[] Allreduce<T> (int facet, T[] values, ReductionOperation<T> op);
-		void Allreduce<T> (int facet, T[] inValues, ReductionOperation<T> op, ref T[] outValues);
+		//TODO		T Allreduce<T>(int facet, T value, ReductionOperation<T> op);
+		//TODO		T[] Allreduce<T> (int facet, T[] values, ReductionOperation<T> op);
+		//TODO		void Allreduce<T> (int facet, T[] inValues, ReductionOperation<T> op, ref T[] outValues);
 
-		T[] Alltoall<T> (int facet, T[] values);
-		void Alltoall<T> (int facet, T[] inValues, ref T[] outValues);
+		//TODO		T[] Alltoall<T> (int facet, T[] values);
+		//TODO		void Alltoall<T> (int facet, T[] inValues, ref T[] outValues);
 
-		void AlltoallFlattened<T> (int facet, T[] inValues, int[] sendCounts, int[] recvCounts, ref T[] outValues);
+		//TODO void AlltoallFlattened<T> (int facet, T[] inValues, int[] sendCounts, int[] recvCounts, ref T[] outValues);
 
-		T[] ReduceScatter<T> (int facet, T[] values, ReductionOperation<T> op, int[] counts);
-		void ReduceScatter<T> (int facet, T[] inValues, ReductionOperation<T> op, int[] counts, ref T[] outValues);
+		//TODO		T[] ReduceScatter<T> (int facet, T[] values, ReductionOperation<T> op, int[] counts);
+		//TODO		void ReduceScatter<T> (int facet, T[] inValues, ReductionOperation<T> op, int[] counts, ref T[] outValues);
 
 		#endregion AllToAll
 
 
 		#region OneToAll
 
-		void Broadcast<T> (int facet, ref T value, int root);
-		void Broadcast<T> (int facet, ref T[] values, int root);
+		//TODO		void Broadcast<T> (int facet, ref T value, int root);
+		//TODO		void Broadcast<T> (int facet, ref T[] values, int root);
 
-		void Scatter<T> (int facet, T[] values);
-		T Scatter<T>(int facet, int root);
-		void Scatter<T>(int facet);
+		//TODO		void Scatter<T> (int facet, T[] values);
+		//TODO		T Scatter<T>(int facet, int root);
+		//TODO		void Scatter<T>(int facet);
 
-		void ScatterFromFlattened<T> (int facet, T[] inValues, int count);
-		void ScatterFromFlattened<T> (int facet, T[] inValues, int[] counts);
-		void ScatterFromFlattened<T> (int facet, int count, int root, ref T[] outValues);
-		void ScatterFromFlattened<T> (int facet, int[] counts, int root, ref T[] outValues);
-		void ScatterFromFlattened<T> (int facet);
-		void ScatterFromFlattened<T> (int facet, T[] inValues, int count, int root, ref T[] outValues);
-		void ScatterFromFlattened<T> (int facet, T[] inValues, int[] counts, int root, ref T[] outValues);
+		//TODO		void ScatterFromFlattened<T> (int facet, T[] inValues, int count);
+		//TODO		void ScatterFromFlattened<T> (int facet, T[] inValues, int[] counts);
+		//TODO		void ScatterFromFlattened<T> (int facet, int count, int root, ref T[] outValues);
+		//TODO		void ScatterFromFlattened<T> (int facet, int[] counts, int root, ref T[] outValues);
+		//TODO		void ScatterFromFlattened<T> (int facet);
+		//TODO		void ScatterFromFlattened<T> (int facet, T[] inValues, int count, int root, ref T[] outValues);
+		//TODO		void ScatterFromFlattened<T> (int facet, T[] inValues, int[] counts, int root, ref T[] outValues);
 
 		#endregion OneToAll
 
 
 		#region AllToOne
 
-		T[] Gather<T> (int facet, T value, int root);
-		T[] Gather<T> (int facet, int root);
-		void Gather<T>(int facet);
-		void Gather<T>(int facet, T inValue, int root, ref T[] outValues);
+		//TODO		T[] Gather<T> (int facet, T value, int root);
+		//TODO		T[] Gather<T> (int facet, int root);
+		//TODO		void Gather<T>(int facet);
+		//TODO		void Gather<T>(int facet, T inValue, int root, ref T[] outValues);
 
-		void GatherFlattened<T>(int facet, int count, ref T[] outValues);
-		T[] GatherFlattened<T>(int facet, int count);
-		void GatherFlattened<T> (int facet, T[] inValues, int root);
-		void GatherFlattened<T>(int facet);
-		void GatherFlattened<T> (int facet, int[] counts, ref T[] outValues);
-		T[] GatherFlattened<T>(int facet, int[] counts);
+		//TODO		void GatherFlattened<T>(int facet, int count, ref T[] outValues);
+		//TODO		T[] GatherFlattened<T>(int facet, int count);
+		//TODO		void GatherFlattened<T> (int facet, T[] inValues, int root);
+		//TODO		void GatherFlattened<T>(int facet);
+		//TODO		void GatherFlattened<T> (int facet, int[] counts, ref T[] outValues);
+		//TODO		T[] GatherFlattened<T>(int facet, int[] counts);
 
-		T Reduce<T> (int facet, T value, ReductionOperation<T> op, int root);
-		T[] Reduce<T>(int facet, T[] values, ReductionOperation<T> op, int root);
-		void Reduce<T>(int facet, T[] inValues, ReductionOperation<T> op, int root, ref T[] outValues);
+		//TODO		T Reduce<T> (int facet, T value, ReductionOperation<T> op, int root);
+		//TODO		T[] Reduce<T>(int facet, T[] values, ReductionOperation<T> op, int root);
+		//TODO		void Reduce<T>(int facet, T[] inValues, ReductionOperation<T> op, int root, ref T[] outValues);
 
 		#endregion AllToOne
 
@@ -165,14 +165,143 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 
 	}
 
-	public class Status
+
+	public interface Status 
+	{
+		Tuple<int,int> Source { get; }
+		int Tag { get; }
+		int? Count (Type type);
+		bool Cancelled { get; }
+	}
+
+	public interface CompletedStatus : Status
+	{
+		int? Count { get; }
+	}
+
+	public class SAFeStatus : Status
+	{
+
+		/// <summary>
+		///   Constructs a <code>Status</code> object from a low-level <see cref="Unsafe.MPI_Status"/> structure.
+		/// </summary>
+		internal SAFeStatus(Tuple<int,int> source, int tag)
+		{
+			this.source = source;
+			this.tag = tag;
+		}
+
+		Tuple<int,int> source;
+
+		/// <summary>
+		/// The rank of the process that sent the message.
+		/// </summary>
+		public Tuple<int,int> Source
+		{
+			get
+			{
+				return source;
+			}
+		}
+
+		int tag;
+
+		/// <summary>
+		/// The tag used to send the message.
+		/// </summary>
+		public int Tag
+		{
+			get
+			{
+				return tag;
+			}
+		}
+
+		/// <summary>
+		/// Determine the number of elements transmitted by the communication
+		/// operation associated with this object.
+		/// </summary>
+		/// <param name="type">
+		///   The type of data that will be stored in the message.
+		/// </param>
+		/// <returns>
+		///   If the type of the data is a value type, returns the number
+		///   of elements in the message. Otherwise, returns <c>null</c>,
+		///   because the number of elements stored in the message won't
+		///   be known until the message is received.
+		/// </returns>
+		public int? Count(Type type)
+		{
+			// TODO:
+			return null;
+		}
+
+		/// <summary>
+		/// Whether the communication was cancelled before it completed.
+		/// </summary>
+		public bool Cancelled
+		{
+			get
+			{
+				// TODO: cancel functionality not implemented ...
+				return false;
+			}
+		}
+	}
+
+	/// <summary>
+	/// Information about a specific message that has already been
+	/// transferred via MPI.
+	/// </summary>
+	public class SAFeCompletedStatus : SAFeStatus, CompletedStatus
+	{
+		/// <summary>
+		///   Constructs a <code>Status</code> object from a low-level <see cref="Unsafe.MPI_Status"/> structure
+		///   and a count of the number of elements received.
+		/// </summary>
+		internal SAFeCompletedStatus(Tuple<int,int> source, int tag, int count) : base(source, tag)
+		{
+			this.count = count;
+		}
+
+		internal SAFeCompletedStatus(Tuple<int,int> source, int tag) : base(source, tag)
+		{
+		}
+
+		public static CompletedStatus createStatus(Tuple<int,int> source, int tag, int count)
+		{
+			return new SAFeCompletedStatus(source, tag, count);
+		}
+
+		public static CompletedStatus createStatus(Tuple<int,int> source, int tag)
+		{
+			return new SAFeCompletedStatus(source, tag);
+		}
+
+		private int? count = null;
+
+		/// <summary>
+		/// Determines the number of elements in the transmitted message.
+		/// </summary>
+		public int? Count
+		{
+			get { return count; } set { count = value; }
+		}
+
+	}
+
+
+
+
+
+	public class MPIStatus : Status
 	{
 		private MPI.Status internal_status;
 
 		/// <summary>
 		///   Constructs a <code>Status</code> object from a low-level <see cref="Unsafe.MPI_Status"/> structure.
 		/// </summary>
-		internal Status(MPI.Status internal_status, Tuple<int,int> source)
+		internal MPIStatus(MPI.Status internal_status, Tuple<int,int> source)
 		{
 			this.source = source;
 			this.internal_status = internal_status;
@@ -237,7 +366,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 	/// Information about a specific message that has already been
 	/// transferred via MPI.
 	/// </summary>
-	public class CompletedStatus : Status
+	public class MPICompletedStatus : MPIStatus, CompletedStatus
 	{
 		private MPI.CompletedStatus internal_status;
 
@@ -245,25 +374,167 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		///   Constructs a <code>Status</code> object from a low-level <see cref="Unsafe.MPI_Status"/> structure
 		///   and a count of the number of elements received.
 		/// </summary>
-		internal CompletedStatus(MPI.CompletedStatus internal_status, Tuple<int,int> source) : base(internal_status, source)
+		internal MPICompletedStatus(MPI.CompletedStatus internal_status, Tuple<int,int> source) : base(internal_status, source)
 		{
 			this.internal_status = internal_status;
 		}
 
 		public static CompletedStatus createStatus(MPI.CompletedStatus internal_status, Tuple<int,int> source)
 		{
-			return new CompletedStatus(internal_status, source);
+			return new MPICompletedStatus(internal_status, source);
 		}
 
 		/// <summary>
 		/// Determines the number of elements in the transmitted message.
 		/// </summary>
-		public int Count()
-		{
-			return internal_status.Count();
+		public int? Count {
+			get { return internal_status.Count (); }
 		}
 
 	}
+
+	public interface IRequest
+	{
+		void registerWaitingSet (AutoResetEvent waiting_set);
+		void unregisterWaitingSet (AutoResetEvent waiting_set);
+		CompletedStatus Wait();
+		CompletedStatus Test();
+		void Cancel ();
+    }
+
+	public class Request : IRequest // Without MPI
+	{
+		private Tuple<int,int> source;
+		int tag;
+
+		private ManualResetEvent e;
+		private Thread waiting_request = null;
+		protected ManualResetEvent initial_signal = new ManualResetEvent (false);
+		private bool completed = false;
+
+		bool completed_request = false;
+
+
+		internal Request(ManualResetEvent e, Tuple<int,int> source, int tag)
+		{
+			this.e = e;
+			this.source = source;
+			this.tag = tag;
+			new Thread (new ThreadStart (delegate() {
+				e.WaitOne();
+				completed_request = true;
+			})).Start();
+
+		}
+
+
+		private object wait_lock = new object ();
+
+		private IList<AutoResetEvent> waiting_sets = new List<AutoResetEvent>();
+
+		public void registerWaitingSet(AutoResetEvent waiting_set)
+		{   
+			waiting_request = new Thread(new ThreadStart(delegate 
+				{
+					while (true) 
+					{
+						initial_signal.WaitOne();
+						e.WaitOne();
+						lock (wait_lock)
+						{
+							completed = true;
+							foreach (AutoResetEvent ws in waiting_sets)
+								ws.Set();
+						}
+					}
+				}));
+
+			waiting_request.Start ();
+
+			lock (wait_lock) 
+			{
+				if (completed)
+					waiting_set.Set ();
+				else 
+				{
+					waiting_sets.Add (waiting_set);
+					initial_signal.Set ();
+				}
+			}
+		}
+
+		public void unregisterWaitingSet(AutoResetEvent waiting_set)
+		{
+			waiting_sets.Remove (waiting_set);
+			initial_signal.Reset ();
+			waiting_request.Abort ();
+			waiting_request = null;
+		}
+
+		/// <summary>
+		/// Wait until this non-blocking operation has completed.
+		/// </summary>
+		/// <returns>
+		///   Information about the completed communication operation.
+		/// </returns>
+		public CompletedStatus Wait()
+		{
+			e.WaitOne ();
+			return SAFeCompletedStatus.createStatus (source, tag);
+		}
+
+		/// <summary>
+		/// Determine whether this non-blocking operation has completed.
+		/// </summary>
+		/// <returns>
+		/// If the non-blocking operation has completed, returns information
+		/// about the completed communication operation. Otherwise, returns
+		/// <c>null</c> to indicate that the operation has not completed.
+		/// </returns>
+		public CompletedStatus Test() 
+		{
+			return completed_request ? SAFeCompletedStatus.createStatus (source, tag) : null;
+		}
+
+		/// <summary>
+		/// Cancel this communication request.
+		/// </summary>
+		public void Cancel() 
+		{
+			// TODO: cancel functionality not implemented ...
+			//internal_request.Cancel ();
+		}
+
+		public static IRequest createRequest(ManualResetEvent e, Tuple<int,int> source, int tag)
+		{
+			return new Request(e, source, tag);
+		}
+
+		// Convert an object to a byte array
+		protected static byte[] ObjectToByteArray(Object obj)
+		{
+			if(obj == null)
+				return null;
+			BinaryFormatter bf = new BinaryFormatter();
+			MemoryStream ms = new MemoryStream();
+			bf.Serialize(ms, obj);
+			return ms.ToArray();
+		}
+
+		protected static Object ByteArrayToObject(byte[] arrBytes)
+		{
+			MemoryStream memStream = new MemoryStream();
+			BinaryFormatter binForm = new BinaryFormatter();
+			memStream.Write(arrBytes, 0, arrBytes.Length);
+			memStream.Seek(0, SeekOrigin.Begin);
+			Object obj = (Object) binForm.Deserialize(memStream);
+			return obj;
+		}
+
+	}
+
+
+
 
 	/// <summary>
 	/// A non-blocking communication request.
@@ -277,7 +548,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 	/// requests be completed with a successful call to <see cref="Wait"/> or <see cref="Test"/>
 	/// before the request object is lost.
 	/// </remarks>
-	public class Request
+	public class MPIRequest : IRequest
 	{
 		private MPI.Request internal_request;
 		private Tuple<int,int> source;
@@ -286,7 +557,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		protected ManualResetEvent initial_signal = new ManualResetEvent (false);
 		private bool completed = false;
 
-		internal Request(MPI.Request internal_request, Tuple<int,int> source)
+		internal MPIRequest(MPI.Request internal_request, Tuple<int,int> source)
 		{
 			this.internal_request = internal_request;
 			this.source = source;
@@ -315,7 +586,6 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 			}));
 			
 			waiting_request.Start ();
-
 
 			lock (wait_lock) 
 			{
@@ -346,7 +616,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		public CompletedStatus Wait()
 		{
 			MPI.CompletedStatus internal_status = internal_request.Wait ();
-			return CompletedStatus.createStatus (internal_status, source);
+			return MPICompletedStatus.createStatus (internal_status, source);
 		}
 
 		/// <summary>
@@ -360,7 +630,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		public CompletedStatus Test() 
 		{
 			MPI.CompletedStatus internal_status = internal_request.Test ();
-			return internal_status != null ? CompletedStatus.createStatus (internal_status, source) : null;
+			return internal_status != null ? MPICompletedStatus.createStatus (internal_status, source) : null;
 		}
 
 		/// <summary>
@@ -371,9 +641,9 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 			internal_request.Cancel ();
 		}
 
-		public static Request createRequest(MPI.Request internal_status, Tuple<int,int> source)
+		public static IRequest createRequest(MPI.Request internal_status, Tuple<int,int> source)
 		{
-			return new Request(internal_status, source);
+			return new MPIRequest(internal_status, source);
 		}
 
 		// Convert an object to a byte array
@@ -399,6 +669,23 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 
 	}
 
+	public interface IReceiveRequest : IRequest
+	{
+		object GetValue ();
+	}
+
+	public abstract class ReceiveRequest : Request, IReceiveRequest
+	{
+		internal ReceiveRequest(ManualResetEvent e, Tuple<int,int> source, int tag) : base(e, source, tag)
+		{
+		}
+		/// <summary>
+		/// Retrieve the value received via this communication. The value
+		/// will only be available when the communication has completed.
+		/// </summary>
+		/// <returns>The value received by this communication.</returns>
+		public abstract object GetValue ();
+	}
 	/// <summary>
 	/// A non-blocking receive request. 
 	/// </summary>
@@ -407,10 +694,10 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 	/// request for completion, wait for completion of a request, cancel a request,
 	/// or extract the value received by this communication request.
 	/// </remarks>
-	public abstract class ReceiveRequest : Request
+	public abstract class MPIReceiveRequest : MPIRequest, IReceiveRequest
 	{
 
-		internal ReceiveRequest(MPI.ReceiveRequest internal_request, Tuple<int,int> source) : base(internal_request, source)
+		internal MPIReceiveRequest(MPI.ReceiveRequest internal_request, Tuple<int,int> source) : base(internal_request, source)
 		{
 		}
 		/// <summary>
@@ -431,9 +718,69 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 	/// </remarks>
 	public class ValueReceiveRequest<T> : ReceiveRequest
 	{
+		Tuple<int,int> source = null; 
+		int? tag = null;
+
+		internal ValueReceiveRequest(ManualResetEvent e, Tuple<int,int> source, int tag) : base(e, source, tag)
+		{
+			this.source = source;
+			this.tag = tag;
+		}
+
+		private object value = null;
+
+		/// <summary>
+		/// Retrieve the value received via this communication. The value
+		/// will only be available when the communication has completed.
+		/// </summary>
+		/// <returns>The value received by this communication.</returns>
+		public override object GetValue()
+		{
+			return value;
+		}
+
+		public void SetValue(byte[] v)
+		{
+			value = (T) ByteArrayToObject(v);
+		}
+
+		public static new ValueReceiveRequest<T> createRequest(ManualResetEvent e, Tuple<int,int> source, int tag)
+		{
+			return new ValueReceiveRequest<T> (e, source, tag);
+		}
+
+		public new CompletedStatus Wait()
+		{
+			SAFeCompletedStatus status = (SAFeCompletedStatus) base.Wait ();
+			status.Count = 1;
+			return status;
+		}
+
+		public new CompletedStatus Test() 
+		{
+			SAFeCompletedStatus status = (SAFeCompletedStatus) base.Test ();
+
+			if (status != null)
+				status.Count = 1;
+
+			return status;
+		}
+	}
+
+
+	/// <summary>
+	/// A non-blocking receive request. 
+	/// </summary>
+	/// <remarks>
+	/// This class allows one to test a receive
+	/// request for completion, wait for completion of a request, cancel a request,
+	/// or extract the value received by this communication request.
+	/// </remarks>
+	public class MPIValueReceiveRequest<T> : MPIReceiveRequest
+	{
 		private MPI.ReceiveRequest internal_request;
 
-		internal ValueReceiveRequest(MPI.ReceiveRequest internal_request, Tuple<int,int> source) : base(internal_request, source)
+		internal MPIValueReceiveRequest(MPI.ReceiveRequest internal_request, Tuple<int,int> source) : base(internal_request, source)
 		{
 			this.internal_request = internal_request;
 		}
@@ -449,9 +796,9 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 			return (T) ByteArrayToObject(v);
 		}
 
-		public static ValueReceiveRequest<T> createRequest(MPI.ReceiveRequest internal_status, Tuple<int,int> source)
+		public static MPIValueReceiveRequest<T> createRequest(MPI.ReceiveRequest internal_status, Tuple<int,int> source)
 		{
-			return new ValueReceiveRequest<T>(internal_status, source);
+			return new MPIValueReceiveRequest<T>(internal_status, source);
 		}
 
 	}
@@ -466,10 +813,83 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 	/// </remarks>
 	public class ArrayReceiveRequest<T> : ReceiveRequest
 	{
+		private T[] values = null;
+		private byte[] v = null;
+		Tuple<int,int> source = null;
+		int? tag = null; 
+
+		internal ArrayReceiveRequest(ManualResetEvent e, Tuple<int,int> source, int tag, T[] values) : base(e,source,tag)
+		{
+			this.values = values;
+			this.source = source;
+			this.tag = null;
+		}
+
+		/// <summary>
+		/// Retrieve the value received via this communication. The value
+		/// will only be available when the communication has completed.
+		/// </summary>
+		/// <returns>The value received by this communication.</returns>
+		public override object GetValue()
+		{
+			if (v == null)
+				return null;
+
+			T[] values_= (T[]) ByteArrayToObject(v);
+
+			// Copy the received values to the destination array (forcing original MPI semantics)
+			int size = values.Length <= values_.Length ? values.Length : values_.Length;
+			for (int i=0; i<size; i++)
+				values[i] = values_[i];
+
+			return values;
+		}
+
+		public void SetValue(byte[] v)
+		{
+			values = (T[]) ByteArrayToObject(v);
+		}
+
+
+		public static ArrayReceiveRequest<T> createRequest(ManualResetEvent e, Tuple<int,int> source, int tag, T[] values)
+		{
+			return new ArrayReceiveRequest<T>(e, source, tag, values);
+		}
+
+		public new CompletedStatus Wait()
+		{
+			SAFeCompletedStatus status = (SAFeCompletedStatus) base.Wait ();
+			status.Count = values.Length;
+			return status;
+		}
+
+		public new CompletedStatus Test() 
+		{
+			SAFeCompletedStatus status = (SAFeCompletedStatus) base.Test ();
+
+			if (status != null)
+				status.Count = values.Length;
+
+			return status;
+		}
+
+	}
+
+
+	/// <summary>
+	/// A non-blocking receive request. 
+	/// </summary>
+	/// <remarks>
+	/// This class allows one to test a receive
+	/// request for completion, wait for completion of a request, cancel a request,
+	/// or extract the value received by this communication request.
+	/// </remarks>
+	public class MPIArrayReceiveRequest<T> : MPIReceiveRequest
+	{
 		private MPI.ReceiveRequest internal_request;
 		private T[] values = null;
 
-		internal ArrayReceiveRequest(MPI.ReceiveRequest internal_request, Tuple<int,int> source, T[] values) : base(internal_request, source)
+		internal MPIArrayReceiveRequest(MPI.ReceiveRequest internal_request, Tuple<int,int> source, T[] values) : base(internal_request, source)
 		{
 			this.internal_request = internal_request;
 			this.values = values;
@@ -493,9 +913,9 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 			return values;
 		}
 
-		public static ArrayReceiveRequest<T> createRequest(MPI.ReceiveRequest internal_status, Tuple<int,int> source, T[] values)
+		public static MPIArrayReceiveRequest<T> createRequest(MPI.ReceiveRequest internal_status, Tuple<int,int> source, T[] values)
 		{
-			return new ArrayReceiveRequest<T>(internal_status, source, values);
+			return new MPIArrayReceiveRequest<T>(internal_status, source, values);
 		}
 
 
@@ -522,7 +942,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		/// </summary>
 		public RequestList()
 		{
-			this.requests = new List<Request>();
+			this.requests = new List<IRequest>();
 		}
 
 
@@ -531,7 +951,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		/// Add a new request to the request list.
 		/// </summary>
 		/// <param name="request">The request to add.</param>
-		public void Add(Request request)
+		public void Add(IRequest request)
 		{
 			requests.Add(request);
 
@@ -543,7 +963,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		/// Remove a request from the request list.
 		/// </summary>
 		/// <param name="request">Request to remove.</param>
-		public void Remove(Request request)
+		public void Remove(IRequest request)
 		{
 			requests.Remove(request);
 		}
@@ -566,22 +986,22 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		/// from the request list and returned.
 		/// </summary>
 		/// <returns>The completed request, which has been removed from the request list.</returns>
-		public Request WaitAny()
+		public IRequest WaitAny()
 		{
 			if (requests.Count == 0)
 				throw new ArgumentException("Cannot call MPI.RequestList.WaitAny with an empty request list");
 
 			sync_request = new AutoResetEvent (false);
 
-			foreach (Request req_item in requests)
+			foreach (IRequest req_item in requests)
 				req_item.registerWaitingSet (sync_request);
 
 			sync_request.WaitOne ();
 			sync_request = null;
 
-			Request req = this.TestAny ();
+			IRequest req = this.TestAny ();
 
-			foreach (Request req_item in requests)
+			foreach (IRequest req_item in requests)
 				req_item.unregisterWaitingSet (sync_request);
 
 			return req;
@@ -605,12 +1025,12 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		///   The first request that has completed, if any. Otherwise, returns <c>null</c> to
 		///   indicate that no request has completed.
 		/// </returns>
-		public Request TestAny()
+		public IRequest TestAny()
 		{
 			int n = requests.Count;
 			for (int i = 0; i < n; ++i)
 			{
-				Request req = requests[i];
+				IRequest req = requests[i];
 				if (req.Test() != null)
 				{
 					requests.RemoveAt(i);
@@ -625,10 +1045,10 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		/// Wait until all of the requests has completed before returning.
 		/// </summary>
 		/// <returns>A list containing all of the completed requests.</returns>
-		public List<Request> WaitAll()
+		public List<IRequest> WaitAll()
 		{
-			List<Request> result = new List<Request>();
-			foreach (Request req in requests) 
+			List<IRequest> result = new List<IRequest>();
+			foreach (IRequest req in requests) 
 			{
 				req.Wait ();
 				result.Add (req);
@@ -651,7 +1071,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		/// Otherwise, the result is <c>null</c>.
 		/// </summary>
 		/// <returns>Either the list of all completed requests, or null.</returns>
-		public List<Request> TestAll()
+		public List<IRequest> TestAll()
 		{
 			int n = requests.Count;
 			for (int i = 0; i < n; ++i)
@@ -660,8 +1080,8 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 					return null;
 			}
 
-			List<Request> result = requests;
-			requests = new List<Request>();
+			List<IRequest> result = requests;
+			requests = new List<IRequest>();
 			return result;
 		}
 
@@ -673,18 +1093,18 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		///   A list of all of the requests that have completed, which
 		///   will contain at least one element.
 		/// </returns>
-		public List<Request> WaitSome()
+		public List<IRequest> WaitSome()
 		{
 			if (requests.Count == 0)
 				throw new ArgumentException("Cannot call MPI.RequestList.WaitAny with an empty request list");
 
-			List<Request> result = new List<Request>();
+			List<IRequest> result = new List<IRequest>();
 			while (result.Count == 0)
 			{
 				int n = requests.Count;
 				for (int i = 0; i < n; ++i)
 				{
-					Request req = requests[i];
+					IRequest req = requests[i];
 					if (req.Test() != null)
 					{
 						requests.RemoveAt(i);
@@ -704,13 +1124,13 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		///   A list of all of the requests that have completed. If
 		///   no requests have completed, returns <c>null</c>.
 		/// </returns>
-		public List<Request> TestSome()
+		public List<IRequest> TestSome()
 		{
-			List<Request> result = null;
+			List<IRequest> result = null;
 			int n = requests.Count;
 			for (int i = 0; i < n; ++i)
 			{
-				Request req = requests[i];
+				IRequest req = requests[i];
 				if (req.Test() != null)
 				{
 					requests.RemoveAt(i);
@@ -718,7 +1138,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 					--n;
 
 					if (result == null)
-						result = new List<Request>();
+						result = new List<IRequest>();
 					result.Add(req);
 				}
 			}
@@ -728,7 +1148,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.Binding
 		/// <summary>
 		/// The actual list of requests.
 		/// </summary>
-		protected List<Request> requests;
+		protected List<IRequest> requests;
 	}
 
 

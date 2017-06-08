@@ -5,7 +5,7 @@
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b9e6d1b3d6a5aa27bd556a3921863818ba2de6bcbf58a4aa128bec49804b97d502c22e3bcfcab5a6ea6a7f5b070ebe2ffbbb82990d770eb9ac3ff46dde951dc78c38589295917dd53e9c95e08f51c7f62f9eb1add957188c27faff448b4c8326cbb81e1acb0170cfdcf664ed27944490cfca993a82fd4b4660c6a326486ed2c0" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/DataSink.hpe" name="DataSink" package="br.ufc.mdcc.hpcshelf.mapreduce.datasource" version="1.0.0.0">
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000087caa5593a3cd3ea1d11c86d47a66715e2a9b0345fbb1828c37fba73c15524c65104d8b374c5a14ba9c470bbc6caa351ba1851b5ae7f98ae62550bce4494043439106ba5d42b020b569b111c3d79b93cbe6b2c051fd6d4d2d11816cf5cd03a82053bcbf87c40373106af3ee79a096ccfdc2507fd76a6751efb4b735a77032992" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/DataSink.hpe" name="DataSink" package="br.ufc.mdcc.hpcshelf.mapreduce.datasource" version="1.0.0.0">
         <visualDescription h="60" w="100" x="255" y="475">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -14,8 +14,8 @@
           <visualDescription h="60" w="187" x="238" y="357">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###1118609896"/>
-          <parameter formFieldId="server_port_type" varName="X###1105733367"/>
+          <parameter formFieldId="server_port_type" varName="X###1117995919"/>
+          <parameter formFieldId="client_port_type" varName="X###1891664846"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="51" y="2"/>
           </unitBounds>

@@ -50,10 +50,10 @@
       <visualDescription h="60" w="182" x="343" y="170">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="input_key_type" varName="IKey"/>
       <parameter formFieldId="output_item_value_type" varName="TValue"/>
-      <parameter formFieldId="input_value_type" varName="IValue"/>
+      <parameter formFieldId="input_key_type" varName="IKey"/>
       <parameter formFieldId="output_item_key_type" varName="TKey"/>
+      <parameter formFieldId="input_value_type" varName="IValue"/>
       <port index_replica="0" localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
         <visualDescription h="60" w="100" x="393" y="62">
           <color b="255" g="255" r="255"/>
@@ -74,7 +74,7 @@
         <visualDescription h="69" w="188" x="657" y="210">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###1937106697"/>
+        <parameter formFieldId="item_type" varName="X###921674961"/>
         <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -96,8 +96,8 @@
       <visualDescription h="72" w="118" x="58" y="414">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="client_port_type" varName="C"/>
       <parameter formFieldId="server_port_type" varName="S0"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
       <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="46" y="8"/>
       </unitBounds>
@@ -106,8 +106,8 @@
       <visualDescription h="81" w="100" x="554" y="372">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="client_port_type" varName="C0"/>
       <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C0"/>
       <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -156,7 +156,7 @@
     <supplyParameter cRef="mapper_port_type_client" direct="true" varName="C"/>
     <supplyParameter cRef="mapper_port_type_server" direct="true" varName="S"/>
     <supplyParameter cRef="task_port_type_advance" direct="true" varName="TAdvance"/>
-    <innerComponent localRef="C###1937106697" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###921674961" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="93" y="410">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -166,26 +166,26 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1937106697" varName="X###1937106697"/>
+    <supplyParameter cRef="C###921674961" varName="X###921674961"/>
     <innerRenaming cNewName="map_key" cOldName="input_key" cRef="map_function" index_replica="0"/>
-    <innerRenaming cNewName="map_value" cOldName="input_value" cRef="map_function" index_replica="0"/>
     <innerRenaming cNewName="output" cOldName="output_data" cRef="map_function" index_replica="0"/>
+    <innerRenaming cNewName="map_value" cOldName="input_value" cRef="map_function" index_replica="0"/>
     <interface iRef="IMapper" nArgs="6">
-      <slice isRef="feed_pairs">
-        <originRef cRef="feed_pairs" iRef="IBindingDirect"/>
-        <visualDescription h="10" w="10" x="79" y="24"/>
-      </slice>
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IBindingDirect"/>
         <visualDescription h="10" w="10" x="18" y="28"/>
       </slice>
-      <slice isRef="platform_map">
-        <originRef cRef="platform_map" iRef="IProcessingNode"/>
-        <visualDescription h="10" w="10" x="9" y="12"/>
-      </slice>
       <slice isRef="task_map">
         <originRef cRef="task_map" iRef="ITaskPort"/>
         <visualDescription h="10" w="10" x="55" y="0"/>
+      </slice>
+      <slice isRef="feed_pairs">
+        <originRef cRef="feed_pairs" iRef="IBindingDirect"/>
+        <visualDescription h="10" w="10" x="79" y="24"/>
+      </slice>
+      <slice isRef="platform_map">
+        <originRef cRef="platform_map" iRef="IProcessingNode"/>
+        <visualDescription h="10" w="10" x="9" y="12"/>
       </slice>
       <slice isRef="map_function">
         <originRef cRef="map_function" iRef="IMapFunction"/>
@@ -212,21 +212,25 @@
       <visualDescription h="40" w="99" x="52" y="153">
         <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="feed_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="feed_pairs"/>
-      </port>
       <port name="collect_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_pairs" sRef="collect_pairs"/>
+      </port>
+      <port name="task_map">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_map" sRef="task_map"/>
+      </port>
+      <port name="feed_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="feed_pairs"/>
       </port>
       <port name="platform_map">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_map" sRef="platform_map"/>
       </port>
-      <port name="task_map">
+      <port name="output">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_map" sRef="task_map"/>
+        <slice pRef="output_data" sRef="map_function"/>
       </port>
       <port name="map_key">
         <visualDescription h="10" w="10" x="15" y="4"/>
@@ -235,10 +239,6 @@
       <port name="map_value">
         <visualDescription h="10" w="10" x="46" y="20"/>
         <slice pRef="input_value" sRef="map_function"/>
-      </port>
-      <port name="output">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_data" sRef="map_function"/>
       </port>
       <parameter iname="IMaintainer" order="0" parid="platform_maintainer" uname="maintainer" varid="M"/>
       <parameter iname="IMapFunction" order="5" parid="map_function" uname="map_function" varid="MF"/>
@@ -251,17 +251,20 @@
       </action>
     </interface>
     <unit facet="0" iRef="IMapper" multiple="true" private="false" replica="0" uRef="mapper" visibleInterface="true">
-      <slices cRef="feed_pairs" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="feed_pairs" transitive="false">
-        <visualDescription h="10" w="10" x="79" y="24"/>
-      </slices>
       <slices cRef="collect_pairs" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="collect_pairs" transitive="false">
         <visualDescription h="10" w="10" x="18" y="28"/>
       </slices>
-      <slices cRef="map_value" inner_replica="0" slice_replica="0" uRef="data" sliceName="map_value" transitive="true">
-        <visualDescription h="10" w="10" x="13" y="19"/>
+      <slices cRef="task_map" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_map" transitive="false">
+        <visualDescription h="10" w="10" x="55" y="0"/>
       </slices>
       <slices cRef="output" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="output" transitive="true">
         <visualDescription h="10" w="10" x="121" y="19"/>
+      </slices>
+      <slices cRef="feed_pairs" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="feed_pairs" transitive="false">
+        <visualDescription h="10" w="10" x="79" y="24"/>
+      </slices>
+      <slices cRef="map_value" inner_replica="0" slice_replica="0" uRef="data" sliceName="map_value" transitive="true">
+        <visualDescription h="10" w="10" x="13" y="19"/>
       </slices>
       <slices cRef="map_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="map_key" transitive="true">
         <visualDescription h="10" w="10" x="5" y="6"/>
@@ -269,13 +272,10 @@
       <slices cRef="platform_map" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_map" transitive="false">
         <visualDescription h="10" w="10" x="9" y="12"/>
       </slices>
-      <slices cRef="task_map" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_map" transitive="false">
-        <visualDescription h="10" w="10" x="55" y="0"/>
-      </slices>
       <slices cRef="map_function" inner_replica="0" slice_replica="0" uRef="map_function" sliceName="map_function" transitive="false">
         <visualDescription h="10" w="10" x="78" y="9"/>
-        <port>map_value</port>
         <port>output</port>
+        <port>map_value</port>
         <port>map_key</port>
       </slices>
       <visualDescription h="40" w="99" x="335" y="361"/>

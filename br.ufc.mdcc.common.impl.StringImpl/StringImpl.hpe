@@ -5,7 +5,7 @@
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e5873a44b23e0e36b62bd4462cf4f01fc4b03ce7b0922141e389cf2291aacd898d054a1e2147ce8c1c563b7a410cefef0e8d5b9b941643a09a5bdd0bd24eeeec082e8bd8fdf285fa51fe1c78d5351d970ba67e30fceb6575df115ce2b235b62d8fb560a1546371508d8a1aa133a213323d80aacd148883ae2fa6225f4d678cec" localRef="base" location="br.ufc.mdcc.common.String/String.hpe" name="String" package="br.ufc.mdcc.common" version="1.0.0.0">
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000045c882f1084adfca7a93a303cdfc9a14546ebdda232dafa338192de8260685698c212a8cead593c71103319ab3995354bc1e70e50bece06ed1efc1aea2ccb159ae628c753624403ae515fa1b39de135eee12954f719a3ae448c9b3286b6ecfa6916748af9fea5db43bae363b0dcc4244a7ab1986939b35692dc56b174e5e21a1" localRef="base" location="br.ufc.mdcc.common.String/String.hpe" name="String" package="br.ufc.mdcc.common" version="1.0.0.0">
         <visualDescription h="60" w="100" x="168" y="284">
           <color b="255" g="255" r="255"/>
         </visualDescription>
