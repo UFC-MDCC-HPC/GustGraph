@@ -74,7 +74,7 @@
         <visualDescription h="69" w="188" x="657" y="210">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###921674961"/>
+        <parameter formFieldId="item_type" varName="X###767426585"/>
         <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -156,7 +156,7 @@
     <supplyParameter cRef="mapper_port_type_client" direct="true" varName="C"/>
     <supplyParameter cRef="mapper_port_type_server" direct="true" varName="S"/>
     <supplyParameter cRef="task_port_type_advance" direct="true" varName="TAdvance"/>
-    <innerComponent localRef="C###921674961" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###767426585" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="93" y="410">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -166,10 +166,10 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###921674961" varName="X###921674961"/>
-    <innerRenaming cNewName="map_key" cOldName="input_key" cRef="map_function" index_replica="0"/>
-    <innerRenaming cNewName="output" cOldName="output_data" cRef="map_function" index_replica="0"/>
+    <supplyParameter cRef="C###767426585" varName="X###767426585"/>
     <innerRenaming cNewName="map_value" cOldName="input_value" cRef="map_function" index_replica="0"/>
+    <innerRenaming cNewName="output" cOldName="output_data" cRef="map_function" index_replica="0"/>
+    <innerRenaming cNewName="map_key" cOldName="input_key" cRef="map_function" index_replica="0"/>
     <interface iRef="IMapper" nArgs="6">
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IBindingDirect"/>
@@ -228,10 +228,6 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_map" sRef="platform_map"/>
       </port>
-      <port name="output">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_data" sRef="map_function"/>
-      </port>
       <port name="map_key">
         <visualDescription h="10" w="10" x="15" y="4"/>
         <slice pRef="input_key" sRef="map_function"/>
@@ -239,6 +235,10 @@
       <port name="map_value">
         <visualDescription h="10" w="10" x="46" y="20"/>
         <slice pRef="input_value" sRef="map_function"/>
+      </port>
+      <port name="output">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_data" sRef="map_function"/>
       </port>
       <parameter iname="IMaintainer" order="0" parid="platform_maintainer" uname="maintainer" varid="M"/>
       <parameter iname="IMapFunction" order="5" parid="map_function" uname="map_function" varid="MF"/>

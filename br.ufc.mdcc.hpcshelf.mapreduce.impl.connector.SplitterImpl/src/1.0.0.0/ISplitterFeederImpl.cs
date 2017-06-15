@@ -105,7 +105,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 					Task_binding_split_chunk_ready.invoke (CHUNK_READY.name);
 				}
 			}
-			Console.WriteLine ("<{0},{1}>: ISplitterFeeder : END !",this.Rank);
+			Console.WriteLine ("<{0},{1}>: ISplitterFeeder : END !",this.Rank, this.ThisFacetInstance);
 		}
 	}
 }

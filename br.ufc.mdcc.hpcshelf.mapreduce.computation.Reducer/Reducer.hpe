@@ -66,7 +66,7 @@
         <visualDescription h="60" w="181" x="64" y="390">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###1373620688"/>
+        <parameter formFieldId="value_type" varName="X###618927105"/>
         <parameter formFieldId="key_type" varName="TKey"/>
         <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
           <visualDescription h="20" w="20" x="137" y="20"/>
@@ -190,7 +190,7 @@
     <supplyParameter cRef="output_item_ttype" direct="true" varName="OUTPUT_REDUCE"/>
     <supplyParameter cRef="output_item_type" direct="true" varName="OUT_REDUCE"/>
     <supplyParameter cRef="task_port_type_advance" direct="true" varName="TAdvance"/>
-    <innerComponent localRef="C###1373620688" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###618927105" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="152" x="455" y="455">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -199,7 +199,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1373620688" varName="X###1373620688"/>
+    <supplyParameter cRef="C###618927105" varName="X###618927105"/>
     <interface iRef="IReducer" nArgs="6">
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IBindingDirect"/>
@@ -262,10 +262,6 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_reduce" sRef="platform_reduce"/>
       </port>
-      <port name="output_value">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_value" sRef="reduce_function"/>
-      </port>
       <port name="input_values">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_values" sRef="reduce_function"/>
@@ -273,6 +269,10 @@
       <port name="continuation_value">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="continuation_value" sRef="reduce_function"/>
+      </port>
+      <port name="output_value">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_value" sRef="reduce_function"/>
       </port>
       <parameter iname="IMaintainer" order="0" parid="platform_maintainer" uname="maintainer" varid="M"/>
       <parameter iname="IReduceFunction" order="5" parid="reduce_function" uname="reduce_function" varid="RF"/>

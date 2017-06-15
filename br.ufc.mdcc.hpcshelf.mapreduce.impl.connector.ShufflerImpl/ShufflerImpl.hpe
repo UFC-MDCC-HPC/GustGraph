@@ -16,8 +16,8 @@
           <visualDescription h="60" w="100" x="61" y="403">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###874076076"/>
-          <parameter formFieldId="client_port_type" varName="X###686547957"/>
+          <parameter formFieldId="server_port_type" varName="X###230478150"/>
+          <parameter formFieldId="client_port_type" varName="X###111335793"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="1" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="45" y="6"/>
           </unitBounds>
@@ -26,8 +26,8 @@
           <visualDescription h="60" w="100" x="517" y="411">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1821028030"/>
-          <parameter formFieldId="client_port_type" varName="X###107747705"/>
+          <parameter formFieldId="server_port_type" varName="X###400257419"/>
+          <parameter formFieldId="client_port_type" varName="X###321463537"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="41" y="14"/>
           </unitBounds>
@@ -36,7 +36,7 @@
           <visualDescription h="83" w="228" x="369" y="436">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###2016840239"/>
+          <parameter formFieldId="task_port_type" varName="X###2029318451"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="1" parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
             <visualDescription h="20" w="20" x="12" y="34"/>
           </unitBounds>
@@ -48,7 +48,7 @@
           <visualDescription h="70" w="303" x="70" y="475">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###255142551"/>
+          <parameter formFieldId="task_port_type" varName="X###1745737229"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="1" parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="135" y="6"/>
           </unitBounds>
@@ -57,7 +57,7 @@
           <visualDescription h="71" w="298" x="671" y="424">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###921930385"/>
+          <parameter formFieldId="task_port_type" varName="X###613852590"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="131" y="7"/>
           </unitBounds>

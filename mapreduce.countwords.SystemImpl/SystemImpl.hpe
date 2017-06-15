@@ -67,13 +67,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_perform" sRef="splitter_input"/>
       </port>
-      <port name="input_pairs_source">
-        <visualDescription h="10" w="10" x="99" y="6"/>
-        <slice pRef="collect_pairs" sRef="splitter_input"/>
-      </port>
       <port name="task_split_input_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_read_chunk" sRef="splitter_input"/>
+      </port>
+      <port name="input_pairs_source">
+        <visualDescription h="10" w="10" x="99" y="6"/>
+        <slice pRef="collect_pairs" sRef="splitter_input"/>
       </port>
       <action id="main">
         <protocol/>
@@ -97,13 +97,17 @@
       <visualDescription h="40" w="134" x="528" y="692">
         <color b="0" g="213" r="255"/>
       </visualDescription>
+      <port name="output_pairs_sink">
+        <visualDescription h="10" w="10" x="65" y="6"/>
+        <slice pRef="output_data" sRef="sink"/>
+      </port>
       <port name="platform_data_sink">
         <visualDescription h="10" w="10" x="92" y="5"/>
         <slice pRef="platform_data_sink" sRef="sink"/>
       </port>
       <port name="output_pairs_sink">
         <visualDescription h="10" w="10" x="65" y="6"/>
-        <slice pRef="output_data" sRef="sink"/>
+        <slice pRef="feed_pairs" sRef="splitter_output"/>
       </port>
       <port name="task_split_output_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -112,10 +116,6 @@
       <port name="task_split_output_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_perform" sRef="splitter_output"/>
-      </port>
-      <port name="output_pairs_sink">
-        <visualDescription h="10" w="10" x="65" y="6"/>
-        <slice pRef="feed_pairs" sRef="splitter_output"/>
       </port>
       <action id="main">
         <protocol/>
@@ -143,17 +143,17 @@
       <visualDescription h="40" w="80" x="388" y="720">
         <color b="0" g="165" r="255"/>
       </visualDescription>
-      <port name="global_intermediate_pairs">
+      <port name="platform_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="reducer"/>
+        <slice pRef="platform_reduce" sRef="reducer"/>
       </port>
       <port name="output_pairs_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feed_pairs" sRef="reducer"/>
       </port>
-      <port name="platform_reduce">
+      <port name="global_intermediate_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_reduce" sRef="reducer"/>
+        <slice pRef="collect_pairs" sRef="reducer"/>
       </port>
       <port name="task_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -171,6 +171,10 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_shuffle_chunk_ready" sRef="shuffler"/>
       </port>
+      <port name="task_split_output_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_perform" sRef="splitter_output"/>
+      </port>
       <port name="task_split_output_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_read_chunk" sRef="splitter_output"/>
@@ -178,10 +182,6 @@
       <port name="output_pairs_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_pairs" sRef="splitter_output"/>
-      </port>
-      <port name="task_split_output_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_perform" sRef="splitter_output"/>
       </port>
       <action id="main">
         <protocol/>
@@ -213,21 +213,17 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_map" sRef="mapper"/>
       </port>
-      <port name="platform_map">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_map" sRef="mapper"/>
-      </port>
       <port name="local_intermediate_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feed_pairs" sRef="mapper"/>
       </port>
+      <port name="platform_map">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_map" sRef="mapper"/>
+      </port>
       <port name="input_pairs_map">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_pairs" sRef="mapper"/>
-      </port>
-      <port name="task_shuffle_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_read_chunk" sRef="shuffler"/>
       </port>
       <port name="task_shuffle_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -237,9 +233,9 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_pairs" sRef="shuffler"/>
       </port>
-      <port name="task_split_input_perform">
+      <port name="task_shuffle_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_perform" sRef="splitter_input"/>
+        <slice pRef="task_binding_shuffle_read_chunk" sRef="shuffler"/>
       </port>
       <port name="input_pairs_map">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -248,6 +244,10 @@
       <port name="task_split_input_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_chunk_ready" sRef="splitter_input"/>
+      </port>
+      <port name="task_split_input_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_perform" sRef="splitter_input"/>
       </port>
       <action id="main">
         <protocol/>
@@ -271,57 +271,57 @@
       <visualDescription h="40" w="80" x="734" y="674">
         <color b="255" g="0" r="0"/>
       </visualDescription>
-      <port name="task_shuffle_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_read_chunk" sRef="workflow"/>
-      </port>
       <port name="task_shuffle_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_shuffle_perform" sRef="workflow"/>
       </port>
-      <port name="task_split_input_read_chunk">
+      <port name="task_shuffle_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_input_read_chunk" sRef="workflow"/>
-      </port>
-      <port name="task_shuffle_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_chunk_ready" sRef="workflow"/>
-      </port>
-      <port name="task_split_input_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_input_perform" sRef="workflow"/>
-      </port>
-      <port name="task_split_output_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_output_read_chunk" sRef="workflow"/>
-      </port>
-      <port name="task_map">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_map" sRef="workflow"/>
+        <slice pRef="task_shuffle_read_chunk" sRef="workflow"/>
       </port>
       <port name="swl_port">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="swl_port" sRef="workflow"/>
       </port>
-      <port name="task_split_output_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_output_chunk_ready" sRef="workflow"/>
-      </port>
       <port name="platform_SAFe">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_SAFe" sRef="workflow"/>
       </port>
-      <port name="task_split_output_perform">
+      <port name="task_map">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_output_perform" sRef="workflow"/>
+        <slice pRef="task_map" sRef="workflow"/>
+      </port>
+      <port name="task_split_output_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_split_output_read_chunk" sRef="workflow"/>
+      </port>
+      <port name="task_split_output_chunk_ready">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_split_output_chunk_ready" sRef="workflow"/>
+      </port>
+      <port name="task_split_input_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_split_input_read_chunk" sRef="workflow"/>
+      </port>
+      <port name="task_reduce">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_reduce" sRef="workflow"/>
+      </port>
+      <port name="task_split_input_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_split_input_perform" sRef="workflow"/>
+      </port>
+      <port name="task_shuffle_chunk_ready">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_shuffle_chunk_ready" sRef="workflow"/>
       </port>
       <port name="task_split_input_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_split_input_chunk_ready" sRef="workflow"/>
       </port>
-      <port name="task_reduce">
+      <port name="task_split_output_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce" sRef="workflow"/>
+        <slice pRef="task_split_output_perform" sRef="workflow"/>
       </port>
       <port name="platform_SAFe">
         <visualDescription h="10" w="10" x="0" y="0"/>

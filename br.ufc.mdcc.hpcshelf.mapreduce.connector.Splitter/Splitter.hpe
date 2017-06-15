@@ -249,13 +249,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_read_chunk" sRef="task_binding_split_read_chunk"/>
       </port>
-      <port name="output_key">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_key" sRef="bin_function"/>
-      </port>
       <port name="input_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_key" sRef="bin_function"/>
+      </port>
+      <port name="output_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="bin_function"/>
       </port>
       <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="IKey"/>
       <parameter iname="IData" order="1" parid="input_value_type" uname="data" varid="IValue"/>

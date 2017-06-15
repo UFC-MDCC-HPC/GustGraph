@@ -25,7 +25,7 @@
           <visualDescription h="60" w="181" x="64" y="390">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###929960887"/>
+          <parameter formFieldId="value_type" varName="X###1918576915"/>
           <parameter formFieldId="key_type" varName="TKey"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="137" y="20"/>
