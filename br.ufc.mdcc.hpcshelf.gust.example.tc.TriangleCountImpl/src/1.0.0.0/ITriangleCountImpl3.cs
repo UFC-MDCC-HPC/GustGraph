@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
 using br.ufc.pargo.hpe.backend.DGAC;
@@ -21,12 +20,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 
 		private IUndirectedGraphInstance<IVertexBasic, IEdgeBasic<IVertexBasic>, int, IEdgeInstance<IVertexBasic, int>> g = null;
 		private int[] partition = null;
-		private bool[]  partition_own = null;
+		private bool[]  partition_own = null; 
 		private int partid = 0;
 		private int partition_size = 0;
 		private int count = 0;
+		private IDictionary<int, IList<int>> InMessages = new Dictionary<int, IList<int>>();
 		private IDictionary<int, IList<int>>[] OutMessages = null;
-		private IDictionary<int, ICollection<int>> Neighbors = new Dictionary<int, ICollection<int>>();
 		public bool isGhost(int v){ return !partition_own[this.partition [v - 1]]; }
 
 		public override void main() { this.input_messages (); }
@@ -65,7 +64,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 			while (V.MoveNext ()) {
 				int v = V.Current;
 				if (!isGhost(v)) {
-					ICollection<int> vneighbors = g.outgoingVertexOf (v); // TODO: dá erro pois deve-se trocar o tipo do grafo, de undirected para directed
+					ICollection<int> vneighbors = g.neighborsOf (v);
 					foreach (int w in vneighbors) {
 						if (v < w) {
 							if (isGhost(w)) {
@@ -75,17 +74,11 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 									OutMessages[partition[w-1]][w] = l;
 								}
 								l.Add (v);
-								if (!Neighbors.ContainsKey (v))
-									Neighbors [v] = vneighbors;
 							} else {
-								//								IEnumerator<int> wneighbors = g.iteratorOutgoingVertexOf (w);
-								//								while (wneighbors.MoveNext ()) {
-								//									int wz = wneighbors.Current;
-								ICollection<int> wneighbors = null;// = g.iteratorOutgoingVertexOf(w);
-								if (!Neighbors.TryGetValue (w, out wneighbors))
-									wneighbors = Neighbors [w] = g.outgoingVertexOf (w); //emited.Add (w);
-								foreach(int wz in wneighbors){
-									if (w < wz && vneighbors.Contains (wz)) {
+								IEnumerator<int> wneighbors = g.iteratorNeighborsOf (w);
+								while (wneighbors.MoveNext ()) {
+									int z = wneighbors.Current;
+									if (w < z && vneighbors.Contains (z)) {
 										count++;
 									}
 								}
@@ -104,36 +97,18 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 			while (ivalues.fetch_next (out o)) {
 				IDataTriangleInstance dt = ((IDataTriangleInstance)o);
 				if (this.Superstep == 0)
-					this.graph_creator ((IInputFormatInstance)dt.Value);
+					this.graph_creator ((IInputFormatInstance) dt.Value);
 				else {
-					Block bin = (Block)dt.Value;
-					if (this.Superstep == 1) {
-						for (int k = 0; k < bin.SIZE; k++) {
-							int w = bin.Keys [k];
-							ICollection<int> wneighbors = null;// = g.iteratorOutgoingVertexOf(w);
-							if (!Neighbors.TryGetValue (w, out wneighbors))
-								wneighbors = Neighbors [w] = g.outgoingVertexOf (w); //emited.Add (w);
-							foreach (int wz in wneighbors) {
-								if (w < wz) {
-									foreach (int v in bin.Values[k]) {
-										IList<int> l;
-										if (!OutMessages [partition [v - 1]].TryGetValue (v, out l)) {
-											l = new List<int> ();
-											OutMessages [partition [v - 1]] [v] = l;
-										}
-										l.Add (wz);
-									}
-								}
+					IDictionary<int, IList<int>> block = (IDictionary<int, IList<int>>)dt.Value;
+					foreach (KeyValuePair<int, IList<int>> kv in block) {
+						int w = kv.Key;
+						foreach (int v in kv.Value) {
+							IList<int> l;
+							if (!InMessages.TryGetValue (w, out l)) {
+								l = new List<int> ();
+								InMessages [w] = l;
 							}
-						}
-					} else {
-						for (int k = 0; k < bin.SIZE; k++) {
-							int v = bin.Keys [k];
-							foreach (int wz in bin.Values[k]) {
-								if (Neighbors [v].Contains (wz)) {
-									count++;
-								}
-							}
+							l.Add (v);
 						}
 					}
 				}
@@ -143,6 +118,32 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 		public void gust0(){
 			if (this.Superstep == 0)
 				this.startup ();
+			else {
+				foreach (KeyValuePair<int, IList<int>> TRI in InMessages) {
+					int w = TRI.Key;
+					IEnumerator<int> wneighbors = g.iteratorNeighborsOf (w);
+					while (wneighbors.MoveNext ()) {
+						int vw = wneighbors.Current;
+						if (w < vw) {
+							foreach (int v in TRI.Value) {
+								if (this.Superstep == 1) {
+									IList<int> l;
+									if (!OutMessages[partition[v-1]].TryGetValue (v, out l)) {
+										l = new List<int> ();
+										OutMessages[partition[v-1]][v] = l;
+									}
+									l.Add (vw);
+
+								} else {
+									if (v == vw) {
+										count++;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 			emitter ();
 		}
 
@@ -151,18 +152,11 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 			for (int p = 0; p < partition_size; p++) {
 				IDictionary<int, IList<int>> block = OutMessages [p];
 				if (block.Count > 0) {
-					Block bin = new Block(OutMessages[p].Count); 
-					int count = 0;
 					IKVPairInstance<IVertexBasic,IDataTriangle> item = (IKVPairInstance<IVertexBasic,IDataTriangle>)Output_messages.createItem ();
 					((IVertexBasicInstance)item.Key).Id = p;
 					((IVertexBasicInstance)item.Key).PId = (byte) p;
-					foreach (KeyValuePair<int, IList<int>> kv in block) {
-						bin.Keys [count] = kv.Key;
-						bin.Values[count++] = kv.Value.ToArray ();
-					}
-					((IDataTriangleInstance)item.Value).Value = bin;
+					((IDataTriangleInstance)item.Value).Value = block;
 					output_value.put (item);
-					OutMessages [p] = new Dictionary<int, IList<int>> ();
 				}
 			}
 			if (this.Superstep == 2) { 
@@ -173,16 +167,9 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 				output_value.put (item);
 				output_value.finish ();
 			}
-		}
-		[Serializable]
-		public class Block{
-			public int SIZE = 0;
-			public int[] Keys;
-			public int[][] Values;
-			public Block(int size){
-				this.SIZE = size;
-				this.Keys = new int[size];
-				this.Values = new int[size][];
+			InMessages.Clear ();
+			for (int p = 0; p < partition_size; p++) {
+				OutMessages [p] = new Dictionary<int, IList<int>> ();
 			}
 		}
 		#endregion

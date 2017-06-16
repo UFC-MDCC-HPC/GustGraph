@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
 using br.ufc.pargo.hpe.backend.DGAC;
@@ -109,18 +108,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 					IKVPairInstance<IVertexBasic,IDataSSSP> ITEM = (IKVPairInstance<IVertexBasic,IDataSSSP>)Output_messages.createItem ();
 					((IVertexBasicInstance)ITEM.Key).Id = i;
 					((IVertexBasicInstance)ITEM.Key).PId = (byte) i;
+
 					if (partition_own [i] || !emite [i])
-						((IDataSSSPInstance)ITEM.Value).Value = new Block (0);
-					else {
-						Block bin = new Block (messages[i].Count);
-						int count = 0;
-						KeyValuePair<int,float>[] kv = messages [i].ToArray ();
-						foreach (KeyValuePair<int,float> b in kv) {
-							bin.Keys [count] = b.Key;
-							bin.Values [count++] = b.Value;
-						}
-						((IDataSSSPInstance)ITEM.Value).Value = bin;
-					}
+						((IDataSSSPInstance)ITEM.Value).Path_size = new Dictionary<int, float> ();
+					else
+						((IDataSSSPInstance)ITEM.Value).Path_size = messages [i];
+
 					((IDataSSSPInstance)ITEM.Value).Halt = any_emite ? 1 : 0;
 					output_value_instance.put (ITEM);
 				}
@@ -134,52 +127,37 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 			IVertexBasicInstance ikey = (IVertexBasicInstance)input_values_instance.Key;
 			IIteratorInstance<IDataSSSP> ivalues = (IIteratorInstance<IDataSSSP>)input_values_instance.Value;
 
-			object o;
-			float distance_min;
+			object o; float distance_min;
 			while (ivalues.fetch_next (out o)) {
 				IDataSSSPInstance VALUE = (IDataSSSPInstance)o;
 				if (this.Superstep == 0)
 					this.graph_creator ((IInputFormatInstance)VALUE.Value);
 				else {
 					halt_sum += VALUE.Halt;
-					Block bin = (Block)VALUE.Value;
-					for (int k = 0; k < bin.SIZE; k++) {//KeyValuePair<int, float> kv in VALUE.Path_size) {
-						float v_distance_min_candidate = bin.Values [k];//kv.Value;
-						if (v_distance_min_candidate > 0) {
-							int v = bin.Keys[k];//kv.Key; //foreach (KeyValuePair<int, float> kv in VALUE.Path_size) { //	int v = kv.Key; //float v_distance_min_candidate = kv.Value;
-							Queue<int> queue = new Queue<int> ();
-							if (!messages [partition [v - 1]].TryGetValue (v, out distance_min) || distance_min > v_distance_min_candidate) {
-								messages [partition [v - 1]] [v] = v_distance_min_candidate;
-								queue.Enqueue (v);
-								while (queue.Count > 0) { // Busca em profundidade
-									v = queue.Dequeue ();
-									v_distance_min_candidate = messages [partition [v - 1]] [v];
-									IEnumerator<KeyValuePair<int, float>> vneighbors = g.iteratorVertexWeightOf (v); //g.iteratorOutgoingVertexWeightOf (v);
-									while (vneighbors.MoveNext ()) {
-										int n = vneighbors.Current.Key;
-										float n_distance_min_candidate = vneighbors.Current.Value + v_distance_min_candidate;
-										if (!messages [partition [n - 1]].TryGetValue (n, out distance_min) || distance_min > n_distance_min_candidate) {
-											messages [partition [n - 1]] [n] = n_distance_min_candidate;
-											queue.Enqueue (n);
-											emite [partition [n - 1]] = true;
-										}
+					foreach (KeyValuePair<int, float> kv in VALUE.Path_size) {
+						int v = kv.Key;
+						float v_distance_min_candidate = kv.Value;
+						Queue<int> queue = new Queue<int> ();
+						if (!messages [partition [v - 1]].TryGetValue (v, out distance_min) || distance_min > v_distance_min_candidate) {
+							messages [partition [v - 1]] [v] = v_distance_min_candidate;
+							queue.Enqueue (v);
+							while (queue.Count > 0) { // Busca em profundidade
+								v = queue.Dequeue ();
+								v_distance_min_candidate = messages [partition [v - 1]] [v];
+								IEnumerator<KeyValuePair<int, float>> vneighbors = g.iteratorVertexWeightOf (v); //g.iteratorOutgoingVertexWeightOf (v);
+								while (vneighbors.MoveNext ()) {
+									int n = vneighbors.Current.Key;
+									float n_distance_min_candidate = vneighbors.Current.Value + v_distance_min_candidate;
+									if (!messages [partition [n - 1]].TryGetValue (n, out distance_min) || distance_min > n_distance_min_candidate) {
+										messages [partition [n - 1]] [n] = n_distance_min_candidate;
+										queue.Enqueue (n);
+										emite [partition [n - 1]] = true;
 									}
 								}
 							}
 						}
 					}
 				}
-			}
-		}
-		[Serializable]
-		public class Block{
-			public int SIZE = 0;
-			public int[] Keys;
-			public float[] Values;
-			public Block(int size){
-				this.SIZE = size;
-				this.Keys = new int[size];
-				this.Values = new float[size];
 			}
 		}
 		#endregion

@@ -10,7 +10,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK
 	} // end main interface
 
 	public interface IDataPGRANKInstance : IDataObjectInstance, ICloneable {
-		IDictionary<int, float> Ranks { get; set; }
-		float Slice { get; set; }
+		IDictionary<int, double> Ranks { get; set; }
+		double Slice { get; set; }
 	}
 } // end namespace

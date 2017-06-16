@@ -36,8 +36,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANKImpl
 
 		#region IDataPGRANKInstance implementation
 
-		private IDictionary<int, float> ranks = new Dictionary<int, float>();
-		private float slice = 0.0f;
+		private IDictionary<int, double> ranks = new Dictionary<int, double>();
+		private double slice = 0.0f;
 
 		public IDataPGRANKInstanceImpl(){ }
 
@@ -47,28 +47,28 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANKImpl
 		   set { this._value = value; }
 		}
 
-		public IDictionary<int, float> Ranks {
+		public IDictionary<int, double> Ranks {
 			get { return this.ranks; }
-			set { this.ranks = (IDictionary<int, float>) value; }
+			set { this.ranks = (IDictionary<int, double>) value; }
 		}
 
-		public float Slice {
+		public double Slice {
 			get { return this.slice; }
-			set { this.slice = (float) value; }
+			set { this.slice = (double) value; }
 		}
 
 		public object ObjValue {
-			get { return new Tuple<IDictionary<int, float>, float, object>(this.ranks, this.slice, this._value); }
+			get { return new Tuple<IDictionary<int, double>, double, object>(this.ranks, this.slice, this._value); }
 			set {
-				this.ranks = ((Tuple<IDictionary<int, float>, float, object>)value).Item1;
-				this.slice = ((Tuple<IDictionary<int, float>, float, object>)value).Item2;
-				this._value = ((Tuple<IDictionary<int, float>, float, object>)value).Item3;
+				this.ranks = ((Tuple<IDictionary<int, double>, double, object>)value).Item1;
+				this.slice = ((Tuple<IDictionary<int, double>, double, object>)value).Item2;
+				this._value = ((Tuple<IDictionary<int, double>, double, object>)value).Item3;
 			}
 		}
 
 		public override string ToString () {
 			System.Text.StringBuilder sb = new System.Text.StringBuilder();
-			IEnumerator<KeyValuePair<int, float>> iterator = this.Ranks.GetEnumerator ();
+			IEnumerator<KeyValuePair<int, double>> iterator = this.Ranks.GetEnumerator ();
 			if (iterator.MoveNext ()) {
 				sb.Append (iterator.Current.Key + ":" + iterator.Current.Value);
 				while (iterator.MoveNext ())
@@ -84,7 +84,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANKImpl
 		#region ICloneable implementation
 		public object Clone () {
 			IDataPGRANKInstance clone = new IDataPGRANKInstanceImpl ();
-			clone.Ranks = new Dictionary<int, float> (this.Ranks);
+			clone.Ranks = new Dictionary<int, double> (this.Ranks);
 			clone.Slice = this.slice;
 			clone.Value = this._value;
 			return clone;
