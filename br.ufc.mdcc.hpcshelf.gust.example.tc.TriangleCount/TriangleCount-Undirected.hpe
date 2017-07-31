@@ -27,7 +27,7 @@
           <visualDescription h="60" w="181" x="96" y="471">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###513024262"/>
+          <parameter formFieldId="value_type" varName="X###1632145248"/>
           <parameter formFieldId="key_type" varName="TKey"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="137" y="20"/>
@@ -43,8 +43,8 @@
             <visualDescription h="20" w="20" x="7" y="21"/>
           </unitBounds>
         </port>
-        <port index_replica="0" localRef="graph" location="br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/DirectedGraph.hpe" multiple="false" name="DirectedGraph" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
-          <visualDescription h="60" w="100" x="418" y="597">
+        <port index_replica="0" localRef="graph" location="br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph/UndirectedGraph.hpe" multiple="false" name="UndirectedGraph" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+          <visualDescription h="60" w="146" x="363" y="487">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <parameter formFieldId="edge_type" varName="E"/>
@@ -58,7 +58,7 @@
           <visualDescription h="60" w="265" x="461" y="401">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###251928729"/>
+          <parameter formFieldId="item_type" varName="X###1656560005"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="iterator">
             <visualDescription h="20" w="20" x="19" y="23"/>
           </unitBounds>
@@ -95,6 +95,17 @@
       <visualDescription h="60" w="100" x="632" y="502">
         <color b="255" g="255" r="255"/>
       </visualDescription>
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="g" location="br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph/UndirectedGraph.hpe" multiple="false" name="UndirectedGraph" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+      <visualDescription h="60" w="146" x="363" y="487">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="edge_type" varName="E"/>
+      <parameter formFieldId="container" varName="CTN"/>
+      <parameter formFieldId="vertex_type" varName="V"/>
       <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -142,17 +153,6 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="g" location="br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/DirectedGraph.hpe" multiple="false" name="DirectedGraph" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
-      <visualDescription h="60" w="100" x="418" y="597">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="edge_type" varName="E"/>
-      <parameter formFieldId="container" varName="CTN"/>
-      <parameter formFieldId="vertex_type" varName="V"/>
-      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
     <supplyParameter cRef="tkey" direct="true" varName="TKey"/>
     <supplyParameter cRef="tvalue" direct="true" varName="TValue"/>
     <supplyParameter cRef="okey" direct="true" varName="OKey"/>
@@ -164,10 +164,10 @@
     <supplyParameter cRef="gif" direct="true" varName="GIF"/>
     <interface iRef="ITriangleCount" nArgs="0">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount&#xA;{&#xA;&#x9;public interface BaseITriangleCount : BaseIGustyFunction&lt;&#xA;&#x9;IVertexBasic,&#xA;&#x9;IDataTriangle,&#xA;&#x9;IVertexBasic,&#xA;&#x9;IDataTriangle,&#xA;&#x9;IDirectedGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>>,&#xA;&#x9;IInputFormat&#xA;&#x9;>, IComputationKind&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseITriangleCount.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount/bin/1.0.0.0/BaseITriangleCount.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount&#xA;{&#xA;&#x9;public interface BaseITriangleCount : BaseIGustyFunction&lt;&#xA;&#x9;IVertexBasic,&#xA;&#x9;IDataTriangle,&#xA;&#x9;IVertexBasic,&#xA;&#x9;IDataTriangle,&#xA;&#x9;IUndirectedGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>>,&#xA;&#x9;IInputFormat&#xA;&#x9;>, IComputationKind&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseITriangleCount.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount/bin/1.0.0.0/BaseITriangleCount.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/BaseIGustyFunction.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount&#xA;{&#xA;&#x9;public interface ITriangleCount : BaseITriangleCount, IGustyFunction&lt;&#xA;&#x9;IVertexBasic,&#xA;&#x9;IDataTriangle,&#xA;&#x9;IVertexBasic,&#xA;&#x9;IDataTriangle,&#xA;&#x9;IDirectedGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>>,&#xA;&#x9;IInputFormat&#xA;&#x9;>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITriangleCount.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount/bin/1.0.0.0/ITriangleCount.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount&#xA;{&#xA;&#x9;public interface ITriangleCount : BaseITriangleCount, IGustyFunction&lt;&#xA;&#x9;IVertexBasic,&#xA;&#x9;IDataTriangle,&#xA;&#x9;IVertexBasic,&#xA;&#x9;IDataTriangle,&#xA;&#x9;IUndirectedGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>>,&#xA;&#x9;IInputFormat&#xA;&#x9;>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITriangleCount.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount/bin/1.0.0.0/ITriangleCount.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount/bin/1.0.0.0/BaseITriangleCount.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/IGustyFunction.dll</dependency>
         </file>

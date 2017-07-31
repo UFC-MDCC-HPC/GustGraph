@@ -9,7 +9,7 @@ using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;
 using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 using br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount;
-using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;
+using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;
 using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
 using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;
@@ -18,13 +18,13 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl
 {
 	public abstract class BaseITriangleCountImpl: Computation, BaseITriangleCount
 	{
-		private IUndirectedGraph<IDataContainerV<IVertexBasic, IEdgeBasic<IVertexBasic>>, IVertexBasic, IEdgeBasic<IVertexBasic>> graph = null;
-		public IUndirectedGraph<IDataContainerV<IVertexBasic, IEdgeBasic<IVertexBasic>>, IVertexBasic, IEdgeBasic<IVertexBasic>> Graph
+		private IDirectedGraph<IDataContainerV<IVertexBasic, IEdgeBasic<IVertexBasic>>, IVertexBasic, IEdgeBasic<IVertexBasic>> graph = null;
+		public IDirectedGraph<IDataContainerV<IVertexBasic, IEdgeBasic<IVertexBasic>>, IVertexBasic, IEdgeBasic<IVertexBasic>> Graph
 		{
 			get
 			{
 				if (this.graph == null)
-					this.graph = (IUndirectedGraph<IDataContainerV<IVertexBasic, IEdgeBasic<IVertexBasic>>, IVertexBasic, IEdgeBasic<IVertexBasic>>) Services.getPort("graph");
+					this.graph = (IDirectedGraph<IDataContainerV<IVertexBasic, IEdgeBasic<IVertexBasic>>, IVertexBasic, IEdgeBasic<IVertexBasic>>) Services.getPort("graph");
 				return this.graph;
 			}
 		}

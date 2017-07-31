@@ -80,10 +80,6 @@
       <Project>{6A7BA994-391F-404F-939C-077CA597C821}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph\br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph\br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph.csproj">
-      <Project>{F71D8D8A-2FAD-4FA2-A9A3-0CFFC56DA1F7}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.Vertex\br.ufc.mdcc.hpcshelf.gust.graph.Vertex\br.ufc.mdcc.hpcshelf.gust.graph.Vertex.csproj">
       <Project>{B53D1E64-E50C-4BCD-A705-EDE7AEC76D9A}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.graph.Vertex</Name>
@@ -131,6 +127,10 @@
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator.csproj">
       <Project>{1784C0D3-7632-4F38-8FFF-FA8008E2A724}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph\br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph\br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph.csproj">
+      <Project>{90671855-07C4-4E67-8F2F-2384704D1F6B}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

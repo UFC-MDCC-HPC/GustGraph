@@ -8,7 +8,7 @@ using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount;
-using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;
+using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;
 using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
@@ -19,7 +19,7 @@ using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 	public class ITriangleCountImpl : BaseITriangleCountImpl, ITriangleCount {
 
-		private IUndirectedGraphInstance<IVertexBasic, IEdgeBasic<IVertexBasic>, int, IEdgeInstance<IVertexBasic, int>> g = null;
+		private IDirectedGraphInstance<IVertexBasic, IEdgeBasic<IVertexBasic>, int, IEdgeInstance<IVertexBasic, int>> g = null;
 		private int[] partition = null;
 		private bool[]  partition_own = null;
 		private int partid = 0;
@@ -151,7 +151,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 			for (int p = 0; p < partition_size; p++) {
 				IDictionary<int, IList<int>> block = OutMessages [p];
 				if (block.Count > 0) {
-					Block bin = new Block(OutMessages[p].Count); 
+					Block bin = new Block(OutMessages[p].Count);
 					int count = 0;
 					IKVPairInstance<IVertexBasic,IDataTriangle> item = (IKVPairInstance<IVertexBasic,IDataTriangle>)Output_messages.createItem ();
 					((IVertexBasicInstance)item.Key).Id = p;
@@ -165,7 +165,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 					OutMessages [p] = new Dictionary<int, IList<int>> ();
 				}
 			}
-			if (this.Superstep == 2) { 
+			if (this.Superstep == 2) {
 				IKVPairInstance<IVertexBasic,IDataTriangle> item = (IKVPairInstance<IVertexBasic,IDataTriangle>)Output_messages.createItem ();
 				((IVertexBasicInstance)item.Key).Id = partid;
 				((IVertexBasicInstance)item.Key).PId = (byte)partid;
