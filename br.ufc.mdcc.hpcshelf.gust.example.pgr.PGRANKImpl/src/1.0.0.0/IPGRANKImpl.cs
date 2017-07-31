@@ -37,7 +37,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl {
 		private IDictionary<int, ICollection<int>> cache = new Dictionary<int, ICollection<int>>();
 		public bool isGhost(int v){ return !partition_own[this.partition [v - 1]]; }
 
-		public override void main() { this.input_messages (); }
+		public override void main() { } //this.unroll (); }
 		#region Create Directed Graph Weight
 		public void graph_creator(IInputFormatInstance gif){
 			if (partition_own==null){
@@ -87,7 +87,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl {
 				}
 			}
 		}
-		public void input_messages() {
+		public void unroll() {
 			IKVPairInstance<IVertexBasic,IIterator<IDataPGRANK>> input_values_instance = (IKVPairInstance<IVertexBasic,IIterator<IDataPGRANK>>)Input_values.Instance;
 			IIteratorInstance<IDataPGRANK> ivalues = (IIteratorInstance<IDataPGRANK>)input_values_instance.Value;
 
@@ -109,7 +109,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl {
 				}
 			}
 		}
-		public void gust0(){
+		public void compute(){
 			if (this.Superstep == 0)
 				this.startup ();
 			else {
@@ -150,9 +150,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANKImpl {
 					}
 				}
 			}
-			emite ();
 		}
-		private void emite(){
+		public void scatter(){
 			IIteratorInstance<IKVPair<IVertexBasic,IDataPGRANK>> output_value_instance = (IIteratorInstance<IKVPair<IVertexBasic,IDataPGRANK>>)Output_messages.Instance;
 			if (this.Superstep == MAX_ITERATION) {
 				IKVPairInstance<IVertexBasic,IDataPGRANK> ITEM = (IKVPairInstance<IVertexBasic,IDataPGRANK>)Output_messages.createItem ();

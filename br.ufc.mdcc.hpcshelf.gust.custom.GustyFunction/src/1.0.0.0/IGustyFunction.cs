@@ -23,6 +23,10 @@ namespace br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction
 		//void input_messages();
 
 		// Algoritmo deve possuir pelo menos uma etapa, onde a assinatura é gustx, para x>=0
-		void gust0();
+		//void gust0();
+
+		void unroll();
+		void compute();
+		void scatter();
 	}
 }

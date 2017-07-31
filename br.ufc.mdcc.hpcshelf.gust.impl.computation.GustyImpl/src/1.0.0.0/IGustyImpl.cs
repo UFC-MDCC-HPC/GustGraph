@@ -1,5 +1,5 @@
 using System;
-using System.Reflection;
+//using System.Reflection;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
@@ -56,23 +56,11 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 
 			Console.WriteLine (this.Rank + ": REDUCER 2");
 
-			//Gust ###
 			int superstep = -1;
-			ICollection<MethodInfo> collection_methods = getGustMethods (Reduce_function);
-			IEnumerator<MethodInfo> gust_methods = collection_methods.GetEnumerator ();
-			// ###
-
 			bool end_computation = false;
 			while (!end_computation)    // new iteration
 			{
-				// Gust ###
 				Reduce_function.Superstep = ++superstep;
-				if (!gust_methods.MoveNext ()) {
-					gust_methods = collection_methods.GetEnumerator ();
-					gust_methods.MoveNext ();
-				}
-				MethodInfo gustX = gust_methods.Current;
-				//### for call: gustX.Invoke(Reduce_function,null);
 
 				//IDictionary<object,object> cont_dict = new Dictionary<object, object> ();
 
@@ -112,7 +100,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 						//	((IDataInstance)Continue_value.Instance).ObjValue = acc_value;
 
 						Input_values.Instance = kvpair;
-						Reduce_function.go ();
+						Reduce_function.unroll (); 
 						//cont_dict [kvpair.Key] = ((IDataInstance)((IKVPairInstance<OKey,OValue>)Output_value.Instance).Value).ObjValue;
 
 						count++;
@@ -130,7 +118,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 				IActionFuture reduce_chunk_ready;
 				Task_reduce.invoke (CHUNK_READY.name, out reduce_chunk_ready);  //***
 
-				gustX.Invoke(Reduce_function,null); //Gust### one ordered gustX foreach iteration. Repeat after maximum X
+				Reduce_function.compute ();
+				Reduce_function.scatter ();
 //				foreach (KeyValuePair<object,object> output_pair in cont_dict)
 //				{
 //					IKVPairInstance<OKey,OValue> new_pair = (IKVPairInstance<OKey,OValue>) Output_value.newInstance ();
@@ -153,30 +142,30 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 			Console.WriteLine (this.Rank + ": REDUCER FINISH ... ");
 		}
 
-		private static ICollection<MethodInfo> getGustMethods(object o){
-			IDictionary<int,MethodInfo> dic = new Dictionary<int,MethodInfo> ();
-			IList<MethodInfo> all_methods = new List<MethodInfo> (o.GetType ().GetMethods ());
-			foreach (MethodInfo m in all_methods) {
-				if (m.Name.Length >= 4) {
-					if (m.Name.Substring (0, 4).ToLower().Equals ("gust") && (m.GetParameters ().Length == 0) ) {
-						int id = -1;
-						if (int.TryParse (m.Name.Substring (4), out id)) dic [id] = m;
-					}
-				}
-			}
-			all_methods.Clear (); int[] array = ( new List<int>(dic.Keys) ).ToArray(); Array.Sort (array);
-			for(int i=0;i<array.Length;i++) all_methods.Add(dic[array[i]]);
-			return all_methods;
-		}
+//		private static ICollection<MethodInfo> getGustMethods(object o){
+//			IDictionary<int,MethodInfo> dic = new Dictionary<int,MethodInfo> ();
+//			IList<MethodInfo> all_methods = new List<MethodInfo> (o.GetType ().GetMethods ());
+//			foreach (MethodInfo m in all_methods) {
+//				if (m.Name.Length >= 4) {
+//					if (m.Name.Substring (0, 4).ToLower().Equals ("gust") && (m.GetParameters ().Length == 0) ) {
+//						int id = -1;
+//						if (int.TryParse (m.Name.Substring (4), out id)) dic [id] = m;
+//					}
+//				}
+//			}
+//			all_methods.Clear (); int[] array = ( new List<int>(dic.Keys) ).ToArray(); Array.Sort (array);
+//			for(int i=0;i<array.Length;i++) all_methods.Add(dic[array[i]]);
+//			return all_methods;
+//		}
 
-		private void startThreads() {
-			/*Instancias*/
-			Thread treadPairOMKOMV = new Thread(new ThreadStart(readPair_OMK_OMVs));
-
-			/*Starting*/
-			treadPairOMKOMV.Start();
-			/* Joins*/
-			treadPairOMKOMV.Join();
-		}
+//		private void startThreads() {
+//			/*Instancias*/
+//			Thread treadPairOMKOMV = new Thread(new ThreadStart(readPair_OMK_OMVs));
+//
+//			/*Starting*/
+//			treadPairOMKOMV.Start();
+//			/* Joins*/
+//			treadPairOMKOMV.Join();
+//		}
    }
 }

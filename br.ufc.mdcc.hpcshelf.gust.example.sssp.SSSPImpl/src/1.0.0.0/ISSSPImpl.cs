@@ -33,7 +33,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 		private IDictionary<int, float>[] messages = null;
 		public bool isGhost(int v){ return !partition_own[this.partition [v - 1]]; }
 
-		public override void main() { this.input_messages (); }
+		public override void main() { } //this.unroll (); }
 		#region Create Directed Graph Weight
 		public void graph_creator(IInputFormatInstance gif){
 			if (partition_own==null){
@@ -86,50 +86,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 				}
 			}
 		}
-		public void gust0(){ //emite saídas
-			if (this.Superstep == 0)
-				this.startup ();
-
-			IIteratorInstance<IKVPair<IVertexBasic,IDataSSSP>> output_value_instance = (IIteratorInstance<IKVPair<IVertexBasic,IDataSSSP>>)Output_messages.Instance;
-
-			bool any_emite = false;
-			foreach (bool any in emite)
-				any_emite = any_emite || any;
-			if (!any_emite && halt_sum == 0) {
-				IKVPairInstance<IVertexBasic,IDataSSSP> ITEM = (IKVPairInstance<IVertexBasic,IDataSSSP>)Output_messages.createItem ();
-				((IVertexBasicInstance)ITEM.Key).Id = this.partid;
-				((IVertexBasicInstance)ITEM.Key).PId = (byte) this.partid;
-				((IDataSSSPInstance)ITEM.Value).Path_size = messages [((IVertexBasicInstance)ITEM.Key).PId];
-				((IDataSSSPInstance)ITEM.Value).Halt = 0;
-				output_value_instance.put (ITEM);
-
-				output_value_instance.finish (); //finish(), preparando-se para a emissão definitiva de saída
-			} else {
-				for (int i = 0; i < partition_size; i++) {
-					IKVPairInstance<IVertexBasic,IDataSSSP> ITEM = (IKVPairInstance<IVertexBasic,IDataSSSP>)Output_messages.createItem ();
-					((IVertexBasicInstance)ITEM.Key).Id = i;
-					((IVertexBasicInstance)ITEM.Key).PId = (byte) i;
-					if (partition_own [i] || !emite [i])
-						((IDataSSSPInstance)ITEM.Value).Value = new Block (0);
-					else {
-						Block bin = new Block (messages[i].Count);
-						int count = 0;
-						KeyValuePair<int,float>[] kv = messages [i].ToArray ();
-						foreach (KeyValuePair<int,float> b in kv) {
-							bin.Keys [count] = b.Key;
-							bin.Values [count++] = b.Value;
-						}
-						((IDataSSSPInstance)ITEM.Value).Value = bin;
-					}
-					((IDataSSSPInstance)ITEM.Value).Halt = any_emite ? 1 : 0;
-					output_value_instance.put (ITEM);
-				}
-			}
-			emite = new bool[partition_size];
-			halt_sum = 0;
-		}
-
-		public void input_messages() {
+		public void unroll() {
 			IKVPairInstance<IVertexBasic,IIterator<IDataSSSP>> input_values_instance = (IKVPairInstance<IVertexBasic,IIterator<IDataSSSP>>)Input_values.Instance;
 			IVertexBasicInstance ikey = (IVertexBasicInstance)input_values_instance.Key;
 			IIteratorInstance<IDataSSSP> ivalues = (IIteratorInstance<IDataSSSP>)input_values_instance.Value;
@@ -170,6 +127,49 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 					}
 				}
 			}
+		}
+		public void compute(){
+			if (this.Superstep == 0)
+				this.startup ();
+		}
+		public void scatter(){
+			IIteratorInstance<IKVPair<IVertexBasic,IDataSSSP>> output_value_instance = (IIteratorInstance<IKVPair<IVertexBasic,IDataSSSP>>)Output_messages.Instance;
+
+			bool any_emite = false;
+			foreach (bool any in emite)
+				any_emite = any_emite || any;
+			if (!any_emite && halt_sum == 0) {
+				IKVPairInstance<IVertexBasic,IDataSSSP> ITEM = (IKVPairInstance<IVertexBasic,IDataSSSP>)Output_messages.createItem ();
+				((IVertexBasicInstance)ITEM.Key).Id = this.partid;
+				((IVertexBasicInstance)ITEM.Key).PId = (byte) this.partid;
+				((IDataSSSPInstance)ITEM.Value).Path_size = messages [((IVertexBasicInstance)ITEM.Key).PId];
+				((IDataSSSPInstance)ITEM.Value).Halt = 0;
+				output_value_instance.put (ITEM);
+
+				output_value_instance.finish (); //finish(), preparando-se para a emissão definitiva de saída
+			} else {
+				for (int i = 0; i < partition_size; i++) {
+					IKVPairInstance<IVertexBasic,IDataSSSP> ITEM = (IKVPairInstance<IVertexBasic,IDataSSSP>)Output_messages.createItem ();
+					((IVertexBasicInstance)ITEM.Key).Id = i;
+					((IVertexBasicInstance)ITEM.Key).PId = (byte) i;
+					if (partition_own [i] || !emite [i])
+						((IDataSSSPInstance)ITEM.Value).Value = new Block (0);
+					else {
+						Block bin = new Block (messages[i].Count);
+						int count = 0;
+						KeyValuePair<int,float>[] kv = messages [i].ToArray ();
+						foreach (KeyValuePair<int,float> b in kv) {
+							bin.Keys [count] = b.Key;
+							bin.Values [count++] = b.Value;
+						}
+						((IDataSSSPInstance)ITEM.Value).Value = bin;
+					}
+					((IDataSSSPInstance)ITEM.Value).Halt = any_emite ? 1 : 0;
+					output_value_instance.put (ITEM);
+				}
+			}
+			emite = new bool[partition_size];
+			halt_sum = 0;
 		}
 		[Serializable]
 		public class Block{

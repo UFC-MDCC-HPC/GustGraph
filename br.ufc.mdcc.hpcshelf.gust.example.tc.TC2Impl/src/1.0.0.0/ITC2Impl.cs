@@ -27,7 +27,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TC2Impl {
 		private IDictionary<int, IList<int>> InMessages = new Dictionary<int, IList<int>>();
 		public bool isGhost(int v){ return !partition_own[this.partition [v - 1]]; }
 
-		public override void main() { this.input_messages (); }
+		public override void main() { }//this.unroll (); }
 		#region Create Undirected Graph
 		public void graph_creator(IInputFormatInstance gif, int tcount){
 			if (partition_own==null){
@@ -56,7 +56,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TC2Impl {
 		#endregion
 
 		#region Algorithm implementation
-		public void input_messages(){
+		public void unroll(){
 			IKVPairInstance<IVertexBasic,IIterator<IDataTriangle>> input_values_instance = (IKVPairInstance<IVertexBasic,IIterator<IDataTriangle>>)Input_values.Instance;
 			IIteratorInstance<IDataTriangle> ivalues = (IIteratorInstance<IDataTriangle>)input_values_instance.Value;
 
@@ -81,7 +81,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TC2Impl {
 				}
 			}
 		}
-		public void gust0(){
+		public void compute(){
 			foreach (KeyValuePair<int, IList<int>> TRI in InMessages) {
 				int w = TRI.Key;
 				IEnumerator<int> wneighbors = g.iteratorNeighborsOf (w);
@@ -96,9 +96,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TC2Impl {
 					}
 				}
 			}
-			emitter ();
 		}
-		public void emitter(){
+		public void scatter(){
 			IIteratorInstance<IKVPair<IVertexBasic,IDataTriangle>> output_value = (IIteratorInstance<IKVPair<IVertexBasic,IDataTriangle>>)Output_messages.Instance;
 			IKVPairInstance<IVertexBasic,IDataTriangle> item = (IKVPairInstance<IVertexBasic,IDataTriangle>)Output_messages.createItem ();
 			((IVertexBasicInstance)item.Key).Id = partid;
