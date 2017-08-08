@@ -55,15 +55,6 @@
     <Compile Include="..\src\1.0.0.0\BaseIPeer_4.cs">
       <Link>BaseIPeer_4.cs</Link>
     </Compile>
-    <Compile Include="..\src\1.0.0.0\BaseIPeer_5.cs">
-      <Link>BaseIPeer_5.cs</Link>
-    </Compile>
-    <Compile Include="..\src\1.0.0.0\BaseIPeer_6.cs">
-      <Link>BaseIPeer_6.cs</Link>
-    </Compile>
-    <Compile Include="..\src\1.0.0.0\BaseIPeer_7.cs">
-      <Link>BaseIPeer_7.cs</Link>
-    </Compile>
     <Compile Include="..\src\1.0.0.0\BaseIRoot.cs">
       <Link>BaseIRoot.cs</Link>
     </Compile>
@@ -81,15 +72,6 @@
     </Compile>
     <Compile Include="..\src\1.0.0.0\IPeer_4.cs">
       <Link>IPeer_4.cs</Link>
-    </Compile>
-    <Compile Include="..\src\1.0.0.0\IPeer_5.cs">
-      <Link>IPeer_5.cs</Link>
-    </Compile>
-    <Compile Include="..\src\1.0.0.0\IPeer_6.cs">
-      <Link>IPeer_6.cs</Link>
-    </Compile>
-    <Compile Include="..\src\1.0.0.0\IPeer_7.cs">
-      <Link>IPeer_7.cs</Link>
     </Compile>
     <Compile Include="..\src\1.0.0.0\IRoot.cs">
       <Link>IRoot.cs</Link>

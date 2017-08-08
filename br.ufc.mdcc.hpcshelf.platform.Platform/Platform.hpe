@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ebd79c008046bda718a2f95c35b0cd4002933dc60c36efdfb393a07f9ca13cd4c728f25333d8c2789a444a0f463cb178981abc27031cd830f5bb51f3644442d0dbb1cea891e129b8fefdf6997c4e5b555f9e8b2d3a0c347bb974e5773abb58418e8420366243b910a1febecfbaf1d26731ff992a75be0a9df5508f6d19f5be83" isAbstract="true" kind="Environment" name="Platform" packagePath="br.ufc.mdcc.hpcshelf.platform">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e916ee20e4501d14f818344c0431d0db6615b052e5ae75072eff79ba9d8833814f937a5a94ecb6851974c49fc992f9a257a802dec40fb2071e9b14060cf41eb529a5fd148042cc260d6416938e5c90059e4bf789ec17590c9ad912e551aabdc3e124850e49607f0a8d0df2f6b0bec93a227b0b033ec0b35edd14c24316642e96" isAbstract="true" kind="Environment" name="Platform" packagePath="br.ufc.mdcc.hpcshelf.platform">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>

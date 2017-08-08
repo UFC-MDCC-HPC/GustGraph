@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bdbfdec75e44b1f555035b08a0dc1218834c22fccf3804d5ffb916c853dbe116bb6b671b7440ce6726feec12664da1a6c9a3c8beee1624e3d914cca9a8867ecd7aa1d63205b469fe12a73af58d0e639cd2179b9fb73e42cedd5423d3ed7e75b2c749f24e073dea155fb4e77d77cfda2a5c935bbbc9ad32b0c5385a518cfaedb1" isAbstract="true" kind="Computation" name="GustyFunction" packagePath="br.ufc.mdcc.hpcshelf.gust.custom">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000658949257d22980ca9b30fa0cc0b0be9afb4cc8b1f96f31d0a2532e731dc19331b3f6b609d4777b8f869ef87a2615ab6298ce8bfe8f80428c4fbd3e65f8d50f0afe88ffe6aef06348d9cfe6740c489c53f654139bc9e1aa16b1eba22d171ceb2ce2f71a6864f33f3a438017a1b554ee8a1744773ce95d36a5fae22991e4f28af" isAbstract="true" kind="Computation" name="GustyFunction" packagePath="br.ufc.mdcc.hpcshelf.gust.custom">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000004344f6e028aa6f9a8b605397ac86cfc97967f68b18c9ffa5c2cb42cff7535460d2738ec1233603e5b802c6216d086f125264542a6048e3eca353b2fc93e36dd6e4fe2b5b43ce32397ac4122d5b2daa9465412b3d0cc3db222a6bec481b124ef3f665f15b11f6c4451f2cf82246d18dc3f8db3a014897680173969489296409c6" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/ReduceFunction.hpe" name="ReduceFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" version="1.0.0.0">
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000000366ca5c87782106bcc336e893350f967fd94de12c15b00dab3a5f72982565ff3d9dae15b037cde5e65a9e35dc70eb8af1ba17b7b856bd068ec92f13f2ec8599617be0ea32415ed7e945a8305bae7f16a660e37270f79edb477a31e4186415786d19615462e141abc2f7a52e7aaa8a351ca361b01f7598845d406f26c7b749da" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/ReduceFunction.hpe" name="ReduceFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" version="1.0.0.0">
         <visualDescription h="60" w="100" x="383" y="306">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="output_value_type" varName="OValue"/>
+        <parameter formFieldId="output_key_type" varName="OKey"/>
         <parameter formFieldId="input_key_type" varName="TKey"/>
         <parameter formFieldId="input_value_type" varName="TValue"/>
-        <parameter formFieldId="output_key_type" varName="OKey"/>
+        <parameter formFieldId="output_value_type" varName="OValue"/>
         <port index_replica="0" localRef="continuation_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
           <visualDescription h="68" w="203" x="344" y="418">
             <color b="255" g="255" r="255"/>
@@ -25,7 +25,7 @@
           <visualDescription h="60" w="181" x="157" y="312">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###1764762938"/>
+          <parameter formFieldId="value_type" varName="X###239993612"/>
           <parameter formFieldId="key_type" varName="TKey"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="137" y="20"/>
@@ -128,13 +128,13 @@
     </innerComponent>
     <supplyParameter cRef="kvpairs" direct="true" varName="KVPAIRS"/>
     <interface iRef="IGustyFunction" nArgs="6">
-      <slice isRef="graph">
-        <originRef cRef="graph" iRef="IData"/>
-        <visualDescription h="10" w="10" x="179" y="18"/>
-      </slice>
       <slice isRef="output_messages">
         <originRef cRef="output_messages" iRef="IIterator"/>
         <visualDescription h="10" w="10" x="175" y="1"/>
+      </slice>
+      <slice isRef="graph">
+        <originRef cRef="graph" iRef="IData"/>
+        <visualDescription h="10" w="10" x="179" y="18"/>
       </slice>
       <slice isRef="input_format">
         <originRef cRef="input_format" iRef="IInputFormat"/>
@@ -150,7 +150,7 @@
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/bin/1.0.0.0/BaseIReduceFunction.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction&#xA;{&#xA;&#x9;public interface IGustyFunction&lt;TKey, TValue, OKey, OValue, G, GIF> : BaseIGustyFunction&lt;TKey, TValue, OKey, OValue, G, GIF>, IReduceFunction&lt;TKey, TValue, OKey, OValue>&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;&#x9;where G:IData&#xA;&#x9;&#x9;where GIF:IInputFormat&#xA;&#x9;{&#xA;&#x9;   // Define o contador de superstep (iteration count)&#xA;&#x9;   int Superstep { get; set; }&#xA;&#xA;&#x9;&#x9;// M&#xe9;todo construtor de grafos&#xA;&#x9;&#x9;// void graph_creator();&#xA;&#xA;&#x9;&#x9;// M&#xe9;todo getMessages&#xA;&#x9;&#x9;//void input_messages();&#xA;&#xA;&#x9;&#x9;// Algoritmo deve possuir pelo menos uma etapa, onde a assinatura &#xe9; gustx, para x>=0&#xA;&#x9;&#x9;void gust0();&#xA;&#x9;}&#xA;}&#xA;" name="IGustyFunction.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/IGustyFunction.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction&#xA;{&#xA;&#x9;public interface IGustyFunction&lt;TKey, TValue, OKey, OValue, G, GIF> : BaseIGustyFunction&lt;TKey, TValue, OKey, OValue, G, GIF>, IReduceFunction&lt;TKey, TValue, OKey, OValue>&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;&#x9;where G:IData&#xA;&#x9;&#x9;where GIF:IInputFormat&#xA;&#x9;{&#xA;&#x9;   // Define o contador de superstep (iteration count)&#xA;&#x9;   int Superstep { get; set; }&#xA;&#xA;&#x9;&#x9;// M&#xe9;todo construtor de grafos&#xA;&#x9;&#x9;// void graph_creator();&#xA;&#xA;&#x9;&#x9;// M&#xe9;todo getMessages&#xA;&#x9;&#x9;//void input_messages();&#xA;&#xA;&#x9;&#x9;// Algoritmo deve possuir pelo menos uma etapa, onde a assinatura &#xe9; gustx, para x>=0&#xA;&#x9;&#x9;//void gust0();&#xA;&#xA;&#x9;&#x9;void unroll();&#xA;&#x9;&#x9;void compute();&#xA;&#x9;&#x9;void scatter();&#xA;&#x9;}&#xA;}&#xA;" name="IGustyFunction.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/IGustyFunction.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/BaseIGustyFunction.dll</dependency>
@@ -160,18 +160,18 @@
       <visualDescription h="40" w="190" x="297" y="123">
         <color b="0" g="165" r="255"/>
       </visualDescription>
-      <port name="graph">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="graph" sRef="graph"/>
-      </port>
       <port name="output_messages">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_messages" sRef="output_messages"/>
       </port>
-      <parameter iname="IData" order="2" parid="output_key_type" uname="data" varid="OKey"/>
+      <port name="graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="graph" sRef="graph"/>
+      </port>
       <parameter iname="IData" parid="output_value_type" uname="data" varid="OValue"/>
       <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="TKey"/>
       <parameter iname="IData" order="1" parid="input_value_type" uname="data" varid="TValue"/>
+      <parameter iname="IData" order="2" parid="output_key_type" uname="data" varid="OKey"/>
       <parameter iname="IData" parid="graph_type" uname="data" varid="G"/>
       <parameter iname="IInputFormat" order="3" parid="graph_input_format" uname="data" varid="GIF"/>
       <action id="main">

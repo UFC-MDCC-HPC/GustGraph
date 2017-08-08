@@ -73,7 +73,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl
 						Map_key.Instance = bin.Key;
 						Map_value.Instance = bin.Value;
 						Map_function.go ();
-						//Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 4");
+						Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 4");
 					}
 
 					sync_perform.wait ();
@@ -85,8 +85,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl
 					Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 6");
 
 					Task_map.invoke (CHUNK_READY.name);  //****
-					/* levando em conta que há sincronização pelos iteradores, talvez não haja necessidade de sincronizar o CHUNK_READY para o
-				     * shuffler começar a ler os pares */
+					/* levando em conta que hï¿½ sincronizaï¿½ï¿½o pelos iteradores, talvez nï¿½o haja necessidade de sincronizar o CHUNK_READY para o
+				     * shuffler comeï¿½ar a ler os pares */
 					Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 7");
 				}
 

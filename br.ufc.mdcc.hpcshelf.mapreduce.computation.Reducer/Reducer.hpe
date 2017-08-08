@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000006d25f85e56b7095a8bcfb18f74af86940eab579a6d829d9ad4bd64117f77e60463f0a17109772abb1fe03f5ea9aefc34ef2c181e3707522d61e00cea799eb02c127c1b4938344e6ff202c7325fd317ad244e5b944c8b6aba258c1aa6af3f8b6c987977512a58df9031c421f22a3620d57be7575298dad5fe962f46de66c977b2" isAbstract="true" kind="Computation" name="Reducer" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.computation">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000069b84d1ff19b1aa168235153bdbc668c8b90bf67ba881d6e559318d0dd52060012da39565edbf63cf7ba1706dcdd57061ded188155c6817467bd1e010458c1c9891a38162131a635c67cdfbe834a00ed66b5a8e37a1f4cb76c21032759de36da55c6bd98158da695b4aa2a88a87f586ac66988adafd75f58e85b9a7bf169bdc9" isAbstract="true" kind="Computation" name="Reducer" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.computation">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -50,10 +50,10 @@
       <visualDescription h="63" w="132" x="97" y="74">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="output_value_type" varName="OValue"/>
+      <parameter formFieldId="output_key_type" varName="OKey"/>
       <parameter formFieldId="input_key_type" varName="TKey"/>
       <parameter formFieldId="input_value_type" varName="TValue"/>
-      <parameter formFieldId="output_key_type" varName="OKey"/>
+      <parameter formFieldId="output_value_type" varName="OValue"/>
       <port index_replica="0" localRef="continuation_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
         <visualDescription h="60" w="170" x="0" y="193">
           <color b="255" g="255" r="255"/>
@@ -66,7 +66,7 @@
         <visualDescription h="60" w="181" x="64" y="390">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###514869862"/>
+        <parameter formFieldId="value_type" varName="X###298141234"/>
         <parameter formFieldId="key_type" varName="TKey"/>
         <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
           <visualDescription h="20" w="20" x="137" y="20"/>
@@ -99,8 +99,8 @@
       <visualDescription h="60" w="112" x="457" y="378">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="client_port_type" varName="C0"/>
       <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C0"/>
       <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -109,8 +109,8 @@
       <visualDescription h="60" w="111" x="63" y="265">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="client_port_type" varName="C"/>
       <parameter formFieldId="server_port_type" varName="S0"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
       <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -190,7 +190,7 @@
     <supplyParameter cRef="output_item_ttype" direct="true" varName="OUTPUT_REDUCE"/>
     <supplyParameter cRef="output_item_type" direct="true" varName="OUT_REDUCE"/>
     <supplyParameter cRef="task_port_type_advance" direct="true" varName="TAdvance"/>
-    <innerComponent localRef="C###514869862" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###298141234" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="152" x="455" y="455">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -199,23 +199,23 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###514869862" varName="X###514869862"/>
+    <supplyParameter cRef="C###298141234" varName="X###298141234"/>
     <interface iRef="IReducer" nArgs="6">
-      <slice isRef="feed_pairs">
-        <originRef cRef="feed_pairs" iRef="IBindingDirect"/>
-        <visualDescription h="10" w="10" x="69" y="14"/>
-      </slice>
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IBindingDirect"/>
         <visualDescription h="10" w="10" x="46" y="26"/>
       </slice>
-      <slice isRef="platform_reduce">
-        <originRef cRef="platform_reduce" iRef="IProcessingNode"/>
-        <visualDescription h="10" w="10" x="11" y="26"/>
+      <slice isRef="feed_pairs">
+        <originRef cRef="feed_pairs" iRef="IBindingDirect"/>
+        <visualDescription h="10" w="10" x="69" y="14"/>
       </slice>
       <slice isRef="task_reduce">
         <originRef cRef="task_reduce" iRef="ITaskPort"/>
         <visualDescription h="10" w="10" x="0" y="23"/>
+      </slice>
+      <slice isRef="platform_reduce">
+        <originRef cRef="platform_reduce" iRef="IProcessingNode"/>
+        <visualDescription h="10" w="10" x="11" y="26"/>
       </slice>
       <slice isRef="reduce_function">
         <originRef cRef="reduce_function" iRef="IReduceFunction"/>
@@ -246,21 +246,21 @@
       <visualDescription h="40" w="91" x="226" y="204">
         <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="feed_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="feed_pairs"/>
-      </port>
       <port name="collect_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_pairs" sRef="collect_pairs"/>
       </port>
-      <port name="platform_reduce">
+      <port name="feed_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_reduce" sRef="platform_reduce"/>
+        <slice pRef="feed_pairs" sRef="feed_pairs"/>
       </port>
       <port name="task_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_reduce" sRef="task_reduce"/>
+      </port>
+      <port name="platform_reduce">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_reduce" sRef="platform_reduce"/>
       </port>
       <port name="input_values">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -276,21 +276,15 @@
       </port>
       <parameter iname="IMaintainer" order="0" parid="platform_maintainer" uname="maintainer" varid="M"/>
       <parameter iname="IReduceFunction" order="5" parid="reduce_function" uname="reduce_function" varid="RF"/>
-      <parameter iname="IData" order="3" parid="output_key_type" uname="data" varid="OKey"/>
       <parameter iname="IData" order="4" parid="output_value_type" uname="data" varid="OValue"/>
       <parameter iname="IData" order="1" parid="input_key_type" uname="data" varid="TKey"/>
       <parameter iname="IData" order="2" parid="input_value_type" uname="data" varid="TValue"/>
+      <parameter iname="IData" order="3" parid="output_key_type" uname="data" varid="OKey"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IReducer" multiple="true" private="false" replica="0" uRef="reducer" visibleInterface="true">
-      <slices cRef="output_value" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="output_value" transitive="true">
-        <visualDescription h="10" w="10" x="144" y="21"/>
-      </slices>
-      <slices cRef="feed_pairs" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="feed_pairs" transitive="false">
-        <visualDescription h="10" w="10" x="69" y="14"/>
-      </slices>
       <slices cRef="collect_pairs" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="collect_pairs" transitive="false">
         <visualDescription h="10" w="10" x="46" y="26"/>
       </slices>
@@ -300,17 +294,23 @@
       <slices cRef="input_values" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="input_values" transitive="true">
         <visualDescription h="10" w="10" x="11" y="25"/>
       </slices>
+      <slices cRef="feed_pairs" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="feed_pairs" transitive="false">
+        <visualDescription h="10" w="10" x="69" y="14"/>
+      </slices>
       <slices cRef="task_reduce" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_reduce" transitive="false">
         <visualDescription h="10" w="10" x="0" y="23"/>
       </slices>
       <slices cRef="platform_reduce" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_reduce" transitive="false">
         <visualDescription h="10" w="10" x="11" y="26"/>
       </slices>
+      <slices cRef="output_value" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="output_value" transitive="true">
+        <visualDescription h="10" w="10" x="144" y="21"/>
+      </slices>
       <slices cRef="reduce_function" inner_replica="0" slice_replica="0" uRef="reduce_function" sliceName="reduce_function" transitive="false">
         <visualDescription h="10" w="10" x="2" y="10"/>
-        <port>output_value</port>
         <port>continuation_value</port>
         <port>input_values</port>
+        <port>output_value</port>
       </slices>
       <slices cRef="output" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="output" transitive="false">
         <visualDescription h="10" w="10" x="60" y="25"/>

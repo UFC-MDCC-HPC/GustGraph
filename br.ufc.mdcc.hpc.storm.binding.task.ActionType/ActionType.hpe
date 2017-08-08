@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000490ab725063a448d68da7d15056715372803d7217feb5fbc25938af2396b35f7a0fa38b0a75d6296fb72fc328d73b6ffabee2248d5916b776a8f7c3355d868f46213e9d95e64a465c8142c1c741f1eba46feddee2dfcb3512312edfa13a6335d5d32af41ca87a2e0d0908ee8c386cb55736e4b7c9d17098fdb506a213ab39081" isAbstract="true" kind="Environment" name="ActionType" packagePath="br.ufc.mdcc.hpc.storm.binding.task">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000031cbc85cbe592dcd2d483b79bafcb4494e66f168f534fe79df977706aeb9f53915820dd8939cc58bfbffeccf72215e407a1805aeb9e987c3d51320c2001e064f35b59949deac8f9357d7ce5c0d462eb422fa818349b19798a00dce2915a156725ca27121c5f3f6a0125727da502cac45042073b20d20db19545752c63f3f53cb" isAbstract="true" kind="Environment" name="ActionType" packagePath="br.ufc.mdcc.hpc.storm.binding.task">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -10,8 +10,8 @@
   <componentInfo>
     <interface iRef="IActionType" nArgs="0">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.task.ActionType&#xA;{&#xA;&#x9;public interface BaseIActionType : IEnvironmentKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIActionType.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.task.ActionType/bin/1.0.0.0/BaseIActionType.dll" versionId="1.0.0.0"/>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using System.Collections.Generic;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.task.ActionType&#xA;{&#xA;&#x9;public interface IActionType : BaseIActionType&#xA;&#x9;{&#xA;&#x9;}&#xA;&#x9;&#xA;}" name="IActionType.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.task.ActionType/bin/1.0.0.0/IActionType.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.task.ActionType&#xA;{&#xA;&#x9;public interface BaseIActionType : IEnvironmentKind&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIActionType.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.task.ActionType/bin/1.0.0.0/BaseIActionType.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using System.Collections.Generic;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.task.ActionType&#xA;{&#xA;&#x9;public interface IActionType : BaseIActionType&#xA;&#x9;{&#xA;&#x9;}&#xA;&#xA;&#x9;public class ActionTags&#xA;&#x9;{&#xA;&#x9;&#x9;public static IDictionary&lt;string, int> action_tags = new Dictionary&lt;string, int>();&#xA;&#x9;}&#xA;&#xA;&#xA;}" name="IActionType.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.task.ActionType/bin/1.0.0.0/IActionType.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.task.ActionType/bin/1.0.0.0/BaseIActionType.dll</dependency>
         </file>
       </sources>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002dce373d692d552b06c2619b888456b48a3b7f677bae798ac6876a7e883dbcf2ba54bb80308aef79fc0e4be37ac1e86bb1337d118a8daaf7549926c8fdeecc489e5d5228e0698d4eb4c780e198a8ebfbd1630145cef7cf8409aed70d0814be2a55361d0ed8dabf8c3e04100e3bfe3633d5c258107ccda56c373be7d80bd3d388" isAbstract="false" kind="Computation" name="WorkflowImpl" packagePath="mapreduce.gust.tc3">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000df7b960a274527825b2069736e896d38867c8b4adb331cc8a5855114ead1aed7870332cab9c56fd65268079ee26272e226361a5d23f6ed41bccf7627efb0a948bb4a21027354980f2e568064c57afca9023963600f49a2445531bd6fa4f18ee43c07fef5296764d96953c6dd4c1c3cd21c5c40d122eb639fc7d5060291c26486" isAbstract="false" kind="Computation" name="WorkflowImpl" packagePath="mapreduce.gust.tc3">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000047003692afa7ed3b984286e080e9dd8c89f4270ba88b985b13900fab43674166c5a82e084b79bcb6e42b66296c8bd48ce530aca8ef29be9cb870dab193cbecd1d76a807fd28f483b1b95d4d9f19616755f19b1d6271a54893f0aac8040489eb19ff2211acf21eb9a4e42af37cb064a4a66a0e876a38f0e9717e9708c65f638a6" localRef="base" location="mapreduce.gust.tc3.Workflow/Workflow.hpe" name="Workflow" package="mapreduce.gust.tc3" version="1.0.0.0">
-        <visualDescription h="50" w="100" x="137" y="385">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b9d761023798bdc170dc535d990d828451cfc66c819f1bf78e4d13008bbed4ebec3e357075d4cf2a1df49b368e98998e8919a5f805fad96a8dbc57f9bba70ee09ff3b94a9d8443bd65564f577fafe5334ac42af3e9591d680116f23d4529c212e9ad3e5c09d3484cda833a7ee5e630d1e2eff58b17ec4451697ea2c3270c5781" localRef="base" location="mapreduce.gust.tc3.Workflow/Workflow.hpe" name="Workflow" package="mapreduce.gust.tc3" version="1.0.0.0">
+        <visualDescription h="50" w="100" x="145" y="613">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="maintainer" varName="M"/>
         <port index_replica="0" localRef="platform_SAFe" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
-          <visualDescription h="150" w="200" x="500" y="500">
+          <visualDescription h="150" w="200" x="477" y="606">
             <color b="20" g="20" r="20"/>
           </visualDescription>
           <parameter formFieldId="maintainer" varName="M"/>
@@ -19,56 +19,110 @@
             <visualDescription h="30" w="20" x="10" y="10"/>
           </unitBounds>
         </port>
-        <port index_replica="0" localRef="task_map" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-          <visualDescription h="42" w="70" x="180" y="458">
+        <port index_replica="0" localRef="task_reduce_0" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="42" w="332" x="417" y="330">
             <color b="243" g="217" r="217"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1108251865"/>
+          <parameter formFieldId="task_port_type" varName="X###1364435695"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
             <visualDescription h="30" w="20" x="10" y="10"/>
           </unitBounds>
         </port>
-        <port index_replica="0" localRef="task_reduce" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-          <visualDescription h="42" w="70" x="296" y="79">
+        <port index_replica="0" localRef="task_shuffle_0_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="42" w="375" x="382" y="474">
             <color b="243" g="217" r="217"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###59354032"/>
+          <parameter formFieldId="task_port_type" varName="X###1126953136"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
             <visualDescription h="30" w="20" x="10" y="10"/>
           </unitBounds>
         </port>
-        <port index_replica="0" localRef="task_split_input_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-          <visualDescription h="42" w="375" x="352" y="196">
-            <color b="243" g="217" r="217"/>
-          </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1130803616"/>
-          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-            <visualDescription h="30" w="20" x="10" y="10"/>
-          </unitBounds>
-        </port>
-        <port index_replica="0" localRef="task_shuffle_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-          <visualDescription h="42" w="375" x="351" y="145">
-            <color b="243" g="217" r="217"/>
-          </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###186098162"/>
-          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-            <visualDescription h="30" w="20" x="10" y="10"/>
-          </unitBounds>
-        </port>
-        <port index_replica="0" localRef="task_shuffle_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-          <visualDescription h="40" w="377" x="360" y="273">
+        <port index_replica="0" localRef="task_shuffle_0_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="40" w="377" x="377" y="420">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1015618702"/>
+          <parameter formFieldId="task_port_type" varName="X###1856812584"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <port index_replica="0" localRef="task_shuffle_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-          <visualDescription h="37" w="370" x="370" y="309">
+        <port index_replica="0" localRef="task_shuffle_0_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="37" w="370" x="388" y="531">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1303498158"/>
+          <parameter formFieldId="task_port_type" varName="X###1066565604"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port index_replica="0" localRef="task_reduce_1" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="42" w="246" x="774" y="331">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###1939535395"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port index_replica="0" localRef="task_reduce_2" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="43" w="219" x="1057" y="331">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###1873294992"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port index_replica="0" localRef="task_shuffle_1_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="41" w="270" x="757" y="425">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###1681838267"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port index_replica="0" localRef="task_shuffle_1_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="46" w="267" x="757" y="472">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###1216347783"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port index_replica="0" localRef="task_shuffle_1_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="51" w="267" x="756" y="521">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###1819288133"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port index_replica="0" localRef="task_shuffle_2_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="42" w="265" x="1041" y="423">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###1111660013"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port index_replica="0" localRef="task_shuffle_2_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="45" w="272" x="1034" y="470">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###1357594134"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port index_replica="0" localRef="task_shuffle_2_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="48" w="277" x="1032" y="520">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###1733781834"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -77,34 +131,7 @@
           <visualDescription h="39" w="362" x="369" y="390">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1412858459"/>
-          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-            <visualDescription h="20" w="20" x="5" y="2"/>
-          </unitBounds>
-        </port>
-        <port index_replica="0" localRef="task_split_input_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-          <visualDescription h="38" w="367" x="373" y="353">
-            <color b="255" g="255" r="255"/>
-          </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1185435534"/>
-          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-            <visualDescription h="20" w="20" x="5" y="2"/>
-          </unitBounds>
-        </port>
-        <port index_replica="0" localRef="task_split_output_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-          <visualDescription h="37" w="361" x="370" y="438">
-            <color b="255" g="255" r="255"/>
-          </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1409226719"/>
-          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-            <visualDescription h="20" w="20" x="5" y="2"/>
-          </unitBounds>
-        </port>
-        <port index_replica="0" localRef="task_split_input_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-          <visualDescription h="44" w="369" x="371" y="481">
-            <color b="255" g="255" r="255"/>
-          </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###276323470"/>
+          <parameter formFieldId="task_port_type" varName="X###173546991"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -113,8 +140,25 @@
           <visualDescription h="60" w="366" x="367" y="230">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1308915476"/>
+          <parameter formFieldId="task_port_type" varName="X###1549999284"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port index_replica="0" localRef="task_split_output_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="37" w="361" x="370" y="438">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###1441890976"/>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port index_replica="0" localRef="swl_port" location="br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding/SWLWorkflowBinding.hpe" multiple="false" name="SWLWorkflowBinding" package="br.ufc.mdcc.hpcshelf.workflow.environment" exposed="true">
+          <visualDescription h="60" w="100" x="339" y="610">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
@@ -140,107 +184,147 @@
     </innerComponent>
     <supplyParameter cRef="maintainer" direct="true" varName="M"/>
     <interface iRef="IWorkflowImpl" nArgs="1">
-      <slice isRef="task_split_output_perform">
-        <originRef cRef="task_split_output_perform" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="35" y="41"/>
+      <slice isRef="task_shuffle_1_read_chunk">
+        <originRef cRef="task_shuffle_1_read_chunk" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="156" y="115"/>
       </slice>
       <slice isRef="task_split_output_chunk_ready">
         <originRef cRef="task_split_output_chunk_ready" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="46" y="29"/>
+        <visualDescription h="10" w="10" x="102" y="118"/>
       </slice>
-      <slice isRef="task_split_input_chunk_ready">
-        <originRef cRef="task_split_input_chunk_ready" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="8" y="35"/>
+      <slice isRef="task_shuffle_2_chunk_ready">
+        <originRef cRef="task_shuffle_2_chunk_ready" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="164" y="103"/>
       </slice>
-      <slice isRef="task_shuffle_chunk_ready">
-        <originRef cRef="task_shuffle_chunk_ready" iRef="ITaskPort"/>
+      <slice isRef="task_split_output_perform">
+        <originRef cRef="task_split_output_perform" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="43" y="29"/>
+      </slice>
+      <slice isRef="task_reduce_0">
+        <originRef cRef="task_reduce_0" iRef="ITaskPort"/>
+        <visualDescription h="15" w="15" x="10" y="10"/>
+      </slice>
+      <slice isRef="task_shuffle_0_read_chunk">
+        <originRef cRef="task_shuffle_0_read_chunk" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="25" y="29"/>
+      </slice>
+      <slice isRef="task_reduce_2">
+        <originRef cRef="task_reduce_2" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="193" y="84"/>
+      </slice>
+      <slice isRef="task_shuffle_0_perform">
+        <originRef cRef="task_shuffle_0_perform" iRef="ITaskPort"/>
+        <visualDescription h="15" w="15" x="10" y="10"/>
+      </slice>
+      <slice isRef="task_reduce_1">
+        <originRef cRef="task_reduce_1" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="192" y="60"/>
+      </slice>
+      <slice isRef="task_shuffle_2_read_chunk">
+        <originRef cRef="task_shuffle_2_read_chunk" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="175" y="78"/>
+      </slice>
+      <slice isRef="task_split_output_read_chunk">
+        <originRef cRef="task_split_output_read_chunk" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="86" y="30"/>
+      </slice>
+      <slice isRef="task_shuffle_1_perform">
+        <originRef cRef="task_shuffle_1_perform" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="136" y="111"/>
+      </slice>
+      <slice isRef="task_shuffle_0_chunk_ready">
+        <originRef cRef="task_shuffle_0_chunk_ready" iRef="ITaskPort"/>
         <visualDescription h="10" w="10" x="64" y="39"/>
-      </slice>
-      <slice isRef="task_reduce">
-        <originRef cRef="task_reduce" iRef="ITaskPort"/>
-        <visualDescription h="15" w="15" x="10" y="10"/>
-      </slice>
-      <slice isRef="task_shuffle_perform">
-        <originRef cRef="task_shuffle_perform" iRef="ITaskPort"/>
-        <visualDescription h="15" w="15" x="10" y="10"/>
-      </slice>
-      <slice isRef="task_split_input_perform">
-        <originRef cRef="task_split_input_perform" iRef="ITaskPort"/>
-        <visualDescription h="15" w="15" x="10" y="10"/>
       </slice>
       <slice isRef="platform_SAFe">
         <originRef cRef="platform_SAFe" iRef="IProcessingNode"/>
         <visualDescription h="15" w="15" x="10" y="10"/>
       </slice>
-      <slice isRef="task_split_output_read_chunk">
-        <originRef cRef="task_split_output_read_chunk" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="23" y="40"/>
+      <slice isRef="task_shuffle_2_perform">
+        <originRef cRef="task_shuffle_2_perform" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="174" y="88"/>
       </slice>
-      <slice isRef="task_split_input_read_chunk">
-        <originRef cRef="task_split_input_read_chunk" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="85" y="20"/>
+      <slice isRef="task_shuffle_1_chunk_ready">
+        <originRef cRef="task_shuffle_1_chunk_ready" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="120" y="112"/>
       </slice>
-      <slice isRef="task_shuffle_read_chunk">
-        <originRef cRef="task_shuffle_read_chunk" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="25" y="29"/>
-      </slice>
-      <slice isRef="task_map">
-        <originRef cRef="task_map" iRef="ITaskPort"/>
-        <visualDescription h="15" w="15" x="10" y="10"/>
+      <slice isRef="swl_port">
+        <originRef cRef="swl_port" iRef="ISWLWorkflowBinding"/>
+        <visualDescription h="10" w="10" x="59" y="115"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="// ------------------------------------------------------------------------------&#xA;//  &lt;autogenerated>&#xA;//      This code was generated by a tool.&#xA;//      Mono Runtime Version: 4.0.30319.17020&#xA;// &#xA;//      Changes to this file may cause incorrect behavior and will be lost if &#xA;//      the code is regenerated.&#xA;//  &lt;/autogenerated>&#xA;// ------------------------------------------------------------------------------&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using System;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using System.Threading;&#xA;using System.Collections.Generic;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;&#xA;using mapreduce.gust.tc3.Workflow;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.PerformActionType;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvancePerform;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceChunkReady;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvanceReadChunk;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;&#xA;&#xA;namespace mapreduce.gust.tc3.WorkflowImpl {&#xA;&#xA;&#xA;&#x9;public class IWorkflowImpl&lt;M> :br.ufc.pargo.hpe.kinds.Computation ,IWorkflow&lt;M> &#xA;&#x9;&#x9;where M:ISAFeHost&#xA;&#x9;{&#xA;&#xA;&#x9;&#x9;private void read_data_source()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;read_data_source&quot;);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private void split_perform()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;split_perform&quot;);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private void map_perform()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;map_perform&quot;);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private void shuffle_perform()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;shuffle_perform&quot;);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private void reduce_perform()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;reduce_perform&quot;);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private void write_sink_source()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;write_sink_source&quot;);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main() &#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;// Task_map.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;// Task_reduce.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;// Task_shuffle_chunk_ready.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;// Task_shuffle_perform.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;// Task_split_input_chunk_ready.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;// Task_split_input_perform.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;// Task_split_input_read_chunk.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;// Task_shuffle_read_chunk.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;// Task_shuffle_chunk_ready.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;// Task_shuffle_perform.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;// Task_split_output_chunk_ready.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;// Task_split_output_perform.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;// Task_split_output_read_chunk.TraceFlag = true;&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;STARTING WORKFLOW&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;// Consume the input from the data source.&#xA;&#x9;&#x9;&#x9;Thread t = new Thread ((ThreadStart)delegate() {&#xA;&#x9;&#x9;&#x9;&#x9;while (true) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_split_input_read_chunk.invoke (READ_CHUNK.name);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_split_input_perform.invoke (PERFORM.name);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;});&#xA;&#x9;&#x9;&#x9;t.Start();&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;STARTING WORKFLOW 2&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;// Preparing select guards.&#xA;&#xA;&#x9;&#x9;&#x9;IActionFutureSet future_iteration = null;&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture future_split_input_chunk_ready = null;&#xA;&#x9;&#x9;&#x9;Task_split_input_chunk_ready.invoke (CHUNK_READY.name, out future_split_input_chunk_ready);&#xA;&#x9;&#x9;&#x9;int action_id_split_input_chunk_ready = future_split_input_chunk_ready.GetHashCode ();&#xA;&#x9;&#x9;&#x9;future_iteration = future_split_input_chunk_ready.createSet ();&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture future_map_chunk_ready = null;&#xA;&#x9;&#x9;&#x9;Task_map.invoke (CHUNK_READY.name, out future_map_chunk_ready);&#xA;&#x9;&#x9;&#x9;int action_id_map_chunk_ready = future_map_chunk_ready.GetHashCode ();&#xA;&#x9;&#x9;&#x9;future_iteration.addAction (future_map_chunk_ready);&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture future_shuffle_chunk_ready = null; &#xA;&#x9;&#x9;&#x9;Task_shuffle_chunk_ready.invoke (CHUNK_READY.name, out future_shuffle_chunk_ready);&#xA;&#x9;&#x9;&#x9;int action_id_shuffle_chunk_ready = future_shuffle_chunk_ready.GetHashCode ();&#xA;&#x9;&#x9;&#x9;future_iteration.addAction (future_shuffle_chunk_ready);&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture future_reduce_chunk_ready = null;&#xA;&#x9;&#x9;&#x9;Task_reduce.invoke (CHUNK_READY.name, out future_reduce_chunk_ready);&#xA;&#x9;&#x9;&#x9;int action_id_reduce_chunk_ready = future_reduce_chunk_ready.GetHashCode ();&#xA;&#x9;&#x9;&#x9;future_iteration.addAction (future_reduce_chunk_ready);&#xA;&#xA;&#x9;&#x9;&#x9;// Enable output.&#xA;&#xA;&#x9;&#x9;&#x9;Thread t_output_chunk_ready = new Thread ((ThreadStart)delegate() {&#xA;&#x9;&#x9;&#x9;&#x9;while (true)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_split_output_chunk_ready.invoke (CHUNK_READY.name);&#xA;&#x9;&#x9;&#x9;});&#xA;&#x9;&#x9;&#x9;t_output_chunk_ready.Start ();&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;STARTING WORKFLOW 3&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;bool terminate = false;&#xA;&#x9;&#x9;&#x9;do &#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;IActionFuture action = future_iteration.waitAny ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;int action_id = action.GetHashCode();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (&quot;STARTING WORKFLOW 2 - after future_iteration.waitAny&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;if (action_id == action_id_split_input_chunk_ready) &#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;WORKFLOW action_id_split_input_chunk_ready 1&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_map.invoke (READ_CHUNK.name); &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IActionFuture future_map_perform = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_map.invoke (PERFORM.name, map_perform, out future_map_perform);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;WORKFLOW action_id_split_input_chunk_ready 2&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_split_input_chunk_ready.invoke (CHUNK_READY.name, out future_split_input_chunk_ready);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;action_id_split_input_chunk_ready = future_split_input_chunk_ready.GetHashCode ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;future_iteration.addAction(future_split_input_chunk_ready);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;WORKFLOW action_id_split_input_chunk_ready 3&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;else if( action_id == action_id_map_chunk_ready) &#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;WORKFLOW action_id_map_chunk_ready 1&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_shuffle_read_chunk.invoke (READ_CHUNK.name);  &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IActionFuture future_shuffle_perform = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_shuffle_perform.invoke (PERFORM.name, shuffle_perform, out future_shuffle_perform);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;WORKFLOW action_id_map_chunk_ready 2&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_map.invoke (CHUNK_READY.name, out future_map_chunk_ready);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;action_id_map_chunk_ready = future_map_chunk_ready.GetHashCode ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;future_iteration.addAction(future_map_chunk_ready);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;WORKFLOW action_id_map_chunk_ready 3&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;else if (action_id == action_id_shuffle_chunk_ready)&#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;WORKFLOW action_id_shuffle_chunk_ready 1&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_reduce.invoke (READ_CHUNK.name); &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IActionFuture future_reduce_perform = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_reduce.invoke (PERFORM.name, reduce_perform, out future_reduce_perform);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;WORKFLOW action_id_shuffle_chunk_ready 2&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_shuffle_chunk_ready.invoke (CHUNK_READY.name, out future_shuffle_chunk_ready);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;action_id_shuffle_chunk_ready = future_shuffle_chunk_ready.GetHashCode ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;future_iteration.addAction(future_shuffle_chunk_ready);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;WORKFLOW action_id_shuffle_chunk_ready 3&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;else if (action_id == action_id_reduce_chunk_ready)&#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;WORKFLOW action_id_reduce_chunk_ready 1&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_split_output_read_chunk.invoke (READ_CHUNK.name);  &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IActionFuture future_split_perform = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_split_output_perform.invoke (PERFORM.name, split_perform, out future_split_perform);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;WORKFLOW action_id_reduce_chunk_ready 2&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_reduce.invoke (CHUNK_READY.name, out future_reduce_chunk_ready);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;action_id_reduce_chunk_ready = future_reduce_chunk_ready.GetHashCode ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;future_iteration.addAction(future_reduce_chunk_ready);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;WORKFLOW action_id_reduce_chunk_ready 3&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;} &#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;UNEXPECTED ERROR: ACTION FUTURE NOT RECOGNIZED ! &quot;);&#xA;&#xA;&#xA;&#x9;&#x9;&#x9;} while (!terminate) ;&#xA;&#xA;&#x9;&#x9;&#x9;t.Join ();&#xA;&#x9;&#x9;&#x9;t_output_chunk_ready.Join ();&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine(&quot;WORKFLOW FINISHED ! &quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvancePerform> task_split_input_perform = null;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvancePerform> Task_split_input_perform&#xA;&#x9;&#x9;{ &#xA;&#x9;&#x9;&#x9;get &#xA;&#x9;&#x9;&#x9;{   if (task_split_input_perform == null)&#xA;&#x9;&#x9;&#x9;&#x9;task_split_input_perform = (ITaskPort&lt;ITaskPortTypeAdvancePerform>) this.Services.getPort (&quot;task_split_input_perform&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return task_split_input_perform;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvanceChunkReady> task_split_input_chunk_ready = null;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvanceChunkReady> Task_split_input_chunk_ready&#xA;&#x9;&#x9;{ &#xA;&#x9;&#x9;&#x9;get &#xA;&#x9;&#x9;&#x9;{   if (task_split_input_chunk_ready == null)&#xA;&#x9;&#x9;&#x9;&#x9;task_split_input_chunk_ready = (ITaskPort&lt;ITaskPortTypeAdvanceChunkReady>) this.Services.getPort (&quot;task_split_input_chunk_ready&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return task_split_input_chunk_ready;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvanceReadChunk> task_split_input_read_chunk = null;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvanceReadChunk> Task_split_input_read_chunk&#xA;&#x9;&#x9;{ &#xA;&#x9;&#x9;&#x9;get &#xA;&#x9;&#x9;&#x9;{   if (task_split_input_read_chunk == null)&#xA;&#x9;&#x9;&#x9;&#x9;task_split_input_read_chunk = (ITaskPort&lt;ITaskPortTypeAdvanceReadChunk>) this.Services.getPort (&quot;task_split_input_read_chunk&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return task_split_input_read_chunk;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvancePerform> task_split_output_perform = null;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvancePerform> Task_split_output_perform&#xA;&#x9;&#x9;{ &#xA;&#x9;&#x9;&#x9;get &#xA;&#x9;&#x9;&#x9;{   if (task_split_output_perform == null)&#xA;&#x9;&#x9;&#x9;&#x9;task_split_output_perform = (ITaskPort&lt;ITaskPortTypeAdvancePerform>) this.Services.getPort (&quot;task_split_output_perform&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return task_split_output_perform;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvanceChunkReady> task_split_output_chunk_ready = null;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvanceChunkReady> Task_split_output_chunk_ready&#xA;&#x9;&#x9;{ &#xA;&#x9;&#x9;&#x9;get &#xA;&#x9;&#x9;&#x9;{   if (task_split_output_chunk_ready == null)&#xA;&#x9;&#x9;&#x9;&#x9;task_split_output_chunk_ready = (ITaskPort&lt;ITaskPortTypeAdvanceChunkReady>) this.Services.getPort (&quot;task_split_output_chunk_ready&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return task_split_output_chunk_ready;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvanceReadChunk> task_split_output_read_chunk = null;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvanceReadChunk> Task_split_output_read_chunk&#xA;&#x9;&#x9;{ &#xA;&#x9;&#x9;&#x9;get &#xA;&#x9;&#x9;&#x9;{   if (task_split_output_read_chunk == null)&#xA;&#x9;&#x9;&#x9;&#x9;task_split_output_read_chunk = (ITaskPort&lt;ITaskPortTypeAdvanceReadChunk>) this.Services.getPort (&quot;task_split_output_read_chunk&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return task_split_output_read_chunk;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvancePerform> task_shuffle_perform = null;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvancePerform> Task_shuffle_perform &#xA;&#x9;&#x9;{ &#xA;&#x9;&#x9;&#x9;get &#xA;&#x9;&#x9;&#x9;{   &#xA;&#x9;&#x9;&#x9;&#x9;if (task_shuffle_perform == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;task_shuffle_perform = (ITaskPort&lt;ITaskPortTypeAdvancePerform>) this.Services.getPort (&quot;task_shuffle_perform&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return task_shuffle_perform;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvanceChunkReady> task_shuffle_chunk_ready = null;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvanceChunkReady> Task_shuffle_chunk_ready &#xA;&#x9;&#x9;{ &#xA;&#x9;&#x9;&#x9;get &#xA;&#x9;&#x9;&#x9;{   &#xA;&#x9;&#x9;&#x9;&#x9;if (task_shuffle_chunk_ready == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;task_shuffle_chunk_ready = (ITaskPort&lt;ITaskPortTypeAdvanceChunkReady>) this.Services.getPort (&quot;task_shuffle_chunk_ready&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return task_shuffle_chunk_ready;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvanceReadChunk> task_shuffle_read_chunk = null;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvanceReadChunk> Task_shuffle_read_chunk &#xA;&#x9;&#x9;{ &#xA;&#x9;&#x9;&#x9;get &#xA;&#x9;&#x9;&#x9;{   &#xA;&#x9;&#x9;&#x9;&#x9;if (task_shuffle_read_chunk == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;task_shuffle_read_chunk = (ITaskPort&lt;ITaskPortTypeAdvanceReadChunk>) this.Services.getPort (&quot;task_shuffle_read_chunk&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return task_shuffle_read_chunk;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_reduce = null;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvance> Task_reduce &#xA;&#x9;&#x9;{ &#xA;&#x9;&#x9;&#x9;get &#xA;&#x9;&#x9;&#x9;{   &#xA;&#x9;&#x9;&#x9;&#x9;if (task_reduce == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;task_reduce = (ITaskPort&lt;ITaskPortTypeAdvance>) this.Services.getPort (&quot;task_reduce&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return task_reduce;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_map = null;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvance> Task_map &#xA;&#x9;&#x9;{ &#xA;&#x9;&#x9;&#x9;get &#xA;&#x9;&#x9;&#x9;{  &#xA;&#x9;&#x9;&#x9;&#x9;if (task_map == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;task_map = (ITaskPort&lt;ITaskPortTypeAdvance>) this.Services.getPort (&quot;task_map&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return task_map;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#xA;&#x9;}&#xA;}&#xA;" name="IWorkflowImpl.cs" srcType="user" uri="mapreduce.gust.tc3.WorkflowImpl/bin/1.0.0.0/IWorkflowImpl.dll" versionId="1.0.0.0"/>
+        <file contents="// ------------------------------------------------------------------------------&#xA;//  &lt;autogenerated>&#xA;//      This code was generated by a tool.&#xA;//      Mono Runtime Version: 4.0.30319.17020&#xA;// &#xA;//      Changes to this file may cause incorrect behavior and will be lost if &#xA;//      the code is regenerated.&#xA;//  &lt;/autogenerated>&#xA;// ------------------------------------------------------------------------------&#xA;using System;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;&#xA;using br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding;&#xA;using mapreduce.gust.tc3.Workflow;&#xA;&#xA;namespace mapreduce.gust.tc3.WorkflowImpl&#xA;{&#xA;    public class IWorkflowImpl&lt;M> : br.ufc.pargo.hpe.kinds.Workflow, IWorkflow&lt;M>&#xA;        where M : ISAFeHost&#xA;    {&#xA;        public override void main()&#xA;        {&#xA;            Console.WriteLine(&quot;WORKFLOW IMPL !!!&quot;);&#xA;            this.SWLOrchestration = SWLPort.Client.Workflow;&#xA;            base.main();&#xA;        }&#xA;&#xA;        private ISWLWorkflowBinding swl_port = null;&#xA;        private ISWLWorkflowBinding SWLPort&#xA;        {&#xA;            get&#xA;            {&#xA;                return swl_port == null ? (ISWLWorkflowBinding)this.Services.getPort(&quot;swl_port&quot;) : swl_port;&#xA;            }&#xA;        }&#xA;    }&#xA;}&#xA;" name="IWorkflowImpl.cs" srcType="user" uri="mapreduce.gust.tc3.WorkflowImpl/bin/1.0.0.0/IWorkflowImpl.dll" versionId="1.0.0.0"/>
       </sources>
       <visualDescription h="100" w="150" x="92" y="314">
         <color b="20" g="20" r="20"/>
       </visualDescription>
-      <port name="task_split_output_perform">
+      <port name="task_shuffle_1_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_output_perform" sRef="task_split_output_perform"/>
+        <slice pRef="task_shuffle_1_read_chunk" sRef="task_shuffle_1_read_chunk"/>
       </port>
       <port name="task_split_output_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_split_output_chunk_ready" sRef="task_split_output_chunk_ready"/>
       </port>
-      <port name="task_split_input_chunk_ready">
+      <port name="task_shuffle_2_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_input_chunk_ready" sRef="task_split_input_chunk_ready"/>
+        <slice pRef="task_shuffle_2_chunk_ready" sRef="task_shuffle_2_chunk_ready"/>
       </port>
-      <port name="task_shuffle_chunk_ready">
+      <port name="task_split_output_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_chunk_ready" sRef="task_shuffle_chunk_ready"/>
+        <slice pRef="task_split_output_perform" sRef="task_split_output_perform"/>
       </port>
-      <port name="task_reduce">
+      <port name="task_reduce_0">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce" sRef="task_reduce"/>
+        <slice pRef="task_reduce_0" sRef="task_reduce_0"/>
       </port>
-      <port name="task_shuffle_perform">
+      <port name="task_shuffle_0_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_perform" sRef="task_shuffle_perform"/>
+        <slice pRef="task_shuffle_0_read_chunk" sRef="task_shuffle_0_read_chunk"/>
       </port>
-      <port name="task_split_input_perform">
+      <port name="task_reduce_2">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_input_perform" sRef="task_split_input_perform"/>
+        <slice pRef="task_reduce_2" sRef="task_reduce_2"/>
       </port>
-      <port name="platform_SAFe">
+      <port name="task_shuffle_0_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_SAFe" sRef="platform_SAFe"/>
+        <slice pRef="task_shuffle_0_perform" sRef="task_shuffle_0_perform"/>
+      </port>
+      <port name="task_reduce_1">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_reduce_1" sRef="task_reduce_1"/>
+      </port>
+      <port name="task_shuffle_2_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_shuffle_2_read_chunk" sRef="task_shuffle_2_read_chunk"/>
       </port>
       <port name="task_split_output_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_split_output_read_chunk" sRef="task_split_output_read_chunk"/>
       </port>
-      <port name="task_split_input_read_chunk">
+      <port name="task_shuffle_1_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_input_read_chunk" sRef="task_split_input_read_chunk"/>
+        <slice pRef="task_shuffle_1_perform" sRef="task_shuffle_1_perform"/>
       </port>
-      <port name="task_shuffle_read_chunk">
+      <port name="task_shuffle_0_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_read_chunk" sRef="task_shuffle_read_chunk"/>
+        <slice pRef="task_shuffle_0_chunk_ready" sRef="task_shuffle_0_chunk_ready"/>
       </port>
-      <port name="task_map">
+      <port name="platform_SAFe">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_map" sRef="task_map"/>
+        <slice pRef="platform_SAFe" sRef="platform_SAFe"/>
+      </port>
+      <port name="task_shuffle_2_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_shuffle_2_perform" sRef="task_shuffle_2_perform"/>
+      </port>
+      <port name="task_shuffle_1_chunk_ready">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_shuffle_1_chunk_ready" sRef="task_shuffle_1_chunk_ready"/>
+      </port>
+      <port name="swl_port">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="swl_port" sRef="swl_port"/>
       </port>
       <parameter iname="ISAFeHost" order="0" parid="maintainer" uname="safe_host" varid="M"/>
       <action id="main">

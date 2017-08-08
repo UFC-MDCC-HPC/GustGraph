@@ -54,15 +54,6 @@
     <Compile Include="..\src\1.0.0.0\IPeer4Impl.cs">
       <Link>IPeer4Impl.cs</Link>
     </Compile>
-    <Compile Include="..\src\1.0.0.0\IPeer5Impl.cs">
-      <Link>IPeer5Impl.cs</Link>
-    </Compile>
-    <Compile Include="..\src\1.0.0.0\IPeer6Impl.cs">
-      <Link>IPeer6Impl.cs</Link>
-    </Compile>
-    <Compile Include="..\src\1.0.0.0\IPeer7Impl.cs">
-      <Link>IPeer7Impl.cs</Link>
-    </Compile>
 	<Compile Include="..\src\1.0.0.0\IRootImpl.cs">
       <Link>IRootImpl.cs</Link>
     </Compile>
@@ -80,50 +71,6 @@
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost.csproj">
       <Project>{40D35DEE-28A1-4CE9-81EE-50280672C8DE}</Project>
       <Name>br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper\br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper\br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper.csproj">
-      <Project>{08449497-A987-494B-8DD2-B53211B3C762}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter\br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter\br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter.csproj">
-      <Project>{90623C03-B24B-4448-A81E-901BB4017F36}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler\br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler\br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler.csproj">
-      <Project>{2ED50770-7691-4DF8-8FC9-D1CD007B8792}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer\br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer\br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer.csproj">
-      <Project>{CD94FE2F-14E1-4B06-B2F1-F99E7A24F47C}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction.csproj">
-      <Project>{ADB1B6BE-28D3-4B10-BBFC-9224181F52C7}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.csproj">
-      <Project>{22FB1B6B-A788-4107-967C-7D5070B8885E}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost\br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost\br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.csproj">
-      <Project>{B9018D06-D120-45ED-9A37-A713D5B715E5}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer.csproj">
-      <Project>{F7ABD722-31F4-4ACC-B8B6-A14DDAEB022B}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.platform.Maintainer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data.csproj">
-      <Project>{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}</Project>
-      <Name>br.ufc.mdcc.common.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction.csproj">
-      <Project>{CC4908F8-3F6B-4F14-9179-64EF033B3371}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction.csproj">
-      <Project>{F8166152-ED2A-473F-A191-3FC88F611512}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\mapreduce.gust.tc3.Workflow\mapreduce.gust.tc3.Workflow\mapreduce.gust.tc3.Workflow.csproj">
       <Project>{B2C7608F-CF32-47AF-810F-85AD2D01AC9F}</Project>

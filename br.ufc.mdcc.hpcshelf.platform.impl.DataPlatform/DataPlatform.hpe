@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a515bef1bbca7500bb0bac76a9b3dcc3eae507b98367cf355c427202123fdabba13c1d8d14257fc1dd7d8dc3c9254187bd3a07ec2210d56822795486258e0ea398a4a36ef099f4f4a5061536d1f0059e62b964a2bb313de7131176ae54f65b4629d11ccb509c0a9cb8688169a6acfb0f8138c3c9b9ceec73ae04cc5d8d02dddb" isAbstract="false" kind="Environment" name="DataPlatform" packagePath="br.ufc.mdcc.hpcshelf.platform.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c195af91cdf894c2f655ab01f4963dd3984bf576897c604048fb305426b6b0023a7d8bae6ac439bee96596d8cd24f15270050ba8fdc05fc8de70cf04bd4f03973f0d7e681804c3be8e53491bd36e4da734d5f650b8d0ffab7727df7bb8dcc85d4e288e2bc2f0dc77b13bbc5ea21115c0cd47ad2715f80f43cb2529ced235809e" isAbstract="false" kind="Environment" name="DataPlatform" packagePath="br.ufc.mdcc.hpcshelf.platform.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ebd79c008046bda718a2f95c35b0cd4002933dc60c36efdfb393a07f9ca13cd4c728f25333d8c2789a444a0f463cb178981abc27031cd830f5bb51f3644442d0dbb1cea891e129b8fefdf6997c4e5b555f9e8b2d3a0c347bb974e5773abb58418e8420366243b910a1febecfbaf1d26731ff992a75be0a9df5508f6d19f5be83" localRef="base" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e916ee20e4501d14f818344c0431d0db6615b052e5ae75072eff79ba9d8833814f937a5a94ecb6851974c49fc992f9a257a802dec40fb2071e9b14060cf41eb529a5fd148042cc260d6416938e5c90059e4bf789ec17590c9ad912e551aabdc3e124850e49607f0a8d0df2f6b0bec93a227b0b033ec0b35edd14c24316642e96" localRef="base" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" version="1.0.0.0">
         <visualDescription h="60" w="100" x="225" y="350">
           <color b="255" g="255" r="255"/>
         </visualDescription>

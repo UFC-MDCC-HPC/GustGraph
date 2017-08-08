@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001dd6c340b4e48c8cdec3b29abb8b833ac3d849c32648c1dbe9a27f6f372926f77a109d9d26942f08d12332a28dbbffcaac529a4c410990039268b5cda8755f71f86165234f8e0113acb0b181e1f57bc48b80992bc2c452411d7ffcf55c2660af4c24489ea877d6bcae863fcdb36f4ed6a137a3b9a5a93a49e232eec2bced759b" isAbstract="false" kind="Computation" name="ReducerImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003fda4f7064e8d0c1a8e35fa71ae71cfe22d77766f7675255f261ddd9e67620653100491a1732793c4f73f61e78afb3543c22b95a84bdb099d74c181c8a82f07156e10b1c94fbd231226c2a6857610ffb9b0340e7f137a0ee277dc066b14203233177095833ac71ac669b2794acb7d2b159e948a2e57b186b50cffedcfa88b5c8" isAbstract="false" kind="Computation" name="ReducerImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000006d25f85e56b7095a8bcfb18f74af86940eab579a6d829d9ad4bd64117f77e60463f0a17109772abb1fe03f5ea9aefc34ef2c181e3707522d61e00cea799eb02c127c1b4938344e6ff202c7325fd317ad244e5b944c8b6aba258c1aa6af3f8b6c987977512a58df9031c421f22a3620d57be7575298dad5fe962f46de66c977b2" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer/Reducer.hpe" name="Reducer" package="br.ufc.mdcc.hpcshelf.mapreduce.computation" version="1.0.0.0">
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000069b84d1ff19b1aa168235153bdbc668c8b90bf67ba881d6e559318d0dd52060012da39565edbf63cf7ba1706dcdd57061ded188155c6817467bd1e010458c1c9891a38162131a635c67cdfbe834a00ed66b5a8e37a1f4cb76c21032759de36da55c6bd98158da695b4aa2a88a87f586ac66988adafd75f58e85b9a7bf169bdc9" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer/Reducer.hpe" name="Reducer" package="br.ufc.mdcc.hpcshelf.mapreduce.computation" version="1.0.0.0">
         <visualDescription h="60" w="100" x="349" y="220">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="output_value_type" varName="OValue"/>
+        <parameter formFieldId="output_key_type" varName="OKey"/>
         <parameter formFieldId="input_key_type" varName="TKey"/>
         <parameter formFieldId="input_value_type" varName="TValue"/>
-        <parameter formFieldId="platform_maintainer" varName="M"/>
         <parameter formFieldId="reduce_function" varName="RF"/>
-        <parameter formFieldId="output_key_type" varName="OKey"/>
+        <parameter formFieldId="output_value_type" varName="OValue"/>
+        <parameter formFieldId="platform_maintainer" varName="M"/>
         <port index_replica="0" localRef="task_reduce" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
           <visualDescription h="60" w="182" x="269" y="455">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1878171106"/>
+          <parameter formFieldId="task_port_type" varName="X###129646377"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -28,8 +28,8 @@
           <visualDescription h="60" w="112" x="457" y="378">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###559651289"/>
-          <parameter formFieldId="server_port_type" varName="X###80840363"/>
+          <parameter formFieldId="server_port_type" varName="X###724691765"/>
+          <parameter formFieldId="client_port_type" varName="X###249778284"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -38,8 +38,8 @@
           <visualDescription h="60" w="111" x="51" y="234">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###1474316037"/>
-          <parameter formFieldId="server_port_type" varName="X###1163314773"/>
+          <parameter formFieldId="server_port_type" varName="X###565137926"/>
+          <parameter formFieldId="client_port_type" varName="X###2008707693"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -109,10 +109,10 @@
       <visualDescription h="60" w="100" x="676" y="326">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="output_value_type" varName="OValue"/>
+      <parameter formFieldId="output_key_type" varName="OKey"/>
       <parameter formFieldId="input_key_type" varName="TKey"/>
       <parameter formFieldId="input_value_type" varName="TValue"/>
-      <parameter formFieldId="output_key_type" varName="OKey"/>
+      <parameter formFieldId="output_value_type" varName="OValue"/>
       <unitBounds facet="0" facet_instance="0" parallel="false" uRef="reduce_function">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -151,13 +151,13 @@
     <supplyParameter cRef="s" direct="true" varName="S"/>
     <supplyParameter cRef="maintainer" direct="true" varName="M"/>
     <interface iRef="IReducerImpl" nArgs="6">
-      <slice isRef="feed_pairs">
-        <originRef cRef="feed_pairs" iRef="IBindingDirect"/>
-        <visualDescription h="10" w="10" x="69" y="14"/>
-      </slice>
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IBindingDirect"/>
         <visualDescription h="10" w="10" x="46" y="26"/>
+      </slice>
+      <slice isRef="feed_pairs">
+        <originRef cRef="feed_pairs" iRef="IBindingDirect"/>
+        <visualDescription h="10" w="10" x="69" y="14"/>
       </slice>
       <slice isRef="task_reduce">
         <originRef cRef="task_reduce" iRef="ITaskPort"/>
@@ -199,13 +199,13 @@
       <visualDescription h="40" w="91" x="202" y="188">
         <color b="0" g="0" r="255"/>
       </visualDescription>
-      <port name="feed_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="feed_pairs"/>
-      </port>
       <port name="collect_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_pairs" sRef="collect_pairs"/>
+      </port>
+      <port name="feed_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="feed_pairs"/>
       </port>
       <port name="task_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -217,10 +217,10 @@
       </port>
       <parameter iname="IComputeHost" order="0" parid="platform_maintainer" uname="compute_host" varid="M"/>
       <parameter iname="IReduceFunction" order="5" parid="reduce_function" uname="reduce_function" varid="RF"/>
-      <parameter iname="IData" order="3" parid="output_key_type" uname="data" varid="OKey"/>
       <parameter iname="IData" order="4" parid="output_value_type" uname="data" varid="OValue"/>
       <parameter iname="IData" order="1" parid="input_key_type" uname="data" varid="TKey"/>
       <parameter iname="IData" order="2" parid="input_value_type" uname="data" varid="TValue"/>
+      <parameter iname="IData" order="3" parid="output_key_type" uname="data" varid="OKey"/>
       <action id="main">
         <protocol/>
       </action>

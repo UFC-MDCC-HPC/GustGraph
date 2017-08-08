@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e5873a44b23e0e36b62bd4462cf4f01fc4b03ce7b0922141e389cf2291aacd898d054a1e2147ce8c1c563b7a410cefef0e8d5b9b941643a09a5bdd0bd24eeeec082e8bd8fdf285fa51fe1c78d5351d970ba67e30fceb6575df115ce2b235b62d8fb560a1546371508d8a1aa133a213323d80aacd148883ae2fa6225f4d678cec" isAbstract="true" kind="Data" name="String" packagePath="br.ufc.mdcc.common">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000dbb1568c8b07182166a0a98bb383b0aebdfb127d9e3ff896f46d401753df925d07bea19933eff9b46252d5f7a721bf1b5d8243b10609be8667ea46852bd2594ff814c92a71b159f69826bf98557893c45eb0ac02817b2e9de6602623dcd7955d12a55738daf2ec2d5e4218e9e8c4444d9be3095feb0b5f71396667bf513f2288" isAbstract="true" kind="Data" name="String" packagePath="br.ufc.mdcc.common">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002b679e8f63c6925bfcc928a7cc3013906b15c175a4e98fab23a035f735fa6c0ad73ed2eae507a31345dd1d315a36138fc3377a2b0953350e14b7cf31e6b06c33f4f4ee03b53200f4bfdbaab49b63edb35bda74c698665df952a90b9df4bdf2e6bc62129a9da0a4ba4ee78fb225d5b4353e96afd6e47927b6943bf6ace9cf0cb0" localRef="base" location="br.ufc.mdcc.common.Data/Data.hpe" name="Data" package="br.ufc.mdcc.common" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000139714d4151e1b412a9c70c46c1ca45b56878fcc36ce587ad9c3b8db2ec286ca277572c35129d78e10800fb12f98f0399c023ec6da5371a5d23b00b1237acc595cdf417e4e7b37153d4eb505a95586d3353e3c4cbea8d5f85c99550c786009f7b808620ab5e704240f8d8013230b1b9a742bceeb45e40340eb07b66465d299a2" localRef="base" location="br.ufc.mdcc.common.Data/Data.hpe" name="Data" package="br.ufc.mdcc.common" version="1.0.0.0">
         <visualDescription h="60" w="100" x="343" y="249">
           <color b="255" g="255" r="255"/>
         </visualDescription>

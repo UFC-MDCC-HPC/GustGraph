@@ -1,19 +1,13 @@
 /* Automatically Generated Code */
 
-using System;
-using br.ufc.pargo.hpe.backend.DGAC;
-using br.ufc.pargo.hpe.basic;
-using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;
 using br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph;//
-using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
-using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
 using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkGraphInterface;
-using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
+using br.ufc.pargo.hpe.kinds;
 
 namespace br.ufc.mdcc.hpcshelf.gust.binding.impl.environment.EnvironmentBindingWriteDataGraphImpl
 {
-	public abstract class BaseIWriteDataGraphImpl<S>: Synchronizer, BaseIWriteDataGraph<S>
+    public abstract class BaseIWriteDataGraphImpl<S>: Synchronizer, BaseIWriteDataGraph<S>
 		//where C:IPortTypeIterator
 		where S:IPortTypeIterator
 	{

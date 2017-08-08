@@ -1,15 +1,13 @@
 using System;
-using br.ufc.pargo.hpe.backend.DGAC;
-using br.ufc.pargo.hpe.basic;
-using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
-using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
-using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE;
-using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
 using System.Collections.Generic;
+using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
+using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE;
+using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
+using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 
-namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerEImpl {
-	public class IDataContainerEImpl<V, E> : BaseIDataContainerEImpl<V, E>, IDataContainerE<V, E> 
+namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerEImpl
+{
+    public class IDataContainerEImpl<V, E> : BaseIDataContainerEImpl<V, E>, IDataContainerE<V, E> 
 		where V:IVertex 
 		where E:IEdge<V> {
 		public IDataContainerEImpl(){ }

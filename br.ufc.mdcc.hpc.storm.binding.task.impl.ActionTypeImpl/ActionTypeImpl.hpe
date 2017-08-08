@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000799d63ed62090cdf6b0c7ef4e5e0212b4508f9787625193e3dc03304af727f33012f4fa4f318aeb728e86323e4cb34471d7c0e2ab07b961677c64aee33146bffcba8f8b10255305c2fa84f44a5156ad971e0a763bc858c7ccc8caff48da470e703a24d049da6c9777c8e960c0f429cc99c835f76b3b90fe8aa9657d72c9c139f" isAbstract="false" kind="Environment" name="ActionTypeImpl" packagePath="br.ufc.mdcc.hpc.storm.binding.task.impl">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009de1b1ff9da01a291df9dae879b9bea9b2cd4c1c8310b002886b0b0fcf72f8ea87fffe3b37c4be51b5a87b6cf170affffdca334be0629fa2d256596df1a009c3839f70b3a5ab08d1038cf188949bc9a838ed459e772c0d40f4ea97fae65fb09bd03bdc6001791dead7c14bb874cc649acbac8096e8fbd9e9d283dd51696e2b91" isAbstract="false" kind="Environment" name="ActionTypeImpl" packagePath="br.ufc.mdcc.hpc.storm.binding.task.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000490ab725063a448d68da7d15056715372803d7217feb5fbc25938af2396b35f7a0fa38b0a75d6296fb72fc328d73b6ffabee2248d5916b776a8f7c3355d868f46213e9d95e64a465c8142c1c741f1eba46feddee2dfcb3512312edfa13a6335d5d32af41ca87a2e0d0908ee8c386cb55736e4b7c9d17098fdb506a213ab39081" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.ActionType/ActionType.hpe" name="ActionType" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000031cbc85cbe592dcd2d483b79bafcb4494e66f168f534fe79df977706aeb9f53915820dd8939cc58bfbffeccf72215e407a1805aeb9e987c3d51320c2001e064f35b59949deac8f9357d7ce5c0d462eb422fa818349b19798a00dce2915a156725ca27121c5f3f6a0125727da502cac45042073b20d20db19545752c63f3f53cb" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.ActionType/ActionType.hpe" name="ActionType" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
         <visualDescription h="60" w="100" x="177" y="173">
           <color b="255" g="255" r="255"/>
         </visualDescription>

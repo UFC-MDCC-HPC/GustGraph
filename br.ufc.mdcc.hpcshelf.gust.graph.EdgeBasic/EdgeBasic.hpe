@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007dba48a4ba1c8172d7f6b6c6c4bda81856f7ec553f881ea79a93d895a3e2f862f85a4836cf97a40b7cfd39de15bbb69e075dc80b3b2edc92a6354db3cfab1bb5fbe478f4415761a57c625ab087aa3ca6bdc58ff3c538e93313183d04315e62f6de0d5cf290b39152493b92db90ac50ceca4d391036fc121d4b3b4efb11d86398" isAbstract="true" kind="Data" name="EdgeBasic" packagePath="br.ufc.mdcc.hpcshelf.gust.graph">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002fc85fb3c5ca3121a6a97969c43d74add536d02227b325ee0adf58e826cb8bfd211a91623122fc3df14af3d4cfbdee300d00b632d696c17dfe9bdd599669ee751d0cd4046738c805817cab99b68c063ddb3c3febb98365dd52ccc97b03323507d89c2b03fb1fa9f6bde20ba3c56fc3fe2c28f7298d5d19ceebe0c7e8c2a618a7" isAbstract="true" kind="Data" name="EdgeBasic" packagePath="br.ufc.mdcc.hpcshelf.gust.graph">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cb86d663f49376f1b8686cfe16f382812bd772179bcad725229002f165d0b8abb4dee575585f02e80aac0988099e3ef65cf3fd8ff03bca8893bde6a45f6f724c95e3e4387a381f2dced9c5cc7111d867afa78ac2a0fa695d87b37f609e1b78c1c3aa2ba2e8113e88ae909334de9596a9b879a22eae797aefac5387c7719edfb3" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.graph.Edge/Edge.hpe" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.graph" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d54313d502cd71eaddd59bbce6fc98434354105ed2b94974f3bc9b4286409eaafc613f05ddb4040680bc5fe60452ff2e5a56fdb48deae544d2c20ac2898293ab5b4dfb183cb21d3a19a9a65795836e2411be505d27c273bc68c8e3ce8d71ce7b09ef1a4dda1ea58b5a044fc71a8fd2be8d678ed083c95860ff81053a70f18691" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.graph.Edge/Edge.hpe" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.graph" version="1.0.0.0">
         <visualDescription h="60" w="100" x="276" y="478">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="vertex_type" varName="V"/>
-        <unitBounds parallel="false" uRef="data">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -19,6 +19,7 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <parameter componentRef="vertex_type" formFieldId="vertex_type" order="0" variance="contravariant" varName="V"/>
@@ -26,7 +27,7 @@
       <visualDescription h="60" w="128" x="313" y="310">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -36,7 +37,7 @@
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/BaseIEdge.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using System;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic {&#xA;&#x9;public interface IEdgeBasic&lt;V> : BaseIEdgeBasic&lt;V>, IEdge&lt;V> where V:IVertex {&#xA;&#x9;&#x9;IEdgeBasicInstance&lt;V, int> EdgeBasicInstance { get; }&#xA;&#x9;&#x9;IEdgeBasicInstance&lt;V, T> InstanceTFactory&lt;T> (T s, T t, float w);&#xA;&#x9;}&#xA;&#x9;public interface IEdgeBasicInstance&lt;V, TV> : IEdgeInstance&lt;V, TV>, ICloneable where V: IVertex{&#xA;&#x9;}&#xA;//&#x9;public interface IRootEdgeBasic&lt;RV>: IRootEdge&lt;RV> {&#xA;//&#x9;}&#xA;}" name="IEdgeBasic.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/bin/1.0.0.0/IEdgeBasic.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using System;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic {&#xA;&#x9;public interface IEdgeBasic&lt;V> : BaseIEdgeBasic&lt;V>, IEdge&lt;V> where V:IVertex {&#xA;&#x9;&#x9;IEdgeBasicInstance&lt;V, int> EdgeBasicInstance { get; }&#xA;&#x9;&#x9;//IEdgeBasicInstance&lt;V, T> InstanceTFactory&lt;T> (T s, T t, float w);&#xA;&#x9;}&#xA;&#x9;public interface IEdgeBasicInstance&lt;V, TV> : IEdgeInstance&lt;V, TV>, ICloneable where V: IVertex{&#xA;&#x9;}&#xA;//&#x9;public interface IRootEdgeBasic&lt;RV>: IRootEdge&lt;RV> {&#xA;//&#x9;}&#xA;}" name="IEdgeBasic.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/bin/1.0.0.0/IEdgeBasic.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/bin/1.0.0.0/BaseIEdgeBasic.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll</dependency>

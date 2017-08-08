@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a78c329c52d8451a734a3d6bcea4aa6d1b7cff5b39204ef57f9eee8499ee00439d8682346d0e5805cd0f2e14666340202adc5bf0f8f10b39bb91e6c58743af8e3a3bc8045cc3f8fd63b5e235bf69b0189c0448cd2bba7af4cae3e658033111cf29b60c82bb85cbd6f2024e7f6995a405b8af7e434e4b731f7b86a141649fd9c7" isAbstract="false" kind="Environment" name="TaskPortTypeAdvanceImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000afc714d686495f679e4f1cf77e72dc1fcbf170d8034f61ac0289d76df3595cf32b27bb8a9851acbf3f5f988ad748dc65fa7ec064358a5f74a426239375191cabbabe34f8a609e76275046e87a090c726bd671fb46e9db057d1d2db95b0f64bf86bc621544fbd37e350e92ec1b4251be04ffaded9f0b90921fc2e452321dd358a" isAbstract="false" kind="Environment" name="TaskPortTypeAdvanceImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000095464ee47eb13b77977afe55fb21c1268843f7feb064ed4a2a10c511b6a019c1f8060c237d442a576df3f7ce1c1f36527b1b48f65579c326fd8a4dcdbefce7aeea373d23e1b4987d1c42ccc4d301bd893f7e7a8b54bcd32117b93bd90780d490e450d5dd5320fe3887e43cffa35f018ba37cd2e7237365920fe11e552abc6193" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d5b9d3955670f1919ddac70fca069603c9fd54a296132e260b5182f7d83196f152136fdb91c344e77287dd9880ab04c9cf6c336cecda272eae71cda1d3912b322566d8ce9baeea2d1082af200c8d82553abd7c206aad7cc2a21a7436fccf3776e0a116daf66b8f773842b509a4da081ab702a24b65b292c27d8b14c31458428d" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" version="1.0.0.0">
         <visualDescription h="60" w="100" x="206" y="188">
           <color b="255" g="255" r="255"/>
         </visualDescription>

@@ -1,27 +1,21 @@
 using System;
-using br.ufc.pargo.hpe.backend.DGAC;
-using br.ufc.pargo.hpe.basic;
-using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadDataGraph;//
-using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
-using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
-using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
-using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceGraphInterface;
-using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect;
-using System.Threading;
 using System.Collections.Generic;
+using System.Threading;
+using br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadDataGraph;//
+using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceGraphInterface;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
 
 namespace br.ufc.mdcc.hpcshelf.gust.binding.impl.environment.EnvironmentBindingReadDataGraphImpl
 {
-	public class IReadDataGraphImpl<S>: BaseIReadDataGraphImpl<S>, IReadDataGraph<S>
+    public class IReadDataGraphImpl<S>: BaseIReadDataGraphImpl<S>, IReadDataGraph<S>
 		where S:IPortTypeDataSourceGraphInterface {
 		public override void main(){ }
 
 		private Thread thread_file_reader = null;
 
-		public override void after_initialize() {
-			Client.IsEmptyAction = ask_for_next_item;
-			startReadSource ();
+		public override void after_initialize() 
+        {
+            startReadSource ();
 		}
 
 		private void ask_for_next_item() {
@@ -47,10 +41,17 @@ namespace br.ufc.mdcc.hpcshelf.gust.binding.impl.environment.EnvironmentBindingR
 		private S server = default(S);
 		public S Server { 
 			set { 
+                Console.WriteLine("IReadDataGraphImpl - SET SERVER 1 ");
 				server = value; 
-				client = (IPortTypeIterator)server.IteratorInstance; 
-				server_ok.Set (); 
-				client_ok.Set (); 
+                client = (IPortTypeIterator)(server.IteratorInstance);
+                Console.WriteLine("IReadDataGraphImpl - SET SERVER 2 " + server.GetType());
+				client.IsEmptyAction = ask_for_next_item;
+				Console.WriteLine("IReadDataGraphImpl - SET SERVER 3");
+				server_ok.Set ();
+				Console.WriteLine("IReadDataGraphImpl - SET SERVER 4");
+				client_ok.Set ();
+				Console.WriteLine("IReadDataGraphImpl - SET SERVER 5");
+
 			} 
 		}
 
@@ -60,8 +61,16 @@ namespace br.ufc.mdcc.hpcshelf.gust.binding.impl.environment.EnvironmentBindingR
 		int counter_write_global = 0;
 
 		private void file_reader() {
-			IEnumerable<object> enumerable_obj = server.fetchContentsKeyValue ();
-			foreach (object item_kv in enumerable_obj) {
+
+            Console.WriteLine("STARTING FILE READER 1");
+
+            server_ok.WaitOne();
+
+			Console.WriteLine("STARTING FILE READER 2");
+
+            IEnumerable<object> enumerable_obj = server.fetchContentsKeyValue ();
+			foreach (object item_kv in enumerable_obj) 
+            {
 				e.WaitOne (); 
 				client.put(item_kv);
 

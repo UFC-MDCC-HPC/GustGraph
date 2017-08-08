@@ -1,18 +1,10 @@
 using System;
-using br.ufc.pargo.hpe.backend.DGAC;
-using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using mapreduce.gust.tc3.System;
-using br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper;
-using System.Threading;
-using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;
-using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;
-using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;
-using br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost;
 
 namespace mapreduce.gust.tc3.SystemImpl
 {
-	public class IPeer1Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_1
+    public class IPeer1Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_1
 	{
 		private void Go(Object o) {
 			((Activate)(o)).go();

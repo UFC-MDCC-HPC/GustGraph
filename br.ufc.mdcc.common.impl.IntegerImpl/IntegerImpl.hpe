@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003542b8d99944b5b861d11ab37e5185248938f05fb7e5e0690ac159d9ae80af868cfb8bd074ac66c72548e3cbd576f0e8bf085059ba947b029e8b9c00c6d4c0c4f73185857ac6c2648bfd6886ff86b93eae5421a06404dabce5e8679e75c9f6cb9a4fa264ef202c760a64f522e677d5bf27df148e4b0bc954291a286df0523b87" isAbstract="false" kind="Data" name="IntegerImpl" packagePath="br.ufc.mdcc.common.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000dfa75c3b9885faec433fe1df69910d926f4ca6cbfbb88ea65811b92982535da7b42eeac87b6a5c7bebcb63b9e37bfca3278b6dee549d00a27f2e7fd568c840f290b2006614ae10dec699828062c1fa4fe0eb185ad06436545ce2214ae3aa5765fcf008911054ae4646e02fbccc96aeae61d8f051ecb29161bf2d15a2ad849df3" isAbstract="false" kind="Data" name="IntegerImpl" packagePath="br.ufc.mdcc.common.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000027b12a74c31c03bc9924a084de578c01e2261fc8909e40d08b674d1aaf869599f310fc70026ab78d06094f36f322e0e162b0601eb1fea4f426af9254539ab66924ced594a86e3e23b4dfba446e086af4d2bcac117be56030db8d001e4bcdb0874c85df826218c55eb4fe39bfa739fa7da4030d157613e915e3df199dd2ac37a9" localRef="base" location="br.ufc.mdcc.common.Integer/Integer.hpe" name="Integer" package="br.ufc.mdcc.common" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b93a798a72c61be59112b4e8c17f34d57ca37dc57b2c3eb7d4389ae770e558f806b6a0afec5d2b487dfd46487a4613a0e573a9eb1818593eab85df3c65c9a2e1a74c9f21e1a62b5ae9526e6d9e41b353b5dd460b5949edb4e40171d98a1148559efdd1928bf5d14ef713735939c58a89cc6caaa61675bdd40435c9061a87ee86" localRef="base" location="br.ufc.mdcc.common.Integer/Integer.hpe" name="Integer" package="br.ufc.mdcc.common" version="1.0.0.0">
         <visualDescription h="60" w="100" x="192" y="187">
           <color b="255" g="255" r="255"/>
         </visualDescription>

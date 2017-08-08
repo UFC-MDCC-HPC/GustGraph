@@ -36,7 +36,7 @@ namespace br.ufc.mdcc.common.impl.IteratorImpl
 		private IIteratorInstance<T> instance;
 
 		public object Instance {
-			get { return instance; }
+            get { if (instance == null) newInstance(); return instance; }
 			set { this.instance = (IIteratorInstance<T>) value; }
 		}
 

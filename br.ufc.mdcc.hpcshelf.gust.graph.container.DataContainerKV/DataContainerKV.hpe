@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a94c3e01281805e7dfc504610a30a1b60e42087b9851f5d6c7c83f43b68d7740cd50ad5aff7b729f69a7c49e5481c15ef88ae6698a3c9581ca66e8c0ef97cb8ec575e05bc91e065fba8e74354e922c2c27ad1d987f81c19a70bc4365cd7a4765ae057eb7414154d7190e5d5aa44933f311f1e1c47e24c591d5c2b670979ca780" isAbstract="true" kind="Data" name="DataContainerKV" packagePath="br.ufc.mdcc.hpcshelf.gust.graph.container">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e348b043a6ba6a513a33e6e22c07ca8e11114fc9241179314dc06282a27298c2ac8ee7337e8d514d12fc997480300369cdb5341714c658ef02f7b56a44e4b4cfa158476cff79a75ee278d9df2d3d83b753b7cc179dae517f7d1eadd5bfbf17c3f1c4359a2c2df22cb4a6402a9105a2c55d0c4202f1553293659a294a91bab2b3" isAbstract="true" kind="Data" name="DataContainerKV" packagePath="br.ufc.mdcc.hpcshelf.gust.graph.container">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000091f9c21efbbdbcf156f271ac61408aa7c179e5772ceb4ed5a137ea10c622fae27c67822095dae4d818144d589479a2750d7b2a369341dee3c66fa965cdb57a16f91e52ffffb1a7b6deb6f886b69790a8640f5d4f9db2256c2fd1b007ce8b584dd4291dfd68b1d1dfc400e3576a3144db04c3245101179cab0019583535221fbf" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/DataContainer.hpe" name="DataContainer" package="br.ufc.mdcc.hpcshelf.gust.graph.container" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d1c574a8356e833e5894a7f19a8c75dbffa62785362dcfb94bb4dcef2dd5fe0fd2e8d400a0b5be06ddacc0295731ec2d2191202fe0a6d60ed88410aa2b8a80a78da1438264647f33aa91612c863a454ef25272a27a4f3489341671517c03f94d651988132bea353162842ed389ab254b44eb99a5d1ad699c7583c1de0ead1cc6" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/DataContainer.hpe" name="DataContainer" package="br.ufc.mdcc.hpcshelf.gust.graph.container" version="1.0.0.0">
         <visualDescription h="60" w="100" x="301" y="364">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="edge_type" varName="E"/>
         <parameter formFieldId="vertex_type" varName="V"/>
-        <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+        <parameter formFieldId="edge_type" varName="E"/>
+        <port index_replica="0" localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
           <visualDescription h="60" w="142" x="126" y="461">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <unitBounds parallel="false" uRef="data">
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+        <port index_replica="0" localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
           <visualDescription h="60" w="161" x="448" y="450">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <parameter formFieldId="vertex_type" varName="V"/>
-          <unitBounds parallel="false" uRef="data">
+          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <unitBounds parallel="false" uRef="data">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -37,6 +37,7 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <parameter componentRef="vertex_type" formFieldId="vertex_type" order="0" variance="contravariant" varName="V"/>
@@ -45,7 +46,7 @@
       <visualDescription h="60" w="150" x="655" y="188">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -54,7 +55,7 @@
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="vertex_type" varName="V"/>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -65,7 +66,7 @@
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/bin/1.0.0.0/BaseIDataContainer.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV&#xA;{&#xA;&#x9;public interface IDataContainerKV&lt;V, E> : BaseIDataContainerKV&lt;V, E>, IDataContainer&lt;V, E>&#xA;&#x9;&#x9;where V:IVertex&#xA;&#x9;&#x9;where E:IEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDataContainerKV.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV/bin/1.0.0.0/IDataContainerKV.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using System;&#xA;using System.Collections.Generic;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV&#xA;{&#xA;&#x9;public interface IDataContainerKV&lt;V, E> : BaseIDataContainerKV&lt;V, E>, IDataContainer&lt;V, E>&#xA;&#x9;&#x9;where V:IVertex&#xA;&#x9;&#x9;where E:IEdge&lt;V> {&#xA;&#x9;&#x9;IDataContainerKVInstance&lt;V, E, int, IEdgeInstance&lt;V, int>> DataContainerKVInstance { get; set; }&#xA;&#x9;&#x9;IDataContainerKVInstance&lt;V, E, TV, TE> InstanceTFactory&lt;TV, TE> (TE e) where TE: IEdgeInstance&lt;V, TV>;&#xA;&#x9;}&#xA;&#x9;public interface IDataContainerKVInstance&lt;V, E, TV, TE> : IDataContainerInstance&lt;V, E>, ICloneable &#xA;&#x9;&#x9;where V:IVertex &#xA;&#x9;&#x9;where E:IEdge&lt;V>  &#xA;&#x9;&#x9;where TE:IEdgeInstance&lt;V, TV> {&#xA;&#xA;&#x9;&#x9;TV Vertex { get; set; }&#xA;&#x9;&#x9;TE EdgeFactory { set; get; }&#xA;&#xA;&#x9;&#x9;IDictionary&lt;TV, IEdgeContainer&lt;KeyValuePair&lt;TV, float>>> DataSet { get; }&#xA;&#x9;&#x9;//void newDataSet (int size);&#xA;&#x9;}&#xA;}&#xA;" name="IDataContainerKV.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV/bin/1.0.0.0/IDataContainerKV.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV/bin/1.0.0.0/BaseIDataContainerKV.dll</dependency>
@@ -75,8 +76,8 @@
       <visualDescription h="40" w="216" x="133" y="167">
         <color b="52" g="226" r="138"/>
       </visualDescription>
-      <parameter iname="IVertex" order="0" parid="vertex_type" uname="data" varid="V"/>
       <parameter iname="IEdge" order="1" parid="edge_type" uname="data" varid="E"/>
+      <parameter iname="IVertex" order="0" parid="vertex_type" uname="data" varid="V"/>
     </interface>
     <unit facet="0" iRef="IDataContainerKV" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
       <super cRef="base" uRef="data"/>

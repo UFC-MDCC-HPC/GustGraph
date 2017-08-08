@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000083b8ecb8a6d5a570546d3a1dc5ee6c7635c793ff7efb6e0ff10e51730c29a542ceb450ec1b859ba5677fadc7f3e4ed2181cda16df1ca7bd35e91a12a237981be1915289ac392307c68bab8449e3b6783b74d2e05ffac548abcf01167018419f38a6ff6fec09d7961bd07dc5e222e8dbfa6a3617208fb58a6505f187fea040c9c" isAbstract="false" kind="Data" name="VertexImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.graph.impl">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007d3642b0e4714e1cb15b78b5d9edeec08208ce4230cba4aaa4dad06fee0d11a4515a269b0b9e4bb350f62d2b00d641254b04cbd0de4c7fb522ba56b463cc39815c6067b40c103b240e518989b3393960d70613959c515b31e72622f2b23a2bdcc751a18968da74376e8fa000994ad758e12ffb0c874ea9bf4523de5fc58c20a3" isAbstract="false" kind="Data" name="VertexImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.graph.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d310c1eb7f2e5221e313263b61858cb4f7d2fcd44819057648aabdfbda27dd4602092fb2a4308d3d503698d0d9888eca5746e461b4aa9c6f5e637f4bae07f1c3e672829b1c119971da95808b208dc16ff6c00e83dc239ed20c956cce1e95522fe80112484a62af534cf558f218503efbba5b23bef4a3f158da67cf4c267007ae" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cf9e7d52a137ba6839b7a06eb28c21de8b6d3336bbab86d406286fafc20ed1d406d61b7e2eef7f3022a762428647a6ce62a2d35333633d892f02b9fc35e631a7e51f854141670f0368681a15001642bb0b476bb8ff34633383b21877f3d6879ce037affbff7581a5e8716249407a2e0765fcd387222bc07ddc439fc256fece92" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" version="1.0.0.0">
         <visualDescription h="60" w="100" x="197" y="587">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <unitBounds parallel="false" uRef="data">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -18,6 +18,7 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <interface iRef="IVertexImpl" nArgs="0">
@@ -25,7 +26,7 @@
         <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexImpl &#xA;{&#xA;&#x9;public abstract class BaseIVertexImpl: DataStructure, BaseIVertex&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIVertexImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexImpl/bin/1.0.0.0/BaseIVertexImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/BaseIVertex.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexImpl&#xA;{&#xA;&#x9;public class IVertexImpl : BaseIVertexImpl, IVertex&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="IVertexImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexImpl/bin/1.0.0.0/IVertexImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexImpl &#xA;{&#xA;&#x9;public class IVertexImpl : BaseIVertexImpl, IVertex &#xA;&#x9;{&#xA;&#xA;&#x9;&#x9;public IVertexImpl () { }&#xA;&#xA;&#x9;&#x9;override public void after_initialize () {&#xA;&#x9;&#x9;&#x9;newInstance (); &#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public IVertexInstance newInstance (int i) {&#xA;&#x9;&#x9;&#x9;IVertexInstance instance = (IVertexInstance)newInstance ();&#xA;&#x9;&#x9;&#x9;instance.Id = i;&#xA;&#x9;&#x9;&#x9;return instance;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public object newInstance () {&#xA;&#x9;&#x9;&#x9;this.instance = new IVertexInstanceImpl ();&#xA;&#x9;&#x9;&#x9;return this.Instance;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IVertexInstance instance;&#xA;&#xA;&#x9;&#x9;public object Instance {&#xA;&#x9;&#x9;&#x9;get { return instance; }&#xA;&#x9;&#x9;&#x9;set { this.instance = (IVertexInstance)value; }&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;public IVertexInstance VInstance {&#xA;&#x9;&#x9;&#x9;get { return instance; }&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#xA;&#x9;[Serializable]&#xA;&#x9;public class IVertexInstanceImpl : IVertexInstance {&#xA;&#xA;&#x9;&#x9;#region IVertexInstance implementation&#xA;&#x9;&#x9;private int val;&#xA;&#xA;&#x9;&#x9;public int Id {&#xA;&#x9;&#x9;&#x9;get { return val; }&#xA;&#x9;&#x9;&#x9;set { this.val = value; }&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public object ObjValue {&#xA;&#x9;&#x9;&#x9;get { return val; }&#xA;&#x9;&#x9;&#x9;set { this.val = (int)value; }&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override string ToString () {&#xA;&#x9;&#x9;&#x9;return Id.ToString ();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override int GetHashCode () {&#xA;&#x9;&#x9;&#x9;return this.Id;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;public override bool Equals (object obj) {&#xA;&#x9;&#x9;&#x9;if (typeof(IVertexInstance).IsAssignableFrom (obj.GetType ()))&#xA;&#x9;&#x9;&#x9;&#x9;return this.Id == ((IVertexInstance)obj).Id;&#xA;&#x9;&#x9;&#x9;return false;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;#endregion&#xA;&#xA;&#x9;&#x9;#region ICloneable implementation&#xA;&#x9;&#x9;public object Clone () {&#xA;&#x9;&#x9;&#x9;IVertexInstance clone = new IVertexInstanceImpl ();&#xA;&#x9;&#x9;&#x9;clone.Id = this.Id;&#xA;&#x9;&#x9;&#x9;return clone;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;#endregion&#xA;&#x9;}&#xA;}&#xA;" name="IVertexImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexImpl/bin/1.0.0.0/IVertexImpl.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexImpl/bin/1.0.0.0/BaseIVertexImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
         </file>

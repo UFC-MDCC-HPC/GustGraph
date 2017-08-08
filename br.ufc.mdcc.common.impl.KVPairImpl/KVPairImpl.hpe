@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e329d6a53643eb306dc48521dda023ef22d14fc08b6cade5b6154e4f2b541ed2eb55fc70981d5c219d1f2dd35bdb69a6d66b6ae21ecf991fcd2a1bb00af79ad34f2c031afa7ee1eed9dd012267c82dbd5ccf59714fc520d46b66336a07c2fbe1cec00608e5b216def3f332a11152e263a6ea3ca330d78122ea0ffd015ce4b2a9" isAbstract="false" kind="Data" name="KVPairImpl" packagePath="br.ufc.mdcc.common.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b174756145ef140dbabc6b2cfbdce1cc5bfbc8c17a42f32a4c2b8f195f3cc08a84b8f2e9a56dbb603f14e7d8685052813134443a566cc8a11b350656217e41ba1acc60f3d9728540ca4655aef7524db80b37510826d7c8100c96238bda50fb27db43de457e771437cc188fadf648a0b12d34e54724b78d3be685a7f79b2ad682" isAbstract="false" kind="Data" name="KVPairImpl" packagePath="br.ufc.mdcc.common.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ebb3897a2bb06809a6732f15788c21fa415682537f4977e12f8ad85082530fed15f306d2cdcda0d5988114ad38a759926b34dd5c58849954752ddab4ba6f75245c839ca636bc2804daefbbc00f57eda4a970464faac4a7b44541b5fc51f99509fc026596e1ccfa729c1398ba6d04d3eeb4c1186d157d7f6b757c04b55eb972ab" localRef="base" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" name="KVPair" package="br.ufc.mdcc.common" version="1.0.0.0">
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001bb895a1c1f2d6dd10d08b7220d7739847072861127292596b59befbe2b3b8d55e3adf190d718aec99010c265d962f645d43a613f4d3655abed14694e2a04746ee1624968901175382de09e89ea4167dff3dcc54d931af7063ff865c7b59d041168f43148e983481cd4d6011ced7a0a68137677b523872e98a532721cca5b681" localRef="base" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" name="KVPair" package="br.ufc.mdcc.common" version="1.0.0.0">
         <visualDescription h="60" w="100" x="177" y="278">
           <color b="255" g="255" r="255"/>
         </visualDescription>

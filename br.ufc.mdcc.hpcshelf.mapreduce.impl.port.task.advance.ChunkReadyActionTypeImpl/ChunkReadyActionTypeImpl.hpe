@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cfc46b3dc1a2d6151ad4e46307eaa66feeda6cb3a6276ecdfa8d88626ba701da0de4b4f89cc7b955c34794010e479efa586fc008025ff88738b70a31504fda98ac7cdf79bb026c4a130e1502fbc069f87381a20c9fe15ebf58ca012a98595de4d6c6af128357e13f8a57bb146ddfa151f1fa5d0134019f3a24665cb38b15df84" isAbstract="false" kind="Environment" name="ChunkReadyActionTypeImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ad486c8b7e9a392e9b43574e7b2c08708298d49bbe9854931298a82cdf81b16a7c29545b8cdc3d5443d3cd1444eb740d6230697cb41f6fb0a0f3386ee004208e7baec3ce1898b734e54b182ed5e3075f91a367c7f539951b285c0025f9d403ffda90dd9be3f1e39831603e22eb20e85941e5788f51ff42bb5077f6ee02581ed5" isAbstract="false" kind="Environment" name="ChunkReadyActionTypeImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.port.task.advance">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bbccf682f422d0e3e156a48062cd97d9b37cf6c28e4b56a3768df561d3731b1f52a7c5a411cc1536aab514989965c019c154af41344d17a1bad4b58b6477884f438bee9dc26147c2cf7e57ba1e9d501fe0621ccb1da35a902644c9bf3fae4e8defe1ac0d88da073d1592ec9208cc25364ae989800ab30e8b33661c5c49897dac" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType/ChunkReadyActionType.hpe" name="ChunkReadyActionType" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance" version="1.0.0.0">
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000063b3a96092651323d978a58bbc006cf3a079d2b694a44f9d247d1b8cbc1d83e26d809fc72c23541782077ab76f587d79b1f0ed7db41f6a10506f284c240e8823325024335381ed597bc7fdc0372983243b1838831361018ebd45fa3c7f0b76d094b43f99a2c7c41175ee370808139d0e3c209132bebe838f8ab76b97078a25ab" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ChunkReadyActionType/ChunkReadyActionType.hpe" name="ChunkReadyActionType" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance" version="1.0.0.0">
         <visualDescription h="60" w="100" x="233" y="177">
           <color b="255" g="255" r="255"/>
         </visualDescription>

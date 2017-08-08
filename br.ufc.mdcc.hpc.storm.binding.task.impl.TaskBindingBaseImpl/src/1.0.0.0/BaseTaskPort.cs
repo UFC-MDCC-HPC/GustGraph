@@ -8,10 +8,10 @@ using br.ufc.mdcc.hpc.storm.binding.task.TaskPortType;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
 
-namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl 
+namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 {
-	public abstract class BaseTaskPort<T>: Synchronizer, BaseITaskPort<T>
-		where T:ITaskPortType
+	public abstract class BaseTaskPort<T> : TaskBinding, BaseITaskPort<T>
+		where T : ITaskPortType
 	{
 		private T task_port_type = default(T);
 
@@ -20,7 +20,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 			get
 			{
 				if (this.task_port_type == null)
-					this.task_port_type = (T) Services.getPort("task_port_type");
+					this.task_port_type = (T)Services.getPort("task_port_type");
 				return this.task_port_type;
 			}
 		}
@@ -32,7 +32,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl
 			get
 			{
 				if (this.channel == null)
-					this.channel = (IChannel) Services.getPort("channel");
+					this.channel = (IChannel)Services.getPort("channel");
 				return this.channel;
 			}
 		}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a13cf1f98ee70b84c1c37604ab4ce4aed4ff0b74ab4f05e8bf614f15db123bd79be38cc70a07ae8ebba729349f5ae78ce5241bfe96bcca9dfc4a213c00d8d3c182abb05e0e52e47bb4b9e877fc429b45ead0432080db1f50d0fef62990371dfea1e712e111d201c8ce5679976e118178b8631dd08a9cafba0dd91b36cc7540a3" isAbstract="true" kind="Computation" name="DataSourceGraph" packagePath="br.ufc.mdcc.hpcshelf.gust.custom.io">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000006ffb047b295c3673c124ba9a5e885729e64520a5d55d8a0e2a5a2f449eaf4683dd7a17324642568222f159041b22ec3d54cda4a244749c4107efc0b7781cfb70fa17fbce06c44e682eff4d7c299b1eb091760284949734a7c6c5d0dd8108699cdeda263192e6ee5183776637e64757f7751490170d796eaa7d2d66eac65b0795" isAbstract="true" kind="Computation" name="DataSourceGraph" packagePath="br.ufc.mdcc.hpcshelf.gust.custom.io">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -25,8 +25,8 @@
       <visualDescription h="60" w="200" x="263" y="475">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="client_port_type" varName="C"/>
       <parameter formFieldId="server_port_type" varName="S"/>
+      <parameter formFieldId="client_port_type" varName="C"/>
       <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
         <visualDescription h="20" w="20" x="9" y="22"/>
       </unitBounds>
@@ -93,13 +93,13 @@
     <supplyParameter cRef="s" direct="true" varName="S"/>
     <supplyParameter cRef="t" direct="true" varName="T"/>
     <interface iRef="IDataSourceGraph" nArgs="4">
-      <slice isRef="platform_data_source">
-        <originRef cRef="platform_data_source" iRef="IProcessingNode"/>
-        <visualDescription h="10" w="10" x="6" y="27"/>
-      </slice>
       <slice isRef="input_data">
         <originRef cRef="input_data" iRef="IBindingDirect"/>
         <visualDescription h="10" w="10" x="41" y="27"/>
+      </slice>
+      <slice isRef="platform_data_source">
+        <originRef cRef="platform_data_source" iRef="IProcessingNode"/>
+        <visualDescription h="10" w="10" x="6" y="27"/>
       </slice>
       <slice isRef="input_key">
         <originRef cRef="input_key" iRef="IVertexBasic"/>
@@ -118,7 +118,7 @@
         <visualDescription h="10" w="10" x="184" y="27"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceGraphInterface;&#xA;using br.ufc.mdcc.hpcshelf.platform.Platform;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DataObject;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.custom.io.DataSourceGraph&#xA;{&#xA;&#x9;public interface BaseIDataSourceGraph&lt;M, IKey, IValue, GIF> : IComputationKind &#xA;&#x9;&#x9;where M:IMaintainer&#xA;&#x9;&#x9;where IKey:IVertexBasic&#xA;&#x9;&#x9;where IValue:IDataObject&#xA;&#x9;&#x9;where GIF:IInputFormat&#xA;&#x9;{&#xA;&#x9;&#x9;IBindingDirect&lt;IEnvironmentPortTypeSinglePartner, IPortTypeDataSourceGraphInterface> Input_data {get;}&#xA;&#x9;&#x9;IProcessingNode&lt;M> Platform_data_source {get;}&#xA;&#x9;}&#xA;}" name="BaseIDataSourceGraph.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.custom.io.DataSourceGraph/bin/1.0.0.0/BaseIDataSourceGraph.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DataObject;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;//using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;//using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect;&#xA;//using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner;&#xA;//using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceGraphInterface;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.custom.io.DataSourceGraph&#xA;{&#xA;&#x9;public interface BaseIDataSourceGraph&lt;M, IKey, IValue, GIF> : IComputationKind &#xA;&#x9;&#x9;where M:IMaintainer&#xA;&#x9;&#x9;where IKey:IVertexBasic&#xA;&#x9;&#x9;where IValue:IDataObject&#xA;&#x9;&#x9;where GIF:IInputFormat&#xA;&#x9;{&#xA;&#x9;&#x9;// GENERATE: IBindingDirect&lt;IEnvironmentPortTypeSinglePartner, IPortTypeDataSourceGraphInterface> Input_data {get;}&#xA;&#x9;&#x9;// IServerBase&lt;IPortTypeDataSourceGraphInterface> Input_data { get; }&#xA;&#x9;}&#xA;}&#xA;" name="BaseIDataSourceGraph.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.custom.io.DataSourceGraph/bin/1.0.0.0/BaseIDataSourceGraph.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/bin/1.0.0.0/IBindingDirect.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceGraphInterface/bin/1.0.0.0/IPortTypeDataSourceGraphInterface.dll</dependency>
@@ -140,13 +140,13 @@
       <visualDescription h="40" w="227" x="239" y="309">
         <color b="6" g="154" r="78"/>
       </visualDescription>
-      <port name="platform_data_source">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_data_source" sRef="platform_data_source"/>
-      </port>
       <port name="input_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_data" sRef="input_data"/>
+      </port>
+      <port name="platform_data_source">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_data_source" sRef="platform_data_source"/>
       </port>
       <parameter iname="IMaintainer" parid="platform_maintainer" uname="maintainer" varid="M"/>
       <parameter iname="IVertexBasic" order="0" parid="input_key_type" uname="data" varid="IKey"/>
@@ -157,11 +157,11 @@
       </action>
     </interface>
     <unit facet="0" iRef="IDataSourceGraph" multiple="true" private="false" replica="0" uRef="data_source_graph" visibleInterface="true">
-      <slices cRef="platform_data_source" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_data_source" transitive="false">
-        <visualDescription h="10" w="10" x="6" y="27"/>
-      </slices>
       <slices cRef="input_data" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="input_data" transitive="false">
         <visualDescription h="10" w="10" x="41" y="27"/>
+      </slices>
+      <slices cRef="platform_data_source" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_data_source" transitive="false">
+        <visualDescription h="10" w="10" x="6" y="27"/>
       </slices>
       <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="false">
         <visualDescription h="10" w="10" x="205" y="7"/>

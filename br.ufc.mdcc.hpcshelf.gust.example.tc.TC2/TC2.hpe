@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002152c09efc514f45e8ec54c88c4f3965dab312c142237a34d31d71e0c62ad5edd98bc31f5c1ee0a03aa7617dc8e2f4722f45f874e7b69ab130fbde09a6eb84c1c5ceb680077daf92baad2b58490402ab3aef3cf1184db9284424c5830da3a1ef5d999fa708aae89a24100207864215fb572c697d6e86beefc3fc30939aabdc89" isAbstract="true" kind="Computation" name="TC2" packagePath="br.ufc.mdcc.hpcshelf.gust.example.tc">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e713ce6b0aafa9627679b6b650a827d7dc2f296a53cea5fd40f06fc8a3ea3cfb4bd13241057d85b93f3ea22112f00c82d150596acaafa256ee16cf7f08ab63535c48dc903c8dc16e141d8852b9f54211d13894adfdf45ffddd0ddf20a76a7c984d4e8a3d699925b2f65ebe12952374e710b9035a18f6bf22f9a0b3aec4ee47df" isAbstract="true" kind="Computation" name="TC2" packagePath="br.ufc.mdcc.hpcshelf.gust.example.tc">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bdbfdec75e44b1f555035b08a0dc1218834c22fccf3804d5ffb916c853dbe116bb6b671b7440ce6726feec12664da1a6c9a3c8beee1624e3d914cca9a8867ecd7aa1d63205b469fe12a73af58d0e639cd2179b9fb73e42cedd5423d3ed7e75b2c749f24e073dea155fb4e77d77cfda2a5c935bbbc9ad32b0c5385a518cfaedb1" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/GustyFunction.hpe" name="GustyFunction" package="br.ufc.mdcc.hpcshelf.gust.custom" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000658949257d22980ca9b30fa0cc0b0be9afb4cc8b1f96f31d0a2532e731dc19331b3f6b609d4777b8f869ef87a2615ab6298ce8bfe8f80428c4fbd3e65f8d50f0afe88ffe6aef06348d9cfe6740c489c53f654139bc9e1aa16b1eba22d171ceb2ce2f71a6864f33f3a438017a1b554ee8a1744773ce95d36a5fae22991e4f28af" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/GustyFunction.hpe" name="GustyFunction" package="br.ufc.mdcc.hpcshelf.gust.custom" version="1.0.0.0">
         <visualDescription h="60" w="100" x="309" y="374">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="output_value_type" varName="OValue"/>
+        <parameter formFieldId="output_key_type" varName="OKey"/>
         <parameter formFieldId="graph_type" varName="G"/>
         <parameter formFieldId="input_key_type" varName="TKey"/>
         <parameter formFieldId="input_value_type" varName="TValue"/>
+        <parameter formFieldId="output_value_type" varName="OValue"/>
         <parameter formFieldId="graph_input_format" varName="GIF"/>
-        <parameter formFieldId="output_key_type" varName="OKey"/>
         <port index_replica="0" localRef="continuation_value" location="br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle/DataTriangle.hpe" multiple="false" name="DataTriangle" package="br.ufc.mdcc.hpcshelf.gust.example.tc" exposed="true">
           <visualDescription h="68" w="203" x="23" y="352">
             <color b="255" g="255" r="255"/>
@@ -27,7 +27,7 @@
           <visualDescription h="60" w="181" x="96" y="471">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###2094798199"/>
+          <parameter formFieldId="value_type" varName="X###1622832791"/>
           <parameter formFieldId="key_type" varName="TKey"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="137" y="20"/>
@@ -43,22 +43,22 @@
             <visualDescription h="20" w="20" x="7" y="21"/>
           </unitBounds>
         </port>
-        <port index_replica="0" localRef="graph" location="br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph/UndirectedGraph.hpe" multiple="false" name="UndirectedGraph" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+        <port index_replica="0" localRef="graph" location="br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph/UndirectedGraph.hpe" multiple="false" name="UndirectedGraph" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
           <visualDescription h="60" w="146" x="363" y="487">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="edge_type" varName="E"/>
           <parameter formFieldId="container" varName="CTN"/>
           <parameter formFieldId="vertex_type" varName="V"/>
+          <parameter formFieldId="edge_type" varName="E"/>
           <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <port index_replica="0" localRef="output_messages" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+        <port index_replica="0" localRef="output_messages" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
           <visualDescription h="60" w="265" x="461" y="401">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###1426421675"/>
+          <parameter formFieldId="item_type" varName="X###1707938322"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="iterator">
             <visualDescription h="20" w="20" x="19" y="23"/>
           </unitBounds>
@@ -99,13 +99,13 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="g" location="br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph/UndirectedGraph.hpe" multiple="false" name="UndirectedGraph" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+    <innerComponent localRef="g" location="br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph/UndirectedGraph.hpe" multiple="false" name="UndirectedGraph" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
       <visualDescription h="60" w="146" x="363" y="487">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="edge_type" varName="E"/>
       <parameter formFieldId="container" varName="CTN"/>
       <parameter formFieldId="vertex_type" varName="V"/>
+      <parameter formFieldId="edge_type" varName="E"/>
       <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -131,8 +131,8 @@
       <visualDescription h="60" w="100" x="723" y="272">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="edge_type" varName="E"/>
       <parameter formFieldId="vertex_type" varName="V"/>
+      <parameter formFieldId="edge_type" varName="E"/>
       <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>

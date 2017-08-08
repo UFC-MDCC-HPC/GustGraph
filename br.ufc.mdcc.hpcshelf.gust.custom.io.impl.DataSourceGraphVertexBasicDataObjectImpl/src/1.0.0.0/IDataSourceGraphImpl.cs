@@ -27,9 +27,9 @@ where GIF:IInputFormat {
 
 		public override void after_initialize () 
 		{ //Input_data.TraceFlag = true;
-			DataSourceReader<IKey, IValue, GIF> graph_server = new DataSourceReader<IKey, IValue, GIF> (Input_format.newInstanceIF (), Input_pairs);
+ 			DataSourceReader<IKey, IValue, GIF> graph_server = new DataSourceReader<IKey, IValue, GIF> (Input_format.newInstanceIF (), Input_pairs);
 			Input_data.Server = graph_server;
-		}
+ 		}
 		private class DataSourceReader<IKey, IValue, GIF>: IPortTypeDataSourceGraphInterface 
 			where IKey:IVertexBasic
 			where IValue:IDataObject
@@ -49,7 +49,8 @@ where GIF:IInputFormat {
 			}
 			public IEnumerable<object> fetchContentsKeyValue()
 			{
-				IDictionary<int, IInputFormatInstance> BINS = Gif_instance.extractBins (PATH_GRAPH_FILE);
+                string path_graph_file = System.Environment.GetEnvironmentVariable(PATH_GRAPH_FILE);
+				IDictionary<int, IInputFormatInstance> BINS = Gif_instance.extractBins (path_graph_file);
 				foreach(KeyValuePair<int, IInputFormatInstance> dictionary_kv_pair in BINS) 
 				{
 					IKVPairInstance<IKey, IValue> item = (IKVPairInstance<IKey, IValue>)Input_pairs_reference.createItem ();

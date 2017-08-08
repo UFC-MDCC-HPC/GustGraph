@@ -1,40 +1,31 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e330c0f74e9ebb0855f3c621f6b5683302386aec60c2dd3a39e01996af54a44bdb71aab3f58b21b7329cc1dfa9a7eff1017b98527b16a3dd18a2a026b90d51d7f238bfd03d04d8a44a2d418896673b0473d96fc1b7b485a26d350abc8887294086ef712320834c5513dbb06502780f70259e17e187d33bf94cb0b9a2666bbba5" isAbstract="false" kind="Application" name="SystemImpl" packagePath="mapreduce.gust.tc3">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000004d65ec000aae3066befd7eb7bdd3a474b0a77ae620fa3ced20dac606ed894b22cd5cd5fef45b7bba6093cb8f49b8f322aa28311364cc26abce94143204ada659b89d53ad5f2fe66d7618ca1f0ba2a4f7da67270d3f1c48049e7214b8d0c5e33daaf4a1830020509de15eb9a1b98b2cef60f43e33b4a40a80155d6152ab0357c3" isAbstract="false" kind="Application" name="SystemImpl" packagePath="mapreduce.gust.tc3">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000513304bd24347a3b710536c7ece176c9960661d11fb09824ccc1b9bc39c82dff98adace207426ecf89193d778a4bdf2e212f48c3852abae212f2a703b2c9e9003f89cd0488c7c34333e526a022e786ef9d8ab2431879549c5d4a2109fa03ad725a0ade386313a79c952a35c3e1065c57533dd387cf7774eb24f9b9b1394aeae3" localRef="base" location="mapreduce.gust.tc3.System/System.hpe" name="System" package="mapreduce.gust.tc3" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000639a83c8038fc77dc8340b6ae093a9671e03c68ed64919debab79327428f141f5f968e191f034252a079d9e4fc8149170001346bb6c91a6caba70a1da9cdabe52896b898d3003b44a6af24829cc6fd8cf05fb613e9ae0f5f24547f86aeb6de59f1dfa725e0076f9b216ff9c737a51c8689ff8f2e6e2b69df2ab6968e63cbb38a" localRef="base" location="mapreduce.gust.tc3.System/System.hpe" name="System" package="mapreduce.gust.tc3" version="1.0.0.0">
         <visualDescription h="60" w="211" x="431" y="421">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer_0">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
-        <unitBounds facet="3" facet_instance="0" facet_instance_enclosing="3" parallel="true" uRef="peer_3">
-          <visualDescription h="20" w="20" x="28" y="2"/>
+        <unitBounds facet="1" facet_instance="0" facet_instance_enclosing="1" parallel="true" uRef="peer_1">
+          <visualDescription h="20" w="20" x="74" y="2"/>
+        </unitBounds>
+        <unitBounds facet="5" facet_instance="0" facet_instance_enclosing="5" parallel="true" uRef="root">
+          <visualDescription h="20" w="20" x="97" y="2"/>
         </unitBounds>
         <unitBounds facet="2" facet_instance="0" facet_instance_enclosing="2" parallel="true" uRef="peer_2">
           <visualDescription h="20" w="20" x="51" y="2"/>
         </unitBounds>
-        <unitBounds facet="1" facet_instance="0" facet_instance_enclosing="1" parallel="true" uRef="peer_1">
-          <visualDescription h="20" w="20" x="74" y="2"/>
-        </unitBounds>
-        <unitBounds facet="8" facet_instance="0" facet_instance_enclosing="8" parallel="true" uRef="root">
-          <visualDescription h="20" w="20" x="97" y="2"/>
-        </unitBounds>
-        <unitBounds facet="7" facet_instance="0" facet_instance_enclosing="7" parallel="true" uRef="peer_7">
-          <visualDescription h="20" w="20" x="120" y="2"/>
+        <unitBounds facet="3" facet_instance="0" facet_instance_enclosing="3" parallel="true" uRef="peer_3">
+          <visualDescription h="20" w="20" x="28" y="2"/>
         </unitBounds>
         <unitBounds facet="4" facet_instance="0" facet_instance_enclosing="4" parallel="true" uRef="peer_4">
           <visualDescription h="20" w="20" x="143" y="2"/>
-        </unitBounds>
-        <unitBounds facet="5" facet_instance="0" facet_instance_enclosing="5" parallel="true" uRef="peer_5">
-          <visualDescription h="20" w="20" x="166" y="2"/>
-        </unitBounds>
-        <unitBounds facet="6" facet_instance="0" facet_instance_enclosing="6" parallel="true" uRef="peer_6">
-          <visualDescription h="20" w="20" x="189" y="2"/>
         </unitBounds>
       </component>
     </baseType>
@@ -54,194 +45,62 @@
   </header>
   <componentInfo>
     <interface iRef="IPeer0Impl" nArgs="0">
-      <slice isRef="splitter_input">
-        <originRef cRef="splitter_input" iRef="ISplitterCollector"/>
-        <visualDescription h="10" w="10" x="111" y="26"/>
-      </slice>
       <slice isRef="source">
         <originRef cRef="source" iRef="IDataSourceGraph"/>
         <visualDescription h="10" w="10" x="111" y="9"/>
       </slice>
+      <slice isRef="shuffler_0">
+        <originRef cRef="shuffler_0" iRef="IShufflerCollector"/>
+        <visualDescription h="10" w="10" x="99" y="25"/>
+      </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using mapreduce.gust.tc3.System;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost;&#xA;using br.ufc.mdcc.common.String;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace mapreduce.gust.tc3.SystemImpl&#xA;{&#xA;&#x9;public class IPeer0Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_0&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IDataSource&lt;IDataHost> source = ((IDataSource&lt;IDataHost>)(this.Services.getPort(&quot;source&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_source = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_source.Start(source);&#xA;            ISplitterCollector&lt;IInteger, IString, IPartitionFunction&lt;IInteger>> splitter_input = ((ISplitterCollector&lt;IInteger, IString, IPartitionFunction&lt;IInteger>>)(this.Services.getPort(&quot;splitter_input&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_splitter_input = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_splitter_input.Start(splitter_input);&#xA;            go_source.Join();&#xA;            go_splitter_input.Join();&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;FINISH PEER 0&quot;);&#xA;&#x9;&#x9;&#x9;AutoResetEvent e = new AutoResetEvent (false);&#xA;&#x9;&#x9;&#x9;e.WaitOne ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IPeer0Impl.cs" srcType="user" uri="mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/IPeer0Impl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using mapreduce.gust.tc3.System;&#xA;&#xA;namespace mapreduce.gust.tc3.SystemImpl&#xA;{&#xA;    public class IPeer0Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_0&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;IDataSource&lt;IDataHost> source = ((IDataSource&lt;IDataHost>)(this.Services.getPort(&quot;source&quot;)));&#xA;//&#x9;&#x9;&#x9;Thread go_source = new Thread(new ParameterizedThreadStart(this.Go));&#xA;//            go_source.Start(source);&#xA;//            ISplitterCollector&lt;IInteger, IString, IPartitionFunction&lt;IInteger>> splitter_input = ((ISplitterCollector&lt;IInteger, IString, IPartitionFunction&lt;IInteger>>)(this.Services.getPort(&quot;splitter_input&quot;)));&#xA;//&#x9;&#x9;&#x9;Thread go_splitter_input = new Thread(new ParameterizedThreadStart(this.Go));&#xA;//&#x9;&#x9;&#x9;go_splitter_input.Start(splitter_input);&#xA;//            go_source.Join();&#xA;//            go_splitter_input.Join();&#xA;//&#xA;//&#x9;&#x9;&#x9;Console.WriteLine (&quot;FINISH PEER 0&quot;);&#xA;//&#x9;&#x9;&#x9;AutoResetEvent e = new AutoResetEvent (false);&#xA;//&#x9;&#x9;&#x9;e.WaitOne ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IPeer0Impl.cs" srcType="user" uri="mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/IPeer0Impl.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/BaseIPeer0Impl.dll</dependency>
           <dependency>mapreduce.gust.tc3.System/bin/1.0.0.0/IPeer_0.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="41" w="136" x="72" y="169">
+      <visualDescription h="41" w="136" x="51" y="156">
         <color b="0" g="255" r="255"/>
       </visualDescription>
-      <port name="task_split_input_read_chunk">
+      <port name="local_pairs_0">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_read_chunk" sRef="splitter_input"/>
-      </port>
-      <port name="task_split_input_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_perform" sRef="splitter_input"/>
-      </port>
-      <port name="input_pairs_source">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="splitter_input"/>
+        <slice pRef="input_data" sRef="source"/>
       </port>
       <port name="platform_data_source">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_data_source" sRef="source"/>
       </port>
-      <port name="input_pairs_source">
+      <port name="local_pairs_0">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_data" sRef="source"/>
+        <slice pRef="collect_pairs" sRef="shuffler_0"/>
       </port>
-      <action id="main">
-        <protocol/>
-      </action>
-    </interface>
-    <interface iRef="IPeer3Impl" nArgs="0">
-      <slice isRef="splitter0">
-        <originRef cRef="splitter0" iRef="ISplitterFeeder"/>
-        <visualDescription h="10" w="10" x="108" y="6"/>
-      </slice>
-      <slice isRef="mapper0">
-        <originRef cRef="mapper0" iRef="IMapper"/>
-        <visualDescription h="10" w="10" x="107" y="21"/>
-      </slice>
-      <slice isRef="shuffler0">
-        <originRef cRef="shuffler0" iRef="IShufflerCollector"/>
-        <visualDescription h="10" w="10" x="107" y="34"/>
-      </slice>
-      <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="using System;&#xA;using System.Threading;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using mapreduce.gust.tc3.System;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;&#xA;//using br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace mapreduce.gust.tc3.SystemImpl&#xA;{&#xA;&#x9;public class IPeer3Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_3&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;&#xA;" name="IPeer3Impl.cs" srcType="user" uri="mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/IPeer3Impl.dll" versionId="1.0.0.0">
-          <dependency>%WORKSPACE/mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/BaseIPeer3Impl.dll</dependency>
-          <dependency>mapreduce.gust.tc3.System/bin/1.0.0.0/IPeer_3.dll</dependency>
-        </file>
-      </sources>
-      <visualDescription h="40" w="134" x="246" y="158">
-        <color b="62" g="175" r="252"/>
-      </visualDescription>
-      <port name="task_split0_chunk_ready">
+      <port name="task_shuffle_0_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_chunk_ready" sRef="splitter0"/>
+        <slice pRef="task_binding_shuffle_read_chunk" sRef="shuffler_0"/>
       </port>
-      <port name="task_split0_perform">
+      <port name="task_shuffle_0_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_perform" sRef="splitter0"/>
-      </port>
-      <port name="input_pairs_map0">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="splitter0"/>
-      </port>
-      <port name="task_map0">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_map" sRef="mapper0"/>
-      </port>
-      <port name="platform_map">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_map" sRef="mapper0"/>
-      </port>
-      <port name="local_intermediate_pairs0">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="mapper0"/>
-      </port>
-      <port name="input_pairs_map0">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="mapper0"/>
-      </port>
-      <port name="task_shuffle0_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_read_chunk" sRef="shuffler0"/>
-      </port>
-      <port name="local_intermediate_pairs0">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="shuffler0"/>
-      </port>
-      <port name="task_shuffle0_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_perform" sRef="shuffler0"/>
-      </port>
-      <action id="main">
-        <protocol/>
-      </action>
-    </interface>
-    <interface iRef="IPeer2Impl" nArgs="0">
-      <slice isRef="shuffler">
-        <originRef cRef="shuffler" iRef="IShufflerFeeder"/>
-        <visualDescription h="10" w="10" x="117" y="10"/>
-      </slice>
-      <slice isRef="reducer0">
-        <originRef cRef="reducer0" iRef="IReducer"/>
-        <visualDescription h="10" w="10" x="118" y="20"/>
-      </slice>
-      <slice isRef="splitter0">
-        <originRef cRef="splitter0" iRef="ISplitterCollector"/>
-        <visualDescription h="10" w="10" x="116" y="34"/>
-      </slice>
-      <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using mapreduce.gust.tc3.System;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost;&#xA;using br.ufc.mdcc.common.String;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.example.cw.Tallier;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace mapreduce.gust.tc3.SystemImpl&#xA;{&#xA;&#x9;public class IPeer2Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_2&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IReducer&lt;IComputeHost, IString, IInteger, IString, IInteger, ITallier> reducer = ((IReducer&lt;IComputeHost, IString, IInteger, IString, IInteger, ITallier>)(this.Services.getPort(&quot;reducer&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_reducer = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_reducer.Start(reducer);&#xA;&#x9;&#x9;&#x9;ISplitterCollector&lt;IString, IInteger, IPartitionFunction&lt;IString>> splitter_output = ((ISplitterCollector&lt;IString, IInteger, IPartitionFunction&lt;IString>>)(this.Services.getPort(&quot;splitter_output&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_splitter_output = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_splitter_output.Start(splitter_output);&#xA;&#x9;&#x9;&#x9;IShufflerFeeder&lt;IString, IInteger> shuffler = ((IShufflerFeeder&lt;IString, IInteger>)(this.Services.getPort(&quot;shuffler&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_shuffler = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_shuffler.Start(shuffler);&#xA;&#x9;&#x9;&#x9;go_reducer.Join();&#xA;&#x9;&#x9;&#x9;go_splitter_output.Join();&#xA;&#x9;&#x9;&#x9;go_shuffler.Join();&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;FINISH PEER 2&quot;);&#xA;&#x9;&#x9;&#x9;AutoResetEvent e = new AutoResetEvent (false);&#xA;&#x9;&#x9;&#x9;e.WaitOne ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IPeer2Impl.cs" srcType="user" uri="mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/IPeer2Impl.dll" versionId="1.0.0.0">
-          <dependency>%WORKSPACE/mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/BaseIPeer2Impl.dll</dependency>
-          <dependency>mapreduce.gust.tc3.System/bin/1.0.0.0/IPeer_2.dll</dependency>
-        </file>
-      </sources>
-      <visualDescription h="55" w="162" x="412" y="145">
-        <color b="0" g="165" r="255"/>
-      </visualDescription>
-      <port name="task_shuffle_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_perform" sRef="shuffler"/>
-      </port>
-      <port name="global_intermediate_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="shuffler"/>
-      </port>
-      <port name="task_shuffle_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_chunk_ready" sRef="shuffler"/>
-      </port>
-      <port name="platform_reduce">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_reduce" sRef="reducer0"/>
-      </port>
-      <port name="global_intermediate_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="reducer0"/>
-      </port>
-      <port name="output_pairs_reduce0">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="reducer0"/>
-      </port>
-      <port name="task_reduce0">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce" sRef="reducer0"/>
-      </port>
-      <port name="task_split0_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_read_chunk" sRef="splitter0"/>
-      </port>
-      <port name="task_split0_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_perform" sRef="splitter0"/>
-      </port>
-      <port name="output_pairs_reduce0">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="splitter0"/>
+        <slice pRef="task_binding_shuffle_perform" sRef="shuffler_0"/>
       </port>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <interface iRef="IPeer1Impl" nArgs="0">
-      <slice isRef="mapper">
-        <originRef cRef="mapper" iRef="IMapper"/>
-        <visualDescription h="10" w="10" x="113" y="21"/>
+      <slice isRef="shuffler_0">
+        <originRef cRef="shuffler_0" iRef="IShufflerFeeder"/>
+        <visualDescription h="10" w="10" x="117" y="10"/>
       </slice>
-      <slice isRef="shuffler">
-        <originRef cRef="shuffler" iRef="IShufflerCollector"/>
-        <visualDescription h="10" w="10" x="113" y="33"/>
+      <slice isRef="reducer_0">
+        <originRef cRef="reducer_0" iRef="IReducer"/>
+        <visualDescription h="10" w="10" x="118" y="20"/>
       </slice>
-      <slice isRef="splitter_input">
-        <originRef cRef="splitter_input" iRef="ISplitterFeeder"/>
-        <visualDescription h="10" w="10" x="112" y="9"/>
+      <slice isRef="shuffler_1">
+        <originRef cRef="shuffler_1" iRef="IShufflerCollector"/>
+        <visualDescription h="10" w="10" x="116" y="35"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using mapreduce.gust.tc3.System;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;&#xA;using br.ufc.mdcc.common.String;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.example.cw.WordCounter;&#xA;&#xA;namespace mapreduce.gust.tc3.SystemImpl&#xA;{&#xA;&#x9;public class IPeer1Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_1&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IMapper&lt;IComputeHost, IInteger, IString, IString, IInteger, IWordCounter> mapper = ((IMapper&lt;IComputeHost, IInteger, IString, IString, IInteger, IWordCounter>)(this.Services.getPort(&quot;mapper&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_mapper = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_mapper.Start(mapper);&#xA;&#x9;&#x9;&#x9;ISplitterFeeder&lt;IInteger, IString> splitter_input = (ISplitterFeeder&lt;IInteger, IString>)(this.Services.getPort(&quot;splitter_input&quot;));&#xA;&#x9;&#x9;&#x9;Thread go_splitter_input = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_splitter_input.Start(splitter_input);&#xA;&#x9;&#x9;&#x9;IShufflerCollector&lt;IString, IInteger, IPartitionFunction&lt;IString>> shuffler = ((IShufflerCollector&lt;IString, IInteger, IPartitionFunction&lt;IString>>)(this.Services.getPort(&quot;shuffler&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_shuffler = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_shuffler.Start(shuffler);&#xA;&#x9;&#x9;&#x9;go_mapper.Join();&#xA;&#x9;&#x9;&#x9;go_splitter_input.Join();&#xA;&#x9;&#x9;&#x9;go_shuffler.Join();&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;FINISH PEER 1&quot;);&#xA;&#x9;&#x9;&#x9;AutoResetEvent e = new AutoResetEvent (false);&#xA;&#x9;&#x9;&#x9;e.WaitOne ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IPeer1Impl.cs" srcType="user" uri="mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/IPeer1Impl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using mapreduce.gust.tc3.System;&#xA;&#xA;namespace mapreduce.gust.tc3.SystemImpl&#xA;{&#xA;    public class IPeer1Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_1&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;IMapper&lt;IComputeHost, IInteger, IString, IString, IInteger, IWordCounter> mapper = ((IMapper&lt;IComputeHost, IInteger, IString, IString, IInteger, IWordCounter>)(this.Services.getPort(&quot;mapper&quot;)));&#xA;//&#x9;&#x9;&#x9;Thread go_mapper = new Thread(new ParameterizedThreadStart(this.Go));&#xA;//&#x9;&#x9;&#x9;go_mapper.Start(mapper);&#xA;//&#x9;&#x9;&#x9;ISplitterFeeder&lt;IInteger, IString> splitter_input = (ISplitterFeeder&lt;IInteger, IString>)(this.Services.getPort(&quot;splitter_input&quot;));&#xA;//&#x9;&#x9;&#x9;Thread go_splitter_input = new Thread(new ParameterizedThreadStart(this.Go));&#xA;//&#x9;&#x9;&#x9;go_splitter_input.Start(splitter_input);&#xA;//&#x9;&#x9;&#x9;IShufflerCollector&lt;IString, IInteger, IPartitionFunction&lt;IString>> shuffler = ((IShufflerCollector&lt;IString, IInteger, IPartitionFunction&lt;IString>>)(this.Services.getPort(&quot;shuffler&quot;)));&#xA;//&#x9;&#x9;&#x9;Thread go_shuffler = new Thread(new ParameterizedThreadStart(this.Go));&#xA;//&#x9;&#x9;&#x9;go_shuffler.Start(shuffler);&#xA;//&#x9;&#x9;&#x9;go_mapper.Join();&#xA;//&#x9;&#x9;&#x9;go_splitter_input.Join();&#xA;//&#x9;&#x9;&#x9;go_shuffler.Join();&#xA;//&#xA;//&#x9;&#x9;&#x9;Console.WriteLine (&quot;FINISH PEER 1&quot;);&#xA;//&#x9;&#x9;&#x9;AutoResetEvent e = new AutoResetEvent (false);&#xA;//&#x9;&#x9;&#x9;e.WaitOne ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IPeer1Impl.cs" srcType="user" uri="mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/IPeer1Impl.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/BaseIPeer1Impl.dll</dependency>
           <dependency>mapreduce.gust.tc3.System/bin/1.0.0.0/IPeer_1.dll</dependency>
         </file>
@@ -249,45 +108,45 @@
       <visualDescription h="50" w="136" x="617" y="144">
         <color b="0" g="136" r="255"/>
       </visualDescription>
-      <port name="platform_map">
+      <port name="task_shuffle_0_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_map" sRef="mapper"/>
+        <slice pRef="task_binding_shuffle_perform" sRef="shuffler_0"/>
       </port>
-      <port name="local_intermediate_pairs">
+      <port name="task_shuffle_0_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="mapper"/>
+        <slice pRef="task_binding_shuffle_chunk_ready" sRef="shuffler_0"/>
       </port>
-      <port name="task_map">
+      <port name="global_pairs_0">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_map" sRef="mapper"/>
+        <slice pRef="feed_pairs" sRef="shuffler_0"/>
       </port>
-      <port name="input_pairs_map">
+      <port name="global_pairs_0">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="mapper"/>
+        <slice pRef="collect_pairs" sRef="reducer_0"/>
       </port>
-      <port name="local_intermediate_pairs">
+      <port name="local_pairs_1">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="shuffler"/>
+        <slice pRef="feed_pairs" sRef="reducer_0"/>
       </port>
-      <port name="task_shuffle_perform">
+      <port name="task_reduce_0">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_perform" sRef="shuffler"/>
+        <slice pRef="task_reduce" sRef="reducer_0"/>
       </port>
-      <port name="task_shuffle_read_chunk">
+      <port name="platform_reduce_0">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_read_chunk" sRef="shuffler"/>
+        <slice pRef="platform_reduce" sRef="reducer_0"/>
       </port>
-      <port name="task_split_input_chunk_ready">
+      <port name="task_shuffle_1_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_chunk_ready" sRef="splitter_input"/>
+        <slice pRef="task_binding_shuffle_read_chunk" sRef="shuffler_1"/>
       </port>
-      <port name="task_split_input_perform">
+      <port name="local_pairs_1">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_perform" sRef="splitter_input"/>
+        <slice pRef="collect_pairs" sRef="shuffler_1"/>
       </port>
-      <port name="input_pairs_map">
+      <port name="task_shuffle_1_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="splitter_input"/>
+        <slice pRef="task_binding_shuffle_perform" sRef="shuffler_1"/>
       </port>
       <action id="main">
         <protocol/>
@@ -303,7 +162,7 @@
         <visualDescription h="10" w="10" x="111" y="14"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="using System;&#xA;using mapreduce.gust.tc3.System;&#xA;using mapreduce.gust.tc3.Workflow;&#xA;using System.Threading;&#xA;using mapreduce.gust.tc3.Application;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace mapreduce.gust.tc3.SystemImpl&#xA;{&#xA;&#x9;public class IRootImpl : br.ufc.pargo.hpe.kinds.Application, IRoot&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IWorkflow&lt;ISAFeHost> workflow = ((IWorkflow&lt;ISAFeHost>)(this.Services.getPort(&quot;workflow&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_workflow = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_workflow.Start(workflow);&#xA;&#x9;&#x9;&#x9;IApplication&lt;ISAFeHost> application = ((IApplication&lt;ISAFeHost>)(this.Services.getPort(&quot;application&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_application = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_application.Start(application);&#xA;&#x9;&#x9;&#x9;go_workflow.Join();&#xA;&#x9;&#x9;&#x9;go_application.Join();&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;FINISH ROOT&quot;);&#xA;&#x9;&#x9;&#x9;AutoResetEvent e = new AutoResetEvent (false);&#xA;&#x9;&#x9;&#x9;e.WaitOne ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IRootImpl.cs" srcType="user" uri="mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/IRootImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using mapreduce.gust.tc3.System;&#xA;using mapreduce.gust.tc3.Workflow;&#xA;using System.Threading;&#xA;using mapreduce.gust.tc3.Application;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace mapreduce.gust.tc3.SystemImpl&#xA;{&#xA;&#x9;public class IRootImpl : br.ufc.pargo.hpe.kinds.Application, IRoot&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;IWorkflow&lt;ISAFeHost> workflow = ((IWorkflow&lt;ISAFeHost>)(this.Services.getPort(&quot;workflow&quot;)));&#xA;//&#x9;&#x9;&#x9;Thread go_workflow = new Thread(new ParameterizedThreadStart(this.Go));&#xA;//&#x9;&#x9;&#x9;go_workflow.Start(workflow);&#xA;//&#x9;&#x9;&#x9;IApplication&lt;ISAFeHost> application = ((IApplication&lt;ISAFeHost>)(this.Services.getPort(&quot;application&quot;)));&#xA;//&#x9;&#x9;&#x9;Thread go_application = new Thread(new ParameterizedThreadStart(this.Go));&#xA;//&#x9;&#x9;&#x9;go_application.Start(application);&#xA;//&#x9;&#x9;&#x9;go_workflow.Join();&#xA;//&#x9;&#x9;&#x9;go_application.Join();&#xA;//&#xA;//&#x9;&#x9;&#x9;Console.WriteLine (&quot;FINISH ROOT&quot;);&#xA;//&#x9;&#x9;&#x9;AutoResetEvent e = new AutoResetEvent (false);&#xA;//&#x9;&#x9;&#x9;e.WaitOne ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IRootImpl.cs" srcType="user" uri="mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/IRootImpl.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/BaseIRootImpl.dll</dependency>
           <dependency>mapreduce.gust.tc3.System/bin/1.0.0.0/IRoot.dll</dependency>
         </file>
@@ -311,117 +170,77 @@
       <visualDescription h="54" w="138" x="793" y="150">
         <color b="255" g="0" r="0"/>
       </visualDescription>
-      <port name="task_reduce0">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce0" sRef="workflow"/>
-      </port>
-      <port name="task_reduce1">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce1" sRef="workflow"/>
-      </port>
-      <port name="task_split_input_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_input_read_chunk" sRef="workflow"/>
-      </port>
-      <port name="task_shuffle_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_chunk_ready" sRef="workflow"/>
-      </port>
-      <port name="task_map1">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_map1" sRef="workflow"/>
-      </port>
-      <port name="task_split1_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split1_chunk_ready" sRef="workflow"/>
-      </port>
-      <port name="task_shuffle1_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle1_read_chunk" sRef="workflow"/>
-      </port>
-      <port name="task_split_input_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_input_perform" sRef="workflow"/>
-      </port>
       <port name="task_split_output_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_split_output_chunk_ready" sRef="workflow"/>
       </port>
-      <port name="platform_SAFe">
+      <port name="task_shuffle_0_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_SAFe" sRef="workflow"/>
+        <slice pRef="task_shuffle_0_chunk_ready" sRef="workflow"/>
       </port>
-      <port name="task_map0">
+      <port name="task_shuffle_1_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_map0" sRef="workflow"/>
+        <slice pRef="task_shuffle_1_perform" sRef="workflow"/>
       </port>
-      <port name="task_shuffle0_read_chunk">
+      <port name="task_shuffle_1_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle0_read_chunk" sRef="workflow"/>
+        <slice pRef="task_shuffle_1_chunk_ready" sRef="workflow"/>
       </port>
-      <port name="task_shuffle0_chunk_ready">
+      <port name="task_shuffle_2_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle0_chunk_ready" sRef="workflow"/>
+        <slice pRef="task_shuffle_2_chunk_ready" sRef="workflow"/>
       </port>
-      <port name="task_shuffle1_perform">
+      <port name="swl_port">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle1_perform" sRef="workflow"/>
+        <slice pRef="swl_port" sRef="workflow"/>
       </port>
-      <port name="task_map">
+      <port name="task_reduce_1">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_map" sRef="workflow"/>
+        <slice pRef="task_reduce_1" sRef="workflow"/>
       </port>
-      <port name="task_shuffle0_perform">
+      <port name="task_split_output_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle0_perform" sRef="workflow"/>
+        <slice pRef="task_split_output_perform" sRef="workflow"/>
       </port>
-      <port name="task_split_input_chunk_ready">
+      <port name="task_shuffle_2_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_input_chunk_ready" sRef="workflow"/>
-      </port>
-      <port name="task_split0_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split0_read_chunk" sRef="workflow"/>
-      </port>
-      <port name="task_split0_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split0_perform" sRef="workflow"/>
-      </port>
-      <port name="task_split0_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split0_chunk_ready" sRef="workflow"/>
-      </port>
-      <port name="task_reduce">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce" sRef="workflow"/>
-      </port>
-      <port name="task_split1_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split1_read_chunk" sRef="workflow"/>
-      </port>
-      <port name="task_split1_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split1_perform" sRef="workflow"/>
-      </port>
-      <port name="task_shuffle_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_read_chunk" sRef="workflow"/>
-      </port>
-      <port name="task_shuffle1_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle1_chunk_ready" sRef="workflow"/>
-      </port>
-      <port name="task_shuffle_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_perform" sRef="workflow"/>
+        <slice pRef="task_shuffle_2_perform" sRef="workflow"/>
       </port>
       <port name="task_split_output_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_split_output_read_chunk" sRef="workflow"/>
       </port>
-      <port name="task_split_output_perform">
+      <port name="task_shuffle_2_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_output_perform" sRef="workflow"/>
+        <slice pRef="task_shuffle_2_read_chunk" sRef="workflow"/>
+      </port>
+      <port name="platform_SAFe">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_SAFe" sRef="workflow"/>
+      </port>
+      <port name="task_shuffle_1_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_shuffle_1_read_chunk" sRef="workflow"/>
+      </port>
+      <port name="task_shuffle_0_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_shuffle_0_read_chunk" sRef="workflow"/>
+      </port>
+      <port name="task_reduce_2">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_reduce_2" sRef="workflow"/>
+      </port>
+      <port name="task_reduce_0">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_reduce_0" sRef="workflow"/>
+      </port>
+      <port name="task_shuffle_0_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_shuffle_0_perform" sRef="workflow"/>
+      </port>
+      <port name="swl_port">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="swl_port" sRef="application"/>
       </port>
       <port name="platform_SAFe">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -431,60 +250,146 @@
         <protocol/>
       </action>
     </interface>
-    <interface iRef="IPeer7Impl" nArgs="0">
-      <slice isRef="splitter_output">
-        <originRef cRef="splitter_output" iRef="ISplitterFeeder"/>
-        <visualDescription h="10" w="10" x="150" y="12"/>
+    <interface iRef="IPeer2Impl" nArgs="0">
+      <slice isRef="shuffler_1">
+        <originRef cRef="shuffler_1" iRef="IShufflerFeeder"/>
+        <visualDescription h="10" w="10" x="148" y="8"/>
       </slice>
-      <slice isRef="sink">
-        <originRef cRef="sink" iRef="IDataSinkGraph"/>
-        <visualDescription h="10" w="10" x="151" y="24"/>
+      <slice isRef="reducer_1">
+        <originRef cRef="reducer_1" iRef="IReducer"/>
+        <visualDescription h="10" w="10" x="148" y="19"/>
+      </slice>
+      <slice isRef="shuffler_2">
+        <originRef cRef="shuffler_2" iRef="IShufflerCollector"/>
+        <visualDescription h="10" w="10" x="145" y="35"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using mapreduce.gust.tc3.System;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost;&#xA;using br.ufc.mdcc.common.String;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace mapreduce.gust.tc3.SystemImpl&#xA;{&#xA;&#x9;public class IPeer7Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_7&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IDataSink&lt;IDataHost> sink = ((IDataSink&lt;IDataHost>)(this.Services.getPort(&quot;sink&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_sink = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_sink.Start(sink);&#xA;&#x9;&#x9;&#x9;ISplitterFeeder&lt;IString, IInteger> splitter_output = ((ISplitterFeeder&lt;IString, IInteger>)(this.Services.getPort(&quot;splitter_output&quot;)));&#xA;&#x9;&#x9;&#x9;Thread go_splitter_output = new Thread(new ParameterizedThreadStart(this.Go));&#xA;&#x9;&#x9;&#x9;go_splitter_output.Start(splitter_output);&#xA;&#x9;&#x9;&#x9;go_sink.Join();&#xA;&#x9;&#x9;&#x9;go_splitter_output.Join();&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;FINISH PEER 3&quot;);&#xA;&#x9;&#x9;&#x9;AutoResetEvent e = new AutoResetEvent (false);&#xA;&#x9;&#x9;&#x9;e.WaitOne ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IPeer7Impl.cs" srcType="user" uri="mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/IPeer7Impl.dll" versionId="1.0.0.0">
-          <dependency>%WORKSPACE/mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/BaseIPeer7Impl.dll</dependency>
-          <dependency>mapreduce.gust.tc3.System/bin/1.0.0.0/IPeer_7.dll</dependency>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using mapreduce.gust.tc3.System;&#xA;&#xA;namespace mapreduce.gust.tc3.SystemImpl&#xA;{&#xA;    public class IPeer2Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_2&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;IReducer&lt;IComputeHost, IString, IInteger, IString, IInteger, ITallier> reducer = ((IReducer&lt;IComputeHost, IString, IInteger, IString, IInteger, ITallier>)(this.Services.getPort(&quot;reducer&quot;)));&#xA;//&#x9;&#x9;&#x9;Thread go_reducer = new Thread(new ParameterizedThreadStart(this.Go));&#xA;//&#x9;&#x9;&#x9;go_reducer.Start(reducer);&#xA;//&#x9;&#x9;&#x9;ISplitterCollector&lt;IString, IInteger, IPartitionFunction&lt;IString>> splitter_output = ((ISplitterCollector&lt;IString, IInteger, IPartitionFunction&lt;IString>>)(this.Services.getPort(&quot;splitter_output&quot;)));&#xA;//&#x9;&#x9;&#x9;Thread go_splitter_output = new Thread(new ParameterizedThreadStart(this.Go));&#xA;//&#x9;&#x9;&#x9;go_splitter_output.Start(splitter_output);&#xA;//&#x9;&#x9;&#x9;IShufflerFeeder&lt;IString, IInteger> shuffler = ((IShufflerFeeder&lt;IString, IInteger>)(this.Services.getPort(&quot;shuffler&quot;)));&#xA;//&#x9;&#x9;&#x9;Thread go_shuffler = new Thread(new ParameterizedThreadStart(this.Go));&#xA;//&#x9;&#x9;&#x9;go_shuffler.Start(shuffler);&#xA;//&#x9;&#x9;&#x9;go_reducer.Join();&#xA;//&#x9;&#x9;&#x9;go_splitter_output.Join();&#xA;//&#x9;&#x9;&#x9;go_shuffler.Join();&#xA;//&#xA;//&#x9;&#x9;&#x9;Console.WriteLine (&quot;FINISH PEER 2&quot;);&#xA;//&#x9;&#x9;&#x9;AutoResetEvent e = new AutoResetEvent (false);&#xA;//&#x9;&#x9;&#x9;e.WaitOne ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IPeer2Impl.cs" srcType="user" uri="mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/IPeer2Impl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/BaseIPeer2Impl.dll</dependency>
+          <dependency>mapreduce.gust.tc3.System/bin/1.0.0.0/IPeer_2.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="168" x="84" y="622">
-        <color b="6" g="154" r="78"/>
+      <visualDescription h="55" w="162" x="412" y="145">
+        <color b="0" g="165" r="255"/>
       </visualDescription>
-      <port name="task_split_output_chunk_ready">
+      <port name="global_pairs_1">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_chunk_ready" sRef="splitter_output"/>
+        <slice pRef="feed_pairs" sRef="shuffler_1"/>
       </port>
-      <port name="output_pairs_sink">
+      <port name="task_shuffle_1_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="splitter_output"/>
+        <slice pRef="task_binding_shuffle_chunk_ready" sRef="shuffler_1"/>
+      </port>
+      <port name="task_shuffle_1_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_shuffle_perform" sRef="shuffler_1"/>
+      </port>
+      <port name="local_pairs_2">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="reducer_1"/>
+      </port>
+      <port name="global_pairs_1">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="reducer_1"/>
+      </port>
+      <port name="task_reduce_1">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_reduce" sRef="reducer_1"/>
+      </port>
+      <port name="platform_reduce_1">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_reduce" sRef="reducer_1"/>
+      </port>
+      <port name="task_shuffle_2_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_shuffle_read_chunk" sRef="shuffler_2"/>
+      </port>
+      <port name="task_shuffle_2_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_shuffle_perform" sRef="shuffler_2"/>
+      </port>
+      <port name="local_pairs_2">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="shuffler_2"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IPeer3Impl" nArgs="0">
+      <slice isRef="shuffler_2">
+        <originRef cRef="shuffler_2" iRef="IShufflerFeeder"/>
+        <visualDescription h="10" w="10" x="140" y="10"/>
+      </slice>
+      <slice isRef="reducer_2">
+        <originRef cRef="reducer_2" iRef="IReducer"/>
+        <visualDescription h="10" w="10" x="138" y="20"/>
+      </slice>
+      <slice isRef="splitter_output">
+        <originRef cRef="splitter_output" iRef="ISplitterCollector"/>
+        <visualDescription h="10" w="10" x="128" y="33"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using System.Threading;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using mapreduce.gust.tc3.System;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;&#xA;//using br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace mapreduce.gust.tc3.SystemImpl&#xA;{&#xA;&#x9;public class IPeer3Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_3&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;&#xA;" name="IPeer3Impl.cs" srcType="user" uri="mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/IPeer3Impl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/BaseIPeer3Impl.dll</dependency>
+          <dependency>mapreduce.gust.tc3.System/bin/1.0.0.0/IPeer_3.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="134" x="246" y="158">
+        <color b="62" g="175" r="252"/>
+      </visualDescription>
+      <port name="global_pairs_2">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="shuffler_2"/>
+      </port>
+      <port name="task_shuffle_2_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_shuffle_perform" sRef="shuffler_2"/>
+      </port>
+      <port name="task_shuffle_2_chunk_ready">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_shuffle_chunk_ready" sRef="shuffler_2"/>
+      </port>
+      <port name="result_pairs_0">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="reducer_2"/>
+      </port>
+      <port name="global_pairs_2">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="reducer_2"/>
+      </port>
+      <port name="task_reduce_2">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_reduce" sRef="reducer_2"/>
+      </port>
+      <port name="platform_reduce_2">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_reduce" sRef="reducer_2"/>
+      </port>
+      <port name="task_split_output_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_read_chunk" sRef="splitter_output"/>
       </port>
       <port name="task_split_output_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_perform" sRef="splitter_output"/>
       </port>
-      <port name="output_pairs_sink">
+      <port name="result_pairs_0">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_data" sRef="sink"/>
-      </port>
-      <port name="platform_data_sink">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_data_sink" sRef="sink"/>
+        <slice pRef="collect_pairs" sRef="splitter_output"/>
       </port>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <interface iRef="IPeer4Impl" nArgs="0">
-      <slice isRef="shuffler0">
-        <originRef cRef="shuffler0" iRef="IShufflerFeeder"/>
-        <visualDescription h="10" w="10" x="148" y="8"/>
+      <slice isRef="splitter_output">
+        <originRef cRef="splitter_output" iRef="ISplitterFeeder"/>
+        <visualDescription h="10" w="10" x="146" y="8"/>
       </slice>
-      <slice isRef="reducer1">
-        <originRef cRef="reducer1" iRef="IReducer"/>
-        <visualDescription h="10" w="10" x="148" y="19"/>
-      </slice>
-      <slice isRef="splitter1">
-        <originRef cRef="splitter1" iRef="ISplitterCollector"/>
-        <visualDescription h="10" w="10" x="148" y="32"/>
+      <slice isRef="sink">
+        <originRef cRef="sink" iRef="IDataSinkGraph"/>
+        <visualDescription h="10" w="10" x="142" y="21"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="using System;&#xA;using System.Threading;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using mapreduce.gust.tc3.System;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;&#xA;//using br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace mapreduce.gust.tc3.SystemImpl&#xA;{&#xA;&#x9;public class IPeer4Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_4&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;&#xA;" name="IPeer4Impl.cs" srcType="user" uri="mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/IPeer4Impl.dll" versionId="1.0.0.0">
@@ -495,177 +400,25 @@
       <visualDescription h="63" w="165" x="292" y="618">
         <color b="62" g="175" r="252"/>
       </visualDescription>
-      <port name="task_shuffle0_perform">
+      <port name="task_split_output_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_perform" sRef="shuffler0"/>
+        <slice pRef="task_binding_split_chunk_ready" sRef="splitter_output"/>
       </port>
-      <port name="task_shuffle0_chunk_ready">
+      <port name="result_pairs_1">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_chunk_ready" sRef="shuffler0"/>
-      </port>
-      <port name="global_intermediate_pairs0">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="shuffler0"/>
-      </port>
-      <port name="output_pairs_reduce1">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="reducer1"/>
-      </port>
-      <port name="global_intermediate_pairs0">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="reducer1"/>
-      </port>
-      <port name="task_reduce1">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce" sRef="reducer1"/>
-      </port>
-      <port name="platform_reduce">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_reduce" sRef="reducer1"/>
-      </port>
-      <port name="task_split1_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_perform" sRef="splitter1"/>
-      </port>
-      <port name="task_split1_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_read_chunk" sRef="splitter1"/>
-      </port>
-      <port name="output_pairs_reduce1">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="splitter1"/>
-      </port>
-      <action id="main">
-        <protocol/>
-      </action>
-    </interface>
-    <interface iRef="IPeer5Impl" nArgs="0">
-      <slice isRef="splitter1">
-        <originRef cRef="splitter1" iRef="ISplitterFeeder"/>
-        <visualDescription h="10" w="10" x="155" y="9"/>
-      </slice>
-      <slice isRef="mapper1">
-        <originRef cRef="mapper1" iRef="IMapper"/>
-        <visualDescription h="10" w="10" x="156" y="22"/>
-      </slice>
-      <slice isRef="shuffler1">
-        <originRef cRef="shuffler1" iRef="IShufflerCollector"/>
-        <visualDescription h="10" w="10" x="157" y="39"/>
-      </slice>
-      <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="using System;&#xA;using System.Threading;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using mapreduce.gust.tc3.System;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;&#xA;//using br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace mapreduce.gust.tc3.SystemImpl&#xA;{&#xA;&#x9;public class IPeer5Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_5&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IPeer5Impl.cs" srcType="user" uri="mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/IPeer5Impl.dll" versionId="1.0.0.0">
-          <dependency>%WORKSPACE/mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/BaseIPeer5Impl.dll</dependency>
-          <dependency>mapreduce.gust.tc3.System/bin/1.0.0.0/IPeer_5.dll</dependency>
-        </file>
-      </sources>
-      <visualDescription h="59" w="181" x="481" y="624">
-        <color b="62" g="175" r="252"/>
-      </visualDescription>
-      <port name="task_split1_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_perform" sRef="splitter1"/>
-      </port>
-      <port name="task_split1_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_chunk_ready" sRef="splitter1"/>
-      </port>
-      <port name="input_pairs_map1">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="splitter1"/>
-      </port>
-      <port name="platform_map">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_map" sRef="mapper1"/>
-      </port>
-      <port name="task_map1">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_map" sRef="mapper1"/>
-      </port>
-      <port name="local_intermediate_pairs1">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="mapper1"/>
-      </port>
-      <port name="input_pairs_map1">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="mapper1"/>
-      </port>
-      <port name="task_shuffle1_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_perform" sRef="shuffler1"/>
-      </port>
-      <port name="local_intermediate_pairs1">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="shuffler1"/>
-      </port>
-      <port name="task_shuffle1_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_read_chunk" sRef="shuffler1"/>
-      </port>
-      <action id="main">
-        <protocol/>
-      </action>
-    </interface>
-    <interface iRef="IPeer6Impl" nArgs="0">
-      <slice isRef="shuffler1">
-        <originRef cRef="shuffler1" iRef="IShufflerFeeder"/>
-        <visualDescription h="10" w="10" x="140" y="10"/>
-      </slice>
-      <slice isRef="reducer">
-        <originRef cRef="reducer" iRef="IReducer"/>
-        <visualDescription h="10" w="10" x="138" y="20"/>
-      </slice>
-      <slice isRef="splitter_output">
-        <originRef cRef="splitter_output" iRef="ISplitterCollector"/>
-        <visualDescription h="10" w="10" x="136" y="31"/>
-      </slice>
-      <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="using System;&#xA;using System.Threading;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using mapreduce.gust.tc3.System;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;&#xA;//using br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost;&#xA;//using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace mapreduce.gust.tc3.SystemImpl&#xA;{&#xA;&#x9;public class IPeer6Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_6&#xA;&#x9;{&#xA;&#x9;&#x9;private void Go(Object o) {&#xA;&#x9;&#x9;&#x9;((Activate)(o)).go();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;&#xA;&#xA;" name="IPeer6Impl.cs" srcType="user" uri="mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/IPeer6Impl.dll" versionId="1.0.0.0">
-          <dependency>%WORKSPACE/mapreduce.gust.tc3.SystemImpl/bin/1.0.0.0/BaseIPeer6Impl.dll</dependency>
-          <dependency>mapreduce.gust.tc3.System/bin/1.0.0.0/IPeer_6.dll</dependency>
-        </file>
-      </sources>
-      <visualDescription h="54" w="166" x="713" y="628">
-        <color b="62" g="175" r="252"/>
-      </visualDescription>
-      <port name="task_shuffle1_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_perform" sRef="shuffler1"/>
-      </port>
-      <port name="global_intermediate_pairs1">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="shuffler1"/>
-      </port>
-      <port name="task_shuffle1_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_chunk_ready" sRef="shuffler1"/>
-      </port>
-      <port name="output_pairs_reduce">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="reducer"/>
-      </port>
-      <port name="platform_reduce">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_reduce" sRef="reducer"/>
-      </port>
-      <port name="global_intermediate_pairs1">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="reducer"/>
-      </port>
-      <port name="task_reduce">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce" sRef="reducer"/>
+        <slice pRef="feed_pairs" sRef="splitter_output"/>
       </port>
       <port name="task_split_output_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_perform" sRef="splitter_output"/>
       </port>
-      <port name="task_split_output_read_chunk">
+      <port name="platform_data_sink">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_read_chunk" sRef="splitter_output"/>
+        <slice pRef="platform_data_sink" sRef="sink"/>
       </port>
-      <port name="output_pairs_reduce">
+      <port name="result_pairs_1">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="splitter_output"/>
+        <slice pRef="output_data" sRef="sink"/>
       </port>
       <action id="main">
         <protocol/>
@@ -675,37 +428,25 @@
       <super cRef="base" uRef="peer_0"/>
       <visualDescription h="39" w="129" x="97" y="256"/>
     </unit>
-    <unit facet="3" iRef="IPeer3Impl" multiple="true" private="false" replica="0" uRef="peer_3" visibleInterface="true">
-      <super cRef="base" uRef="peer_3"/>
-      <visualDescription h="56" w="125" x="270" y="231"/>
+    <unit facet="1" iRef="IPeer1Impl" multiple="true" private="false" replica="0" uRef="peer_1" visibleInterface="true">
+      <super cRef="base" uRef="peer_1"/>
+      <visualDescription h="46" w="130" x="599" y="239"/>
+    </unit>
+    <unit facet="5" iRef="IRootImpl" multiple="true" private="false" replica="0" uRef="root" visibleInterface="true">
+      <super cRef="base" uRef="root"/>
+      <visualDescription h="39" w="132" x="747" y="255"/>
     </unit>
     <unit facet="2" iRef="IPeer2Impl" multiple="true" private="false" replica="0" uRef="peer_2" visibleInterface="true">
       <super cRef="base" uRef="peer_2"/>
       <visualDescription h="45" w="134" x="442" y="223"/>
     </unit>
-    <unit facet="1" iRef="IPeer1Impl" multiple="true" private="false" replica="0" uRef="peer_1" visibleInterface="true">
-      <super cRef="base" uRef="peer_1"/>
-      <visualDescription h="46" w="130" x="599" y="239"/>
-    </unit>
-    <unit facet="8" iRef="IRootImpl" multiple="true" private="false" replica="0" uRef="root" visibleInterface="true">
-      <super cRef="base" uRef="root"/>
-      <visualDescription h="39" w="132" x="747" y="255"/>
-    </unit>
-    <unit facet="7" iRef="IPeer7Impl" multiple="true" private="false" replica="0" uRef="peer_7" visibleInterface="true">
-      <super cRef="base" uRef="peer_7"/>
-      <visualDescription h="40" w="168" x="93" y="537"/>
+    <unit facet="3" iRef="IPeer3Impl" multiple="true" private="false" replica="0" uRef="peer_3" visibleInterface="true">
+      <super cRef="base" uRef="peer_3"/>
+      <visualDescription h="56" w="125" x="270" y="231"/>
     </unit>
     <unit facet="4" iRef="IPeer4Impl" multiple="true" private="false" replica="0" uRef="peer_4" visibleInterface="true">
       <super cRef="base" uRef="peer_4"/>
       <visualDescription h="46" w="165" x="301" y="535"/>
-    </unit>
-    <unit facet="5" iRef="IPeer5Impl" multiple="true" private="false" replica="0" uRef="peer_5" visibleInterface="true">
-      <super cRef="base" uRef="peer_5"/>
-      <visualDescription h="59" w="172" x="507" y="520"/>
-    </unit>
-    <unit facet="6" iRef="IPeer6Impl" multiple="true" private="false" replica="0" uRef="peer_6" visibleInterface="true">
-      <super cRef="base" uRef="peer_6"/>
-      <visualDescription h="46" w="157" x="750" y="520"/>
     </unit>
   </componentInfo>
 </component:component>

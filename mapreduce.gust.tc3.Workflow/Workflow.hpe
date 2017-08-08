@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000083fa4b9265bd7fbfea175bd7f8b1a5a4a74efa5ff1a43a0236a327e533eb3389096ed9ee4ccc9efacbe61e5497ae5dff8dc7a913d84839b7cd29471b0dfe102bf93667cfd61d79fb04701d0620af6386148b3691830285fa526aa2cd33ea04c01c91e9c4601e3fea7b42e39069bfb6d88548108d2cf91db65951eab35e793f9e" isAbstract="true" kind="Computation" name="Workflow" packagePath="mapreduce.gust.tc3">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b9d761023798bdc170dc535d990d828451cfc66c819f1bf78e4d13008bbed4ebec3e357075d4cf2a1df49b368e98998e8919a5f805fad96a8dbc57f9bba70ee09ff3b94a9d8443bd65564f577fafe5334ac42af3e9591d680116f23d4529c212e9ad3e5c09d3484cda833a7ee5e630d1e2eff58b17ec4451697ea2c3270c5781" isAbstract="true" kind="Computation" name="Workflow" packagePath="mapreduce.gust.tc3">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -18,23 +18,6 @@
         <visualDescription h="30" w="20" x="10" y="10"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="t_task_map" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
-      <visualDescription h="30" w="40" x="10" y="10">
-        <color b="23" g="200" r="117"/>
-      </visualDescription>
-      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="task_port_type">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="task_map" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="42" w="363" x="350" y="52">
-        <color b="243" g="217" r="217"/>
-      </visualDescription>
-      <parameter formFieldId="task_port_type" varName="T_task_map"/>
-      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-        <visualDescription h="30" w="20" x="10" y="10"/>
-      </unitBounds>
-    </innerComponent>
     <innerComponent localRef="t_task_reduce" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
       <visualDescription h="30" w="40" x="10" y="10">
         <color b="23" g="200" r="117"/>
@@ -43,8 +26,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_reduce" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="42" w="366" x="1108" y="44">
+    <innerComponent localRef="task_reduce_0" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+      <visualDescription h="42" w="332" x="417" y="330">
         <color b="243" g="217" r="217"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="T_task_reduce"/>
@@ -52,16 +35,7 @@
         <visualDescription h="30" w="20" x="10" y="10"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_split_input_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="42" w="375" x="382" y="333">
-        <color b="243" g="217" r="217"/>
-      </visualDescription>
-      <parameter formFieldId="task_port_type" varName="TPerform"/>
-      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-        <visualDescription h="30" w="20" x="10" y="10"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="task_shuffle_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+    <innerComponent localRef="task_shuffle_0_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
       <visualDescription h="42" w="375" x="382" y="474">
         <color b="243" g="217" r="217"/>
       </visualDescription>
@@ -86,7 +60,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_shuffle_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+    <innerComponent localRef="task_shuffle_0_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
       <visualDescription h="40" w="377" x="377" y="420">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -95,44 +69,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_shuffle_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+    <innerComponent localRef="task_shuffle_0_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
       <visualDescription h="37" w="370" x="388" y="531">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="task_port_type" varName="TChunkReady"/>
-      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="task_split_output_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="39" w="362" x="1317" y="292">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="task_port_type" varName="TReadChunk"/>
-      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="task_split_input_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="38" w="367" x="390" y="292">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="task_port_type" varName="TReadChunk"/>
-      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="task_split_output_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="37" w="361" x="1318" y="384">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="task_port_type" varName="TChunkReady"/>
-      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="task_split_input_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="44" w="369" x="391" y="379">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="TChunkReady"/>
@@ -156,26 +94,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_split_output_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="40" w="366" x="1323" y="334">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="task_port_type" varName="TPerform"/>
-      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="task_map0" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="42" w="148" x="765" y="48">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="task_port_type" varName="T_task_map"/>
-      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="task_reduce0" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="42" w="151" x="935" y="46">
+    <innerComponent localRef="task_reduce_1" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+      <visualDescription h="42" w="246" x="774" y="331">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="T_task_reduce"/>
@@ -183,17 +103,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_map1" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="46" w="157" x="763" y="95">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="task_port_type" varName="T_task_map"/>
-      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="task_reduce1" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="43" w="155" x="929" y="99">
+    <innerComponent localRef="task_reduce_2" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+      <visualDescription h="43" w="219" x="1057" y="331">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="T_task_reduce"/>
@@ -201,34 +112,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_split0_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="48" w="269" x="762" y="288">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="task_port_type" varName="TReadChunk"/>
-      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="task_split0_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="42" w="267" x="764" y="338">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="task_port_type" varName="TPerform"/>
-      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="task_split0_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="38" w="269" x="762" y="382">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="task_port_type" varName="TChunkReady"/>
-      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="task_shuffle0_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+    <innerComponent localRef="task_shuffle_1_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
       <visualDescription h="41" w="270" x="757" y="425">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -237,7 +121,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_shuffle0_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+    <innerComponent localRef="task_shuffle_1_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
       <visualDescription h="46" w="267" x="757" y="472">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -246,7 +130,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_shuffle0_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+    <innerComponent localRef="task_shuffle_1_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
       <visualDescription h="51" w="267" x="756" y="521">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -255,34 +139,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_split1_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="40" w="272" x="1033" y="292">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="task_port_type" varName="TReadChunk"/>
-      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="task_split1_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="44" w="264" x="1040" y="333">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="task_port_type" varName="TPerform"/>
-      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="task_split1_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="42" w="268" x="1041" y="378">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="task_port_type" varName="TChunkReady"/>
-      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="task_shuffle1_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+    <innerComponent localRef="task_shuffle_2_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
       <visualDescription h="42" w="265" x="1041" y="423">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -291,7 +148,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_shuffle1_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+    <innerComponent localRef="task_shuffle_2_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
       <visualDescription h="45" w="272" x="1034" y="470">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -300,7 +157,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_shuffle1_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+    <innerComponent localRef="task_shuffle_2_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
       <visualDescription h="48" w="277" x="1032" y="520">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -309,241 +166,187 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="t_task_map" direct="true" varName="T_task_map"/>
+    <innerComponent localRef="task_split_output_read_chunk" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+      <visualDescription h="41" w="270" x="1328" y="418">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="task_port_type" varName="TReadChunk"/>
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="task_split_output_perform" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+      <visualDescription h="46" w="267" x="1319" y="469">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="task_port_type" varName="TPerform"/>
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="task_split_output_chunk_ready" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+      <visualDescription h="51" w="267" x="1315" y="519">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="task_port_type" varName="TChunkReady"/>
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="swl_port" location="br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding/SWLWorkflowBinding.hpe" multiple="false" name="SWLWorkflowBinding" package="br.ufc.mdcc.hpcshelf.workflow.environment" exposed="true">
+      <visualDescription h="60" w="100" x="339" y="610">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
     <supplyParameter cRef="t_task_reduce" direct="true" varName="T_task_reduce"/>
     <supplyParameter cRef="task_port_type_perform" direct="true" varName="TPerform"/>
     <supplyParameter cRef="task_port_type_read_chunk" direct="true" varName="TReadChunk"/>
     <supplyParameter cRef="task_port_type_chunk_ready" direct="true" varName="TChunkReady"/>
     <interface iRef="IWorkflow" nArgs="1">
-      <slice isRef="task_split_output_perform">
-        <originRef cRef="task_split_output_perform" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="35" y="41"/>
+      <slice isRef="task_shuffle_1_read_chunk">
+        <originRef cRef="task_shuffle_1_read_chunk" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="156" y="115"/>
       </slice>
       <slice isRef="task_split_output_chunk_ready">
         <originRef cRef="task_split_output_chunk_ready" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="46" y="29"/>
+        <visualDescription h="10" w="10" x="102" y="118"/>
       </slice>
-      <slice isRef="task_split_input_chunk_ready">
-        <originRef cRef="task_split_input_chunk_ready" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="8" y="35"/>
+      <slice isRef="task_shuffle_2_chunk_ready">
+        <originRef cRef="task_shuffle_2_chunk_ready" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="164" y="103"/>
       </slice>
-      <slice isRef="task_shuffle_chunk_ready">
-        <originRef cRef="task_shuffle_chunk_ready" iRef="ITaskPort"/>
+      <slice isRef="task_split_output_perform">
+        <originRef cRef="task_split_output_perform" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="43" y="29"/>
+      </slice>
+      <slice isRef="task_reduce_0">
+        <originRef cRef="task_reduce_0" iRef="ITaskPort"/>
+        <visualDescription h="15" w="15" x="10" y="10"/>
+      </slice>
+      <slice isRef="task_shuffle_0_read_chunk">
+        <originRef cRef="task_shuffle_0_read_chunk" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="25" y="29"/>
+      </slice>
+      <slice isRef="task_reduce_2">
+        <originRef cRef="task_reduce_2" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="193" y="84"/>
+      </slice>
+      <slice isRef="task_shuffle_0_perform">
+        <originRef cRef="task_shuffle_0_perform" iRef="ITaskPort"/>
+        <visualDescription h="15" w="15" x="10" y="10"/>
+      </slice>
+      <slice isRef="task_reduce_1">
+        <originRef cRef="task_reduce_1" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="192" y="60"/>
+      </slice>
+      <slice isRef="task_shuffle_2_read_chunk">
+        <originRef cRef="task_shuffle_2_read_chunk" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="175" y="78"/>
+      </slice>
+      <slice isRef="task_split_output_read_chunk">
+        <originRef cRef="task_split_output_read_chunk" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="86" y="30"/>
+      </slice>
+      <slice isRef="task_shuffle_1_perform">
+        <originRef cRef="task_shuffle_1_perform" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="136" y="111"/>
+      </slice>
+      <slice isRef="task_shuffle_0_chunk_ready">
+        <originRef cRef="task_shuffle_0_chunk_ready" iRef="ITaskPort"/>
         <visualDescription h="10" w="10" x="64" y="39"/>
-      </slice>
-      <slice isRef="task_reduce">
-        <originRef cRef="task_reduce" iRef="ITaskPort"/>
-        <visualDescription h="15" w="15" x="10" y="10"/>
-      </slice>
-      <slice isRef="task_shuffle_perform">
-        <originRef cRef="task_shuffle_perform" iRef="ITaskPort"/>
-        <visualDescription h="15" w="15" x="10" y="10"/>
-      </slice>
-      <slice isRef="task_split_input_perform">
-        <originRef cRef="task_split_input_perform" iRef="ITaskPort"/>
-        <visualDescription h="15" w="15" x="10" y="10"/>
       </slice>
       <slice isRef="platform_SAFe">
         <originRef cRef="platform_SAFe" iRef="IProcessingNode"/>
         <visualDescription h="15" w="15" x="10" y="10"/>
       </slice>
-      <slice isRef="task_split_output_read_chunk">
-        <originRef cRef="task_split_output_read_chunk" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="23" y="40"/>
-      </slice>
-      <slice isRef="task_split_input_read_chunk">
-        <originRef cRef="task_split_input_read_chunk" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="85" y="20"/>
-      </slice>
-      <slice isRef="task_shuffle_read_chunk">
-        <originRef cRef="task_shuffle_read_chunk" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="25" y="29"/>
-      </slice>
-      <slice isRef="task_map">
-        <originRef cRef="task_map" iRef="ITaskPort"/>
-        <visualDescription h="15" w="15" x="10" y="10"/>
-      </slice>
-      <slice isRef="task_map0">
-        <originRef cRef="task_map0" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="186" y="29"/>
-      </slice>
-      <slice isRef="task_map1">
-        <originRef cRef="task_map1" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="189" y="44"/>
-      </slice>
-      <slice isRef="task_reduce0">
-        <originRef cRef="task_reduce0" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="192" y="60"/>
-      </slice>
-      <slice isRef="task_reduce1">
-        <originRef cRef="task_reduce1" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="193" y="84"/>
-      </slice>
-      <slice isRef="task_split0_read_chunk">
-        <originRef cRef="task_split0_read_chunk" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="187" y="98"/>
-      </slice>
-      <slice isRef="task_split0_perform">
-        <originRef cRef="task_split0_perform" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="190" y="110"/>
-      </slice>
-      <slice isRef="task_split0_chunk_ready">
-        <originRef cRef="task_split0_chunk_ready" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="175" y="117"/>
-      </slice>
-      <slice isRef="task_shuffle0_read_chunk">
-        <originRef cRef="task_shuffle0_read_chunk" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="156" y="115"/>
-      </slice>
-      <slice isRef="task_shuffle0_perform">
-        <originRef cRef="task_shuffle0_perform" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="136" y="111"/>
-      </slice>
-      <slice isRef="task_shuffle0_chunk_ready">
-        <originRef cRef="task_shuffle0_chunk_ready" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="120" y="112"/>
-      </slice>
-      <slice isRef="task_split1_read_chunk">
-        <originRef cRef="task_split1_read_chunk" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="166" y="26"/>
-      </slice>
-      <slice isRef="task_split1_perform">
-        <originRef cRef="task_split1_perform" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="166" y="45"/>
-      </slice>
-      <slice isRef="task_split1_chunk_ready">
-        <originRef cRef="task_split1_chunk_ready" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="174" y="58"/>
-      </slice>
-      <slice isRef="task_shuffle1_read_chunk">
-        <originRef cRef="task_shuffle1_read_chunk" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="175" y="78"/>
-      </slice>
-      <slice isRef="task_shuffle1_perform">
-        <originRef cRef="task_shuffle1_perform" iRef="ITaskPort"/>
+      <slice isRef="task_shuffle_2_perform">
+        <originRef cRef="task_shuffle_2_perform" iRef="ITaskPort"/>
         <visualDescription h="10" w="10" x="174" y="88"/>
       </slice>
-      <slice isRef="task_shuffle1_chunk_ready">
-        <originRef cRef="task_shuffle1_chunk_ready" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="164" y="103"/>
+      <slice isRef="task_shuffle_1_chunk_ready">
+        <originRef cRef="task_shuffle_1_chunk_ready" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="120" y="112"/>
+      </slice>
+      <slice isRef="swl_port">
+        <originRef cRef="swl_port" iRef="ISWLWorkflowBinding"/>
+        <visualDescription h="10" w="10" x="59" y="115"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="// ------------------------------------------------------------------------------&#xA;//  &lt;autogenerated>&#xA;//      This code was generated by a tool.&#xA;//      Mono Runtime Version: 4.0.30319.17020&#xA;// &#xA;//      Changes to this file may cause incorrect behavior and will be lost if &#xA;//      the code is regenerated.&#xA;//  &lt;/autogenerated>&#xA;// ------------------------------------------------------------------------------&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;&#xA;&#xA;&#xA;namespace mapreduce.gust.tc3.Workflow {&#xA;    &#xA;    &#xA;    public interface IWorkflow&lt;M> : br.ufc.pargo.hpe.kinds.IComputationKind &#xA;&#x9;&#x9;where M:ISAFeHost{&#xA;    }&#xA;}&#xA;" name="IWorkflow.cs" srcType="user" uri="mapreduce.gust.tc3.Workflow/bin/1.0.0.0/IWorkflow.dll" versionId="1.0.0.0"/>
       </sources>
-      <visualDescription h="100" w="150" x="79" y="373">
+      <visualDescription h="214" w="262" x="30" y="244">
         <color b="20" g="20" r="20"/>
       </visualDescription>
-      <port name="task_split_output_perform">
+      <port name="task_shuffle_1_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_output_perform" sRef="task_split_output_perform"/>
+        <slice pRef="task_shuffle_1_read_chunk" sRef="task_shuffle_1_read_chunk"/>
       </port>
       <port name="task_split_output_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_split_output_chunk_ready" sRef="task_split_output_chunk_ready"/>
       </port>
-      <port name="task_split_input_chunk_ready">
+      <port name="task_shuffle_2_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_input_chunk_ready" sRef="task_split_input_chunk_ready"/>
+        <slice pRef="task_shuffle_2_chunk_ready" sRef="task_shuffle_2_chunk_ready"/>
       </port>
-      <port name="task_shuffle_chunk_ready">
+      <port name="task_split_output_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_chunk_ready" sRef="task_shuffle_chunk_ready"/>
+        <slice pRef="task_split_output_perform" sRef="task_split_output_perform"/>
       </port>
-      <port name="task_reduce">
+      <port name="task_reduce_0">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce" sRef="task_reduce"/>
+        <slice pRef="task_reduce_0" sRef="task_reduce_0"/>
       </port>
-      <port name="task_shuffle_perform">
+      <port name="task_shuffle_0_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_perform" sRef="task_shuffle_perform"/>
+        <slice pRef="task_shuffle_0_read_chunk" sRef="task_shuffle_0_read_chunk"/>
       </port>
-      <port name="task_split_input_perform">
+      <port name="task_reduce_2">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_input_perform" sRef="task_split_input_perform"/>
+        <slice pRef="task_reduce_2" sRef="task_reduce_2"/>
       </port>
-      <port name="platform_SAFe">
+      <port name="task_shuffle_0_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_SAFe" sRef="platform_SAFe"/>
+        <slice pRef="task_shuffle_0_perform" sRef="task_shuffle_0_perform"/>
+      </port>
+      <port name="task_reduce_1">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_reduce_1" sRef="task_reduce_1"/>
+      </port>
+      <port name="task_shuffle_2_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_shuffle_2_read_chunk" sRef="task_shuffle_2_read_chunk"/>
       </port>
       <port name="task_split_output_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_split_output_read_chunk" sRef="task_split_output_read_chunk"/>
       </port>
-      <port name="task_split_input_read_chunk">
+      <port name="task_shuffle_1_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_input_read_chunk" sRef="task_split_input_read_chunk"/>
+        <slice pRef="task_shuffle_1_perform" sRef="task_shuffle_1_perform"/>
       </port>
-      <port name="task_shuffle_read_chunk">
+      <port name="task_shuffle_0_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_read_chunk" sRef="task_shuffle_read_chunk"/>
+        <slice pRef="task_shuffle_0_chunk_ready" sRef="task_shuffle_0_chunk_ready"/>
       </port>
-      <port name="task_map">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_map" sRef="task_map"/>
+      <port name="platform_SAFe">
+        <visualDescription h="10" w="10" x="118" y="19"/>
+        <slice pRef="platform_SAFe" sRef="platform_SAFe"/>
       </port>
-      <port name="task_map0">
+      <port name="task_shuffle_2_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_map0" sRef="task_map0"/>
+        <slice pRef="task_shuffle_2_perform" sRef="task_shuffle_2_perform"/>
       </port>
-      <port name="task_map1">
+      <port name="task_shuffle_1_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_map1" sRef="task_map1"/>
+        <slice pRef="task_shuffle_1_chunk_ready" sRef="task_shuffle_1_chunk_ready"/>
       </port>
-      <port name="task_reduce0">
+      <port name="swl_port">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce0" sRef="task_reduce0"/>
-      </port>
-      <port name="task_reduce1">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce1" sRef="task_reduce1"/>
-      </port>
-      <port name="task_split0_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split0_read_chunk" sRef="task_split0_read_chunk"/>
-      </port>
-      <port name="task_split0_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split0_perform" sRef="task_split0_perform"/>
-      </port>
-      <port name="task_split0_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split0_chunk_ready" sRef="task_split0_chunk_ready"/>
-      </port>
-      <port name="task_shuffle0_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle0_read_chunk" sRef="task_shuffle0_read_chunk"/>
-      </port>
-      <port name="task_shuffle0_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle0_perform" sRef="task_shuffle0_perform"/>
-      </port>
-      <port name="task_shuffle0_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle0_chunk_ready" sRef="task_shuffle0_chunk_ready"/>
-      </port>
-      <port name="task_split1_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split1_read_chunk" sRef="task_split1_read_chunk"/>
-      </port>
-      <port name="task_split1_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split1_perform" sRef="task_split1_perform"/>
-      </port>
-      <port name="task_split1_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split1_chunk_ready" sRef="task_split1_chunk_ready"/>
-      </port>
-      <port name="task_shuffle1_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle1_read_chunk" sRef="task_shuffle1_read_chunk"/>
-      </port>
-      <port name="task_shuffle1_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle1_perform" sRef="task_shuffle1_perform"/>
-      </port>
-      <port name="task_shuffle1_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle1_chunk_ready" sRef="task_shuffle1_chunk_ready"/>
+        <slice pRef="swl_port" sRef="swl_port"/>
       </port>
       <parameter iname="ISAFeHost" order="0" parid="maintainer" uname="safe_host" varid="M"/>
       <action id="main">
@@ -551,89 +354,56 @@
       </action>
     </interface>
     <unit facet="0" iRef="IWorkflow" multiple="true" private="false" replica="0" uRef="workflow_unit" visibleInterface="true">
-      <slices cRef="task_shuffle1_perform" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle1_perform" transitive="false">
-        <visualDescription h="10" w="10" x="174" y="88"/>
-      </slices>
-      <slices cRef="task_shuffle1_chunk_ready" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle1_chunk_ready" transitive="false">
-        <visualDescription h="10" w="10" x="164" y="103"/>
-      </slices>
-      <slices cRef="task_map0" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_map0" transitive="false">
-        <visualDescription h="10" w="10" x="186" y="29"/>
-      </slices>
-      <slices cRef="task_reduce1" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_reduce1" transitive="false">
-        <visualDescription h="10" w="10" x="193" y="84"/>
-      </slices>
-      <slices cRef="task_map1" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_map1" transitive="false">
-        <visualDescription h="10" w="10" x="189" y="44"/>
-      </slices>
-      <slices cRef="task_reduce0" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_reduce0" transitive="false">
-        <visualDescription h="10" w="10" x="192" y="60"/>
-      </slices>
-      <slices cRef="task_shuffle_perform" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle_perform" transitive="false">
-        <visualDescription h="15" w="15" x="10" y="10"/>
-      </slices>
-      <slices cRef="task_split1_chunk_ready" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_split1_chunk_ready" transitive="false">
-        <visualDescription h="10" w="10" x="174" y="58"/>
-      </slices>
-      <slices cRef="task_shuffle0_read_chunk" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle0_read_chunk" transitive="false">
+      <slices cRef="task_shuffle_1_read_chunk" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle_1_read_chunk" transitive="false">
         <visualDescription h="10" w="10" x="156" y="115"/>
       </slices>
-      <slices cRef="task_split_input_perform" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_split_input_perform" transitive="false">
-        <visualDescription h="15" w="15" x="10" y="10"/>
+      <slices cRef="task_split_output_chunk_ready" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_split_output_chunk_ready" transitive="false">
+        <visualDescription h="10" w="10" x="102" y="118"/>
       </slices>
-      <slices cRef="task_split0_read_chunk" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_split0_read_chunk" transitive="false">
-        <visualDescription h="10" w="10" x="187" y="98"/>
-      </slices>
-      <slices cRef="task_split_output_read_chunk" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_split_output_read_chunk" transitive="false">
-        <visualDescription h="10" w="10" x="23" y="40"/>
-      </slices>
-      <slices cRef="task_shuffle_read_chunk" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle_read_chunk" transitive="false">
-        <visualDescription h="10" w="10" x="25" y="29"/>
-      </slices>
-      <slices cRef="task_split0_perform" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_split0_perform" transitive="false">
-        <visualDescription h="10" w="10" x="190" y="110"/>
+      <slices cRef="task_shuffle_2_chunk_ready" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle_2_chunk_ready" transitive="false">
+        <visualDescription h="10" w="10" x="164" y="103"/>
       </slices>
       <slices cRef="task_split_output_perform" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_split_output_perform" transitive="false">
-        <visualDescription h="10" w="10" x="35" y="41"/>
+        <visualDescription h="10" w="10" x="43" y="29"/>
       </slices>
-      <slices cRef="task_shuffle_chunk_ready" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle_chunk_ready" transitive="false">
-        <visualDescription h="10" w="10" x="64" y="39"/>
+      <slices cRef="task_reduce_0" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_reduce_0" transitive="false">
+        <visualDescription h="15" w="15" x="10" y="10"/>
       </slices>
-      <slices cRef="task_split1_read_chunk" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_split1_read_chunk" transitive="false">
-        <visualDescription h="10" w="10" x="166" y="26"/>
+      <slices cRef="task_shuffle_0_read_chunk" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle_0_read_chunk" transitive="false">
+        <visualDescription h="10" w="10" x="25" y="29"/>
       </slices>
-      <slices cRef="task_split_input_read_chunk" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_split_input_read_chunk" transitive="false">
-        <visualDescription h="10" w="10" x="85" y="20"/>
+      <slices cRef="task_reduce_2" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_reduce_2" transitive="false">
+        <visualDescription h="10" w="10" x="193" y="84"/>
       </slices>
-      <slices cRef="task_shuffle0_perform" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle0_perform" transitive="false">
+      <slices cRef="task_shuffle_0_perform" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle_0_perform" transitive="false">
+        <visualDescription h="15" w="15" x="10" y="10"/>
+      </slices>
+      <slices cRef="task_reduce_1" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_reduce_1" transitive="false">
+        <visualDescription h="10" w="10" x="192" y="60"/>
+      </slices>
+      <slices cRef="task_shuffle_2_read_chunk" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle_2_read_chunk" transitive="false">
+        <visualDescription h="10" w="10" x="175" y="78"/>
+      </slices>
+      <slices cRef="task_split_output_read_chunk" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_split_output_read_chunk" transitive="false">
+        <visualDescription h="10" w="10" x="86" y="30"/>
+      </slices>
+      <slices cRef="task_shuffle_1_perform" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle_1_perform" transitive="false">
         <visualDescription h="10" w="10" x="136" y="111"/>
       </slices>
-      <slices cRef="task_shuffle1_read_chunk" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle1_read_chunk" transitive="false">
-        <visualDescription h="10" w="10" x="175" y="78"/>
+      <slices cRef="task_shuffle_0_chunk_ready" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle_0_chunk_ready" transitive="false">
+        <visualDescription h="10" w="10" x="64" y="39"/>
       </slices>
       <slices cRef="platform_SAFe" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_SAFe" transitive="false">
         <visualDescription h="15" w="15" x="10" y="10"/>
       </slices>
-      <slices cRef="task_map" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_map" transitive="false">
-        <visualDescription h="15" w="15" x="10" y="10"/>
+      <slices cRef="task_shuffle_2_perform" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle_2_perform" transitive="false">
+        <visualDescription h="10" w="10" x="174" y="88"/>
       </slices>
-      <slices cRef="task_split_output_chunk_ready" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_split_output_chunk_ready" transitive="false">
-        <visualDescription h="10" w="10" x="46" y="29"/>
-      </slices>
-      <slices cRef="task_split_input_chunk_ready" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_split_input_chunk_ready" transitive="false">
-        <visualDescription h="10" w="10" x="8" y="35"/>
-      </slices>
-      <slices cRef="task_reduce" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_reduce" transitive="false">
-        <visualDescription h="15" w="15" x="10" y="10"/>
-      </slices>
-      <slices cRef="task_split0_chunk_ready" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_split0_chunk_ready" transitive="false">
-        <visualDescription h="10" w="10" x="175" y="117"/>
-      </slices>
-      <slices cRef="task_split1_perform" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_split1_perform" transitive="false">
-        <visualDescription h="10" w="10" x="166" y="45"/>
-      </slices>
-      <slices cRef="task_shuffle0_chunk_ready" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle0_chunk_ready" transitive="false">
+      <slices cRef="task_shuffle_1_chunk_ready" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_shuffle_1_chunk_ready" transitive="false">
         <visualDescription h="10" w="10" x="120" y="112"/>
+      </slices>
+      <slices cRef="swl_port" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="swl_port" transitive="false">
+        <visualDescription h="10" w="10" x="59" y="115"/>
       </slices>
       <visualDescription h="135" w="213" x="10" y="10"/>
     </unit>

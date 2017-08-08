@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c74f48803e22768fccd6d803ac7bd52e552e424f3cdcd9282d1c6477a945dd44febf94e1697d3bd215162db18218ad8731e9df4b02b13e190920631ab0d372671f1e2f144b3128478ae6b79e7b2950cd7ac8885db64314c6d1d0cf408da58ad59fc94ab60fecb8ce917e7edcb2340e0fa2068e6780eb15c025ca0ca191f41895" isAbstract="false" kind="Synchronizer" name="SplitterImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.connector">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000051eb877356405f912ac67490264dd48afa796542864ecec996c71975fbd6abfb84d8b14d64e3f977b1b83794b518c52bd1f0ee0a72a8e5ce8ecd632926d8fe15e485dff85a0e83db67039467786fa9106afeab5d634a0e2c3c800a699ee307a54d0e6d5260fdca3c8a304287a82ea2bae578a9ef916493dc0ca3593516e26c89" isAbstract="false" kind="Synchronizer" name="SplitterImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.connector">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007d28c0f038750a5f0f5a5cab521d91d94a08babb3e92b7d64dedd4f606e7e806faa2463b992699b104ac4c1650623b43c824f10e500b4fba2532151da56ddd46a152d8893501afac175acc8c5de6d1f46e19207da85b8d991facb756f8b5dc17a4a020176fb54a2a4bd54c0e1fe52c8a80f0b5734733d902b8adf61deca2c99d" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/Splitter.hpe" name="Splitter" package="br.ufc.mdcc.hpcshelf.mapreduce.connector" version="1.0.0.0">
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000000bf7a2a92ddb0cde3f7e355a533d367af302bfa48c5514bb8a492cbc4e436d2e8a15a75ff6ce3499f158ab1d06a76891f4db9ae47b609050c603da7b676bcb777b1281658cd6add6d1452884999c368d4b4f10a8cdb5b43df202c1aa1d3722c26066f969ad8e876ffe8cf6d4c6cadd1ac314b3b9f3f685958c9b4bed6e76f0a2" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/Splitter.hpe" name="Splitter" package="br.ufc.mdcc.hpcshelf.mapreduce.connector" version="1.0.0.0">
         <visualDescription h="89" w="174" x="317" y="118">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -16,8 +16,8 @@
           <visualDescription h="60" w="124" x="255" y="482">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###316181901"/>
-          <parameter formFieldId="server_port_type" varName="X###1194667429"/>
+          <parameter formFieldId="server_port_type" varName="X###1165463348"/>
+          <parameter formFieldId="client_port_type" varName="X###151685877"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="53" y="7"/>
           </unitBounds>
@@ -26,8 +26,8 @@
           <visualDescription h="60" w="126" x="674" y="513">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###1950863400"/>
-          <parameter formFieldId="server_port_type" varName="X###380841404"/>
+          <parameter formFieldId="server_port_type" varName="X###212777078"/>
+          <parameter formFieldId="client_port_type" varName="X###16947872"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="1" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="54" y="6"/>
           </unitBounds>
@@ -36,7 +36,7 @@
           <visualDescription h="83" w="228" x="353" y="397">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1300208968"/>
+          <parameter formFieldId="task_port_type" varName="X###2029366171"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
             <visualDescription h="20" w="20" x="12" y="34"/>
           </unitBounds>
@@ -48,7 +48,7 @@
           <visualDescription h="70" w="303" x="7" y="405">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1966016951"/>
+          <parameter formFieldId="task_port_type" varName="X###636869458"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="135" y="6"/>
           </unitBounds>
@@ -57,7 +57,7 @@
           <visualDescription h="71" w="298" x="671" y="424">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1663502715"/>
+          <parameter formFieldId="task_port_type" varName="X###1558297234"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="1" parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="131" y="7"/>
           </unitBounds>
@@ -263,13 +263,13 @@
         <originRef cRef="feed_pairs" iRef="IBindingDirect"/>
         <visualDescription h="10" w="10" x="71" y="28"/>
       </slice>
-      <slice isRef="task_binding_split_chunk_ready">
-        <originRef cRef="task_binding_split_chunk_ready" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="145" y="21"/>
-      </slice>
       <slice isRef="task_binding_split_perform">
         <originRef cRef="task_binding_split_perform" iRef="ITaskPort"/>
         <visualDescription h="10" w="10" x="11" y="25"/>
+      </slice>
+      <slice isRef="task_binding_split_chunk_ready">
+        <originRef cRef="task_binding_split_chunk_ready" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="145" y="21"/>
       </slice>
       <slice isRef="output">
         <originRef cRef="output" iRef="IIterator"/>
@@ -303,13 +303,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feed_pairs" sRef="feed_pairs"/>
       </port>
-      <port name="task_binding_split_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_chunk_ready" sRef="task_binding_split_chunk_ready"/>
-      </port>
       <port name="task_binding_split_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_perform" sRef="task_binding_split_perform"/>
+      </port>
+      <port name="task_binding_split_chunk_ready">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_chunk_ready" sRef="task_binding_split_chunk_ready"/>
       </port>
       <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="IKey"/>
       <parameter iname="IData" order="1" parid="input_value_type" uname="data" varid="IValue"/>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003defca888abc965518903b166c170e6baeb0860aaf0a922d8d355e721b09ab74fab1c7b7a8a501a62007be1f0341763bfbb9987c9c648f9fe1154f59a9adb840036ce18bc5722939b17a92e1a86b366f8ceaf11ac5747dd313db6d918be18679cfc62ea4f1d179e235410e0923aec75011313b74417a8c8f7c4b331b4e5d4ae8" isAbstract="true" kind="Qualifier" name="DataHost" packagePath="br.ufc.mdcc.hpcshelf.platform.maintainer">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f50e4da49e907dbb615cc11995c4a47cb76fb4f6c91bfb8997e3530e5ba2ccc65e693e6f9422ef57933d03ccf363d61c6324e2f45b7ceff063e6693d7e157550d3c7be4b0359fa2ecdc8f5e718eb9d4f2a37570958f591eccf33e1f7631bdad0f6ba3d7eaf9526dbc965d42fd5a686febde77154d6a8ddeaf425811bdb8d88a4" isAbstract="true" kind="Qualifier" name="DataHost" packagePath="br.ufc.mdcc.hpcshelf.platform.maintainer">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000679c27b29ad182a1aca6f4621fd2c98662b812986e4d7d1700a8d611e7b1deb71942860e11974ac2a591803437293fc5a6a29faedeff390fd355063703fa96937dd78be0636e9b49cdeb3a1b1c5131aa3511ac020292fc1ae0c78a7b08fb43110a292b713b44387a78e9286fcec450642f6a1e3028d2c0cb431414dd613554cc" localRef="base" location="br.ufc.mdcc.hpcshelf.platform.Maintainer/Maintainer.hpe" name="Maintainer" package="br.ufc.mdcc.hpcshelf.platform" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cd60e61471ab51f5e33144700e4dfd4d06831db56c92a4c69e45893daab2ef2447c83b9889fd505970cd4d8f02f08baa0408a5005fdb88388c78259545bd816f387e8d4138c8b38e4ea7837ba43e445e036aa9b60123d5ad9d9c8c7f83528b8d430a2e4a75ca783cbf2a7dd7bc82b7898918d9adea5d0455f6dca4a1a35baf9c" localRef="base" location="br.ufc.mdcc.hpcshelf.platform.Maintainer/Maintainer.hpe" name="Maintainer" package="br.ufc.mdcc.hpcshelf.platform" version="1.0.0.0">
         <visualDescription h="60" w="100" x="217" y="244">
           <color b="255" g="255" r="255"/>
         </visualDescription>

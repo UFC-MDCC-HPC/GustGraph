@@ -1,19 +1,15 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using br.ufc.pargo.hpe.backend.DGAC;
-using br.ufc.pargo.hpe.basic;
-using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;
-using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
-using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;
+using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphKVWeightedImpl
 {
-	public class IDirectedGraphKVWeightedImpl<CTN, V, E> : BaseIDirectedGraphKVWeightedImpl<CTN, V, E>, IDirectedGraph<CTN, V, E>
+    public class IDirectedGraphKVWeightedImpl<CTN, V, E> : BaseIDirectedGraphKVWeightedImpl<CTN, V, E>, IDirectedGraph<CTN, V, E>
 where CTN:IDataContainerKV<V, E>
 where V:IVertex
 where E:IEdge<V>
@@ -333,7 +329,9 @@ where E:IEdge<V>
 					sb.Append (vertexSet.Current.ToString ()+",");
 				}
 				sb.Remove (sb.Length-1, 1);
-				sb.Append ("] \nedges ");
+				sb.Append("]");
+				sb.AppendLine();
+				sb.Append("edges");
 				for (int i=0; edgeSet.MoveNext(); i++) {
 					sb.Append("(");
 					sb.Append (edgeSet.Current.ToString());

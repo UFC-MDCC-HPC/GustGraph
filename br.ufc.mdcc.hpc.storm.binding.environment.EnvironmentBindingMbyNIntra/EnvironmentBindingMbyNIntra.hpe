@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009bfcc418e3205ff5f30d96b473e22ec98df70becc2cb2548ffeb487b2026f8683fa2edadce914e35244a1f558dc45ca80fcfb06626bf66c7d61d3ae7781d5dca504f3a2e99c00bd9a7799992991bd53895da1084008cc7b82d918c718cbc280f05b0fc86970860468b6bcc8f28e1837e6d35c13065e2bbbf4ea81dfc9d690081" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMbyNIntra" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000013f1e904e2a8b8ecb19c5ca05b5ec74ddde6bf7509ecaeaec49436dbb62c1aa1663228e0b594d1b9650ed649381ca3dd53844a6e7f8d172df70f29b7cb14560563e4fe09de7b776280d0489f75bae2d293b31a981be05572a40a1bcffcac6b2a27fb3c38467584b9975fc63385b12af394323565a6ef6364a093091082416c88" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMbyNIntra" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
     <baseType>
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d9e93f41ecdc24c151691986404104691fc2b4c524c9bc6317b05885a2cea9975c441bc9a9339284a55d4fbf1d7f823c026b8bba14661b578a973db0e5417436963dc58083ffd494aa312ef3b4f8b3b4b7d5cf3f03f39a874207d655148bd32f89785cd862e93165cd9ec40b8a09f27b326d1238b158bbd796774dae2ae44dc2" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/EnvironmentBindingMbyN.hpe" name="EnvironmentBindingMbyN" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a109fc9c0d1df74cf91ce92c5f9cd66316d0c491fb3dcb6ed05e7900a094629df5e79bee311bf6d7d22c0f3cefb03b7e8e9f535a8ef48cf20864a21ea71439b1edee138650b035b1375ddcada633b52b63ee4afa201ea1aa4be1671f9bdffd98090db1d377a72775d488d6e84d7bb2e4c44d07b9b37899fd613ec073e5e599b4" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/EnvironmentBindingMbyN.hpe" name="EnvironmentBindingMbyN" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
         <visualDescription h="60" w="166" x="141" y="227">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="client_port_type" varName="C"/>
         <parameter formFieldId="server_port_type" varName="S"/>
+        <parameter formFieldId="client_port_type" varName="C"/>
         <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="client">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>

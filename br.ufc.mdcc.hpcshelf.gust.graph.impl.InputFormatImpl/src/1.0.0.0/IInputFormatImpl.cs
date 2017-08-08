@@ -89,37 +89,47 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 			return false;
 		}
 
-		public IDictionary<int, IInputFormatInstance> extractBins(string fileName){
+		public IDictionary<int, IInputFormatInstance> extractBins(string fileName)
+        {
 			//fileName = System.Environment.GetEnvironmentVariable ("PATH_GRAPH_FILE");
 			this.extractFile(fileName);
 			IDictionary<int, IInputFormatInstance> dic = new Dictionary<int, IInputFormatInstance> (this.PARTITION_SIZE);
 			bool weighted = this.Weight.Length > 1;
-			for (int i = 0; i < this.PARTITION_SIZE; i++) {
+
+			for (int i = 0; i < this.PARTITION_SIZE; i++) 
+            {
 				dic [i] = new IInputFormatInstanceImpl ();
 				dic [i].PARTID = i;
 			}
-			for (int i = 0; i < this.ESIZE; i++) {
+
+			for (int i = 0; i < this.ESIZE; i++) 
+            {
 				int s = this.Source [i];
 				int t = this.Target [i];
 				int spart = this.PartitionTABLE [s - 1];
 				int tpart = this.PartitionTABLE [t - 1];
-				if (!weighted) {
+				if (!weighted) 
+                {
 					dic [spart].Add (s, t);
 					if(spart!=tpart)
 						dic [tpart].Add (s, t);
-				} else {
+				} else 
+                {
 					float f = this.Weight[i];
 					dic [spart].Add (s, t, f);
 					if(spart!=tpart)
 						dic [tpart].Add (s, t, f);
 				}
 			}
-			for (int i = 0; i < this.PARTITION_SIZE; i++) {
+			
+            for (int i = 0; i < this.PARTITION_SIZE; i++) 
+            {
 				IInputFormatInstance tmp = dic [i]; 
 				tmp.Trim ();
 				tmp.PartitionTABLE = this.PartitionTABLE;
 				tmp.PARTITION_SIZE = this.PARTITION_SIZE;
 			}
+
 			source = new int[1];
 			target = new int[1];
 			weight = new float[1];
@@ -129,6 +139,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 			count = 0;
 			return dic;
 		}
+
 		public void Trim(){
 			Array.Resize (ref source, count);
 			Array.Resize (ref target, count);
@@ -173,7 +184,9 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 			partid = -1;
 			count = 0;
 		}
-		public void extractFile(string fileName){
+
+		public void extractFile(string fileName)
+        {
 			byte[] b = {9, 13, 32};
 			System.IO.StreamReader file = null;
 			checkFiles (fileName, b, file);

@@ -277,7 +277,9 @@ where E:IEdge<V> {
 					sb.Append (vertexSet.Current.ToString ()+",");
 				}
 				sb.Remove (sb.Length-1, 1);
-				sb.Append ("] \nedges ");
+				sb.Append("]");
+				sb.AppendLine();
+				sb.Append("edges");
 				for (int i=0; edgeSet.MoveNext(); i++) {
 					sb.Append("(");
 					sb.Append (edgeSet.Current.ToString());

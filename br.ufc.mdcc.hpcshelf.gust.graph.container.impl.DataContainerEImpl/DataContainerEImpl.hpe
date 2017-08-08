@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007579ff7937ce5e8426a2e2f066263ee01067e7dfaf17d6ac1a17db552f8f936128afc22aad040e391e6c5c9f04fc2dd4d8fe2b3e508e4e1c3f1405f4d653889a521403b9ec17612b50f1ac636d30d74b4ee16929a2c120e167a997e5942ee039cbc97a55132740c7b38c66809d009f8c9f08fe0d0869a95f44b48535be5904ee" isAbstract="false" kind="Data" name="DataContainerEImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.graph.container.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000471df7431fb5c2299ac61a58b3baa3abf7a2420a925140350eec8e37594199ef819f7cb354096b1adcfea3c77f04f9855600a09a2b7e55c73aa87101e59eb1a64b8628513162f370fc5d3c34bf6aa74665f3275e38d32757f47950542731ef7becffb0b80b6f16a59691f12223669d5888d38685b85085478064d852363318bc" isAbstract="false" kind="Data" name="DataContainerEImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.graph.container.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000617eeed46af4534a693fdac9338c467c9c1a9b30ab2f91eece7b6fddef61a94ea023f7371c4b2c1ebd2cfc0832ea3005fab018942ec18ec81d6dc43eeca6a0854806f863748bcbe09a9916889fb18a13fb96dcfb8f14740aa908b019186ad0e4c52bcc6745a9494a426c1e398a60a60e956c32731be4e0453004a637252b7591" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE/DataContainerE.hpe" name="DataContainerE" package="br.ufc.mdcc.hpcshelf.gust.graph.container" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000dfe85c5ac1d308dcdd25866521923b003cb33db7b3fe0b8a7b29278fa33ab9afa55994d58c1af0e3d61a532c2abf9a7824236f53ed59f7ae60b262667bd64dde9a87d56032d6488e6a99aad0a34c04776ba84b5aa197fada03f5de1845dc5c2c0360723d76efb4a5f79deefd0d2160f87ad24e5da612db006749bf66b0443a8d" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE/DataContainerE.hpe" name="DataContainerE" package="br.ufc.mdcc.hpcshelf.gust.graph.container" version="1.0.0.0">
         <visualDescription h="60" w="100" x="297" y="461">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="edge_type" varName="E"/>
         <parameter formFieldId="vertex_type" varName="V"/>
-        <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+        <parameter formFieldId="edge_type" varName="E"/>
+        <port index_replica="0" localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
           <visualDescription h="60" w="142" x="101" y="566">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <unitBounds parallel="false" uRef="data">
+          <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+        <port index_replica="0" localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
           <visualDescription h="60" w="161" x="423" y="538">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <parameter formFieldId="vertex_type" varName="V"/>
-          <unitBounds parallel="false" uRef="data">
+          <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <unitBounds parallel="false" uRef="data">
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -37,13 +37,14 @@
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
     <innerComponent localRef="v" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
       <visualDescription h="60" w="142" x="101" y="566">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -52,7 +53,7 @@
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="vertex_type" varName="V"/>
-      <unitBounds parallel="false" uRef="data">
+      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -60,12 +61,12 @@
     <supplyParameter cRef="e" direct="true" varName="E"/>
     <interface iRef="IDataContainerEImpl" nArgs="2">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerEImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataContainerEImpl: DataStructure, BaseIDataContainerE&lt;V, E>&#xA;&#x9;&#x9;where V:IVertex&#xA;&#x9;&#x9;where E:IEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;&#x9;private E edgeFactory = default(E);&#xA;&#xA;&#x9;&#x9;public E EdgeFactory&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.edgeFactory == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.edgeFactory = (E) Services.getPort(&quot;edgeFactory&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.edgeFactory;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private V vertex = default(V);&#xA;&#xA;&#x9;&#x9;public V Vertex&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.vertex == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.vertex = (V) Services.getPort(&quot;vertex&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.vertex;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataContainerEImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerEImpl/bin/1.0.0.0/BaseIDataContainerEImpl.dll" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerEImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataContainerEImpl&lt;V, E>: DataStructure, BaseIDataContainerE&lt;V, E>&#xA;&#x9;&#x9;where V:IVertex&#xA;&#x9;&#x9;where E:IEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;&#x9;private E edgeFactory = default(E);&#xA;&#xA;&#x9;&#x9;public E EdgeFactory&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.edgeFactory == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.edgeFactory = (E) Services.getPort(&quot;edgeFactory&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.edgeFactory;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private V vertex = default(V);&#xA;&#xA;&#x9;&#x9;public V Vertex&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.vertex == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.vertex = (V) Services.getPort(&quot;vertex&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.vertex;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataContainerEImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerEImpl/bin/1.0.0.0/BaseIDataContainerEImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE/bin/1.0.0.0/BaseIDataContainerE.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerEImpl&#xA;{&#xA;&#x9;public class IDataContainerEImpl : BaseIDataContainerEImpl, IDataContainerE&lt;V, E>&#xA;where V:IVertex&#xA;where E:IEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="IDataContainerEImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerEImpl/bin/1.0.0.0/IDataContainerEImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using System.Collections.Generic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerEImpl&#xA;{&#xA;    public class IDataContainerEImpl&lt;V, E> : BaseIDataContainerEImpl&lt;V, E>, IDataContainerE&lt;V, E> &#xA;&#x9;&#x9;where V:IVertex &#xA;&#x9;&#x9;where E:IEdge&lt;V> {&#xA;&#x9;&#x9;public IDataContainerEImpl(){ }&#xA;&#x9;&#x9;override public void after_initialize () { &#xA;&#x9;&#x9;&#x9;newInstance (); &#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;public object newInstance () {&#xA;&#x9;&#x9;&#x9;IVertexInstance v = (IVertexInstance) this.Vertex.newInstance ();&#xA;&#x9;&#x9;&#x9;IEdgeInstance&lt;V, int> e = (IEdgeInstance&lt;V, int>)this.EdgeFactory.newInstance ();&#xA;&#x9;&#x9;&#x9;instance = new IDataContainerEInstanceImpl&lt;V, E, int, IEdgeInstance&lt;V, int>> (v.Id, e, 0);&#xA;&#x9;&#x9;&#x9;return instance;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private object instance;&#xA;&#x9;&#x9;public object Instance {&#xA;&#x9;&#x9;&#x9;get { return instance; }&#xA;&#x9;&#x9;&#x9;set { &#xA;&#x9;&#x9;&#x9;&#x9;IDataContainerInstance&lt;V, E> dc = (IDataContainerInstance&lt;V, E>)value;&#xA;&#x9;&#x9;&#x9;&#x9;dc.PartitionID = 0;&#xA;&#x9;&#x9;&#x9;&#x9;this.instance = dc;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;public IDataContainerEInstance&lt;V, E, int, IEdgeInstance&lt;V, int>> DataContainerEInstance {&#xA;&#x9;&#x9;&#x9;get { return (IDataContainerEInstance&lt;V, E, int, IEdgeInstance&lt;V, int>>) this.instance; }&#xA;&#x9;&#x9;&#x9;set { &#xA;&#x9;&#x9;&#x9;&#x9;this.instance = (IDataContainerEInstance&lt;V, E, int, IEdgeInstance&lt;V, int>>)value;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;public IDataContainerEInstance&lt;V, E, TV, TE> InstanceTFactory&lt;TV, TE> (TE e) where TE:IEdgeInstance&lt;V, TV> {&#xA;&#x9;&#x9;&#x9;TE ei = (TE)this.EdgeFactory.InstanceTFactory&lt;TV> (e.Source, e.Target);//,e.Weight);&#xA;&#x9;&#x9;&#x9;IDataContainerEInstance&lt;V, E, TV, TE> instanceT = new IDataContainerEInstanceImpl&lt;V, E, TV, TE> (ei.Source, ei, 0); &#xA;&#x9;&#x9;&#x9;return instanceT;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#xA;&#x9;[Serializable]&#xA;&#x9;public class IDataContainerEInstanceImpl&lt;V, E, TV, TE> : IDataContainerEInstance&lt;V, E, TV, TE> &#xA;&#x9;&#x9;where V: IVertex &#xA;&#x9;&#x9;where E:IEdge&lt;V> &#xA;&#x9;&#x9;where TE:IEdgeInstance&lt;V, TV> {&#xA;&#xA;&#x9;&#x9;public IDataContainerEInstanceImpl(){}&#xA;&#x9;&#x9;public IDataContainerEInstanceImpl(TV v, TE e, int part){&#xA;&#x9;&#x9;&#x9;this.vertex = v;&#xA;&#x9;&#x9;&#x9;this.edgeFactory = e;&#xA;&#x9;&#x9;&#x9;partition_id = part;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;#region ICloneable implementation&#xA;&#x9;&#x9;public object Clone () {&#xA;&#x9;&#x9;&#x9;IDataContainerEInstanceImpl&lt;V, E, TV, TE> clone = new IDataContainerEInstanceImpl&lt;V, E, TV, TE> ();&#xA;&#x9;&#x9;&#x9;Type[] types = this.GetType ().GenericTypeArguments;&#xA;&#x9;&#x9;&#x9;if (typeof(ICloneable).IsAssignableFrom (types [2]))&#xA;&#x9;&#x9;&#x9;&#x9;clone.Vertex = (TV)((ICloneable)vertex).Clone ();&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;clone.Vertex = vertex;&#xA;&#x9;&#x9;&#x9;clone.EdgeFactory = (TE)edgeFactory.Clone ();&#xA;&#x9;&#x9;&#x9;clone.PartitionID = partition_id;&#xA;&#x9;&#x9;&#x9;clone.AllowingLoops = _allowingLoops;&#xA;&#x9;&#x9;&#x9;clone.AllowingMultipleEdges = _allowingMultipleEdges;&#xA;&#x9;&#x9;&#x9;clone.DataSet =  new Dictionary&lt;TV, IEdgeContainer&lt;TE>> (dataSet);&#xA;&#x9;&#x9;&#x9;return (IDataContainerEInstance&lt;V, E, TV, TE>) clone;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;#endregion&#xA;&#xA;&#x9;&#x9;#region IDataContainerEInstance implementation&#xA;&#x9;&#x9;private TV vertex;&#xA;&#x9;&#x9;private TE edgeFactory;&#xA;&#x9;&#x9;private int partition_id = 0;&#xA;&#x9;&#x9;private bool _allowingLoops = true;&#xA;&#x9;&#x9;private bool _allowingMultipleEdges = false; &#xA;&#x9;&#x9;private IDictionary&lt;TV, IEdgeContainer&lt;TE>> dataSet; &#xA;&#xA;&#x9;&#x9;public TV Vertex { get { return vertex; } set { this.vertex = (TV)value; } }&#xA;&#x9;&#x9;public TE EdgeFactory { get { return edgeFactory; } set { this.edgeFactory = (TE)value; } }&#xA;&#x9;&#x9;public int PartitionID { get { return partition_id; } set { this.partition_id = value; } }&#xA;&#x9;&#x9;public bool AllowingLoops{ get { return _allowingLoops; } set{ _allowingLoops = value; } }&#xA;&#x9;&#x9;public bool AllowingMultipleEdges{ get { return _allowingMultipleEdges; } set{ _allowingMultipleEdges = value; } }&#xA;&#x9;&#x9;public IDictionary&lt;TV, IEdgeContainer&lt;TE>> DataSet { &#xA;&#x9;&#x9;&#x9;get { if (dataSet == null) dataSet = new Dictionary&lt;TV, IEdgeContainer&lt;TE>> (); return dataSet; } &#xA;&#x9;&#x9;&#x9;set { dataSet = (IDictionary&lt;TV, IEdgeContainer&lt;TE>>)value; }&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public object ObjValue {&#xA;&#x9;&#x9;&#x9;get { return new Tuple&lt;TV,TE, int, bool, bool, IDictionary&lt;TV, IEdgeContainer&lt;TE>>>(vertex,edgeFactory,partition_id,_allowingLoops,_allowingMultipleEdges,dataSet); }&#xA;&#x9;&#x9;&#x9;set { &#xA;&#x9;&#x9;&#x9;&#x9;this.vertex =                 ((Tuple&lt;TV,TE, int, bool, bool, IDictionary&lt;TV, IEdgeContainer&lt;TE>>>)value).Item1;&#xA;&#x9;&#x9;&#x9;&#x9;this.edgeFactory =            ((Tuple&lt;TV,TE, int, bool, bool, IDictionary&lt;TV, IEdgeContainer&lt;TE>>>)value).Item2;&#xA;&#x9;&#x9;&#x9;&#x9;this.partition_id =          ((Tuple&lt;TV,TE, int, bool, bool, IDictionary&lt;TV, IEdgeContainer&lt;TE>>>)value).Item3;&#xA;&#x9;&#x9;&#x9;&#x9;this._allowingLoops =         ((Tuple&lt;TV,TE, int, bool, bool, IDictionary&lt;TV, IEdgeContainer&lt;TE>>>)value).Item4;&#xA;&#x9;&#x9;&#x9;&#x9;this._allowingMultipleEdges = ((Tuple&lt;TV,TE, int, bool, bool, IDictionary&lt;TV, IEdgeContainer&lt;TE>>>)value).Item5;&#xA;&#x9;&#x9;&#x9;&#x9;this.dataSet =            ((Tuple&lt;TV,TE, int, bool, bool, IDictionary&lt;TV, IEdgeContainer&lt;TE>>>)value).Item6;&#xA;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;public void newDataSet (int size) {&#xA;&#x9;&#x9;&#x9;dataSet = new Dictionary&lt;TV, IEdgeContainer&lt;TE>> (size);&#xA;&#x9;&#x9;}&#xA;//&#x9;&#x9;public override bool Equals (object obj) {&#xA;//&#x9;&#x9;&#x9;if (typeof(IDataContainerEInstance&lt;V, E, TV, TE>).IsAssignableFrom (obj.GetType ())) {&#xA;//&#x9;&#x9;&#x9;&#x9;IDataContainerEInstance&lt;V, E, TV, TE> o = (IDataContainerEInstance&lt;V, E, TV, TE>)obj;&#xA;//&#x9;&#x9;&#x9;&#x9;if (o.PartitionID == this.PartitionID)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;return true;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;&#x9;return false;&#xA;//&#x9;&#x9;}&#xA;//&#x9;&#x9;public override int GetHashCode () { return partition_id; }&#xA;&#x9;&#x9;#endregion&#xA;&#x9;}&#xA;}&#xA;" name="IDataContainerEImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerEImpl/bin/1.0.0.0/IDataContainerEImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerEImpl/bin/1.0.0.0/BaseIDataContainerEImpl.dll</dependency>
@@ -75,8 +76,8 @@
       <visualDescription h="40" w="216" x="149" y="259">
         <color b="52" g="226" r="138"/>
       </visualDescription>
-      <parameter iname="IVertex" order="0" parid="vertex_type" uname="data" varid="V"/>
       <parameter iname="IEdge" order="1" parid="edge_type" uname="data" varid="E"/>
+      <parameter iname="IVertex" order="0" parid="vertex_type" uname="data" varid="V"/>
     </interface>
     <unit facet="0" iRef="IDataContainerEImpl" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
       <super cRef="base" uRef="data"/>

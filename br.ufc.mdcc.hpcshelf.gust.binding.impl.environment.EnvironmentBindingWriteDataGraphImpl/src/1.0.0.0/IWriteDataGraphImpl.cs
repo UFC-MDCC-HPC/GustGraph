@@ -1,22 +1,14 @@
 using System;
-using br.ufc.pargo.hpe.backend.DGAC;
-using br.ufc.pargo.hpe.basic;
-using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph;//
-using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
-using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
-using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect;
-using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkGraphInterface;
-using System.Threading;
-using System.Collections.Generic;
-using br.ufc.mdcc.common.KVPair;
-using br.ufc.mdcc.common.Integer;
-using br.ufc.mdcc.common.String;
 using System.Collections.Concurrent;
+using System.Threading;
+using br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteDataGraph;//
+using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkGraphInterface;
+using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
+
 
 namespace br.ufc.mdcc.hpcshelf.gust.binding.impl.environment.EnvironmentBindingWriteDataGraphImpl
 {
-	public class IWriteDataGraphImpl<S>: BaseIWriteDataGraphImpl<S>, IWriteDataGraph<S>
+    public class IWriteDataGraphImpl<S>: BaseIWriteDataGraphImpl<S>, IWriteDataGraph<S>
 		where S:IPortTypeIterator
 	{
 		private ConcurrentQueue<Tuple<object,int>> lines = new ConcurrentQueue<Tuple<object,int>>();
@@ -68,7 +60,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.binding.impl.environment.EnvironmentBindingW
 							end_iteration = true;
 
 						int count = 0;
-						IKVPairInstance<IString,IInteger> bin;
+						//IKVPairInstance<IString,IInteger> bin;
 						while (server.fetch_next (out bin_object))
 						{
 							Console.WriteLine("READ COUNTS - READ " + count);
