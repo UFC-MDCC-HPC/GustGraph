@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c16d6f5eaa6e309dd4ca5f5d9be222af2e4235ee93eef16662bd72b5bb9cfc56a8a6b37939deaca1108d0aec52b2cbd89a0bb1edf100f1e2f5f03fb317887da827700e505fb7f86312c33d3c90b4ef21e404bc3ea42c7a5cc6488606ff374cfcf5ab1696bf126dd876a39dd93c8dd36210e3daf1aa04b73763618541608ff681" isAbstract="false" kind="Synchronizer" name="SWLWorkflowBindingImpl" packagePath="br.ufc.mdcc.hpcshelf.workflow.impl.environment">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000006d9d1e9a64ac703eee1d10484c1d5526b1b40922c3e8a56b2206b4959b6bf8948e5b7219993bb826af3e7196116a066ac29e70ee9c7ecabc44784ce18c4a4b22214973cf5d0f31f00b2cde6d4c246ca15c591ccba541ef443e28569f0c5b95d63dba38a26dbebd4fc324152966adac6c8beed7c5f41a1cbbcc0d4989686338a0" localRef="base" location="br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding/SWLWorkflowBinding.hpe" name="SWLWorkflowBinding" package="br.ufc.mdcc.hpcshelf.workflow.environment" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="195" y="279">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
+  </header>
+  <componentInfo>
+    <interface iRef="ISWLWorkflowBindingImpl" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding;&#xA;using br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.workflow.impl.environment.SWLWorkflowBindingImpl &#xA;{&#xA;&#x9;public abstract class BaseISWLWorkflowBindingImpl: Synchronizer, BaseISWLWorkflowBinding&#xA;&#x9;{&#xA;&#x9;&#x9;private ISWLPortType client_port_type = null;&#xA;&#xA;&#x9;&#x9;protected ISWLPortType Client_port_type&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.client_port_type == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.client_port_type = (ISWLPortType) Services.getPort(&quot;client_port_type&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.client_port_type;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ISWLPortType server_port_type = null;&#xA;&#xA;&#x9;&#x9;protected ISWLPortType Server_port_type&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.server_port_type == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.server_port_type = (ISWLPortType) Services.getPort(&quot;server_port_type&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.server_port_type;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseISWLWorkflowBindingImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.workflow.impl.environment.SWLWorkflowBindingImpl/bin/1.0.0.0/BaseISWLWorkflowBindingImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding/bin/1.0.0.0/BaseIBindingDirect.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding;&#xA;using br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType;&#xA;using System.Threading;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.workflow.impl.environment.SWLWorkflowBindingImpl&#xA;{&#xA;&#x9;public class ISWLWorkflowBindingImpl : BaseISWLWorkflowBindingImpl, ISWLWorkflowBinding&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#xA;        private ManualResetEvent e = new ManualResetEvent(false);&#xA;&#xA;&#x9;&#x9;public ISWLPortType Client { get {&#x9;e.WaitOne (); return server; } }&#xA;&#xA;&#x9;&#x9;private ISWLPortType server = null;&#xA;&#x9;&#x9;public ISWLPortType Server { set { e.Set ();&#x9;server = value; } }&#xA;&#xA;&#x9;}&#xA;}&#xA;" name="ISWLWorkflowBindingImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.workflow.impl.environment.SWLWorkflowBindingImpl/bin/1.0.0.0/ISWLWorkflowBindingImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.workflow.impl.environment.SWLWorkflowBindingImpl/bin/1.0.0.0/BaseISWLWorkflowBindingImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding/bin/1.0.0.0/IBindingDirect.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="62" w="253" x="75" y="76">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ISWLWorkflowBindingImpl" multiple="false" private="false" replica="0" uRef="client_server" visibleInterface="true">
+      <super cRef="base" uRef="client_server"/>
+      <visualDescription h="40" w="80" x="47" y="200"/>
+    </unit>
+  </componentInfo>
+</component:component>

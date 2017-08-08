@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000006d9d1e9a64ac703eee1d10484c1d5526b1b40922c3e8a56b2206b4959b6bf8948e5b7219993bb826af3e7196116a066ac29e70ee9c7ecabc44784ce18c4a4b22214973cf5d0f31f00b2cde6d4c246ca15c591ccba541ef443e28569f0c5b95d63dba38a26dbebd4fc324152966adac6c8beed7c5f41a1cbbcc0d4989686338a0" isAbstract="true" kind="Synchronizer" name="SWLWorkflowBinding" packagePath="br.ufc.mdcc.hpcshelf.workflow.environment">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e744e4ff44e0f7b596a1ba3f64e6e904e3bc90dd4cbcde3c6304d1dbda9ccffd4f1b323cf4a6e027b241481fe165fe22bddccca2c4d535bc30de0ed99af2ba12135e2be68ef2bcc017d9cf5d1c9b5547c10a71a10c881f55bb276033d406cb80993279afe06c3e61fe2a2a1ae3adad3160ff6ec18a8b3ec7f63ac9bcfefacb97" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/EnvironmentBindingBaseDirect.hpe" name="EnvironmentBindingBaseDirect" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="127" y="252">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="server_port_type" varName="S"/>
+        <parameter formFieldId="client_port_type" varName="C"/>
+        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
+          <visualDescription h="20" w="20" x="51" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+    <facet_configuration facet="0" multiple="false"/>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="client_port_type" location="br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType/SWLPortType.hpe" multiple="false" name="SWLPortType" package="br.ufc.mdcc.hpcshelf.workflow.environment" exposed="false">
+      <visualDescription h="60" w="100" x="99" y="275">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="server_port_type" location="br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType/SWLPortType.hpe" multiple="false" name="SWLPortType" package="br.ufc.mdcc.hpcshelf.workflow.environment" exposed="false">
+      <visualDescription h="60" w="100" x="120" y="349">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds facet="0" facet_instance="0" parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="client_port_type" direct="true" varName="C"/>
+    <supplyParameter cRef="server_port_type" direct="true" varName="S"/>
+    <interface iRef="ISWLWorkflowBinding" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect;&#xA;using br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType;&#xA;      &#xA;namespace br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding&#xA;{&#xA;&#x9;public interface BaseISWLWorkflowBinding : BaseIBindingDirect&lt;ISWLPortType,ISWLPortType>, ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseISWLWorkflowBinding.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding/bin/1.0.0.0/BaseISWLWorkflowBinding.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/bin/1.0.0.0/BaseIBindingDirect.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect;&#xA;using br.ufc.mdcc.hpcshelf.workflow.environment.SWLPortType;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding&#xA;{&#xA;&#x9;public interface ISWLWorkflowBinding : BaseISWLWorkflowBinding, IBindingDirect&lt;ISWLPortType,ISWLPortType>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ISWLWorkflowBinding.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding/bin/1.0.0.0/ISWLWorkflowBinding.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.workflow.environment.SWLWorkflowBinding/bin/1.0.0.0/BaseISWLWorkflowBinding.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/bin/1.0.0.0/IBindingDirect.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="182" x="75" y="76">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ISWLWorkflowBinding" multiple="false" private="false" replica="0" uRef="client_server" visibleInterface="true">
+      <super cRef="base" uRef="client_server"/>
+      <visualDescription h="40" w="80" x="47" y="200"/>
+    </unit>
+  </componentInfo>
+</component:component>
