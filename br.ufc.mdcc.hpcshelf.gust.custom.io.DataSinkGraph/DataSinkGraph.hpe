@@ -11,7 +11,7 @@
     <parameter componentRef="platform_maintainer" formFieldId="platform_maintainer" order="0" variance="contravariant" varName="M"/>
     <parameter componentRef="input_key" formFieldId="input_key_type" order="1" variance="contravariant" varName="IKey"/>
     <parameter componentRef="input_value" formFieldId="input_value_type" order="2" variance="contravariant" varName="IValue"/>
-    <parameter componentRef="output_format" formFieldId="graph_output_format" order="2" variance="contravariant" varName="GOF"/>
+    <parameter componentRef="output_format" formFieldId="graph_output_format" order="3" variance="contravariant" varName="GOF"/>
     <innerComponent localRef="output_data" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/EnvironmentBindingBaseDirect.hpe" multiple="false" name="EnvironmentBindingBaseDirect" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
       <visualDescription h="74" w="206" x="244" y="473">
         <color b="255" g="255" r="255"/>
@@ -144,8 +144,8 @@
       </port>
       <parameter iname="IMaintainer" order="0" parid="platform_maintainer" uname="maintainer" varid="M"/>
       <parameter iname="IVertexBasic" order="1" parid="input_key_type" uname="data" varid="IKey"/>
-      <parameter iname="IDataObject" parid="input_value_type" uname="data" varid="IValue"/>
-      <parameter iname="IOutputFormat" order="2" parid="graph_output_format" uname="data" varid="GOF"/>
+      <parameter iname="IDataObject" order="2" parid="input_value_type" uname="data" varid="IValue"/>
+      <parameter iname="IOutputFormat" order="3" parid="graph_output_format" uname="data" varid="GOF"/>
       <action id="main">
         <protocol/>
       </action>

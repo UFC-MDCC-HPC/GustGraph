@@ -6,7 +6,7 @@
         <extends>true</extends>
       </extensionType>
       <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e744e4ff44e0f7b596a1ba3f64e6e904e3bc90dd4cbcde3c6304d1dbda9ccffd4f1b323cf4a6e027b241481fe165fe22bddccca2c4d535bc30de0ed99af2ba12135e2be68ef2bcc017d9cf5d1c9b5547c10a71a10c881f55bb276033d406cb80993279afe06c3e61fe2a2a1ae3adad3160ff6ec18a8b3ec7f63ac9bcfefacb97" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/EnvironmentBindingBaseDirect.hpe" name="EnvironmentBindingBaseDirect" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
-        <visualDescription h="81" w="114" x="290" y="413">
+        <visualDescription h="81" w="114" x="303" y="450">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="server_port_type" varName="S"/>
@@ -53,7 +53,7 @@
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/bin/1.0.0.0/IBindingDirect.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="257" x="238" y="261">
+      <visualDescription h="40" w="257" x="183" y="199">
         <color b="0" g="0" r="255"/>
       </visualDescription>
       <parameter iname="IPortTypeDataSourceGraphInterface" order="0" parid="server_port_type" uname="environment_port_type" varid="S"/>

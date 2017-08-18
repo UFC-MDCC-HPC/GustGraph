@@ -11,8 +11,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl
 where V:IVertex
 where E:IEdge<V> {
 		public IDataContainerVImpl(){ }
-		override public void after_initialize () { 
-			newInstance (); 
+		override public void after_initialize () {
+            if (instance ==null) newInstance (); 
 		}
 		public object newInstance () {
 			IVertexInstance v = (IVertexInstance)this.Vertex.newInstance ();
@@ -29,7 +29,11 @@ where E:IEdge<V> {
 			}
 		}
 		public IDataContainerVInstance<V, E, int, IEdgeInstance<V, int>> DataContainerVInstance {
-			get { return (IDataContainerVInstance<V, E, int, IEdgeInstance<V, int>>)instance; }
+			get {
+                 if (instance == null)
+                    newInstance();
+				return (IDataContainerVInstance<V, E, int, IEdgeInstance<V, int>>)instance; 
+            }
 			set { 
 				IDataContainerVInstance<V, E, int, IEdgeInstance<V, int>> dc = (IDataContainerVInstance<V, E, int, IEdgeInstance<V, int>>)value;
 				dc.PartitionID = 0; 

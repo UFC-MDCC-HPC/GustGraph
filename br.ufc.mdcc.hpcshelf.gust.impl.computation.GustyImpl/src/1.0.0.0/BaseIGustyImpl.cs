@@ -110,7 +110,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 		protected IIterator<IKVPair<OKey,OValue>> Output {
 			get {
 				if (this.output == null)
-					this.output = (IIterator<IKVPair<OKey,OValue>>)Services.getPort("output_messages");//Services.getPort("output");
+					this.output = (IIterator<IKVPair<OKey,OValue>>)Services.getPort("output");
 				return this.output;
 			}
 		}

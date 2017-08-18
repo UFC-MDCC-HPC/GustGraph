@@ -9,8 +9,8 @@
   </header>
   <componentInfo>
     <parameter componentRef="platform_maintainer" formFieldId="platform_maintainer" order="0" variance="contravariant" varName="M"/>
-    <parameter componentRef="input_key" formFieldId="input_key_type" order="0" variance="contravariant" varName="IKey"/>
-    <parameter componentRef="input_format" formFieldId="graph_input_format" order="1" variance="contravariant" varName="GIF"/>
+    <parameter componentRef="input_key" formFieldId="input_key_type" order="1" variance="contravariant" varName="IKey"/>
+    <parameter componentRef="input_format" formFieldId="graph_input_format" order="3" variance="contravariant" varName="GIF"/>
     <parameter componentRef="input_value" formFieldId="input_value_type" order="2" variance="contravariant" varName="IValue"/>
     <innerComponent localRef="platform_data_source" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
       <visualDescription h="81" w="203" x="46" y="462">
@@ -148,10 +148,10 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_data_source" sRef="platform_data_source"/>
       </port>
-      <parameter iname="IMaintainer" parid="platform_maintainer" uname="maintainer" varid="M"/>
-      <parameter iname="IVertexBasic" order="0" parid="input_key_type" uname="data" varid="IKey"/>
+      <parameter iname="IMaintainer" order="0" parid="platform_maintainer" uname="maintainer" varid="M"/>
+      <parameter iname="IVertexBasic" order="1" parid="input_key_type" uname="data" varid="IKey"/>
       <parameter iname="IDataObject" order="2" parid="input_value_type" uname="data" varid="IValue"/>
-      <parameter iname="IInputFormat" order="1" parid="graph_input_format" uname="data" varid="GIF"/>
+      <parameter iname="IInputFormat" order="3" parid="graph_input_format" uname="data" varid="GIF"/>
       <action id="main">
         <protocol/>
       </action>

@@ -52,17 +52,17 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 			{   
 				end_computation = true;
 
-				Console.WriteLine ("{0}: IShufflerCollector - ENTER ITERATION", this.Rank);
+				Console.WriteLine ("{1}-{0}: IShufflerCollector - ENTER ITERATION", this.Rank, this.CID);
 
 				bool end_iteration = false;
 				while (!end_iteration) // take next chunk ...
 				{  
-					Console.WriteLine ("{0}: IShufflerCollector - BEFORE READ CHUNK", this.Rank);
+					Console.WriteLine ("{1}-{0}: IShufflerCollector - BEFORE READ CHUNK", this.Rank, this.CID);
 
 					Task_binding_shuffle_read_chunk.invoke (READ_CHUNK.name);
 					Task_binding_shuffle_perform.invoke (PERFORM.name, out sync_perform);
 
-					Console.WriteLine ("{0}: IShufflerCollector - AFTER PERFORM", this.Rank);
+					Console.WriteLine ("{1}-{0}: IShufflerCollector - AFTER PERFORM", this.Rank, this.CID);
 
 					IList<IKVPairInstance<TKey,TValue>>[] buffer = new IList<IKVPairInstance<TKey,TValue>>[reduce_size];
 					for (int i = 0; i < reduce_size; i++)
@@ -76,7 +76,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 					int count = 0;
 					while (input_instance.fetch_next (out bin_object)) 
 					{
-						//Console.WriteLine ("{0}: IShufflerCollector - CHUNK ITEM {1}", this.Rank, count);
+						//Console.WriteLine ("{1}-{0}: IShufflerCollector - CHUNK ITEM {1}", this.Rank, count);
 
 						IKVPairInstance<TKey,TValue> item = (IKVPairInstance<TKey,TValue>)bin_object;
 						this.Input_key.Instance = item.Key;
@@ -86,19 +86,21 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 						count++;
 					}
 						
-					Console.WriteLine ("{0}: IShufflerCollector - END CHUNK", this.Rank);
+					Console.WriteLine ("{1}-{0}: IShufflerCollector - END CHUNK", this.Rank, this.CID);
 
 					// PERFORM
 					for (int i = 0; i < reduce_size; i++)
 						Shuffler_channel.Send (buffer [i], unit_ref [i], end_iteration ? TAG_SHUFFLE_EOS_CHUNK : TAG_SHUFFLE_NEW_CHUNK);
 
-					Console.WriteLine ("{0}: IShufflerCollector - AFTER SEND CHUNK", this.Rank);
+					Console.WriteLine ("{1}-{0}: IShufflerCollector - AFTER SEND CHUNK", this.Rank, this.CID);
 
 					sync_perform.wait ();
 
-					Console.WriteLine ("{0}: IShufflerCollector - AFTER PERFORM WAIT", this.Rank);
-				}			
+					Console.WriteLine ("{1}-{0}: IShufflerCollector - AFTER PERFORM WAIT", this.Rank, this.CID);
+				}
+				Console.WriteLine("{1}-{0}: IShufflerCollector - END ITERATION", this.Rank, this.CID);
 			}		
+            Console.WriteLine("{1}-{0}: IShufflerCollector - END COMPUTATION", this.Rank, this.CID);
 		}
 	}
 }

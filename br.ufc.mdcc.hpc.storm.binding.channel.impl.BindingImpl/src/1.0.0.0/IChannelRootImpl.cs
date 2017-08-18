@@ -625,7 +625,7 @@ namespace br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl
 			return messageSide2;
 		}
 
-		private static int BUFFER_SIZE = 1024 * 1024;
+		private static int BUFFER_SIZE = 8192 * 8192;
 
 		public void serverReceiveRequests(int facet, Socket server_socket)
 		{

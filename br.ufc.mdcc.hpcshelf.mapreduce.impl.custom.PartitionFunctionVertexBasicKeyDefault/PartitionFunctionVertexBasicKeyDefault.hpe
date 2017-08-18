@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000058a0e2c0202466b71afb0d227ac90c3991290cc1be9aa2968440216e4a265c7fb44f50cb5eed369b94493ca8e211f6c3bdfd1778b85838f9a6a3647bb5634dbff4ed0a2e3e6f4be06aa3775e3fb30ffd0083e5bf97a6198587f2ee3b42ca494ad220be8865b9c741e5bc6d1f921f95a66d1dba7dc2ce2f73e06749723a9bdb3" isAbstract="false" kind="Computation" name="PartitionFunctionVertexBasicKeyDefault" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.custom">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001932144acbdd123215f7973b22f90fef8fbd2645bdc492d12085710953ccb643ae6809111e4fb69df49d1f84773b68b3269be124638ac6b91f70f8cbc7cc2f8d2765a2f8f561677bb891cee17cd2d4054ef771e23a2926817b3e081e48026e301fd671a6725f6a615cfd0de3f50ceaf8c49dd67e7a8ec6d545b665403c146b8b" isAbstract="false" kind="Computation" name="PartitionFunctionVertexBasicKeyDefault" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.custom">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000035e85c05153e5063f993b299fb2760bc4e9cce3bbf6ac41b05d45be374508eb2afc9fed108d89751953616d92f856db3c832c6d22051703e3f13f0c4fff26e18925f49f58d69cc39fb7404eb38dd464573170e30a150e96dc869e6e8f9cb9441da82acaf1d1b611984126ac96e3e6d09584ed543bc59c2cd1a96bce21f5d9786" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/PartitionFunction.hpe" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" version="1.0.0.0">
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000087b688df0b839a0366b2b824fb64b64ea53fbaef3657f1e772a207c01455be135fdc4071b416e53661b6bed853aadf504c65ac9f8b1a5010451475e56882e35795858e6d9ddb8c962edb918eb1c594c82aeeae567a5c73c4105105b6dd182b5df75bebb05c0616183fd72f50694f89558d4772a4da9051d46a2e4b2d1f514b88" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/PartitionFunction.hpe" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" version="1.0.0.0">
         <visualDescription h="60" w="100" x="256" y="403">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -48,13 +48,13 @@
     </innerComponent>
     <supplyParameter cRef="ipk" direct="true" varName="IPK"/>
     <interface iRef="IPartitionVertexBasicKeyDefaultImpl" nArgs="1">
-      <slice isRef="input_key">
-        <originRef cRef="input_key" iRef="IData"/>
-        <visualDescription h="10" w="10" x="24" y="26"/>
-      </slice>
       <slice isRef="output_key">
         <originRef cRef="output_key" iRef="IInteger"/>
         <visualDescription h="10" w="10" x="130" y="24"/>
+      </slice>
+      <slice isRef="input_key">
+        <originRef cRef="input_key" iRef="IData"/>
+        <visualDescription h="10" w="10" x="24" y="26"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionVertexBasicKeyDefault&#xA;{&#xA;&#x9;public abstract class BaseIPartitionVertexBasicKeyDefaultImpl&lt;TKey>: Computation, BaseIPartitionFunction&lt;TKey>&#xA;&#x9;&#x9;where TKey:IVertexBasic&#xA;&#x9;{&#xA;&#x9;&#x9;private IInteger output_key = null;&#xA;&#xA;&#x9;&#x9;public IInteger Output_key&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_key == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_key = (IInteger) Services.getPort(&quot;output_key&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_key;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private TKey input_key = default(TKey);&#xA;&#xA;&#x9;&#x9;public TKey Input_key&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_key == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_key = (TKey) Services.getPort(&quot;input_key&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_key;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIPartitionVertexBasicKeyDefaultImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionVertexBasicKeyDefault/bin/1.0.0.0/BaseIPartitionVertexBasicKeyDefaultImpl.dll" versionId="1.0.0.0">
@@ -63,7 +63,7 @@
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/IVertexBasic.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/BaseIPartitionFunction.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionVertexBasicKeyDefault {&#xA;&#xA;&#x9;public class IPartitionVertexBasicKeyDefaultImpl&lt;TKey> : BaseIPartitionVertexBasicKeyDefaultImpl&lt;TKey>, IPartitionFunction&lt;TKey>&#xA;    where TKey:IVertexBasic&#xA;&#x9;{&#xA;&#x9;&#x9;public IPartitionVertexBasicKeyDefaultImpl() { }&#xA;&#xA;&#x9;&#x9;private int number_of_partitions;&#xA;&#x9;&#x9;public int NumberOfPartitions {&#xA;&#x9;&#x9;&#x9;get { return number_of_partitions; }&#xA;&#x9;&#x9;&#x9;set { this.number_of_partitions = value; }&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IVertexBasicInstance input_string_instance = (IVertexBasicInstance) Input_key.Instance;&#xA;&#x9;&#x9;&#x9;IVertexBasicInstance output_string_instance = (IVertexBasicInstance) Output_key.Instance;&#xA;&#xA;&#x9;&#x9;&#x9;int value = (int) input_string_instance.Value;&#xA;&#xA;//&#x9;&#x9;&#x9;Trace.WriteLine(&quot;BIN FUNCTION &quot; + (value % NumberOfPartitions) + &quot;value=&quot; + value + &quot;, npart=&quot; + NumberOfPartitions);&#xA;&#xA;&#x9;&#x9;&#x9;output_string_instance.Value = value % NumberOfPartitions;&#xA;&#xA;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#xA;}&#xA;" name="IPartitionVertexBasicKeyDefaultImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionVertexBasicKeyDefault/bin/1.0.0.0/IPartitionVertexBasicKeyDefaultImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionVertexBasicKeyDefault {&#xA;&#xA;&#x9;public class IPartitionVertexBasicKeyDefaultImpl&lt;TKey> : BaseIPartitionVertexBasicKeyDefaultImpl&lt;TKey>, IPartitionFunction&lt;TKey>&#xA;    where TKey:IVertexBasic&#xA;&#x9;{&#xA;&#x9;&#x9;public IPartitionVertexBasicKeyDefaultImpl() { }&#xA;&#xA;&#x9;&#x9;private int number_of_partitions;&#xA;&#x9;&#x9;public int NumberOfPartitions {&#xA;&#x9;&#x9;&#x9;get { return number_of_partitions; }&#xA;&#x9;&#x9;&#x9;set { this.number_of_partitions = value; }&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IVertexBasicInstance input_instance = (IVertexBasicInstance) Input_key.Instance;&#xA;&#x9;&#x9;&#x9;IIntegerInstance output_instance = (IIntegerInstance) Output_key.Instance;&#xA;&#xA;&#x9;&#x9;&#x9;byte value = input_instance.PId;&#xA;&#x9;&#x9;&#x9;output_instance.Value = value % NumberOfPartitions;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IPartitionVertexBasicKeyDefaultImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionVertexBasicKeyDefault/bin/1.0.0.0/IPartitionVertexBasicKeyDefaultImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/IVertexBasic.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionVertexBasicKeyDefault/bin/1.0.0.0/BaseIPartitionVertexBasicKeyDefaultImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll</dependency>
@@ -72,13 +72,13 @@
       <visualDescription h="40" w="265" x="95" y="240">
         <color b="41" g="41" r="239"/>
       </visualDescription>
-      <port name="input_key">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key" sRef="input_key"/>
-      </port>
       <port name="output_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_key" sRef="output_key"/>
+      </port>
+      <port name="input_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="input_key"/>
       </port>
       <parameter iname="IVertexBasic" order="0" parid="input_key" uname="data" varid="IPK"/>
       <action id="main">

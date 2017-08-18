@@ -44,7 +44,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 		{
 		//	Collect_pairs.TraceFlag = true;	Feed_pairs.TraceFlag = true;Task_reduce.TraceFlag = true;
 
-			Console.WriteLine (this.Rank + ": REDUCE 1");
+            Console.WriteLine ("{1}-{0}: GUSTY 1", this.Rank, this.CID);
 
 			IIteratorInstance<IKVPair<TKey, IIterator<TValue>>> input_instance = (IIteratorInstance<IKVPair<TKey, IIterator<TValue>>>)Collect_pairs.Client;
 			IIteratorInstance<IKVPair<OKey,OValue>> output_instance = (IIteratorInstance<IKVPair<OKey,OValue>>)Output.Instance;
@@ -54,7 +54,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 
 			// TODO: Dividir em chunks a saa de pares (OKey,OValue)
 
-			Console.WriteLine (this.Rank + ": REDUCER 2");
+			Console.WriteLine ("{1}-{0}: GUSTY 2", this.Rank, this.CID);
 
 			int superstep = -1;
 			bool end_computation = false;
@@ -64,19 +64,19 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 
 				//IDictionary<object,object> cont_dict = new Dictionary<object, object> ();
 
-				Console.WriteLine (this.Rank + ": REDUCER LOOP");
+                Console.WriteLine ("{1}-{0}: GUSTY LOOP", this.Rank, this.CID);
 
 				end_computation = true;
 
 				bool end_iteration = false;
 				while (!end_iteration)    // take next chunk ...
 				{
-					Console.WriteLine (this.Rank + ": REDUCER ITERATE 1");
+					Console.WriteLine ("{1}-{0}: GUSTY ITERATE 1", this.Rank, this.CID);
 
 					Task_reduce.invoke (READ_CHUNK.name);
 					Task_reduce.invoke (PERFORM.name, out sync_perform);
 
-					Console.WriteLine (this.Rank + ": REDUCER ITERATE 2");
+					Console.WriteLine ("{1}-{0}: GUSTY ITERATE 2", this.Rank, this.CID);
 
 					IKVPairInstance<TKey, IIterator<TValue>> kvpair = null;
 					object kvpair_object;
@@ -89,7 +89,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 					int count=0;
 					while (input_instance.fetch_next (out kvpair_object))
 					{
-//						Console.WriteLine (this.Rank + ": REDUCER ITERATE INNER LOOP 3 count=" + count);
+                        Console.WriteLine ("{1}-{0}: GUSTY ITERATE INNER LOOP 3 count={2}", this.Rank, this.CID, count);
 
 						kvpair = (IKVPairInstance<TKey, IIterator<TValue>>)kvpair_object;
 
@@ -106,14 +106,14 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 						count++;
 					}
 
-					Console.WriteLine (this.Rank + ": REDUCER ITERATE 4 count=" + count);
+                    Console.WriteLine ("{1}-{0}: GUSTY ITERATE 4 count={2}", this.Rank, this.CID, count);
 
 					sync_perform.wait ();
 
-					Console.WriteLine (this.Rank + ": REDUCER ITERATE 5");
+					Console.WriteLine ("{1}-{0}: GUSTY ITERATE 5", this.Rank, this.CID);
 				}
 
-				Console.WriteLine (this.Rank + ": REDUCER ITERATE END ITERATION");
+				Console.WriteLine ("{1}-{0}: GUSTY ITERATE END ITERATION", this.Rank, this.CID);
 
 				IActionFuture reduce_chunk_ready;
 				Task_reduce.invoke (CHUNK_READY.name, out reduce_chunk_ready);  //***
@@ -134,12 +134,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 				output_instance.finish ();
 				Task_reduce.invoke (CHUNK_READY.name);
 
-				Console.WriteLine (this.Rank + ": REDUCER ITERATE FINISH");
+				Console.WriteLine ("{1}-{0}: GUSTY ITERATE FINISH", this.Rank, this.CID);
 			}
 
 			output_instance.finish ();
 
-			Console.WriteLine (this.Rank + ": REDUCER FINISH ... ");
+			Console.WriteLine ("{1}-{0}: GUSTY FINISH ... ", this.Rank, this.CID);
 		}
 
 //		private static ICollection<MethodInfo> getGustMethods(object o){

@@ -44,7 +44,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 			bool end_computation = false;
 			while (!end_computation)   // next iteration
 			{
-				Console.WriteLine ("{0}: IShufflerFeeder - ENTER ITERATION", this.Rank);
+				Console.WriteLine ("{1}-{0}: IShufflerFeeder - ENTER ITERATION", this.Rank, this.CID);
 
 				IList<int> inactive_senders = new List<int>();
 				IList<int> active_senders = new List<int>();
@@ -56,7 +56,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 				bool has_chunk = false;
 				while (active_senders.Count > 0)     // take next chunk ... 
 				{  
-					Console.WriteLine ("{0}: IShufflerFeeder - ENTER READ CHUNK", this.Rank);
+					Console.WriteLine ("{1}-{0}: IShufflerFeeder - ENTER READ CHUNK", this.Rank, this.CID);
 
 					IActionFuture sync_perform;
 
@@ -67,7 +67,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 					// PERFORM
 					foreach (int i in active_senders) 
 					{
-						Console.WriteLine ("{0}: IShufflerFeeder - RECEIVE CHUNK FROM {1}", this.Rank, i);
+						Console.WriteLine ("{1}-{0}: IShufflerFeeder - RECEIVE CHUNK FROM {2}", this.Rank, this.CID, i);
 
 						IList<IKVPairInstance<TKey,TValue>> buffer;
 						CompletedStatus status;
@@ -108,7 +108,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 					foreach (int i in inactive_senders)
 						active_senders.Remove (i);
 					
-					Console.WriteLine ("{0}: IShufflerFeeder - BEFORE FINISH CHUNK", this.Rank);
+                    Console.WriteLine ("{1}-{0}: IShufflerFeeder - BEFORE FINISH CHUNK", this.Rank, this.CID);
 
 					output_instance.finish ();
 
@@ -118,14 +118,17 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 
 					sync_perform.wait ();
 
-					Console.WriteLine ("{0}: IShufflerFeeder - AFTER PERFORM WAIT", this.Rank);
+					Console.WriteLine ("{1}-{0}: IShufflerFeeder - AFTER PERFORM WAIT", this.Rank, this.CID);
 
 					// CHUNK_READY
 					Task_binding_shuffle_chunk_ready.invoke (CHUNK_READY.name);   //****
 
-					Console.WriteLine ("{0}: IShufflerFeeder - AFTER CHUNK READY", this.Rank);
+					Console.WriteLine ("{1}-{0}: IShufflerFeeder - AFTER CHUNK READY", this.Rank, this.CID);
 				}
 			}
+
+            Console.WriteLine("{1}-{0}: IShufflerFeeder - END COMPUTATION", this.Rank, this.CID);
+
 		}
 	}
 }

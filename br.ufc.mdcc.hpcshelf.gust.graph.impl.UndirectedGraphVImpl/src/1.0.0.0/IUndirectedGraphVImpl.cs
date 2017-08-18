@@ -45,7 +45,9 @@ where E:IEdge<V> {
 			return (IUndirectedGraphInstance<V, E, TV, TE>) this.graphInstanceT;
 		}
 		public IUndirectedGraphInstance<V, E, int, IEdgeInstance<V, int>> newInstance(int size) {
+            Console.WriteLine("IUndirectedGraphVImpl - newInstance 1 - ");
 			IDataContainerVInstance<V, E, int, IEdgeInstance<V, int>> dc = DataContainer.DataContainerVInstance;
+            Console.WriteLine("IUndirectedGraphVImpl - newInstance 2 - " + (dc==null));
 			dc.newDataSet (size);
 			IGraphHelperV<V, E, int, IEdgeInstance<V, int>> h = new IGraphHelperVImpl<V, E, int, IEdgeInstance<V, int>>(dc);
 			this.graphInstanceT = new IUndirectedGraphVInstanceImpl<V, E, int, IEdgeInstance<V, int>> (h);

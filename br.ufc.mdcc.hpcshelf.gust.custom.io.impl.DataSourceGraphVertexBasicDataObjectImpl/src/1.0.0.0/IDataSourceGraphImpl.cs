@@ -53,6 +53,7 @@ where GIF:IInputFormat {
 				IDictionary<int, IInputFormatInstance> BINS = Gif_instance.extractBins (path_graph_file);
 				foreach(KeyValuePair<int, IInputFormatInstance> dictionary_kv_pair in BINS) 
 				{
+                    Console.WriteLine("IDataSourceGraphImpl - BIN {0}", dictionary_kv_pair.Key);
 					IKVPairInstance<IKey, IValue> item = (IKVPairInstance<IKey, IValue>)Input_pairs_reference.createItem ();
 					((IVertexBasicInstance)item.Key).Id = dictionary_kv_pair.Key;
 					((IVertexBasicInstance)item.Key).PId = (byte) dictionary_kv_pair.Key;

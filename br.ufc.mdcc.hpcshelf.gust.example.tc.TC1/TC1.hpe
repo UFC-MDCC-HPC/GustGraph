@@ -27,7 +27,7 @@
           <visualDescription h="60" w="181" x="96" y="471">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###195811645"/>
+          <parameter formFieldId="value_type" varName="X###631815880"/>
           <parameter formFieldId="key_type" varName="TKey"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="137" y="20"/>
@@ -41,26 +41,6 @@
           <parameter formFieldId="key_type" varName="OKey"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="7" y="21"/>
-          </unitBounds>
-        </port>
-        <port index_replica="0" localRef="graph" location="br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph/UndirectedGraph.hpe" multiple="false" name="UndirectedGraph" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
-          <visualDescription h="60" w="146" x="363" y="487">
-            <color b="255" g="255" r="255"/>
-          </visualDescription>
-          <parameter formFieldId="container" varName="CTN"/>
-          <parameter formFieldId="vertex_type" varName="V"/>
-          <parameter formFieldId="edge_type" varName="E"/>
-          <unitBounds facet="0" facet_instance="0" parallel="false" uRef="data">
-            <visualDescription h="20" w="20" x="5" y="2"/>
-          </unitBounds>
-        </port>
-        <port index_replica="0" localRef="output_messages" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
-          <visualDescription h="60" w="265" x="461" y="401">
-            <color b="203" g="192" r="255"/>
-          </visualDescription>
-          <parameter formFieldId="item_type" varName="X###273735401"/>
-          <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="iterator">
-            <visualDescription h="20" w="20" x="19" y="23"/>
           </unitBounds>
         </port>
         <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="reduce_function">

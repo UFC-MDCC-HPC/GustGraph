@@ -97,13 +97,13 @@
       <visualDescription h="40" w="193" x="155" y="153">
         <color b="207" g="159" r="114"/>
       </visualDescription>
-      <port name="vertex">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="vertex" sRef="dataContainer"/>
-      </port>
       <port name="edgeFactory">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="edgeFactory" sRef="dataContainer"/>
+      </port>
+      <port name="vertex">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="vertex" sRef="dataContainer"/>
       </port>
       <parameter iname="IDataContainer" parid="container" uname="data" varid="CTN"/>
       <parameter iname="IEdge" order="1" parid="edge_type" uname="data" varid="E"/>

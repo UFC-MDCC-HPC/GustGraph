@@ -5,10 +5,9 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.port.task.advance.ReadChunkActionType
 	public interface IReadChunk : BaseIReadChunk
 	{
 	}
-	
+
 	public class READ_CHUNK
 	{
-		//public const static object name = "READ_CHUNK";
-		public const int name = 20;
+		public const string name = "READ_CHUNK";
 	}
 }

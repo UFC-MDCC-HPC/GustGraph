@@ -19,27 +19,27 @@
           <visualDescription h="60" w="182" x="122" y="388">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1186447065"/>
+          <parameter formFieldId="task_port_type" varName="X###139319839"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
         <port index_replica="0" localRef="feed_pairs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/EnvironmentBindingBaseDirect.hpe" multiple="false" name="EnvironmentBindingBaseDirect" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
-          <visualDescription h="60" w="112" x="521" y="366">
+          <visualDescription h="60" w="112" x="497" y="395">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1984313486"/>
-          <parameter formFieldId="client_port_type" varName="X###789845695"/>
+          <parameter formFieldId="server_port_type" varName="X###1304475232"/>
+          <parameter formFieldId="client_port_type" varName="X###1901637468"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
         <port index_replica="0" localRef="collect_pairs" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/EnvironmentBindingBaseDirect.hpe" multiple="false" name="EnvironmentBindingBaseDirect" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
-          <visualDescription h="60" w="154" x="148" y="298">
+          <visualDescription h="60" w="111" x="62" y="271">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1092199056"/>
-          <parameter formFieldId="client_port_type" varName="X###975408412"/>
+          <parameter formFieldId="server_port_type" varName="X###660809770"/>
+          <parameter formFieldId="client_port_type" varName="X###1100514299"/>
           <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -65,14 +65,14 @@
     <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
-    <parameter componentRef="input_key_type" formFieldId="input_key_type" order="0" variance="contravariant" varName="TKey"/>
-    <parameter componentRef="input_value_type" formFieldId="input_value_type" order="1" variance="contravariant" varName="TValue"/>
-    <parameter componentRef="output_key_type" formFieldId="output_key_type" order="2" variance="contravariant" varName="OKey"/>
-    <parameter componentRef="output_value_type" formFieldId="output_value_type" order="3" variance="contravariant" varName="OValue"/>
-    <parameter componentRef="graph_type" formFieldId="graph_type" order="4" variance="contravariant" varName="G"/>
-    <parameter componentRef="platform_maintainer" formFieldId="platform_maintainer" order="4" variance="contravariant" varName="M"/>
-    <parameter componentRef="reduce_function" formFieldId="reduce_function" order="4" variance="contravariant" varName="RF"/>
-    <parameter componentRef="graph_input_format" formFieldId="graph_input_format" order="5" variance="contravariant" varName="GIF"/>
+    <parameter componentRef="input_key_type" formFieldId="input_key_type" order="1" variance="contravariant" varName="TKey"/>
+    <parameter componentRef="input_value_type" formFieldId="input_value_type" order="2" variance="contravariant" varName="TValue"/>
+    <parameter componentRef="output_key_type" formFieldId="output_key_type" order="3" variance="contravariant" varName="OKey"/>
+    <parameter componentRef="output_value_type" formFieldId="output_value_type" order="4" variance="contravariant" varName="OValue"/>
+    <parameter componentRef="graph_type" formFieldId="graph_type" order="6" variance="contravariant" varName="G"/>
+    <parameter componentRef="platform_maintainer" formFieldId="platform_maintainer" order="0" variance="contravariant" varName="M"/>
+    <parameter componentRef="reduce_function" formFieldId="reduce_function" order="5" variance="contravariant" varName="RF"/>
+    <parameter componentRef="graph_input_format" formFieldId="graph_input_format" order="7" variance="contravariant" varName="GIF"/>
     <innerComponent localRef="input_key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_key_type" exposed="false">
       <visualDescription h="60" w="205" x="305" y="78">
         <color b="255" g="255" r="255"/>
@@ -106,7 +106,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="graph_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="graph_type" exposed="false">
-      <visualDescription h="60" w="171" x="79" y="127">
+      <visualDescription h="60" w="171" x="83" y="159">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
@@ -143,7 +143,7 @@
         <visualDescription h="60" w="181" x="657" y="106">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###1788829503"/>
+        <parameter formFieldId="value_type" varName="X###313297713"/>
         <parameter formFieldId="key_type" varName="TKey"/>
         <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="kv_pair">
           <visualDescription h="20" w="20" x="137" y="20"/>
@@ -159,23 +159,6 @@
           <visualDescription h="20" w="20" x="7" y="21"/>
         </unitBounds>
       </port>
-      <port index_replica="0" localRef="graph" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-        <visualDescription h="60" w="146" x="1026" y="287">
-          <color b="255" g="255" r="255"/>
-        </visualDescription>
-        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="data">
-          <visualDescription h="20" w="20" x="3" y="24"/>
-        </unitBounds>
-      </port>
-      <port index_replica="0" localRef="output_messages" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
-        <visualDescription h="60" w="265" x="905" y="156">
-          <color b="203" g="192" r="255"/>
-        </visualDescription>
-        <parameter formFieldId="item_type" varName="X###927191655"/>
-        <unitBounds facet="0" facet_instance="0" facet_instance_enclosing="0" parallel="false" uRef="iterator">
-          <visualDescription h="20" w="20" x="19" y="23"/>
-        </unitBounds>
-      </port>
       <unitBounds facet="0" facet_instance="0" parallel="false" uRef="reduce_function">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
@@ -188,7 +171,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="C###1788829503" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###313297713" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="152" x="455" y="455">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -197,18 +180,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1788829503" varName="X###1788829503"/>
-    <innerComponent localRef="C###927191655" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="191" x="712" y="236">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <parameter formFieldId="value_type" varName="OValue"/>
-      <parameter formFieldId="key_type" varName="OKey"/>
-      <unitBounds facet="0" facet_instance="0" parallel="false" uRef="kv_pair">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <supplyParameter cRef="C###927191655" varName="X###927191655"/>
+    <supplyParameter cRef="C###313297713" varName="X###313297713"/>
     <interface iRef="IGusty" nArgs="8">
       <slice isRef="graph_type">
         <originRef cRef="graph_type" iRef="IData"/>
@@ -238,14 +210,14 @@
       <visualDescription h="82" w="195" x="315" y="106">
         <color b="0" g="0" r="255"/>
       </visualDescription>
-      <parameter iname="IMaintainer" parid="platform_maintainer" uname="maintainer" varid="M"/>
-      <parameter iname="IGustyFunction" parid="reduce_function" uname="reduce_function" varid="RF"/>
-      <parameter iname="IData" order="3" parid="output_value_type" uname="data" varid="OValue"/>
-      <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="TKey"/>
-      <parameter iname="IData" order="1" parid="input_value_type" uname="data" varid="TValue"/>
-      <parameter iname="IData" order="2" parid="output_key_type" uname="data" varid="OKey"/>
-      <parameter iname="IData" order="4" parid="graph_type" uname="data" varid="G"/>
-      <parameter iname="IInputFormat" order="5" parid="graph_input_format" uname="data" varid="GIF"/>
+      <parameter iname="IMaintainer" order="0" parid="platform_maintainer" uname="maintainer" varid="M"/>
+      <parameter iname="IGustyFunction" order="5" parid="reduce_function" uname="reduce_function" varid="RF"/>
+      <parameter iname="IData" order="4" parid="output_value_type" uname="data" varid="OValue"/>
+      <parameter iname="IData" order="1" parid="input_key_type" uname="data" varid="TKey"/>
+      <parameter iname="IData" order="2" parid="input_value_type" uname="data" varid="TValue"/>
+      <parameter iname="IData" order="3" parid="output_key_type" uname="data" varid="OKey"/>
+      <parameter iname="IData" order="6" parid="graph_type" uname="data" varid="G"/>
+      <parameter iname="IInputFormat" order="7" parid="graph_input_format" uname="data" varid="GIF"/>
       <action id="main">
         <protocol/>
       </action>

@@ -24,9 +24,9 @@
     <facet_configuration facet="0" multiple="false"/>
   </header>
   <componentInfo>
-    <parameter componentRef="vertex_type" formFieldId="vertex_type" order="0" variance="contravariant" varName="V"/>
-    <parameter componentRef="edge_type" formFieldId="edge_type" order="1" variance="contravariant" varName="E"/>
-    <parameter componentRef="container" formFieldId="container" order="2" variance="contravariant" varName="CTN"/>
+    <parameter componentRef="vertex_type" formFieldId="vertex_type" order="1" variance="contravariant" varName="V"/>
+    <parameter componentRef="edge_type" formFieldId="edge_type" order="2" variance="contravariant" varName="E"/>
+    <parameter componentRef="container" formFieldId="container" order="0" variance="contravariant" varName="CTN"/>
     <innerComponent localRef="vertex_type" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="vertex_type" exposed="false">
       <visualDescription h="60" w="141" x="681" y="117">
         <color b="255" g="255" r="255"/>
@@ -90,9 +90,9 @@
       <visualDescription h="40" w="193" x="152" y="162">
         <color b="207" g="159" r="114"/>
       </visualDescription>
-      <parameter iname="IDataContainer" order="2" parid="container" uname="data" varid="CTN"/>
-      <parameter iname="IEdge" order="1" parid="edge_type" uname="data" varid="E"/>
-      <parameter iname="IVertex" order="0" parid="vertex_type" uname="data" varid="V"/>
+      <parameter iname="IDataContainer" order="0" parid="container" uname="data" varid="CTN"/>
+      <parameter iname="IEdge" order="2" parid="edge_type" uname="data" varid="E"/>
+      <parameter iname="IVertex" order="1" parid="vertex_type" uname="data" varid="V"/>
     </interface>
     <unit facet="0" iRef="IUndirectedGraph" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
       <super cRef="base" uRef="data"/>

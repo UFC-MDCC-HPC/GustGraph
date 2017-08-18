@@ -74,9 +74,9 @@
       <visualDescription h="40" w="193" x="145" y="153">
         <color b="207" g="159" r="114"/>
       </visualDescription>
-      <parameter iname="IDataContainerE" order="2" parid="container" uname="data" varid="CTN"/>
-      <parameter iname="IEdge" order="1" parid="edge_type" uname="data" varid="E"/>
-      <parameter iname="IVertex" order="0" parid="vertex_type" uname="data" varid="V"/>
+      <parameter iname="IDataContainerE" order="0" parid="container" uname="data" varid="CTN"/>
+      <parameter iname="IEdge" order="2" parid="edge_type" uname="data" varid="E"/>
+      <parameter iname="IVertex" order="1" parid="vertex_type" uname="data" varid="V"/>
     </interface>
     <unit facet="0" iRef="IUndirectedGraphEImpl" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
       <super cRef="base" uRef="data"/>

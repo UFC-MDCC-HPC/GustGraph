@@ -62,13 +62,13 @@
       <visualDescription h="41" w="136" x="51" y="156">
         <color b="0" g="255" r="255"/>
       </visualDescription>
-      <port name="local_pairs_0">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_data" sRef="source"/>
-      </port>
       <port name="platform_data_source">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_data_source" sRef="source"/>
+      </port>
+      <port name="local_pairs_0">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_data" sRef="source"/>
       </port>
       <port name="local_pairs_0">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -92,7 +92,7 @@
         <visualDescription h="10" w="10" x="117" y="10"/>
       </slice>
       <slice isRef="reducer_0">
-        <originRef cRef="reducer_0" iRef="IReducer"/>
+        <originRef cRef="reducer_0" iRef="IGusty"/>
         <visualDescription h="10" w="10" x="118" y="20"/>
       </slice>
       <slice isRef="shuffler_1">
@@ -108,10 +108,6 @@
       <visualDescription h="50" w="136" x="617" y="144">
         <color b="0" g="136" r="255"/>
       </visualDescription>
-      <port name="task_shuffle_0_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_perform" sRef="shuffler_0"/>
-      </port>
       <port name="task_shuffle_0_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_shuffle_chunk_ready" sRef="shuffler_0"/>
@@ -120,13 +116,9 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feed_pairs" sRef="shuffler_0"/>
       </port>
-      <port name="global_pairs_0">
+      <port name="task_shuffle_0_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="reducer_0"/>
-      </port>
-      <port name="local_pairs_1">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="reducer_0"/>
+        <slice pRef="task_binding_shuffle_perform" sRef="shuffler_0"/>
       </port>
       <port name="task_reduce_0">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -135,6 +127,14 @@
       <port name="platform_reduce_0">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_reduce" sRef="reducer_0"/>
+      </port>
+      <port name="global_pairs_0">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="reducer_0"/>
+      </port>
+      <port name="local_pairs_1">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="reducer_0"/>
       </port>
       <port name="task_shuffle_1_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -170,81 +170,81 @@
       <visualDescription h="54" w="138" x="793" y="150">
         <color b="255" g="0" r="0"/>
       </visualDescription>
-      <port name="task_split_output_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_output_chunk_ready" sRef="workflow"/>
-      </port>
-      <port name="task_shuffle_0_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_0_chunk_ready" sRef="workflow"/>
-      </port>
-      <port name="task_shuffle_1_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_1_perform" sRef="workflow"/>
-      </port>
-      <port name="task_shuffle_1_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_1_chunk_ready" sRef="workflow"/>
-      </port>
-      <port name="task_shuffle_2_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_2_chunk_ready" sRef="workflow"/>
-      </port>
       <port name="swl_port">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="swl_port" sRef="workflow"/>
-      </port>
-      <port name="task_reduce_1">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce_1" sRef="workflow"/>
-      </port>
-      <port name="task_split_output_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_output_perform" sRef="workflow"/>
-      </port>
-      <port name="task_shuffle_2_perform">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_2_perform" sRef="workflow"/>
-      </port>
-      <port name="task_split_output_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_split_output_read_chunk" sRef="workflow"/>
-      </port>
-      <port name="task_shuffle_2_read_chunk">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_2_read_chunk" sRef="workflow"/>
       </port>
       <port name="platform_SAFe">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_SAFe" sRef="workflow"/>
       </port>
+      <port name="task_shuffle_2_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_shuffle_2_perform" sRef="workflow"/>
+      </port>
+      <port name="task_shuffle_2_chunk_ready">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_shuffle_2_chunk_ready" sRef="workflow"/>
+      </port>
       <port name="task_shuffle_1_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_shuffle_1_read_chunk" sRef="workflow"/>
       </port>
-      <port name="task_shuffle_0_read_chunk">
+      <port name="task_shuffle_1_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_shuffle_0_read_chunk" sRef="workflow"/>
+        <slice pRef="task_shuffle_1_chunk_ready" sRef="workflow"/>
+      </port>
+      <port name="task_shuffle_0_chunk_ready">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_shuffle_0_chunk_ready" sRef="workflow"/>
+      </port>
+      <port name="task_reduce_1">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_reduce_1" sRef="workflow"/>
+      </port>
+      <port name="task_split_output_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_split_output_read_chunk" sRef="workflow"/>
       </port>
       <port name="task_reduce_2">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_reduce_2" sRef="workflow"/>
       </port>
-      <port name="task_reduce_0">
+      <port name="task_shuffle_1_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce_0" sRef="workflow"/>
+        <slice pRef="task_shuffle_1_perform" sRef="workflow"/>
+      </port>
+      <port name="task_split_output_chunk_ready">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_split_output_chunk_ready" sRef="workflow"/>
       </port>
       <port name="task_shuffle_0_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_shuffle_0_perform" sRef="workflow"/>
       </port>
-      <port name="swl_port">
+      <port name="task_shuffle_2_read_chunk">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="swl_port" sRef="application"/>
+        <slice pRef="task_shuffle_2_read_chunk" sRef="workflow"/>
+      </port>
+      <port name="task_reduce_0">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_reduce_0" sRef="workflow"/>
+      </port>
+      <port name="task_split_output_perform">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_split_output_perform" sRef="workflow"/>
+      </port>
+      <port name="task_shuffle_0_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_shuffle_0_read_chunk" sRef="workflow"/>
       </port>
       <port name="platform_SAFe">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_SAFe" sRef="application"/>
+      </port>
+      <port name="swl_port">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="swl_port" sRef="application"/>
       </port>
       <action id="main">
         <protocol/>
@@ -256,7 +256,7 @@
         <visualDescription h="10" w="10" x="148" y="8"/>
       </slice>
       <slice isRef="reducer_1">
-        <originRef cRef="reducer_1" iRef="IReducer"/>
+        <originRef cRef="reducer_1" iRef="IGusty"/>
         <visualDescription h="10" w="10" x="148" y="19"/>
       </slice>
       <slice isRef="shuffler_2">
@@ -272,10 +272,6 @@
       <visualDescription h="55" w="162" x="412" y="145">
         <color b="0" g="165" r="255"/>
       </visualDescription>
-      <port name="global_pairs_1">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="shuffler_1"/>
-      </port>
       <port name="task_shuffle_1_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_shuffle_chunk_ready" sRef="shuffler_1"/>
@@ -284,29 +280,33 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_shuffle_perform" sRef="shuffler_1"/>
       </port>
-      <port name="local_pairs_2">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="reducer_1"/>
-      </port>
       <port name="global_pairs_1">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="reducer_1"/>
+        <slice pRef="feed_pairs" sRef="shuffler_1"/>
       </port>
       <port name="task_reduce_1">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_reduce" sRef="reducer_1"/>
       </port>
+      <port name="local_pairs_2">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="reducer_1"/>
+      </port>
       <port name="platform_reduce_1">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_reduce" sRef="reducer_1"/>
       </port>
-      <port name="task_shuffle_2_read_chunk">
+      <port name="global_pairs_1">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_read_chunk" sRef="shuffler_2"/>
+        <slice pRef="collect_pairs" sRef="reducer_1"/>
       </port>
       <port name="task_shuffle_2_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_shuffle_perform" sRef="shuffler_2"/>
+      </port>
+      <port name="task_shuffle_2_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_shuffle_read_chunk" sRef="shuffler_2"/>
       </port>
       <port name="local_pairs_2">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -322,7 +322,7 @@
         <visualDescription h="10" w="10" x="140" y="10"/>
       </slice>
       <slice isRef="reducer_2">
-        <originRef cRef="reducer_2" iRef="IReducer"/>
+        <originRef cRef="reducer_2" iRef="IGusty"/>
         <visualDescription h="10" w="10" x="138" y="20"/>
       </slice>
       <slice isRef="splitter_output">
@@ -338,41 +338,41 @@
       <visualDescription h="40" w="134" x="246" y="158">
         <color b="62" g="175" r="252"/>
       </visualDescription>
-      <port name="global_pairs_2">
+      <port name="task_shuffle_2_chunk_ready">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="shuffler_2"/>
+        <slice pRef="task_binding_shuffle_chunk_ready" sRef="shuffler_2"/>
       </port>
       <port name="task_shuffle_2_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_shuffle_perform" sRef="shuffler_2"/>
       </port>
-      <port name="task_shuffle_2_chunk_ready">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_shuffle_chunk_ready" sRef="shuffler_2"/>
-      </port>
-      <port name="result_pairs_0">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="reducer_2"/>
-      </port>
       <port name="global_pairs_2">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="reducer_2"/>
+        <slice pRef="feed_pairs" sRef="shuffler_2"/>
       </port>
       <port name="task_reduce_2">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_reduce" sRef="reducer_2"/>
       </port>
+      <port name="result_pairs_0">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="reducer_2"/>
+      </port>
       <port name="platform_reduce_2">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_reduce" sRef="reducer_2"/>
       </port>
-      <port name="task_split_output_read_chunk">
+      <port name="global_pairs_2">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_read_chunk" sRef="splitter_output"/>
+        <slice pRef="collect_pairs" sRef="reducer_2"/>
       </port>
       <port name="task_split_output_perform">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_perform" sRef="splitter_output"/>
+      </port>
+      <port name="task_split_output_read_chunk">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_read_chunk" sRef="splitter_output"/>
       </port>
       <port name="result_pairs_0">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -412,13 +412,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_perform" sRef="splitter_output"/>
       </port>
-      <port name="platform_data_sink">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_data_sink" sRef="sink"/>
-      </port>
       <port name="result_pairs_1">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_data" sRef="sink"/>
+      </port>
+      <port name="platform_data_sink">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_data_sink" sRef="sink"/>
       </port>
       <action id="main">
         <protocol/>

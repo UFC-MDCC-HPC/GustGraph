@@ -41,17 +41,11 @@ namespace br.ufc.mdcc.hpcshelf.gust.binding.impl.environment.EnvironmentBindingR
 		private S server = default(S);
 		public S Server { 
 			set { 
-                Console.WriteLine("IReadDataGraphImpl - SET SERVER 1 ");
 				server = value; 
                 client = (IPortTypeIterator)(server.IteratorInstance);
-                Console.WriteLine("IReadDataGraphImpl - SET SERVER 2 " + server.GetType());
 				client.IsEmptyAction = ask_for_next_item;
-				Console.WriteLine("IReadDataGraphImpl - SET SERVER 3");
 				server_ok.Set ();
-				Console.WriteLine("IReadDataGraphImpl - SET SERVER 4");
 				client_ok.Set ();
-				Console.WriteLine("IReadDataGraphImpl - SET SERVER 5");
-
 			} 
 		}
 
@@ -72,6 +66,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.binding.impl.environment.EnvironmentBindingR
 			foreach (object item_kv in enumerable_obj) 
             {
 				e.WaitOne (); 
+                Console.WriteLine("IReadGraphImpl - NEW ITEM " + item_kv);
 				client.put(item_kv);
 
 				counter_write_chunk++;

@@ -15,9 +15,13 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerEImpl
 			newInstance (); 
 		}
 		public object newInstance () {
+			Console.WriteLine("IDataContainerEImpl - newInstance 1 {0}", instance == null);
 			IVertexInstance v = (IVertexInstance) this.Vertex.newInstance ();
+			Console.WriteLine("IDataContainerEImpl - newInstance 2 {0}", v == null);
 			IEdgeInstance<V, int> e = (IEdgeInstance<V, int>)this.EdgeFactory.newInstance ();
+			Console.WriteLine("IDataContainerEImpl - newInstance 3 {0}", e == null);
 			instance = new IDataContainerEInstanceImpl<V, E, int, IEdgeInstance<V, int>> (v.Id, e, 0);
+			Console.WriteLine("IDataContainerEImpl - newInstance 4 {0}", instance == null);
 			return instance;
 		}
 		private object instance;
@@ -30,7 +34,13 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerEImpl
 			}
 		}
 		public IDataContainerEInstance<V, E, int, IEdgeInstance<V, int>> DataContainerEInstance {
-			get { return (IDataContainerEInstance<V, E, int, IEdgeInstance<V, int>>) this.instance; }
+			get {
+				Console.WriteLine("IDataContainerEImpl - DataContainerVInstance - GET 1 {0}", instance == null);
+				if (instance == null)
+					newInstance();
+				Console.WriteLine("IDataContainerEImpl - DataContainerVInstance - GET 2 {0}", instance == null);
+				return (IDataContainerEInstance<V, E, int, IEdgeInstance<V, int>>) this.instance; 
+            }
 			set { 
 				this.instance = (IDataContainerEInstance<V, E, int, IEdgeInstance<V, int>>)value;
 			}
